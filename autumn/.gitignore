@@ -1,0 +1,9 @@
+*.project
+*.iml
+/.idea/
+*/target/
+*/.idea/
+
+# macOS Finder
+.DS_Store
+**/.DS_Store
