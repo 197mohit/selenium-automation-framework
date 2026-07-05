@@ -1,0 +1,97 @@
+pipeline {
+    agent {
+        label 'master'
+    }
+    environment {
+        registry = "qa-nexus-repo1.paytm.local:8083/paytm/pg_qa/builds/subscription"
+    }
+
+    parameters {
+        string (
+            name: 'autumn_branch',
+            defaultValue: "restructuring",
+            description: "Autumn repository branch")
+        string (
+            name: 'NEW_VERSION',
+            defaultValue: "",
+            description: "New Version to be updated")
+    }
+
+    stages {
+        stage('Builds') {
+            agent {
+                docker {
+                    image 'qa-nexus-repo1.paytm.local:8083/paytm/pg_qa/jenkins/build_env:v1'
+                    args '-v /paytm/dockerFiles:/paytm/dockerFiles:rw,z'
+                }
+            }
+
+            stages {
+                stage('Git_Clone')  {
+                    steps{
+                        sh 'echo "Cloning git repos"'
+                        script{
+                            env.work = pwd()
+                        }
+                        dir('autumn') {
+                            git branch: '${autumn_branch}', url: 'git@bitbucket.org:paytmteam/autumn.git'
+                            sh 'echo "Code pulled autumn"'
+                        }
+                        dir('payment-automation-util') {
+                            git branch: '${autumn_branch}', url: 'git@bitbucket.org:paytmteam/payment-automation-util.git'
+                            sh 'echo "Code pulled payment-automation-util"'
+                        }
+                        dir('pgp_automation') {
+                            git branch: '${autumn_branch}', url: 'git@bitbucket.org:paytmteam/pgp_automation.git'
+                            sh 'echo "Code pulled pgp_automation"'
+                        }
+
+                    }
+                }
+                stage('Update_versions') {
+                    steps {
+                        sh 'echo "Updating versioning"'
+                        dir('autumn') {
+                            sh ' echo "Updating version"'
+                            sh 'mvn -DgenerateBackupPoms=false -batch-mode release:update-versions -DdevelopmentVersion=$NEW_VERSION -DskipTests=true -N versions:update-child-modules'
+                        }
+                    }
+                }
+                stage('Building'){
+                    steps{
+                        dir('autumn') {
+                            sh 'echo "Building project"'
+                            sh 'mvn clean install -DskipTests=true -PALL -s settings.xml'
+                            sh 'mvn clean deploy -DskipTests=true -PDEPLOYMENT -s settings.xml'
+                        }
+                    }
+                }
+            }
+        }
+        stage('Push_Updated_Version'){
+            steps{
+                sh '''
+                    cd ${work}/autumn
+                    git status
+                    git add .
+                    git commit -m "$NEW_VERSION VERSION UPDATE CI/CD"
+                    git push --set-upstream origin $autumn_branch
+                '''
+                sh '''
+                    cd ${work}/payment-automation-util
+                    git status
+                    git add .
+                    git commit -m "$NEW_VERSION VERSION UPDATE CI/CD"
+                    git push --set-upstream origin $autumn_branch
+                '''
+                sh '''
+                    cd ${work}/pgp_automation
+                    git status
+                    git add .
+                    git commit -m "$NEW_VERSION VERSION UPDATE CI/CD"
+                    git push --set-upstream origin $autumn_branch
+                '''
+            }
+        }
+    }
+}
