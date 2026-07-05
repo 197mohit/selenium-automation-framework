@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SettlementWithdrawSMS" verbose="1" thread-count="6" parallel="methods" >
+    <test name="Stop sms for Realtime settlemet and Manual withdraw">
+        <classes>
+            <class name="scripts.PgproxyNotificationTest">
+                <methods>
+                    <include name="StopSettlementSMSForTWSMerchantwithflagon"/>
+                    <include name="StopWithdrawSMSForBWMerchantwithflagon"/>
+                    <include name="SendAutoWithdrawSMSForBWMerchantwithflagon"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

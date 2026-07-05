@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Refund" verbose="1" thread-count="2" parallel="tests">
+    <test name="Refund Async with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                   <include name="refundFailureWithIncorrectMidOrderIdTxnId_async"/>
+                  <include name="partialRefundErrorMessageRedundantRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SyncRefund">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="verifyPartialAmountLessThanOne"/>
+                    <!-- Disabling wallet case -->
+                    <!-- <include name="successfulWalletOnlySyncRefund"/> -->
+                    <include name="verifyAmountNotComingInReq"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-25870" parallel="methods">
+    <test name="PGP-25870">
+        <classes>
+            <class name="scripts.mgv.TestNativeMGVFlow">
+                <methods>
+                    <include name="TC_PT_MGV_005"/>
+                    <include name="TC_PT_MGV_005_V2"/>
+                    <include name="TC_PT_MGV_006"/>
+                    <include name="TC_PT_MGV_007"/>
+                    <include name="TC_PT_MGV_008"/>
+                    <include name="TC_PT_MGV_009"/>
+                    <include name="TC_PT_MGV_010"/>
+                    <include name="TC_PT_MGV_011"/>
+                    <include name="TC_PT_MGV_012"/>
+                    <include name="TC_PT_MGV_012_V2"/>
+                    <include name="TC_PT_MGV_013"/>
+                    <include name="TC_PT_MGV_014"/>
+                    <include name="TC_PT_MGV_015"/>
+                    <include name="TC_PT_MGV_016"/>
+                    <include name="TC_PT_MGV_017"/>
+                    <include name="TC_PT_MGV_018"/>
+                    <include name="TC_PT_MGV_019"/>
+                    <include name="TC_PT_MGV_019_V2"/>
+                    <include name="TC_PT_MGV_020"/>
+                    <include name="TC_PT_MGV_021"/>
+                    <include name="TC_PT_MGV_022"/>
+                    <include name="TC_PT_MGV_023"/>
+                    <include name="TC_PT_MGV_024"/>
+                    <include name="TC_PT_MGV_025"/>
+                    <include name="TC_PT_MGV_026"/>
+                    <include name="TC_PT_MGV_026_V2"/>
+                    <include name="TC_PT_MGV_027"/>
+                    <include name="TC_PT_MGV_028"/>
+                    <include name="TC_PT_MGV_029"/>
+                    <include name="TC_PT_MGV_030"/>
+                    <include name="TC_PT_MGV_031"/>
+                    <include name="TC_PT_MGV_032"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

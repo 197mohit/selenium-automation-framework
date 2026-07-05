@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Prepaid cases" verbose="1" parallel="methods" thread-count="20">
+
+    <test name="Prepaid cases for enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidEnhancedTxn"/>
+                    <include name="appInvokeSuccessPrepaidTxn"/>
+                    <include name="addPaySuccessPrepaidTxnEnhanced"/>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                    <include name="retryPrepaid"/>
+                    <include name="pcfPrepaidEnhancedTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalse"/>
+                    <include name="FF4jOffNormalTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalseBinFalse"/>
+                    <include name="peonPrefDisabledPrepaidCard"/>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="Prepaid cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+        <class name="scripts.PrepaidCard">
+            <methods>
+                <include name="successPrepaidEnhancedTxn"/>
+                <include name="appInvokeSuccessPrepaidTxn"/>
+                <include name="addPaySuccessPrepaidTxnEnhanced"/>
+                <include name="savedCardPrepaidEnhancedTxn"/>
+                <include name="offlinePrepaidEnhancedTxn"/>
+                <include name="retryPrepaid"/>
+                <include name="pcfPrepaidEnhancedTxn"/>
+                <include name="successPrepaidWithPeonFlagFalse"/>
+                <include name="FF4jOffNormalTxn"/>
+                <include name="successPrepaidWithPeonFlagFalseBinFalse"/>
+                <include name="peonPrefDisabledPrepaidCard"/>
+                <include name="emiCCPrepaidEnhancedTxn"/>
+                <include name="emiDCPrepaidEnhancedTxn"/>
+            </methods>
+
+        </class>
+        </classes>
+    </test>
+
+    <test name="Prepaid cases for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidNativeTxn"/>
+                    <include name="addPaySuccessPrepaidTxnNative"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Prepaid cases for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidNativeTxn"/>
+                    <include name="addPaySuccessPrepaidTxnNative"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-43587" verbose="1" >
+    <test name="PGP-43587">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.LinkTxnOneCrore">
+                <methods>
+                    <include name="Merchant_Display_Name_for_FixedLink"/>
+                    <include name="Merchant_Display_Name_for_GenericLink"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

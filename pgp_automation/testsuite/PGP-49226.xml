@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Deferred Checkout Scripts">
+    <test name="Deferred Checkout txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validate_CC_DC_returnedInDeferredFlowSubsFPOResponse"/>
+                    <include name="validate_CC_DC_notReturnedInDeferredFlowSubsFPOResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Deferred Checkout txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validate_CC_DC_returnedInDeferredFlowSubsFPOResponse"/>
+                    <include name="validate_CC_DC_notReturnedInDeferredFlowSubsFPOResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

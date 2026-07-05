@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38796" verbose="1" thread-count="1" parallel="tests">
+    <test name="Channel Display Name 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.DisplayNameOnCheckout.CorrectingEmiAndBankMandate">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Channel Display Name 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.DisplayNameOnCheckout.CorrectingEmiAndBankMandate">
+                <methods>
+                    <include name="verifyChannelDisplayNameInConsoleInFPOResponse"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

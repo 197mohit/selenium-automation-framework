@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPICreditCardNPCIRiskRejectlogic" verbose="1">
+    <test name="UPI Credit Card - NPCI Risk Reject logic at Theia">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateCConUPIAllowedforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOnlineMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOnlineMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOnusMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOnusMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOnlineMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOnlineMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Fixes and One automation case">
+    <test name="UPI Fixes and One automation case">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ReqauthFlowUPIIntentTest">
+                <methods>
+                    <include name="VpaShouldBeVisibleInGetPaymentStatusWhenThisPreferenceAndFf4jIsOnReturnUserVpaInResponse"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRWhenpayerPaymentInstrumentFeeisPassedasNullinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                    <include name="validateReqAuthSQRUPIPSPUpiCreditCardforMDRWhenpayerPaymentInstrumentFeeisPassedasNullinRequest"/>
+                    <include name="validateReqAuthSQRUPIPSPUpiCreditlineforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

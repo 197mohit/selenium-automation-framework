@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPISavedVPA" verbose="1"  parallel="tests" thread-count="5">
+
+    <test name="Saved UPI VPA transactions">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISavedVPA">
+                <methods>
+                    <include name="savedVPA_localCustomerId001"/>
+                    <include name="savedVPA_localCustomerId002"/>
+                    <include name="savedVPA_localCustomerId003"/>
+                    <include name="savedVPA_localMobile001"/>
+                    <include name="savedVPA_localMobile002"/>
+                    <include name="savedVPA_localMobile003"/>
+                    <include name="savedVPA_GLOBAL001"/>
+                    <include name="savedVPA_GLOBAL002"/>
+                    <include name="savedVPA_GLOBAL003"/>
+                    <include name="savedVPA_GLOBAL004"/>
+                    <include name="savedVPA_GLOBAL005"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+

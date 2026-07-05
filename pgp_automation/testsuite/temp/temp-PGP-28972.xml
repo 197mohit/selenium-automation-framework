@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28972 Subscription Details fix for new frequencies" verbose="1" >
+    <test name="PGP-28972 tests">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                </methods>
+            </class>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="validateDAYFreqInPushAppData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

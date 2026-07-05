@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notification_Suite" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="PeonTxn Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="validatePeonForFailedTransaction"/>
+                    <exclude name="PGP_400_PeonWalletOnlyFail"/>
+                    <exclude name="PGP_401_PeonHybridPass"/>
+                    <exclude name="PGP_402_PeonHybridFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PeonTxn Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="PGP_401_PeonHybridPass"/>
+                    <exclude name="PGP_402_PeonHybridFail"/>
+                    <exclude name="validatePeonForFailedTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FGW Mappings - PGP-38316">
+        <classes>
+            <class name="scripts.notificationTemplate.PGP38316NewFGWMappingwithContextualErrorMessagesFailedSettlementTxn">
+                <methods>
+                    <include name="FgwBankFailSpecificReason_MerchantAutoWithdraw"/>
+                    <include name="FgwAccountFrozen_MerchantWithdraw"/>
+                    <include name="FgwBankFailSpecificReason_OnlineSettlement"/>
+                    <include name="FgwAccountFrozen_RealtimeSettlement"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Addition of fields in DTOs">
+        <classes>
+            <class name="scripts.PgproxyNotificationTest"></class>
+        </classes>
+    </test>
+
+    <test name="PGP-37195">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationLogs">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-39455">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="pushCloseNotifyWithPaymodePPBL"/>
+                    <exclude name="verifyPaymentNotifyWithHybrid"/>
+                    <exclude name="acquiringCloseNotifyNotifyWithHybrid"/>
+                    <!-- NQH logs cases, NQH is still not on Kibana -->
+                    <exclude name="pushCloseNotifyWithAddnPay"/>
+                    <exclude name="pushCloseNotifyWithPaymodeCC"/>
+                    <exclude name="pushCloseNotifyWithPaymodeUPI"/>
+                    <exclude name="pushPaymentNotifyWithAddNPay"/>
+                    <exclude name="pushPaymentNotifyWithPaymodeCC"/>
+                    <exclude name="pushPaymentNotifyWithPaymodePPBL"/>
+                    <exclude name="pushPaymentNotifyWithPaymodeUPI"/>
+                    <exclude name="validateTopicForRTDD_AddNPay"/>
+                    <exclude name="validateTopicForRTDD_CC"/>
+                    <exclude name="validateTopicForRTDD_PPBL"/>
+                    <exclude name="validateTopicForRTDD_UPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ProcessTransactionTests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateCommLogsForCC"/>
+                    <include name="validateCommLogsForDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-37474 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="validateTopicForRTDD_CC"/>
+                    <include name="validateTopicForRTDD_UPI"/>
+                    <include name="validateTopicForRTDD_PPBL"/>
+                    <include name="validateTopicForRTDD_AddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+  <!--  <test name="WalletSettlement">
+        <classes>
+            <class name = "scripts.WalletSetlement.WalletSettlementInstaproxy"/>
+        </classes>
+    </test>
+-->
+
+
+    <!--Notification cases added from miscellaneous-->
+    <test name="PGP-36427 - Verify isAutoRefund is true in FPO response of subscription created for merchant whose AutoRefund is enabled">
+        <classes>
+            <class name="scripts.notificationTemplate.TestGetNotificationGlobalConfig"/>
+            <class name="scripts.notificationTemplate.TestEmailTemplate"/>
+            <class name="scripts.notificationTemplate.TestSmsTemplate"/>
+        </classes>
+    </test>
+
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <!--EMI Txn is not supported in Native, Hence Excluded-->
+                    <exclude name="hybridTxnUsingEMI"/>
+                    <exclude name="retryTxnUsingEMI"/>
+                    <!--Hybrid cases are not supprted to pg2 right now -->
+                    <exclude name="hybridTxnUsingSavedCard"/>
+                    <exclude name="TC_PT_016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus Peon">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <!--EMI are not supported to pg2 right now-->
+                    <exclude name="hybridTxnUsingEMI"/>
+                    <exclude name="retryTxnUsingEMI"/>
+                    <!--Hybrid cases are not supprted to pg2 right now -->
+                    <exclude name="hybridTxnUsingSavedCard"/>
+                    <exclude name="TC_PT_016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund_Success">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.RefundNotify"/>
+        </classes>
+    </test>
+
+    <test name="Close_Order">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.AcquiringOrderCloseNotify"/>
+        </classes>
+    </test>
+</suite>
+

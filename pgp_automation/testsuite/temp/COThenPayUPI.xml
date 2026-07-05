@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38757" verbose="1" thread-count="20" parallel="tests">
+    <test name="Validate Co Then Pay UPI push transactions">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCoThenPayUpiPushTxnPG2MID"/>
+                    <include name="validateFullTrafficYFailedCoThenPayUpiPushTxnPG2MID"/>
+                    <include name="pendingFullTrafficYCoThenPayUpiPushTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

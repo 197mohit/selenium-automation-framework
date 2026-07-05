@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33721_33720" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-33721_33720">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33721_33720 for checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

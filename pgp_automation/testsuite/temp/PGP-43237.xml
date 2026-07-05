@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Instrument Categorization">
+    <test name="PGP-43237 RefundNotify">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.RefundNotify">
+                <methods>
+                    <include name="verifyRefundNotify_CC"/>
+                    <include name="verify_payloadPushedTo_ACQURING_REFUND_NOTIFY_CC_Topic_CC"/>
+                    <include name="verifyRefundNotify_DC"/>
+                    <include name="verify_payloadPushedTo_ACQURING_REFUND_NOTIFY_CC_Topic_DC"/>
+                    <include name="verifyRefundNotify_Wallet"/>
+                    <include name="verify_payloadPushedTo_ACQURING_REFUND_NOTIFY_CC_Topic_Wallet"/>
+                    <include name="verifyRefundNotify_UPI"/>
+                    <include name="verify_payloadPushedTo_ACQURING_REFUND_NOTIFY_CC_Topic_UPI"/>
+                    <include name="verifyRefundNotify_PPBL"/>
+                    <include name="verify_payloadPushedTo_ACQURING_REFUND_NOTIFY_CC_Topic_PPBL"/>
+                    <include name="verifyRefundNotify_AddNPay"/>
+                    <include name="verify_payloadPushedTo_ACQURING_REFUND_NOTIFY_CC_Topic_AddNPay"/>
+                    <include name="verifyRefundSuccessNotify_Fail_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

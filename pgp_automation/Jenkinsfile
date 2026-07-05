@@ -1,0 +1,38 @@
+pipeline {
+    agent {
+        docker {
+            image 'qa-nexus-repo1.paytm.local:8083/paytm/pg_qa/jenkins/build_env:v1'
+            args '-v /paytm/dockerFiles:/paytm/dockerFiles:rw,z -v /root/.m2/repository:/root/.m2/repository:rw,z'
+        }
+    }
+
+    stages {
+        stage('Validate commit messages') {
+            steps {
+                sh '''
+                    git fetch origin release_qa || true
+                    bash scripts/validate-branch-commits.sh origin/release_qa
+                '''
+            }
+        }
+        stage('Build'){
+            steps{
+                sh "mvn clean install -DskipTests=true -s settings.xml -Pautomation"
+            }
+        }
+        stage('SonarQube Analysis') {
+            steps {
+                echo 'Starting Sonar analysis'
+                withSonarQubeEnv('SonarQube') {
+                    sh "mvn sonar:sonar -Dsonar.projectKey=pgp_automation -Dsonar.host.url=http://10.142.53.178:8080 -Dsonar.login=243ef548bd44822b0374afbc10fefda814e8ad32 -s settings.xml -DskipTests=true -Pautomation"
+                }
+            }
+        }
+        stage('Quality Gate') {
+            steps {
+                waitForQualityGate abortPipeline: true
+            }
+        }
+
+    }
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29554" verbose="1">
+    <test name="PGP-29554">
+        <classes>
+            <class name="scripts.api.mappingService.GetFetchEntityIgnoreParamTest"/>
+            <class name="scripts.api.mappingService.MappingService">
+                <methods>
+                    <include name="validateGetEntityUrlInfoAPIWithEmpty_Response"/>
+                    <include name="validateGetEntityUrlInfov2APIWithEmpty_Response"/>
+                    <include name="validateEntityOfferDetail_withEmptyResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

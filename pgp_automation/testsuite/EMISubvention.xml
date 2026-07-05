@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMISubvention" verbose="1" parallel="methods" thread-count="3">
+    <test name="EMISubventionWithNativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMISubvention"/>
+        </classes>
+    </test>
+    <test name="EMISubvention">
+            <parameter name="isNativePlus"  value="false"/>
+        <classes>
+            <class name="scripts.EMISubvention"/>
+        </classes>
+    </test>
+</suite>

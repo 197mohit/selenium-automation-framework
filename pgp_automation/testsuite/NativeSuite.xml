@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression test cases for merchant 4 and enhancedwap and enhancedweb themes" verbose="1" thread-count="6"
+       parallel="tests">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="Native.FetchBinDetails">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails"/>
+        </classes>
+    </test>
+    <test name="Native Plus Process Txn">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_PPBL_Success"/>
+                        <include name="TC_PT_COD_Failure_WithoutToken"/>
+                        <include name="TC_PT_COD_Failure"/>
+                        <include name="TC_PT_015"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                        <include name="TC_PT_014"/>
+                        <include name="TC_PT_025_CC"/>
+                        <include name="TC_PT_016"/>
+                        <include name="TC_PT_043"/>
+                        <include name="TC_PT_hybridWithoutFetchPayOption"/>
+                        <include name="verifyRestrictCCPromo_TC_20"/>
+                        <include name="verifyRestrictDCPromo_TC_20"/>
+                        <include name="verifyRestrictPPIPromo_TC_20"/>
+                        <include name="verifyCCPromo_TC_16"/>
+                        <include name="verifyDCPromo_TC_16_1"/>
+                        <include name="verifyWalletPromo_TC_15"/>
+                        <include name="TC_PT_002"/>
+                        <include name="TC_PT_003"/>
+                        <include name="TC_PT_004"/>
+                        <include name="TC_PT_005"/>
+                        <include name="TC_PT_006"/>
+                        <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                        <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                        <include name="TC_PT_035"/>
+                        <include name="TC_PT_037"/>
+                        <include name="TC_13"/>
+                        <include name="TC_07"/>
+                        <include name="TC_PT_001"/>
+                        <include name="TC_PT_COD_Success"/>
+                        <include name="TC_PT_EMI_Success"/>
+                        <include name="TC_PT_0CostEMI_Success"/>
+                        <include name="verifyRestrictDCPromo_TC_20_1"/>
+                        <include name="TC_PT_028"/>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_025"/>
+                        <include name="TC_PT_EMI_Hyb_Success"/>
+                        <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                        <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                        <include name="Verify_RiskReject"/>
+                        <include name="TC_PT_BAJAJ_EMI_Success"/>
+                        <include
+                                name="checkCardIndexNoPresentInProcessTransactionApiResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                        <include name="checkNativeAddMoneyTxn"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Process Txn">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_PPBL_Success"/>
+                        <include name="TC_PT_COD_Failure_WithoutToken"/>
+                        <include name="TC_PT_COD_Failure"/>
+                        <include name="TC_PT_015"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                        <include name="TC_PT_014"/>
+                        <include name="ProcessTransactionTests"/>
+                        <include name="TC_PT_026_CC"/>
+                        <include name="TC_PT_016"/>
+                        <include name="TC_PT_043"/>
+                        <include name="verifyRestrictCCPromo_TC_20"/>
+                        <include name="verifyRestrictDCPromo_TC_20"/>
+                        <include name="verifyRestrictPPIPromo_TC_20"/>
+                        <include name="verifyCCPromo_TC_16"/>
+                        <include name="verifyDCPromo_TC_16_1"/>
+                        <include name="verifyWalletPromo_TC_15"/>
+                        <include name="TC_PT_002"/>
+                        <include name="TC_PT_003"/>
+                        <include name="TC_PT_004"/>
+                        <include name="TC_PT_005"/>
+                        <include name="TC_PT_006"/>
+                        <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                        <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                        <include name="TC_PT_031"/>
+                        <include name="TC_PT_037"/>
+                        <include name="TC_13"/>
+                        <include name="TC_07"/>
+                        <include name="TC_PT_001"/>
+                        <include name="TC_PT_COD_Success"/>
+                        <include name="TC_PT_EMI_Success"/>
+                        <include name="TC_PT_0CostEMI_Success"/>
+                        <include name="verifyRestrictDCPromo_TC_20_1"/>
+                        <include name="TC_PT_027"/>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_018_UPI"/>
+                        <include name="TC_PT_025"/>
+                        <include name="TC_PT_EMI_Hyb_Success"/>
+                        <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                        <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                        <include name="Verify_expiredCardNotFoundInFetchPayInstrument"/>
+                        <include name="Verify_RiskReject"/>
+                        <include name="TC_PT_BAJAJ_EMI_Success"/>
+                        <include
+                                name="checkCardIndexNoPresentInProcessTransactionApiResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                        <include name="checkNativeAddMoneyTxn"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Mutual Funds">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_020"/>
+                        <include name="TC_PT_022"/>
+                        <include name="TC_PT_023"/>
+                        <include name="TC_PT_024"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Plus Mutual Funds">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_020"/>
+                        <include name="TC_PT_022"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Fetch Pay Options">
+        <classes>
+            <class name="scripts.Native.FetchPayOptions"/>
+        </classes>
+    </test>
+    <test name="Native Initiate Txn">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.Native.InitiateTransaction"/>
+            </classes>
+        </parameter>
+    </test>
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon"/>
+        </classes>
+    </test>
+    <test name="Native Plus Peon">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon"/>
+        </classes>
+    </test>
+    <test name="Native.FetchVPADetails">
+        <classes>
+            <class name="scripts.Native.FetchVPADetails"/>
+        </classes>
+    </test>
+    <test name="Native.FetchPromoCodeDetails">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails"/>
+        </classes>
+    </test>
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription"/>
+        </classes>
+    </test>
+    <test name="Fetch Payment Page AppInvoke">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="FPP_CCAppInvokeTC001"/>
+                    <include name="FPP_PPIAppInvokeTC002"/>
+                    <include name="FPP_SavedCCAppInvokeTC003"/>
+                    <include name="FPP_HDFOAppInvokeTC004"/>
+                    <include name="FPP_BajajFinAppInvokeTC005"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Direct Bank Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Direct Bank Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="fetchmerinfo">
+        <classes>
+            <class name="scripts.FetchMerchantInfo">
+                <methods>
+                    <include name="verifyMerchantInfowithValidMid"/>
+                    <include name="invalidMidMerchantInfo"/>
+                    <include name="verifyMerchantInfowithSingleValidMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

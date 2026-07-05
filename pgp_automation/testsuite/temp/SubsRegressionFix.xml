@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Fixes" verbose="1" parallel="methods" thread-count="1">
+    <test name="SubsFix Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="TC_007_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <include name="TC_015_Enhanced_ValidateBankMandateSubscriptionRenewDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_016_Enhanced_ValidateSavedBankMandateSubscriptionRenewNBPAymodeAmountMoreThan0"/>
+                    <include name="TC_017_Enhanced_ValidateSavedBankMandateSubscriptionRenewDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_018_Enhanced_ValidateSavedBankMandateSubscriptionRenewNBPAymodeAmount0"/>
+                    <include name="TC_019_Enhanced_ValidateSavedBankMandateSubscriptionRenewDCPAymodeAmount0"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

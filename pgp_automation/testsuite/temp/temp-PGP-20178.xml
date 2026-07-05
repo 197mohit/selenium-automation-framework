@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-PGP-20178" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-20178">
+        <classes>
+            <class name="scripts.api.theia.GetEmiDetails"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Maestro Card on CheckoutJS(PGP-29620)" verbose="1" parallel="methods" thread-count="5">
+    <test name="Maestro Card Test Cases for checkoutJS web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.MaestroCardCheckout"/>
+        </classes>
+    </test>
+    <test name="Maestro Card Test Cases for checkoutJS web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.MaestroCardCheckout"/>
+        </classes>
+    </test>
+</suite>

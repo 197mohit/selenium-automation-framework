@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New params in savedCard block" verbose="1" parallel="tests" thread-count="2">
+    <test name=" SavedCard block in pushAppData in Redirectional/Enhance flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="cardType_bankName_inEnhancedSavedCards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SavedCard block in Native api flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPayOptions">
+                <methods>
+                    <include name="cardType_bankName_inNativeSavedCards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

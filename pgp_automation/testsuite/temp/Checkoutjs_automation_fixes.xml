@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.BankOfferOnPCF">
+                <methods>
+                    <include name="TC_04"/>
+                    <exclude name="TC_05"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="card_LocckedIN_Fhidelable"/>  
+                    <include name="categorize"/>  
+                    <include name="card_LocckedIN_hidelable"/>  
+                </methods>
+            </class>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestE2ESuccessResponseWhenPartialSubventionAndBoAmountprovided"/>  
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialSubventionProvided"/>  
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvidedNB"/>  
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

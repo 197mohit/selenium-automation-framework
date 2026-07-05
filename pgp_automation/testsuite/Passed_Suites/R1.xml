@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R1">
+    <listeners>
+        <listener class-name="com.paytm.listeners.MasterReport"/>
+        <listener class-name="com.paytm.listeners.StatusCounterListener"/>
+        <listener class-name="com.paytm.listeners.ScreenListener"/>
+    </listeners>
+    <suite-files>
+  <!--      <suite-file path="postpaid.xml"/> -->
+        <suite-file path="upi.xml"/>
+        <suite-file path="notification.xml"/>
+        <suite-file path="upi_offline.xml"/>
+    </suite-files>
+</suite>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Deferred Checkout Scripts">
+    <test name="Fetch Bin response validation for Alt tokenization">
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyFetchBinV1ApiAlt"/>
+                    <include name="verifyFetchBinApiAlt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

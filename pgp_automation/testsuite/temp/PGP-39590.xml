@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AOA" verbose="1" parallel="tests" thread-count="3">
+    <test name="Verify Request Sent To TimeOutCentre from theia in AOA Transaction">
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Request_Sent_To_TimeOutCentre"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

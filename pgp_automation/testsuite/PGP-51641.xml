@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Simplified Unified in FPO">
+    <test name="Simplified Unified in FPO">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="VerifyThatMinMaxAmountSentInCOPRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

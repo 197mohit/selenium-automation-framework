@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Promo_Suite_Failed" verbose="1" thread-count="20" parallel="tests">
+  <test thread-count="20" verbose="0" name="Native ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyRestrictDCPromo_TC_20"/>
+                    <include name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <include name="verifyNBPromo_TC_17"/>
+                    <include name="verifyCCPromo_TC_16"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native ProcessTransactionTests -->
+    <test thread-count="20" verbose="0" name="Native Plus ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <include name="verifyNBPromo_TC_17"/>
+                    <include name="verifyCCPromo_TC_16"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native Plus ProcessTransactionTests -->
+    <test thread-count="20" verbose="0" name="PGP-28691 Block bulk apply Pref check for show payment page"
+          parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include
+                            name="PGP_28691_BulkPromoShouldNotHitWhenBLOCK_BULK_APPLY_PROMOisActiveForShowPaymentPage"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPromoCodeDetails -->
+        </classes>
+    </test> <!-- PGP-28691 Block bulk apply Pref check for show payment page -->
+    <test thread-count="20" verbose="0" name="Checkoutjs UI test cases wap UI REVAMP" parallel="tests">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforCheckoutJs"/>
+                </methods>
+            </class> <!-- scripts.Native.checkoutjs.CheckoutJsTests -->
+        </classes>
+    </test> <!-- Checkoutjs UI test cases wap UI REVAMP -->
+    <test thread-count="20" verbose="0" name="Native.FetchPromoCodeDetails" parallel="tests">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_002"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPromoCodeDetails -->
+        </classes>
+    </test> <!-- Native.FetchPromoCodeDetails -->
+    <test thread-count="20" verbose="0" name="EMI Subvention Phase 2" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class> <!-- scripts.api.theia.emiSubvention.EmiSubventionApiTests -->
+        </classes>
+    </test> <!-- EMI Subvention Phase 2 -->
+    <test thread-count="20" verbose="0" name="Verify user Payment Offers applied on the merchant" parallel="tests">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="verifyFetchUserPaymentOffers"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPromoCodeDetails -->
+        </classes>
+    </test> <!-- Verify user Payment Offers applied on the merchant -->
+    <test thread-count="20" verbose="0" name="Checkoutjs UI test cases web UI REVAMP" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforCheckoutJs"/>
+                    <include name="ApplyOfferOnPostpaidForPreLogin"/>
+                    <include name="ApplyOfferOnPostpaid"/>
+                </methods>
+            </class> <!-- scripts.Native.checkoutjs.CheckoutJsTests -->
+        </classes>
+    </test> <!-- Checkoutjs UI test cases web UI REVAMP -->
+    <test thread-count="20" verbose="0" name="Item Level Promo Discount redemption" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.ItemLevelPromoTest">
+                <methods>
+                    <include name="ValidateFinalTxnAmountisDiscountedforCCPayMode"/>
+                    <include name="ValidateFinalTxnAmountisDiscountedforUPIPayMode"/>
+                    <include name="ValidateFinalTxnAmountisDiscountedforDCPayMode"/>
+                    <include name="ValidateFinalTxnAmountisDiscountedforNBPayMode"/>
+                </methods>
+            </class> <!-- scripts.api.theia.ItemLevelPromoTest -->
+        </classes>
+    </test> <!-- Item Level Promo Discount redemption -->
+    <test thread-count="20" verbose="0" name="PGP-22997 OR flow SCM FPO" parallel="tests">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.ORFPOSCM">
+                <methods>
+                    <include name="validatePaymentFlowinFPONONE"/>
+                    <include name="validatePaymentFlowinFPONONEADDNPAY"/>
+                    <include name="validatePaymentFlowinFPOHybrid"/>
+                    <include name="validatePaymentFlowinFPOADDNPAY"/>
+                </methods>
+            </class> <!-- scripts.Promo.ORRFlow.ORFPOSCM -->
+        </classes>
+    </test> <!-- PGP-22997 OR flow SCM FPO -->
+    <test thread-count="20" verbose="0" name="PGP-27157 Bank offers on PWP Not Supported enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_27157_ValidateBankOffersNotVisiblewithPWPMerchantfterLoggingIn"/>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisTrueAddNPay"/>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                </methods>
+            </class> <!-- scripts.AppInvokePromoCases -->
+        </classes>
+    </test> <!-- PGP-27157 Bank offers on PWP Not Supported enhancedwap -->
+    <test thread-count="20" verbose="0" name="PGP-18539 seamless Promo Txn" parallel="tests">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_297_successfulSeamlessNBPromoTxn"/>
+                    <include name="PGP_299_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_296_successfulSeamlessNBPromoTxnDiscountType"/>
+                    <include name="PGP_298_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_294_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_295_successfulSeamlessNBPromoTxn"/>
+                </methods>
+            </class> <!-- scripts.Seamless -->
+        </classes>
+    </test> <!-- PGP-18539 seamless Promo Txn -->
+    <test thread-count="20" verbose="0" name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for Native Plus"
+          parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_007"/>
+                    <include name="TC_FPC_008"/>
+                    <include name="ValidateFailureTxnUsingInvalidPromoWithValidatePromoTrueInNewFlow"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPromoCodeDetails -->
+        </classes>
+    </test> <!-- PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for Native Plus -->
+    <test thread-count="20" verbose="0" name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for native"
+          parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_007"/>
+                    <include name="ValidateFailureTxnUsingInvalidPromoWithValidatePromoTrueInNewFlow"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPromoCodeDetails -->
+        </classes>
+    </test> <!-- PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for native -->
+    <test thread-count="20" verbose="0" name="PGP-28967 Verify merchant name passed in promo flow" parallel="tests">
+        <classes>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="PGP 28967 test merchant name in theia facade logs after paytm_cashback promo txn"/>
+                </methods>
+            </class> <!-- scripts.flows.NativePlusTest -->
+        </classes>
+    </test> <!-- PGP-28967 Verify merchant name passed in promo flow -->
+    <test thread-count="20" verbose="0" name="PGP-22997 OR flow SCM FetchCardDetails" parallel="tests">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.FetchCardDetailsSCM">
+                <methods>
+                    <include name="validateFetchCardDetails_SCM_with_CIN"/>
+                    <include name="validateFetchCardDetails_SCM_with_New_Card"/>
+                </methods>
+            </class> <!-- scripts.Promo.ORRFlow.FetchCardDetailsSCM -->
+        </classes>
+    </test> <!-- PGP-22997 OR flow SCM FetchCardDetails -->
+    <test thread-count="20" verbose="0" name="Native.FetchPromoCodeDetails-2" parallel="tests">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforPCF"/>
+                    <include name="TC_FPC_007"/>
+                    <include name="TC_FPC_008"/>
+                    <include name="verifyFetchUserPaymentOffers"/>
+                    <include name="PaymentOffersFlow_PromoON"/>
+                    <include name="ValidateTncUrlPresentInApplyPromoForDiscountPromo"/>
+                    <include name="ValidateTncUrlPresentInApplyPromoForCashbackPromo"/>
+                    <include name="TC_FPC_001"/>
+                    <include name="TC_FPC_002"/>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforAppInvoke"/>
+                    <include name="TC_FPC_004"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPromoCodeDetails -->
+        </classes>
+    </test> <!-- Native.FetchPromoCodeDetails-2 -->
+    <test thread-count="20" verbose="0" name="temp-PGP-24050 Promo cases for enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisFalse"/>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisTrue"/>
+                </methods>
+            </class> <!-- scripts.AppInvokePromoCases -->
+        </classes>
+    </test> <!-- temp-PGP-24050 Promo cases for enhancedwap -->
+    <test thread-count="20" verbose="0" name="applyPromoSuccessCheckoutPromoFailLogged" parallel="tests">
+        <classes>
+            <class name="scripts.Promo.AND_Flow.ApplyPromoSuccessCheckoutPromoFailLogged">
+                <methods>
+                    <include name="validateApplyPromo_ApplyPromoSuccessAndCheckoutFailCC"/>
+                </methods>
+            </class> <!-- scripts.Promo.AND_Flow.ApplyPromoSuccessCheckoutPromoFailLogged -->
+        </classes>
+    </test> <!-- applyPromoSuccessCheckoutPromoFailLogged -->
+    <test thread-count="20" verbose="0" name="Promo And Flow" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.FetchAllPaymentOffers">
+                <methods>
+                    <include name="testWhenMerchantHasPromos"/>
+                    <include name="testWhenMerchantHasNoPromos"/>
+                </methods>
+            </class> <!-- scripts.api.theia.FetchAllPaymentOffers -->
+        </classes>
+    </test> <!-- Promo And Flow -->
+    <test thread-count="20" verbose="0" name="PGP-22997 AND flow SCM ApplyPrommo" parallel="tests">
+        <classes>
+            <class name="scripts.Promo.ANDFlow.ApplyPromoSCM">
+                <methods>
+                    <include name="validateApplyPromo_UsingCIN"/>
+                    <include name="validateApplyPromo_UsingNewCard"/>
+                </methods>
+            </class> <!-- scripts.Promo.ANDFlow.ApplyPromoSCM -->
+        </classes>
+    </test> <!-- PGP-22997 AND flow SCM ApplyPrommo -->
+    <test thread-count="20" verbose="0" name="PGP-25875_3" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include
+                            name="test when body fetchAllPaymentOffers = true given merchant does not have promos configured"/>
+                    <include name="setTxnToken"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test -->
+        </classes>
+    </test> <!-- PGP-25875_3 -->
+    <test thread-count="20" verbose="0" name="PGP-25875_2" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test when body fetchAllPaymentOffers = &#039;&#039;"/>
+                    <include
+                            name="test when body fetchAllPaymentOffers = true given merchant does not have promos configured"/>
+                    <include name="setTxnToken"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test -->
+        </classes>
+    </test> <!-- PGP-25875_2 -->
+    <test thread-count="20" verbose="0" name="Promo OR Flow" parallel="tests">
+        <classes>
+            <class name="scripts.or.FetchCardDetailsAPI">
+                <methods>
+                    <include name="assertValidResponseForDifferentSavedCardTypes"/>
+                    <include name="assertSuccessWhenSavedCardIdPassed"/>
+                    <include name="assertFailureWhenSavedCardIdOfAnotherUserPassed"/>
+                    <include name="assertBinLength8WhenEightDigitBinRequiredTrue"/>
+                    <include name="assertResponseWhenBothCardNumberAndSavedCardIdPassed"/>
+                    <include name="assertValidResponseForDifferentCardTypes"/>
+                    <include name="assertCorrectRespWhenLowSuccessRateCardProvided"/>
+                    <include name="assertBinLength6WhenEightDigitBinRequiredFalse"/>
+                    <include name="executeFetchPayOptions"/>
+                </methods>
+            </class> <!-- scripts.or.FetchCardDetailsAPI -->
+        </classes>
+    </test> <!-- Promo OR Flow -->
+    <test thread-count="20" verbose="0" name="PGP-25875_1" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test">
+                <methods>
+                    <include name="setTxnToken"/>
+                    <include name="test when merchant does have not promos configured"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test -->
+        </classes>
+    </test> <!-- PGP-25875_1 -->
+    <test thread-count="20" verbose="0" name="PGP-25567" parallel="tests">
+        <classes>
+            <class name="scripts.flows.NativeTest">
+                <methods>
+                    <include name="test if tncUrl not present in apply promo response if ff4j flag OFF"/>
+                    <include name="test when promo amt is greater than txn amt"/>
+                    <include
+                            name="test when paytm_cashback promo is applied but discount promo details are passed while initiating order"/>
+                    <include name="test when order payment is done by add n pay cc given cashback promo is applied"/>
+                    <include name="test when order payment is done by ppi given paytm_cashback promo is applied"/>
+                    <include name="test when promo amt is lesser than txn amt"/>
+                    <include name="test when order payment is done by add n pay cc given discount promo is applied"/>
+                    <include
+                            name="test when order payment is done by add n pay cc given paytm_cashback promo is applied"/>
+                    <include
+                            name="test when order payment is done by saved card id given paytm_cashback promo is applied"/>
+                    <include name="test when order payment is done by cc given paytm_cashback promo is applied"/>
+                </methods>
+            </class> <!-- scripts.flows.NativeTest -->
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="Verify success transaction with ECOM token for MDR+PCF merchant"/>
+                    <include name="test when promo amt is lesser than txn amt"/>
+                    <include
+                            name="Verify failure transaction with ECOM token with all mandatory and optional fields in PTC"/>
+                    <include
+                            name="Verify that transaction does not fail at theia end when ECOM token passed has bank as null in get token API"/>
+                    <include name="test eventLinkId is not coming in response in case of risk reject"/>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for CC pay mode in case of risk pass"/>
+                    <include
+                            name="test when order payment is done by add n pay cc given paytm_cashback promo is applied"/>
+                    <include
+                            name="Verify that corporate card transaction does not fail at theia end when ECOM token passed has bank as null in get token API"/>
+                    <include
+                            name="test when order payment is done by saved card id given paytm_cashback promo is applied"/>
+                    <include name="Verify that the PTC API fails when ECOM token digits are less than 16"/>
+                    <include name="Verify that transaction with prepaid card ECOM token should fail"/>
+                    <include name="test eventLinkId is not coming in response in case of risk verify"/>
+                    <include
+                            name="Verify transaction should fail for corporate ECOM token transaction is initiated when Corporate acquiring is not present on MID"/>
+                    <include name="Verify that the PTC API fails when expiryYear is of past"/>
+                    <include
+                            name="Verify transaction should fail for prepaid ECOM token transaction is initiated when Prepaid acquiring is not present on MID"/>
+                    <include name="Verify transaction with VISA CC ECOM token"/>
+                    <include name="Verify success transaction with CC ECOM token with only mandatory fields in PTC"/>
+                    <include name="test when promo amt is greater than txn amt"/>
+                    <include name="PGP 28967 test merchant name in theia facade logs after paytm_cashback promo txn"/>
+                    <include name="Verify that the PTC API fails when expiryMonth field has value more than 12"/>
+                    <include
+                            name="Verify that PTC API fails for merchant not having token support preference for transaction with ECOM token"/>
+                    <include
+                            name="test when paytm_cashback promo is applied but discount promo details are passed while initiating order"/>
+                    <include name="test when order payment is done by add n pay cc given cashback promo is applied"/>
+                    <include
+                            name="Verify the transaction with corporate card ECOM token is successful for MDR+PCF merchant"/>
+                    <include
+                            name="Verify success transaction with ECOM token with all mandatory and optional fields in PTC"/>
+                    <include
+                            name="Verify that PTC API fails with ECOM token when mandatory parameter expiryMonth is missing"/>
+                    <include name="Verify the transaction with corporate card ECOM token is successful"/>
+                    <include
+                            name="Verify that PTC API fails with ECOM token when mandatory parameter ecomtoken is missing"/>
+                    <include
+                            name="Verify that in case of mismatch of paymentMode and issuingBank between merchant and our DB, our DB credentials are picked"/>
+                    <include name="Verify that the PTC API fails when EMI transaction is initiated with ECOM token"/>
+                    <include name="test when order payment is done by add n pay cc given discount promo is applied"/>
+                    <include
+                            name="Verify that transaction with prepaid card ECOM token should fail for MDR+PCF merchant"/>
+                    <include
+                            name="Verify transaction should fail when CC ECOM token transaction is initiated when CC acquiring is not present on MID"/>
+                    <include
+                            name="Verify that PTC API fails with ECOM token when mandatory parameter authenticationValue is missing"/>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for DC pay mode in case of risk pass"/>
+                    <include name="test when order payment is done by cc given paytm_cashback promo is applied"/>
+                    <include
+                            name="Verify that PTC API fails with ECOM token when mandatory parameter expiryYear is missing"/>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for NB pay mode in case of risk pass"/>
+                    <include name="Verify that the PTC API fails when expiryMonth field has only single digit value"/>
+                    <include
+                            name="Verify failure transaction with ECOM token with all mandatory and optional fields in PTC for MDR+PCF merchant"/>
+                    <include name="test when order payment is done by ppi given paytm_cashback promo is applied"/>
+                </methods>
+            </class> <!-- scripts.flows.NativePlusTest -->
+        </classes>
+    </test> <!-- PGP-25567 -->
+    <test name="PGP-46787 - PG2 Deals tests">
+        <classes>
+            <class name="scripts.Deals.DealsTests">
+                <methods>
+                    <include name="successfulDealsOnlyAddnPayCCTransactionViaCOP"/>
+                    <include name="successfulDealsOnlyAddnPayCCTransactionViaCOTP"/>
+                    <include name="successfulDealsOnlyHybridCCTransactionViaCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Promo_Suite -->

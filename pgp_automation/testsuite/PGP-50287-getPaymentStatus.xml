@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-50287-GetPaymentStatus" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-50287-GetPaymentStatus">
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="validateEMISubventioninfoInGetPaymentStatus"/>
+                    <include name="validateEMISubventioninfoInWithPromo"/>
+                    <include name="validateWithOnlyPromo"/>
+                    <include name="validateEMISubventionInfoOnlyItem"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="G2JTheiaOne-1" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="PGP-24758" >
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test tncUrl when FF4J applyPromoSendResponseTncUrl flag is enabled on mid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-24062" >
+        <classes>
+            <class name="scripts.api.theia.FastForwardTest">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="testSuccess"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="fetch BIN when CC_EMI is enabled"/>
+                    <exclude name="fetch BIN when DC_EMI is enabled"/>
+                    <exclude name="testForBajajfnBinWhenSupported"/>
+                    <exclude name="testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test when body mid = null"/>
+                    <exclude name="test when body mid equals random value"/>
+                    <exclude name="test when body mid is not provided"/>
+                    <exclude name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant and user both do not have PAYTM_DIGITAL_CREDIT configured"/>
+                    <exclude name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant has PAYTM_DIGITAL_CREDIT configured but user does not"/>
+                    <exclude name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given user has PAYTM_DIGITAL_CREDIT configured but merchant does not"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.TxnTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV2Test"/>
+        </classes>
+    </test>
+
+    <test name="TxnTokenFetchBalanceInfoV1Test">
+        <classes>
+            <class name="scripts.api.theia.fetchBalance.TxnTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant and user both do not have PAYTM_DIGITAL_CREDIT configured"/>
+                    <exclude name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant has PAYTM_DIGITAL_CREDIT configured but user does not"/>
+                    <exclude name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given user has PAYTM_DIGITAL_CREDIT configured but merchant does not"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27186 close order API V2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.colseOrderv2.CloseOrder">
+                <methods>
+                    <include name="closeOrderSsoToken"/>
+                    <include name="closeOrderTxnToken"/>
+                    <include name="closeOrderInvalidSsoToken"/>
+                    <include name="closeOrderInvalidTxnToken"/>
+                    <include name="closeOrderInvalidOrderidVaildTxnToken"/>
+                    <include name="closeOrderInvalidChecksum"/>
+                    <include name="closeOrderChecksumToken"/>
+                    <include name="closeOrderSsoSuccessNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenSuccessNativePlusTxn"/>
+                    <include name="closeOrderChecksumSuccessNativePlusTxn"/>
+                    <include name="closeOrderSsoSuccessNativeTxn"/>
+                    <include name="closeOrderTxnTokenSuccessNativeTxn"/>
+                    <include name="closeOrderChecksumSuccessNativeTxn"/>
+                    <include name="closeOrderSsoSuccessEnhanceTxn"/>
+                    <include name="closeOrderChecksumSuccessEnhanceTxn"/>
+                    <include name="closeOrderSsoFailureNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenFailureNativePlusTxn"/>
+                    <include name="closeOrderChecksumFailureNativePlusTxn"/>
+                    <include name="closeOrderSsoFailureNativeTxn"/>
+                    <include name="closeOrderTxnTokenFailureNativeTxn"/>
+                    <include name="closeOrderChecksumFailureNativeTxn"/>
+                    <include name="closeOrderSsoPendingNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenPendingNativePlusTxn"/>
+                    <include name="closeOrderChecksumPendingNativePlusTxn"/>
+                    <include name="closeOrderSsoPendingNativeTxn"/>
+                    <include name="closeOrderTxnTokenPendingNativeTxn"/>
+                    <include name="closeOrderChecksumPendingNativeTxn"/>
+                    <include name="closeOrderSsoPendingEnhanceTxn"/>
+                    <include name="closeOrderChecksumPendingEnhanceTxn"/>
+                    <include name="closeOrderSsoSuccessOfflineTxn"/>
+                    <include name="closeOrderSSoAddMoneySuccess"/>
+                    <include name="closeOrderChecksumAddMoneySuccess"/>
+                    <include name="closeOrderSSoAddMoneyFailure"/>
+                    <include name="closeOrderChecksumAddMoneyFailure"/>
+                    <include name="closeOrderSSoAddMoneyPending"/>
+                    <include name="closeOrderChecksumAddMoneyPending"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payments API's">
+        <classes>
+            <class name="scripts.api.theia.InitiateTransaction"/>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest"/>
+        </classes>
+    </test>
+
+    <test name="Payments API's 1">
+        <classes>
+            <class name="scripts.api.theia.FetchCardIndexNumber">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage -->
+                    <exclude name="test unable to fetch card index no when cardExpiry equals past value"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.CreateToken"/>
+        </classes>
+    </test>
+
+    <test name="Payments API's 2">
+        <classes>
+            <class name="scripts.api.theia.FetchMerchantUserInfo"/>
+            <class name="scripts.api.theia.FetchEmiPaymentChannels"/>
+        </classes>
+    </test>
+
+    <test name="Payments API's 3">
+        <classes>
+            <class name="scripts.api.theia.FetchBinAppDetails"/>
+            <class name="scripts.api.theia.ErrorJsp"/>
+        </classes>
+    </test>
+
+
+
+    <test name="Payments API's 5">
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="testForBajajfnBinWhenSupported"/>
+                    <exclude name="testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test able to fetch bin details when bin equals MAESTRO bin"/>
+                    <exclude name="testForBajajfnBinWhenSupported"/>
+                    <exclude name="testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="theia API's 2">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.ChecksumVPAValidateV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test unable to validate vpa when body vpa equals random numerical value"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.vpaValidate.TxnTokenVPAValidateV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test unable to validate vpa when body vpa equals random numerical value"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="theia API's 3">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.SSOTokenVPAValidateV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage -->
+                    <exclude name="test unable to validate vpa when body vpa equals random numerical value"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.ValidateOtp"/>
+        </classes>
+    </test>
+
+    <test name="theia API's 4">
+        <classes>
+            <class name="scripts.api.theia.validateAndFetchMerchantInfo.JWTTokenValidateAndFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.UpdateTransactionDetail"/>
+        </classes>
+    </test>
+
+    <test name="theia API's 5">
+        <classes>
+            <class name="scripts.api.theia.SubmitKYC"/>
+            <class name="scripts.api.theia.ShowPaymentPage"/>
+        </classes>
+    </test>
+
+    <test name="theia API's 6">
+        <classes>
+            <class name="scripts.api.theia.SendOtp"/>
+            <class name="scripts.api.theia.FetchVpaDetails"/>
+        </classes>
+    </test>
+
+    <test name="theia API's 7">
+        <classes>
+            <class name="scripts.api.theia.FetchPromoCodeDetail"/>
+            <class name="scripts.api.theia.FetchPcfDetails"/>
+        </classes>
+    </test>
+</suite>

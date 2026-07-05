@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LinkServicePG2" verbose="1" parallel="methods" thread-count="1">
+    <test name="LinkServicePG2 without theme">
+        <classes>
+            <class name="scripts.api.linkservice.AmountCheckAtUITest"/>
+            <class name="scripts.api.linkservice.ArchiveLinkApiTest"/>
+            <class name="scripts.api.linkservice.CreateNewLinkTest"/>
+            <class name="scripts.api.linkservice.ExpireLinkApiTest"/>
+            <class name="scripts.api.linkservice.FetchDefaultSettingsTest"/>
+            <class name="scripts.api.linkservice.FetchLinkApiTest"/>
+            <class name="scripts.api.linkservice.IsNewMerchantApiTest"/>
+            <class name="scripts.api.linkservice.ResendNotificationApiTest"/>
+            <class name="scripts.api.linkservice.SaveDefaultSettingsApi"/>
+            <class name="scripts.api.linkservice.SaveOrUpdateLinkDefaultSettingsApiTest"/>
+            <class name="scripts.api.linkservice.UpdateLinkApi"/>
+
+        </classes>
+    </test>
+    <test name="LinkServicePG2 with theme checkoutjs_web_revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CustomerJourneyChangesCheckoutJS"/>
+            <class name="scripts.api.linkservice.EdcLinkSafetyTipTest"/>
+            <class name="scripts.api.linkservice.linkEMISubvention">
+            <methods>
+                <exclude name="EMISubvention_0026"/>
+            </methods>
+            </class>
+            <class name="scripts.api.linkservice.LocationPopUpTests"/>
+            <class name="scripts.api.linkservice.KafkaMessagePayload">
+                <methods>
+                    <exclude name="MessagePayload_12"/>
+                    <exclude name="MessagePayload_16"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.MaxAmountCheck"/>
+            <class name="scripts.api.linkservice.OTPConsultApi">
+            <methods>
+                <exclude name="GenerateTxnToken_007"/>
+                <exclude name="GenerateTxnToken_008"/>
+                <exclude name="GenerateTxnToken_009"/>
+            </methods>
+            </class>
+            <class name="scripts.api.linkservice.PaymentButtonsDisabled"/>
+            <class name="scripts.api.linkservice.EnableDisablePayModesTest">
+                <methods>
+                    <exclude name="PaymodeEanbleDisable_06"/>
+                    <exclude name="PaymodeEanbleDisable_09"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.initiateTxnApi">
+                <methods>
+                    <exclude name="Initiate_Txn_0023"/>
+                    <exclude name="Initiate_Txn_0024"/>
+                    <exclude name="Initiate_Txn_0025"/>
+                    <exclude name="Initiate_Txn_0026"/>
+                    <exclude name="Initiate_Txn_0027"/>
+                    <exclude name="Initiate_Txn_0028"/>
+                    <exclude name="Initiate_Txn_0033"/>
+                    <exclude name="Initiate_Txn_0034"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.LinkTxnOneCrore">
+                <methods>
+                    <exclude name="Fixed_001_OFFLINE"/>
+                    <exclude name="Generic_002_OFFLINE"/>
+                    <exclude name="Invoice_003_OFFLINE"/>
+                    <exclude name="Skip_Login_001_OFFLINE"/>
+                    <exclude name="Skip_Login_002_1_OFFLINE"/>
+                    <exclude name="Skip_Login_003_OFFLINE"/>
+                    <exclude name="All_in1_001_OFFLINE"/>
+                    <exclude name="All_in1_002_OFFLINE"/>
+                    <exclude name="All_in1_003_1_OFFLINE"/>
+                    <exclude name="Paymentform_01_OFFLINE"/>
+                    <exclude name="Paymentform_02_OFFLINE"/>
+                    <exclude name="Paymentform_03_OFFLINE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LinkServicePG2 with theme enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.getLinkDetail"/>
+            <class name="scripts.api.linkservice.GenerateTxnToken"/>
+            <class name="scripts.api.linkservice.GetLinkInfoApi">
+            <methods>
+                <exclude name="GetLinkInfo_002"/>
+                <exclude name="GetLinkInfo_004"/>
+                <exclude name="GetLinkInfo_005"/>
+                <exclude name="GetLinkInfo_006"/>
+            </methods>
+        </class>
+            <class name="scripts.api.linkservice.LinkReportDownloadApi"/>
+
+        </classes>
+    </test>
+
+
+
+</suite>

@@ -1,0 +1,214 @@
+PGOnly:
+  - id: "FZDtRw99918314911277"
+    key: "CiW9LqdA6VgxkWy#"
+AddMoney:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+AddMoneyMP:
+  - id: "SCWMER90619707098260"
+    key: "123"
+AddnPay:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+WalletOnly:
+  - id: "walAut98045458609650"
+    key: "C1fE0znjrAf96oVy"
+Hybrid:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+COD:
+  - id: "Hybrid40785213692637"
+    key: "mAeeSfZ@E49VHAI7"
+PaytmExpress_Hybrid_Onus:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+PaytmExpress_Hybrid_Offus:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+PaytmExpress_Hybrid_PayModeDisabled:
+  - id: "syFftd35509588745501"
+    key: "qOkn2m84QkDoCjyn"
+PaytmExpress_Hybrid_CCPayModeDisabled:
+  - id: "uxExFv71960889279060"
+    key: "qOkn2m84QkDoCjyn"
+PaytmExpress_AddnPay_Onus:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+PaytmExpress_AddnPay_Offus:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+TopUpExpress_Onus:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+TopUpExpress_Offus:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+EMI:
+  - id: "AuEmiT45080993633101"
+    key: "KfGfg%2qR!z7A!wQ"
+PGOnly_Retry:
+  - id: "dZbxHf15041674388503"
+    key: "i_!PeRMH1&rrHeFU"
+Hybrid_Retry:
+  - id: "dZbxHf15041674388503"
+    key: "i_!PeRMH1&rrHeFU"
+AddnPay_Retry:
+  - id: "SOyGlG97546201904523"
+    key: "th3xBm7Ay0#SNQeu"
+Seamless_Hybrid_Onus:
+  - id: "arzoo128093250811422"
+    key: "zJ%rxdIQ&tvj5suU"
+Seamless_Hybrid_Offus:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+Seamless_Hybrid_PayModeDisabled:
+  - id: "syFftd35509588745501"
+    key: "qOkn2m84QkDoCjyn"
+SeamlessNative_Hybrid_Onus:
+  - id: "arzoo128093250811422"
+    key: "zJ%rxdIQ&tvj5suU"
+SeamlessNative_Hybrid_Offus:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+SeamlessNative_Hybrid_PayModeDisabled:
+  - id: "syFftd35509588745501"
+    key: "qOkn2m84QkDoCjyn"
+PostConvMerchant:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+FastForward:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+Subscription_PGOnly:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+SUBSCRIPTION_PGONLY_RETRY:
+  - id: "dZbxHf15041674388503"
+    key: "i_!PeRMH1&rrHeFU"
+SUBSCRIPTION_PPI:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+SUBSCRIPTION_PPI_RETRY:
+  - id: "SOyGlG97546201904523"
+    key: "th3xBm7Ay0#SNQeu"
+SUBSCRIPTION_WALLET_ONLY:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+ADDNPAYPEON:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+HYBPEON:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+WALLETPEON:
+  - id: "YRfsHa55002149964486"
+    key: "p&ZHMviu787PTzos"
+ADD_MONEY_ONLY:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+ADD_MONEY_WITH_RETRY:
+  - id: "SOyGlG97546201904523"
+    key: "th3xBm7Ay0#SNQeu"
+
+AddnPay_Disabled:
+  - id: "rjhkou44897486373119"
+    key: "&AgfGbpjPLFAs%VA"
+
+NonMigrated:
+  - id: ""
+    key: "123"
+LICENCE_EXPIRED_MERCHANT:
+  - id: "RupayT14050766099224"
+    key: "qOkn2m84QkDoCjyn"
+ADD_N_PAY_WITHOUT_CC_DC:
+  - id: "wElinK50699795654723"
+    key: ""
+PPBLYONLY:
+  - id: "HeFxJe59676630540214"
+    key: "123"
+ALLPAYMODE:
+  - id: "BhkxmN47323455891141"
+    key: "123"
+PPBL_PAYTMCC_NOVPA:
+  - id: "online40797048862522"
+    key: "123"
+PPBL_PAYTMCC_VPA:
+  - id: "PGP31899144818088675"
+    key: "5p@e%ZyU&xDpQU%Z"
+NATIVE_HYBRID:
+  - id: "Hybrid40785213692637"
+    key: "mAeeSfZ@E49VHAI7"
+NATIVE_WALLET_ONLY:
+  - id: "WALLET60502505437588"
+    key: "oX@JDf0pqc!tLU!6"
+NATIVE_ADDNPAY:
+  - id: "AddNPa35971655208299"
+    key: "wmp9&o3lj%R1X_eW"
+NATIVE_PROMO_HYBRID:
+  - id: "HPromo04055437851135"
+    key: "diQHztPb%zJeeny%"
+NATIVE_EMI:
+  - id: "EMI00130248505310479"
+    key: "tnojjLLyQDeQFubX"
+NATIVE_HYBRID_RETRY:
+  - id: "HyRetr16352048713338"
+    key: "1cwj9P1OepZr36WE"
+NATIVE_HDFO:
+  - id: "HYHDFO52356065666901"
+    key: "8NMDqH3sX@@ggF4k"
+ICICI_IDEBIT_ENABLED:
+  - id: "341leu34940278108351"
+    key: "qa5z0584k588XZRu"
+FOOD_MERCHANT_HYB:
+  - id: "PExEMI73769038386135"
+    key: "i&FQgIo7X8iTlhz8"
+FOOD_MERCHANT_ADDNPAY:
+  - id: "PccAdd06962524301291"
+    key: "dGRQd8aB9SB_xKoF"
+PGONLY_EMI_MIN_MAX:
+  - id: "EMI00130248505310479"
+    key: "tnojjLLyQDeQFubX"
+MF_SIP_NEW_MID:
+  - id: "qa14si99686713297474"
+    key: "aAqnSTGCU1BY8o2i"
+Subscription_Pg2_MID1:
+  - id: "qa8aut51592501086079"
+    key: "bmsJ2cwpXM1BT18h"
+Subscription_Pg2_MID2:
+  - id: "qa8aut50118645643811"
+    key: "KIqkJ2OMXr55w@Aj"
+Subscription_Pg2_MID3:
+  - id: "qa8aut40916463608456"
+    key: "9dY8Pq8PvbRCcO1Y"
+Subscription_Pg2_MID4:
+  - id: "qa8aut78987995213847"
+    key: "rZ1k0_6WbPcawEj1"
+Subscription_Pg2_MID5:
+  - id: "qa8aut86182821476572"
+    key: "gARJfUHHpCmXfUOn"
+MF_SIP_Pg2_MID1:
+  - id: "qa8aut02981879946912"
+    key: "w&sSG1dmL9b19Ngh"
+MF_SIP_Pg2_MID2:
+  - id: "qa8aut51868868465156"
+    key: "eex_sg3YbQJzFLXn"
+MF_SIP_Pg2_MID3:
+  - id: "qa8aut09709190909676"
+    key: "pdNyNaiWnX8aZ3fy"
+Arn_Mid:
+  - id: "qa8uty42045652280741"
+    key: "3ohvx@stsmjrC6k2"
+Deferred_Subs_MID:
+  - id: "qa8aut51592501086079"
+    key: "bmsJ2cwpXM1BT18h"
+    preferences:
+      - DEFFERED_FLOW_ON_SUBSCRIPTION_ENABLED: "Y"
+Deferred_Subs_MID_1:
+  - id: "qa14me67864128884642"
+    key: "9SWX4gPQ5ns#nTbX"
+    preferences:
+      - DEFFERED_FLOW_ON_SUBSCRIPTION_ENABLED: "Y"
+
+SUBS_Prenotify_MID:
+  - id: "qa8mid52490196971518"
+    key: "0oPyf%pJ9LT9a0Wu"

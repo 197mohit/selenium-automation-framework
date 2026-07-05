@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-2158" verbose="1">
+<test name="BinMinMax">
+        <classes>
+            <class name="scripts.api.CC.CC_PG2">
+                <methods>
+                    <include name="validateFetchBinDetailAndSuccessCCTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

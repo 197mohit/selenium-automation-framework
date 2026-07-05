@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fixes" verbose="1">
+    <test name="EMI Fixes RT2 Apr" parallel="tests" thread-count="1">
+        <classes>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutNewFlowTest">
+                <methods>
+                    <include name="testCustomCheckoutNewFlow_EMI_BO_RUPAY_CARD_PAR_DISABLE"/>
+                    <include name="testCustomCheckoutNewFlow_EMI_BO_MASTER_CARD_PAR_DISABLE"/>
+                </methods>
+            </class>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestPFOForSimplifiedUnifiedOffer012"/>
+                    <include name="validateOnlySubventionAmountBased"/>
+                    <include name="validateOnlySubventionAmountBasedAndPromoDiscount"/>
+                    <include name="validateOnlySubventionAmountBasedAndPromoCashback"/>
+                    <include name="validateOnlyItemBasedSubvention"/>
+                    <include name="validateOnlySubventionAmountBasedcotp"/>
+                    <include name="validateOnlyPromoBasedInCotp"/>
+                    <include name="TestE2ESuccessTxnWithPostpaid_01"/>
+                    <include name="TestE2ESuccessTxnWithPostpaid_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

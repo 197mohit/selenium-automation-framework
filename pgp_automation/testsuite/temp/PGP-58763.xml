@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="upiinterestfreeandinterestbearcreditline" verbose="1">
+    <test name=" UPIPSP PROCESSOR upi interest free and interest bear credit line">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineRailsYabove2000"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineRailsYabove2000"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Theia UPIPSP  upi interest free and interest bear credit line">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineRailsYabove2000"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "merchantLimits"
+  ],
+  "properties": {
+    "merchantLimits": {
+      "type": "array",
+      "minItems": 0,
+      "items": {
+        "type": "object",
+        "required": [
+          "payMode",
+          "limit",
+          "msg",
+          "showPopUp"
+        ],
+        "properties": {
+          "payMode": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "msg": {
+            "type": "string",
+            "minLength": 1
+          },
+          "showPopUp": {
+            "enum": [
+              true
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

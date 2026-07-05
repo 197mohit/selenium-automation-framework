@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMIKfsUnified" verbose="1" parallel="methods" thread-count="2">
+    <test name="Offer Apply SSO Token">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest">
+                <methods>
+                    <include name="Test_showKFSLink_showLendingConsent_returned_for_EMI_DC"/>
+                    <include name="Test_showKFSLink_returned_true_for_EMI_DC"/>
+                    <include name="Test_showLendingConsent_returned_true_for_EMI_DC"/>
+                    <include name="Test_showLendingConsent_returned_false_for_EMI_DC"/>
+                    <include name="Test_showKFSLink_showLendingConsent_returned_false_for_EMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Offer Discovery Txn Token">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest">
+                <methods>
+                    <include name="Test_showKFSLink_showLendingConsent_returned_for_EMI_DC"/>
+                    <include name="Test_showKFSLink_returned_true_for_EMI_DC"/>
+                    <include name="Test_showLendingConsent_returned_true_for_EMI_DC"/>
+                    <include name="Test_showLendingConsent_returned_false_for_EMI_DC"/>
+                    <include name="Test_showKFSLink_showLendingConsent_returned_false_for_EMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="KFS Test on EMI New Flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="Kfs_true_lendingConsent_true_newCard"/>
+                    <include name="Kfs_true_lendingConsent_false_newCard"/>
+                    <include name="Kfs_false_lendingConsent_false_newCard"/>
+                    <include name="Kfs_true_lendingConsent_true_savedCard"/>
+                    <include name="Kfs_true_lendingConsent_false_savedCard"/>
+                    <include name="Kfs_false_lendingConsent_false_SavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

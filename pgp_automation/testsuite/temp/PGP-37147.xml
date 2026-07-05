@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI_SUBVENTION_LOGIN" verbose="1" parallel="methods" thread-count="3">
+    <test name="EMI_SUBVENTION_LOGIN">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="PGP_37147_LoginIssueEmiSubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

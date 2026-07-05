@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CreditLine Offline">
+    <test name="UPI CreditLine For Offline transaction">
+        <classes>
+            <class name="scripts.api.UPI.creditLine.CreditLine_Offline_DQRTest">
+                <methods>
+                    <include name="payerPaymentInstrument_On_Insta_JUSPay"/>
+                    <include name="Ineligible_Small_MID_Blacklisted"/>
+                    <include name="CreditLineEligible_Small_MID"/>
+                    <include name="TxnAmt_2000_not_allowed_ON_CL"/>
+                    <include name="TxnAmt_2000_allowed_ON_CL"/>
+                    <include name="Txn_Not_allowed_ON_CL_BIG_MID"/>
+                    <include name="Txn_Not_allowed_ON_CL_BIG_MID_NoPref"/>
+                    <include name="AllTxnt_allowed_ON_CL_BIG_MID"/>
+                    <include name="payerPaymentInstrument_On_Insta_YesBank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

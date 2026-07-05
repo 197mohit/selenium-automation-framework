@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-51159" verbose="1">
+    <test name="Theia| Screen Sharing and on call parameters to Risk">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validatePtcHeaderinRiskExtendInfoinCOPforwallet"/>
+                    <include name="validatePtcHeaderinRiskExtendInfoinCOPforPostpaid"/>
+                    <include name="validatePtcHeaderinRiskExtendInfoinCOPforUPI"/>
+                    <include name="validatePtcHeaderNotPresentinRiskExtendInfoinCOPforwallet"/>
+                    <include name="validatePtcHeaderNotPresentinRiskExtendInfoinCOPforPostpaid"/>
+                    <include name="validatePtcHeaderNotPresentinRiskExtendInfoinCOPforUPI"/>
+                    <include name="validatePtcHeaderinRiskExtendInfoinCOTPforpostpaid"/>
+                    <include name="validatePtcHeaderNotPresentinRiskExtendInfoinCOTPforpostpaid"/>
+                    <include name="validatePtcHeaderNotPresentinRiskExtendInfoinCOPforUPIPush"/>
+                    <include name="validatePtcHeaderNotPresentinRiskExtendInfoinCOPPforUPIPush"/>
+                    <include name="validatePtcHeaderNotPresentinRiskExtendInfoinCOTPforUPIPushAddnPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

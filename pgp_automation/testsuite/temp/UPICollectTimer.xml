@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Collect Timer" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="Verify UPI Collect timer is starting from 5 minutes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyUpiCollect5MinTimer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

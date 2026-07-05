@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BAJAJFN_NONDBD" verbose="1" thread-count="1" parallel="tests">
+    <test name="BAJAJFN_NONDBD">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDABSOLUTEZERO"/>
+                    <include name="TXNFailureBajajFNRetryDisable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="BAJAJFN_NONDBD NATIVE">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDPERCENTAGEZERO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="BAJAJFN_NONDBD checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDABSOLUTEZEROJS"/>
+                    <include name="BankFormFailureBajajFNRetryDisable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

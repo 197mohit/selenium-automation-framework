@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" EMI_DC" verbose="1">
+    <test name="EMI_DC cases">
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifyEmiDcVisibleInFPOAndPerformSuccessfulTransaction"/>
+                    <include name="verifyEmiDcNotVisibleInFPOformobNoWithEmiDcNotConfigured"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithoutMobNoInInitiateApi"/>
+                    <include name="verifyEmiDcVisibleInFPOPerformSuccessfulTransactionWithAccessToken"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenformobNoWithEmiDcNotConfigured"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenWithoutMobNoInCreateTokenApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI_DC checkoutJS cases">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="SuccessfulEmiDCTransactionUsingMobNoInInitiateAPI"/>
+                    <include name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <include name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

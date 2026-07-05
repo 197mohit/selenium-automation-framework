@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subs Client Removal" verbose="1" parallel="tests" thread-count="6">
+
+    <test name="Subscription Client Removal - Collect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_001_subscriptionClientRemoval_createCollectFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription Client Removal - Intent">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_001_subscriptionClientRemoval_createIntentFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription Client Removal - HDFC">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_subscriptionClientRemoval_createCollectFlowHDFC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

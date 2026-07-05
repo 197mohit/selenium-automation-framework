@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Brand EMI Cases Handling in case of HDFC/SBI Banks" verbose="1">
+    <test name="Validate special handling for brand emi in HDFC/SBI banks">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <include name="verifyBrandEmiCases_forHDFCBank_whenBankContributionGreaterThanZero"/>
+                    <include name="verifyBrandEmiCases_forHDFCBank_whenMerchantContributionGreaterThanZero"/>
+                    <include name="verifyBrandEmiCases_forOtherBank_whenBankContributionGreaterThanZero" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

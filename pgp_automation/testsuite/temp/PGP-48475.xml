@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48475'" verbose="1" parallel="tests" thread-count="1">
+  <test name="HPCL bin mapping in merchant-status">
+    <parameter name="theme" value="enhancedweb_revamp"/>
+    <classes>
+      <class name="scripts.HPCLBinMappingMerchantStatus">
+      </class>
+    </classes>
+  </test>
+</suite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-18539 seamless promo txn" verbose="1" >
+    <test name="PGP-18539 seamless Promo Txn" parallel="methods" thread-count="6">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+
+                    <include name="PGP_294_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_295_successfulSeamlessNBPromoTxn"/>
+                    <include name="PGP_296_successfulSeamlessNBPromoTxnDiscountType"/>
+                    <include name="PGP_297_successfulSeamlessNBPromoTxn"/>
+                    <include name="PGP_298_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_299_successfulSeamlessCCPromoTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

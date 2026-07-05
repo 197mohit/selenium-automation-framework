@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QUICK_FIX_TESTS" verbose="1" thread-count="5" parallel="tests">
+
+    <test name="fixes">
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative">
+                <methods>
+                    <include name="validateFetchPCFResponseWhenOnlyEMIpayMethodPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkPassed"/>
+                    <include name="validateFetchPCFResponseWhenIssuerBankPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkDinersPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkMaestroPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkVisaPassed"/>
+                    <include name="validateFetchBinDetailsResponseForCardNetworkDiners"/>
+                    <include name="validateFetchBinDetailsResponseForCardNetworkVISA"/>
+                    <include name="validatePTCResponseForCardNetworkVISA"/>
+                    <include name="validatePTCResponseForCardNetworkDiners"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

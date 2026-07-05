@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="offline Direct Bank Suite">
+    <test name="Offline_Direct" thread-count="5" parallel="methods">
+        <classes>
+            <class name="scripts.DynamicQR">
+                <methods>
+                    <include name="validateHDFODirectPageOnDynamicFLow"/>
+                    <include name="validateICIOirectPageOnDynamicFLow"/>
+                    <include name="validateHDFODirectPageOnDynamicFLowForOrderAlreadyCreatedFlag"/>
+                    <include name="validateICIOirectPageOnDynamicFLowForOrderAlreadyCreatedFlagIsTrue"/>
+                    <include name="validateHDFODirectPageWhenOrderIsCreatedWithPaymentService"/>
+                    <include name="validateICIODirectPageWhenOrderIsCreatedWithPaymentService"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.Offline.OffLineTxn">
+                <methods>
+                    <include name="validateICICIbankDIrectBankTxn"/>
+                    <include name="validateHDFObankDIrectBankTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

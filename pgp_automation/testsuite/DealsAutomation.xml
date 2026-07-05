@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46787" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-46787 - PG2 Deals tests">
+        <classes>
+            <class name="scripts.Deals.DealsTests">
+            </class>
+        </classes>
+    </test>
+</suite>

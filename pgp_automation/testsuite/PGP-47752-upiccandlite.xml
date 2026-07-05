@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="upiccandlite " verbose="1" parallel="tests" thread-count="3">
+    <test name="upicc">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUpiPushCCTxn"/>
+                    <include name="validateUpiCollectCCTxn"/>
+                    <include name="validateUpiPushCCTxnOffline"/>
+                    <include name="validateUpiCollectCCTxnOffline"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upilite">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <include name="validateUpiPushLiteTxn"/>
+                    <include name="validateUpiPushOffline"/>
+                    <include name="validateUpiLitePaymodeByEnablePrefAndIsliteEligibleNotPassed"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligibleTrue"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligibleFalse"/>
+                    <include name="validateUpiLitePaymodeByEnablePrefAndIsliteEligibleNotPassedForOffline"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligiblePassedForOffline"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligibleFalseForOffline"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

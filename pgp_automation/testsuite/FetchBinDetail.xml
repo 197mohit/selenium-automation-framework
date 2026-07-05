@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FetchBinDetail_SUITE" verbose="1">
+    <test name="FetchBinDetail" parallel="methods" thread-count="20">
+        <parameter name="theme" value="merchant"/>
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.FetchBinAppDetails"/>
+            <class name="scripts.Native.FetchBinDetails"/>
+            <class name="scripts.api.theia.CompatibilityTest">
+                <methods>
+                    <include name="testFetchBinDetail"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.OfflineCompatibilityTest">
+                <methods>
+                    <include name="testFetchBinDetail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

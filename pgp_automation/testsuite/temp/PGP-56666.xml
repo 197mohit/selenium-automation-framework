@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMIDCEligbilityDeferredFPO" verbose="1">
+    <test name="EMI DC Eligbility Not happening in Deferred Checkout FPO">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validate_EmiEligibility_CallNotHappening_inFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

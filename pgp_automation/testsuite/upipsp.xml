@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="upi psp " verbose="1">
+    <test name="UPI PSP api cases">
+        <classes>
+            <class name="scripts.api.UpiPsp.ExternalOrderPayTest">
+            </class>
+        </classes>
+    </test>
+    <test name="UPI PSP e2e txn">
+        <classes>
+            <class name="scripts.api.UpiPsp.StaticQrE2ETxn">
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-37186" parallel="methods" verbose="1">
+    <test name="Element_CHECKOUTJS on web Test cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="validate_vpa_msg"/>
+                    <include name="validate_vpa_msg_AddnPay"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="validate_vpa_msg_logs"/>
+                    <include name="validate_vpa_msg_logs_addnpay"/>
+                    <include name="validate_vpa_msg_logs_subscription"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs_subscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

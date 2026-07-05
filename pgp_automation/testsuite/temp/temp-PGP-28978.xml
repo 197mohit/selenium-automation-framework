@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-21763 Subscription Error Messages" parallel="methods" thread-count="2" verbose="1">
+
+    <test name="PGP-28978 OTP inject Bank redirectional link Enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.otpInject.OTPInjection">
+                <methods>
+                    <include name="verifyGoToBankPagelinkAvailable"/>
+                    <include name="verifyGoToBankPageLinkRedirectToActualBank"/>
+                    <include name="verifySuccessTransactionActualBankTransaction"/>
+                    <include name="verifyGoToBankRedirectionalLinkForRetryTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28978 OTP inject Bank redirectional link Enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.otpInject.OTPInjection">
+                <methods>
+                    <include name="verifyGoToBankPagelinkAvailable"/>
+                    <include name="verifyGoToBankPageLinkRedirectToActualBank"/>
+                    <include name="verifySuccessTransactionActualBankTransaction"/>
+                    <include name="verifyGoToBankRedirectionalLinkForRetryTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

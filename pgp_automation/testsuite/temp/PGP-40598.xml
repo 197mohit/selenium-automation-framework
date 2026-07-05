@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Two Factor Authentication via  Postpaid">
+    <test name="Static QR">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_be_display_in_the_fetch_qr_details_repsone_pref_ff4j_is_on"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_be_displayed_in_the_fetch_qr_details_repsone_pref_is_off_ff4j_is_on"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Dynamic QR">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_be_display_in_the_fetch_qr_details_repsone_pref_ff4j_is_on"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_be_displayed_in_the_fetch_qr_details_repsone_pref_is_off_ff4j_is_on"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AllInOneQR">
+        <classes>
+            <class name="scripts.scanNPay.AllInOneQrTests">
+                <methods>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_display_in_the_fpo_repsone"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_display_in_the_fpo_response"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_be_display_in_the_fpo_repsone_pref_ff4j_is_on"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_be_displayed_in_the_fpo_repsone_pref_is_off_ff4j_is_on"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

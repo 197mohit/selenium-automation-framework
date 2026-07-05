@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Auto Refund" verbose="1" thread-count="20" parallel="tests">
+    <test name="Auto refund">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.AutoRefund">
+                <methods>
+                    <include name="PGP_verifyAutoRefundWithAmountLessThanLimitAmount"/>
+                    <include name="PGP_verifyResponseWithAmountGraterThanLimitAmount"/>
+                    <include name="PGP_verifyAutoRefundWithAmountEqualToLimitAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

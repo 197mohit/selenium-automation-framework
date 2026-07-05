@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Link_Service" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP-52775">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Link_Payment_NewLogic"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

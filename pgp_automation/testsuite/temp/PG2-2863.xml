@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-2863">
+    <test name="Verify PG2 PostPaid Txn">
+        <classes>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateUserNotPresentInFF4JPostPaidTxnRoutedToPPlus"/>
+                    <include name="validateMidNotPresentInFF4JButPrefEnabledPostPaidTxnRoutedToPG2PendingTxn"/>
+                    <include name="validateMidNotPresentInFF4JTheiaStatusPrefDisabledCloseOrderFail"/>
+                    <include name="validatePostPaidPG2FullAsyncRefund"/>
+                    <include name="validatePostPaidPG2PartialAsyncRefund"/>
+                    <include name="validateMidNotPresentInRefundFF4J"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Validates branch naming convention before push.
+# Allowed prefixes: feature/, bugs/, tests/, infra/, perf/, fix/, refactor/, docs/, chore/, ci/
+# Also allows: master, main, release_qa, dev_integration, dev_integration_*
+# Installed by scripts/install-hooks.sh or pre-commit install --hook-type pre-push.
+set -euo pipefail
+
+BRANCH=$(git branch --show-current 2>/dev/null || true)
+
+if [ -z "$BRANCH" ]; then
+  exit 0
+fi
+
+PATTERN='^(feature|bugs|tests|infra|perf|fix|refactor|docs|chore|ci)/.+$|^(master|main|release_qa|dev_integration|dev_integration_.*)$|^(PGP|PGQA)-[0-9]+$'
+
+if echo "$BRANCH" | grep -qE "$PATTERN"; then
+  exit 0
+fi
+
+echo "Branch name \"$BRANCH\" does not follow the naming convention."
+echo ""
+echo "Allowed patterns:"
+echo "  feature/<desc>  bugs/<desc>  tests/<desc>  infra/<desc>  perf/<desc>"
+echo "  fix/<desc>  refactor/<desc>  docs/<desc>  chore/<desc>  ci/<desc>"
+echo "  master  main  release_qa  dev_integration  dev_integration_*"
+echo "  PGP-<ticket>  PGQA-<ticket>"
+echo ""
+echo "See .foundry/casts/collaboration.md for details."
+exit 1

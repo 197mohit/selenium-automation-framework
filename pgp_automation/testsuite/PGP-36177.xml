@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36177" verbose="1" parallel="tests" thread-count="2">
+
+    <test name="PGP-36177 UPI Autopay Enhanced flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="verifySubsLessThan5k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-36177 UPI Autopay Checkout flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.CheckoutJsUPICollectSubs">
+                <methods>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="verifySubsGreaterThan25k"/>
+                    <include name="verifySubsFixTo25k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

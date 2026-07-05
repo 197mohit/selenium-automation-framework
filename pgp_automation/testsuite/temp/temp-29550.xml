@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LPVRedisKey" verbose="1">
+    <test name="LPV keys Testcases">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <include name="testLPVforFlagTheiaBlacListTrueTheiaDisableTrueTheiaLPVMIDTrue"/>
+                    <include name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDTrue"/>
+                    <include name="testLPVforFlagTheiaBlackListFalseTheiaDisableFalseTheiaLPVMIDTrue"/>
+                    <include name="testADDNPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <include name="testADDnPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <include name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentSession"/>
+                    <include name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentStatic"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

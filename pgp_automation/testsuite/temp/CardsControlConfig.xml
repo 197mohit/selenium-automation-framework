@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56830" preserve-order="true">
+    <test name="Verify Global level block functionality on bin">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+
+        <classes>
+            <class name="scripts.api.CardsControlConfig.CardsControlConfig">
+                <methods>
+                    <include name="onlineMid_UnsavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_UnblockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_UnblockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_UnblockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_UnblockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_BothBlockedBin_ff4jOFF"/>
+                    <include name="offlineMid_UnsavedCard_BothBlockedBin_ff4jOFF"/>
+                    <include name="offlineMid_SavedCard_BothBlockedBin_ff4jOFF"/>
+                    <include name="onlineMid_SavedCard_BothBlockedBin_ff4jOFF"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyStandardEMIForNewCardFlow"/>    
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="no_Wallet_mid_cashierPage_loaded_non_loggedin"/>
+                    <include name="integrateUPI"/>
+                    <include name="EMISubElementJsItembased09"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="EMISubCheckoutJsItembased09"/>           
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="CCSuccessTxn"/>     
+                    <include name="CCSuccessTxn_AppInvoke"/>        
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

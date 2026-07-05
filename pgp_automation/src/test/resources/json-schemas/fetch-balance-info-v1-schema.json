@@ -1,0 +1,104 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "head": {
+      "type": "object",
+      "properties": {
+        "responseTimestamp": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "null"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "responseTimestamp",
+        "version"
+      ]
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "walletTwoFAConfig": {
+          "type": "object",
+          "properties": {
+            "redirectUri": {
+              "type": "null"
+            },
+            "amount": {
+              "type": "string"
+            },
+            "clientId": {
+              "type": "null"
+            },
+            "nextStep": {
+              "type": "null"
+            },
+            "twoFAEnabled": {
+              "type": "boolean"
+            },
+            "passCodeExist": {
+              "type": "boolean"
+            },
+            "workflowId": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "amount",
+            "twoFAEnabled",
+            "passCodeExist"
+          ]
+        },
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "balanceInfo": {
+          "type": "object",
+          "properties": {
+            "currency": {
+              "type": "string"
+            },
+            "value": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "currency",
+            "value"
+          ]
+        },
+        "resultInfo": {
+          "type": "object",
+          "properties": {
+            "resultStatus": {
+              "type": "string"
+            },
+            "resultCode": {
+              "type": "string"
+            },
+            "resultMsg": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ]
+        }
+      },
+      "required": [
+        "resultInfo"
+      ]
+    }
+  },
+  "required": [
+    "head",
+    "body"
+  ]
+}

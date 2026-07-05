@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-53319 : Scan and Pay | Additional parameter in v1/PTC fallback" verbose="1" thread-count="2" parallel="methods">
+    <test name="PGP-53319 : Scan and Pay | Additional parameter in v1/PTC fallback">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_53319_TC01"/>
+                    <include name="PGP_53319_TC02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

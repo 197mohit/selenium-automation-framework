@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SaveCardAuthenticationTest" verbose="1">
+    <test name="SaveCardAuthenticationTestCases">
+        <classes>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests">
+                <methods>
+                    <include name="VerifySuccessFullTxnWithUserIdWhereJwtFromVault"/>
+                    <include name="VerifySavedCardDetailsWithUserIdAndInvalidJwt"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests">
+                <methods>
+                    <include name="VerifySuccessFullTxnWhereJwtFromVault"/>
+                    <include name="VerifySavedCardDetailsWithInvalidJWTFromVault"/>
+                    <include name="VerifySuccessFullTxnWithCheksum"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.DeleteCardbyMidCustIdTest">
+                <methods>
+                    <include name="VerifySuccessFullTxnDeleteCardWhereJwtFromVault"/>
+                    <include name="VerifyDeleteCardDetailsWithInvalidJwtFromVault"/>
+                    <include name="VerifySuccessFullTxnDeleteCardWithChecksum"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

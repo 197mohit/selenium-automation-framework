@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-60892">
+    <test name="Verify flowType = Brand is being floated in initiate and offerApply">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyFlowTypeBrandIsBeingFloatedInInitiateAndOfferApply"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify flowType = Bank is being floated in initiate and offerApply">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyFlowTypeBankIsBeingFloatedInInitiateAndOfferApply"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify error message when flowType = INVALID is being passed for Bank EMI">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyErrorWhenFlowTypeInvalidIsBeingPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify flowType blank is being is being passed for Bank EMI">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyWhenFlowTypeBlankIsBeingPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

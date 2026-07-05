@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MultiCurrencyconversion - MCC" verbose="1" parallel="methods" thread-count="1">
+    <test name="MCC - PAPR-5206">
+        <classes>
+            <class name="scripts.MultiCurrencyConversion">
+                <methods>
+                    <include name="MCC_001"/>
+                    <include name="MCC_002"/>
+                    <include name="MCC_003"/>
+                    <include name="MCC_004"/>
+                    <include name="MCC_005"/>
+                    <include name="MCC_006"/>
+                    <include name="MCC_007"/>
+                    <include name="MCC_008"/>
+                    <include name="MCC_009"/>
+                    <include name="MCC_010"/>
+                    <include name="MCC_011"/>
+                    <include name="MCC_UI_0012"/>
+                    <include name="MCC_UI_0013"/>
+                    <include name="MCC_UI_0014"/>
+                    <include name="MCC_UI_0015"/>
+                    <include name="MCC_UI_0016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

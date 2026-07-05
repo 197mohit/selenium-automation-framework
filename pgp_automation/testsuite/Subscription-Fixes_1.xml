@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Fixes New">
+    <test name="Xpath updation for the Upi handles">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_40026_TC_02_VerifyAdditionalUPIHandles"></include>
+                    <include name="TC_05"></include>
+                    <include name="sC_VIA_DC15"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Xpath updation for the Upi handles WAP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="TC_05"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Key incorrect in YAML file">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="UpiNumericIdCmid_01"></include>
+                    <include name="UpiNumericId_01"></include>
+                    <include name="UpiNumericIdCmid_02"></include>
+                    <include name="UpiVpaCases_01"></include>
+                    <include name="UpiNumericId_02"></include>
+                    <include name="UpiVpaCases_02"></include>
+                    <include name="UpiVpaCases_05"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Key incorrect in YAML WAP">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="UpiNumericIdCmid_01"></include>
+                    <include name="UpiNumericId_01"></include>
+                    <include name="UpiNumericIdCmid_02"></include>
+                    <include name="UpiVpaCases_01"></include>
+                    <include name="UpiNumericId_02"></include>
+                    <include name="UpiVpaCases_02"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Addition of prenotifies for wallet">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="subsBlankWithPPI"></include>
+                    <include name="TC_NRS001_ProcessRenewSubs_VAR_PPI_MONTH"></include>
+                    <include name="verifyRenewWEEKDDDC"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

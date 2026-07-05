@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35351" verbose="1">
+    <test name="POS ID Based Payment Push notification for Merchant[Sub Users] for transaction Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="posIDBasedpushPaymentNotificationForSubUsersTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="POS ID Based Payment Push notification for Merchant[Sub Users] for refund Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="posIDBasedpushPaymentNotificationForSubUsersRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
+
+

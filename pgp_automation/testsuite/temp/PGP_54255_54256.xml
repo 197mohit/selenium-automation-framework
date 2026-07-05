@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="walletRemovedFromFPO" verbose="1" parallel="methods" thread-count="1">
+    <test name="ValidateWalletRemoval">
+        <classes>
+            <class name="scripts.api.FPO.walletRemovedInFPO">
+                <methods>
+                    <include name="walletRemovedfromFpo_ZerotoOneBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_ZerotoOneBalance_FF4JOn"/>
+                    <include name="walletRemovedfromFpo_SufficientBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_DebitFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFpo_OverallFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFpo_DebitFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_OverallFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_CreditFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_ZerotoOneBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_ZerotoOneBalance_FF4JOn"/>
+                    <include name="walletRemovedfromFqr_SufficientBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_DebitFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFqr_OverallFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFqr_DebitFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_OverallFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_CreditFreeze_FF4JOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

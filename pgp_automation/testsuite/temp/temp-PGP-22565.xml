@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sprint-33.2-PGP-22565" parallel="methods">
+    <test name="PGP-22565 Mapping Service">
+        <classes>
+            <class name="scripts.api.mappingService.merchantPreferenceInfo.MerchantPrefInfo">
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-22565 Mapping Backend Validation">
+        <classes>
+            <class name="scripts.SolidityCheck.ValidateMerchantConfig">
+                <methods>
+                    <include name="validateOfflineDescText"/>
+                    <include name="validateOfflineDescFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

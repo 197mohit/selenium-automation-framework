@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native MF cases for split" verbose="1">
+    <test name="Split settlement For Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeMF"/>
+        </classes>
+    </test>
+
+    <test name="Split settlement for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeMF"/>
+        </classes>
+    </test>
+</suite>

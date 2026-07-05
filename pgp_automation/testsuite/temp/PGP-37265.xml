@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-AOA" verbose="1" parallel="methods" thread-count="5">
+    <test name="AOA Merchant Creation API's">
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_AddAcquiring_For_UnsupportedCardScheme"></include>
+                    <include name="verifying_AddAcquiring_For_unsupportedCardSubTypes"></include>
+                    <include name="verifying_AddAcquiring_For_unsupportedIssuingBanks"></include>
+                    <include name="verifying_AddAcquiring_For_unsupportedUpiPayMethods"></include>
+                    <include name="verifying_FPO_For_UnsupportedCardScheme"></include>
+                    <include name="verifying_FPO_For_unsupportedCardSubTypes"></include>
+                    <include name="verifying_FPO_For_unsupportedIssuingBanks"></include>
+                    <include name="verifying_FPO_For_unsupportedUpiPayMethods"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

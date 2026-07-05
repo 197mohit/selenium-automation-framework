@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "bankId": {
+          "type": "integer"
+        },
+        "aggregatorId": {
+          "type": "integer"
+        },
+        "bankCode": {
+          "type": "string"
+        },
+        "entityId": {
+          "type": "string",
+          "format": "integer"
+        },
+        "isActive": {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        },
+        "isAtm": {
+          "type": "integer",
+          "enum": [
+            0,
+            1
+          ]
+        }
+      },
+      "required": [
+        "aggregatorId",
+        "bankCode",
+        "bankId",
+        "entityId",
+        "id",
+        "isActive",
+        "isAtm"
+      ],
+      "title": "Root"
+    }
+  }
+}

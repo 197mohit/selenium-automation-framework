@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48241 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-48241 Custom Cases">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestDetailExtendInfoItemBasedSubventionAndBOCOP"/>
+                    <include name="TestDetailExtendInfoCOPForOnlypromoForCustomCheckout"/>
+                    <include name="TestDetailExtendInfoItemBasedSubventionCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--This Cases requires version of checkoutJS branch: emiNewFlowPpsl as this cases are for new UI only-->
+    <test name="PGP-48241 Simplified Cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TestParamsInCOPRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionAndBO"/>
+                    <include name="TestParamsInCOPRequestWhenSimplifiedUnifiedOfferOnlyAmountBasedSubvention"/>
+                    <include name="TestParamsInCOPRequestWhenSimplifiedUnifiedOfferOnlyBO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

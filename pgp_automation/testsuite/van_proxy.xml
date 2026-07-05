@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="van_proxy" verbose="1" thread-count="20"
+       parallel="tests" data-provider-thread-count="3">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="van proxy service">
+        <classes>
+            <class name="scripts.api.van.createVan.ChecksumTokenVanCreateTest"/>
+            <class name="scripts.api.van.createVan.JWTTokenVanCreateTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 1">
+        <classes>
+            <class name="scripts.api.van.vanPayment.JWTTokenVanPaymentTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 2">
+        <classes>
+            <class name="scripts.api.van.vanQuery.ChecksumTokenVanQueryTest"/>
+            <class name="scripts.api.van.vanQuery.JWTTokenVanQueryTest"/>
+        </classes>
+    </test>
+
+
+    <test name="van proxy service 3">
+        <classes>
+            <class name="scripts.api.van.vanSearch.JWTTokenVanSearchTest"/>
+            <class name="scripts.api.van.vanSearch.ChecksumTokenVanSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 4">
+        <classes>
+            <class name="scripts.api.van.updateVan.JWTTokenVanUpdateTest"/>
+            <class name="scripts.api.van.updateVan.ChecksumTokenVanUpdateTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 5">
+        <classes>
+            <class name="scripts.api.van.disableVan.ChecksumTokenVanDisableTest"/>
+            <class name="scripts.api.van.disableVan.JWTTokenVanDisableTest"/>
+        </classes>
+    </test>
+</suite>

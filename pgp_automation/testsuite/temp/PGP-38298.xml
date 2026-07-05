@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36505 - Merchant-Status: mapping id can't be null exceptions" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-36505 - Merchant-Status: mapping id can't be null exceptions">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_36505_VerifyNoNullPointerExceptionforMerchantStatusAPIs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

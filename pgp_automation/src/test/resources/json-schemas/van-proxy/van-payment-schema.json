@@ -1,0 +1,150 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": [
+    "event_tracking_id",
+    "response_code",
+    "data"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "event_tracking_id": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "response_code": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "data": {
+      "type": "object",
+      "required": [
+        "status",
+        "errorCode",
+        "errorMessage",
+        "remitterIfsc",
+        "amount",
+        "bankTxnIdentifier",
+        "transactionRequestId",
+        "transactionType",
+        "meta",
+        "remitterNbin"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "status": {
+          "enum": [
+            "SUCCESS",
+            "FAILURE"
+          ]
+        },
+        "errorCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "errorMessage": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "remitterIfsc": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "amount": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bankTxnIdentifier": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transactionRequestId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "transactionType": {
+          "type":
+          [
+            "string",
+            "null"
+          ]
+
+        },
+        "remitterNbin": {
+          "type": "string"
+        },
+        "meta": {
+          "type": "object",
+          "required": [
+            "vanExtendInfo",
+            "mid",
+            "identificationNo",
+            "customerDetails",
+            "userDefinedFields"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "Mobile Number": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "vanExtendInfo": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "Client Name": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "mid": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "identificationNo": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "customerDetails": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "userDefinedFields": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}

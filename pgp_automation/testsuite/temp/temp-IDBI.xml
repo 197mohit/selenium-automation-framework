@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-IDBI NB transaction suite" verbose="1" parallel="methods"
+       thread-count="2">
+    <parameter name="browser" value="chrome"/>
+    <test name="IDBI NB transaction">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGWithoutLogintransactionwithIDBINB"/>
+                    <include name="PGWithtLogintransactionwithIDBINB"/>
+                    <include name="FailedTxnwithIDBINB"/>
+                    <include name="PendingTxnwithIDBINB"/>
+                </methods>
+            </class>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_IDBI_NB"/>
+                    <include name="validateRetryInfoNotPresentForWalletWithoutRetryMerchantOfflineTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="transactionwithIDBINB"/>
+                </methods>
+            </class>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="verifySuccessfulTxnUsingNBIDBI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

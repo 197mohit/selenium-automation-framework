@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28966 Simplify EMI subvention" verbose="1" parallel="methods" thread-count="2">
+<test name="PGP-28966 Simplify EMI subvention tests - Native">
+    <parameter name="isNativePlus" value="false">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnAmountBased"/>
+                    <include name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnItemBased"/>
+                    <include name="PGP_28966_VerifyEMISimplifiedSubventionWithPlanIdMissing"/>
+                    <include name="PGP_28966_VerifyEMISimplifiedSubventionWithIncorrectPlanId"/>
+                    <include name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedAmountBased"/>
+                    <include name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedItemBased"/>
+                    <include name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedAmountBased"/>
+                    <include name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedItemBased"/>
+                </methods>
+            </class>
+        </classes>
+    </parameter>
+</test>
+
+    <test name="PGP-28966 Simplify EMI subvention tests - Nativeplus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnAmountBased"/>
+                        <include name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnItemBased"/>
+                        <include name="PGP_28966_VerifyEMISimplifiedSubventionWithPlanIdMissing"/>
+                        <include name="PGP_28966_VerifyEMISimplifiedSubventionWithIncorrectPlanId"/>
+                        <include name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedAmountBased"/>
+                        <include name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedItemBased"/>
+                        <include name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedAmountBased"/>
+                        <include name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedItemBased"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

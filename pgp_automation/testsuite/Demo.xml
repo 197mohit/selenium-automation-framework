@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo test" verbose="1" thread-count="20"
+       parallel="tests">
+    <test name="Demo Test">
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

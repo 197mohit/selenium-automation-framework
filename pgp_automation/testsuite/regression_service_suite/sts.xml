@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="STS_Suite" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP-40714 Fund transfer API">
+        <classes>
+            <class name="scripts.api.sts.FundTransferAPI">
+                <methods>
+                    <include name="verifySuccessfulFundTransferWithAutoM2B"/>
+                    <include name="verifySuccessfulFundTransferWithManualM2B"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

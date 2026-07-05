@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IvrNotification(PGP-26899)" verbose="1" thread-count="20" parallel="tests">
+    <test name="Ivr Notification Test Cases for enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.notification.IvrNotifyTest"/>
+        </classes>
+    </test>
+</suite>

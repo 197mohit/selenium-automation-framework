@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Control the redirection time of integrated payment links via preferences" verbose="1">
+    <test name="Control the redirection time of integrated payment links via preferences">
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="verifyRedirectTimeOnUI_WhenPrefRedirectionTimePL_100"/>
+                    <include name="verify_PrefRedirectionTimePL_100_onAPP_DATA"/>
+                    <include name="verifyRedirectTimeOnUI_WhenPrefRedirectionTimePL_NotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

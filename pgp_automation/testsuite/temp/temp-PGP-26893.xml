@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-26893 - Transit Wallet" verbose="1" thread-count="3" parallel="methods">
+    <test name="PGP-26893 - Transit Wallet">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="verifyAddMoneySuccess"/>
+                    <include name="verifyMaxLimit2000"/>
+                    <include name="verifyLimitExact"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26893 - Risk Reject Transit Wallet">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="riskRejectTransit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

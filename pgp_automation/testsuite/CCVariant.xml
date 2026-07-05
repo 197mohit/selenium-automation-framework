@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CCVariant(PGP-32476)" verbose="1" thread-count="20" parallel="tests">
+    <test name="CC Variant Test Cases">
+        <classes>
+            <class name="scripts.CCVariant.CCVariantTest"/>
+        </classes>
+    </test>
+</suite>

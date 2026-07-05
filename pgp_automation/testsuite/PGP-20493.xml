@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-20493" verbose="1" parallel="tests" thread-count="1">
+
+    <test name="PGP-20493 validate Direct OTP on CashierPage">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validateDirectOTPonCashierPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

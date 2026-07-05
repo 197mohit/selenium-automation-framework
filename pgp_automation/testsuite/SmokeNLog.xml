@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeNLog">
+    <suite-files>
+        <suite-file path="smoke.xml"/>
+        <suite-file path="Logcheck.xml"/>
+        <suite-file path="LogcheckBash.xml"/>
+    </suite-files>
+</suite>

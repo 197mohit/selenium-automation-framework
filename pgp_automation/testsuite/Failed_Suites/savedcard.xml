@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Save_Card_Suite_Failed" parallel="tests" thread-count="10">
+    <test thread-count="10" verbose="0" name="Native EMISubvention" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class> <!-- scripts.EMISubvention -->
+        </classes>
+    </test> <!-- Native EMISubvention -->
+    <test thread-count="10" verbose="0" name="Non-matching Website TC&#039;s" parallel="tests">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="testAddNPayUsingSavedCardWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflineSavedCardTxnWhenNonMatchingWebsiteProvided"/>
+                </methods>
+            </class> <!-- scripts.api.Offline.OffLineTxn -->
+        </classes>
+    </test> <!-- Non-matching Website TC's -->
+    <test thread-count="10" verbose="0" name="FetchPayInstrument" parallel="tests">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_saveCard"/>
+                </methods>
+            </class> <!-- scripts.api.Offline.FetchPayInstrumentTest -->
+        </classes>
+    </test> <!-- FetchPayInstrument -->
+    <test thread-count="10" verbose="0" name="Fetch Payment Page AppInvoke" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="FPP_SavedCCAppInvokeTC003"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPaymentPage -->
+        </classes>
+    </test> <!-- Fetch Payment Page AppInvoke -->
+    <test thread-count="10" verbose="0" name="Seamless" parallel="tests">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_291_SeamlessCCAndSavingCard"/>
+                    <include name="PGP_292_SeamlessCCUsingSavedCard"/>
+                </methods>
+            </class> <!-- scripts.Seamless -->
+        </classes>
+    </test> <!-- Seamless -->
+    <test thread-count="10" verbose="0" name="CCBillPayment on Enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="validateCCBillPaymentUsingRetrySavedCard"/>
+                    <include name="validateCCBillPaymentUsingSavedCard"/>
+                </methods>
+            </class> <!-- scripts.CCBillPayment -->
+        </classes>
+    </test> <!-- CCBillPayment on Enhancedweb -->
+    <test thread-count="10" verbose="0" name="Offline Txn" parallel="methods">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedwap_revamp"/>
+                <methods>
+                    <include name="PGP_529_OfflineSavedCardTxn"/>
+                    <include name="validateAddNPayUsingSavedCard"/>
+                    <include name="validatePGonlyWithLoginUsingSavedCard"/>
+                </methods>
+            </class> <!-- scripts.api.Offline.OffLineTxn -->
+        </classes>
+    </test> <!-- Offline Txn -->
+    <test thread-count="10" verbose="0" name="Add Money MP Fee Cases" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                </methods>
+            </class> <!-- scripts.AddMoneyMP -->
+        </classes>
+    </test> <!-- Add Money MP Fee Cases -->
+    <test thread-count="10" verbose="0" name="CCBillPayment on Enhancedwap" parallel="tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="validateCCBillPaymentUsingRetrySavedCard"/>
+                    <include name="validateCCBillPaymentUsingSavedCard"/>
+                </methods>
+            </class> <!-- scripts.CCBillPayment -->
+        </classes>
+    </test> <!-- CCBillPayment on Enhancedwap -->
+    <test thread-count="10" verbose="0" name="Add Money Uber Fee Cases" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                </methods>
+            </class> <!-- scripts.AddMoneyUber -->
+        </classes>
+    </test> <!-- Add Money Uber Fee Cases -->
+    <test thread-count="10" verbose="0" name="AddNPay-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_CC_S_CheckforCardSaved"/>
+                </methods>
+            </class> <!-- scripts.AddNPay -->
+        </classes>
+    </test> <!-- AddNPay-enhancedwap -->
+    <test thread-count="10" verbose="0" name="SeamlessNative" parallel="tests">
+        <classes>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="PGP_363_SeamlessNativeCCUsingSavedCard"/>
+                    <include name="PGP_361_SeamlessNativeCCWithoutSavedCard"/>
+                    <include name="PGP_362_SeamlessNativeCCAndSavingCard"/>
+                </methods>
+            </class> <!-- scripts.SeamlessNative -->
+        </classes>
+    </test> <!-- SeamlessNative -->
+    <test thread-count="10" verbose="0" name="Deferred Fee on AddMoney Cases" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateFullKYCGVSavedCCNewAPP"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateFullKYCWalletSavedCCNewFlow"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                </methods>
+            </class> <!-- scripts.DeferredCheckout -->
+        </classes>
+    </test> <!-- Deferred Fee on AddMoney Cases -->
+    <test thread-count="10" verbose="0" name="temp-Prepaid cases for enhanced web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                </methods>
+            </class> <!-- scripts.PrepaidCard -->
+        </classes>
+    </test> <!-- temp-Prepaid cases for enhanced web -->
+    <test thread-count="10" verbose="0" name="Hybrid with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                </methods>
+            </class> <!-- scripts.Hybrid -->
+        </classes>
+    </test> <!-- Hybrid with enhancedweb -->
+    <test thread-count="10" verbose="0" name="PGP-25875_2" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test -->
+        </classes>
+    </test> <!-- PGP-25875_2 -->
+    <test thread-count="10" verbose="0" name="AddMoneyMP  with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                </methods>
+            </class> <!-- scripts.AddMoneyMP -->
+        </classes>
+    </test> <!-- AddMoneyMP  with enhancedweb -->
+    <test thread-count="10" verbose="0" name="Hybrid-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                </methods>
+            </class> <!-- scripts.Hybrid -->
+        </classes>
+    </test> <!-- Hybrid-enhancedwap -->
+    <test thread-count="10" verbose="0" name="AddMoneyMP-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                </methods>
+            </class> <!-- scripts.AddMoneyMP -->
+        </classes>
+    </test> <!-- AddMoneyMP-enhancedwap -->
+    <test thread-count="10" verbose="0" name="PGOnly with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_269_verifySaveCardThroughDCTxn"/>
+                    <include name="PGP_verifySaveCardWithoutLogin"/>
+                    <include name="validatePGOnlyRetryTxnUsingSavedCard"/>
+                    <include name="savedCardInfoNotGettingSavedPGP17483"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGOnly with enhancedweb -->
+    <test thread-count="10" verbose="0" name="PGOnly with enhancedwap" parallel="tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_271_verifyDCSavedCardTxn"/>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="validatePGOnlyRetryTxnUsingSavedCard"/>
+                    <include name="savedCardInfoNotGettingSavedPGP17483"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="checkExpiredSaveCardNotVisible_OnCashierPage"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGOnly with enhancedwap -->
+    <test thread-count="10" verbose="0" name="Add Money using Retry Saved Card on Wap Theme" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                </methods>
+            </class> <!-- scripts.AddMoneyUber -->
+        </classes>
+    </test> <!-- Add Money using Retry Saved Card on Wap Theme -->
+    <test thread-count="10" verbose="0" name="Savecards-service APIs" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests">
+                <methods>
+                    <include name="VerifyDeadTokenNotReturned"/>
+                    <include name="VerifyAllParamsSuspendedToken"/>
+                </methods>
+            </class> <!-- scripts.coft.savedCardService.SavedCardByMidCustIdTests -->
+            <class name="scripts.coft.savedCardService.DeleteCardbyMidCustIdTest">
+                <methods>
+                    <include name="VerifySuccessFullTxnDeleteCardWithChecksum"/>
+                </methods>
+            </class> <!-- scripts.coft.savedCardService.DeleteCardbyMidCustIdTest -->
+        </classes>
+    </test> <!-- Savecards-service APIs -->
+    <test thread-count="10" verbose="0" name="SaveCard Instant Refund" parallel="tests">
+        <classes>
+            <class name="scripts.api.instantrefund.RefundAccountRemove">
+                <methods>
+                    <include name="checkAbleToDeleteAssetForInvalidToken"/>
+                    <include name="testWithWrongAssetId"/>
+                    <include name="checkAbleToDeleteBankAccount"/>
+                </methods>
+            </class> <!-- scripts.api.instantrefund.RefundAccountRemove -->
+            <class name="scripts.api.instantrefund.RefundAccountAdd">
+                <methods>
+                    <include name="testWhenAccountDetailsNotPassed"/>
+                    <include name="testForRealBankAccount"/>
+                </methods>
+            </class> <!-- scripts.api.instantrefund.RefundAccountAdd -->
+            <class name="scripts.api.instantrefund.RefundAccountValidate">
+                <methods>
+                    <include name="assertInvalidMid"/>
+                    <include name="assertFailureWhenAccountDetailsAreNotSupplied"/>
+                    <include name="assertInvalidVPADetails"/>
+                    <include name="testWhenInvalidAcctNoSupplied"/>
+                    <include name="assertSuccessWhenValidDetailsPassed"/>
+                    <include name="assertDifferentMIDsInBodyAndQueryParams"/>
+                    <include name="testWhenChannelIdIsNull"/>
+                    <include name="assertChecksumMismatch"/>
+                </methods>
+            </class> <!-- scripts.api.instantrefund.RefundAccountValidate -->
+            <class name="scripts.api.instantrefund.RefundConsultView">
+                <methods>
+                    <include name="testWhenRefundAccountIsNotAddedOnTheUser"/>
+                    <include name="testWhenRefundAmountIsGreaterThanTxnAmount"/>
+                    <include name="testWhenRefundAccountIsAddedOnTheUserAfterNBTxn"/>
+                    <include name="testWhenRefundAccountIsAddedOnTheUserAfterDCTxn"/>
+                    <include name="testWhenRefundAccountIsAddedOnTheUserAfterCCTxn"/>
+                </methods>
+            </class> <!-- scripts.api.instantrefund.RefundConsultView -->
+            <class name="scripts.api.instantrefund.RefundAccountQuery">
+                <methods>
+                    <include name="checkUPIAccountDetailsReturnedWhenAvailable"/>
+                    <include name="checkNoAccountDetailsReturnedWhenNotAvailable"/>
+                    <include name="checkAccountDetailsReturnedWhenAvailable"/>
+                </methods>
+            </class> <!-- scripts.api.instantrefund.RefundAccountQuery -->
+        </classes>
+    </test> <!-- SaveCard Instant Refund -->
+    <test name="Global Vault Split">
+        <classes>
+            <class name="scripts.coft.theia.GlobalVaultSplit">
+                <methods>
+                    <include name="addNPayWithOclMid"/>
+                    <include name="addNPayWithPPBLMid"/>
+                    <include name="addMoneyWithPPBLMid"/>
+                    <include name="addNPayWithOffusMid"/>
+                    <include name="addMoneyWithOffusMid"/>
+                    <include name="addNPayWithOclMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addNPayWithPPBLMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addMoneyWithPPBLMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addNPayWithOffusMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addMoneyWithOffusMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addNPayWithPMallMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Global Vault and Local Vault">
+        <classes>
+            <class name="scripts.coft.theia.GlobalVaultAndLocalVault">
+                <methods>
+                    <include name="onusMerchantLoggedinFlow"/>
+                    <include name="ofusMerchantLoggedinFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Otp Eligible in Fetch Bin Detail">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="Validate isCardCoBranded value in FPO1/2/5 for Credit and Debit Card">
+        <classes>
+            <class name="scripts.api.theia.CObrandedCardsFilterTest">
+                <methods>
+                    <include name="Saved_Card_in_FPO5"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Save_Card_Suite -->

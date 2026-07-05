@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TEMP EMISubvention_ThirdParty" verbose="1" parallel="methods" thread-count="2">
+    <test name="Emi Subvention for Third Party native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+            </class>
+        </classes>
+    </test>
+    <test name="Emi Subvention for Third Party native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

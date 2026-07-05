@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service_PGP-50905" verbose="1"  parallel="tests" thread-count="20">
+    <test name="PGP-50905">
+        <classes>
+            <class name="scripts.api.mappingService.StatusFlagApi"/>
+        </classes>
+    </test>
+</suite>

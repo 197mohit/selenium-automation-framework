@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-24758" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-24758">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test"/>
+        </classes>
+    </test>
+</suite>

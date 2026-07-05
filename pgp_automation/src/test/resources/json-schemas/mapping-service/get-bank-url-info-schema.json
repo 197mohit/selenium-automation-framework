@@ -1,0 +1,87 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "bankId": {
+          "type": "integer"
+        },
+        "payMethodId": {
+          "type": "integer"
+        },
+        "channelId": {
+          "type": "integer"
+        },
+        "webPayUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "s2sPayUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "statusQueryUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "refundUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "refundStatusUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "webResponseUrl": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "urlType": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "url": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "bankId",
+        "channelId",
+        "id",
+        "payMethodId",
+        "refundStatusUrl",
+        "refundUrl",
+        "s2sPayUrl",
+        "statusQueryUrl",
+        "url",
+        "urlType",
+        "webPayUrl",
+        "webResponseUrl"
+      ],
+      "title": "Root"
+    }
+  }
+}

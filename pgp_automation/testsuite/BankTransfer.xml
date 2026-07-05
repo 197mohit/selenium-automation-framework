@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="BankTransferCheckoutTest" verbose="1" thread-count="20" parallel="tests">
+    <test name="BankTransferCheckoutTest">
+        <classes>
+            <class name="scripts.BankTransferCheckoutTest">
+                <parameter name="theme" value="checkoutjs_web_revamp"/>
+                <methods>
+                    <include name="successTxn_Provided_TPVInfoInInitTxn" />
+                    <include name="successTxn_Provided_TPVInfoInInitTxn_PCFMerchant" />
+                    <include name="tpvFailureTxn_Provided_TPVInfoInInitTxn_PCFMerchant"/>
+                    <include name="tpvFailureTxn_Provided_TPVInfoInInitTxn" />
+                    <include name="tpvFailureTxn_2ndtimeSuccess_Provided_TPVInfoInInitTxn" />
+                    <include name="tpvFailureTxn_2ndtimeSuccess_Provided_TPVInfoInInitTxn_PCFMerchant" />
+                    <include name="successTxn_Provided_MoreThen1TPVInfoInInitTxn" />
+                    <include name="successTxn_Provided_10TPVInfoInInitTxn" />
+                    <include name="Txn_Provided_MoreThen10TPVInfoInInitTxn" />
+                    <include name="successTxn_MutualFund_Provided_TPVInfoInInitTxn" />
+                    <include name="tpvFailureTxn_MutualFund_Provided_TPVInfoInInitTxn" />
+                    <include name="tpvFailureTxn_2ndTimeSuccess_MutualFund_Provided_TPVInfoInInitTxn" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

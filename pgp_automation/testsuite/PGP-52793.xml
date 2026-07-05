@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Simplified Unified in FPO">
+    <test name="Simplified Unified in FPO">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestPFOForSimplifiedUnifiedOffer022"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer023"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer024"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer025"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer026"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer027"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer028"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer029"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer030"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer031"/>
+                    <include name="TestPFOForSimplifiedUnifiedOffer032"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

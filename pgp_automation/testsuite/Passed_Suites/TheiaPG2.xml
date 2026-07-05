@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia4_Suite" verbose="1" thread-count="25" parallel="classes">
+    <!--   <test name="ChargeFeeOnAddMoney_Flag OFF cases">
+           <classes>
+               <class name="scripts.ChargeFeeOnAddMoney">
+               </class>
+           </classes>
+       </test>
+       <test name="Merchant Center client Id">
+           <classes>
+               <class name="scripts.Native.NativeFPOV2">
+                   <methods>
+                       <include name="validateLoginQRClientIdfromMerchantCenter"/>
+                       <include name="validateLoginQRClientIdfromCache"/>
+                       <include name="validateLoginQRClientIdfromCacheUPI"/>
+                       <include name="validateLoginQRClientIdnotPresentonMerchantCenter"/>
+                       <include name="validateLoginQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                       <include name="validateLoginQRFQRClientIdfromMerchantCenter"/>
+                       <include name="validateLoginQRFQRClientIdfromCache"/>
+                       <include name="validateLoginQRFQRClientIdnotPresentonMerchantCenter"/>
+                       <include name="validateLoginQRFQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                   </methods>
+               </class>
+           </classes>
+       </test>
+       <test name="Apply SuperCash API Test">
+           <classes>
+               <class name="scripts.supercashtests.ApplySuperCashTests">
+                   <methods>
+                       <include name="superCashOffersInFPO_V1"/>
+                       <include name="superCashOffersInFPO_V2"/>
+                       <include name="superCashOffersInFPO_V5"/>
+                       <include name="superCashOffersIn_FQR_V2"/>
+                       <include name="superCashOffersIn_FQR_V1"/>
+                       <include name="UPI_OfferDisabled_In_FQRV2"/>
+                   </methods>
+               </class>
+           </classes>
+       </test>
+       <test name="Verify  Nick Name characters substring">
+           <classes>
+               <class name="scripts.api.Wallet.PG2Wallet">
+                   <methods>
+                       <include name="validateNickName"/>
+                   </methods>
+               </class>
+           </classes>
+       </test>
+         <test name="Validate fileds in BOSS_CHARGE_FEE_BATCH_CONSULT request/response" >
+             <classes>
+                 <class name="scripts.MDRPCF.MDRPCFNative">
+                     <methods>
+                         <include name="validateFetchPCFResponseWhenOnlyEMIpayMethodPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkPassed"/>
+                         <include name="validateFetchPCFResponseWhenIssuerBankPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkDinersPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkMaestroPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkVisaPassed"/>
+                         <include name="validateFetchBinDetailsResponseForCardNetworkDiners"/>
+                         <include name="validateFetchBinDetailsResponseForCardNetworkVISA"/>
+                         <include name="validatePTCResponseForCardNetworkVISA"/>
+                         <include name="validatePTCResponseForCardNetworkDiners"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test>
+         <test name="PGP-48994 Pure Hybrid Suite Std checkout">
+             <parameter name="theme" value="enhancedweb_revamp"/>
+             <classes>
+                 <class name="scripts.PureHybrid.PureHybrid">
+                     <methods>
+                         <include name="verifyPureHybrid_01"/>
+                         <include name="verifyPureHybrid_02"/>
+                         <include name="verifyPureHybrid_03"/>
+                         <include name="verifyPureHybrid_04"/>
+                         <include name="verifyPureHybrid_12"/>
+                         <include name="verifyPureHybrid_13"/>
+                         <include name="verifyPureHybrid_15"/>
+                         <include name="verifyPureHybrid_16"/>
+                         <include name="verifyPureHybrid_17"/>
+                         <include name="verifyPureHybrid_20"/>
+                         <include name="verifyPureHybrid_21"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test>
+         <test name="PGP-48994 Pure Hybrid Suite checkoutJS">
+             <parameter name="theme" value="checkoutjs_web_revamp"/>
+             <classes>
+                 <class name="scripts.PureHybrid.PureHybrid">
+                     <methods>
+                         <include name="verifyPureHybrid_05"/>
+                         <include name="verifyPureHybrid_06"/>
+                         <include name="verifyPureHybrid_07"/>
+                         <include name="verifyPureHybrid_08"/>
+                         <include name="verifyPureHybrid_11"/>
+                         <include name="verifyPureHybrid_14"/>
+                         <include name="verifyPureHybrid_18"/>
+                         <include name="verifyPureHybrid_19"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test>
+         <test name="PGP-48994 Pure Hybrid Suite Native">
+             <classes>
+                 <class name="scripts.PureHybrid.PureHybrid">
+                     <methods>
+                         <include name="verifyPureHybrid_22"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test>
+         <test name="PGP-48994 Pure Hybrid Suite Deals">
+             <classes>
+                 <class name="scripts.Deals.DealsTests">
+                     <methods>
+                         <include name="successfulDealsOnlyHybridCCTransactionViaCOP"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test>
+         <test name="PGP-48994 Addnapay Hybrid Suite">
+             <classes>
+                 <class name="scripts.PureHybrid.AddnPayHybrid">
+                     <methods>
+                         <include name="validate_AddnpayHYBRID_Txn_01"/>
+                         <include name="validate_AddnpayHYBRID_Txn_02"/>
+                         <include name="validate_AddnpayHYBRID_Txn_03"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test>
+          <test name="Txnstatus app Api">
+              <classes>
+                  <class name="com.paytm.api.theia.Txnstatushandlerinternal">
+                      <methods>
+                          <include name="validatechargeamountintxnstatuswhenpreferenceisY"/>
+                          <include name="validatechargeamountintxnstatuswhenpreferenceisN"/>
+                      </methods>
+                  </class>
+              </classes>
+          </test>
+            <test name="Verify fetch balance info api">
+               <classes>
+                   <class name="scripts.FetchBalanceTests">
+                       <methods>
+                           <include name="fetchBalanceForPPBL"/>
+                           <include name="fetchBalanceForwallet"/>
+                           <include name="fetchBalanceForwalletwhenmidnothavewallet"/>
+                           <include name="fetchBalanceForwalletwhenqrcodeidiswrong"/>
+                           <include name="fetchBalanceForwalletwithoutqueryparam"/>
+                       </methods>
+                   </class>
+               </classes>
+           </test>
+             <test name="Block chat payment cases">
+                 <classes>
+                     <class name="scripts.api.theia.chatpayment.chatpayment">
+                         <methods>
+                             <include name="BlockchatpaymentPTC"/>
+                             <include name="BlockchatpaymentFastforward"/>
+                             <include name="BlockchatpaymentPTCregexcheck"/>
+                         </methods>
+                     </class>
+                 </classes>
+             </test>
+            <test name="PGP-48011 Enhanced">
+                 <parameter name="theme" value="enhancedweb_revamp"/>
+                 <classes>
+                     <class name="scripts.Native.ProcessTransactionTests">
+                         <methods>
+                             <include name="PAPR_4754_TC05"/>
+                         </methods>
+                     </class>
+                 </classes>
+             </test>
+             <test name="PGP-48011 Native">
+                 <parameter name="isNativePlus" value="false"/>
+                 <classes>
+                     <class name="scripts.Native.ProcessTransactionTests">
+                         <methods>
+                             <include name="PAPR_4754_TC03"/>
+                             <include name="PAPR_4754_TC04"/>
+                         </methods>
+                     </class>
+                 </classes>
+             </test>
+             <test name="PGP-48011">
+                 <classes>
+                     <class name="scripts.Native.ProcessTransactionTests">
+                         <methods>
+                             <include name="PAPR_4754_TC01"/>
+                             <include name="PAPR_4754_TC02"/>
+                             <include name="PAPR_4754_TC06"/>
+                             <include name="PAPR_4754_TC07"/>
+                         </methods>
+                     </class>
+                 </classes>
+             </test> !-->
+</suite>

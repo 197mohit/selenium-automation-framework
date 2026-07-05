@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57680">
+    <test name="Verify original card hash for populate card hash">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="verifyOriginalCardHashForEMIVisaCreditCardWithOffers"/>
+                    <include name="verifyOriginalCardHashForEMIVisaCreditCardWithoutOffers"/>
+                    <include name="verifyOriginalCardHashForEMIDebitCardWithOffers"/>
+                    <include name="verifyOriginalCardHashFlowForMasterCard"/>
+                    <include name="verifyOriginalCardHashFlowForRupayCard"/>
+                    <include name="verifyOriginalCardHashFlowForVisaCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

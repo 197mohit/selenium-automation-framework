@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bank-offers-Hybrid-flow-checkoutJS" verbose="1" thread-count="1">
+    <test name="Bank offers in checkoutJS for Hybrid Flow on UI-revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateHybridWalletAndCCTxnWithDiscount"/>
+                    <include name="ValidateHybridWalletAndSavedCCTxnWithCashback"/>
+                    <include name="ValidateHybridWalletAndNBTxnWithDiscount"/>
+                    <include name="ValidateHybridWalletAndUPITxnWithCashback"/>
+                    <include name="ValidateHybridWalletAndNBTxnWithCashback"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Bulk Bank offers in checkoutJS for Hybrid Flow on UI-revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateHybridWalletAndCCTxnWithBulkOffer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validate Promo False for Bank offers in checkoutJS for Hybrid Flow on UI-revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePromoFalseHybridWalletAndCCTxnWithCashback"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

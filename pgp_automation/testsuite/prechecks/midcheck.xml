@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="System Checks" verbose="1">
+    <test name="Check/Update mid configs from merchant.yaml">
+        <classes>
+            <class name="scripts.api.binCheck.MidCheck">
+                <methods>
+                    <include name="testMerchantsWithPgmc"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+  <test name="Check Response url(s)">
+        <classes>
+            <class name="scripts.SolidityCheck.ResponseUrlValidation"/>
+        </classes>
+    </test>
+    <test name="Verify health check of applications">
+        <classes>
+            <class name="scripts.SolidityCheck.HealthCheck"/>
+        </classes>
+    </test>
+</suite>

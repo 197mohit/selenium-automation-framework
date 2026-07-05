@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-24062" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-24062">
+        <classes>
+            <class name="scripts.api.theia.FastForwardTest"/>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test"/>
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV2Test"/>
+        </classes>
+    </test>
+</suite>

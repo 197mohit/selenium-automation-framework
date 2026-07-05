@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Promo" verbose="1" thread-count="2" parallel="tests">
+    <test name=" Promo txns - AppInvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsFalse"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsTrue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Promo SimpliFiedPaymentOffers Tests for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FetchPromoCodeDetails">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_006"/>
+                    <include name="TC_FPC_005"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

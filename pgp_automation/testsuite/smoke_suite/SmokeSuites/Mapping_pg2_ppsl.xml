@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service" verbose="1" parallel="tests" thread-count="5">
+    <test name="Mapping Service PG2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiringMid">
+                <methods>
+                    <include name="verifyQueryMerchantAcquiringMidApi_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetPreferenceInfo">
+                <methods>
+                    <include name="verifyMerchantGetPreferenceInfoAPI"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop3.Entityurlinfoformid">
+                <methods>
+                    <include name="Verifyentityurlinfoformid1"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiring">
+                <methods>
+                    <include name="verifyQueryMerchantAcquiringapi_01"/>
+                    <include name="verifyQueryMerchantAcquiringapi_03"/>
+                    <include name="verifyQueryMerchantAcquiringapi_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityurlinformid">
+                <methods>
+                    <include name="verifyEntityurlinformidapi_02"/>
+                    <include name="verifyEntityurlinformidapi_01"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsV2Tid">
+                <methods>
+                    <include name="VerifyDeviceDetailsV2Tid_03"/>
+                    <include name="VerifyDeviceDetailsV2Tid_02"/>
+                    <include name="VerifyDeviceDetailsV2Tid_04"/>
+                    <include name="VerifyDeviceDetailsV2Tid_01"/>
+                    <include name="VerifyDeviceDetailsV2Tid_05"/>
+                    <include name="VerifyDeviceDetailsV2Tid_06"/>
+                    <include name="VerifyDeviceDetailsV2Tid_07"/>
+                    <include name="VerifyDeviceDetailsV2Tid_08"/>
+                    <include name="VerifyDeviceDetailsV2Tid_09"/>
+                    <include name="VerifyDeviceDetailsV2Tid_10"/>
+                    <include name="VerifyDeviceDetailsV2Tid_11"/>
+                    <include name="VerifyDeviceDetailsV2Tid_12"/>
+                </methods>
+            </class>
+
+
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantPrefInfo">
+                <methods>
+                    <include name="verifyQueryMerchantPrefInfoAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

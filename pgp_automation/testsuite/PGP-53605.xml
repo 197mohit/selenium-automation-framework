@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Google refund-PGP-53605" verbose="1" thread-count="1" parallel="tests">
+    <test name="Custom Sync Api">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GoogleRefundCustomSync"/>
+        </classes>
+    </test>
+
+</suite>

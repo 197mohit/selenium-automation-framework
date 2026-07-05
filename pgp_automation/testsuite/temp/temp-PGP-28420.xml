@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27624 CheckoutJS tests" verbose="1" parallel="methods" thread-count="4">
+    <test name="CheckoutJS Tests with NativeJSONRequest N">
+        <parameter name="theme" value="checkoutjs_web"/>
+      <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27624_SuccessQRTxnUsingCCwithNativeJsonPrefN"/>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefF"/>
+                    <include name="PGP_27624_ValidateSuccessSubscriptionwithNativeJsonPrefN"/>
+                    <include name="PGP_27624_PromoTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="PGP_27624_SplitSettlementTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="PGP_27624_ValidateCCTxnNativeJsonPrefN"/>
+                    <include name="PGP_27624_ValidateWalletTxnNativeJsonPrefN"/>
+                    <include name="PGP_27624_ValidateUPITxnNativeJsonPrefN"/>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-50318" verbose="1">
+    <test name="Merchant Order IDs in Refunds and Forward transaction to HDFC Acquirer">
+        <classes>
+            <class name="scripts.Instaproxy.InstaproxyValidation">
+                <methods>
+                    <include name="validateOrderIdinBankRequestCardHDFCAcquirerFlagOn"/>
+                    <include name="validateOrderIdNotPresentinBankRequestCardHDFCAcquirerFlagOff"/>
+                    <include name="validateOrderIdinBankRequestDebitCardHDFCAcquirerFlagOn"/>
+                    <include name="validateOrderIdNotPresentinBankRequestDebitCardHDFCAcquirerFlagOff"/>
+                    <include name="validateOrderIdNotPresentinBankRequestICICINBAcquirerFlagOn"/>
+                    <include name="validateOrderIdNotPresentinBankRequestHDFCNBAcquirerFlagOn"/>
+                    <include name="validateOrderIdNotPresentinBankRequestPPBLNBAcquirerFlagOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

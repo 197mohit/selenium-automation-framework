@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-54630" verbose="1" thread-count="5" parallel="tests">
+    <test name="PGP-54630 cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="validateOfferStripOnAppInvokeFlowWhenBothPrefEnabled"/>
+                    <include name="validateOfferStripOnAppInvokeFlowWhenMinimalSubventionPrefEnabled"/>
+                    <include name="validateOfferStripOnAppInvokeFlowWhenMinimalPromoPrefEnabled"/>
+                    <include name="validateOfferStripOnAppInvokeFlowWhenBothDisabled"/>
+                    <include name="validateOfferStripOnJSOnRedirectionFlowWhenBothPrefEnabled"/>
+                    <include name="validateOfferStripOnJSOnRedirectionFlowWhenMinimalSubventionPrefEnabled"/>
+                    <include name="validateOfferStripOnJSOnRedirectionFlowWhenMinimalPromoPrefEnabled"/>
+                    <include name="validateOfferStripOnJSOnRedirectionFlowWhenBothPromoPrefDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

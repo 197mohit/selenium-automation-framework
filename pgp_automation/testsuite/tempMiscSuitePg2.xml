@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Misc Theia Suite" verbose="1" parallel="methods" thread-count="15">
+
+
+    <test name="Native Plus ProcessTransactionTests" parallel="methods" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <exclude name="validateFullKYCWalletSavedCC"/>
+                    <exclude name="validateFullKYCWalletCC"/>
+                    <exclude name="validateFullKYCGVSavedCC"/>
+                    <exclude name="validateFullKYCGV"/>
+                    <exclude name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                    <exclude name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                    <exclude name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="TC_PT_018_MutualFund"/>
+                    <exclude name="testOrderSuccessByEMIWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="verifyCCPromo_TC_16"/>
+                    <exclude name="verifyDCPromo_TC_16_1"/>
+                    <exclude name="validateIdempotentCase1"/>
+                    <exclude name="validateIdempotentCase2"/>
+                    <exclude name="validateIdempotentCase3"/>
+                    <exclude name="validateSDKTypeAIO_SDK_PGPCP"/>
+                    <exclude name="validateSDKTypeCUI_SDK_PGPCP"/>
+                    <exclude name="validateSDKTypeAIO_SDK_PGCOP"/>
+                    <exclude name="validateSDKTypeCUI_SDK_PGCOP"/>
+                    <exclude name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                    <exclude name="SpecialCharCustIdTxnSuccessfulForloggedInUser"/>
+                    <exclude name="TC_PT_039"/>
+
+                    <exclude name="TC_10"/>
+                    <exclude name="TC_12"/>
+                    <exclude name="hybridPostpaidTxnFailWhenInsufficientAmount"/>
+                    <exclude name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <exclude name="validateSucessfullPCFTransactionviaICICINB"/>
+                    <exclude name="validateSucessfullPCFTransactionviaPPBL"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenKeyIsRemovedTwiceandWithRetry"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenTxnkeyRemovedFromSessionRedis"/>
+                    <exclude name="validateNoKYCDC"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAY"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20"/>
+                    <exclude name="verifyNBPromo_TC_17"/>
+                    <exclude name="TC_PT_022"/>
+
+                    <exclude name="TC_PT_BAJAJ_EMI_Success"/>
+                    <exclude name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <exclude name="PGP_27167_verifyMERC_UNQ_REFinTxnStatus"/>
+                    <exclude name="mutualFundRiskReject"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20_1"/>
+                    <exclude name="TC_PT_041"/>
+                    <exclude name="TC_PT_042"/>
+                    <exclude name="TC_PT_025"/>
+                    <exclude name="checkEmiTxnUsingAmexCreditCard"/>
+                    <exclude name="verifyGVWalletLimitBreachedAddNPay"/>
+                    <exclude name="verifyAddNPayWalletLimitBreachedWithCOP"/>
+                    <exclude name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testADDNPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentSession"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentStatic"/>
+                    <exclude name="validateCancelTxn_Native"/>
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalance"/>
+                    <exclude name="enablePayModeNBSuccessPaytmPostpaid"/>
+                    <exclude name="enablePayModePPBLNBSuccessPaytmPostpaid"/>
+                    <exclude name="ProcessTransactionTests.TC_PT_PostPaid_Success"/>
+                    <exclude name="verifyRetryCase_RetryBy_Postpaid"/>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="validateMinKYCLimitNotBreachedGV"/>
+                    <exclude name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <exclude name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                    <!--Added below TCs in Notification Suite -->
+                    <exclude name="validateCommLogsForCC"/>
+                    <exclude name="validateCommLogsForDC"/>
+                    <!--Belows COD Tcs is not supported to pg2 -->
+                    <exclude name="TC_PT_COD_Failure"/>
+                    <exclude name="TC_PT_COD_Failure_WithoutToken"/>
+                    <exclude name="TC_PT_COD_Success"/>
+                    <exclude name="testOrderSuccessByCODWhenNonMatchingWebsiteProvided"/>
+                    <!--Belows EMI Tcs is not supported to pg2 -->
+                    <exclude name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnItemBased"/>
+                    <exclude name="PGP_28966_VerifyEMISimplifiedSubventionWithPlanIdMissing"/>
+                    <exclude name="PGP_28966_VerifyEMISimplifiedSubventionWithIncorrectPlanId"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedAmountBased"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedItemBased"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedAmountBased"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedItemBased"/>
+                    <exclude name="TC_PT_EMI_Success"/>
+                    <exclude name="testOrderSuccessByEMIWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="TC_PT_BAJAJ_EMI_Success"/>
+                    <exclude name="TC_PT_0CostEMI_Success"/>
+                    <exclude name="successCorporateEMIBinCorporateMerchant"/>
+                    <exclude name="PGP_27715_validateOnlyEMIMerchantwithCorporateBin"/>
+                    <exclude name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <exclude name="SimplifiedPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON"/>
+                    <exclude name="ItemEMISimplifiedSubvention_peonOFF_MerchantStatusOFF"/>
+                    <exclude name="SimplifiedPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON"/>
+                    <exclude name="ApplyPromoAndSimplifiedItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON_PromoOFF"/>
+                    <exclude name="ApplyPromoAndSimplifiedAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoON"/>
+                    <exclude name="SimplifiedPromoAndItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON"/>
+                    <exclude name="ApplyPromoAndSimplifiedAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoON"/>
+                    <exclude name="ApplyPromoAndSimplifiedItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON_PromoOFF"/>
+                    <exclude name="verifySubventionTypeInFpoResponse"/>
+                    <!--Belows Hybrid   Tcs flow is not supported To PG2  -->
+                    <exclude name="TC_PT_EMI_Hyb_Success"/>
+                    <exclude name="TC_PT_hybridWithoutFetchPayOption"/>
+                    <exclude name="testHybridOrderSuccessWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="TC_PT_016"/>
+                    <exclude name="validateRiskAcceptNotNullForHybrid"/>
+                    <exclude name="hybridPostpaidTxnFailWhenInsufficientAmount"/>
+                    <exclude name="TC_12"/>
+                    <exclude name="TC_10"/>
+                    <exclude name="Native_Success_ReDirectChannel"/>
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalance"/>
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalanceWhenRetryNotPresentMerchant"/>
+                    <exclude name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTCForHybridTxn"/>
+                    <exclude name="TC_PT_DC_Failure_MutualFunds"/>
+                    <exclude name="TC_PT_DC_Pending_MutualFunds"/>
+                    <exclude name="EMI_Native_Bank_failure"/>
+                    <exclude name="verifyMFSplitSettlementFailureWithEscape"/>
+                    <exclude name="verifySSOinPPBL_NBBankFormRequest"/>
+                    <exclude name="IPv6clientIpCOP"/>
+                    <exclude name="IPv4clientIpCOP"/>
+                    <exclude name="VerifyDealsInFetchQrPaymentDetails"/>
+                    <exclude name="offlineQRCodeTxnDC"/>
+                    <exclude name="posIDBasedpushPaymentNotificationForSubUsersTransaction"/>
+                    <exclude name="posIDBasedpushPaymentNotificationForSubUsersRefund"/>
+                    <exclude name="validateCommLogsForCC"/>
+                    <exclude name="validateCommLogsForDC"/>
+                    <exclude name="verifyPtcResponseforUpiIntentTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native  ProcessTransactionTests2" parallel="methods" >
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <exclude name="validateFullKYCWalletSavedCC"/>
+                    <exclude name="validateFullKYCWalletCC"/>
+                    <exclude name="validateFullKYCGVSavedCC"/>
+                    <exclude name="validateFullKYCGV"/>
+                    <exclude name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                    <exclude name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                    <exclude name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="TC_PT_018_MutualFund"/>
+                    <exclude name="testOrderSuccessByEMIWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="verifyCCPromo_TC_16"/>
+                    <exclude name="verifyDCPromo_TC_16_1"/>
+                    <exclude name="validateIdempotentCase1"/>
+                    <exclude name="validateIdempotentCase2"/>
+                    <exclude name="validateIdempotentCase3"/>
+                    <exclude name="validateSDKTypeAIO_SDK_PGPCP"/>
+                    <exclude name="validateSDKTypeCUI_SDK_PGPCP"/>
+                    <exclude name="validateSDKTypeAIO_SDK_PGCOP"/>
+                    <exclude name="validateSDKTypeCUI_SDK_PGCOP"/>
+                    <exclude name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                    <exclude name="SpecialCharCustIdTxnSuccessfulForloggedInUser"/>
+                    <exclude name="TC_PT_039"/>
+
+                    <exclude name="TC_10"/>
+                    <exclude name="TC_12"/>
+                    <exclude name="hybridPostpaidTxnFailWhenInsufficientAmount"/>
+                    <exclude name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <exclude name="validateSucessfullPCFTransactionviaICICINB"/>
+                    <exclude name="validateSucessfullPCFTransactionviaPPBL"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenKeyIsRemovedTwiceandWithRetry"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenTxnkeyRemovedFromSessionRedis"/>
+                    <exclude name="validateNoKYCDC"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAY"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20"/>
+                    <exclude name="verifyNBPromo_TC_17"/>
+                    <exclude name="TC_PT_022"/>
+
+                    <exclude name="TC_PT_BAJAJ_EMI_Success"/>
+                    <exclude name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <exclude name="PGP_27167_verifyMERC_UNQ_REFinTxnStatus"/>
+                    <exclude name="mutualFundRiskReject"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20_1"/>
+                    <exclude name="TC_PT_041"/>
+                    <exclude name="TC_PT_042"/>
+                    <exclude name="TC_PT_025"/>
+                    <exclude name="checkEmiTxnUsingAmexCreditCard"/>
+                    <exclude name="verifyGVWalletLimitBreachedAddNPay"/>
+                    <exclude name="verifyAddNPayWalletLimitBreachedWithCOP"/>
+                    <exclude name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testADDNPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentSession"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentStatic"/>
+                    <exclude name="validateCancelTxn_Native"/>
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalance"/>
+                    <exclude name="enablePayModeNBSuccessPaytmPostpaid"/>
+                    <exclude name="enablePayModePPBLNBSuccessPaytmPostpaid"/>
+                    <exclude name="ProcessTransactionTests.TC_PT_PostPaid_Success"/>
+                    <exclude name="verifyRetryCase_RetryBy_Postpaid"/>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="validateMinKYCLimitNotBreachedGV"/>
+                    <exclude name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <exclude name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                    <!--Added below TCs in Notification Suite -->
+                    <exclude name="validateCommLogsForCC"/>
+                    <exclude name="validateCommLogsForDC"/>
+                    <!--Belows COD Tcs is not supported to pg2 -->
+                    <exclude name="TC_PT_COD_Failure"/>
+                    <exclude name="TC_PT_COD_Failure_WithoutToken"/>
+                    <exclude name="TC_PT_COD_Success"/>
+                    <exclude name="testOrderSuccessByCODWhenNonMatchingWebsiteProvided"/>
+                    <!--Belows EMI Tcs is not supported to pg2 -->
+                    <exclude name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnItemBased"/>
+                    <exclude name="PGP_28966_VerifyEMISimplifiedSubventionWithPlanIdMissing"/>
+                    <exclude name="PGP_28966_VerifyEMISimplifiedSubventionWithIncorrectPlanId"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedAmountBased"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenSimplifiedPromoAndSubventionBothAppliedItemBased"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedAmountBased"/>
+                    <exclude name="PGP_28966_ValidateSuccessTxnWhenApplyPromoAndSubventionBothAppliedItemBased"/>
+                    <exclude name="TC_PT_EMI_Success"/>
+                    <exclude name="testOrderSuccessByEMIWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="TC_PT_BAJAJ_EMI_Success"/>
+                    <exclude name="TC_PT_0CostEMI_Success"/>
+                    <exclude name="successCorporateEMIBinCorporateMerchant"/>
+                    <exclude name="PGP_27715_validateOnlyEMIMerchantwithCorporateBin"/>
+                    <exclude name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <exclude name="SimplifiedPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON"/>
+                    <exclude name="ItemEMISimplifiedSubvention_peonOFF_MerchantStatusOFF"/>
+                    <exclude name="SimplifiedPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON"/>
+                    <exclude name="ApplyPromoAndSimplifiedItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON_PromoOFF"/>
+                    <exclude name="ApplyPromoAndSimplifiedAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoON"/>
+                    <exclude name="SimplifiedPromoAndItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON"/>
+                    <exclude name="ApplyPromoAndSimplifiedAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoON"/>
+                    <exclude name="ApplyPromoAndSimplifiedItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON_PromoOFF"/>
+                    <exclude name="verifySubventionTypeInFpoResponse"/>
+                    <!--Belows Promo  Tcs flow is not supported on prod  -->
+                    <exclude name="verifyWalletPromo_TC_15"/>
+                    <exclude name="verifyCCPromo_TC_16"/>
+                    <exclude name="verifyDCPromo_TC_16_1"/>
+                    <exclude name="verifyNBPromo_TC_17"/>
+                    <exclude name="verifyRestrictCCPromo_TC_20"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20"/>
+                    <exclude name="verifyRestrictPPIPromo_TC_20"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20_1"/>
+                    <exclude name="Native_Success_ReDirectChannel"/>
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalance"/>
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalanceWhenRetryNotPresentMerchant"/>
+                    <exclude name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTCForHybridTxn"/>
+                    <exclude name="TC_PT_DC_Failure_MutualFunds"/>
+                    <exclude name="TC_PT_DC_Pending_MutualFunds"/>
+                    <exclude name="EMI_Native_Bank_failure"/>
+                    <exclude name="verifyMFSplitSettlementFailureWithEscape"/>
+                    <exclude name="verifySSOinPPBL_NBBankFormRequest"/>
+                    <exclude name="IPv6clientIpCOP"/>
+                    <exclude name="IPv4clientIpCOP"/>
+                    <exclude name="VerifyDealsInFetchQrPaymentDetails"/>
+                    <exclude name="offlineQRCodeTxnDC"/>
+                    <exclude name="posIDBasedpushPaymentNotificationForSubUsersTransaction"/>
+                    <exclude name="posIDBasedpushPaymentNotificationForSubUsersRefund"/>
+                    <exclude name="validateCommLogsForCC"/>
+                    <exclude name="validateCommLogsForDC"/>
+                    <exclude name="verifyPtcResponseforUpiIntentTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20953 visa single click">
+        <classes>
+            <class name="scripts.VisaSingleClick.CreateTokenTest" />
+            <class name="scripts.VisaSingleClick.EnrollmentStatusTest">
+                <methods>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="enrollmentStatusofCardWithSSOOneCardIsNotEnrolled"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithACCESSTokenOneCardNotEnrolled"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithSSOForEnrolledCard"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithACCESSTokenAndInvalidCustId"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithACCESSTokenForEnrolledCard"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithChecksumAndInvalidCustId"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithChecksumForEnrolledCard"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithChecksumOneCardIsNotEnrolled"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithTxnTokenOneForEnrolledCard"/>
+                    <exclude name="enrollmentStatusofEnrolledCardWithTxnTokenOneCardIsNotEnrolled"/>
+                </methods>
+            </class>
+            <class name="scripts.VisaSingleClick.DeEnrollCardTest">
+                <methods>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="DeEnrolCardWithChecksumAndInvalidBin"/>
+                    <exclude name="DeEnrolCardWithChecksum"/>
+                    <exclude name="DeEnrolCardWithSSOAndInvalidBin"/>
+                    <exclude name="DeEnrolCardWithSSO"/>
+                    <exclude name="DeEnrolCardWithTxnTokenAndInavlidBin"/>
+                    <exclude name="DeEnrolCardWithTxnToken"/>
+                    <exclude name="DeEnrollCardWithAccesstokenAndinvalidBin"/>
+                    <exclude name="DeEnrollCardWithAccesstoken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="fetchmerinfo">
+        <classes>
+            <class name="scripts.FetchMerchantInfo">
+                <methods>
+                    <include name="verifyMerchantInfowithValidMid"/>
+                    <include name="invalidMidMerchantInfo"/>
+                    <include name="verifyMerchantInfowithSingleValidMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--<test name="KYC Regression on Enhanced Web theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.KYC"/>
+        </classes>
+    </test>-->
+    <test name="Native OTP Limit Breach">
+        <classes>
+            <class name="scripts.Native.LimitOTP">
+            </class>
+        </classes>
+    </test>
+
+    <test name="DeferredNative flow">
+        <classes>
+            <class name="scripts.flows.DeferredNativeTest">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test eventLinkId is not coming in response in case of risk verify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--<test name="khatabook native testcases">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC_001_KhataBookTxnNB"/>
+                    <include name="TC_002_KhataBookTxnCC"/>
+                    <include name="TC_003_KhataBookTxnDC"/>
+                    <include name="TC_004_KhataBookTxnWallet"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC_008_KhataBookTxnDifferentMID"/>
+                    <include name="TC_009_KhataBookTxnCCFailed"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    <!--<test name="khatabook nativeplus test">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC_001_KhataBookTxnNB"/>
+                    <include name="TC_002_KhataBookTxnCC"/>
+                    <include name="TC_003_KhataBookTxnDC"/>
+                    <include name="TC_004_KhataBookTxnWallet"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC_008_KhataBookTxnDifferentMID"/>
+                    <include name="TC_009_KhataBookTxnCCFailed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+    <!-- <test name="Khatabook enhancewap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC001_KhatabookAppInvokeCC"/>
+                    <include name="TC002_KhatabookAppInvokeDC"/>
+                    <include name="TC004_KhatabookAppInvokeNB"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC007_KhatabookAppInvokeWallet"/>
+                    <include name="TC008_KhatabookAppInvokeCCforFailedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <!-- <test name="Khatabook enhanceweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC001_KhatabookAppInvokeCC"/>
+                    <include name="TC002_KhatabookAppInvokeDC"/>
+                    <include name="TC004_KhatabookAppInvokeNB"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC007_KhatabookAppInvokeWallet"/>
+                    <include name="TC008_KhatabookAppInvokeCCforFailedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+
+</suite>

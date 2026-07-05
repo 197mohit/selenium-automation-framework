@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NativePeon" verbose="1" parallel="methods" thread-count="20">
+    <test name="Native EMI and Saved Card TC">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="pgWithoutLoginTxnUsingSavedCard"/>
+                    <include name="hybridTxnUsingEMI"/>
+                    <include name="hybridTxnUsingSavedCard"/>
+                    <include name="retryTxnUsingEMI"/>
+                    <include name="retryTxnUsingSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native EMI and Saved Card TC not native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="pgWithoutLoginTxnUsingSavedCard"/>
+                    <include name="hybridTxnUsingEMI"/>
+                    <include name="hybridTxnUsingSavedCard"/>
+                    <include name="retryTxnUsingEMI"/>
+                    <include name="retryTxnUsingSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon"/>
+        </classes>
+    </test>
+    <test name="Native Plus Peon">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon"/>
+        </classes>
+    </test>
+</suite>

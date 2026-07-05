@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57116" verbose="1" thread-count="1" parallel="tests">
+    <test name="PGP-57116">
+        <parameter name="theme" value=""/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testAccessTokenExpiryCaseForWidget"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

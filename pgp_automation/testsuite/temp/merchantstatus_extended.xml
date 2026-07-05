@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--
+  merchantstatus_extended.xml
+  Extended merchant-status suite covering payment-mode gaps, branch-coverage negative paths,
+  and new recovery/security tests.
+
+  Run with:
+    mvn clean test -DsuiteXmlFile=testsuite/temp/merchantstatus_extended.xml \
+      -Denv=staging -Dbrowser=chrome
+
+  Test IDs covered:
+    MS-NEW-02..04e  RecoveryStatusTests: active negative + body/JsonData mismatch + blank MID
+    MS-NEW-04..08   DC, NB, refund paths in MerchantStatusTests
+    MS-NEW-17       UPI path in MerchantStatusTests
+    MS-NEW-21..23   Security/negative paths in MerchantStatusTests
+    MS-NEW-26..33   Branch-coverage negative paths across all endpoints
+    MS-BRANCH-01..07 ChecksumFilter + MerchantTxnStatusServiceImpl + MerchantOrderStatusImpl branches
+    MS-NEW-24..25   PromoMerchantStatusTests (disabled until promo merchant available)
+-->
+<suite name="MerchantStatus_Extended_Suite" verbose="1" thread-count="8" parallel="tests">
+
+    <!-- ===== RecoveryStatusTests: active negative + security tests ===== -->
+    <test name="RecoveryStatus - OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.RecoveryStatusTests">
+                <methods>
+                    <include name="recoveryStatus_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryStatus - MissingDeductionType">
+        <classes>
+            <class name="scripts.merchantStatus.RecoveryStatusTests">
+                <methods>
+                    <include name="recoveryStatus_MissingDeductionType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryStatus - ChecksumMismatch">
+        <classes>
+            <class name="scripts.merchantStatus.RecoveryStatusTests">
+                <methods>
+                    <include name="recoveryStatus_ChecksumMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== MerchantStatusTests: new DC / NB / Refund tests ===== -->
+    <test name="MerchantStatus - DC Success (getTxnStatus)">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_DC_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - DC Failure (getTxnStatus)">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_DC_Failure"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - NB Success (getTxnStatus)">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_NB_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - Full Refund reflected in getTxnStatus">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusAfterFullRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - Partial Refund reflected in getTxnStatus">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusAfterPartialRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== MerchantStatusTests: new UPI path ===== -->
+    <test name="MerchantStatus - UPI Success (v2/order/status)">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="v2OrderStatus_UPI_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== MerchantStatusTests: security / negative paths ===== -->
+    <test name="MerchantStatus - getTxnStatus Checksum Mismatch">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_ChecksumMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - v2/order/status Invalid Token">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="v2OrderStatus_InvalidToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - getTxnStatus Cross-MID Isolation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_CrossMID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== RecoveryStatusTests: body/JsonData mismatch + blank MID ===== -->
+    <test name="RecoveryStatus - Body MID Mismatch">
+        <classes>
+            <class name="scripts.merchantStatus.RecoveryStatusTests">
+                <methods>
+                    <include name="recoveryStatus_BodyMidMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryStatus - Body OrderId Mismatch">
+        <classes>
+            <class name="scripts.merchantStatus.RecoveryStatusTests">
+                <methods>
+                    <include name="recoveryStatus_BodyOrderIdMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryStatus - Body DeductionType Mismatch">
+        <classes>
+            <class name="scripts.merchantStatus.RecoveryStatusTests">
+                <methods>
+                    <include name="recoveryStatus_BodyDeductionTypeMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryStatus - Blank MID">
+        <classes>
+            <class name="scripts.merchantStatus.RecoveryStatusTests">
+                <methods>
+                    <include name="recoveryStatus_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== MerchantStatusTests: branch-coverage negative paths ===== -->
+    <test name="MerchantStatus - getTxnStatus Blank OrderId">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="getTxnStatus_BlankOrderId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - TXNSTATUS/APP Blank Token">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusApp_BlankToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - TXNSTATUS/APP Invalid SSO Token">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusApp_InvalidSsoToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - v2/order/status Blank Token">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="v2OrderStatus_BlankToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - v2/order/status Blank OrderId">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="v2OrderStatus_BlankOrderId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - v2/order/status Blank MID">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="v2OrderStatus_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - getPaymentStatus Blank OrderId">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="getPaymentStatus_BlankOrderId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - getPaymentStatus Blank MID">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="getPaymentStatus_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== MerchantTxnStatusBranchTests: ChecksumFilter + service branch coverage ===== -->
+    <test name="MerchantStatus - getTxnStatus Blank ChecksumHash">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantTxnStatusBranchTests">
+                <methods>
+                    <include name="getTxnStatus_BlankChecksumHash"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - getTxnStatus POST Invalid ChecksumHash">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantTxnStatusBranchTests">
+                <methods>
+                    <include name="getTxnStatusPost_InvalidChecksumHash"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - getTxnStatus Unknown MID">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantTxnStatusBranchTests">
+                <methods>
+                    <include name="getTxnStatus_UnknownMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - getTxnStatus Non-Existent Order">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantTxnStatusBranchTests">
+                <methods>
+                    <include name="getTxnStatus_NonExistentOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - getTxnStatus POST Non-Existent Order">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantTxnStatusBranchTests">
+                <methods>
+                    <include name="getTxnStatusPost_NonExistentOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - v2/order/status Non-Existent Order">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantTxnStatusBranchTests">
+                <methods>
+                    <include name="v2OrderStatus_NonExistentOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MerchantStatus - v2/order/status Unknown MID">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantTxnStatusBranchTests">
+                <methods>
+                    <include name="v2OrderStatus_UnknownMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== PromoMerchantStatusTests: disabled until promo merchant is available ===== -->
+    <!--
+    <test name="MerchantStatus - Promo Applied getTxnStatus">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.PromoMerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_PromoApplied_Success"/>
+                    <include name="txnStatus_PromoApplied_v2OrderStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+
+</suite>
+
+
+

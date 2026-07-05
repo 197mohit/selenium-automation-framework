@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MCC ADD MONEY" verbose="1" thread-count="1" parallel="tests">
+    <test name="MCC ADDMONEY UPICOllect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MCC_ADD_COLLECT">
+                <methods>
+                    <include name="addnPay_UPI_Collect_FULLKYC"/>
+                    <include name="addnPay_UPI_Collect_MINKYC"/>
+                    <include name="addMoney_UPI_Collect_FULLKYC"/>
+                    <include name="addMoney_UPI_Collect_MINKYC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NATIVE : MCC ADDNPAY UPICOllect">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MCC_ADD_COLLECT">
+                <methods>
+                    <include name="validateupiCollectToAddPayFullKyc"/>
+                    <include name="validateupiCollectToAddPayMinKyc"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

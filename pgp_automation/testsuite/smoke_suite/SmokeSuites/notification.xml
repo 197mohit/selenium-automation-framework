@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notification" verbose="1" thread-count="4" parallel="tests">
+    <test name="PeonTxn Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PeonTxn Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="TC_PT_001"/>
+                    <include name="TC_PT_003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus Peon">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="TC_PT_001"/>
+                    <include name="TC_PT_003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-47723" verbose="1" parallel="methods" thread-count="3">
+    <test name="Custom checkout and simplified flow cases">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="Testv1CheckoutApiCalledForStdEmiTxn"/>
+                    <include name="TestOrderOfferInfoNotSentForNonDealsTxn"/>
+                    <include name="Testv1CheckoutShouldNotCallForPaytm_CashbackTxn"/>
+                    <include name="Testv1CheckoutApiCalledForStdEmiPromoTxn"/>
+                    <include name="Testv1CheckoutApiCalledForSubEmiTxnAmountbased"/>
+                    <include name="Testv1CheckoutApiCalledForStdEmiPromoTxnItembased"/>
+                    <include name="Testv1CheckoutApiCalledForSubEmiTxnPartialAmountbased"/>
+                    <include name="Testv1CheckoutApiCalledForDCPromoTxn"/>
+                    <include name="Testv1CheckoutShouldNotCallForNBPromoTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkout js cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="Testv1CheckoutApiCalledForEmiPromoSubventionTxn"/>
+                    <include name="Testv1CheckoutApiCalledForEmiPromoAmountBasedSubventionItemTxn"/>
+                    <include name="Testv1CheckoutApiCalledForEmiSubventionTxn"/>
+                    <include name="Testv1CheckoutApiCalledForItembasedPromoAndAmountSubventionTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

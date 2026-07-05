@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="COFT_Theia" verbose="1" parallel="tests" thread-count="7">
+    <test name="Global Vault Split">
+        <classes>
+            <class name="scripts.coft.theia.GlobalVaultSplit">
+                <methods>
+                    <include name="addNPayWithOclMid"/>
+                    <include name="addNPayWithPPBLMid"/>
+                    <include name="addMoneyWithPPBLMid"/>
+                    <include name="addNPayWithOffusMid"/>
+                    <include name="addMoneyWithOffusMid"/>
+                    <include name="addNPayWithOclMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addNPayWithPPBLMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addMoneyWithPPBLMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addNPayWithOffusMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addMoneyWithOffusMidwithGlobalVaultCoftEnabled"/>
+                    <include name="addNPayWithPMallMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

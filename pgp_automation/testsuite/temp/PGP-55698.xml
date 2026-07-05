@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-55698" verbose="1" preserve-order="true">
+    <test name="Multi Item OfferApply and offerDiscovery API's">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest">
+                <methods>
+                    <include name="TestSuccessOfferDiscoverywithMultipleItem_EMI"/>
+                    <include name="TestSuccessOfferDiscoverywithMultipleItem_CC"/>
+                    <include name="TestSuccessOfferDiscoverywithMultipleItem_UPI"/>
+                    <include name="TestSuccessOfferDiscoverywithMultipleItem_All"/>
+                    <include name="TestSuccessOfferDiscovery_AmtBasedSubvention_ItemBasedOffers_SingleItem"/>
+                    <include name="TestSuccessOfferDiscovery_AmtBasedSubvention_ItemBasedOffers_MultipleItem"/>
+                    <include name="TestSuccessOfferDiscovery_ItemBasedSubvention_AmtBasedOffers_SingleItem"/>
+                    <include name="TestSuccessOfferDiscovery_ItemBasedSubvention_AmtBasedOffers_MultipleItem"/>
+                    <include name="TestSuccessOfferDiscovery_AmtBasedSubvention_AmtBasedOffers_MultipleItem"/>
+                    <include name="TestSuccessOfferDiscoverywithPartialAmountSingleItem_EMI"/>
+                    <include name="TestFailureOfferDiscoverywithPartialAmountMultipleItem_EMI"/>
+                    <include name="TestFailureOfferDiscovery_MoreThan5Items"/>
+                    <include name="TestFailureOfferDiscovery_brandIdCategoryIdHasSpecialCharacters"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest">
+                <methods>
+                    <include name="TestSuccessOfferApplywithMultipleItem_EMI"/>
+                    <include name="TestSuccessOfferApplywithMultipleItem_CC"/>
+                    <include name="TestSuccessOfferApplywithMultipleItem_UPI"/>
+                    <include name="TestSuccessOfferApplywithMultipleItem_EMI_OfferSpecified"/>
+                    <include name="TestSuccessOfferApplywithMultipleItem_CC_OfferSpecified"/>
+                    <include name="TestSuccessOfferApplywithMultipleItem_UPI_OfferSpecified"/>
+                    <include name="TestSuccessOfferApplywithSingleItem_EMI"/>
+                    <include name="TestSuccessOfferApply_AmtBasedSubvention_ItemBasedOffers_SingleItem"/>
+                    <include name="TestSuccessOfferApply_AmtBasedSubvention_ItemBasedOffers_MultipleItem"/>
+                    <include name="TestSuccessOfferApply_ItemBasedSubvention_AmtBasedOffers_SingleItem"/>
+                    <include name="TestSuccessOfferApply_ItemBasedSubvention_AmtBasedOffers_MultipleItem"/>
+                    <include name="TestSuccessOfferApply_AmtBasedSubvention_AmtBasedOffers"/>
+                    <include name="TestFailureOfferApply_MoreThan5Items"/>
+                    <include name="TestFailureOfferApply_brandIdCategoryIdHasSpecialCharacters"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Fixes New">
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC_NPS005_ProcessVariableSubscriptionPPIMonth"></include>
+                    <include name="TC_NPS007_ProcessVariableSubscriptionPPIDay"></include>
+                    <include name="TC_NPS008_ProcessVariableSubscriptionPPIYear"></include>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIMonth"></include>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIDay"></include>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIYear"></include>
+                    <include name="TC_NPS016_ProcessVariableSubscriptionPPIWeek"></include>
+                    <include name="TC_NPS017_ProcessVariableSubscriptionPPIQuarter"></include>
+                    <include name="TC_NPS018_ProcessVariableSubscriptionPPIBimonthly"></include>
+                    <include name="TC_NPS019_ProcessVariableSubscriptionPPISemiAnnually"></include>
+                    <include name="TC04_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP"></include>
+                    <include name="TC05_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP_PAY"></include>
+                    <include name="TC06_ValidateBankAccountFeatureList_ReqType_NULL"></include>
+                    <include name="TC_NPS015_ProcessAddnpayFixSubscriptionNB"></include>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionNB"></include>
+                    <include name="TC_NPS015_ProcessAddnpayFIXSubscriptionUPI"></include>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionUPI"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 1">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="ValidateDisplayNameInResponseOfFPOForRequestTypeNativeSubscription"></include>
+                    <include name="TC_NativeMFSubs_PM_001_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"></include>
+                    <include name="TC_NativeMF_PM_Subs002_ValidateDBWhenSubsCallBackSentWhenTxnAmtGreaterThan0"></include>
+                    <include name="ValidateDisplayNameInResponseOfFPOForRequestTypeNATIVE_MF_SIP"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 2">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewWEEKDDDC"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 3">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.SubsMandate">
+                <methods>
+                    <include name="TC_SM001_ValidateTknGnrtd_NMS_BM"></include>
+                    <include name="TC_SM001_ValidateTknGnrtd_NS_BM"></include>
+                    <include name="TC_SM004_ValidateStatusAndSubstatus_NMS_SubsInitiated"></include>
+                    <include name="TC_SM021_ValidatePTC_Fail_NMS_invalidPayMode"></include>
+                    <include name="TC_022_ValidateFPO_BM_PaymodeSupported"></include>
+                    <include name="peonNotSentForZeroBMNativeSubs"></include>
+                    <include name="peonNotSentForZeroBMNativeMF"></include>
+                    <include name="TC_SM013_ValidateSubs_Success_NMS_emptyGraceDays"></include>
+                    <include name="TC_SM012_ValidateSubs_Success_NMS_emptyRetryCount"></include>
+                    <include name="TC_SM014_ValidateSubs_Success_NMS_enblRetryis0"></include>
+                    <include name="TC_SM018_ValidateSubs_Success_NMS_emptySubsFreq"></include>
+                    <include name="TC_SM019_ValidateSubs_Success_NMS_ZeroSubsFreq"></include>
+                    <include name="TC_SM011_ValidateSubs_Success_NMS_startDateLess_todayDate"></include>
+                    <include name="TC_SM004_ValidateStatusAndSubstatus_NMS_SubsInitiated"></include>
+                    <include name="TC_SM004_ValidateStatusAndSubstatus_NS_SubsInitiated"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 4">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

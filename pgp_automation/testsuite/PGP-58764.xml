@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58764" verbose="1" thread-count="5" parallel="tests">
+
+    <test name="Native Multi TPV payerAccountNumbers">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC01_multiTPV_NativeMF"/>
+                    <include name="TC02_multiTPV_NativeST"/>
+                    <include name="TC03_multiTPV_Nativepayments"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeSubs Multi TPV payerAccountNumbers">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC01_multiTPV_MFSIP"/>
+                    <include name="TC02_multiTPV_NativeSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

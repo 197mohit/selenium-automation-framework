@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/Head"
+        },
+        "body": {
+          "$ref": "#/definitions/Body"
+        }
+      },
+      "required": [
+        "body",
+        "head"
+      ],
+      "title": "Root"
+    },
+    "Body": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resultInfo": {
+          "$ref": "#/definitions/ResultInfo"
+        },
+        "authenticated": {
+          "type": "boolean"
+        },
+        "extraParamsMap": {
+          "type": "null"
+        }
+      },
+      "required": [
+        "resultInfo"
+      ],
+      "title": "Body"
+    },
+    "ResultInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resultStatus": {
+          "type": "string"
+        },
+        "resultCode": {
+          "type": "string"
+        },
+        "resultMsg": {
+          "type": "string"
+        },
+        "resultMsgRegional": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "resultCode",
+        "resultStatus"
+      ],
+      "title": "ResultInfo"
+    },
+    "Head": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "pattern": "[0-9]{13,}"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "required": [
+        "requestId",
+        "responseTimestamp",
+        "version"
+      ],
+      "title": "Head"
+    }
+  }
+}

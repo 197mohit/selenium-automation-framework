@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI" verbose="1" thread-count="5" parallel="classes">
+    <test name="UPIEnhanceEnhanceWeb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaytmCC with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="postpaidSignupBannerNotVisible"/>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <include name="TC_insuffBalShownWhenUserClicksCheckBalGivenInsuffPostpaidBal"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalancefalse"/>
+                    <include name="postpaidSignupBannerVisible"/>
+                    <include name="PGP_517_PostPaidAndWalletInactive"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalanceisnull"/>
+                    <include name="PGP_468_PostPaidBalanceLessThanTxn"/>
+                    <include name="PGP_478_Pending"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Net Banking test cases">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validateCOPFullTrafficPendingNBTxnPG2MID"/>
+                    <include name="midNotPrsentInFF4JButPrefEnabledNBRoutedToPG2PendingTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLSuccessCheckoutJSPageTxn"/>
+                    <include name="validateFullTrafficCOTPSuccessNBTxn"/>
+                    <include name="validateFullTrafficCOTPPendingNBTxn"/>
+                    <include name="validateFullTrafficCOPSuccessNBTxn"/>
+                    <include name="validatePendingNBTxnPG2MIDCloseOrderV2ThenCheckMerchantStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ElementJs sanity cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UiSanityElementJs">
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases web UI REVAMP 1">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="PGP_40763_TC_04_validateWallet_Selected"/>
+                    <include name="TC_001_VerifyBankmandatePaymodeAppearingOnCashierPage"/>
+                    <include name="verifyRupeeSymbolInPCFFlow"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jDisabled"/>
+                    <include name="verify_closed_wallet_user_error_message_when_all_paymodes_disabled_except_wallet"/>
+                    <include name="VerifyBankLogoforSavedVpa"/>
+                    <include name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="VerifyBankLogoforNB"/>
+                    <include name="TC001_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="verifyUPICollectIsDisabledForLessThan2k"/>
+                    <include name="PGP_39255_TC_08"/>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                    <include name="verifyNewUpiPollingPageAndSuccessTxn"/>
+                    <include name="PGP_27624_ValidateSuccessSubscriptionwithNativeJsonPrefN"/>
+                    <include name="PGP_Verify_CallbackURL"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="verifyQRDetailsShowingInFPOResponse"/>
+                    <include name="PGP_36505_VerifyNoNullPointerExceptionforMerchantStatusAPIs"/>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                    <include name="PGP_41787_TC03"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC06"/>
+                    <include name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="EMI_PayOption_Visible_addNPay"/>
+                    <include name="removeEmiSubventionObjectfromCheckoutJSConfig"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="PGP_27624_ValidateUPITxnNativeJsonPrefN"/>
+                    <include name="ValidateBrandAndBusinessNameForRetryTxn"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC13"/>
+                    <include name="PGP_41787_TC14"/>
+                    <include name="Verify_txntype_parameter_displyedin_FetchBinDetailsAPI"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="verifyPostpaidAsNOTdefaultforNoneFlow"/>
+                    <include name="PGP_41787_TC07"/>
+                    <include name="TC_0014_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="ValidateTxn_AvoidNullPointerException"/>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_1"/>
+                    <include name="UpiNumericIdTestCase_09"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="Verify_bankResultInfo_parameter_enabled_when_transaction_failed_for_offline_merchant_in_theia_merchantStatus_logs"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                    <include name="VerifyDePrioritiseDC"/>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                    <include name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC"/>
+                    <include name="validatePayment_Instrument_Group_level_priority"/>
+                    <include name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jDisabled"/>
+                    <include name="TC002_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="TC_003_VerifyNBSelectedByDefault"/>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforCCTxnSpecificCashbackPromo"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="verifyMaskedMobileNumberInSendOTPAPI"/>
+                    <include name="PGP_41787_TC04"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jEnabled"/>
+                    <include name="verifyPostpaidAsDefaultforAddNPay"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                    <include name="AddMoneyOnJsCheckoutWithNB"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC15"/>
+                    <include name="ValidateSuccessTxnUsingNB"/>
+                    <include name="TC_002_VerifyBankmandateTxn"/>
+                    <include name="PGP_41787_TC11"/>
+                    <include name="TC_002_Verify_Fields_are_noneditable"/>
+                    <include name="VerifyTxnPaidTimeFieldShouldReturnInResponse_ViaNB"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidCvv"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="AddMoneyOnJsCheckoutWithDC"/>
+                    <include name="ValidatePendingTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                    <include name="verifying_hidePaytmBranding_false"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jEnabled"/>
+                    <include name="LoginScreenChanges"/>
+                    <include name="verifying_phone_number_and_email"/>
+                    <include name="VerifySopamount"/>
+                    <include name="verifyMaskedMobileNumberInFPOResponse"/>
+                    <include name="VerifyBankLogoforNB_TXN"/>
+                    <include name="PGP_41787_TC13"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnWithoutSpecificPromo"/>
+                    <include name="PGP_41787_TC09"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <include name="ValidatePPBLPasscodeTxt"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="verifying_hidePaytmBranding_Null"/>
+                    <include name="EMI_DCbasedonCategorization_CheckNumber"/>
+                    <include name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <include name="ValidateConfigName"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="verify_loader_is_displayed_during_success_transaction"/>
+                    <include name="PGP_41787_TC05"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC10"/>
+                    <include name="validatePayment_Instrument_Group_level_DEFAULT"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+                    <include name="verifying_FD_BalanceIsNotVisible"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="verifying_hidePaytmBranding_true"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC12"/>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                    <include name="Validate_Succesful_TXN_WalletOnly_Insufficient_Balance"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforConfigredMid"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                    <include name="ValidateSuccessTxnUsingUPI"/>
+                    <include name="VerifyCobrandedCards"/>
+                    <include name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                    <include name="TC_011_VerifySubsCreatedInInitState"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC14"/>
+                    <include name="EMI_DCbasedonCategorization_DBCheck"/>
+                    <include name="PGP_27014_ValidateSuccessUPISubscription"/>
+                    <include name="PGP_41787_TC08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="UpiNumericIdTestCase_06"/>
+                    <include name="t1"/>
+                    <include name="ValidateInstrumentCategorization"/>
+                    <include name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <include name="PGP_41787_TC12"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnDiscountPromo"/>
+                    <include name="verifying_FD_BalanceIsVisible"/>
+                    <include name="PGP_41787_TC02"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC20_ICICI"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled_LoggedIn"/>
+                    <include name="verifyUPICollectIsDisabledForGreaterThan2k"/>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="ValidateSuccessTxnUsingWalletviaSSOtoken"/>
+                    <include name="verifying_success_FD_txn"/>
+                    <include name="PGP_27624_PromoTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="PGP_41787_TC15"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                    <include name="EMI_DCbasedonCategorization_DefaultTrue"/>
+                    <include name="VerifyBankLogoInSavedCard"/>
+                    <include name="verifyLogoColor"/>
+                    <include name="PGP_39255_TC_09"/>
+                    <include name="Verify_txn_via_child_mid"/>
+                    <include name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <include name="verify_SavedBankMandate_Details"/>
+                    <include name="VerifyUPICollect_Via_Login"/>
+                    <include name="VERIFY_Rupee_SpecialCharacter_Rendering_onJSCheckout"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="VerifyUPICollect_Tab_loggedIN"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_39530_TC_03_Subs_GD_CC"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIYear"/>
+                    <include name="TC05_CheckFPOResponse_AccountNoPassedAsNULL"/>
+                    <include name="TC03_CheckFPOResponse_AccountNoIncorrect"/>
+                    <include name="TC_NPS015_ProcessAddnpayFIXSubscriptionUPI"/>
+                    <include name="TC01_CheckFPOResponse_AccountNoPassed"/>
+                    <include name="TC02_ValidateBankAccountFeatureList_ReqType_NATIVE_SUBSCRIPTION"/>
+                    <include name="TC_NPS018_ProcessVariableSubscriptionPPIBimonthly"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionUPI"/>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIDay"/>
+                    <include name="verifyNativeMONTHsubsWithMoreGraceperiod"/>
+                    <include name="TC06_ValidateBankAccountFeatureList_ReqType_NULL"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionCC"/>
+                    <include name="TC06_ValidateCreateSubscriptionResponse_RequestTypeNULL"/>
+                    <include name="TC_NPS015_ProcessAddnpayFixSubscriptionNB"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="VerifyisAddNPayFlagForCreateSubsUsingAddnPayThroughUPI"/>
+                    <include name="verifyNativeDAYsubsWithMoreGraceperiod"/>
+                    <include name="TC_NPS007_ProcessVariableSubscriptionPPIDay"/>
+                    <include name="TC_NPS015_ProcessAddnpayFixSubscriptionCC"/>
+                    <include name="TC_NPS015_ProcessAddnpayFixSubscriptionDC"/>
+                    <include name="TC02_CheckFPOResponse_AccountNotPassed"/>
+                    <include name="PGP_39530_TC_03_Subs_GD_CC"/>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionNB"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="TC_NPS005_ProcessVariableSubscriptionPPIMonth"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionDC"/>
+                    <include name="TC04_CheckFPOResponse_AccountNoNumeric"/>
+                    <include name="TC_NPS016_ProcessVariableSubscriptionPPIWeek"/>
+                    <include name="TC04_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP"/>
+                    <include name="TC01_ValidateBankAccountFeatureList"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

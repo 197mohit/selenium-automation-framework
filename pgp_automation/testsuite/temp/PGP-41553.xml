@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-41553" verbose="1">
+    <test name="Postpaid as default option for AddNPay Flow - checkout JS">
+        <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyPostpaidAsDefaultforAddNPay"/>
+                    <include name="verifyPostpaidAsNOTdefaultforNoneFlow"/>
+                    <include name="verifyPostpaidtxnforAddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid as default option for AddNPay Flow - JS on Enhance flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyPostpaidAsDefaultforAddNPay"/>
+                    <include name="verifyPostpaidAsNOTdefaultforNoneFlow"/>
+                    <include name="verifyPostpaidtxnforAddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

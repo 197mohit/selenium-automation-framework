@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS_UMP Test Cases" verbose="1" thread-count="12" parallel="methods">
+
+    <test name="CheckoutJS UMP test cases - WEB">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyLogoColor"/>
+                    <include name="Verify_cashierpage_is_displayed_with_customisation"/>
+                    <include name="FooterTextColourDoNotChangeOnChangingHeaderTextColour"/>
+                    <include name="FooterBackgroundColourDoNotChangeOnChangingHeaderbackGroundColour"/>
+                    <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_without_applying_customisation"/>
+                    <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_customisation_on_parent_and_child_mid"/>
+                    <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_applying_style_in_checkoutconfig"/>
+                    <include name="FooterBackgroundColourDoesntChangeOnChangingHeaderBackgroundColourFromConfig"/>
+                    <include name="verifying_paytmPgWhiteLogo_displayed_on_darktheme"/>
+                    <include name="ValidateParentMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateParentAndChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithParentMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithParentAndChildThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateChildMIDThemeOverwriteEnabled"/>
+                    <include name="verifying_paytmPgLogo_displayed_onCheckout"/>
+                    <include name="Verify_icici_cobranding_logo_and_theme_is_displayed_on_cashierpage_without_applying_customisation"/>
+                    <include name="Verify_icici_cobranding_logo_and_theme_is_displayed_on_cashierpage_applying_style_in_checkoutconfig"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS UMP test cases - WAP">
+        <parameter name="theme" value="checkoutjse_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_cashierpage_is_displayed_with_customisation"/>
+                    <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_without_applying_customisation"/>
+                    <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_customisation_on_parent_and_child_mid"/>
+                    <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_applying_style_in_checkoutconfig"/>
+                    <include name="verifying_paytmPgWhiteLogo_displayed_on_darktheme"/>
+                    <include name="ValidateParentAndChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithParentMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithParentAndChildThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateChildMIDThemeOverwriteEnabled"/>
+                    <include name="Verify_childmid_parentmid_display_as_null_in_response"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

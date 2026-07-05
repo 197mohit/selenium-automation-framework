@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Add Description Fetch Pay Options" verbose="1" parallel="tests" thread-count="6">
+    <test name="Add Description FPO Tests - txntoken and Guest">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefDisabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Description FPO Tests - Mid + SSO - FPO V1, V2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled'"/>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is disabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is disabled'"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

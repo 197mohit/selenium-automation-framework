@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="10" guice-stage="DEVELOPMENT" verbose="0" name="PostPaid_Suite_Failed" parallel="tests">
+    <test thread-count="10" verbose="0" name="PGP-34038 - Mapping Merchant Profile API Tests for postpaid"
+          parallel="tests">
+        <classes>
+            <class name="scripts.api.mappingService.MerchantProfilePostpaidOnAddNPay">
+                <methods>
+                    <include name="validatePostPaidOnAddNPayWhenMCCCodeMatchedWithPropertyFile"/>
+                    <include name="validatePostPaidOnAddNPayWhenALLOW_POSTPAID_ON_ADDNPAYAndBLOCK_POSTPAID_ON_ADDNPAYPrefDisabled"/>
+                </methods>
+            </class> <!-- scripts.api.mappingService.MerchantProfilePostpaidOnAddNPay -->
+        </classes>
+    </test> <!-- PGP-34038 - Mapping Merchant Profile API Tests for postpaid -->
+    <test thread-count="10" verbose="0" name="temp-Static QR Test Cases" parallel="tests">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="validatePostpaid_PCF_Txn_UsingStaticQR"/>
+                    <include name="Verify_PPBL_Wallet_PaytmPostpaid_currency_value_is_showing_in_response"/>
+                    <include name="successTxnOfHigherAmountToIncreaseMPABalanceOfUser"/>
+                    <include name="Verify_PPBL_PaytmPostpaid_balance_is_null_in_response"/>
+                    <include name="validatePostpaid_Txn_UsingStaticQR"/>
+                </methods>
+            </class> <!-- scripts.StaticQRNew -->
+        </classes>
+    </test> <!-- temp-Static QR Test Cases -->
+    <test thread-count="10" verbose="0" name="Native ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyRetryCase_RetryBy_Postpaid"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native ProcessTransactionTests -->
+
+    <test thread-count="10" verbose="0" name="Native Plus ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyRetryCase_RetryBy_Postpaid"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native Plus ProcessTransactionTests -->
+    <test thread-count="10" verbose="0" name="PCF enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="verify_successful_PostPaidPfc"/>
+                </methods>
+            </class> <!-- scripts.PostCovEnhance -->
+        </classes>
+    </test> <!-- PCF enhancedweb -->
+    <test thread-count="10" verbose="0" name="enhanced cases" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="enablePayModePPBLNBSuccessPaytmPostpaidEnhanced"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- enhanced cases -->
+    <test thread-count="10" verbose="0" name="PGP-36629 - Postpaid add and pay" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="verifyParametersPassesInMetadata"/>
+                    <include name="verifyParametersnotPassedInMetadata"/>
+                </methods>
+            </class> <!-- scripts.AddNPay -->
+        </classes>
+    </test> <!-- PGP-36629 - Postpaid add and pay -->
+    <test thread-count="10" verbose="0" name="checkout js cases" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="enablePayModePPBLNBSuccessPaytmPostpaidCheckoutJS"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- checkout js cases -->
+    <test thread-count="10" verbose="0" name="PGP-33928 - Postpaid AddNpay enhanced wap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDAndWalletMIDHavingPostapidPaymode"/>
+                    <include name="SuccessfulPostpaidTxnForWalletDeselected"/>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDNotHavingPostapidPaymode"/>
+                </methods>
+            </class> <!-- scripts.AddNPay -->
+        </classes>
+    </test> <!-- PGP-33928 - Postpaid AddNpay enhanced wap -->
+    <test thread-count="10" verbose="0" name="PGP-33928 - Postpaid AddNpay enhanced web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDAndWalletMIDHavingPostapidPaymode"/>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDNotHavingPostapidPaymode"/>
+                </methods>
+            </class> <!-- scripts.AddNPay -->
+        </classes>
+    </test> <!-- PGP-33928 - Postpaid AddNpay enhanced web -->
+    <test thread-count="10" verbose="0" name="PGP-33928 - Postpaid AddNpay checkoutJS web" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.checkoutJSPostpaidAddNPay">
+                <methods>
+                    <include name="postpaidSuccessTxn"/>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDNotHavingPostapidPaymode"/>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDAndWalletMIDHavingPostapidPaymode"/>
+                    <include name="SuccessfulPostpaidTxnForWalletDeselected"/>
+                </methods>
+            </class> <!-- scripts.Native.checkoutjs.checkoutJSPostpaidAddNPay -->
+        </classes>
+    </test> <!-- PGP-33928 - Postpaid AddNpay checkoutJS web -->
+    <test thread-count="10" verbose="0" name="PaytmCC with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <include name="PostPaidVisibleAfterLoginCheckoutJS"/>
+                    <include name="showPostpaidbalanceFPOAPI"/>
+
+                </methods>
+            </class> <!-- scripts.PaytmDigitalCard -->
+        </classes>
+    </test> <!-- PaytmCC with enhancedweb -->
+    <test thread-count="10" verbose="0" name="PaytmCC-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                    <include name="PGP_469successfulPostPaidTxn_fromPGOnly"/>
+                    <include name="showPostpaidbalanceFPOAPI"/>
+                    <include name="PostPaidNotVisibleBeforeLoginCheckoutJS"/>
+                </methods>
+            </class> <!-- scripts.PaytmDigitalCard -->
+        </classes>
+    </test> <!-- PaytmCC-enhancedwap -->
+</suite> <!-- PostPaid_Suite -->

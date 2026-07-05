@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Link Kafka" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-41056 with theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.KafkaMessagePayload">
+                <methods>
+                    <include name="MessagePayload_15"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41056 without theme">
+            <classes>
+                <class name="scripts.api.linkservice.KafkaMessagePayload">
+                    <methods>
+                        <exclude name="MessagePayload_15"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
+    </suite>
+
+

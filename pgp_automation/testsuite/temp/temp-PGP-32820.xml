@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-32820" verbose="1" parallel="tests" thread-count="4">
+    <test name="Validating siHubMode is not sent to P+">
+        <classes>
+            <class name="scripts.SIDetailsBlocked">
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

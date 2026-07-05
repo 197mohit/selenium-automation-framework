@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI-PSP-E2E-Tests">
+    <test name="UPI-PSP E2E Transaction Tests">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPI.OfflineUpi.DQRCreationOnAcqId">
+                <methods>
+                    <include name="tc01_VerifyE2ESQRTransaction"/>
+                    <include name="tc02_VerifyE2ESQRTransactionRetry"/>
+                    <include name="tc03_VerifyE2EDQRTransactionWithAcquirementId"/>
+                    <include name="tc04_VerifyE2EDQRTransactionWithOrderId"/>
+                </methods>
+            </class>
+            <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+                <methods>
+                    <include name="testInitiationModeAndPurposeCodeInCallback"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

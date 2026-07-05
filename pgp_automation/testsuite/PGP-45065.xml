@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-45065 : Scan and Pay | Dynamic Payment Instrument Priority" verbose="1" thread-count="3" parallel="methods">
+    <test name="PGP-45065 : Scan and Pay | Dynamic Payment Instrument Priority">
+        <classes>
+            <class name="scripts.Native.DynamicPaymentInstrumentPriority">
+                <methods>
+                    <include name="dynamicPaymentInstrumentPriority_01"/>
+                    <include name="dynamicPaymentInstrumentPriority_02"/>
+                    <include name="dynamicPaymentInstrumentPriority_03"/>
+                    <include name="dynamicPaymentInstrumentPriority_04"/>
+                    <include name="dynamicPaymentInstrumentPriority_05"/>
+                    <include name="dynamicPaymentInstrumentPriority_06"/>
+                    <include name="dynamicPaymentInstrumentPriority_07"/>
+                    <include name="dynamicPaymentInstrumentPriority_08"/>
+                    <include name="dynamicPaymentInstrumentPriority_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

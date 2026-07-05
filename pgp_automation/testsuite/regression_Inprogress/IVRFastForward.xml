@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IVRFastForward" verbose="1" parallel="tests" thread-count="10">
+    <test name="IVRFastForward">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="PGP_236_successfulIVRTxn"/>
+                    <include name="PGP_437_IVR_UnsuccessfulTxnInsufficientWalletBalance"/>
+                    <include name="PGP_438_UnsuccessfulTxnInvalidToken"/>
+                    <include name="PGP_439_UnsuccessfulTxnExpiredToken"/>
+                    <include name="PGP_440_UnsuccessfulTxnInvalidRequestType"/>
+                    <include name="PGP_441_UnsuccessfulTxnInvalidMid"/>
+                    <include name="PGP_442_UnsuccessfulTxnNonMigratedMid"/>
+                    <include name="PGP_443_SuccessfulTxnAppIDNotSend"/>
+                    <include name="PGP_444_UnsuccessfulTxnTxnAmount_0"/>
+                    <include name="PGP_445_UnsuccessfulTxnAlphanumricAmount"/>
+                    <include name="PGP_446_UnsuccessfulTxnNegativeAmount"/>
+                    <include name="PGP_447_SuccessfulTxnInvalidCurrency"/>
+                    <include name="PGP_448_SuccessfulTxnBlankCurrencyType"/>
+                    <include name="PGP_449_SuccessfulTxnCurrencyNotPassed"/>
+                    <include name="PGP_450_SuccessfulTxnDeviceIdNotPassed"/>
+                    <include name="PGP_451_SuccessfulTxnPaytmToken"/>
+                    <include name="PGP_453_UnsuccessfulTxnInvalidPaymode"/>
+                    <include name="PGP_455_UnsuccessfulTxnWithoutCustID"/>
+                    <include name="PGP_456_UnsuccessfulTxnWithBlankCustID"/>
+                    <include name="PGP_457_UnsuccessfulTxnInvalidIndustryType"/>
+                    <include name="PGP_458_SuccessfulTxnChannelWAP"/>
+                    <include name="PGP_459_SuccessfulTxnInvalidAuthMode"/>
+                    <include name="PGP_460_SuccessfulTxnMerchantUniqueNotPassed"/>
+                    <include name="testAutoDebitTxnByPCFMerchant"/>
+                    <include name="riskRejectFastForward"/>
+                    <include name="validateSuccessPeonPPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Loyality Points Fetch Balance info and fast forward TC's">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="successfulFetchBalanceLP"/>
+                    <include name="fetchBalanceOnUserNotHavingLP"/>
+                    <include name="fetchBalanceOnInvalidSSOTokenLP"/>
+                    <include name="fetchBalanceOnMidNotHavingLP"/>
+                    <include name="fetchBalanceWithInvalidPayModeLP"/>
+                    <include name="successFFTxnWithInvalidPayModeLP"/>
+                    <include name="invalidSSOtokenFastForwardLP"/>
+                    <include name="validSSOInvalidExchangeLP"/>
+                    <include name="txnAmountGreaterThanLP"/>
+                    <include name="payModeNotThereOnMerchantLP"/>
+                    <include name="payModeNotThereOnUserLP"/>
+                    <include name="ffExchangeNumberNegativeLP"/>
+                    <include name="exchangeNumberAlphaNumericLP"/>
+                    <include name="duplicateOrderIdLP"/>
+                    <include name="refundFullAmountLP"/>
+                    <include name="refundPartialAmountLP"/>
+                    <include name="expiredSSOTokenLP"/>
+                    <include name="newParamMerchantMLP"/>
+                    <include name="oldFlowMerchantIfNewParamNullLP"/>
+                    <include name="midNotListedInPropFFLP"/>
+                    <include name="invalidRootCustId"/>
+                    <include name="refundFullAmountMLP"/>
+                    <include name="validateSuccessPeonLP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

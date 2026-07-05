@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2 UPI COLLECT">
+    <test name="Verify PG2 UPI Collect Txns">
+        <classes>
+            <class name="scripts.api.UPI.UPICollectTransactionPG2">
+                <methods>
+                    <include name="validateSuccessPG2UPICollectTxn_PG2MID_FullTrafficenabled"/>
+                    <include name="validateFailPG2UPICollectTxn_PG2MID_FullTrafficenabled"/>
+                    <include name="validateSuccessPG2UPICollectTxn_PG2MID_PG2Enabled"/>
+                    <include name="validateFailPG2UPICollectTxn_PG2MID_PG2Enabled"/>
+                    <include name="validateSuccessPG2UPICollectTxn_PG2MID_PaymentAdapter"/>
+                    <include name="validateFailPG2UPICollectTxn_PG2MID_PaymentAdapter"/>
+                    <include name="validatePartialAsyncRefund_UPICollectTxnPG2MID_FullTrafficEnabled"/>
+                    <include name="validateFullAsyncRefund_UPICollectTxnPG2MID_FullTrafficEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PG2 UPI Collect txn using checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.UPICollectTransactionPG2">
+                <methods>
+                    <include name="validateSuccessPG2UPICollectTxn_COTP_PG2MID_FullTrafficenabled"/>
+                    <include name="validateFailPG2UPICollectTxn_COTP_PG2MID_FullTrafficenabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

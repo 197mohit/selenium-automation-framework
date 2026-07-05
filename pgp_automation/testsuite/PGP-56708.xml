@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56708_RISK_RULES" verbose="1" thread-count="1">
+    <test name="PGP-56708_RISK_RULES">
+        <classes>
+            <class name="scripts.api.UPI.Risk_Rules_In_OrderPayUpipsp">
+                <methods>
+                    <include name="ValidateriskExtendInfoin_TheiaOrderPayUPIPSP"/>
+                    <include name="ValidateRiskParam_IN_UPIPspV1OrderPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

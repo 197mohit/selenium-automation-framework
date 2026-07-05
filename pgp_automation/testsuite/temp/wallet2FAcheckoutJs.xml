@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="wallet2FA" verbose="1" parallel="methods" thread-count="1">
+    <test name="ValidateWallet2FA">
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="validateWallet2FACorrectPasscode"/>
+                    <include name="validateWallet2FAIncorrectPasscode"/>
+                    <include name="validateWallet2FAEmptyPasscode"/>
+                    <include name="validateWallet2FAIncompletePasscode"/>
+                    <include name="validateWallet2FAForgotPasscode"/>
+                    <include name="validateWallet2FAWalletBalanceEqualTo5k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Redirectional_suite">
+    <test name="Saved  card fixes">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>  
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>   
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

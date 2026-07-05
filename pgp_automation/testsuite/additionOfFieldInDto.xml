@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38888" verbose="1" thread-count="1">
+    <test name="Addition of fields in DTOs">
+        <classes>
+            <class name="scripts.PgproxyNotificationTest"></class>
+        </classes>
+    </test>
+</suite>

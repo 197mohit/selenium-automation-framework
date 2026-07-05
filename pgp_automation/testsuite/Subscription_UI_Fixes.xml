@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33734" verbose="1" thread-count="20" parallel="tests">
+    <test name="Subscription Ui fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="TC_01"></include>
+                    <include name="TC_02"></include>
+                    <include name="TC_03"></include>
+                    <include name="TC_04"></include>
+                    <include name="TC_05"></include>
+                    <include name="TC_06"></include>
+                </methods>
+           </class>
+        </classes>
+    </test>
+</suite>

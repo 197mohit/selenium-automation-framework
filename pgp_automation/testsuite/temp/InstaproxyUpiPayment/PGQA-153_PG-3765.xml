@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AI-Generated: 2026-04-16 - Configuration -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGQA-153 - PG-3765 - Instaproxy UPI Payment Request" verbose="1">
+    <test name="InstaproxyUpiPaymentRequestTest">
+        <classes>
+            <class name="scripts.api.Instaproxy.InstaproxyUpiPaymentRequestTest">
+                <methods>
+                    <include name="postUpiPaymentRequest_executeStyle"/>
+                    <include name="postUpiPaymentRequest_executeStyleWithHeaders"/>
+                    <include name="verifyUpiCreditlineNotPassedWhenPrefEnabled"/>
+                    <include name="verifyUpiCreditlineIsPassedWhenPrefDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

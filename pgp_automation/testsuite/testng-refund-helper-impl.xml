@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<!-- AI-Generated: 2025-12-19 - TestNG suite for RefundHelperImpl coverage tests -->
+<suite name="RefundHelperImpl Coverage Test Suite" parallel="false" verbose="1">
+    <test name="RefundHelperImpl E2E Tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundHelperImplTests">
+                <methods>
+                    <include name="verifyRefundEligibilityForSuccessfulCCTransaction"/>
+                    <include name="verifyRefundAmountValidationForPartialRefund"/>
+                    <include name="verifyRefundRequestBuilderWithAllParameters"/>
+                    <include name="verifyRefundStatusTransitionsFromPendingToSuccess"/>
+                    <include name="verifyRefundHelperForDifferentOrderTypesUPI"/>
+                    <include name="verifyRefundValidationForMinimumAmount"/>
+                    <include name="verifyRefundWithDecimalAmountPrecision"/>
+                    <include name="verifyRefundValidationWithTxnIdVerification"/>
+                    <include name="verifyRemainingAmountAfterPartialRefund"/>
+                    
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

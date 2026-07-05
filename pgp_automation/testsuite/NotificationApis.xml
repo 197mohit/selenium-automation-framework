@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notifications" verbose="1" parallel="methods" thread-count="5">
+
+    <test name="FundBackNotify">
+        <classes>
+            <class name="scripts.notification.FundBackNotifyTest">
+                <methods>
+                    <include name="Test_001_FundBackNotify_CC_closed"/>
+                    <include name="Test_002_FundBackNotify_CC_expired"/>
+                    <include name="Test_003_FundBackNotify_CC_repeatPay"/>
+                    <include name="Test_004_FundBackNotify_UPI_closed"/>
+                    <include name="Test_005_FundBackNotify_UPI_expired"/>
+                    <include name="Test_006_FundBackNotify_UPI_repeatPay"/>
+                    <include name="Test_007_FundBackNotify_DC_closed"/>
+                    <include name="Test_008_FundBackNotify_DC_expired"/>
+                    <include name="Test_009_FundBackNotify_DC_repeatPay"/>
+                    <include name="Test_010_FundBackNotify_Balance_closed"/>
+                    <include name="Test_011_FundBackNotify_BALANCE_expired"/>
+                    <include name="Test_012_FundBackNotify_BALANCE_repeatPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CaptureNotify">
+        <classes>
+            <class name="scripts.notification.CaptureNotifyTest">
+                <methods>
+                    <include name="Test_001_CaptureNotify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="DeductionNotify">
+        <classes>
+            <class name="scripts.notification.DeductionNotifyTest">
+                <methods>
+                    <include name="Test_001_DeductionNotify"/>
+                    <include name="Test_002_DeductionNotify"/>
+                    <include name="Test_003_DeductionNotify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="VoidNotify">
+        <classes>
+            <class name="scripts.notification.VoidNotifyTest">
+                <methods>
+                    <include name="Test_001_VoidNotify"/>
+                    <include name="Test_002_VoidNotify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

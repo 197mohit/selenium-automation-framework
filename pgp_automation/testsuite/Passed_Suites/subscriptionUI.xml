@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription_UI" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-26916 Creating subscriptions">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_40026_TC_BankMandateDefaultAuthMode"/>
+                    <include name="PGP_41837_TC01_BankMandateJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-26916 Creating subscriptions UI REVAMP(Included)">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                    <include name="PGP_35247_TC_05_ONDEMAND"/>
+                    <include name="PGP_40026_TC_BankMandateDefaultAuthMode"/>
+                    <include name="PGP_41837_TC01_BankMandateJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIEnhanceEnhanceWap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="TC_002_Enhanced_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIEnhanceEnhanceWeb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced web 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_18282_ValidateStatusAfterLogin"/>
+                    <include name="PGP_87_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="validateStartDateMoreThanTodayDate"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-42982 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC02_ValidateUI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42982 - 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC04_ValidateUI_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-21763 Subscription - Native">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+   <!-- <test name="PGP-23279 tests">-->
+
+    <test name="Subs UI Enhancements-UI Flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_39255_TC_03"/>
+                    <include name="PGP_39255_TC_02"/>
+                    <include name="TC_01_PGP_40026_VerifyDefaultUPIHandles"/>
+                    <include name="PGP_39255_TC_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-32821 - CC DC Filtered for grace days">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.cardsFilteredForGraceDays">
+                <methods>
+                    <include name="TC_003_CcDc_filteredOut_for_unknownPayMode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30170 wallet not selected by default in subscription enhanced txn">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_35247_TC_07_Subs_UIUX_PPBL"/>
+                    <include name="PGP_35247_TC_05_Subs_UIUX_FIX"/>
+                    <exclude name="PGP_35247_TC_01_Subs_UIUX_Month"/>
+                    <include name="PGP_35247_TC_06_Subs_UIUX_UPI"/>
+                    <include name="PGP_39530_TC_03_Subs_GD_CC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PGP-20306">-->
+<!--        <parameter name="theme" value="enhancedweb_revamp"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.AddMoneyMP">-->
+<!--                <methods>-->
+<!--                    <include name="testCardIndexNoIsPresentInOutputWhenCardTokenRequiredIsTrueInOrder"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <!-- New Cases from Subscription Pg2 Added -->
+    <test name="Verify Checkout JS UI Changes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_41837_TC01_BankMandateJS"/>
+                    <include name="PGP_41837_TC02_BankMandateJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merchant Updation6">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_39255_TC_01"/>
+                    <include name="PGP_39255_TC_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyTAVVforCOPinAlternateIdOnusVISA"></include>
+                    <include name="verifyTAVVforPaymemtCashierinAlternateIdOffusVISA"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyTAVVforCOPinAlternateIdOnusVISA"></include>
+                    <include name="verifyTAVVforPaymemtCashierinAlternateIdOffusVISA"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyTAVVforCOPinAlternateIdOnusVISA"></include>
+                    <include name="verifyTAVVforPaymemtCashierinAlternateIdOffusVISA"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PostPaid Subs transaction">-->
+<!--        <classes>-->
+<!--            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">-->
+<!--                <methods>-->
+<!--                    <include name="PostPaidSubs_BankTxnId_returned"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Wallet and PPBL Checkout JS blocked">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="walletNotReturned_subsCheckoutJs"/>
+                    <include name="ppblNotReturned_subsCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet and PPBL UI Subs transaction blocked">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="walletNotSupporting_subsCreation"/>
+                    <include name="ppblNotSupporting_subsCreation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="HDFC Collect Redirectional cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_Enhanced_Subs_Month"/>
+                    <include name="TC_002_Enhanced_Subs_ONDEMAND"/>
+                    <include name="TC_003_Enhanced_Subs_YEAR"/>
+                    <include name="TC_004_Enhanced_Subs_WEEK"/>
+                    <include name="TC_005_Enhanced_Subs_QUARTER"/>
+                    <include name="TC_006_Enhanced_Subs_BI_MONTHLY"/>
+                    <include name="TC_007_Enhanced_Subs_SEMI_ANNUALLY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HDFC Collect RedirectionalC cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_checkoutJS_Subs_Month"/>
+                    <include name="TC_002_checkoutJS_Subs_ONDEMAND"/>
+                    <include name="TC_003_checkoutJS_Subs_WEEK"/>
+                    <include name="TC_004_checkoutJS_Subs_YEAR"/>
+                    <include name="TC_005_checkoutJS_Subs_QUARTER"/>
+                    <include name="TC_006_checkoutJS_Subs_BI_MONTHLY"/>
+                    <include name="TC_007_checkoutJS_Subs_SEMI_ANNUALLY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription Client Removal - Collect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_001_subscriptionClientRemoval_createCollectFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Update Next Billing Date Label on Subscription Link Landing Page">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Subscription_link_Date_UI_001"/>
+                    <include name="Subscription_link_Date_UI_002"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription Links UX Enhancement">
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Subscription_link_Expiry_Date_Text"/>
+                    <include name="Subscription_link_ContactMerchant_Pref_N"/>
+                    <include name="Subscription_link_ContactMerchant_Pref_Y"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enhanced Subscription Tinmeout Changes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="validateExpiryTime_Enhanced"/>
+                    <include name="validateEnhancedOrderCreateon_51051000100000000004"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enhanced PennyDrop PCF disabled">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="validateEnhancedOrderCreateon_51051000100000000052"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

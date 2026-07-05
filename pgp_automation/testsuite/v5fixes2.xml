@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="v5 FPO fixes 2" verbose="1" parallel="tests" thread-count="2">
+    <test name="v5 FPO fixes web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_011_VerifySubsCreatedInInitState"/>
+                    <include name="TC_012_BankMandateSubscriptionDCPAymodeAmount0"/>
+                    <include name="TC_013_ValidateSubsPurposeValueIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="TC_0014_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+
+                    <include name="TC_002_VerifyBankmandateTxn"/>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                    <include name="PGP_29543_verifyOrderAmtGreaterthanMGVBalance"/>
+                    <include name="ExhaustAllRetryAvailable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38778" verbose="1" thread-count="20" parallel="tests">
+    <test name="Validate Co Then Pay PPBL transactions">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYFailCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYPendingCoThenPayPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

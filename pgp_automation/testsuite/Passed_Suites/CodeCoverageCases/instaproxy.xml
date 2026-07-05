@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Instaproxy_CodeCoverage_Suite" verbose="1" parallel="false">
+    <test name="BankResponseServiceCoverage">
+        <classes>
+            <class name="scripts.Instaproxy.BankResponseServiceCoverageTest">
+                <methods>
+                    <include name="testPPSLDirectResponse_CC" />
+                    <include name="testPPSLDirectResponse_UPI" />
+                    <include name="testPPSLDirectResponse_InvalidPaymode" />
+                    <include name="testPPSLDirectResponse_NB" />
+                    <include name="testPPSLPGResponse" />
+                    <include name="testGenericBankCodeRESP" />
+                    <include name="testPSLUResponse" />
+                    <include name="testWebhookResponse" />
+                    <include name="testWebhookInvalidPaymode" />
+                    <include name="testSBINBPostWithSubsidiary" />
+                    <include name="testSBINBGet" />
+                    <include name="testPSBCheckerMakerChecker" />
+                    <include name="testGenericBankResponsePOST" />
+                    <include name="testGenericBankResponsePOST_DC" />
+                    <include name="testGenericBankResponsePOST_NB" />
+                    <include name="testGenericBankResponseGET" />
+                    <include name="testBankVerifyStatusGET" />
+                    <include name="testBankResponseRESPBODY" />
+                    <include name="testBankResponseWithTxnId" />
+                    <include name="testBankResponseWithMbid" />
+                    <include name="testBankResponseWithTxnIdAndMbid" />
+                    <include name="testOneClickVisaPOST" />
+                    <include name="testOneClickVisaDeviceGET" />
+                    <include name="testUPIv3FINOFCallback" />
+                    <include name="testUPIv2YesBankPayloadBranch" />
+                    <include name="testUPIv2YesBankRequestMsgBranch" />
+                    <include name="testUPIv2YesBankOfflineBranch" />
+                    <include name="testRefundUPIv2PayloadBranch" />
+                    <include name="testRefundUPIv2RequestMsgBranch" />
+                    <include name="testRefundUPIv2OfflineBranch" />
+                    <include name="testUPIACK" />
+                    <include name="testUPICallbackPTYES" />
+                    <include name="testUPICallbackJustPay" />
+                    <include name="testRefundUPICallback" />
+                    <include name="testCORPNBGet" />
+                    <include name="testENCRESPGet" />
+                    <include name="testBankResponseGETExt" />
+                    <include name="testRedirectFormFetch" />
+                    <include name="testRecurringParametersValidationFailure" />
+                    <include name="testPEMIValidationFailure" />
+                    <include name="testPEMISignatureFailure" />
+                    <include name="testICIUUPIPost" />
+                    <include name="testAxisUPIResponse" />
+                    <include name="testAxisUPIResponseMandate" />
+                    <include name="testHDFCUPIResp" />
+                    <include name="testHDFCUPIRespWithMeRes" />
+                    <include name="testDigiposUPICallback" />
+                    <include name="testPOSCallback" />
+                    <include name="testBankResponseMBID" />
+                    <include name="testCasheCardlessEmi" />
+                    <include name="testUPIv1BodyPost" />
+                    <include name="testUPINKMBPost" />
+                    <include name="testUPIRespPost" />
+                    <include name="testBankResponseTxnGET" />
+                    <include name="testBankResponseEsnMbidGET" />
+                    <include name="testBankResponseRespPrefixGET" />
+                    <include name="testBankResponseAdditionalGET_InvalidPaymode" />
+                    <include name="testThirdPartyUPIv1" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subs fixes" verbose="1" parallel="tests" thread-count="3">
+    <test name="temp-Enhancedweb Bank Mandate Redirectional flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="zeroAmountSubscription"/>
+                    <include name="verify_SavedBankMandate_Details"/>
+                    <include name="TC_020_Enhanced_ValidateBankMandateTxnWhileManuallyEnteringBankAccountDC"/>
+                    <include name="TC_012_Enhanced_ValidateBankMandateFrequencyOtherThanOndemand"/>
+                    <include name="TC_010_Enhanced_ValidateSubsPurposeValueNotPassedIsUpdatedOthersIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="TC_006_Enhanced_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="TC_005_Enhanced_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="TC_002_Enhanced_ValidateSubsPurposeNotComingIfCustomerPassDontPass"/>
+                    <include name="TC_001_Enhanced_ValidateSubsPurposeIfCustomerPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOnePPIYSubsonWalletEnabled"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-Enhancedwap Bank Mandate Redirectional flow">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="zeroAmountSubscription"/>
+                    <include name="verify_SavedBankMandate_Details"/>
+                    <include name="TC_021_Enhanced_ValidateBankMandateTxnWhileManuallyEnteringBankAccountNB"/>
+                    <include name="TC_020_Enhanced_ValidateBankMandateTxnWhileManuallyEnteringBankAccountDC"/>
+                    <include name="TC_012_Enhanced_ValidateBankMandateFrequencyOtherThanOndemand"/>
+                    <include name="TC_010_Enhanced_ValidateSubsPurposeValueNotPassedIsUpdatedOthersIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="TC_006_Enhanced_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="TC_005_Enhanced_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="TC_002_Enhanced_ValidateSubsPurposeNotComingIfCustomerPassDontPass"/>
+                    <include name="TC_001_Enhanced_ValidateSubsPurposeIfCustomerPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_ppi on enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_wallet_only on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly" >
+                <methods>
+                    <include name="validateAllPayModes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_wallet_only on enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly" >
+                <methods>
+                    <include name="validateAllPayModes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutjsUPIPollingScreen" verbose="1" thread-count="6" parallel="tests">
+
+    <test name="Checkoutjs UI UPI Polling screen test cases - RevampWeb">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validatePollingPageIsNotInNewWinowAndSuccessTxnUsingUPICollect"/>
+                    <include name="validatePollingPageIsNotInNewWinowAndFailTxnUsingUPICollect"/>
+                    <include name="validatePollingPageIsNotInNewWinowAndSuccessTxnUsingSavedVPA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI UPI Polling retry  screen test cases - RevampWeb">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validatePollingPageIsNotInNewWinowAndRetryUsingUPICollect"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

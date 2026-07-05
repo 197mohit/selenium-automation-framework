@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38023" verbose="1">
+    <test name="In FPO response, merchant name (Raha's) is showing apostrophe character">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyMerchantname"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

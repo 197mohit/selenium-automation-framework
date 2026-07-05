@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2.0_Suite_Failed" verbose="1" thread-count="20" parallel="tests">
+<test thread-count="20" verbose="0" name="Native" parallel="tests">
+        <classes>
+            <class name="scripts.DccPg2">
+                <methods>
+                    <include name="successfulTransactionForMdrCC"/>
+                    <include name="successfulTransactionWithINRForPcfDC"/>
+                    <include name="dccPg2MerchantStatusValidation"/>
+                    <include name="successfulTransactionForPcfCC"/>
+                    <include name="unsuccessfulTransactionForMdrCC"/>
+                </methods>
+            </class> <!-- scripts.DccPg2 -->
+        </classes>
+    </test> <!-- Native -->
+    <test thread-count="20" verbose="0" name="Verify PG2 Debit Card Txn" parallel="tests">
+        <classes>
+            <class name="scripts.api.Debitcard.PG2Debitcard">
+                <methods>
+                    <include name="dcEnhancedFlow"/>
+                    <include name="dcCheckoutJSFlow"/>
+                    <include name="validateFailedSavedDCTxnPG2MID_PG2Enabled"/>
+                    <include name="validateSuccessSavedDCTxnPG2MID"/>
+                    <include name="validateSuccessFullAsyncRefund_SavedDCTxnPG2MID"/>
+                </methods>
+            </class> <!-- scripts.api.Debitcard.PG2Debitcard -->
+        </classes>
+    </test> <!-- Verify PG2 Debit Card Txn -->
+    <test thread-count="20" verbose="0" name="Verify PG2 UPI Collect Txns" parallel="tests">
+        <classes>
+            <class name="scripts.api.UPI.UPICollectTransactionPG2">
+                <methods>
+                    <include name="validateFullTrafficCOPUPIPUshOrderModifyaftersuccessTxnPG2MID"/>
+                    <include name="upiCollectEnhancedFlow"/>
+                    <include name="validateFullAsyncRefund_UPICollectTxnPG2MID_FullTrafficEnabled"/>
+                </methods>
+            </class> <!-- scripts.api.UPI.UPICollectTransactionPG2 -->
+        </classes>
+    </test> <!-- Verify PG2 UPI Collect Txns -->
+    <test thread-count="20" verbose="0" name="Net Banking test cases" parallel="tests">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validatePendingNBTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validateSuccessHDFCNBTxnPG2MID"/>
+                    <include name="nbEnhancedFlow"/>
+                    <include name="validateSuccessNBTxnPG2MID"/>
+                </methods>
+            </class> <!-- scripts.api.NetBanking.NBPG2 -->
+        </classes>
+    </test> <!-- Net Banking test cases -->
+    <test thread-count="20" verbose="0" name="Verify PG2 Credit Card Txn" parallel="tests">
+        <classes>
+            <class name="scripts.api.CC.CC_PG2">
+                <methods>
+                    <include name="validateSuccessSavedCCTxnPG2MID"/>
+                    <include name="validateFailedSavedCCTxnPG2MID_PG2Enabled"/>
+                    <include name="ccEnhancedFlow"/>
+                    <include name="validateSuccessFullAsyncRefund_SavedCCTxnPG2MID"/>
+                    <include name="validatePendingSavedCCTxnPG2MID_PG2Enabled_CloseOrderV1ThenCheckMerchantStatus"/>
+                </methods>
+            </class> <!-- scripts.api.CC.CC_PG2 -->
+        </classes>
+    </test> <!-- Verify PG2 Credit Card Txn -->
+    <test thread-count="20" verbose="0" name="Verify PG2 Wallet Txn" parallel="tests">
+        <classes>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="walletCheckoutJSFlow"/>
+                    <include name="validateFullTrafficCOThenpayFailedwalletTxnretrywithpostpaid"/>
+                    <include name="validateFullTrafficCOPFailedwalletTxnretrywithpostpaid"/>
+                    <include name="validatePG2COPFullTrafficYSuccessFastForwardTxn"/>
+                    <include name="validateFailedFullTrafficCOThenPayWalletTxnPG2MID"/>
+                    <include name="validatePG2COThenPayFullTrafficYWalletSuccessCheckoutJSPageTxn"/>
+                    <include name="walletEnhancedFlow"/>
+                    <include name="validateSuccessCOThenPayFullTFullTrafficWalletTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCoThenPayWalletPG2partialAsyncRefund"/>
+                    <include name="validateWalletPG2FullAsyncRefund"/>
+                    <include name="validateCOThenPaySuccessOrderModifyWalletTxnPG2MID"/>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyWalletTxnPG2MID"/>
+                    <include name="validateWalletPG2PartialAsyncRefund"/>
+                    <include name="validateCOPSuccessOrderModifyWalletTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCoThenPayWalletPG2FullAsyncRefund"/>
+                    <include name="validateFailedWalletTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOThenPayWalletInternalOrderModifyTxnPG2MID"/>
+                    <include name="validateSuccessWalletTxnPG2MID"/>
+                    <include name="validatePG2COThenPayFullTrafficYWalletSuccessInvokeAppTxn"/>
+                    <include name="validateSuccessWalletTxnagainretrywithwallet"/>
+                    <include name="validateFullTrafficYSuccessCOPWalletInternalOrderModifyTxnPG2MID"/>
+                    <include name="validatePG2COPYSuccessFastForwardTxn"/>
+
+                </methods>
+            </class> <!-- scripts.api.Wallet.PG2Wallet -->
+        </classes>
+    </test> <!-- Verify PG2 Wallet Txn -->
+    <test thread-count="20" verbose="0" name="PG2.0 UPI Test Cases" parallel="tests">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisN"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisN"/>
+                    <include name="validateFullTrafficYFailedCOPUpiPushTxnPG2MID"/>
+                    <include name="validateFailedUpiPushTxnPG2MID"/>
+                    <include name="validateFullTrafficYFailedCoThenPayUpiPushTxnPG2MID"/>
+                    <include name="validatePG2COPStaticQRUPIPushScanNPay"/>
+                    <include name="validateFailedUpitxnretrywithwallet"/>
+                    <include name="validateCOTPFailedUpitxnretrywithwallet"/>
+                    <include name="validateSuccessUpiPushTxnRetrywithupi"/>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyUPIPushTxnPG2MID"/>
+                    <include name="midNotPresentInRefundFF4J"/>
+                    <include name="midNotPresentInFF4JTheiaStatusPrefDisabledCloseOrderFail"/>
+                    <include name="validateFullTrafficYSuccessCOPUpiPushTxnPG2MID"/>
+                </methods>
+            </class> <!-- scripts.api.UPI.UPItransactionPG2 -->
+        </classes>
+    </test> <!-- PG2.0 UPI Test Cases -->
+    <test thread-count="20" verbose="0" name="Verify PG2 FeeCharge Txn" parallel="tests">
+        <classes>
+            <class name="scripts.api.FeeCharge.FeeChargePG2">
+                <methods>
+                    <include name="validateThirdTxnSlabFullPG2TrafficCOPEnabledPCFUPICollectTxn"/>
+                    <include name="validateFirstTxnSlabWithPlatformfeeCOTPFullPG2TrafficEnabledPCFUPIPushExpressTxn"/>
+                    <include
+                            name="validateFourthTxnSlabWithPlatformfeeAsMDRCOTPFullPG2TrafficEnabledMDRPCFPostPaidTxn"/>
+                    <include name="validatePlatformFeePG2ENABLEDPCFDCTxn"/>
+                    <include name="validateFirstTxnSlabFullPG2TrafficCOPEnabledPCFUPICollectTxn"/>
+                    <include name="validatePlatformFeeAsMDRPG2ENABLEDMDRPCFCCTxn"/>
+                    <include name="validatePCFDetailApiForPcfFullTrafficPG2Mid"/>
+                    <include name="validateTxnSlabFullPG2TrafficCOPEnabledPCFWalletTxn"/>
+                    <include name="validateFourthTxnSlabFullPG2TrafficCOPEnabledPCFUPICollectTxn"/>
+                    <include name="validateTheiaPaymentAdapterFeaturePostPaidPCFTxn"/>
+                    <include name="validateFourthTxnSlabWithPlatformfeeCOTPFullPG2TrafficEnabledPCFUPIPushExpressTxn"/>
+                    <include name="validatePCFDetailApiForMDRPcfFullTrafficPG2Mid"/>
+                    <include name="validatePCFDetailApiForMDRPcfPG2EnabledMid"/>
+                    <include name="validateTheiaPaymentAdapterFeatureUPIPushExpressMDRPCFTxn"/>
+                    <include name="validateSecondTxnSlabFullPG2TrafficCOPEnabledMDRPCFPPBLNBTxn"/>
+                    <include name="validateFirstTxnSlabWithPlatformfeeAsMDRCOTPFullPG2TrafficEnabledMDRPCFPostPaidTxn"/>
+                    <include name="validateSecondTxnSlabFullPG2TrafficCOPEnabledPCFUPICollectTxn"/>
+                    <include name="validateFirstTxnSlabFullPG2TrafficCOPEnabledMDRPCFPPBLNBTxn"/>
+                    <include
+                            name="validateSecondTxnSlabWithPlatformfeeAsMDRCOTPFullPG2TrafficEnabledMDRPCFPostPaidTxn"/>
+                    <include name="validateSecondTxnSlabWithPlatformfeeCOTPFullPG2TrafficEnabledPCFUPIPushExpressTxn"/>
+                    <include name="validateTheiaPaymentAdapterFeaturePostPaidPCFTxnPartialRefund"/>
+                    <include name="validatePCFDetailApiForPcfPaymentAdaterMid"/>
+                    <include name="validateThirdTxnSlabWithPlatformfeeAsMDRCOTPFullPG2TrafficEnabledMDRPCFPostPaidTxn"/>
+                    <include name="validateThirdTxnSlabWithPlatformfeeCOTPFullPG2TrafficEnabledPCFUPIPushExpressTxn"/>
+                    <include name="validateFourthTxnSlabFullPG2TrafficCOPEnabledMDRPCFPPBLNBTxn"/>
+                </methods>
+            </class> <!-- scripts.api.FeeCharge.FeeChargePG2 -->
+        </classes>
+    </test> <!-- Verify PG2 FeeCharge Txn -->
+    <test thread-count="20" verbose="0" name="PG2.0 PostPaid Test Cases" parallel="tests">
+        <classes>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateFullTrafficCOPFailedPostPaidTxnPG2MID"/>
+                    <include name="postpaidEnhancedFlow"/>
+                    <include name="validateFullTrafficCOThenpayFailedPostPaidTxnretrywithwallet"/>
+                    <include name="validatePG2COThenPayFullTrafficYPostpaidFailCheckoutJSPageTxn"/>
+                    <include name="validateFullTrafficCOPFailedPostPaidTxnretrywithwallet"/>
+                    <include name="validateFullTrafficCoThenPayFailedPostPaidTxnPG2MID"/>
+                    <include name="validateMidNotPresentInFF4JTheiaStatusPrefDisabledCloseOrderFail"/>
+                    <include name="validatePG2COThenPayFullTrafficYPostpaidFailureInvokeAppTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPostpaidSuccessCheckoutJSPageTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPostpaidSuccessInvokeAppTxn"/>
+                    <include name="validateMidNotPresentInRefundFF4J"/>
+                    <include name="validateFailedPostPaidTxnPG2MID"/>
+                    <include name="validateFullTrafficCoThenPayPostPaidTxnPG2MIDTheiaInternallyClosesOrder"/>
+                    <include name="validateCoThenPaySuccessRentMidOrderModifyPostPaidTxnPG2MID"/>
+                    <include name="validateFullTrafficCOPSuccessInternalOrderModifyPostPaidTxnPG2MID"/>
+                    <include name="validatePartialAsyncRefundCoThenPayPostPaidTxnPG2MID"/>
+                    <include name="validatePendingPostPaidTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validatePostPaidPG2PartialAsyncRefund"/>
+                    <include name="validateFullTrafficCoThenPaySuccessPostPaidTxnPG2MID"/>
+                    <include name="validateFullAsyncRefundCoThenPayPostPaidTxnPG2MID"/>
+                    <include name="validateCoThenPaySuccessOrderModifyPostPaidTxnPG2MID"/>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyPostPaidTxnPG2MID"/>
+                    <include name="validateMidNotPresentInFF4JButPrefEnabledPostPaidTxnRoutedToPG2PendingTxn"/>
+                    <include name="validatePendingPostPaidTxnPG2MIDTheiaCloseOrderThenCheckMerchantStatus"/>
+                    <include name="validateFullTrafficCOPPostPaidTxnPG2MIDTheiaPendingTxnClosesOrderV1"/>
+                    <include name="validatePostPaidPG2FullAsyncRefund"/>
+                    <include name="validateFullTrafficCOPUPIPUshOrderModifyaftersuccessTxnPG2MID"/>
+                    <include name="validatePendingPostPaidTxnPG2MIDCloseOrderV2ThenCheckMerchantStatus"/>
+                    <include name="validateSuccessPostPaidTxnPG2MID"/>
+                    <include name="validateFullTrafficCOPSuccessPostPaidTxnPG2MID"/>
+                    <include name="validateCOPSuccessOrderModifyPostPaidTxnPG2MID"/>
+
+                </methods>
+            </class> <!-- scripts.api.PostPaid.PG2PostPaid -->
+        </classes>
+    </test> <!-- PG2.0 PostPaid Test Cases -->
+    <test thread-count="20" verbose="0" name="PG2.0 PPBL Test Cases" parallel="tests">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateCoThenPaySuccessRentMidOrderModifyPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficCOPFailedPPBLTxnretrywithwallet"/>
+                    <include name="ppblEnhancedFlow"/>
+                    <include name="PPBLPG2FullAsyncRefund"/>
+                    <include name="PPBLmidNotPresentInRefundFF4J"/>
+                    <include name="validateFullTrafficCOThenpayFailedPPBLTxnretrywithwallet"/>
+                    <include name="validateFullTrafficYFailCOPPayPPBLTxnPG2MID"/>
+                    <include name="PPBLPG2PartialAsyncRefund"/>
+                    <include name="validatePartialAsyncRefundCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLFailCheckoutJSPageTxn"/>
+                    <include name="validateFullTrafficYPendingCOPPPBLTxnPG2MID"/>
+                    <include name="midNotPrsentInFF4JButPrefEnabledPPBLRoutedToPG2PendingTxn"/>
+                    <include name="validateSuccessPPBLTxnPG2MID"/>
+                    <exclude name="validateCoThenPaySuccessRentMidOrderModifyPPBLTxnPG2MID"/>
+                    <include name="validateFullAsyncRefundCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOPPPBLTxnPG2MID"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLPendingInvokeAppTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLSuccessCheckoutJSPageTxn"/>
+                    <include name="validatePendingPPBLTxnPG2MIDCloseOrderV2ThenCheckMerchantStatus"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLSuccessInvokeAppTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLFailureInvokeAppTxn"/>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOThenPayPPPBLOrderModifyTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOPPPBLInternalOrderModifyTxnPG2MID"/>
+                    <include name="validateFailedPPBLTxnPG2MID"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLPendingCheckoutJSPageTxn"/>
+                    <include name="validatePendingPPBLTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validateFullTrafficYSuccessCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYFailCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYPendingCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOPPPBLOrderModifyTxnPG2MID"/>
+
+                </methods>
+            </class> <!-- scripts.api.PPBL.PPBLPG2 -->
+        </classes>
+    </test> <!-- PG2.0 PPBL Test Cases -->
+    <test name="PGP-49023 Verify wallet priority ">
+        <classes>
+            <class name="scripts.api.FPO.walletpriority">
+                <methods>
+                    <include name="walletpriority_01"/>
+                    <include name="walletpriority_02"/>
+                    <include name="walletpriority_03"/>
+                    <include name="walletpriority_04"/>
+                    <include name="walletpriority_05"/>
+                    <include name="walletpriority_06"/>
+                    <include name="walletpriority_07"/>
+                    <include name="walletpriority_08"/>
+                    <include name="walletpriority_09"/>
+                    <include name="walletpriority_10"/>
+                    <include name="walletpriority_11"/>
+                    <include name="walletpriority_12"/>
+                    <include name="walletpriority_13"/>
+                    <include name="walletpriority_14"/>
+                    <include name="walletpriority_15"/>
+                    <include name="walletpriority_16"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPBLBANKAPI NATIVE">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validatePPBLAccountFoundNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPBLBANKAPI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validatePPBLAccountFound"/>
+                    <include name="validatePPBLAccountNotFound"/>
+                    <include name="validatePPBLAccountFF4JFlagOFF"/>
+                    <include name="validateSkipingPPBLForNONSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify PG2 FeeCharge Txn-1">
+        <classes>
+            <class name="scripts.api.FeeCharge.FeeChargePG2">
+                <methods>
+                    <include name="validateThirdTxnSlabFullPG2TrafficCOPEnabledMDRPCFPPBLNBTxn"/>
+                    <include name="validateTheiaPaymentAdapterFeaturePPBLNBMDRTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- PG2.0 Test Cases -->

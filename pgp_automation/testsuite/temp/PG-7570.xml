@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-7570" verbose="1" parallel="methods" thread-count="1">
+
+    <test name="NATIVE_MF additionalInfo and mutualFundFeedInfo">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeMF">
+                <methods>
+                    <include name="validateAdditionalInfoInCOP_MF"/>
+                    <include name="validateMutualFundFeedInfoInCOP_MF"/>
+                    <include name="validateInitiateTxnFailure_MF"/>
+                    <include name="validateAdditionalInfoWithSplitSettlementInfoInCOP_MF"/>
+                    <include name="validateMutualFundFeedInfoWithSplitSettlementInfoInCOP_MF"/>
+                    <include name="validateInitiateTxnFailureWithSplitSettlementInfo_MF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NATIVE_MF_SIP additionalInfo and mutualFundFeedInfo">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="validateAdditionalInfoInCOP_MF_SIP"/>
+                    <include name="validateMutualFundFeedInfoInCOP_MF_SIP"/>
+                    <include name="validateInitiateTxnFailure_MF_SIP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

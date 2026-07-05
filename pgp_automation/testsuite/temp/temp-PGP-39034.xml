@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LoyaltyPoints_fetchBalance" verbose="1">
+    <test name="LoyaltyPoints_fetchBalance Cases">
+        <classes>
+            <class name="scripts.FetchBalanceTests">
+                <methods>
+                    <include name="fetchBalanceForLoyaltyPoints_SSOTOKEN"/>
+                    <include name="fetchBalanceForLoyaltyPoints_TXNTOKEN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

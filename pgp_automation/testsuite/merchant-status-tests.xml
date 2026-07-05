@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="merchant-status" verbose="1" parallel="tests" thread-count="4">
+    <test name="PGP-40226 for CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_05"/>
+                    <include name="txnStatusInit_05"/>
+                    <include name="txnStatusClosed_05"/>
+                    <include name="txnStatusInvalid_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40227 for CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_06"/>
+                    <include name="txnStatusInit_06"/>
+                    <include name="txnStatusClosed_06"/>
+                    <include name="txnStatusInvalid_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40228 for CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_03"/>
+                    <include name="txnStatusInit_03"/>
+                    <include name="txnStatusClosed_03"/>
+                    <include name="txnStatusInvalid_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40232 for CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_04"/>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatusClosed_04"/>
+                    <include name="txnStatusInvalid_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40226 for enhancedwap_revamp">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_04"/>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatusClosed_04"/>
+                    <include name="txnStatusInvalid_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40228 for enhancedwap_revamp">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_05"/>
+                    <include name="txnStatusInit_05"/>
+                    <include name="txnStatusClosed_05"/>
+                    <include name="txnStatusInvalid_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40232 for enhancedwap_revamp">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_03"/>
+                    <include name="txnStatusInit_03"/>
+                    <include name="txnStatusClosed_03"/>
+                    <include name="txnStatusInvalid_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40226 for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_04"/>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatusClosed_04"/>
+                    <include name="txnStatusInvalid_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40228 for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_05"/>
+                    <include name="txnStatusInit_05"/>
+                    <include name="txnStatusClosed_05"/>
+                    <include name="txnStatusInvalid_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40232 for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_03"/>
+                    <include name="txnStatusInit_03"/>
+                    <include name="txnStatusClosed_03"/>
+                    <include name="txnStatusInvalid_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40226 for NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_04"/>
+                    <include name="txnStatusNativeInit_04"/>
+                    <include name="txnStatusNativeClosed_04"/>
+                    <include name="txnStatusNativeInvalid_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40226 for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_04"/>
+                    <include name="txnStatusNativeInit_04"/>
+                    <include name="txnStatusNativeClosed_04"/>
+                    <include name="txnStatusNativeInvalid_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40228 for NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_05"/>
+                    <include name="txnStatusNativeInit_05"/>
+                    <include name="txnStatusNativeClosed_05"/>
+                    <include name="txnStatusNativeInvalid_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40228 for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_05"/>
+                    <include name="txnStatusNativeInit_05"/>
+                    <include name="txnStatusNativeClosed_05"/>
+                    <include name="txnStatusNativeInvalid_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40232 for NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_03"/>
+                    <include name="txnStatusNativeInit_03"/>
+                    <include name="txnStatusNativeClosed_03"/>
+                    <include name="txnStatusNativeInvalid_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40232 for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_03"/>
+                    <include name="txnStatusNativeInit_03"/>
+                    <include name="txnStatusNativeClosed_03"/>
+                    <include name="txnStatusNativeInvalid_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

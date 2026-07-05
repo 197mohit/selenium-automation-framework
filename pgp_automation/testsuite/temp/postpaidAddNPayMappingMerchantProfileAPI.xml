@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33334" verbose="1" parallel="methods" thread-count="1">
+    <test name="Mapping Merchant Profile API Tests for postpaid">
+        <classes>
+            <class name="scripts.api.mappingService.MerchantProfilePostpaidOnAddNPay"/>
+        </classes>
+    </test>
+</suite>

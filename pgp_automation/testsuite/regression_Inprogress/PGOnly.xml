@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGOnly" verbose="1" parallel="tests" thread-count="10">
+    <test name="SavedUPI Tests on EnhancedWap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUIChangesforSavedUPI"/>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                    <include name="VerifySuccessfullSavedUPITxnADDNPAY"/>
+                    <include name="VerifySuccessfullSavedUPITxnHYBRID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SavedUPI Tests on EnhancedWeb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUIChangesforSavedUPI"/>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                    <include name="VerifySuccessfullSavedUPITxnADDNPAY"/>
+                    <include name="VerifySuccessfullSavedUPITxnHYBRID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateCancelTxn_PGOnly"/>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_171_CCCancelOn3DPage"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_175_cardNotInBinCheckTxnAllowed"/>
+                    <include name="PGP_237_verifyPaymentModeOnCashierPage"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                    <include name="PGP_243_successfulPGOnlyTxnUsingAMEXCard"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_246_failedPGOnlyTxnWithLicenceExpiredDate"/>
+                    <include name="PGP_248_DCCancelOn3DPage"/>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountConfigured"/>
+                    <include name="PGP_251_verifySavedCardListAfterLogin"/>
+                    <include name="PGP_253_verifyPGOnlyTxnWithMaxRetryCount"/>
+                    <include name="PGP_254_verifyPGOnlyTxnWithRetryCountBreached"/>
+                    <include name="PGP_259_verifyPaymentModesOnCashierPageWhenUserLogedIn"/>
+                    <include name="PGP_260_successfulPGOnlyCCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_262_successfulNBTxnWhenUserLoggedIn"/>
+                    <include name="PGP_265_successfulPGOnlyTxnUsingAMEXCardWhenUserLoggedIn"/>
+                    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_269_verifySaveCardThroughDCTxn"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_271_verifyDCSavedCardTxn"/>
+                    <include name="PGP_275_validateSaveUPIForHybridTxn"/>
+                    <include name="PGP_276_validatePGTxnUsingSavedUPI"/>
+                    <include name="PGP_279_verifyInvalidCardNumberForPGOnlyTxn"/>
+                    <include name="PGP_280_verifyInvalidCVVForPGOnlyTxn"/>
+                    <include name="PGP_281_verifyInvalidOTPForPGOnlyTxn"/>
+                    <include name="PGP_282_verifyInvalidExpiryDateForPGOnlyTxn"/>
+                    <include name="checkUserRedirectedToBankWhenPaymentInitiatedUsingAMEXCard"/>
+                    <!--<include name="PGP_verifySaveCardWithoutLogin"/>--><!--commented as this are still to be automated-->
+                    <include name="validateSucessfullPPBLTransaction"/>
+                    <include name="vailidatePPBLRetry"/>
+                    <include name="vailidatePPBLRetryProcessTrxUsingCC"/>
+                    <include name="vailidatePPBLRetry_ProcessTrxUsingPPBL"/>
+                    <include name="validateInvalidPassCodeErrorMessage"/>
+                    <include name="validatePCFForPPBL"/>
+                    <include name="checkPaymentUsingBajajFinservCard"/>
+                    <include name="checkCardIndexNoPresentInResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                    <include name="checkPaymodesAvailableOnCashierPageWhichArePassedByMerchant"/>
+                    <include name="checkPaymodesNotAvailableOnCashierPageWhichArePassedAsDisabledByMerchant"/>
+                    <include name="validatePGOnlyRetryTxnUsingEMI"/>
+                    <include name="validatePGOnlyRetryTxnUsingSavedCard"/>
+                    <include name="savedCardInfoNotGettingSavedPGP17483"/>
+                    <include name="testTxnOfLessThan1NotAllowed"/>
+                    <include name="validateMobileNoIsNotMaskedWhenSSOtokenisPassed"/>
+                    <include name="validateMobileNoIsNotMaskedWhenMobileNoisNotPassed"/>
+                    <include name="validateRequestOTPMobileNonEditableYMobileNoIsMasked"/>
+                    <include name="validateMobileNonEditableYMobileNoIsMasked"/>
+                    <include name="riskRejectEnhancedFlow"/>
+                    <include name="verifyNBNotVisible"/>
+                    <include name="verifyOnlyNBIsVisible"/>
+                    <include name="verifyOnlyPPBLNBIsVisible"/>
+                    <include name="refreshPageAfterLoginAndProceed"/>
+                    <include name="refreshPageForLoggedInFlow"/>
+                    <include name="refreshNonLoggedInPage"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="session-compatibility">
+        <classes>
+            <class name="scripts.api.theia.CompatibilityTest"/>
+            <class name="scripts.api.theia.OfflineCompatibilityTest"/>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb"/>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb"/>
+                <methods>
+                    <parameter name="orderId" value="T1-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="IDBI NB transaction">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGWithoutLogintransactionwithIDBINB"/>
+                    <include name="PGWithtLogintransactionwithIDBINB"/>
+                    <include name="FailedTxnwithIDBINB"/>
+                    <include name="PendingTxnwithIDBINB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-21561">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payment Retry Count Testcases - enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="ValidatePaymentsRetryCountEqualsFive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20215- EDC Pay Confirm">
+        <classes>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb">
+                    <methods>
+                        <include name="edcPayConfirm1"/>
+                        <include name="edcPayConfirm2"/>
+                        <include name="edcPayConfirm3"/>
+                        <include name="edcPayConfirm4"/>
+                    </methods>
+                </parameter>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-13158 for Native+">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.PGOnly">
+                    <methods>
+                        <include name="verifyReturnVPAforSuccessfulNativeTxnOFFUSMerchant"/>
+                        <include name="verifyReturnVPAforFailedTxnOFFUSMerchant"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="PGP-13158 for Enhanced Wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyReturnVPAforSuccessfulTxnOFFUS"/>
+                    <include name="verifyReturnVPAforFailedTxnOFFUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-13158 for Enhanced Web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyReturnVPAforSuccessfulTxnOFFUS"/>
+                    <include name="verifyReturnVPAforFailedTxnOFFUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-24378 for enhanceweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOff"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOn"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOnTxnTokenNull"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOnTxnTokenTampered"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOFFForRiskAmount"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForRiskAmount"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForRiskAmountTxnisNull"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForRiskAmountTxnisTampered"/>
+                    <include name="verifyResponseForCancelenFf4jFlagIsOFFForBasicKYC"/>
+                    <include name="verifyResponseForCancelenFf4jFlagIsONForBasicKYC"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForBasicKYCTxnisNull"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForBasicKYCTxnisTampered"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-24378 for enhancewap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOff"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOn"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOnTxnTokenNull"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOnTxnTokenTampered"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOFFForRiskAmount"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForRiskAmount"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForRiskAmountTxnisNull"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForRiskAmountTxnisTampered"/>
+                    <include name="verifyResponseForCancelenFf4jFlagIsOFFForBasicKYC"/>
+                    <include name="verifyResponseForCancelenFf4jFlagIsONForBasicKYC"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForBasicKYCTxnisNull"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsONForBasicKYCTxnisTampered"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-23625 Pay using upi apps Paymode Displayed for enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="ValidateUPIAppsPaymodeDisplayedwithUPIIntentEnabledMidConfiguredSSOTokenLogin"/>
+                    <include name="ValidateUPIAppsPaymodeDisplayedwithUPIIntentEnabledMidConfiguredCashierpageLogin"/>
+                    <include name="ValidateUPIAppsPaymodeNotDisplayedWhenUPIIntentNotEnabledMidConfigured"/>
+                    <include name="ValidateUPIAppsPaymodeNotDisplayedwithUPIIntentEnabledMidConfiguredSSOTokenLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-23164 Verify Last Paymode - enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedDCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedPPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddNPayTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddMoneyPPBLTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnsDC_CC_PPBL"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnswithNb_CC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterTxnswithNb_FailedCC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterFailedTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterPendingTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-23164 Verify Last Paymode - enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedDCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedPPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddNPayTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddMoneyPPBLTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnsDC_CC_PPBL"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnswithNb_CC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterTxnswithNb_FailedCC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterFailedTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterPendingTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-22755 Tests on EnhancedWap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSucessfullPCFTransactionviaICICINB"/>
+                    <include name="validateSucessfullPCFTransactionviaPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-PGP-22755 Tests on EnhancedWeb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSucessfullPCFTransactionviaICICINB"/>
+                    <include name="validateSucessfullPCFTransactionviaPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-OTPLimit Test enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_20899_verifyInvalidOTPLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-OTPLimit Test enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_20899_verifyInvalidOTPLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-24614 Validate RRN, AuthCode Enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_24614_ValidateRRNandAuthCodeforsuccessfulPGOnlyCCtxn"/>
+                    <include name="PGP_24614_ValidateRRNandAuthCodeforfailurePGOnlyCCtxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-24614 Validate RRN, AuthCode Enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_24614_ValidateRRNandAuthCodeforsuccessfulPGOnlyCCtxn"/>
+                    <include name="PGP_24614_ValidateRRNandAuthCodeforfailurePGOnlyCCtxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28964 enhanced UI enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_28964_verifyCashierPageWhenDataIsNotEncodedByUImicroservice"/>
+                    <include name="PGP_28964_verifyCashierPageWhenDataIsEncodedByUImicroservice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28964 enhanced UI enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_28964_verifyCashierPageWhenDataIsNotEncodedByUImicroservice"/>
+                    <include name="PGP_28964_verifyCashierPageWhenDataIsEncodedByUImicroservice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28971 - risk extended url for enhanced theme">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validate_RiskExtendedURLInfoTheiaFacade"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-LowSuccessRate">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLowSuccessRateMessageWhenZeroSuccessRateis1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24778 : Enhanced WEB ">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidCC"/>
+                    <include name="validateSuccessTransPaidDC"/>
+                    <include name="validateSuccessTransPaidNB"/>
+                    <include name="validateSuccessTransPaidUPI"/>
+                    <include name="validateSuccessTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24778 : Enhanced WAP ">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidCC"/>
+                    <include name="validateSuccessTransPaidDC"/>
+                    <include name="validateSuccessTransPaidNB"/>
+                    <include name="validateSuccessTransPaidUPI"/>
+                    <include name="validateSuccessTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26892">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtWithoutDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithSameDetailsAfterDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterDeletingCachedKey"/>
+                    <include
+                            name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgWithoutDeletingCachedKey"/>
+                    <include
+                            name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgAfterDeletingCachedKey"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_171_CCCancelOn3DPage"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_175_cardNotInBinCheckTxnAllowed"/>
+                    <include name="PGP_237_verifyPaymentModeOnCashierPage"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                    <include name="PGP_243_successfulPGOnlyTxnUsingAMEXCard"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_246_failedPGOnlyTxnWithLicenceExpiredDate"/>
+                    <include name="PGP_248_DCCancelOn3DPage"/>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountConfigured"/>
+                    <include name="PGP_251_verifySavedCardListAfterLogin"/>
+                    <include name="PGP_253_verifyPGOnlyTxnWithMaxRetryCount"/>
+                    <include name="PGP_254_verifyPGOnlyTxnWithRetryCountBreached"/>
+                    <include name="PGP_259_verifyPaymentModesOnCashierPageWhenUserLogedIn"/>
+                    <include name="PGP_260_successfulPGOnlyCCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_262_successfulNBTxnWhenUserLoggedIn"/>
+                    <include name="PGP_265_successfulPGOnlyTxnUsingAMEXCardWhenUserLoggedIn"/>
+                    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_269_verifySaveCardThroughDCTxn"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_271_verifyDCSavedCardTxn"/>
+                    <include name="PGP_275_validateSaveUPIForHybridTxn"/>
+                    <include name="PGP_276_validatePGTxnUsingSavedUPI"/>
+                    <include name="PGP_279_verifyInvalidCardNumberForPGOnlyTxn"/>
+                    <include name="PGP_280_verifyInvalidCVVForPGOnlyTxn"/>
+                    <include name="PGP_281_verifyInvalidOTPForPGOnlyTxn"/>
+                    <include name="PGP_282_verifyInvalidExpiryDateForPGOnlyTxn"/>
+                    <include name="PGP_verifySaveCardWithoutLogin"/>
+                    <include name="verifyPGOnlyTxnWithRetryCountConfigured_CCtoDC"/>
+                    <include name="verifyPGOnlyTxnWithRetryCountConfigured_DCtoCC"/>
+                    <include name="verifyPGOnlyTxnWithRetryCountConfigured_NBtoCC"/>
+                    <include name="checkExpiredSaveCardNotVisible_OnCashierPage"/>
+                    <include name="validateSucessfullPPBLTransaction"/>
+                    <include name="vailidatePPBLRetry"/>
+                    <include name="vailidatePPBLRetryProcessTrxUsingCC"/>
+                    <include name="vailidatePPBLRetry_ProcessTrxUsingPPBL"/>
+                    <include name="validateInvalidPassCodeErrorMessage"/>
+                    <include name="validatePCFForPPBL"/>
+                    <include name="checkUserRedirectedToBankWhenPaymentInitiatedUsingAMEXCard"/>
+                    <include name="checkPaymentUsingBajajFinservCard"/>
+                    <include name="checkCardIndexNoPresentInResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                    <include name="checkPaymodesAvailableOnCashierPageWhichArePassedByMerchant"/>
+                    <include name="checkPaymodesNotAvailableOnCashierPageWhichArePassedAsDisabledByMerchant"/>
+                    <include name="validatePGOnlyRetryTxnUsingEMI"/>
+                    <include name="validatePGOnlyRetryTxnUsingSavedCard"/>
+                    <include name="savedCardInfoNotGettingSavedPGP17483"/>
+                    <include name="refreshPageAfterLoginAndProceed"/>
+                    <include name="refreshPageForLoggedInFlow"/>
+                    <include name="refreshNonLoggedInPage"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly CC/DC/NB/UPI Txn(s) when user not logged in">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <!--<include name="failurePGOnlyUpi_InvalidPin"/> Not an actual scenario as Invalid pin is handled by mock not by PG -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGOnly CC/DC/NB/UPI Txn(s) when user logged in">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_260_successfulPGOnlyCCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_262_successfulNBTxnWhenUserLoggedIn"/>
+                    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                    <!--<include name="failurePGOnlyUpi_InvalidPin_loggedInUser"/>  Not an actual scenario as Invalid pin is handled by mock not by PG -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

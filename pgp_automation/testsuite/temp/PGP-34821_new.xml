@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-34821">
+    <test name="Verify error code when DQR expires">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateErrorCodeInV1PTCWhenDQRExpires"/>
+                    <include name="validateErrorCodeInFastForwardAPIWhenDQRExpires"/>
+                    <include name="validateErrorCodeInV1PTCWhenOrderIsClosedForDQR"/>
+                    <include name="validateErrorCodeInFastForwardAPIWhenOrderIsClosedForDQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

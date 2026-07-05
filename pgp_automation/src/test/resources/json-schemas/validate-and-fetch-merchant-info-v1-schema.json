@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp",
+        "requestId",
+        "version"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "merchantBaseInfoList",
+        "resultInfo"
+      ],
+      "properties": {
+        "merchantBaseInfoList": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "isValidMid",
+              "mid",
+              "officialName"
+            ],
+            "properties": {
+              "isValidMid": {
+                "type": "boolean"
+              },
+              "mid": {
+                "type": "string"
+              },
+              "officialName": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultCodeId",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string"
+            },
+            "resultCodeId": {
+              "type": "null"
+            },
+            "resultMsg": {
+              "type": "string"
+            },
+            "resultMsgRegional": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

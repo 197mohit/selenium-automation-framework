@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--
+  merchantstatus_coverage.xml
+  Additional merchant-status tests for JaCoCo coverage improvement.
+  Covers gaps in: Recovery V2, Native JWT auth, GET endpoints, Healthcheck.
+
+  Run with:
+    mvn clean test -DsuiteXmlFile=testsuite/temp/merchantstatus_coverage.xml \
+      -Denv=staging -Dbrowser=chrome
+
+  Test IDs:
+    MS-RCV2-01..04   RecoveryStatusV2 branch (head.version=v2)
+    MS-JWT-01..05    Native JWT auth path
+    MS-GET-01..06    GET variants of HANDLER_INTERNAL endpoints
+    MS-HC-01..02     Healthcheck probe
+
+  NOTE: This suite is additive — it does NOT modify or replace existing suites.
+-->
+<suite name="MerchantStatus_Coverage_Suite" verbose="1" thread-count="8" parallel="tests">
+
+    <!-- ===== Recovery V2 branch tests ===== -->
+    <test name="RecoveryV2 - OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusRecoveryV2Tests">
+                <methods>
+                    <include name="recoveryStatusV2_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryV2 - ChecksumMismatch">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusRecoveryV2Tests">
+                <methods>
+                    <include name="recoveryStatusV2_ChecksumMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryV2 - MissingDeductionType">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusRecoveryV2Tests">
+                <methods>
+                    <include name="recoveryStatusV2_MissingDeductionType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RecoveryV2 - BlankMid">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusRecoveryV2Tests">
+                <methods>
+                    <include name="recoveryStatusV2_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== Native JWT auth tests ===== -->
+    <test name="NativeJWT - getPaymentStatus InvalidToken">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusNativeJwtTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_JWT_InvalidToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeJWT - getPaymentStatus OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusNativeJwtTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_JWT_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeJWT - v2/getPaymentStatus InvalidToken">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusNativeJwtTests">
+                <methods>
+                    <include name="nativeGetPaymentStatusV2_JWT_InvalidToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeJWT - v2/getPaymentStatus OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusNativeJwtTests">
+                <methods>
+                    <include name="nativeGetPaymentStatusV2_JWT_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeJWT - getPaymentStatus BlankOrderId">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusNativeJwtTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_JWT_BlankOrderId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== GET endpoint tests ===== -->
+    <test name="GET TXNSTATUS - OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusGetEndpointTests">
+                <methods>
+                    <include name="handlerTxnStatus_GET_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="GET TXNSTATUS - UnknownMid">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusGetEndpointTests">
+                <methods>
+                    <include name="handlerTxnStatus_GET_UnknownMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="GET TXNSTATUS - BlankMid">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusGetEndpointTests">
+                <methods>
+                    <include name="handlerTxnStatus_GET_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="GET TXNSTATUSLIST - OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusGetEndpointTests">
+                <methods>
+                    <include name="handlerTxnStatusList_GET_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="GET TXNSTATUSLIST - UnknownMid">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusGetEndpointTests">
+                <methods>
+                    <include name="handlerTxnStatusList_GET_UnknownMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="GET TXNSTATUSLIST - BlankMid">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusGetEndpointTests">
+                <methods>
+                    <include name="handlerTxnStatusList_GET_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== Healthcheck tests ===== -->
+    <test name="Healthcheck - Status">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusHealthCheckTests">
+                <methods>
+                    <include name="merchantStatus_HealthCheck"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Healthcheck - Latency">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusHealthCheckTests">
+                <methods>
+                    <include name="merchantStatus_HealthCheck_Latency"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

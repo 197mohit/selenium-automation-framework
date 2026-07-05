@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "ElementJs" verbose="1" thread-count="5" parallel="methods">
+    <test name="ElementJs sanity cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UiSanityElementJs">
+            </class>
+        </classes>
+    </test>
+</suite>

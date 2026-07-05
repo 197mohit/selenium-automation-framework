@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ApplySuperCashAPI" verbose="1" thread-count="3" parallel="methods">
+    <test name="Apply SuperCash API Test">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+                <methods>
+                    <include name="superCashOffersInFPO_V1"/>
+                    <include name="superCashOffersInFPO_V2"/>
+                    <include name="superCashOffersInFPO_V5"/>
+                    <include name="superCashOffersIn_FQR_V2"/>
+                    <include name="superCashOffersIn_FQR_V1"/>
+                    <include name="UPI_OfferDisabled_In_FQRV2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

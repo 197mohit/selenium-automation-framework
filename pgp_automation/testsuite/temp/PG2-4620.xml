@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wallet CO Then Pay CheckoutJs Txn " verbose="1">
+    <test name="Wallet CO Then Pay CheckoutJs Test">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validatePG2COThenPayFullTrafficYWalletSuccessCheckoutJSPageTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

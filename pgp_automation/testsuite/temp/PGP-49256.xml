@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49256" verbose="1">
+    <test name="validateREQUEST_TYPEasQR_MERCHANTinNQH_DynamicQR ">
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="validateREQUEST_TYPEasQR_MERCHANTinNQH_DynamicQRTC01"/>
+                    <include name="validateREQUEST_TYPEasQR_MERCHANTinNQH_DynamicQRTC02"/>
+                    <include name="validateREQUEST_TYPEasQR_MERCHANTinNQH_DynamicQRTC03"/>
+                    <include name="validateREQUEST_TYPEasQR_MERCHANTinNQH_DynamicQRTC04"/>
+                    <include name="validateREQUEST_TYPEasQR_MERCHANTinNQH_DynamicQRTC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription UI Changes" verbose="1" parallel="tests" thread-count="3">
+    <test name="Subscription UPI UI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_39935_TC_SubsUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription Bank Mandate UI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="PGP_39935_verifyBankMandateText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

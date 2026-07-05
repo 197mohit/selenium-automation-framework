@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48011" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-48011 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48011 Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC03"/>
+                    <include name="PAPR_4754_TC04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48011">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC01"/>
+                    <include name="PAPR_4754_TC02"/>
+                    <include name="PAPR_4754_TC06"/>
+                    <include name="PAPR_4754_TC07"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

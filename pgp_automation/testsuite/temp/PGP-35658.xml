@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35658"  verbose="1">
+    <test name="EMI payment option visibility when wallet is selected">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="EMI_PayOption_Visible_addNPay"/>
+                    <include name="validate_popup_click_on_EMI"/>
+                    <include name="validate_wallet_checked_onDismiss"/>
+                    <include name="validate_EMI_TXN_onOK"/>
+                    <include name="validate_noPopUp_Display_sufficientBalance"/>
+                    <include name="validate_wallet_unchecked_onEMIClose"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-43104" verbose="1" >
+    <test name="verifyPaymentNotify with diff paymodes in pgproxy notification logs">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="verifyPaymentNotifyWithCC"/>
+                    <include name="verifyPaymentNotifyWithDC"/>
+                    <include name="verifyPaymentNotifyWithNB"/>
+                    <include name="verifyPaymentNotifyWithUPI"/>
+                    <include name="verifyPaymentNotifyWithAddnPay"/>
+                    <include name="verifyPaymentNotifyWithHybrid"/>
+                    <include name="verifyPaymentNotifyWithWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

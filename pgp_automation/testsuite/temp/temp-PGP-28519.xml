@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28966 Simplify EMI subvention" verbose="1" parallel="methods" thread-count="2">
+    <test name="PGP-28966 Simplify EMI subvention tests - Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.DeferredCheckout">
+                    <methods>
+                        <include name="validateDeferedFPOWhenGoodsIdNotMatchesInProp"/>
+                        <include name="validateDeferedFPOWhenGoodIDMatchesInProperty"/>
+                        <include name="validateDeferedFPOWhenGoodsIdNotPassed"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

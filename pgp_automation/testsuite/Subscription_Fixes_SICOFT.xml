@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Fixes">
+    <test name="New param addition in metadata">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="TC_009_Enhanced_ValidateSubsPurposeValueIsNotUpdatedForUpfrontAmountIs0InMetaData"></include>
+                    <include name="TC_008_Enhanced_ValidateSubsPurposeValueIsUpdatedForUpfrontAmountInMetaData"></include>
+                    <include name="TC_010_Enhanced_ValidateSubsPurposeValueNotPassedIsUpdatedOthersIsUpdatedForUpfrontAmountInMetaData"></include>
+                    <include name="TC_011_Enhanced_ValidateSubsPurposeValueIsNotUpdatedWHenNotPassedForUpfrontAmountIs0InMetaData"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="New param addition in metadata for WAP">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="TC_009_Enhanced_ValidateSubsPurposeValueIsNotUpdatedForUpfrontAmountIs0InMetaData"></include>
+                    <include name="TC_008_Enhanced_ValidateSubsPurposeValueIsUpdatedForUpfrontAmountInMetaData"></include>
+                    <include name="TC_010_Enhanced_ValidateSubsPurposeValueNotPassedIsUpdatedOthersIsUpdatedForUpfrontAmountInMetaData"></include>
+                    <include name="TC_011_Enhanced_ValidateSubsPurposeValueIsNotUpdatedWHenNotPassedForUpfrontAmountIs0InMetaData"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

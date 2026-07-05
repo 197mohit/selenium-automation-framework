@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46970" verbose="1" parallel="tests" thread-count="1">
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="NativePlusOnOfflineMerchantWhenPreferenceIsOFF"/>
+                    <include name="NativePlusOnOfflineMerchantWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods><include name="NativeOnOfflineMerchantWhenPreferenceIsOFF"/>
+                    <include name="NativeOnOfflineMerchantWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOn"/>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOff"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsOff_API_Y"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsON_API_Y"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

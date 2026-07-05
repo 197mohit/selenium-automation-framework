@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29611" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-29611">
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="FPP_validateSuccessRetryAppInvokeNBTransaction"/>
+                    <include name="FPP_validateFailureRetryNBTransaction"/>
+                    <include name="FPP_validateFailureRetryNBWhenRetryExhaust"/>
+                    <include name="FPP_validateSuccessRetryNBForHybridTransaction"/>
+                    <include name="FPP_validateSuccessRetryNBForADDNPAYTransaction"/>
+                </methods>
+            </class>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulPaytmNBTxnForMDRPlusPCFAppInvokeUsingRetry"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

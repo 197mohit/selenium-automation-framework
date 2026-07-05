@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Misc" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-36427 - Verify isAutoRefund is true in FPO response of subscription created for merchant whose AutoRefund is enabled">
+        <classes>
+            <class name="scripts.notificationTemplate.TestGetNotificationGlobalConfig"/>
+            <class name="scripts.notificationTemplate.TestEmailTemplate"/>
+            <class name="scripts.notificationTemplate.TestSmsTemplate"/>
+        </classes>
+    </test>
+
+
+
+    <!--Direct P+ Apis used cases-->
+    <!-- <test name="WalletSettlement">
+         <classes>
+             <class name="scripts.WalletSetlement.WalletSettlementNotify"/>
+             <class name="scripts.WalletSetlement.WalletSettlementInstaproxy"/>
+         </classes>
+     </test> -->
+
+     <!--Hybrid cases which are not supported to PG2 right now -->
+    <!-- <test name="Peon checksum Validation Hybrid For Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.HybridPoenCheckSumValidation">
+                <methods>
+                    <include name="peonValidationHybridSuccessTxn"/>
+                    <include name="peonValidationHybridFailedTxn"/>
+                    <include name="peonValidationHybridSuccessTxnWithCC"/>
+                    <include name="peonValidationHybridFailedTxnWithDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <!--EMI Txn is not supported in Native, Hence Excluded-->
+                    <exclude name="hybridTxnUsingEMI"/>
+                    <exclude name="retryTxnUsingEMI"/>
+                    <!--Hybrid cases are not supprted to pg2 right now -->
+                    <exclude name="hybridTxnUsingSavedCard"/>
+                    <exclude name="TC_PT_016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus Peon">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <!--EMI are not supported to pg2 right now-->
+                    <exclude name="hybridTxnUsingEMI"/>
+                    <exclude name="retryTxnUsingEMI"/>
+                    <!--Hybrid cases are not supprted to pg2 right now -->
+                    <exclude name="hybridTxnUsingSavedCard"/>
+                    <exclude name="TC_PT_016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+</suite>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMISubventionNew" verbose="1" thread-count="20" parallel="methods">
+    <test name="EMISubventionUsingTxnTokenApiTests">
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <exclude name="emisub24"></exclude>
+                    <exclude name="emisub25"></exclude>
+                    <exclude name="emisub26"></exclude>
+                    <exclude name="emisub27"></exclude>
+                    <exclude name="emisub28"></exclude>
+                    <exclude name="emisub29"></exclude>
+                    <exclude name="emisub30"></exclude>
+                    <exclude name="emisub31"></exclude>
+                    <exclude name="emisub32"></exclude>
+                    <exclude name="emisub33"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMISubventionUsingTxnTokenAppinvokeTests">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <include name="emisub24"/>
+                    <include name="emisub25"/>
+                    <include name="emisub26"/>
+                    <include name="emisub27"/>
+                    <include name="emisub28"/>
+                    <include name="emisub29"/>
+                    <include name="emisub30"/>
+                    <include name="emisub31"/>
+                    <include name="emisub32"/>
+                    <include name="emisub33"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

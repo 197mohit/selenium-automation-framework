@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-21561" parallel="methods">
+    <test name="PGP-21561">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                </methods>
+            </class>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                </methods>
+            </class>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForCCTxn"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForPPITxn"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForAddnPayTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

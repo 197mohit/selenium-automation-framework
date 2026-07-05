@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)https://stage-webapp.paytm.in/app-invoke.html -->
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>App Invoke</title>
+    <style>
+        .txn-api {
+            margin-top: 20px;
+            font-weight: bolder;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Merchant Payment Page</h1>
+    <form name="target" id="target" action="#">
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>S.No</th>
+                    <th>Label</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td><label>ORDER_ID ::*</label></td>
+                    <td>
+                        <input type="text" id="orderId" value="PARCEL916976" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td><label>MID ::*</label></td>
+                    <td>
+                        <input type="text" id="mid" value="upisub02003129847491" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td><label>Host ::*</label></td>
+                    <td>
+                        <input type="text" id="host" value="https://pgp-qa5.paytm.in" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td><label>Api Host ::*</label></td>
+                    <td>
+                        <input type="text" id="apiHost" value="https://pgp-qa8.paytm.in" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td><label>body ::*</label></td>
+                    <td>
+                        <textarea id="body" required>
+                            {"head":{"clientId":"C11","signature":"","requestTimestamp":1598962000818,"version":"v1","channelId":"WEB"},"body":{"userInfo":{"custId":"Test101"},"orderId":"PARCEL95718","mid":"upisub02003129847491","callbackUrl":"https://pgp-automation.paytm.in/mockbank/MerchantSite/bankResponse","requestType":"Payment","Payment":"retail","txnAmount":{"value":"1","currency":"INR"}}}
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td><label>CALLBACK_URL ::</label></td>
+                    <td>
+                        <input type="text" id="url" maxlength="200"
+                            value="https://pgp-automation.paytm.in/mockbank/MerchantSite/bankResponse">
+                    </td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td><label>Invoke Inititiate Txn Api*</label></td>
+                    <td><button id="btn">Call Api</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+    <div id="invokeApp" style="display: none">
+        <button onclick="callAppInvoke()">APP Invoke Using V2 App Link</button>
+    </div>
+
+    <script>
+
+        function getSetValue(id) {
+            const ele = document.getElementById(id);
+            return ele && ele.value;
+        }
+        var encodedOrderId;
+        document.getElementById('btn').addEventListener('click', function (e) {
+            e.preventDefault();
+            var origin = "https://pgp-qa8.paytm.in",
+                orderId = getSetValue('orderId'),
+                mid = getSetValue('mid'),
+                amount = getSetValue('txn'),
+                clientId = getSetValue('clientId'),
+                custId = getSetValue('custId'),
+                ssoToken = getSetValue('ssoToken'),
+                callbackUrl = getSetValue('url'),
+                body = getSetValue('body'),
+                host = getSetValue('host'),
+                apiHost = getSetValue('apiHost');
+
+            if (orderId === "" || mid === "" || apiHost === "" || host === "") {
+                alert("OrderId, Mid, TxnAmount are mandatory fields");
+                return;
+            }
+            var raw = { "head": { "clientId": clientId, "signature": "", "requestTimestamp": new Date().getTime(), "version": "v1", "channelId": "WEB" }, "body": { "userInfo": { "custId": custId }, "orderId": `${orderId}`, "mid": `${mid}`, "callbackUrl": `${callbackUrl}`, "requestType": "Payment", "Payment": "retail", "txnAmount": { "value": `${amount}`, "currency": "INR" } } };
+
+            var requestOptions = {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json',
+                    'host1': host,
+                    mid,
+                    orderId
+                },
+                body
+            };
+
+            fetch(`${apiHost}/mockbank/preCreate`, requestOptions).then(response => {
+                return response.json();
+            }).then(data => {
+                if (data) {
+                    encodedOrderId = data;
+                    document.getElementById('invokeApp').style.display = 'block';
+                    document.getElementById('invokeAppUsingIntent').style.display = 'block';
+                    alert("Initiate Txn Api hit successfully==> " + data);
+                    return;
+                }
+                alert("failed : " + data);
+            }).catch(error => alert('Api Hit Failed due to network issue' + error))
+        });
+
+        function callAppInvoke(e) {
+            window.location.href = `${apiHost}/api/v1/ac/processTransaction?codeValue=${encodedOrderId}`;
+        }
+    </script>
+</body>
+
+</html>

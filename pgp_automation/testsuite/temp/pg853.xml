@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-853">
+  <test name="TO_VPA Refunds Payout - YBL Integration | Insta">
+      <classes>
+        <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="WhenRefundAmountIsGreaterThanAmountSetAtPaymentsRefundDesitantionShouldBeNull"/>
+                    <include name="WhenRefundAmountIsGreaterThanAmountSetAtRouterItShouldBeAxisBankTransfer"/>
+                    <include name="WhenRefundAmountIsLesserThanAmountSetAtRouterRefundDestinationShouldBeVPA"/>
+                    <include name="WhenRefundAmountIsLesserThanAmountSetAtPaymentsAndPayerVPAhasPaytmHandlerItShouldbeBankTransferAXIS"/> 
+                </methods>
+        </class>
+      </classes>
+  </test>
+</suite>

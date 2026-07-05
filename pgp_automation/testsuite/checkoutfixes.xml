@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1" parallel="tests" thread-count="2">
+    <test name="CheckoutJSE web fixes">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="Nonloggedin_validate_vpa_msg_logs_subscription"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                    <include name="validate_vpa_msg_logs"/>
+                    <include name="validate_vpa_msg_logs_subscription"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS web fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC15"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR"/>
+                    <include name="verifyQRDetailsShowingInFPOResponse"/>
+                    <include name="TC_002_VerifyBankmandateTxn"/>
+                    <include name="TC_011_VerifySubsCreatedInInitState"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PLE" verbose="1" parallel="methods" thread-count="1">
+    <test name="PLE_PaymentLink_Brand">
+        <parameter name="theme" value="checkoutjs_web_revamp" />
+        <classes>
+            <class name="scripts.api.PLE.PaymentLinkBrandTxnFlow">
+                <methods>
+                    <include name="pleBrandEmiPaymentLinkEndToEnd" />
+                    <include name="pleBrandCreditCardPaymentLinkEndToEnd" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PLE_PaymentLink_Bank">
+        <parameter name="theme" value="checkoutjs_web_revamp_2" />
+        <classes>
+            <class name="scripts.api.PLE.PaymentLinkBankTxnFlow">
+                <methods>
+                    <include name="pleBankOfferEmiPaymentLinkEndToEnd" />
+                    <include name="pleBankOfferCreditCardPaymentLinkEndToEnd" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PLE_DIY_Checkout_Brand">
+        <parameter name="theme" value="checkoutjs_web_revamp_2" />
+        <classes>
+            <class name="scripts.api.PLE.DIYCheckoutBrandTxnFlow">
+                <methods>
+                    <include name="pleBrandEmiDiyCheckoutEndToEnd" />
+                    <include name="pleBrandDiyCheckoutCreditCardPayInFull" />
+                </methods>
+            </class>
+            <class name="scripts.api.PLE.DIYCheckoutBankTxnFlow">
+                <methods>
+                    <include name="pleBankEMIOfferDiyCheckoutEndToEnd" />
+                    <include name="pleBankOfferCreditCardPayInFullDiyCheckoutEndToEnd" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PLE_UPI_Offer_Brand">
+        <classes>
+            <class name="scripts.api.PLE.PLEUpiOffer">
+                <methods>
+                    <include name="pleUpiBrandOfferQrFlowEndToEnd" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Standard_Payment_QR">
+        <classes>
+            <class name="scripts.api.PLE.UpiDQRStandardPayment">
+                <methods>
+                    <include name="pleCollectPaymentCreateStdQrFlowEndToEnd" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Standard_Payment_Link">
+        <parameter name="theme" value="checkoutjs_web_revamp_2" />
+        <classes>
+            <class name="scripts.api.PLE.StandardPaymentLinkTxn">
+                <methods>
+                    <include name="pleStandardPaymentLinkCreditCardlow" />
+                    <include name="pleStandardPaymentLinkDebitCardFlow" />
+                    <include name="pleStandardPaymentLinkEMIFlow" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

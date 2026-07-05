@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notification Suite" verbose="1" thread-count="20" parallel="tests">
+    <test name="Notification Low Priority">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationLogs">
+                <methods>
+                    <include name="verifyLowPriorityOfFailedPGOnlyTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

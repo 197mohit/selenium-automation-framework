@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-52544" verbose="1" thread-count="1" parallel="tests">
+    <test name="Apostrophe in link Description">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Link_Apostrophe_desc_SuccessTxn001"/>
+                    <include name="Link_Apostrophe_desc_FailedTxn001"/>
+                    <include name="Link_Apostrophe_desc_SuccessTxn002"/>
+                    <include name="Link_Apostrophe_desc_FailedTxn002"/>
+                    <include name="Link_Apostrophe_desc_SuccessTxn003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

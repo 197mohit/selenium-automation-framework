@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NativeStock" verbose="1" parallel="methods" thread-count="20">
+    <test name="Native Stock : PGP-26467 Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeStock"/>
+        </classes>
+    </test>
+
+    <test name="Native Stock : PGP-26467 Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeStock">
+                <methods>
+                    <exclude name="tc10UPIIntent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

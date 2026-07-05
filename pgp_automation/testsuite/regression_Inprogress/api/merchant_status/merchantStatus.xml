@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Merchant Status API" verbose="1" parallel="methods" thread-count="3">
+    <test name="merchant_status API">
+        <classes>
+            <class name="scripts.api.merchantStatus.txnStatusApp.SSOTokenTxnStatusAppTest"/>
+            <!-- Excluded: /merchant-status/getTxnListStatus -->
+            <!-- <class name="scripts.api.merchantStatus.txnStatusListApp.SSOTokenTxnStatusListAppTest"/> -->
+            <class name="scripts.api.merchantStatus.GetPaymentStatus"/>
+            <class name="scripts.api.merchantStatus.GetTxnStatus"/>
+            <class name="scripts.api.merchantStatus.TxnStatus"/>
+        </classes>
+    </test>
+</suite>

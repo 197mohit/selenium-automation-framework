@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Promo_Suite" verbose="1" thread-count="10" parallel="tests">
+    <test name="PGP-25875_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test when body applyPaymentOffer = ''"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals invalid promo in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers equals random value"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals valid promo in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body fetchAllPaymentOffers = false given merchant has promos configured"/>
+                    <include name="test body simplifiedPaymentOffers is not returned in response when body simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body applyPaymentOffer is not provided"/>
+                    <include name="test when body fetchAllPaymentOffers = null"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test when body applyPaymentOffer = null"/>
+                    <include name="test body simplifiedPaymentOffers is returned in response when body simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body applyPaymentOffer equals random value"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-25875_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="test body simplifiedPaymentOffers is not returned in response when body simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body applyPaymentOffer equals random value"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals invalid promo in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = null"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = ''"/>
+                    <include name="test when body applyPaymentOffer is not provided"/>
+                    <include name="test when body applyPaymentOffer = ''"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals valid promo in Initiate Txn API"/>
+                    <include name="test body simplifiedPaymentOffers is returned in response when body simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers equals random value"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = false given merchant has promos configured"/>
+                    <include name="test when body applyPaymentOffer = null"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingPaymentandSimplifiedoffers"/>
+                    <include name="ValidateFailureTxnUsingNullPromoParamsInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificDiscountPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingInvalidPromoWithValidatePromoFalseInNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingNullPromoParamsInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingPaymentandSimplifiedoffers"/>
+                    <include name="ValidateSuccessTxnUsingInvalidPromoWithValidatePromoFalseInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificDiscountPromoInNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Promo Fixes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native.FetchPromoCodeDetails-2">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_006"/>
+                    <include name="ValidateFailureTxnWhenValidatePromoisTrueForNonPromoTxnInNewFlow"/>
+                    <include name="ValidateTncUrlNotPresentInApplyPromoForDiscountPromo"/>
+                    <include name="PGP_27167_ValidateCashbackPromoInPaymentOffersFlow"/>
+                    <include name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <include name="ValidateCashbackPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <include name="TC_FPC_005"/>
+                    <include name="ValidateTncUrlNotPresentInApplyPromoForCashbackPromo"/>
+                    <include name="PGP_27167_ValidateDiscountPromoInPaymentOffersFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Promo OR Flow">
+        <classes>
+            <class name="scripts.or.FetchCardDetailsAPI">
+                <methods>
+                    <include name="assertFailureWhenInvalidMidPassed"/>
+                    <include name="assertFailureWhenInvalidTokenTypePassed"/>
+                    <include name="assertFailureWhenTokenNotPassed"/>
+                    <include name="assertFailureWhenCardNumberAndSavedCardIdNotPassed"/>
+                    <include name="assertFailureWhenInvalidTokenPassed"/>
+                    <include name="assertFailureWhenMidNotPassed"/>
+                    <include name="assertFailureWhenBlankSavedCardIdPassed"/>
+                    <include name="assertFailureWhenTokenTypeNotPassed"/>
+                    <include name="assertFailureWhenBlankTokenTypePassed"/>
+                    <include name="assertFailureWhenEmptyCardNumberPassed"/>
+                    <include name="assertFailureWhenBlankTokenPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Promo And Flow">
+        <classes>
+            <class name="scripts.api.theia.FetchAllPaymentOffers">
+                <methods>
+                    <include name="testWhenExpiredSSOTokenPassed"/>
+                    <include name="testWhenNonExistentTokenPassed"/>
+                    <include name="testWhenMidNotPassed"/>
+                    <include name="testWhenSSOTokenNotPassed"/>
+                    <include name="testWhenNonExistentMidPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name=" Promo txns - AppInvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsFalse"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsTrue"/>
+                    <exclude name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisTrueAddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-25875_1">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test">
+                <methods>
+                    <include name="test when head token equals txn token generated using different mid"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when head token equals txn token generated for OFFUS user"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when mid provided in request body is different from mid provided in query params"/>
+                    <include name="test when simplifiedPaymentOffers object was not provided in Initate Txn API while creating txn token"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when body orderId equals random value"/>
+                    <include name="test when orderId in query params is not provided"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when head token equals txn token generated using different orderId"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body orderId = ''"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when body orderId = null"/>
+                    <include name="test when body orderId is not provided"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when merchant has promos configured"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when orderId provided in request body is different from orderId provided in query params"/>
+                    <include name="test when head requestTimestamp is not provided"/>
+                    <include name="test when head token equals txn token generated for ONUS user"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- New Cases from Promo Pg2 Added -->
+    <test name="PGP-46787 - PG2 Deals tests">
+        <classes>
+            <class name="scripts.Deals.DealsTests">
+                <methods>
+                    <!--whole class was running hence added onlu excluding ones-->
+                    <exclude name="successfulDealsOnlyAddnPayCCTransactionViaCOP"/>
+                    <exclude name="successfulDealsOnlyAddnPayCCTransactionViaCOTP"/>
+                    <exclude name="successfulDealsOnlyHybridCCTransactionViaCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43122">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Promo.ANDFlow.ModificationInAndOffer"/>
+        </classes>
+    </test>
+    <test name="Custom checkout">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestE2ESuccessResponseWhenPartialSubventionAndBoAmountprovided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialSubventionProvided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvidedNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Offer Apply SSO Token">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaased"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_BOEligibleAmountPaasedNB"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_Only_BOEligibleAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_BoeligibleAmountPaasedEMI_DC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Offer Apply Txn Token">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaased"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_BOEligibleAmountPaasedNB"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_Only_BOEligibleAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_BoeligibleAmountPaasedEMI_DC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Simplified offers">
+        <parameter name="isNativePlus"  value="true"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestE2ESuccessResponseWhenPartialSubventionAndBoAmountprovided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvidedNB"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialSubventionProvided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="applyPromo Migration to Unified flow">
+        <parameter name="isNativePlus" value="true"></parameter>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.ApplyPromoV2ToUnifiedFlow">
+                <methods>
+                    <include name="testApplyPromoV2WithAccessToken"/>
+                    <include name="testApplyPromoV2WithSSOToken"/>
+                    <include name="testApplyPromoV2WithTxnToken"/>
+                    <include name="testApplyPromoV2WithSSOTokenForUPIPaymode"/>
+                    <include name="testApplyPromoV2WithSSOTokenForEMI_DCPaymode"/>
+                    <include name="testApplyPromoV2WithSSOTokenForItemBased"/>
+                    <include name="testApplyPromoV2WithSSOTokenForItemBasedPromoCodeProvided"/>
+                    <include name="testApplyPromoV2WithSSOTokenPromoCodeProvied"/>
+                    <include name="E2EEmiTxnWithapplyPromoApi"/>
+                    <include name="E2EEmiDCTxnWithapplyPromoApi"/>
+                    <include name="E2ECCTxnWithapplyPromoApi"/>
+                    <include name="E2ENBTxnWithapplyPromoApi"/>
+                    <include name="E2EDCTxnWithapplyPromoApi"/>
+                    <include name="E2EUPITxnWithapplyPromoApi"/>
+                    <include name="E2EEmiTxnWithapplyPromoApiItemBased"/>
+                    <include name="E2ENBTxnWithapplyPromoApiItemBased"/>
+                    <include name="TestE2ENBTxnForMinimalPromoMerchant"/>
+                    <include name="TestE2EEMITxnForMinimalPromoMerchant"/>
+                    <include name="TestE2EEMIDCTxnForMinimalPromoMerchant"/>
+                    <include name="TestE2ECCTxnForMinimalPromoMerchant"/>
+                    <include name="TestE2EUPITxnForMinimalPromoMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cust ID in Promo APIs">
+        <classes>
+            <class name="scripts.Promo.ANDFlow.AndFpoSCM">
+                <methods>
+                    <include name="validateCUSTIDPassedV2FPOSSO"/>
+                    <include name="validateCUSTIDPassedV1FPOSSO"/>
+                    <include name="validateCUSTIDPassedV5FPOSSO"/>
+                    <include name="validateCUSTIDPassedV2FPOTxnToken"/>
+                    <include name="validateCUSTIDPassedV5FPOTxnToken"/>
+                    <include name="validateCUSTIDPassedV1FPOTxnToken"/>
+                    <include name="validateCUSTIDPassedV2FPOTxnTokenwithoutSSO"/>
+                    <include name="validateCUSTIDPassedV5FPOTxnTokenwithoutSSO"/>
+                    <include name="validateCUSTIDPassedV1FPOTxnTokenwithoutSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Applying Promo Directly from Offer Strip">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ApplyOffer"/>
+                    <include name="ApplyOfferOnEMI"/>
+                    <include name="ApplyOfferOnUPI"/>
+                    <include name="ApplyOfferOnWallet"/>
+                    <exclude name="ApplyOfferOnPostpaid"/>
+                    <include name="ApplyOfferOnCard"/>
+                    <include name="ApplyOfferOnNetbanking"/>
+                    <include name="ApplyOfferOnWalletForPreLogin"/>
+                    <exclude name="ApplyOfferOnPostpaidForPreLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="OfferApply_API">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyAccessTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyChecksumTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest"/>
+        </classes>
+    </test>
+    <test name="PGP-56062 Test cases promo">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="onlypromocode_in_offerDiscovery"/>
+                    <include name="multipromocode_in_offerDiscovery"/>
+                    <include name="promocodeId_withSubventionId_offerDiscovery"/>
+                    <include name="promocode_Id_in_offerDiscovery"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

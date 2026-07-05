@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AddMoneyUber" verbose="1" parallel="tests" thread-count="12">
+    <test name="Add Money Uber Fee Cases Enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money Uber Fee Cases Enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money using Retry Saved Card on Wap Theme">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNBLessThan2000"/>
+                    <include name="PGP_410_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_411_validateTxnIsAllowedWhenValidSSOTokenIsPassed"/>
+                    <include name="PGP_412_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <include name="PGP_414_validateTxnNotAllowedWhenInvalidChannelIsPassed"/>
+                    <include name="PGP_415_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <include name="PGP_416_VerifyFailureWhenSSOTokenIsNotPassed"/>
+                    <include name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_418_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_420_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_421_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_422_VerifyTxnFailureWhenRequestTypeOtherThanAddMoney"/>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="PGP_285_AddMoneyFor0Amt"/>
+                    <include name="PGP_285_successfulAddMoneyDC"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="addMoneyFail"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money using Retry Saved Card on Web Theme">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedweb"/>
+      <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNBLessThan2000"/>
+                    <include name="PGP_410_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_411_validateTxnIsAllowedWhenValidSSOTokenIsPassed"/>
+                    <include name="PGP_412_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <include name="PGP_414_validateTxnNotAllowedWhenInvalidChannelIsPassed"/>
+                    <include name="PGP_415_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <include name="PGP_416_VerifyFailureWhenSSOTokenIsNotPassed"/>
+                    <include name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_418_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_420_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_421_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_422_VerifyTxnFailureWhenRequestTypeOtherThanAddMoney"/>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="PGP_285_AddMoneyFor0Amt"/>
+                    <include name="PGP_285_successfulAddMoneyDC"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="addMoneyFail"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

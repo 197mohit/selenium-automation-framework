@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fix" verbose="1">
+    <test name="EMI Fix" parallel="methods" thread-count="14">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyBankLogoforEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMISubventionNew">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="FailureTxn_AmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

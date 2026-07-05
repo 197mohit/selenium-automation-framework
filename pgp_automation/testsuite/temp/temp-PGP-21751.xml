@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-21751" verbose="1">
+    <test name="FF4J Flag OFF" parallel="methods">
+        <classes>
+            <class name="scripts.api.savedcardservice.getcard.GetCardFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbycustidmidchecksum.GetSavedCardByCustIdMIdChecksumFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbyssotoken.GetSavedCardBySSOTokenFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbycustidmid.PGGetSavedCardByCustIdMIdFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbyuseridtokenidtokentype.PGGetSavedCardByUserIdTokenIdTokenTypeFlagOffTest"/>
+        </classes>
+    </test>
+    <test name="FF4J Flag ON" parallel="methods">
+        <classes>
+            <class name="scripts.api.savedcardservice.getcard.GetCardFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbycustidmidchecksum.GetSavedCardByCustIdMIdChecksumFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbyssotoken.GetSavedCardBySSOTokenFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbycustidmid.PGGetSavedCardByCustIdMIdFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbyuseridtokenidtokentype.PGGetSavedCardByUserIdTokenIdTokenTypeFlagOnTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Merchant_Status" verbose="1" thread-count="5" parallel="tests">
+<!--    Deprecated
+    <test name="MerchantStatus NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+   -->
+    <test name="MerchantStatus enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_02"/>
+                    <include name="txnStatusInit_02"/>
+                    <include name="txnStatusClosed_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MerchantStatus AppInvoke Flow">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.AppInvokeMerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatus_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MerchantStatus Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInit_02"/>
+                    <include name="txnStatusNative_02"/>
+                    <include name="txnStatusNativeClosed_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MerchantStatus enhancedwap_revamp">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <!--Deprecated
+                    <include name="txnStatus_01"/>
+                    <include name="txnStatusNative_01"/> -->
+                    <include name="txnStatusClosed_02"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

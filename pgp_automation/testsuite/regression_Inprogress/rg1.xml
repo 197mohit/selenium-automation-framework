@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AddNPay">
+    <suite-files>
+        <suite-file path="AddMoneyExpress.xml"/>
+        <suite-file path="AddMoneyMP.xml"/>
+        <suite-file path="AddMoneyUber.xml"/>
+        <suite-file path="AddNPay.xml"/>
+        <suite-file path="AdvanceDeposit.xml"/>
+        <suite-file path="AOATxn.xml"/>
+        <suite-file path="AppInvokePromoCases.xml"/>
+        <suite-file path="AutoLogin.xml"/>
+        <suite-file path="BinInResponse.xml"/>
+        <suite-file path="BinInResponseV1.xml"/>
+        <suite-file path="CCBillPayment.xml"/>
+        <suite-file path="COD.xml"/>
+        <suite-file path="DeferredCheckout.xml"/>
+        <suite-file path="DirectBankTest.xml"/>
+        <suite-file path="DynamicQRNew.xml"/>
+        <suite-file path="EDCQR.xml"/>
+        <suite-file path="EMI.xml"/>
+        <suite-file path="EMISubvention.xml"/>
+        <suite-file path="EnhancedBankMandate.xml"/>
+        <suite-file path="FetchMerchantInfo.xml"/>
+        <suite-file path="FoodWalletRefund.xml"/>
+        <suite-file path="FoodWalletTxns.xml"/>
+        <suite-file path="GiftVoucher.xml"/>
+        <suite-file path="HDFCUPICollect.xml"/>
+        <suite-file path="Hybrid.xml"/>
+    </suite-files>
+</suite>

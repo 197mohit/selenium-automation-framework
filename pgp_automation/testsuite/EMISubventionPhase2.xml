@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Subvention Phase 2" verbose="1" parallel="methods" thread-count="20">
+    <test name="EMI Subvention Phase 2">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t29bankAPIPhase2"/>
+                    <include name="t30bankAPIPhase2"/>
+                    <include name="t31bankAPIPhase2"/>
+                    <include name="t32bankAPIPhase2"/>
+                    <include name="t33bankAPIPhase2"/>
+                    <include name="t34bankAPIPhase2"/>
+                    <include name="t35bankAPIPhase2"/>
+                    <include name="t36bankAPIPhase2"/>
+                    <include name="t37bankAPIPhase2"/>
+                    <include name="t38bankAPIPhase2"/>
+                    <include name="t39bankAPIPhase2"/>
+                    <include name="t40bankAPIPhase2"/>
+                    <include name="t41bankAPIPhase2"/>
+                    <include name="t42bankAPIPhase2"/>
+                    <include name="t43bankAPIPhase2"/>
+                    <include name="t44bankAPIPhase2"/>
+                    <include name="t45bankAPIPhase2"/>
+                    <include name="t46bankAPIPhase2"/>
+                    <include name="t47tenureAPIPhase2"/>
+                    <include name="t48tenureAPIPhase2"/>
+                    <include name="t49tenureAPIPhase2"/>
+                    <include name="t50tenureAPIPhase2"/>
+                    <include name="t51tenureAPIPhase2"/>
+                    <include name="t52tenureAPIPhase2"/>
+                    <include name="t53tenureAPIPhase2"/>
+                    <include name="t54tenureAPIPhase2"/>
+                    <include name="t55tenureAPIPhase2"/>
+                    <include name="t56tenureAPIPhase2"/>
+                    <include name="t57tenureAPIPhase2"/>
+                    <include name="t58tenureAPIPhase2"/>
+                    <include name="t59tenureAPIPhase2"/>
+                    <include name="t60tenureAPIPhase2"/>
+                    <include name="t61tenureAPIPhase2"/>
+                    <include name="t62tenureAPIPhase2"/>
+                    <include name="t63validateAPIPhase2"/>
+                    <include name="t64validateAPIPhase2"/>
+                    <include name="t65validateAPIPhase2"/>
+                    <include name="t66validateAPIPhase2"/>
+                    <include name="t67validateAPIPhase2"/>
+                    <include name="t68validateAPIPhase2"/>
+                    <include name="t69validateAPIPhase2"/>
+                    <include name="t70validateAPIPhase2"/>
+                    <include name="t71validateAPIPhase2"/>
+                    <include name="t72validateAPIPhase2"/>
+                    <include name="t73validateAPIPhase2"/>
+                    <include name="t74validateAPIPhase2"/>
+                    <include name="t75validateAPIPhase2"/>
+                    <include name="t76validateAPIPhase2"/>
+                    <include name="t77validateAPIPhase2"/>
+                    <include name="t78validateAPIPhase2"/>
+                    <include name="t79validateAPIPhase2"/>
+                    <include name="t80validateAPIPhase2"/>
+                    <include name="t81initiateAPIPhase2"/>
+                    <include name="t82initiateAPIPhase2"/>
+                    <include name="t83initiatePTCAPIPhase2"/>
+                    <include name="t84initiatePTCAPIPhase2"/>
+                    <include name="t85initiatePTCAPIPhase2"/>
+                    <include name="t86initiatePTCAPIPhase2"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                    <include name="t88initiatePTCAPIPhase2"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

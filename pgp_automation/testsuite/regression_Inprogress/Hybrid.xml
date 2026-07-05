@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hybrid" verbose="1" parallel="methods" thread-count="10">
+    <test name="Hybrid-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                    <include name="hybrid_CC_S_withDecimalAmount"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                    <include name="hybrid_verifyWalletBalanceAfterLogin"/>
+                    <include name="hybrid_verifyAllPayModeOnCashier"/>
+                    <include name="hybrid_PPI_S_sufficientBalanceValidateWalletBalance"/>
+                    <include name="hybrid_verifySavedCardList"/>
+                    <include name="hybrid_SC_S"/>
+                    <include name="hybrid_SC_F_invalidCvv"/>
+                    <include name="hybrid_CC_S_walletBalanceZero"/>
+                    <include name="hybrid_DC_S"/>
+                    <include name="hybrid_NB_S"/>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                    <include name="hybrid_SC_S_withDCCard"/>
+                    <include name="hybrid_CC_F_invalidOTP"/>
+                    <include name="hybrid_CC_F_invalidCvv"/>
+                    <include name="hybrid_CC_F_invalidExpiry"/>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_CC_F_retryCountBreached"/>
+                    <include name="hybrid_CC_retry_S"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hybrid with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                    <include name="hybrid_CC_S_withDecimalAmount"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                    <include name="hybrid_verifyWalletBalanceAfterLogin"/>
+                    <include name="hybrid_verifyAllPayModeOnCashier"/>
+                    <include name="hybrid_PPI_S_sufficientBalanceValidateWalletBalance"/>
+                    <include name="hybrid_verifySavedCardList"/>
+                    <include name="hybrid_SC_S"/>
+                    <include name="hybrid_SC_F_invalidCvv"/>
+                    <include name="hybrid_CC_S_walletBalanceZero"/>
+                    <include name="hybrid_DC_S"/>
+                    <include name="hybrid_NB_S"/>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                    <include name="hybrid_SC_S_withDCCard"/>
+                    <include name="hybrid_CC_F_invalidOTP"/>
+                    <include name="hybrid_CC_F_invalidCvv"/>
+                    <include name="hybrid_CC_F_invalidExpiry"/>
+                    <include name="hybrid_UPI_S"/>
+                    <!--<include name="hybrid_CC_S_loginOnCashier"/>--><!--commented as this are still to be automated-->
+                    <include name="hybrid_CC_F_retryCountBreached"/>
+                    <include name="hybrid_CC_retry_S"/>
+                    <include name="hybrid_PPBL_S"/>
+                    <include name="hybridErrorMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Txn from Hybrid Merchant">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_PPI_S_sufficientBal" description="Success walletonly txn from Hybrid merc"/>
+                    <include name="hybrid_NB_S"/>
+                    <include name="hybrid_NB_S_uncheckWalletwithSufficientBalance"/>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_UPI_S_sufficientBal"/>
+                    <include name="hybrid_UPI_F_withInvalidPin"/>
+                    <include name="hybrid_PPBL_S"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hybrid IDBI NB Txn">
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_IDBI_NB"/>
+                    <include name="validateRetryInfoNotPresentForWalletWithoutRetryMerchantOfflineTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SMS Mock Failure - PGP-28069">
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="smsNotSent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Hybrid merchant">
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="successCorporateHybridCCBinCorporateMerchant"/>
+                    <include name="successCorporateHybridDCBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-PG2-Failed" verbose="1" parallel="tests" thread-count="20">
+    <test thread-count="20" verbose="0" name="Mapping Service Drop 3 API " parallel="tests">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop3.fetchlogo">
+                <methods>
+                    <include name="Verifyfetchlogo2"/>
+                    <include name="VerifyFetchlogo1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="Mapping Service Drop 1 API " parallel="tests">
+        <classes>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.MerchantAgentGetAgentInfoIdType">
+                <methods>
+                    <include name="verifyMerchantAgentGetAgentInfoIdType_01"/>
+                    <include name="verifyMerchantAgentGetAgentInfoIdType_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetBanksDetailslistfromCodes">
+                <methods>
+                    <include name="verifyGetBanksDetailslistfromCodes_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.UserV1TypePaytmIdWillcreate">
+                <methods>
+                    <include name="verifyUserV1TypePaytmId_04"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.BankmasterdetailsPaymodeApi">
+                <methods>
+                    <include name="verifyBankmasterdetailsPaymodeApi_03"/>
+                    <include name="verifyBankmasterdetailsPaymodeApi_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetGlobalConfigACQUIRER_CURRENCY_IICPC1IN">
+                <methods>
+                    <include name="verifyGetGlobalConfigACQUIRER_CURRENCY_IICPC1IN_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.UserV1TypePaytmId">
+                <methods>
+                    <include name="verifyUserV1TypePaytmId_04"/>
+                    <include name="verifyUserV1TypePaytmId_03"/>
+                    <include name="verifyUserV1TypePaytmId_02"/>
+                    <include name="verifyUserV1TypePaytmId_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="Mapping Service PG2 API " parallel="tests">
+        <classes>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityurlinformidV2">
+                <methods>
+                    <include name="verifyGetEntityurlinformidV2api"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKeyWithoutPaymodeandCliendId">
+                <methods>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApiWithoutPaymodeandClientId_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKey">
+                <methods>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApi_2"/>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApi_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantdata">
+                <methods>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

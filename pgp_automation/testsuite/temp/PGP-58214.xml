@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58214">
+    <test name="REFUND Service error code verification">
+        <classes>
+            <class name="scripts.EMITest.EMIDependentServiceTest">
+                <methods>
+                    <include name="verifyErrorCodeForRefundAmountIsInvalid_ItemInfoMissing_InvalidOrderId"/>    
+                    <include name="verifyErrorCodeWhenItemIsAlreadyRefunded"/>  
+                    <include name="verifyErrorCodeWhenMidIsInvalid"/>  
+                    <include name="verifyErrorCodeWhenOrderIsNotSuccessful"/>    
+                    <include name="verifyErrorCodeWhenNoSuccessfulCheckoutIsFound"/>  
+                    <include name="verifyErrorCodeWhenChildOrderIsNotSuccessful"/>  
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

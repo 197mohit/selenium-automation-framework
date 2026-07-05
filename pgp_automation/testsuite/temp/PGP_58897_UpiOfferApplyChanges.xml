@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57174 - multi item" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-58897">
+        <parameter name="theme" value="PGP-58897"/>
+        <classes>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutNewFlowTest">
+                <methods>
+                    <include name="VerifyUPIOffersGettingAppliedInWithoutVPAScenarioUPIIntentAmountbased"/>
+                    <include name="VerifyUPIOffersGettingAppliedInWithoutVPAScenarioUPIIntentItembased"/>
+                    <include name="VerifyUPIOffersGettingAppliedInWithoutVPAScenarioUPICollectAmountBased"/>
+                    <include name="VerifyUPIOffersGettingAppliedInWithoutVPAScenarioUPICollectItembased"/>
+                    <include name="VerifyUPIOffersGettingAppliedInVPAScenarioUPICollectItembased"/>
+
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="VerifyUPIOffersGettingAppliedInUPICollectFlowAmountBased"/>
+                    <include name="VerifyUPIOffersGettingAppliedInUPICollectFlowItemBased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

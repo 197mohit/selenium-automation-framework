@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Coft_cardPar_tescases" verbose="1">
+
+    <test name="Card_Par">
+
+        <classes>
+
+            <class name="scripts.coft.theia.PTCReqValidationTokenTavvTests">
+
+                <methods>
+
+                    <include name="verify_thePTC_request_iflast4digit_notprovidedin_request_body"/>
+
+                    <include name="verify_thePTC_request_if_PAR_notprovidedin_request_body"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

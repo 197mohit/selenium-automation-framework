@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Saved Card Migration cases" verbose="1" thread-count="1">
+    <test name="PGP-25874 ADDPAY on enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="loginAtCashierPageToCheckMIDUserIdCardsPGSide"/>
+                    <include name="loginAtCashierPageToCheckMIDUserIdCardsAlipay"/>
+                    <include name="storePrefOffAddPay"/>
+                    <include name="logoutCashierPage"/>
+                    <include name="retryAddPayPPlus"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25874 ADDPAY on Native">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeAddMoneyTP">
+                <methods>
+                    <include name="loginAtCashierPageToCheckMIDUserIdCardsAlipayAddPay"/>
+                    <include name="storeCardPrefOff"/>
+                    <include name="disablePayModeCCDC"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25874 ADDnPAY on Native">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="checkSavedCardsWhenInsufficientBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-26959 Saved Card Fix">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="lastSuccessfulTime1"/>
+                    <include name="lastSuccessfulTime2"/>
+                    <include name="lastSuccessfulTime3"/>
+                    <include name="lastSuccessfulTime4"/>
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-26960 International,Prepaid and Bajaj fin card on Enhanced Web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="internationalCardNonLoggedInFlowPGSide"/>
+                    <include name="internationalCardNonLoggedInFlowPPlusSide"/>
+                    <include name="internationalCardLoggedInFlowPGSide"/>
+                    <include name="internationalCardLoggedInFlowPPlus"/>
+                    <include name="internationalCardNotVisibleLoggedInFlowPGSide"/>
+                    <include name="internationalCardNotVisibleLoggedInFlowPPlus"/>
+                    <include name="bajajFinservFilteringAlipay"/>
+                    <include name="prepaidCardNotVisibleUnsupportedMidPG"/>
+                    <include name="prepaidCardNotVisibleUnsupportedMid"/>
+                    <include name="prepaidCardVisibleSupportedMidPG"/>
+                    <include name="prepaidCardVisibleSupportedMid"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26960 International,Prepaid and Bajaj fin card on Native Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPayOptions">
+                <methods>
+                    <include name="internationalCardNonLoggedInFlowPGSide"/>
+                    <include name="internationalCardNonLoggedInFlowPPlusSide"/>
+                    <include name="internationalCardLoggedInFlowPGSide"/>
+                    <include name="internationalCardLoggedInFlowPPlus"/>
+                    <include name="internationalCardNotVisibleLoggedInFlowPGSide"/>
+                    <include name="internationalCardNotVisibleLoggedInFlowPPlus"/>
+                    <include name="bajajFinservFilteringAlipay"/>
+                    <include name="prepaidCardNotVisibleUnsupportedMidPG"/>
+                    <include name="prepaidCardNotVisibleUnsupportedMid"/>
+                    <include name="prepaidCardVisibleSupportedMidPG"/>
+                    <include name="prepaidCardVisibleSupportedMid"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26960 International,Prepaid and Bajaj fin card on Native FPO V2 Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="internationalCardNonLoggedInFlowPGSide"/>
+                    <include name="internationalCardNonLoggedInFlowPPlusSide"/>
+                    <include name="internationalCardLoggedInFlowPGSide"/>
+                    <include name="internationalCardLoggedInFlowPPlus"/>
+                    <include name="internationalCardNotVisibleLoggedInFlowPGSide"/>
+                    <include name="internationalCardNotVisibleLoggedInFlowPPlus"/>
+                    <include name="bajajFinservFilteringAlipay"/>
+                    <include name="prepaidCardNotVisibleUnsupportedMidPG"/>
+                    <include name="prepaidCardNotVisibleUnsupportedMid"/>
+                    <include name="prepaidCardVisibleSupportedMidPG"/>
+                    <include name="prepaidCardVisibleSupportedMid"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

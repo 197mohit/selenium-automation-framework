@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46095" verbose="1" >
+    <test name="Validate fileds in BOSS_CHARGE_FEE_BATCH_CONSULT request/response" parallel="methods" thread-count="6">
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative">
+                <methods>
+                    <include name="validateFetchPCFResponseWhenOnlyEMIpayMethodPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkPassed"/>
+                    <include name="validateFetchPCFResponseWhenIssuerBankPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkDinersPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkMaestroPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkVisaPassed"/>
+                    <include name="validateFetchBinDetailsResponseForCardNetworkDiners"/>
+                    <include name="validateFetchBinDetailsResponseForCardNetworkVISA"/>
+                    <include name="validatePTCResponseForCardNetworkVISA"/>
+                    <include name="validatePTCResponseForCardNetworkDiners"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

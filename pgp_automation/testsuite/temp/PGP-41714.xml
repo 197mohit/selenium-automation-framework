@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-41714" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

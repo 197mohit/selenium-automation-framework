@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI_Suite_UI" verbose="1" thread-count="20" parallel="tests">
+    <test name="CheckoutJS UPI Intent Flow UI REVAMP">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <exclude name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisTrue"/>
+                    <exclude name="ValidateUPICollectpaymodeNotVisiblewithIntentOnlyEnabled"/>
+                    <exclude name="PGP_27157_ValidateBankOffersNotVisiblewithPWPMerchantfterLoggingIn"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS UPI Intent Flow">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="ValidateUPIPaymodeUIchangeswithUPIIntentEnabled"/>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisFalse"/>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisTrue"/>
+                    <include name="ValidateSuccessTxnUsingUPICollectwithIntentEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-36177 UPI Autopay Checkout flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.CheckoutJsUPICollectSubs">
+                <methods>
+                    <include name="verifySubsGreaterThan25k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIEnhanceEnhanceWap" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"/>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"/>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIEnhanceEnhanceWeb" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"/>
+                    <include name="UpiNumericIdCmid_02"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"/>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"/>
+                    <include name="UpiVpaCases_02"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_002_Enhanced_Subs_FreqUnitMonth"/>
+                    <include name="UpiVpaCases_01"/>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="UpiNumericId_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-34678 Verify Upi collect Tab on Enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUPICollect_Tab"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <include name="VerifyUPICollect_Tab_When_PrefDisabled_LoggedIn"/>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                    <include name="verifyAllInOneUpiQr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45265">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.PGP_45265">
+                <methods>
+                    <include name="TEST_06"/>
+                    <include name="TEST_018"/>
+                    <include name="TEST_01"/>
+                    <include name="TEST_010"/>
+                    <include name="TEST_02"/>
+                    <include name="TEST_020"/>
+                    <include name="TEST_017"/>
+                    <include name="TEST_014"/>
+                    <include name="TEST_019"/>
+                    <include name="TEST_05"/>
+                    <include name="TEST_011"/>
+                    <include name="TEST_015"/>
+                    <include name="TEST_04"/>
+                    <include name="TEST_07"/>
+                    <include name="TEST_03"/>
+                    <include name="TEST_016"/>
+                    <include name="TEST_013"/>
+                    <include name="TEST_012"/>
+                    <include name="TEST_08"/>
+                    <include name="TEST_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="temp-PGP-24778 : Enhanced WEB " parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0"
+          name="PGP-29609 Verify the successful UPI Intent subscription txn with all possible freq units"
+          parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_26700_verifySuccessUPIIntentSubsTxnOnEnhancedPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="Hybrid-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_UPI_S_sufficientBal"/>
+                </methods>
+            </class> <!-- scripts.Hybrid -->
+        </classes>
+    </test> <!-- Hybrid-enhancedwap -->
+    <test name="PGP-48011 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_48011_TC01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MCC ADDMONEY UPICOllect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MCC_ADD_COLLECT">
+                <methods>
+                    <include name="addnPay_UPI_Collect_FULLKYC"/>
+                    <include name="addnPay_UPI_Collect_MINKYC"/>
+                    <include name="addMoney_UPI_Collect_FULLKYC"/>
+                    <include name="addMoney_UPI_Collect_MINKYC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-50167">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.api.UPI.UPIErrorCode">
+                <methods>
+                    <include name="Overall_UPI_Limit_Exhaust"/>
+                    <include name="UPI_Collect_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_Intent_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_CC_PerTxn_Limit_Exhaust"/>
+                    <include name="Eligibility_UPICC_PPIWALLET"/>
+                    <include name="UPI_CC_NotAllowed"/>
+                    <include name="UPI_Collect_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_Intent_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_CC_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_Collect_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Daily_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_Daily_Limit_Exhaust"/>
+                    <include name="UPI_CC_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_Monthly_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_Weekly_Limit_Exhaust"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

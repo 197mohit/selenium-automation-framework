@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-1297">
+    <test name=" PG-1297 | Event ingestion - International Card Transactions">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="VerifyEventIngestionInternationalCardTransactions"/>
+                    <include name="VerifyEventIngestionInternationalCardFailTransactions"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

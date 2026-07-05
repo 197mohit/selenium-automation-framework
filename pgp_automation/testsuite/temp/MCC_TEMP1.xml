@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MCC ADD MONEY" verbose="1" thread-count="1" parallel="tests">
+
+    <test name="NATIVE : MCC ADDNPAY and ADDMONEY UPIPUSH">
+        <classes>
+            <class name="scripts.MCCADDNPAY">
+                <methods>
+                    <include name="validateUpiPushTxnADDNPAY"/>
+                    <include name="validateUpiPushTxnADDNPAYMINKYC"/>
+                    <include name="validateUpiPushTxnADDMONEY"/>
+                    <include name="validateUpiPushTxnADDMONEYMINKYC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

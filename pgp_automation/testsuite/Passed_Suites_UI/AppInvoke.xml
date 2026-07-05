@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AppInvoke_UI" verbose="1" thread-count="20" parallel="tests">
+    <test name="UPIEnhanceEnhanceWap" >
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_002_Enhanced_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42086 for AppInvoke Flow">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.AppInvokeMerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatus_02"/>
+                    <include name="txnStatusClosed_02"/>
+                    <include name="txnStatusInvalid_05"/>
+                    <include name="txnStatusInit_02"/>
+                    <include name="txnStatusInvalid_01"/>
+                    <include name="txnStatusInit_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name=" Promo txns - AppInvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsFalse"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsTrue"/>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisTrueAddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-23279 tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_23279_verifySuccessPPISubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29580 Subscription_via_cc_dc">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC04_User_loggedIn_PPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-32161 AddnpayCCdisable_appinvoke">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="appInvoke01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-31208 AppInvoke_bugtest">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokeBugtest">
+                <methods>
+                    <include name="autoInvokePending"/>
+                    <include name="validateAutoAppInvokeAllowedFlag"/>
+                    <include name="autoInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

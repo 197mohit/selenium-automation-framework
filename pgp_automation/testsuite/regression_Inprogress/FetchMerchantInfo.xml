@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FetchMerchantInfo" verbose="1" parallel="methods" thread-count="10">
+    <test name="fetchmerinfo">
+        <classes>
+            <class name="scripts.FetchMerchantInfo">
+                <methods>
+                    <include name="verifyMerchantInfowithValidMid"/>
+                    <include name="invalidMidMerchantInfo"/>
+                    <include name="verifyMerchantInfowithSingleValidMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

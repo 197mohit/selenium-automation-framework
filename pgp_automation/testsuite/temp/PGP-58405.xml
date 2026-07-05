@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58405" verbose="1">
+    <test name="VULN Platform Information Disclosed in HTTP Response">
+        <classes>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest">
+                <methods>
+                    <include name="testDeleteSavedCardByTokenTypeGET"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

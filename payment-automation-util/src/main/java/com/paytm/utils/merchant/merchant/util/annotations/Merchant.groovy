@@ -1,0 +1,14 @@
+package com.paytm.utils.merchant.merchant.util.annotations
+
+import java.lang.annotation.ElementType
+import java.lang.annotation.Retention
+import java.lang.annotation.RetentionPolicy
+import java.lang.annotation.Target
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@interface Merchant {
+    Class value() default { true }
+
+    boolean edit() default false;
+}

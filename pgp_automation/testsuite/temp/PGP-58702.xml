@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="upiinterestfreeandinterestbearcreditline" verbose="1">
+    <test name="Theia UPIPSP  upi interest free and interest bear credit line">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateTheiaUPIPSofflinesmallInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineRailsYabove2000"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

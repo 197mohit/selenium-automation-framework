@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-Instaproxy-Validation" verbose="1" thread-count="10"
+  parallel="methods" data-provider-thread-count="3">
+  <parameter name="browser" value="chrome"/>
+
+  <test name="PGP-60910 - PPBL UPI CreateOrder Validation Tests">
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+        <methods>
+          <include name="testOrderRequestReceivedAtPgInRespAuthForV2CreateOrder"/>
+          <include name="testEpochTimestampInOrderRequestReceivedAtPgForV2CreateOrder"/>
+          <include name="testOrderRequestReceivedAtPgInRespAuthForV3CreateOrder"/>
+          <include name="testEpochTimestampInOrderRequestReceivedAtPgForV3CreateOrder"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

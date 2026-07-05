@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56124" parallel="methods" verbose="1">
+    <test name="PGP-56124">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfs_hdfc_dc_text"/>
+                    <include name="kfs_hdfc_dc_link"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

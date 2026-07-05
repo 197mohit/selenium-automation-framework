@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-42813" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-42813 CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_Verify_CallbackURL"/>
+                    <include name="PGP_Verify_CallbackURL_SIP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

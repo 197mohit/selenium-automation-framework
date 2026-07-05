@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="arnNotify" verbose="1" thread-count="6" parallel="tests">
+    <test name="PGP-43406 arnNotify">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="arnNotify"/>
+                    <include name="refundArnNotify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/Response"
+        },
+        "cardNetworkDetailsList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CardNetworkDetailsList"
+          }
+        }
+      },
+      "required": [
+        "cardNetworkDetailsList",
+        "response"
+      ],
+      "title": "Root"
+    },
+    "CardNetworkDetailsList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cardNetwork": {
+          "type": "string"
+        },
+        "logoUrl": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "cardNetwork",
+        "displayName",
+        "logoUrl"
+      ],
+      "title": "CardNetworkDetailsList"
+    },
+    "Response": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resultCode": {
+          "type": "string",
+          "enum": [
+            "00000"
+          ]
+        },
+        "resultStatus": {
+          "type": "string",
+          "enum": [
+            "S"
+          ]
+        },
+        "messaage": {
+          "type": "string",
+          "enum": [
+            "Success"
+          ]
+        }
+      },
+      "required": [
+        "messaage",
+        "resultCode",
+        "resultStatus"
+      ],
+      "title": "Response"
+    }
+  }
+}

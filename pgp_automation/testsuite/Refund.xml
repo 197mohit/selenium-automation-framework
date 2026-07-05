@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Refund test cases for enhancedwap and enhancedweb themes" verbose="1" thread-count="20"
+       parallel="tests">
+    <test name="Refund-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulHybridRefund"/>
+                    <include name="successfulMultiplePartialRefund"/>
+                    <include name="successfulPGOnlyDCRefund"/>
+                    <include name="successfulPartialRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="validatePPBLRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund Async-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                    <include name="successfulPGOnlyDCRefund_async"/>
+                    <include name="successfulHybridRefund_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_async"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn_async"/>
+                    <include name="successfulMultiplePartialRefund_async"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount_async"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId_async"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund status V1 - enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <exclude name="verifySuccessfulRefundOnSubsViaCC_asyncStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Food wallet refund">
+        <parameter name="theme" value="enhancedweb">
+            <classes>
+                <class name="scripts.FoodWalletRefund">
+                    <methods>
+                        <include name="PGP_successfulFoodWalletRefund"/>
+                        <include name="PGP_failedRefund_WhenFoodNotPassedInCheckSum"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_CC"/>
+                        <include name="PGP_FailedFoodRefund_InvalidFoodParamInChecksum"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_FoodCCMainWallet"/>
+                        <include name="PGP_SuccessFoodPartialRefund_Hybrid_FoodMainWallet"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_PartialFoodMainWallet"/>
+                        <include name="PGP_FailedFoodRefund_Hybrid"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_FoodWalletRefundAmtExceed"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_notExceedsFoodWalletAmount"/>
+                        <include name="PGP_SuccessRefund_AddnPay"/>
+                        <include name="PGP_SuccessRefund_Partial_AddNPay"/>
+                        <include name="PGP_SuccessAdNPayRefund_WhenLimitBreached"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="PCF enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <exclude name="success_PCF_CC_Refund"></exclude>
+                    <exclude name="success_PCF_CC_Refund_Partial"></exclude>
+                    <exclude name="Failed_PCF_CC_Refund_Partial"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulHybridRefund"/>
+                    <include name="successfulMultiplePartialRefund"/>
+                    <include name="successfulPGOnlyDCRefund"/>
+                    <include name="successfulPartialRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="successfulWalletOnlyRefund"/>
+                    <include name="validatePPBLRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund Async with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                    <include name="successfulPGOnlyDCRefund_async"/>
+                    <include name="successfulWalletOnlyRefund_async"/>
+                    <include name="successfulPGOnlyUPIRefund_async"/>
+                    <include name="successfulHybridRefund_async"/>
+                    <include name="successfulAddNPayRefund_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_async"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn_async"/>
+                    <include name="successfulMultiplePartialRefund_async"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount_async"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId_async"/>
+                    <include name="successfulRefundForWalletLimitBreach_async"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund Status Api with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RefundStatus">
+                <methods>
+                    <include name="validateRefundStatusResp_PGOnly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund status V1 - enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <exclude name="verifySuccessfulRefundOnSubsViaCC_asyncStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

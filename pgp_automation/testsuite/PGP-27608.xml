@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27608" parallel="methods" verbose="1">
+    <test name="PGP-27608">
+        <classes>
+            <class name="scripts.api.theia.SendOtp">
+                <methods>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is passed"/>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is not passed"/>
+                    <include name="test when merchant has send otp v5 flag disabled and autoReadHash is passed"/>
+                    <include name="test when merchant has send otp v5 flag disabled and autoReadHash is not passed"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.SendOtpV4Test">
+                <methods>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is passed"/>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is not passed"/>
+                    <include name="test when merchant has send otp v5 flag disabled and autoReadHash is passed"/>
+                    <include name="test when merchant has send otp v5 flag disabled and autoReadHash is not passed"/>
+                    <include
+                            name="test when merchant has send otp v5 flag enabled and requestType is NATIVE_SUBSCRIPTION"/>
+                    <include
+                            name="test when merchant has send otp v5 flag disabled and requestType is NATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

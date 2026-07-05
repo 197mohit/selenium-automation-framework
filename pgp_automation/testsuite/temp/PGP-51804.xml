@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-51804" verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-51804 cases">
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyValidateHavingAmexAndPTCHavingHDFCPlanID"/>
+                    <include name="verifyValidateHavingAmexAndPTCHavingAMEXIncorrectPlanID"/>
+                    <include name="verifyFailureTxnforIncorrectPlanIDInPTC"/>
+                    <include name="verifyFailureTxnforIncorrectPlanIDUsingALTIDInPTC"/>
+                    <include name="verifyFailureTxnforIncorrectPlanIDUsingCOFTInPTC"/>
+                    <include name="verifyFailureTxnforIncorrectTenureUsingCOFTInPTC"/>
+                    <include name="verifyFailureTxnforValidateHavingAmexAndPTCHavinCOFTOfAMEXAndIncorrectPlanID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

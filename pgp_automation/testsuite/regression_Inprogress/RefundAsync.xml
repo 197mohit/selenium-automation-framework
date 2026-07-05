@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RefundAsync" verbose="1" parallel="tests" thread-count="12">
+    <test name="Refund Async with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                    <include name="successfulPGOnlyDCRefund_async"/>
+                    <include name="successfulWalletOnlyRefund_async"/>
+                    <include name="successfulPGOnlyUPIRefund_async"/>
+                    <include name="successfulHybridRefund_async"/>
+                    <include name="successfulAddNPayRefund_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_async"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn_async"/>
+                    <include name="successfulMultiplePartialRefund_async"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount_async"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId_async"/>
+                    <include name="successfulRefundForWalletLimitBreach_async"/>
+                    <include name="partialRefundErrorMessageRedundantRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund Async-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                    <include name="successfulPGOnlyDCRefund_async"/>
+                    <include name="successfulHybridRefund_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_async"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn_async"/>
+                    <include name="successfulMultiplePartialRefund_async"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount_async"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId_async"/>
+                    <include name="partialRefundErrorMessageRedundantRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp PGP-22762 for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.RefundAsync">
+                    <methods>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementNB"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementDC"/>
+                        <include name="validateAsycRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateMasterRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateRefundHandlerAllowedForNonInstantSettlementTxn"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="temp PGP-22762 for Native Plus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.RefundAsync">
+                    <methods>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementNB"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementDC"/>
+                        <include name="validateAsycRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateMasterRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateRefundHandlerAllowedForNonInstantSettlementTxn"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

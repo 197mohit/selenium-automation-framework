@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UDFLinkTxn" verbose="1" parallel="methods" thread-count="3">
+    <test name="UDFLinkTxn">
+        <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+        <classes>
+            <class name="scripts.api.linkservice.SupportUdf2AndUdf3"/>
+        </classes>
+    </test>
+</suite>

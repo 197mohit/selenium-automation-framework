@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="COFT" verbose="1" parallel="tests" thread-count="7">
+    <test name="EMI transaction on token">
+        <classes>
+            <class name="scripts.coft.theia.EmiTransactionOnTokens">
+                <methods>
+                    <include name="standardEmiWithFreshCard"/>
+                    <include name="standardEmiWithTIN"/>
+                    <include name="standardEmiWithTOKEN"/>
+                    <include name="subventionEmiWithFreshCard"/>
+                    <include name="subventionEmiWithTIN"/>
+                    <include name="subventionEmiWithTOKEN"/>
+                    <include name="lastFourDigitVerification"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

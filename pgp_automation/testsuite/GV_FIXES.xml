@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Gift Voucher FIXES" verbose="1">
+    <test name="Native PLUS | Gift Voucher Test Cases">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GiftVoucher">
+                <methods>
+                    <include name="gvAddNPayNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native | Gift Voucher Test Cases">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.GiftVoucher">
+                <methods>
+                    <include name="gvAddNPayNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="enhanced WAP revamp | Gift Voucher Test Cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.mgv.TestMGVForHybridMerchant">
+                <methods>
+                    <include name="testInCaseOfRetryifTxnFailsSuccessfulMGVTxn"/>
+                    <include name="testForAggregatorMerchant"/>
+                    <include name="testWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="enhanced WEB revamp | Gift Voucher Test Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.mgv.TestMGVForHybridMerchant">
+                <methods>
+                    <include name="testInCaseOfRetryifTxnFailsSuccessfulMGVTxn"/>
+                    <include name="testForAggregatorMerchant"/>
+                    <include name="testWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

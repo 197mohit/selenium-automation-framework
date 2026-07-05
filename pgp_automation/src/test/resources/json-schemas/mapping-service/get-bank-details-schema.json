@@ -1,0 +1,108 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bankId": {
+          "type": "integer"
+        },
+        "bankName": {
+          "type": "string"
+        },
+        "bankCode": {
+          "type": "string"
+        },
+        "bankDisplayName": {
+          "type": "string"
+        },
+        "bankKey": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "alipayBankCode": {
+          "type": "string"
+        },
+        "bankWebLogo": {
+          "type": "null"
+        },
+        "bankWapLogo": {
+          "type": "null"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "bankMandate": {
+          "enum": [
+            "PHYSICAL",
+            "EMANDATE",
+            null
+          ]
+        },
+        "standardBankCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "mandateNetBanking": {
+          "type": "boolean"
+        },
+        "mandateDebitCard": {
+          "type": "boolean"
+        },
+        "payMode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "displayOrder": {
+          "type": "integer"
+        },
+        "extendedInfo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "extIfscCode": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bankShortName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "alipayBankCode",
+        "bankCode",
+        "bankDisplayName",
+        "bankId",
+        "bankKey",
+        "bankMandate",
+        "bankName",
+        "bankWapLogo",
+        "bankWebLogo",
+        "displayOrder",
+        "mandateDebitCard",
+        "mandateNetBanking",
+        "payMode",
+        "standardBankCode",
+        "status",
+        "extIfscCode",
+        "bankShortName"
+      ],
+      "title": "Root"
+    }
+  }
+}

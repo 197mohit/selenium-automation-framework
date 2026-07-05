@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29626"  verbose="1" parallel="methods" thread-count="1">
+
+    <test name="PGP-29626 for workflow in JS">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jDisabled"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jEnabled"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jDisabled"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

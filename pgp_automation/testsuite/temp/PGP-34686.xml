@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-34686">
+    <test name="Verify back button changes and its behaviour for yes and no">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyYesNoComingAfterClickOnBackButton"/>
+                    <include name="VerifyResponceWhenClickYesForCancelTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

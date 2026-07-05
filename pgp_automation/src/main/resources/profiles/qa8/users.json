@@ -1,0 +1,81 @@
+[
+  {
+    "mobile": "7000100100",
+    "password": "paytm@123",
+    "premium": false,
+    "ppbl": true,
+    "paytmcc": false,
+    "kyc": true,
+    "subWallets": {
+      "main": true,
+      "food": false,
+      "gift": false
+    }
+  },
+  {
+    "mobile": "7000100101",
+    "password": "paytm@123",
+    "premium": false,
+    "ppbl": true,
+    "paytmcc": false,
+    "kyc": true,
+    "subWallets": {
+      "main": true,
+      "food": false,
+      "gift": false
+    }
+  },
+  {
+    "mobile": "7206691887",
+    "password": "Paytm@1234",
+    "premium": false,
+    "ppbl": true,
+    "paytmcc": false,
+    "kyc": true,
+    "emidc": true,
+    "subWallets": {
+      "main": true,
+      "food": false,
+      "gift": false
+    }
+  },
+  {
+    "mobile": "8006006993",
+    "password": "paytm@123",
+    "premium": false,
+    "ppbl": true,
+    "paytmcc": true,
+    "kyc": true,
+    "subWallets": {
+      "main": true,
+      "food": true,
+      "gift": false
+    }
+  },
+  {
+    "mobile": "9812639191",
+    "password": "Paytm@1234",
+    "premium": false,
+    "ppbl": true,
+    "paytmcc": false,
+    "kyc": false,
+    "subWallets": {
+      "main": true,
+      "food": false,
+      "gift": false
+    }
+  },
+  {
+    "mobile": "5936783921",
+    "password": "paytm@123",
+    "premium": false,
+    "ppbl": false,
+    "paytmcc": false,
+    "kyc": false,
+    "subWallets": {
+      "main": false,
+      "food": false,
+      "gift": false
+    }
+  }
+]

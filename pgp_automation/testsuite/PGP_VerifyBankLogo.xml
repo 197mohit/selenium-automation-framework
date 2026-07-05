@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-32822" parallel="methods" verbose="1">
+    <test name="Verify Bank Logos in v2/fpo">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyBankLogoforNB"/>
+                    <include name="VerifyBankLogoInSavedCard"/>
+                    <include name="VerifyBankLogoforSavedVpa"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="VerifyBankLogoforNB_RETRY_TXN"/>
+                    <include name="VerifyBankLogoforNB_TXN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify bank logos in v2/fpo native API">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="VerifyBankLogoforNBNative"/>
+                    <include name="VerifyBankLogoforSavedCardsNative"/>
+                    <include name="VerifyBankLogoforSavedvpaNative"/>
+                    <include name="VerifyBankLogoforEMINative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

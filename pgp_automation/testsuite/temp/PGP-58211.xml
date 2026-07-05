@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58211" verbose="1" parallel="tests" thread-count="3">
+
+    <test name="PGP-58211 EmiOfferDetailList object should be visible in affordability logs">
+        <classes>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest">
+                <methods>
+                    <include name="testJsCheckoutOldFlow_ForEmiOfferDetailList_AmountBased_EmiCC"/>
+                    <include name="testJsCheckoutOldFlow_ForEmiOfferDetailList_AmountBased_SavedCard"/>
+                    <include name="testJsCheckoutOldFlow_ForEmiOfferDetailList_AmountBased_BankFlow"/>
+                    <include name="testJsCheckoutOldFlow_ForEmiOfferDetailList_ItemBased_EMICC"/>
+                    <include name="testJsCheckoutOldFlow_ForEmiOfferDetailList_ItemBased_BankFlow"/>
+                    <include name="testJsCheckoutOldFlow_ForEmiOfferDetailList_ItemBased_SavedCard"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="testJsCheckoutNewFlow_ForEmiOfferDetailList_AmountBased_EmiCC"/>
+                    <include name="testJsCheckoutNewFlow_ForEmiOfferDetailList_AmountBased_Bankflow"/>
+                    <include name="testJsCheckoutNewFlow_ForEmiOfferDetailList_AmountBased_SavedCard"/>
+                    <include name="testJsCheckoutNewFlow_ForEmiOfferDetailList_SingleItemBased_EMICC"/>
+                    <include name="testJsCheckoutNewFlow_ForEmiOfferDetailList_SingleItemBased_BankFlow"/>
+                    <include name="testJsCheckoutNewFlow_ForEmiOfferDetailList_MultipleItemBased_EMICC"/>
+                    <include name="testJsCheckoutNewFlow_ForEmiOfferDetailList_MultipleItemBased_SavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

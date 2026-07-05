@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UT" verbose="1" parallel="tests" >
+    <test name="Dummy Single Case">
+        <classes>
+            <class name="scripts.api.binUpdate.BinUpdateVerify">
+                <methods>
+                    <include name="TC_001_MASTER_ICICI_DEBIT_CARD_NUMBER"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

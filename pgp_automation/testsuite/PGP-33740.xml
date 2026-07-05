@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33740" verbose="1">
+    <test name="Zest Money Cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+       <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_successful_transaction_with_ZestMoney"/>
+                    <include name="Verify_failure_transaction_with_ZestMoney"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Zest Money Cases Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.ZESTBANK">
+                <methods>
+                    <include name="Verify_failure_transaction_ZestMoney"/>
+                    <include name="Verify_successful_transaction_ZestMoney"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

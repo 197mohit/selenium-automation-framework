@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-3206">
+    <test name="Capture CREDITLINE payment instrument correctly">
+        <classes>
+            <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+                <methods>
+                    <include name="CaptureCreditlinePaymentInstrumentCorrectly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

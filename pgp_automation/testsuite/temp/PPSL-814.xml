@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPSL-814" verbose="1" thread-count="5" parallel="tests">
+    <test name="Subscription Links UX Enhancement">
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Subscription_link_Expiry_Date_Text"/>
+                    <include name="Subscription_link_ContactMerchant_Pref_N"/>
+                    <include name="Subscription_link_ContactMerchant_Pref_Y"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

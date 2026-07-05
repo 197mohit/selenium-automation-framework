@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-Audit-changes-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service Audit changes API ">
+        <classes>
+            <class name="scripts.api.mappingService.Auditapichanges.bankdetailsfromidoldandnew"/>
+            <class name="scripts.api.mappingService.Auditapichanges.getbankdetailsv1bankcode"/>
+            <class name="scripts.api.mappingService.Auditapichanges.merchantidmapv3"/>
+            <class name="scripts.api.mappingService.mappingDrop3.merchantidmap">
+                <methods>
+                    <include name="Verifymerchantidmap5"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

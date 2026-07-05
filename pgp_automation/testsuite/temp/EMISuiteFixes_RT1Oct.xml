@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fixes" verbose="1">
+    <test name="EMI Fixes Rt1 OCT" parallel="tests" thread-count="5">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_ApplyOffer"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedUnified"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedOld"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo_AltId"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEMIOldFlow">
+                <methods>
+                    <include name="testDummyValuesNotBeingSentToATSforItembasedSubventionAmtBasedPromo_Simplified_Old"/>
+                    <include name="testDummyValuesNotBeingSentToATSforItembasedSubvention_Simplified_Old"/>
+                    <include name="testDummyValuesNotBeingSentToATSforAmtbasedSubvention_Simplified_Old"/>
+                    <include name="testDummyValuesNotBeingSentToATSforAmtbasedSubventionAmtBasedPromo_Simplified_Old"/>
+                    <include name="testDummyValuesNotBeingSentToATSforAmtBasedPromo_Simplified_Old"/>
+                    <include name="testDummyValuesNotBeingSentToATSforItemBasedPromo_Simplified_Old"/>
+                    <include name="testDummyValuesNotBeingSentToATSforItemBasedPromoAmtBasedSubvention_Simplified_Old"/>
+                    <include name="testDummyValuesNotBeingSentToATSforItemBasedPromoItemBasedSubvention_Simplified_Old"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestCOPForItemBased1"/>
+                    <include name="TestDetailExtendInfoForAmountBasedForCOTP"/>
+                    <include name="TestDetailExtendInfoForAmountBasedAndPromoForCOTP"/>
+                    <include name="TestDetailExtendInfoItemBasedAndPromoCOTP"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

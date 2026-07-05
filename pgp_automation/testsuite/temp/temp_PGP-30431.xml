@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-30431 issue fix test cases" verbose="1">
+    <test name="PGP-30431 issue fix test cases">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="IPv6clientIpFundTopUp"/>
+                    <include name="IPv6clientIpCreateOrder"/>
+                    <include name="IPv6clientIpCashierPay"/>
+                    <include name="IPv6clientIpCOP"/>
+                    <include name="IPv4clientIpFundTopUp"/>
+                    <include name="IPv4clientIpCreateOrder"/>
+                    <include name="IPv4clientIpCashierPay"/>
+                    <include name="IPv4clientIpCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

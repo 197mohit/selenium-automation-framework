@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Redirectional Zero Pass Percentage Suite" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="PaytmExpress">
+        <classes>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="PGP_successfulPtmX2pressPPI1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCF enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="Verify_FeeOnCashierPageForAllPayModes_forFlatCommision"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCF enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="Verify_FeeOnCashierPageForAllPayModes_forFlatCommision"/>
+                    <include name="Verify_feeSavedInCache_forDC"/>
+                    <include name="Verify_feeSavedInCache_forNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCF enhancewap">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="Verify_FeeOnCashierPageForAllPayModes_forFlatCommision"/>
+                    <include name="Verify_feeSavedInCache_forDC"/>
+                    <include name="Verify_feeSavedInCache_forNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-34467 on PGOnly">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyEMIStandardemiInfoObject"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-LowSuccessRate">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLowSuccessRateMessageWhenZeroSuccessRateis1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-20695">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="verifyAddNPayWalletLimitBreached"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Validating the masked mobile number in Enhanced flows">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyMaskedMobileNumberInConsoleAppData"/>
+                    <include name="verifyMaskedMobileNumberInSendOTPAPIfromEnhancePage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify Paytm NB on Top">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.EnhancingLogicOfOrderingNetBanking">
+                <methods>
+                    <include name="validatePaytmNetBankingOnTop"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="WalletOnly-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_164_successfulWalletOnlyTxnWithOtherUser"/>
+                    <include name="PGP_167_walletOnlyTxnWithEmailIDAutoPopulated"/>
+                    <include name="PGP_166_walletOnlyTxnWithMobileAutoPopulated"/>
+                    <include name="PGP_168_walletOnlyTxnWithMobileAutoPopulatedInCaseOfBothPresent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="WalletOnly-enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_164_successfulWalletOnlyTxnWithOtherUser"/>
+                    <include name="PGP_167_walletOnlyTxnWithEmailIDAutoPopulated"/>
+                    <include name="PGP_166_walletOnlyTxnWithMobileAutoPopulated"/>
+                    <include name="PGP_168_walletOnlyTxnWithMobileAutoPopulatedInCaseOfBothPresent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

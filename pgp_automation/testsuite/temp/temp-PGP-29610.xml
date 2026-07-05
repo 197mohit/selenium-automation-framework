@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29610"  verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-29610 grace period check in subscription txn">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="verifyEnhancedDAYsubsWithLessGraceperiod"/>
+                    <include name="verifyEnhancedWEEKsubsWithMoreGraceperiod"/>
+                    <include name="verifyEnhancedMONTHsubsWithLessGraceperiod"/>
+                    <include name="verifyEnhancedYEARsubsWithMoreGraceperiod"/>
+                </methods>
+            </class>
+
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyNativeDAYsubsWithMoreGraceperiod"/>
+                    <include name="verifyNativeWEEKsubsWithLessGraceperiod"/>
+                    <include name="verifyNativeMONTHsubsWithMoreGraceperiod"/>
+                    <include name="verifyNativeYEARsubsWithLessGraceperiod"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

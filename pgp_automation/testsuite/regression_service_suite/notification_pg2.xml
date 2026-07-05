@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_Notification_Suite_PG2" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="PGP_43686">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="successfulPGOnlyCCEventsPPSL"/>
+                    <include name="successfulPGOnlyDCEventsPPSL"/>
+                    <include name="successfulPGOnlyWalletEventsPPSL"/>
+                    <include name="successfulPGOnlyUPIEventsPPSL"/>
+                    <include name="successfulPGOnlyPostpaidEventsPPSL"/>
+                    <include name="successfulPGOnlyEMIEventsPPSL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notification API's">
+        <classes>
+            <class name="scripts.notification.CaptureNotifyTest">
+                <methods>
+                    <include name="Test_001_CaptureNotify"/>
+                </methods>
+            </class>
+            <class name="scripts.notification.DeductionNotifyTest">
+                <methods>
+                    <include name="Test_001_DeductionNotify"/>
+                </methods>
+            </class>
+            <class name="scripts.notification.VoidNotifyTest">
+                <methods>
+                    <include name="Test_001_VoidNotify"/>
+                </methods>
+            </class>
+            <class name="scripts.notification.FundBackNotifyTest">
+                <methods>
+                    <include name="Test_001_FundBackNotify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="verifyPaymentNotify with diff paymodes in pgproxy notification logs">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="verifyPaymentNotifyWithCC"/>
+                    <include name="verifyPaymentNotifyWithDC"/>
+                    <include name="verifyPaymentNotifyWithNB"/>
+                    <include name="verifyPaymentNotifyWithUPI"/>
+                    <include name="verifyPaymentNotifyWithAddnPay"/>
+                    <include name="verifyPaymentNotifyWithHybrid"/>
+                    <include name="verifyPaymentNotifyWithWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Acquiring Close Notify hit for different Paymodes ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="acquiringCloseNotifyNotifyWithCC"/>
+                    <include name="acquiringCloseNotifyNotifyWithDC"/>
+                    <include name="acquiringCloseNotifyNotifyWithNB"/>
+                    <include name="acquiringCloseNotifyNotifyWithUPI"/>
+                    <include name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                    <include name="acquiringCloseNotifyNotifyWithHybrid"/>
+                    <include name="acquiringCloseNotifyNotifyWithPPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Changes required at UI and Notification for PG UPI Collect process to remove the polling checkoutjs flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                    <include name="verify_that_PG_merchant_payload_is_pushed_to_UPI_COLLECT_PG_topic_AOA_Txn"/>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_PG_CheckoutJs"/>
+                    <include name="disableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Changes required at UI and Notification for PG UPI Collect process to remove the polling enhanced flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verify_that_PG_merchant_payload_is_pushed_to_UPI_COLLECT_PG_topic_PG_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+

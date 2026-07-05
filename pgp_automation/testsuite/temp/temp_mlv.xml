@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-mlv" verbose="1" parallel="methods" thread-count="20">
+    <test name="mlv">
+        <classes>
+            <class name="scripts.api.theia.InitiateTransaction">
+                <methods>
+                    <include name="testWhenAggMidKeyIsNotPassed"/>
+                    <include name="testWhenAggMidKeyIsPassedAsNull"/>
+                    <include name="testWhenNonExistentMidIsPassedAsAggMid"/>
+                    <include name="testWhenExistentMidIsPassedAsAggMidAndChecksumIsCreatedUsingChildMerchantKey"/>
+                    <include name="testWhenExistentMidIsPassedAsAggMidAndChecksumCreatedUsingAggMerchantKey"/>
+                    <include name="testWhenOfflineFlowKeyIsNotPassed"/>
+                    <include name="testWhenOfflineFlowKeyIsPassedAsNull"/>
+                    <include name="testWhenOfflineFlowKeyIsPassedAsFalse"/>
+                    <include name="testWhenOfflineFlowKeyIsPassedAsTrue"/>
+                    <include name="testWhenAggTypeKeyIsNotPassed"/>
+                    <include name="testWhenAggTypeKeyIsPassedAsNull"/>
+                    <include name="testWhenAggTypeKeyIsPassedAsORDER_CREATOR"/>
+                    <include name="testWhenOrderPricingInfoIsNotPassed"/>
+                    <include name="testWhenOrderPricingInfoIsPassed"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="test when non-mlv-supported qrCodeId is passed"/>
+                    <include name="test when mlv-supported qrCodeId is passed"/>
+                    <include name="test when mlvSupported == false given merchant supports mlv"/>
+                    <include name="test when mlvSupported key is not passed given merchant supports mlv"/>
+                    <include name="test when mlvSupported == true given merchant does not support mlv"/>
+                    <include name="test when mlvSupported == true given merchant supports mlv"/>
+                </methods>
+            </class>
+            <class name="scripts.api.merchantStatus.GetTxnStatus"/>
+            <class name="scripts.api.refund.AsyncRefund"/>
+            <class name="scripts.api.refund.RefundStatus"/>
+        </classes>
+    </test>
+</suite>

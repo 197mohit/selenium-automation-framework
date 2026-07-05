@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Validate final payment amount for Upi Intent PCF" verbose="1">
+    <test name="Validate final payment amount for Upi Intent PCF">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateFinalPaymentAmountForUpiIntentPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

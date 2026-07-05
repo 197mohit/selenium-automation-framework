@@ -1,0 +1,20 @@
+package com.paytm.utils.merchant.api.pgp.admin;
+
+import com.paytm.framework.api.BaseApi;
+import com.paytm.utils.merchant.Constants;
+import io.restassured.http.ContentType;
+
+public class ApproveMerchant extends BaseApi {
+
+    private static final String BASE_URI = Constants.ADMIN_SERVER_ADDRESS;
+
+    public ApproveMerchant(String mId) {
+        setMethod(BaseApi.MethodType.POST);
+        getRequestSpecBuilder()
+                .setBaseUri(BASE_URI)
+                .setBasePath("/admin/app/api/approveMerchant")
+                .setAccept(ContentType.JSON)
+                .setBody("{\"MID\":\"" + mId + "\"}");
+    }
+
+}

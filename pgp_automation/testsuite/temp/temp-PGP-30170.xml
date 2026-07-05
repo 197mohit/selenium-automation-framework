@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-30170"  verbose="1" parallel="methods" thread-count="1">
+
+    <test name="PGP-30170 wallet not selected by default in subscription enhanced txn">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+
+                <methods>
+                    <include name="ValidateWalletUnchecked_walletBalanceSufficient"/>
+                    <include name="ValidateWalletUnchecked_walletBalanceNotSufficient"/>
+                    <include name="ValidateADDnPAYWalletUnchecked_walletBalanceNotSufficient"/>
+                    <include name="ValidateADDnPAYWalletUncheckedAfteruserLogin"/>
+                    <include name="ValidateWalletUncheckedAfteruserLogin"/>
+                    <include name="ValidateIfNextPaymodeSelectedWhenNoLoginDone"/>
+                </methods>
+            </class>
+
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+
+                <methods>
+                    <include name="ValidateWalletChecked_walletOnlyMerchant"/>
+                    <include name="ValidateWalletChecked_walletOnlyMerchantUserLoginatCashierPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

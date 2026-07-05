@@ -1,0 +1,43 @@
+# Pre-commit hooks for pgp_automation.
+# Install: bash scripts/install-hooks.sh
+# Run manually: pre-commit run --all-files
+# See https://pre-commit.com/
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-merge-conflict
+      - id: detect-private-key
+      - id: check-added-large-files
+        args: ['--maxkb=1000']
+
+  - repo: local
+    hooks:
+      - id: ai-code-detector
+        name: AI code detection (optional)
+        language: system
+        entry: bash -c 'if [ -f pre-commit-ai-detector.py ] && command -v python3 >/dev/null 2>&1; then python3 pre-commit-ai-detector.py; fi'
+        pass_filenames: false
+        always_run: false
+
+  - repo: local
+    hooks:
+      - id: commit-msg-format
+        name: validate commit message format
+        language: system
+        entry: bash scripts/validate-commit-msg.sh
+        stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: branch-naming
+        name: validate branch name
+        language: system
+        entry: bash -c 'BRANCH=$(git branch --show-current); if echo "$BRANCH" | grep -qE "^(feature|bugs|tests|infra|perf|fix|refactor|docs|chore|ci)/.+$|^(master|main|release_qa|dev_integration|dev_integration_.*)$|^(PGP|PGQA)-[0-9]+$"; then exit 0; else echo "Branch name \"$BRANCH\" does not follow convention (see .foundry/casts/collaboration.md)"; exit 1; fi'
+        always_run: true
+        pass_filenames: false
+        stages: [pre-push]

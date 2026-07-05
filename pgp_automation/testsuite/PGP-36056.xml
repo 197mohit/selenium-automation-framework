@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36056" verbose="1">
+    <test name="Seamless Prepaid Cases">
+       <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="TC001_VerifyPrepaidCardisnotshowninExtendinfo"/>
+                    <include name="TC002_VerifyPrepaidCardisnotshowninExtendinfo"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

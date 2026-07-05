@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PTS" verbose="1" parallel="tests" thread-count="9">
+    <test name="CoftSprint-1 GCIN in Card to PAR API failures">
+        <classes>
+            <class name="scripts.coft.pts.CardToParTests">
+            </class>
+        </classes>
+    </test>
+</suite>
+

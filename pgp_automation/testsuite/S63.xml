@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Sprint_63_Tasks" verbose="1" parallel="tests" thread-count="4">
+
+    <test name="UPI Collect Native fixes">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="PGP_49471_TC001_UPISubs_Created"/>
+                    <include name="PGP_49471_TC002_UPISubs_Created"/>
+                    <include name="PGP_49471_TC003_subsNotCtreated"/>
+                    <include name="PGP_49471_TC004_UPI_notReturnedInFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

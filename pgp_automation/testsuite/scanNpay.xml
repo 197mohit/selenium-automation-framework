@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Scan N Pay suite" verbose="1" parallel="methods" thread-count="5">
+    <test name="Scan N Pay tests">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.scanNPay.ScanNPayTest"/>
+        </classes>
+    </test>
+</suite>

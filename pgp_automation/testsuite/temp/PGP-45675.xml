@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-42454" verbose="1" thread-count="5" parallel="tests">
+    <test name="Verify v2/applyPromo request/response body for EMI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateApplyPromoForEMICCPromoAndSubventionForCOP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoAndSubventionForCOTP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoForCOP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoForCOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

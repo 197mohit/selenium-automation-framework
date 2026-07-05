@@ -1,0 +1,183 @@
+#TODO: Update IS_API_REFUND_ALLOWED, SECURE_STATUS_ENABLED, checkAcquirings, isPeonEnabled, EnhancedNative
+
+PGOnly:
+  - id: "PGONLY48082956556732"
+    key: "U@N%k3B5kCkC2plP"
+AddMoney:
+  - id: "ADDPAY08651789740053"
+    key: "L0rBM43yE9EILgza"
+AddMoneyMP:
+  - id: "SCWMER90619707098260"
+    key: "123"
+AddnPay:
+  - id: "ADDPAY08651789740053"
+    key: "L0rBM43yE9EILgza"
+WalletOnly:
+  - id: "WALOLY28667053793472"
+    key: "3@NLIOvy3xOWb8Ww"
+Hybrid:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+COD:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+PaytmExpress_Hybrid_Onus:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+PaytmExpress_Hybrid_Offus:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+PaytmExpress_Hybrid_PayModeDisabled:
+  - id: ""
+    key: ""
+PaytmExpress_Hybrid_CCPayModeDisabled:
+  - id: ""
+    key: ""
+PaytmExpress_AddnPay_Onus:
+  - id: ""
+    key: ""
+PaytmExpress_AddnPay_Offus:
+  - id: ""
+    key: ""
+TopUpExpress_Onus:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+TopUpExpress_Offus:
+  - id: ""
+    key: ""
+EMI:
+  - id: "EMIHYB93800335318562"
+    key: "XXfOPqAIaFmXTqxq"
+PGOnly_Retry:
+  - id: "RTYPGO17122098549064"
+    key: "1OHKjKRAq_IefR%f"
+Hybrid_Retry:
+  - id: "HYBRTY10152884519541"
+    key: "FXzGeVfA_PrHfqHR"
+AddnPay_Retry:
+  - id: "ANPrty57156388350642"
+    key: "HQFYz!7i&Ssb4Cjc"
+Seamless_Hybrid_Onus:
+  - id: "HYBONU15969746342506"
+    key: "wZuwAGYw9EqbIwSH"
+Seamless_Hybrid_Offus:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+Seamless_Hybrid_PayModeDisabled:
+  - id: ""
+    key: ""
+SeamlessNative_Hybrid_Onus:
+  - id: "HYBONU15969746342506"
+    key: "wZuwAGYw9EqbIwSH"
+SeamlessNative_Hybrid_Offus:
+  - id: ""
+    key: ""
+SeamlessNative_Hybrid_PayModeDisabled:
+  - id: ""
+    key: ""
+PostConvMerchant:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+FastForward:
+  - id: ""
+    key: ""
+Subscription_PGOnly:
+  - id: "SUBPGO86129070584169"
+    key: "mJ95t9uuo!GNFeK_"
+SUBSCRIPTION_PGONLY_RETRY:
+  - id: "SUBPGO86129070584169"
+    key: "mJ95t9uuo!GNFeK_"
+SUBSCRIPTION_PPI:
+  - id: "SUBADD41780126116396"
+    key: "tyMOkS0cD9E&sR%x"
+SUBSCRIPTION_PPI_RETRY:
+  - id: "SUBADD41780126116396"
+    key: "tyMOkS0cD9E&sR%x"
+SUBSCRIPTION_WALLET_ONLY:
+  - id: "WALOLY28667053793472"
+    key: "3@NLIOvy3xOWb8Ww"
+ADDNPAYPEON:
+  - id: "ADDPAY08651789740053"
+    key: "L0rBM43yE9EILgza"
+HYBPEON:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+WALLETPEON:
+  - id: "WALOLY28667053793472"
+    key: "3@NLIOvy3xOWb8Ww"
+ADD_MONEY_ONLY:
+  - id: "ADDMON83788034201487"
+    key: "PXXzs7M3UTtLFL3y"
+ADD_MONEY_WITH_RETRY:
+  - id: ""
+    key: ""
+
+AddnPay_Disabled:
+  - id: ""
+    key: ""
+
+NonMigrated:
+  - id: ""
+    key: ""
+#TODO: unable to create such typ of merchant
+LICENCE_EXPIRED_MERCHANT:
+  - id: "odQ3GS67006697165719"
+    key: "Hc2vr1x8Q1a4msk9"
+ADD_N_PAY_WITHOUT_CC_DC:
+  - id: "4f4GIJ05487415083437"
+    key: "LW@mJ7tG&7!gQrZX"
+PPBLYONLY:
+  - id: "pI8dfv64042161011837"
+    key: "i%wqdBkxH#2r6VY2"
+ALLPAYMODE:
+  - id: ""
+    key: ""
+PPBL_PAYTMCC_NOVPA:
+  - id: ""
+    key: ""
+PPBL_PAYTMCC_VPA:
+  - id: "9Y1xra46636229696948"
+    key: "Y8HYw0KZh1JnnO6v"
+NATIVE_HYBRID:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+NATIVE_WALLET_ONLY:
+  - id: "WALOLY28667053793472"
+    key: "3@NLIOvy3xOWb8Ww"
+NATIVE_ADDNPAY:
+  - id: "ADDPAY08651789740053"
+    key: "L0rBM43yE9EILgza"
+NATIVE_PROMO_HYBRID:
+  - id: "HYBRID01018313979638"
+    key: "MhPyVXoNdV5cxJ_Z"
+NATIVE_EMI:
+  - id: "EMIHYB93800335318562"
+    key: "XXfOPqAIaFmXTqxq"
+NATIVE_HYBRID_RETRY:
+  - id: "1PHY0y17823636446150"
+    key: "jp8nLolARY_Yc4aY"
+NATIVE_HDFO:
+  - id: ""
+    key: ""
+ICICI_IDEBIT_ENABLED:
+  - id: ""
+    key: ""
+FOOD_MERCHANT_HYB:
+  - id: ""
+    key: ""
+FOOD_MERCHANT_ADDNPAY:
+  - id: ""
+    key: ""
+PGONLY_EMI_MIN_MAX:
+  - id: "bTe1pc14031954144596"
+    key: "%YeYCj!6Ytzyq39D"
+ADVANCE_DEPOSIT:
+  - id: "defaul27033444278640"
+    key: "o&X5RjVWpsHGirH!"
+DYNAMICQR:
+  - id: ""
+    key: ""
+UPI_INTENT:
+  - id: ""
+    key: ""
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56181" verbose="1">
+    <test name="Callback Ports-CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Callback Ports-Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Callback Ports-Native">
+    <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Callback Ports-Native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

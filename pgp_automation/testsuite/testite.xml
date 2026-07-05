@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia_Suite" verbose="1" thread-count="25" parallel="classes">
+
+    <test name="PGP-24758" >
+        <classes>
+
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test">
+
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test tncUrl when FF4J applyPromoSendResponseTncUrl flag is enabled on mid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

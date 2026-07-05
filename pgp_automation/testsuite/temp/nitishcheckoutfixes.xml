@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="nitishcheckoutfixes_suite">
+    <test name="Verify successful Promo Cashback with checkoutJS On EnhancedUI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_BANK_OFFER"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="UPISuccessTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifySuccessAltIDGenerationforVISA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

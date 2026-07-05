@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPBL CO Then Pay Invoke APP Txn " verbose="1">
+    <test name="PPBL CO Then Pay Invoke APP Test">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLSuccessInvokeAppTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLFailureInvokeAppTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLPendingInvokeAppTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49239" verbose="1" thread-count="5" parallel="tests">
+    <test name="Theia validation Service migration to Affordability">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.ImeiValidation.imei">
+                <methods>
+                    <include name="AVSpreValidateRequestForrouteToAVSIsTrue_PaymentOffers"/>
+                    <include name="AVSpreValidateRequestForrouteToAVSIsTrue_Subvention"/>
+                    <include name="preValidateRequestToAVSforBLOCK_PaymentOffers"/>
+                    <include name="preValidateRequestToAVSforBLOCK_Subvention"/>
+                    <include name="preValidateRequestToAVSforBLOCKProductIDAsSkuCode_PaymentOffers"/>
+                    <include name="preValidateRequestToAVSforBLOCKProductIDAsSkuCode_Subvention"/>
+                    <include name="preValidateSuccessFromAVS_PaymentOffers"/>
+                    <include name="preValidateSuccessFromAVS_Subvention"/>
+                    <include name="postValidateRequestToAVSForActionUNBLOCK_PaymentOffers"/>
+                    <include name="postValidateRequestToAVSForActionUNBLOCK_Subvention"/>
+                    <include name="postValidateRequestToAVSforUNBLOCKProductIDAsSkuCode_PaymentOffers"/>
+                    <include name="postValidateRequestToAVSforUNBLOCKProductIDAsSkuCode_Subvention"/>
+                    <include name="postValidateSuccessFromAVS_PaymentOffers"/>
+                    <include name="postValidateSuccessFromAVS_Subvention"/>
+                    <include name="unBlockWithoutBlockError_PaymentOffers"/>
+                    <include name="unBlockWithoutBlockError_Subvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

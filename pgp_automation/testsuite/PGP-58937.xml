@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Callback URL to be shared - Online ReqAuth Flow
+" verbose="1">
+    <test name="Validate cases for enabled and disabled flags">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="callback_present_FF4J_Enabled"/>
+                    <include name="callback_not_present_FF4J_Disabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

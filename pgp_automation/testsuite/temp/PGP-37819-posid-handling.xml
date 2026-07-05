@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="StaticAndDynamicQrTests" verbose="1">
+
+    <test name="StaticAndDynamicQrTests">
+
+        <classes>
+
+            <class name="scripts.StaticQRNew">
+
+                <methods>
+
+                    <include name="verifyPosIdCOPStaticQR_GenerateQr"/>
+
+                    <include name="verifyPosIdCOPStaticQR_GenerateQrAndPtcReq"/>
+
+                    <include name="verifyPosIdCOPStaticQR_GenerateQrForFastFwd"/>
+
+                    <include name="verifyPosIdCOPStaticQR_GenerateQrAndFastFwdReq"/>
+
+                </methods>
+            </class>
+
+            <class name="scripts.DynamicQRNew">
+
+                <methods>
+
+                    <include name="verifyPosIdGenerateQr_UsingDynmQR"/>
+
+                    <include name="verifyPosIdPtceQr_UsingDynmQR"/>
+
+                    <include name="verifyPosIdGenerateQr_UsingDynmQrFastForword"/>
+
+                    <include name="verifyPosIdFastFarword_UsingDynamicQR"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

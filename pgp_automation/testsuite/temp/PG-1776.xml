@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-1776 Cases- Add PaidTime field in DQR Txn Status API" verbose="1">
+    <test name="PG-1776">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="verifyTxnPaidTimeInMerchantStatusForSuccessTxn"/>
+                    <include name="verifyTxnPaidTimeInMerchantStatusForFailureTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

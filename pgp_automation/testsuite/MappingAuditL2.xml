@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-Audit-3-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service Drop 2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.GetOldpgIdMerchantId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.GetPaytmidV1OldpgId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantGetExtendedInfoV3MerchantId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantGetExtendedInfoV3MerchantIdClientId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantLogoInfoV1OldpgMid"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantV3Paytm"/>
+        </classes>
+    </test>
+</suite>

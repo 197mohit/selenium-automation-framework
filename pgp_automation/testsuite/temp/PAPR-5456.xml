@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PAPR-5456" verbose="1" thread-count="5" parallel="methods">
+    <test name="PAPR-5456 CheckEMIEligibility API test case">
+        <classes>
+            <class name="scripts.CheckEMIEligibilityEMIDC">
+            </class>
+        </classes>
+    </test>
+</suite>

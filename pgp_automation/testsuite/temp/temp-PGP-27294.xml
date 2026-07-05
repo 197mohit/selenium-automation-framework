@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27294 Custom Process Transaction Test" verbose="1" parallel="methods" thread-count="1">
+    <test name="custom Process Transaction test for odisha flow">
+        <classes>
+            <class name="scripts.flows.CustomProcessTransactionTest">
+            </class>
+        </classes>
+    </test>
+</suite>

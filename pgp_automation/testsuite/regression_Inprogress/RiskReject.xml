@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RiskReject" verbose="1" parallel="tests" thread-count="10">
+    <test name="Risk Verification on WAP Theme">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="payMode" value="CC"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="SuccessfulPGOnlyCCTxnWhenUserLoggedInRiskAlertAccept"/>
+                    <include name="VerifyFailureWhenUserLoggedInAlertBack"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskPaytmPwd"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskOTPSMS"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskOTPEmail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Risk Verification on EnhancedWEB theme">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="SuccessfulPGOnlyCCTxnWhenUserLoggedInRiskAlertAccept"/>
+                    <include name="VerifyFailureWhenUserLoggedInAlertBack"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskPaytmPwd"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskOTPSMS"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskOTPEmail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Risk Verification Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="SuccessfulNativeDCTxnWhenUserLoggedInRiskAlertAccept"/>
+                    <include name="SuccessfulNativeDCTxnWhenUserLoggedInRiskPaytmPwd"/>
+                    <include name="SuccessfulNativeDCTxnWhenUserLoggedInRiskOTPSMS"/>
+                    <include name="SuccessfulNativeCCTxnWhenUserLoggedInRiskOTPEmail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Risk Verification Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="SuccessfulNativeDCTxnWhenUserLoggedInRiskAlertAccept"/>
+                    <include name="SuccessfulNativeDCTxnWhenUserLoggedInRiskPaytmPwd"/>
+                    <include name="SuccessfulNativeDCTxnWhenUserLoggedInRiskOTPSMS"/>
+                    <include name="SuccessfulNativeCCTxnWhenUserLoggedInRiskOTPEmail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28964 risk UI enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="UImicroserviceEncodedWhenMidNotPresentInFF4JFlag"/>
+                    <include name="UImicroserviceEncodedWhenMidPresentInFF4JFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28964 risk UI enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="UImicroserviceEncodedWhenMidNotPresentInFF4JFlag"/>
+                    <include name="UImicroserviceEncodedWhenMidPresentInFF4JFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

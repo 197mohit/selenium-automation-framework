@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OFFLINE PaymentLink NonReqAuth DQR">
+    <test name="Payment link UPI NON ReqAuth DQR in Native App FPO">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.PaymentLinks">
+                <methods>
+                    <include name="verifyUPINonReqAuthDQRInNativeAppFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

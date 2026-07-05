@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-60763" parallel="tests" thread-count="1">
+<test name="Verify mcc and upiVerified fields are present and valid in fetchMerchantUserInfo API response">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.FetchMerchantUserInfoAPI">
+                <methods>
+                    <include name="validateMccAndUpiVerifiedInResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    </suite>

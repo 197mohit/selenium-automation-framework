@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OfferApply-JWE-Encryption-TestSuite" preserve-order="true">
+    <test name="Verify OfferApply with JWE Encryption - CardNo, VPA and NB">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <!-- JWE Encrypted Test Methods -->
+                    <include name="Verify_OfferApply_With_JWE_Encryption_EncKeyId_And_EncryptedParam"/>
+                    <include name="Verify_OfferApply_With_JWE_Encryption_For_UPI_VPA"/>
+                    <include name="Verify_OfferApply_With_JWE_Encryption_For_CardNo"/>
+                    <include name="Verify_OfferApply_With_JWE_Encryption_For_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

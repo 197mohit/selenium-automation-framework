@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Prod Fixes Test Case Automation(PGP-25565)">
+    <test name="PGP-24851">
+        <!--Already included in SplitSettlement class-->
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyMFSplitSettlementFailureWithEscape"/>
+                    <include name="verifyNativeSplitSettlementWithoutEscape"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-20695">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyAddNPayWalletLimitBreachedWithCOP"/>
+                    <include name="verifyAddNPayWalletLimitBreachedNativeWithoutCOP"/>
+                    <include name="verifyGVWalletLimitBreachedAddNPay"/>
+                </methods>
+            </class>
+
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="verifyAddNPayWalletLimitBreached"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="PGP-24778 : Enhanced WEB ">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidCC"/>
+                    <include name="validateSuccessTransPaidDC"/>
+                    <include name="validateSuccessTransPaidNB"/>
+                    <include name="validateSuccessTransPaidUPI"/>
+                    <include name="validateSuccessTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="PGP-24778 : Enhanced WAP ">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidCC"/>
+                    <include name="validateSuccessTransPaidDC"/>
+                    <include name="validateSuccessTransPaidNB"/>
+                    <include name="validateSuccessTransPaidUPI"/>
+                    <include name="validateSuccessTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="PGP-24778 : Native Plus" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateTransPaidCC"/>
+                    <include name="validateTransPaidDC"/>
+                    <include name="validateTransPaidNB"/>
+                    <include name="validateTransPaidUPI"/>
+                    <include name="validateTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="PGP-24778 : Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateTransPaidCC"/>
+                    <include name="validateTransPaidDC"/>
+                    <include name="validateTransPaidNB"/>
+                    <include name="validateTransPaidUPI"/>
+                    <include name="validateTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

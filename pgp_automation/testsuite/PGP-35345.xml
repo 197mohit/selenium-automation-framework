@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35345" parallel="methods" thread-count="20">
+    <test name="Notification SMS DATA pushed into KAFKA topics">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="Verifying_Notification_Data_Into_New_Kafka_Topic"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

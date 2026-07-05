@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ChargeFeeOnAddMoney" verbose="1" >
+    <test name="ChargeFeeOnAddMoney_Flag ON  cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.ChargeFeeOnAddMoney">
+                <methods>
+                    <include name="addMoneyFeeTxn_ADDNPAY_CC_001"/>
+                    <include name="addMoneyFeeTxn_ADDNPAY_CC_002"/>
+                    <include name="addMoneyFeeTxn_ADDNPAY_CC_003"/>
+                    <include name="addMoneyFeeTxn_ADDNPAY_CC_004"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

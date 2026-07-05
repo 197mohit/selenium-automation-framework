@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Verify ccOnUPIAllowed , ccOnUPIAllowedForAddNPay and merchantEligibleUPICC">
+    <test name="UPI CC ">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisN"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

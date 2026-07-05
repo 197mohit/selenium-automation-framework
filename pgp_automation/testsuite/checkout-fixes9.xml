@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkout-fixes" parallel="methods" verbose="1">
+    <test name="CHECKOUTJS on web Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validatePollingPageIsNotInNewWinowAndSuccessTxnUsingUPICollect"/>
+                    <include name="verifyQRDetailsShowingInFPOResponse"/>
+                    <include name="verify_new_wallet_user_error_message"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

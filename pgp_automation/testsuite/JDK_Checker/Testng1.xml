@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Demo1" verbose="1" thread-count="5" parallel="classes">
+    <test name="UPIEnhanceEnhanceWeb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

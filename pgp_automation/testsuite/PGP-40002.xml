@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QR" verbose="1" thread-count="6" parallel="methods">
+    <test name="Static QR Test Cases">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="validateqrCodeId_qrDeepLink"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

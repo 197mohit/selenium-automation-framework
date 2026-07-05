@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Redirectional Bank Mandate" verbose="1" parallel="tests" thread-count="5">
+
+    <test name="Enhancedweb Bank Mandate Redirectional flow">
+        <parameter name="theme" value="enhancedweb"/>
+            <classes>
+                <class name="scripts.EnhancedBankMandate"/>
+            </classes>
+    </test>
+
+
+    <test name="Enhancedwap Bank Mandate Redirectional flow">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate"/>
+            </classes>
+    </test>
+
+
+
+
+    <test name="Native Flow For Bank Mandate" >
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="TC_NativeMFSubs_EM_001_ValidateDBWhenSubsInitiatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_002_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_003_ValidateDBWhenCompletingNPCIFormSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_004_ValidateDBWhenResponseSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_005_ValidateSuccessRenewSubsWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_001_ValidateDBWhenSubsInitiatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_002_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_003_ValidateDBWhenSubsCompletingFormWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_004_ValidateDBWhenSubsCallBackSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_005_ValidateSuccessRenewSubsWhenTxnAmtGreaterThan0"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

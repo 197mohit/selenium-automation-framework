@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforAddNPayTxnWithoutSpecificPromo"/>
+                    <include name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <include name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIWithoutLogin"/>
+                    <include name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIWithLogin"/>
+                    <include name="FooterBackgroundColourDoesntChangeOnChangingHeaderBackgroundColourFromConfig"/>
+                    <include name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <include name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                    <include name="ValidatePendingTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs wap revamp">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_001_VerifyBankmandatePaymodeAppearingOnCashierPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

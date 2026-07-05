@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PG2_SAVED_CC_DC" verbose="1">
+    <test name="Validate SAVED CC DC PG2 txn and refund ">
+        <classes>
+            <class name="scripts.api.CC.CC_PG2">
+            <methods>
+                <include name="validateSuccessSavedCCTxnPG2MID"/>
+                <include name="validatePendingSavedCCTxnPG2MID_PG2Enabled_CloseOrderV1ThenCheckMerchantStatus"/>
+                <include name="validateFailedSavedCCTxnPG2MID_PG2Enabled"/>
+                <include name="validateSuccessFullAsyncRefund_SavedCCTxnPG2MID"/>
+            </methods>
+            </class>
+            <class name="scripts.api.Debitcard.PG2Debitcard">
+                <methods>
+                    <include name="validateSuccessSavedDCTxnPG2MID"/>
+                    <include name="validatePendingSavedDCTxnPG2MID_PG2Enabled_CloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validateFailedSavedDCTxnPG2MID_PG2Enabled"/>
+                    <include name="validateSuccessFullAsyncRefund_SavedDCTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

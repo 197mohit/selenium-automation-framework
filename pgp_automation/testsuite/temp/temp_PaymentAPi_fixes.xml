@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia_Suite" verbose="1" thread-count="10" parallel="tests">
+    <test name="Payment_Api">
+        <classes>
+    <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+        <methods>
+
+            <include name="testFetchQR"/>
+            <include name="test when mlvSupported key is not passed given merchant supports mlv"/>
+            <include name="test when mlv-supported qrCodeId is passed"/>
+            <include name="test when mlvSupported == false given merchant supports mlv"/>
+            <include name="PGP-28418 test Queryparams in logs when mlv-supported qrCodeId is passed"/>
+            <include name="test when mlvSupported == true given merchant supports mlv"/>
+        </methods>
+    </class>
+            </classes>
+    </test>
+</suite>

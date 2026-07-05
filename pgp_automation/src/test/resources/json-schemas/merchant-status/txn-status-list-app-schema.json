@@ -1,0 +1,172 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "mid",
+        "responseTimestamp"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mid": {
+          "type": "string"
+        },
+        "responseTimestamp": {
+          "type": "string"
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "TXN_LIST",
+        "resultInfo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCodeId",
+            "resultCode",
+            "resultMsg"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F"
+              ]
+            },
+            "resultCodeId": {
+              "enum": [
+                "00023424",
+                "234234234"
+              ]
+            },
+            "resultCode": {
+              "enum": [
+                "Success",
+                "failure"
+              ]
+            },
+            "resultMsg": {
+              "enum": [
+                "Success",
+                "Order Id is invalid"
+              ]
+            }
+          }
+        },
+        "TXN_LIST": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "TXNID",
+              "ORDERID",
+              "TXNAMOUNT",
+              "STATUS",
+              "TXNTYPE",
+              "GATEWAYNAME",
+              "RESPCODE",
+              "RESPMSG",
+              "BANKNAME",
+              "MID",
+              "PAYMENTMODE",
+              "REFUNDAMT",
+              "TXNDATE",
+              "REFUNDID"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "TXNID": {
+                "pattern": "^[0-9]*$"
+              },
+              "BANKTXNID": {
+                "pattern": "^[0-9]*$"
+              },
+              "ORDERID": {
+                "type": "string",
+                "minLength": 0
+              },
+              "TXNAMOUNT": {
+                "pattern": "^([0-9]+\\.[0-9]{2}|)$"
+              },
+              "STATUS": {
+                "enum": [
+                  "TXN_SUCCESS",
+                  "TXN_FAILURE",
+                  "PENDING"
+                ]
+              },
+              "TXNTYPE": {
+                "enum": [
+                  "SALE"
+                ]
+              },
+              "GATEWAYNAME": {
+                "type": "string",
+                "minLength": 1
+              },
+              "RESPCODE": {
+                "enum": [
+                  "01",
+                  "810",
+                  "400"
+                ]
+              },
+              "RESPMSG": {
+                "enum": [
+                  "Txn Successful.",
+                  "ORDER IS CLOSE.",
+                  "We are waiting for the response from bank."
+                ]
+              },
+              "BANKNAME": {
+                "type": "string"
+              },
+              "MID": {
+                "type": "string",
+                "minLength": 1
+              },
+              "PAYMENTMODE": {
+                "enum": [
+                  "PPI",
+                  "CC"
+                ]
+              },
+              "REFUNDAMT": {
+                "pattern": "^([0-9]+\\.[0-9]{1,2}|)$"
+              },
+              "TXNDATE": {
+                "pattern": "^([0-9]{4}-[0-1][0-9]-[0-3][0-9] [0-2][0-9]:[0-5][0-9]:[0-5][0-9]\\.0|)$"
+              },
+              "REFUNDID": {
+                "enum": [
+                  ""
+                ]
+              },
+              "BIN": {
+                "pattern": "[0-9]{6}"
+              },
+              "LASTFOURDIGITS": {
+                "pattern": "[0-9]{4}"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

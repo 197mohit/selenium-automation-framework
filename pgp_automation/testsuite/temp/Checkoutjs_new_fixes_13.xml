@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyLPVResponseforAlternateIDVISA"/>
+                </methods>
+            </class>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingUPIWhenWalletAndUPIonMID"/>
+                </methods>
+            </class>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingRupayTxnforAltID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

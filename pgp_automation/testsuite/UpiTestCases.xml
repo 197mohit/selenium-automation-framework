@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UpiCollectFlowVpaTest" verbose="1" parallel="methods" thread-count="1">
+    <test name="UpiCollectFlowVpaTest1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="UpiVpaCases_01"/>
+                    <include name="UpiVpaCases_02"/>
+                    <include name="UpiVpaCases_05"/>
+                    <include name="UpiVpaCases_07"/>
+                    <include name="UpiVpaCases_08"/>
+                    <include name="UpiNumericId_01"/>
+                    <include name="UpiNumericId_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpiCollectFlowVpaTest2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.CheckoutJsUPICollectSubs">
+                <methods>
+                    <include name="UpiVpaCases_03"/>
+                    <include name="UpiVpaCases_04"/>
+                    <include name="UpiVpaCases_06"/>
+                    <include name="UpiNumericId_03"/>
+                    <include name="UpiNumericId_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Upi UI Test for enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="UpiNumericIdTestCase_01"/>
+                    <include name="UpiNumericIdTestCase_02"/>
+                    <include name="UpiNumericIdTestCase_03"/>
+                    <include name="UpiNumericIdTestCase_04"/>
+                    <include name="UpiNumericIdTestCase_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Upi UI Test for CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="UpiNumericIdTestCase_06"/>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="UpiNumericIdTestCase_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ChargeFeeOnAddMoney" verbose="1" >
+    <test name="ChargeFeeOnAddMoney_Flag OFF cases">
+        <classes>
+            <class name="scripts.ChargeFeeOnAddMoney">
+                <methods>
+                    <include name="AddMoneyPcfEnabled_flag_in_FPO_flag_OFF"/>
+                    <include name="AddMoneyPcfEnabled_flag_in_FPO_ADDMONEY_flag_OFF"/>
+                    <include name="AddMoneyFeeTxn_ADDNPAY_CC_Flag_OFF"/>
+                    <include name="AddMoneyFeeTxn_ADDMONEY_CC_Flag_OFF"/>
+                    <include name="ONUS_AddMoney_CC_Flag_OFF"/>
+                    <include name="AddMoneyPcfEnabled_flag_in_FPO_flag_ON"/>
+                    <include name="AddMoneyPcfEnabled_flag_in_FPO_ADDMONEY_flag_ON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

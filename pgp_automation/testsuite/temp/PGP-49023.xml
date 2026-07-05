@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Walletpriority" verbose="1" parallel="tests" thread-count="3">
+    <test name="Verify wallet priority ">
+        <classes>
+            <class name="scripts.api.FPO.walletpriority">
+                <methods>
+                    <include name="walletpriority_01"/>
+                    <include name="walletpriority_02"/>
+                    <include name="walletpriority_03"/>
+                    <include name="walletpriority_04"/>
+                    <include name="walletpriority_05"/>
+                    <include name="walletpriority_06"/>
+                    <include name="walletpriority_07"/>
+                    <include name="walletpriority_08"/>
+                    <include name="walletpriority_09"/>
+                    <include name="walletpriority_10"/>
+                    <include name="walletpriority_11"/>
+                    <include name="walletpriority_12"/>
+                    <include name="walletpriority_13"/>
+                    <include name="walletpriority_14"/>
+                    <include name="walletpriority_15"/>
+                    <include name="walletpriority_16"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

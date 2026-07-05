@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NetBankingTestCases" verbose="1">
+    <test name="NetBankingTestCases">
+        <classes>
+            <class name="scripts.api.Instaproxy.NetBankingTest">
+                <methods>
+                    <include name="validateSuccessHDFC_NBTxnPG2MID"/>
+                    <include name="validateSuccessBOB_NBTxnPG2MID"/>
+                    <include name="validateSuccessNKMB_NBTxnPG2MID"/>
+                    <include name="validateSuccessINDS_NBTxnPG2MID"/>
+                    <include name="validateSuccessCANARA_NBTxnPG2MID"/>
+                    
+                </methods>
+            </class>
+        </classes>
+    </test> 
+</suite>

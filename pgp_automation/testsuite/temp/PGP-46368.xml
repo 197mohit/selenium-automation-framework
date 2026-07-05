@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46368" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnCheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnNativePlus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnNative"/>
+                    <include name="verifyCOPEmiInfoOnNativeWhenApplyPromoAppliedAmountBased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyCOPEmiInfoForRedirection"/>
+                    <include name="BankVerifiedName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

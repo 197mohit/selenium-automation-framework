@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="HDFCUPICollect" verbose="1" parallel="tests" thread-count="10">
+    <test name="HDFC UPI Collect for enhanced web">
+        <parameter name="theme" value="enhancedweb">
+            <classes>
+                <class name="scripts.HDFCUPICollect">
+                    <methods>
+                        <include name="validateSuccessfulHDFCUPITxn"/>
+                        <include name="validateFailureHDFCUPITxn"/>
+                        <include name="refundHDFCUPI"/>
+                        <include name="successfulPartialRefund"/>
+                        <include name="validateSuccesfulHybridHDFCUPITxn"/>
+                        <include name="validateRetryTxnForHDFCUPI"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="HDFC UPI Collect for enhanced wap" >
+        <parameter name="theme" value="enhancedwap">
+            <parameter name="mobileEmulation" value="Nexus 5">
+                <parameter name="userAgent"
+                           value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25">
+                    <classes>
+                        <class name="scripts.HDFCUPICollect">
+                            <methods>
+                                <include name="validateSuccessfulHDFCUPITxn"/>
+                                <include name="validateFailureHDFCUPITxn"/>
+                                <include name="refundHDFCUPI"/>
+                            </methods>
+                        </class>
+                    </classes>
+                </parameter>
+            </parameter>
+        </parameter>
+    </test>
+
+    <test name="HDFC UPI Collect for Native" >
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.HDFCUPICollect">
+                <methods>
+                    <include name="verifyNormalUPINative"/>
+                    <include name="verifyUPINativeHybrid"/>
+                    <include name="verifyNormalFailureUPINative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HDFC UPI Collect for Native Plus" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.HDFCUPICollect">
+                <methods>
+                    <include name="verifyNormalUPINative"/>
+                    <include name="verifyUPINativeHybrid"/>
+                    <include name="verifyNormalFailureUPINative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

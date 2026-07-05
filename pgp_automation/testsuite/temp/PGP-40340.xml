@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AOA MaxLife Peon" verbose="1" thread-count="2" parallel="tests">
+    <test name="AOA Peon for Different Paymodes">
+        <classes>
+            <class name="scripts.AOA.AOAMaxLife">
+                <methods>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_CCTxn"/>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_UPITxn"/>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_DCTxn"/>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_NBTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

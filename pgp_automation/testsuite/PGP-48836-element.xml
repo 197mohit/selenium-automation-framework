@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "ElementJs" verbose="1" thread-count="5" parallel="methods">
+    <test name="ElementJs  cases PGP-48836">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="no_Wallet_mid_cashierPage_loaded_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_loggedin"/>
+                    <include name="no_Wallet_mid_cashierPage_loaded_non_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_non_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_login_otp_txn"/>
+                    <include name="Wallet_only_cashierPage_loaded_loggedin_txn"/>
+                    <include name="Wallet_only_cashierPage_loaded_login_otp_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

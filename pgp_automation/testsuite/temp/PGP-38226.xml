@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Rate of interest for Emi Transaction" verbose="1">
+    <test name="Verifying the interest for different banks based on the brand codes passed in the request ">
+        <classes>
+            <class name="scripts.DifferentRoiForEmiTransaction.RoiForEmiTransaction">
+                <methods>
+                    <include name="veify_passing_brandcode_default"/>
+                    <include name="Verify_passing_default"/>
+                    <include name="Verify_passing_brandcode"/>
+                    <include name="Verify_without_passing_brandcode_default"/>
+                    <include name="Verify_multiple_brandcodes_passed_in_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

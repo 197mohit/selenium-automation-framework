@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia_Suite-2" verbose="1" thread-count="15" parallel="classes">
+    <test name="Payments API's 4">
+        <classes>
+            <class name="scripts.api.theia.CloseOrder"/>
+            <class name="scripts.api.theia.CheckEmiEligibility"/>
+            <class name="scripts.api.theia.GetEmiDetails"/>
+        </classes>
+    </test>
+
+    <test name="Add Description FPO Tests - Mid + SSO - FPO V1, V2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled'"/>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is disabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is disabled'"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Promo OR Flow">
+        <classes>
+            <class name="scripts.or.FetchCardDetailsAPI"/>
+        </classes>
+    </test>
+
+    <test name="PGP-27185 - Sending priority">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="Boss Panel with default merchant"/>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033_1">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.GuestTokenFetchPayOptionsV1Test"/>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+
+
+    <test name="temp-PGP-25033_4">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+
+    <test name="PGP-37815 V5 FPO">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV5Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV5Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV5Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV5Test"/>
+        </classes>
+    </test>
+
+    <test name="Card Index api changes">
+        <classes>
+            <class name="scripts.api.theia.fetchCardIdxNo.JWTTokenFetchCardIndexNoTest"/>
+        </classes>
+    </test>
+
+    <test name="FPO Native cases for PGP-21772">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                    <include name="enhancedOrderingLoggedIn"/>
+                    <include name="enhancedOrderingLogInCashierPage"/>
+                    <include name="enhancedOrderingHybrid"/>
+                    <include name="enhancedOrderingHybridSSO"/>
+                    <include name="enhancedOrderingAddMoneySSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Promo And Flow">
+        <classes>
+            <class name="scripts.api.theia.FetchAllPaymentOffers"/>
+            <class name="scripts.api.theia.ProcessTransactionAPI">
+                <methods>
+                    <!--Exclude Zero Pass Percentage -->
+                    <exclude name="testwithIncorrectContentType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Initiate Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction"/>
+        </classes>
+    </test>
+
+    <test name="Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                    <include name="PGP_289_successfulSeamlessDC"/>
+                    <include name="PGP_293_successfulSeamlessNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-36056 - Seamless Prepaid Cases">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="TC001_VerifyPrepaidCardisnotshowninExtendinfo"/>
+                    <include name="TC002_VerifyPrepaidCardisnotshowninExtendinfo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SeamlessNative">
+        <classes>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="PGP_359_successfulSeamlessNativeCC"/>
+                    <include name="PGP_360_successfulSeamlessNativeDC"/>
+                    <include name="PGP_364_successfulSeamlesNativeNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Fetch Pay Options" parallel="methods" thread-count="3">
+        <classes>
+            <class name="scripts.Native.FetchPayOptions">
+              <methods>
+                  <!-- Exclude Zero Pass Percentage TCs -->
+                  <exclude name="merchantLogoUrlPresent"/>
+                  <exclude name="TC_FPI_002"/>
+              </methods>  
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeFPOV2 TCs">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2"/>
+        </classes>
+    </test>
+
+    <test name="PGP-31411 NATIVE PAY CALL">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.NativePaycall"/>
+        </classes>
+    </test>
+
+    <test name="PGP-34670 - Validate pay on bank otp page for native transaction via CC.">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.NativePaycall">
+                <methods>
+                    <include name="payOnBankForNativeTxnCCPayMode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Excluding Zero Pass Percentage TCs ->
+   <test name="PGP-32831 - Verifying different sub wallets on single user">
+       <classes>
+           <class name="scripts.SubWalletDetails"/>
+        </classes>
+    </test> -->
+
+    <test name="PGP-30179 - ChecksumIssueAggrMerchants">
+        <classes>
+            <class name="scripts.ChecksumIssueAggregatorMerchants"/>
+        </classes>
+    </test>
+
+    <test name="Split settlement For Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeMF">
+                <methods>
+                    <!--Exclude Zero Pass Percentage -->
+                    <exclude name="validateSplitInfoNB"/>
+                    <exclude name="validateSplitInfoDCPercentage"/>
+                    <exclude name="validateSplitInfoDCChild"/>
+                    <exclude name="validateSplitInfoDCChildPERCENTAGE"/>
+                    <exclude name="validateSplitInfoNBPercentage"/>
+                    <exclude name="validateSplitInfoNBChild"/>
+                    <exclude name="validateSplitInfoNBChildPercentage"/>
+                    <exclude name="validateSplitInfoUPIChild"/>
+                    <exclude name="validateSplitInfoUPIChildPERCENTAGE"/>
+                    <exclude name="validateSplitInfoUPIPercentage"/>
+                    <exclude name="validateSplitInfoUPI"/>
+                    <exclude name="validateUPITxnWithoutSplit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="JusPay API Automation">
+        <classes>
+            <class name="scripts.JusPay"/>
+        </classes>
+    </test>
+
+
+
+    <!-- Excluding Zero Pass Percentage TCs (All Risk Add MOney TCs ) >
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API)">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                    <include name="fetchPayOptionForNonRiskRejectedUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="testGVScenario"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="testGVScenario"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    < Till here  -->
+
+</suite>

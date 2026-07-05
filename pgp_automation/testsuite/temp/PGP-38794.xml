@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AOA MaxLife UPI Subs Peon" verbose="1" thread-count="2" parallel="tests">
+    <test name="Validate Peon for AOA MaxLife UPI Subs Txn">
+        <classes>
+            <class name="scripts.AOA.AOAMaxLife">
+                <methods>
+                    <include name="PGP_38073_VerifyPeonSentforSuccessMaxLifeUPItxn"/>
+                    <include name="PGP_38073_VerifyPeonSentforFailureMaxLifeUPItxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

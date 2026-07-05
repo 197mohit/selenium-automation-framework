@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PAPR-4739 | TPV flow UI improvements and Flow Changes" verbose="1" parallel="tests" thread-count="3">
+    <test name="TPV flow UI improvements and Flow Changes in Enhanced Web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PAPR_4739_TC_MF02"/>
+                    <include name="PAPR_4739_TC_MF03"/>
+                    <include name="PAPR_4739_TC_MF05"/>
+                    <include name="PAPR_4739_TC_ST02"/>
+                    <include name="PAPR_4739_TC_ST03"/>
+                    <include name="PAPR_4739_TC_ST05"/>
+                    <include name="PAPR_4739_TC_SIP03"/>
+                    <include name="PAPR_4739_TC_SIP05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TPV flow UI improvements and Flow Changes in Enhanced Wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PAPR_4739_TC_MF02"/>
+                    <include name="PAPR_4739_TC_MF03"/>
+                    <include name="PAPR_4739_TC_MF05"/>
+                    <include name="PAPR_4739_TC_ST02"/>
+                    <include name="PAPR_4739_TC_ST03"/>
+                    <include name="PAPR_4739_TC_ST05"/>
+                    <include name="PAPR_4739_TC_SIP03"/>
+                    <include name="PAPR_4739_TC_SIP05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="TPV flow UI improvements and Flow Changes in JS Checkout Web">
+            <parameter name="theme" value="checkoutjs_web_revamp"/>
+            <classes>
+                <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                    <methods>
+                        <include name="PAPR_4739_TC_MF04"/>
+                        <include name="PAPR_4739_TC_MF06"/>
+                        <include name="PAPR_4739_TC_ST04"/>
+                        <include name="PAPR_4739_TC_ST06"/>
+                        <include name="PAPR_4739_TC_SIP04"/>
+                        <include name="PAPR_4739_TC_SIP06"/>
+                    </methods>
+                </class>
+                <class name="scripts.PGOnly">
+                    <methods>
+                        <include name="PAPR_4739_TC_MF01"/>
+                        <include name="PAPR_4739_TC_ST01"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
+
+        <test name="TPV flow UI improvements and Flow Changes in JS Checkout Wap">
+            <parameter name="theme" value="checkoutjs_wap_revamp"/>
+            <parameter name="mobileEmulation" value="Nexus 5"/>
+            <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+            <classes>
+                <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                    <methods>
+                        <include name="PAPR_4739_TC_MF04"/>
+                        <include name="PAPR_4739_TC_MF06"/>
+                        <include name="PAPR_4739_TC_ST04"/>
+                        <include name="PAPR_4739_TC_ST06"/>
+                        <include name="PAPR_4739_TC_SIP04"/>
+                        <include name="PAPR_4739_TC_SIP06"/>
+                    </methods>
+                </class>
+                <class name="scripts.PGOnly">
+                    <methods>
+                        <include name="PAPR_4739_TC_MF01"/>
+                        <include name="PAPR_4739_TC_ST01"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
+</suite>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ShopperStop" verbose="1" thread-count="10" parallel="tests">
+    <test name="PGP-37195">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationLogs">
+            </class>
+        </classes>
+    </test>
+    <test name="SyncRefund">
+    <classes>
+    <class name="scripts.Refund">
+        <methods>
+            <include name="successfulRefundOfBaseAmountInPostConvenienceTxn_Sync"/>
+            <include name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn_async"/>
+        </methods>
+    </class>
+    </classes>
+    </test>
+</suite>

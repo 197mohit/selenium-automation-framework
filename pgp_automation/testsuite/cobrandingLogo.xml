@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-42134 Co Branding Footer | Prod Bug" verbose="1">
+    <test name="PGP-42134 Co Branding Footer | Prod Bug" parallel="tests" thread-count="2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_icici_cobranding_logo_header_footer_signedIn"/>
+                    <include name="Verify_icici_cobranding_logo_header_footer_signedOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

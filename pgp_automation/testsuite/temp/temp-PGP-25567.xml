@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-25567" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-25567">
+        <classes>
+            <class name="scripts.flows.NativeTest"/>
+            <class name="scripts.flows.NativePlusTest"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+
+            </class>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

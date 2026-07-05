@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33443">
+    <test name="33443">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="validateRiskRejectMessage"/>
+                    <include name="validatePeonForFailedTransaction"/>
+                    <include name="validatePeonForLimitBreach"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

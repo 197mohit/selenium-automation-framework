@@ -1,0 +1,532 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Save_Card_Suite" parallel="tests" thread-count="10">
+
+    <!-- Disabling the saved card service apis as it is no longer supported
+    <test name="SaveCard">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCard">
+                <methods>
+                    < Exclude Zero Pass Percentage TCs >
+                    <exclude name="saveTrused_ValidateExpiryInDB"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.savecardService.SavedCardOpenApi"/>
+            <<class name="scripts.api.savedcardservice.AddSavedCardByMIdCustId"/>not completed
+            <class name="scripts.api.savedcardservice.AddSavedCardByUserId"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.UpdateTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SaveTrustedCardDetails"/>
+            <class name="scripts.api.savedcardservice.SaveTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SavedCardsByCardTypeSsoToken"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByUserIdTokenIdTokenType"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByCustIdMId"/>
+            <class name="scripts.api.savedcardservice.PGDeactivateSavedCard"/>
+            <<class name="scripts.api.savedcardservice.GetSavedRecentCCBillPaymentByCardId"/>not completed>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdCardNo"/>
+            <class name="scripts.api.savedcardservice.GetSavedcardsByUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdStatus"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdInstruments"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserId"/>
+            <class name="scripts.api.savecardService.SaveCardByUserIdTest"/>
+        </classes>
+    </test> -->
+
+    <test name="Add Money Express Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money MP Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money Uber Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Exclude Zero Pass Percentage TCs
+    <test name="Add N Pay Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <test name="Deferred Fee on AddMoney Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateFullKYCWalletSavedCCNewFlow"/>
+                    <include name="validateFullKYCGVSavedCCNewAPP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Exclude Zero Pass Percentage
+   <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+       <parameter name="isNativePlus" value="true"/>
+       <classes>
+           <class name="scripts.Sprint28.RiskAddMoney">
+               <methods>
+                   <include name="addMoneySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <!-- Exclude Zero Pass Percentage
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="addMoneySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <test name="SaveCard Instant Refund">
+        <classes>
+            <class name="scripts.api.instantrefund.RefundAccountQuery"/>
+            <class name="scripts.api.instantrefund.RefundAccountRemove"/>
+            <class name="scripts.api.instantrefund.RefundAccountValidate"/>
+            <class name="scripts.api.instantrefund.RefundConsultView"/>
+            <!-- Exclude Zero Pass Percentage TCs -->
+            <!--class name="scripts.api.instantrefund.AsyncRefund"-->
+            <class name="scripts.api.instantrefund.RefundAccountAdd">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="testForRealUpiAccount"/>
+                    <exclude name="testWhenAccountDetailsAreAlreadyAdded"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Disabling the saved card service apis as it is no longer supported
+    <test name="SaveCard TCs">
+        <classes>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOTokenUserIdMId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOToken"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdSSOTokenChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdCardId"/>
+
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdUserIdMIdCustId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetCard"/>
+            <class name="scripts.api.savedcardservice.GetCacheSavedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardByUserIdCardId"/>
+            <<class name="scripts.api.savedcardservice.DeleteSavedCardBySSOTokenUserIdCardId"/>not completed
+            <class name="scripts.api.savedcardservice.DeletePGSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.DeactivateSavedCard"/>
+
+            <class name="scripts.api.savedcardservice.AddSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardMIdCustId"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCard"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMId"/>
+        </classes>
+    </test> -->
+
+    <test name="PGOnly with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_269_verifySaveCardThroughDCTxn"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_verifySaveCardWithoutLogin"/>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="validatePGOnlyRetryTxnUsingSavedCard"/>
+                    <include name="savedCardInfoNotGettingSavedPGP17483"/>
+                    <!-- Exclude Zero Pass Percentage
+                    <include name="PGP_251_verifySavedCardListAfterLogin"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+    <test name="PGOnly with enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_271_verifyDCSavedCardTxn"/>
+                    <include name="checkExpiredSaveCardNotVisible_OnCashierPage"/>
+                    <include name="validatePGOnlyRetryTxnUsingSavedCard"/>
+                    <include name="savedCardInfoNotGettingSavedPGP17483"/>
+                    <!-- Exclude Zero Pass Percentage
+                    <include name="PGP_251_verifySavedCardListAfterLogin"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native EMISubvention">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                    <include name="verifyHybridEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Non-matching Website TC's">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="testOfflineSavedCardTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testAddNPayUsingSavedCardWhenNonMatchingWebsiteProvided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Offline Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedwap_revamp"/>
+                <methods>
+                    <include name="PGP_529_OfflineSavedCardTxn"/>
+                    <include name="validatePGonlyWithLoginUsingSavedCard"/>
+                    <include name="validateAddNPayUsingSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Fetch Payment Page AppInvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="FPP_SavedCCAppInvokeTC003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FetchPayInstrument">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_saveCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="CCBillPayment on Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="validateCCBillPaymentUsingSavedCard"/>
+                    <include name="validateCCBillPaymentUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="CCBillPayment on Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="validateCCBillPaymentUsingSavedCard"/>
+                    <include name="validateCCBillPaymentUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_290_SeamlessCCWithoutSavedCard"/>
+                    <include name="PGP_291_SeamlessCCAndSavingCard"/>
+                    <include name="PGP_292_SeamlessCCUsingSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="SeamlessNative">
+        <classes>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="PGP_361_SeamlessNativeCCWithoutSavedCard"/>
+                    <include name="PGP_362_SeamlessNativeCCAndSavingCard"/>
+                    <include name="PGP_363_SeamlessNativeCCUsingSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+
+    <test name="AddMoneyMP-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddMoneyMP  with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddNPay-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+
+                    <include name="addnPay_CC_S_CheckforCardSaved"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Hybrid-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                    <!-- Exclude Zero Pass Percentage TCs
+                    <include name="hybrid_verifySavedCardList"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Add Money using Retry Saved Card on Wap Theme">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <!-- Disabling save card service api as it is depricated now
+    <test name="PGP-29551 Access token FPO test cases">
+        <classes>
+            <class name="scripts.api.savedcardservice.AccessTokenSavedCards"/>
+        </classes>
+    </test> -->
+
+
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+
+                    <include name="VerifyBankLogoInSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="temp-Prepaid cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Disabling Below Tests 21751 as SC api is not supported anymore >
+    <test name="PGP-21751 - FF4J Flag OFF" parallel="methods">
+        <classes>
+            <class name="scripts.api.savedcardservice.getcard.GetCardFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbycustidmidchecksum.GetSavedCardByCustIdMIdChecksumFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbyssotoken.GetSavedCardBySSOTokenFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbycustidmid.PGGetSavedCardByCustIdMIdFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbyuseridtokenidtokentype.PGGetSavedCardByUserIdTokenIdTokenTypeFlagOffTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-21751 - FF4J Flag ON" parallel="methods">
+        <classes>
+            <class name="scripts.api.savedcardservice.getcard.GetCardFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbycustidmidchecksum.GetSavedCardByCustIdMIdChecksumFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbyssotoken.GetSavedCardBySSOTokenFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbycustidmid.PGGetSavedCardByCustIdMIdFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbyuseridtokenidtokentype.PGGetSavedCardByUserIdTokenIdTokenTypeFlagOnTest"/>
+        </classes>
+    </test> -->
+
+    <!--Disabling this as Savecard Service APIs are being depricated
+    <test name="PGP-29587 TC">
+        <classes>
+            <class name="scripts.api.savedcardservice.SavedCardOpenAPI">
+                <methods>
+                     Exclude Zero Pass Percentage TCs
+                    <exclude name="successTransaction"/>
+                    <exclude name="cardNoLengthFF4jOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <!--Disabling this as Savecard Service APIs are being depricated
+    <test name="PGP-18000:Phone Update | User verification through saved cards">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCardByUserIdTest"/>
+        </classes>
+    </test> -->
+
+    <test name="Hybrid with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Savecards-service APIs">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.coft.savedCardService.DeleteCardbyMidCustIdTest"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalBinInfoTests"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalDeleteBinUserTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests"/>
+            <class name="scripts.coft.savedCardService.SavecardServicegetGcinV1Test"></class>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest"></class>
+        </classes>
+    </test>
+</suite>

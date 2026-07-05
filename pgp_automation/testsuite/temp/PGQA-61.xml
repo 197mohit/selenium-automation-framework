@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI enhancements and Event Mapping" verbose="1">
+    <test name="PGQA-61 ">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="VerifyparametersInEventLoggerWhenPreferenceIsEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

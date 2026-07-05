@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58596" verbose="1">
+    <test name="Enable Disable PaymentMode Bin Level">
+        <classes>
+            <class name="scripts.EnableDisablePaymentModeBinLevel">
+                <methods>
+                    <include name="verifyFetchbinDetailswithEnabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFetchbinDetailswithEnabledCreditCardPaymodewith6DigitsInvalidBins"/>
+                    <include name="verifyFetchbinDetailswithEnabledCreditCardPaymodewith6DigitsDCBins"/>
+                    <include name="verifyFetchbinDetailswithSSOToken"/>
+                    <include name="verifyFetchbinDetailswithInvalidInputParam"/>
+                    <include name="verifyFetchbinDetailswithEnabledDebitCardPaymodewith6DigitsSavedCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithEnabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithEnabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForCCwithEnabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForCCwithDisbledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithDisabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForDCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithEnabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithEnabledCreditCardPaymodewith6DigitsdifferentCCBins"/>
+                    <include name="verifyPTCForDCwithEnabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithEnabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithDisabledCreditCardPaymodewith6DigitsdifferentCCBins"/>
+                    <include name="verifyPTCForDCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithDisabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="DefferedInitiatewithenabledUPI_PTCwithCC_RetrywithUPI"/>
+                    <include name="DefferedInitiatewithDisabledCC_PTCwithCC_RetrywithUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

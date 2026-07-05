@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="singleOfferEMISubvention"/>  
+                </methods>
+            </class>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>  
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC13"/>  
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

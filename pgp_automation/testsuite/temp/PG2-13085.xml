@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ItemProduct Validation in COP , COTP " verbose="1">
+
+    <test name="ItemProduct Validation">
+        <classes>
+            <class name="scripts.GoodsInfoCheck">
+                <methods>
+                    <include name="validateitemProductNameinCOP"/>
+                    <include name="validateitemProductNamewithspecialcharacterinCOP"/>
+                    <include name="validateitemProductNameinEnhancedFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

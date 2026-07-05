@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35618 Dynamic URL Change" verbose="1" >
+
+    <test name="Dynamic URL update for Native">
+            <classes>
+                <class name="scripts.Native.subscription.NativeProcessSubscription">
+                    <methods>
+                        <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+
+    <test name="Dynamic URL update for EnhancedWeb">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                    <methods>
+                        <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Dynamic URL update for EnhancedWap">
+        <parameter name="theme" value="enhancedwap_revamp">
+            <classes>
+                <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                    <methods>
+                        <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Dynamic URL update for CheckoutJSWap">
+        <parameter name="theme" value="checkoutjs_wap_revamp">
+            <classes>
+                <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                    <methods>
+                        <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Dynamic URL update for CheckoutJSWeb">
+        <parameter name="theme" value="checkoutjs_web_revamp">
+            <classes>
+                <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                    <methods>
+                        <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+</suite>

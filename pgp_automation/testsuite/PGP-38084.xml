@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38084" verbose="1" parallel="methods" thread-count="5">
+    <test name="PGP-38084 checkoutjs web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyUPICollectIsDisabledForLessThan2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-38084 checkoutjs wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyUPICollectIsDisabledForGreaterThan2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-38084 enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyUPICollectIsDisabledForGreaterThan2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-38084 enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyUPICollectIsDisabledForLessThan2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

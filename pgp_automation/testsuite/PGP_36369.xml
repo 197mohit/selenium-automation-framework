@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="v2/apply promo tncUrl is received when FF4J flag is enabled: theia.applyPromoSendResponseTncUrl" verbose="1">
+    <test name="Validate cases for enabled and disabled flags">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test tncUrl when FF4J applyPromoSendResponseTncUrl flag is enabled on mid"/>
+                    <include name="test tncUrl when FF4J applyPromoSendResponseTncUrl flag is disabled on mid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

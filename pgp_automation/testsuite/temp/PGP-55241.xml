@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-55241 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-55241">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateUnifiedOfferforAllOffers"/>
+                    <include name="validateUnifiedOfferforAllOffersSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-55241 -all offers in offerDiscovery">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryWithSSOToken">
+                <methods>
+                    <include name="verifyallOffersTrue"/>
+                    <include name="verifyallOffersFalse"/>
+                    <include name="verifyallOffersTruewithAmount"/>
+                    <include name="verifyallOffersTrueLite"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

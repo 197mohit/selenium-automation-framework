@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39209">
+    <test name="Verify Full Traffic Y CO Then Pay Postpaid Txns">
+        <classes>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateFullTrafficCoThenPaySuccessPostPaidTxnPG2MID"/>
+                    <include name="validateFullTrafficCoThenPayFailedPostPaidTxnPG2MID"/>
+                    <include name="validateFullTrafficCoThenPayPostPaidTxnPG2MIDTheiaInternallyClosesOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

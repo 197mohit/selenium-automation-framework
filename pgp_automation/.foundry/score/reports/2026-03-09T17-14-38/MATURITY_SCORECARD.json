@@ -1,0 +1,649 @@
+{
+  "scoring_method": "llm",
+  "overall_score": {
+    "total": "46/120",
+    "percentage": 38.3,
+    "grade": "F",
+    "maturity_level": "Critical",
+    "inconclusive_count": 12
+  },
+  "criteria_scores": {
+    "testing": {
+      "score": 6,
+      "name": "Testing & Quality Assurance",
+      "confidence": "high",
+      "findings": [
+        "Massive test suite: 14,597 @Test methods across 898 test files (Java + Groovy), covering payments, refunds, EMI, UPI, saved cards, subscriptions, merchant onboarding, and more.",
+        "Well-structured test infrastructure: PGPBaseTest base class with lifecycle hooks, 25+ shared helper classes (SavedCardHelpers, NativeHelpers, PGPHelpers, etc.), DTO builders, page objects for UI tests, and UserManager/MerchantManager for resource management.",
+        "Rich reporting stack: Allure TestNG listener, ExtentReports, ReportPortal integration, custom listeners (FailureHandlerListener, StatusCounterListener, ScreenListener), and Allure annotations (@Owner, @Description, @Epic, @Feature, @Story) used in tests.",
+        "100+ TestNG XML suite files in testsuite/ directory organized by feature area (Regression, EMI, UPI, Refund, Subscription, etc.) with parallel execution support (thread-count=20).",
+        "No code coverage tooling: no JaCoCo, Cobertura, or any coverage measurement plugin configured; no coverage thresholds or gates enforced.",
+        "Static analysis disabled (sonar.skip=true in pom.xml); Jenkinsfile CI pipeline only does build and SonarQube analysis but does not actually execute any tests."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "No code coverage measurement or enforcement \u2014 no JaCoCo or equivalent plugin configured, no coverage thresholds.",
+          "recommendation": "Add JaCoCo Maven plugin with coverage reporting and set minimum coverage thresholds (e.g., 70% line coverage for helper/utility code in src/main/java)."
+        },
+        {
+          "severity": "high",
+          "issue": "CI pipeline (Jenkinsfile) does not execute tests \u2014 it only builds and runs SonarQube analysis. Tests are not validated on every push.",
+          "recommendation": "Add a test execution stage to the Jenkins pipeline that runs at least a smoke/regression suite on every build (e.g., mvn test -DsuiteXmlFile=testsuite/Regression.xml)."
+        },
+        {
+          "severity": "high",
+          "issue": "SonarQube static analysis is disabled (sonar.skip=true in pom.xml line 38), negating the quality gate in the Jenkinsfile.",
+          "recommendation": "Set sonar.skip to false and configure meaningful SonarQube quality gates for code smells, bugs, and security hotspots."
+        },
+        {
+          "severity": "medium",
+          "issue": "Tests have no isolation from external services \u2014 they depend on live QA environments, Redis clusters, and databases. No mocking framework is systematically used.",
+          "recommendation": "For utility/helper unit tests, introduce mocking (Mockito/WireMock) so at least the helper layer can be tested without live infrastructure. Keep integration tests as-is but clearly separate unit from integration tests."
+        },
+        {
+          "severity": "medium",
+          "issue": "Hardcoded credentials in pom.xml (SMTP_PASSWORD on line 164, SonarQube login token in Jenkinsfile line 19).",
+          "recommendation": "Move all credentials to environment variables or a secrets manager. Use Jenkins credentials binding for CI secrets."
+        },
+        {
+          "severity": "low",
+          "issue": "Inconsistent test naming conventions \u2014 mix of TC_FPI_001, PGP_285_xxx, and descriptive names across different test classes.",
+          "recommendation": "Standardize test naming to use descriptive names that explain the behavior being tested, with JIRA IDs in @Description annotations rather than method names."
+        }
+      ],
+      "inconclusive_aspects": [
+        "Test execution in CI may be handled by a separate Jenkins job or pipeline not defined in this repo's Jenkinsfile \u2014 the testsuite XML files and ReportPortal integration suggest tests are executed regularly from an external orchestration system",
+        "The parent POM (com.paytm.autumn:parent-automation:3.2.11-SNAPSHOT) may include additional test plugins or coverage configuration not visible in this repo's pom.xml",
+        "Some test infrastructure (BaseTest, framework utilities) lives in the Autumn framework dependency \u2014 the full test capabilities depend on that parent library"
+      ]
+    },
+    "code_quality": {
+      "score": 2,
+      "name": "Code Hygiene & Maintainability",
+      "confidence": "high",
+      "findings": [
+        "No static analysis tooling configured: no checkstyle.xml, spotbugs, PMD, ErrorProne, or any Java linter/formatter configs exist in the repository.",
+        "SonarQube is explicitly disabled by default (`sonar.skip=true` in pom.xml line 38). A SonarQube stage exists in Jenkinsfile with `abortPipeline: true`, but the default build skips analysis entirely, making it non-enforcing in normal workflows.",
+        "Massive wildcard import usage across 200+ files (`import com.paytm.api.*` etc.), directly violating the project's own stated 'no wildcard imports' coding standard, with zero tooling to catch this.",
+        "No pre-commit code quality hooks \u2014 the only pre-commit hook runs an 'AI code detector' script, not a linter, formatter, or static analysis tool.",
+        "Critical security hygiene failure: hardcoded database credentials, JWT keys, encryption keys, and client secrets committed in 13+ localconfig.properties files; SMTP password in pom.xml (line 164); SonarQube login token in Jenkinsfile (line 19).",
+        "Severe structural issues: CheckoutJsTests.java is 15,201 lines; 134 `e.printStackTrace()` calls across 73 files instead of proper logging; 20+ classes violate PascalCase naming convention (e.g., `txnRefIdindebitcall`, `upiUITests`, `superCashHelper`)."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "Zero static analysis or linting enforcement \u2014 no checkstyle, SpotBugs, PMD, ErrorProne, or formatter is configured or enforced in build or CI",
+          "recommendation": "Add maven-checkstyle-plugin with google_checks.xml or sun_checks.xml to pom.xml and configure it to fail the build on violations. Add SpotBugs or ErrorProne for bug detection. Integrate into the CI pipeline as a blocking step."
+        },
+        {
+          "severity": "high",
+          "issue": "SonarQube analysis is disabled by default (sonar.skip=true in pom.xml) making the Jenkinsfile quality gate stage ineffective for regular builds",
+          "recommendation": "Remove `sonar.skip=true` from pom.xml properties or set it to false. Ensure SonarQube analysis runs on every CI build, not just optionally."
+        },
+        {
+          "severity": "high",
+          "issue": "Hardcoded credentials (database passwords, JWT keys, encryption keys, SMTP password, SonarQube token) committed across 13+ config files and Jenkinsfile",
+          "recommendation": "Move all secrets to environment variables, Jenkins credential store, or a vault. Replace inline credentials in localconfig.properties with `${env.VARIABLE}` references. Immediately rotate all exposed credentials."
+        },
+        {
+          "severity": "high",
+          "issue": "No code formatting enforcement \u2014 no .editorconfig, no formatter plugin (google-java-format, spotless), no pre-commit formatting hooks",
+          "recommendation": "Add spotless-maven-plugin or fmt-maven-plugin with google-java-format to enforce consistent formatting. Add .editorconfig for basic editor settings."
+        },
+        {
+          "severity": "medium",
+          "issue": "200+ files use wildcard imports violating project's own stated coding standards, with no tooling to prevent it",
+          "recommendation": "Configure checkstyle AvoidStarImport rule and enforce it in CI. Clean up existing wildcard imports using IDE auto-import organization."
+        },
+        {
+          "severity": "medium",
+          "issue": "CheckoutJsTests.java is 15,201 lines \u2014 a monolithic test class that is extremely difficult to maintain",
+          "recommendation": "Split into focused test classes by feature area (e.g., CheckoutJsPaymentTests, CheckoutJsSubscriptionTests, CheckoutJsEMITests). Each class should be under 1000 lines."
+        },
+        {
+          "severity": "medium",
+          "issue": "134 occurrences of e.printStackTrace() across 73 files instead of using a proper logging framework",
+          "recommendation": "Replace all printStackTrace() calls with logger.error(\"message\", e) using the project's logging framework. Add a checkstyle rule to prevent future usage."
+        },
+        {
+          "severity": "low",
+          "issue": "20+ classes violate PascalCase naming convention (e.g., txnRefIdindebitcall, upiUITests, shopperStop, generateEsnHelper)",
+          "recommendation": "Rename classes to follow Java PascalCase conventions. Add a checkstyle naming convention rule to prevent future violations."
+        }
+      ],
+      "inconclusive_aspects": [
+        "SonarQube quality gate may be enforced for specific branches or PR builds via Jenkins pipeline parameters not visible in the Jenkinsfile \u2014 the `waitForQualityGate abortPipeline: true` suggests intent but pom.xml default disables it",
+        "The parent POM (com.paytm.autumn:parent-automation:3.2.11-SNAPSHOT) may include some static analysis plugin configuration inherited by this project, but this cannot be verified from this repo alone"
+      ]
+    },
+    "security": {
+      "score": 2,
+      "name": "Security Posture",
+      "confidence": "high",
+      "findings": [
+        "CRITICAL: Massive hardcoded credentials committed to git \u2014 87+ password/secret/token occurrences across 13 localconfig.properties files containing plaintext database passwords (MySQL JDBC URLs with user/pass), JWT keys, client secrets (CARD_SERVICE_THEIA_CLIENT_SECRET, JWT_CLIENT_SECRET_*), and encryption keys.",
+        "CRITICAL: SonarQube authentication token hardcoded in Jenkinsfile:19 (`sonar.login=243ef548bd44822b0374afbc10fefda814e8ad32`), SMTP credentials hardcoded in pom.xml:163-164 (`ptm5automation@gmail.com`/`ptmautomation`), and Maven admin password committed in settings.xml:7.",
+        "CRITICAL: Hardcoded secrets in Java source code \u2014 Redis password in HealthCheckHelper.java:68, risk password in RiskVerificationPage.java:13, merchant key in OrderStatusAPI.java:54.",
+        "No dependency vulnerability scanning tools configured \u2014 no OWASP dependency-check plugin, no Snyk, no Dependabot. Severely outdated dependencies with known CVEs: jackson-core 2.9.1, jsoup 1.8.3, jjwt 0.9.1, guice 4.1.0, jackson-jaxrs-json-provider 2.7.0.",
+        "No SAST tools active \u2014 SonarQube is disabled via `sonar.skip=true` in pom.xml:38. No SpotBugs, FindSecBugs, Checkstyle, or PMD configured. No pre-commit hooks for secret detection.",
+        "Minor positives: `.env` is in .gitignore, Jenkins pipeline exists with a SonarQube stage (though token is hardcoded), Quality Gate step is present in Jenkinsfile, and merchant keys in Constants.java are loaded from config maps rather than being statically embedded."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "Plaintext database credentials, JWT secrets, client secrets, and encryption keys are hardcoded in 13+ localconfig.properties files committed to git across all environment profiles (ite, qa5, qa7, qa8, qa11, qa12, qa14, staging, automation, hotfix, sandbox, mix-hotfix, dev2).",
+          "recommendation": "Move all secrets to a secrets manager (HashiCorp Vault, AWS Secrets Manager) or environment variables. Replace hardcoded values in properties files with placeholders like `${PGP_DB_PASSWORD}`. Add localconfig.properties to .gitignore and provide a localconfig.properties.example with placeholder values."
+        },
+        {
+          "severity": "high",
+          "issue": "SonarQube authentication token hardcoded in Jenkinsfile:19 as a command-line argument visible in build logs.",
+          "recommendation": "Use Jenkins credentials binding (`withCredentials`) to inject the SonarQube token as a secret. Remove the token from the Jenkinsfile and rotate the exposed token immediately."
+        },
+        {
+          "severity": "high",
+          "issue": "SMTP credentials (username/password) hardcoded in pom.xml:163-164 and Maven admin password in settings.xml:7.",
+          "recommendation": "Move SMTP credentials to environment variables or Jenkins credentials. For settings.xml, use Maven master password encryption or inject via CI secrets. These files should not contain real credentials in version control."
+        },
+        {
+          "severity": "high",
+          "issue": "Hardcoded passwords in Java source: Redis password in HealthCheckHelper.java:68, risk password in RiskVerificationPage.java:13, merchant key in OrderStatusAPI.java:54.",
+          "recommendation": "Read these values from configuration/environment variables instead of hardcoding. Rotate any exposed credentials."
+        },
+        {
+          "severity": "high",
+          "issue": "No dependency vulnerability scanning configured. Severely outdated dependencies with known CVEs: jackson-core 2.9.1, jsoup 1.8.3, jjwt 0.9.1, guice 4.1.0, jackson-jaxrs-json-provider 2.7.0.",
+          "recommendation": "Add OWASP dependency-check Maven plugin to pom.xml and integrate into CI pipeline. Update all dependencies to latest secure versions. Consider adding Dependabot or Renovate for automated dependency updates."
+        },
+        {
+          "severity": "high",
+          "issue": "SonarQube analysis is disabled (`sonar.skip=true` in pom.xml:38) and no other SAST tools (SpotBugs, FindSecBugs, PMD, Checkstyle) are configured.",
+          "recommendation": "Remove `sonar.skip=true`, enable SonarQube in regular builds, and add SpotBugs with FindSecBugs plugin for security-focused static analysis."
+        },
+        {
+          "severity": "medium",
+          "issue": "Artifact repository URLs in pom.xml use HTTP instead of HTTPS (e.g., http://artifactory-pg-internal.paytm.com), making them vulnerable to MITM attacks.",
+          "recommendation": "Switch all repository URLs to HTTPS to prevent man-in-the-middle attacks during dependency resolution."
+        },
+        {
+          "severity": "medium",
+          "issue": "Internal infrastructure IP addresses exposed in committed properties files and pom.xml (10.170.x.x, 10.142.x.x, 10.144.x.x ranges).",
+          "recommendation": "Use hostnames instead of IP addresses and move connection details to environment-specific configuration that is not committed to source control."
+        }
+      ],
+      "inconclusive_aspects": [
+        "SonarQube may be running centrally via the Jenkins pipeline (Jenkinsfile has a SonarQube stage), but it is disabled in regular Maven builds via sonar.skip=true and the token is hardcoded rather than injected via credentials",
+        "Dependency scanning may be handled at an organization level (e.g., centralized Snyk or Nexus IQ), but no evidence of this was found in the repo"
+      ]
+    },
+    "cicd": {
+      "score": 4,
+      "name": "CI/CD Pipeline",
+      "confidence": "high",
+      "findings": [
+        "Jenkinsfile exists with a 3-stage declarative pipeline: Build, SonarQube Analysis, and Quality Gate \u2014 running in a Docker agent container",
+        "SonarQube quality gate is enforced with `waitForQualityGate abortPipeline: true`, which is a genuine quality gate that blocks the pipeline on static analysis failures",
+        "Tests are NEVER executed in CI \u2014 the build stage uses `-DskipTests=true` and there is no separate test stage, which is a critical gap for a QA automation test suite repository",
+        "No linting, formatting, or type-checking stages exist in the pipeline \u2014 no checkstyle, PMD, spotbugs, or any other static analysis beyond SonarQube",
+        "Maven .m2 repository is cached via Docker volume mount (`-v /root/.m2/repository:/root/.m2/repository`), providing basic build caching",
+        "No deployment, artifact publishing, post-build actions (notifications), parallelism, or branch-specific pipeline behavior configured"
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "Tests are completely skipped in CI (`-DskipTests=true` in Build stage, no test stage). For a QA automation test suite repository, not running any tests in the CI pipeline defeats the core purpose.",
+          "recommendation": "Add a dedicated Test stage that runs at least a smoke test suite: `mvn test -s settings.xml -DsuiteXmlFile=testsuite/dummy.xml -Pautomation`"
+        },
+        {
+          "severity": "high",
+          "issue": "SonarQube login token is hardcoded in Jenkinsfile line 19: `sonar.login=243ef548bd44822b0374afbc10fefda814e8ad32`",
+          "recommendation": "Move the SonarQube token to Jenkins credentials and reference it via `withCredentials()` or use the `withSonarQubeEnv` block's built-in token handling"
+        },
+        {
+          "severity": "high",
+          "issue": "SMTP credentials are hardcoded in pom.xml (lines 163-164: `ptm5automation@gmail.com` / `ptmautomation`) and Artifactory password is committed in settings.xml (line 7)",
+          "recommendation": "Move all credentials to Jenkins secrets/credentials store or environment variables. Never commit passwords to source control."
+        },
+        {
+          "severity": "medium",
+          "issue": "No linting or code quality checks beyond SonarQube \u2014 no checkstyle, PMD, spotbugs, or formatter enforcement",
+          "recommendation": "Add at least one lint plugin (e.g., maven-checkstyle-plugin) as a pipeline stage to catch code style issues early"
+        },
+        {
+          "severity": "medium",
+          "issue": "No post-build actions configured \u2014 no failure notifications (email, Slack), no test report archiving, no cleanup steps",
+          "recommendation": "Add a `post { failure { } always { } }` block to the Jenkinsfile for notifications and artifact archiving"
+        },
+        {
+          "severity": "low",
+          "issue": "No branch-specific or PR-specific pipeline behavior \u2014 the same pipeline runs identically for all branches with no conditional stages",
+          "recommendation": "Add `when { branch 'master' }` conditions or Multibranch Pipeline configuration to differentiate PR builds from merge builds"
+        }
+      ],
+      "inconclusive_aspects": [
+        "Jenkins job configuration (triggers, branch filters, PR integration) lives in Jenkins UI/Multibranch config, not in the Jenkinsfile \u2014 PR-triggered builds may exist but are not visible from this repo",
+        "Branch protection rules (required reviews, required status checks) are configured in Bitbucket server UI, not in the repository files",
+        "The parent POM `com.paytm.autumn:parent-automation:3.2.11-SNAPSHOT` may contain additional CI-relevant plugin configurations not visible here",
+        "Jenkins shared libraries (`@Library`) are not used in this Jenkinsfile, but other Jenkins jobs may exist that run tests for this repo on a schedule (nightly execution referenced in pom.xml properties)"
+      ]
+    },
+    "infrastructure": {
+      "score": 4,
+      "name": "Infrastructure & Deployment",
+      "confidence": "high",
+      "findings": [
+        "Jenkinsfile exists with declarative pipeline using a Docker agent (pinned image tag `v1`), but it only runs build + SonarQube analysis \u2014 no test execution stage, making the pipeline incomplete for a QA automation repo.",
+        "Excellent environment separation via 14+ Maven profiles (ite, qa5, qa7, qa8, qa11, qa12, qa14, staging, hotfix, sandbox, automation, dev2, local, merchantStaging, mix-hotfix), each with dedicated `localconfig.properties`, `envServerCred.yaml`, and `merchant.yaml`.",
+        "Critical secret exposure: 115 hardcoded password/token occurrences across 13 `localconfig.properties` files, 198 plaintext server passwords across 8 `envServerCred.yaml` files, merchant API keys in `merchant.yaml`, a SonarQube token in the Jenkinsfile, SMTP credentials in pom.xml, and Jenkins credentials in config \u2014 all committed to version control.",
+        "No secret management tooling (Vault, AWS Secrets Manager, env-var injection) is used anywhere in the repository. The `.env` is gitignored but all actual secrets live in tracked config files.",
+        "No Dockerfile, docker-compose, or orchestration configs \u2014 acceptable for a test suite that runs inside a pre-built Docker agent image referenced in the Jenkinsfile.",
+        "Build configuration is functional (Maven + surefire + gmavenplus) but carries tech debt: system-scoped jars (checksum.jar, EncryptDecrypt.jar), `sonar.skip=true` by default, and outdated dependency versions (jackson 2.9, guice 4.1, jsoup 1.8)."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "Plaintext credentials committed to version control across all environment config files (DB passwords, server passwords, API keys, JWT keys, Redis passwords, SMTP credentials) \u2014 300+ secret occurrences across 20+ files.",
+          "recommendation": "Move all secrets to a secrets manager (HashiCorp Vault, AWS Secrets Manager) or inject via CI environment variables. Replace hardcoded values with `${env.VAR_NAME}` references or a runtime config lookup. Never commit secrets to source control."
+        },
+        {
+          "severity": "high",
+          "issue": "SonarQube authentication token hardcoded in Jenkinsfile line 19 (`-Dsonar.login=243ef548bd44822b0374afbc10fefda814e8ad32`).",
+          "recommendation": "Use Jenkins credentials binding (`withCredentials`) to inject the SonarQube token as a secret environment variable instead of hardcoding it in the pipeline script."
+        },
+        {
+          "severity": "medium",
+          "issue": "Jenkinsfile has no test execution stage \u2014 it only builds and runs SonarQube analysis, missing the primary purpose of a QA automation pipeline.",
+          "recommendation": "Add a test execution stage to the Jenkinsfile: `mvn test -s settings.xml -DsuiteXmlFile=<suite> -P<profile>` with parameterized suite/profile selection."
+        },
+        {
+          "severity": "medium",
+          "issue": "System-scoped JARs (checksum.jar, EncryptDecrypt.jar) bundled in src/main/resources/jars/ \u2014 fragile, non-reproducible, and breaks Maven dependency resolution.",
+          "recommendation": "Publish these artifacts to the internal Nexus/Artifactory repository and reference them as normal Maven dependencies."
+        },
+        {
+          "severity": "medium",
+          "issue": "SonarQube analysis is skipped by default (`sonar.skip=true` in pom.xml) and no static analysis plugins (checkstyle, spotbugs, PMD) are configured.",
+          "recommendation": "Enable sonar analysis by default or in CI profile. Add checkstyle/spotbugs plugins to the Maven build for automated code quality checks."
+        },
+        {
+          "severity": "low",
+          "issue": "Maven settings.xml contains encrypted server passwords committed to source control \u2014 while encrypted, this is still a security risk.",
+          "recommendation": "Move Maven server credentials to the CI agent's settings.xml or inject via environment variables rather than committing to the repo."
+        }
+      ],
+      "inconclusive_aspects": [
+        "Test execution may be triggered by separate Jenkins jobs or pipeline configurations outside this repo \u2014 the Jenkinsfile here may only cover the build/quality-gate portion",
+        "Docker image build and maintenance for the Jenkins agent (`build_env:v1`) likely lives in a separate DevOps/infra repo"
+      ]
+    },
+    "observability": {
+      "score": 4,
+      "name": "Observability & Reliability",
+      "confidence": "high",
+      "findings": [
+        "Test reporting infrastructure exists via three frameworks (Allure, ExtentReports, ReportPortal), but ReportPortal is disabled by default (rp.enable=false in pom.xml). Allure and ExtentReports are actively wired via TestNG listeners.",
+        "No standard logging framework is used. There is no logback.xml, log4j.xml, or any logging configuration file. Only 3 source files import SLF4J or java.util.logging. Instead, System.out.println (1593 occurrences across 256 files) and e.printStackTrace() are the de facto logging mechanisms.",
+        "An AspectJ-based Logger.aj provides automatic test-step logging into ExtentReports for @TestStep, @Utility, and @Test annotated methods, giving good per-test reporting but no structured application logging.",
+        "Test retry is implemented via RetryAnalyzer and CustomListener (max 2 retries), and Awaitility is used in ~10 files for resilient polling with timeouts -- appropriate resilience patterns for a test suite.",
+        "Health check helpers exist: HealthCheck.java validates /healthcheck endpoints for 10+ PGP services; HealthCheckHelper.java can verify Kafka, Zookeeper, and Redis availability -- good pre-flight infrastructure validation.",
+        "No metrics instrumentation, distributed tracing, or external error reporting (Sentry/Rollbar) exists. While less critical for a test suite, the complete absence of structured logging makes debugging test failures in CI unnecessarily difficult."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "Pervasive use of System.out.println (1593 occurrences) and e.printStackTrace() instead of a logging framework. No logging configuration file exists (no logback.xml, log4j.xml).",
+          "recommendation": "Adopt SLF4J + Logback with a logback.xml config. Replace System.out.println with logger.info/debug and e.printStackTrace() with logger.error(msg, e). This enables log levels, filtering, and structured output for CI."
+        },
+        {
+          "severity": "medium",
+          "issue": "ReportPortal integration is configured but disabled by default (rp.enable=false). This means centralized test result tracking and historical trends are not available out of the box.",
+          "recommendation": "Enable ReportPortal for CI runs by setting rp.enable=true in the Jenkins pipeline or Maven profile, so test execution history and analytics are automatically captured."
+        },
+        {
+          "severity": "medium",
+          "issue": "Exceptions are frequently swallowed with bare e.printStackTrace() or System.out.println(e), losing context and making failures hard to trace in CI logs.",
+          "recommendation": "Use a proper logger with exception chaining: logger.error(\"Context message for {}\", orderId, e). Consider re-throwing or failing the test explicitly when errors indicate a real problem."
+        },
+        {
+          "severity": "low",
+          "issue": "Hardcoded SonarQube token in Jenkinsfile (line 19) and hardcoded credentials in LogsValidationHelper (line 208: qa_auto_jenkins:Paytm@1234).",
+          "recommendation": "Move credentials to Jenkins credential store and reference via withCredentials() or environment variables. Never commit tokens or passwords to source control."
+        }
+      ],
+      "inconclusive_aspects": [
+        "ReportPortal server and dashboards likely exist externally but are disabled in default config -- cannot verify if CI jobs enable it",
+        "The parent POM (com.paytm.autumn:parent-automation:3.2.11-SNAPSHOT) may provide additional logging/reporting configuration not visible in this repo",
+        "Jenkins job configurations may add additional reporting, notifications, or monitoring beyond what the Jenkinsfile defines",
+        "Allure report server/dashboard likely hosted externally -- cannot verify aggregation and historical trend tracking"
+      ]
+    },
+    "documentation": {
+      "score": 4,
+      "name": "Documentation & Knowledge",
+      "confidence": "high",
+      "findings": [
+        "No README.md exists \u2014 the single most important documentation file is missing. The project explicitly acknowledges this as tech debt in vision.md.",
+        "CONTRIBUTING.md is the best human-facing doc: covers JDK 11/Maven setup, build commands, test execution, code style, and branching. It partially fills the README gap but is not discoverable as a primary entry point.",
+        "CLAUDE.md and AGENTS.md (with 14 .foundry/casts/ files) provide comprehensive AI agent guidance covering repo layout, tech stack, code style, testing, security, environment vars, and debugging \u2014 but these are agent-oriented, not traditional developer onboarding docs.",
+        "Inline documentation is very sparse: only ~109 javadoc annotations (@param/@return/@throws) across the entire src/main/java tree with hundreds of source files. Most classes (e.g., RefundApi.java, CreateSubscription.java) have zero documentation beyond 'Created by' author comments.",
+        "No architecture docs, ADRs, design docs, diagrams, runbooks, or docs/ directory exist. No API documentation (OpenAPI/Swagger) despite the project being an API test suite.",
+        "CHANGELOG.md, SECURITY.md, CONTRIBUTORS.md, and VERSION file exist but are minimal \u2014 CHANGELOG has only one unreleased section; CONTRIBUTORS is an auto-generated list of ~186 names with no role differentiation."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "No README.md \u2014 a new developer has no primary entry point to understand what this repo is, how to set it up, or how to run tests.",
+          "recommendation": "Create a README.md covering: project purpose, prerequisites, setup instructions, how to run tests, repo layout overview, and links to CONTRIBUTING.md and other docs. Much of this content already exists in CLAUDE.md and CONTRIBUTING.md and can be consolidated."
+        },
+        {
+          "severity": "high",
+          "issue": "No architecture or design documentation \u2014 no ADRs, diagrams, or high-level overview of how tests, API helpers, DTOs, and environments relate to each other.",
+          "recommendation": "Add a docs/architecture.md with a component diagram (mermaid) showing test flow: suite XML \u2192 test class \u2192 API helper \u2192 Rest-Assured \u2192 PGP endpoints, plus how profiles/environments work."
+        },
+        {
+          "severity": "medium",
+          "issue": "Extremely sparse inline documentation \u2014 most API helper classes and test helpers have no Javadoc, no method-level comments, and no class-level descriptions.",
+          "recommendation": "Add class-level Javadoc to core helpers (PGPHelpers, NativeHelpers, CommonHelpers) and API classes explaining what endpoint each wraps and what parameters mean."
+        },
+        {
+          "severity": "medium",
+          "issue": "No API documentation (OpenAPI/Swagger specs) despite the project being an API test suite covering dozens of PGP endpoints.",
+          "recommendation": "Consider documenting the tested API surface \u2014 even a simple markdown table mapping API helper classes to endpoints and their purpose would help onboarding."
+        },
+        {
+          "severity": "low",
+          "issue": "CHANGELOG.md has only one unreleased section \u2014 no historical release entries despite the project being at version 3.2.11-SNAPSHOT.",
+          "recommendation": "Backfill key historical releases or at minimum maintain the changelog going forward with each release."
+        }
+      ],
+      "inconclusive_aspects": [
+        "Internal wiki or Confluence documentation may exist at Paytm \u2014 CLAUDE.md and AGENTS.md don't reference external docs but the team may maintain docs elsewhere",
+        "Test infrastructure documentation (Selenium Grid setup, Jenkins agent config, Docker image builds) likely lives in a separate infra repo"
+      ]
+    },
+    "dependencies": {
+      "score": 3,
+      "name": "Dependency Management",
+      "confidence": "high",
+      "findings": [
+        "All direct dependency versions are explicitly declared in pom.xml (no floating ranges like [1.0,) or LATEST), and all plugin versions are pinned \u2014 basic pinning discipline is present.",
+        "5 internal dependencies use -SNAPSHOT versions (autumn 3.2.11-SNAPSHOT, utils 4.0.0-SNAPSHOT, pgp-ff4j-strategy 76.0.0-SNAPSHOT, common 21.1.0-SNAPSHOT, cache 20.0.0-SNAPSHOT), making builds non-reproducible.",
+        "Many dependencies are severely outdated: jackson-core 2.9.1 (2017-era), guice 4.1.0 (2016), jsoup 1.8.3 (2015, known CVEs), lombok 1.18.2 (2018), rest-assured 3.0.2 (2017), jjwt 0.9.1 (2018), jackson-jaxrs 2.7.0 (2016). Several have known security vulnerabilities.",
+        "2 system-scoped JARs (checksum.jar, EncryptDecrypt.jar) are committed to the repository \u2014 an anti-pattern that bypasses Maven dependency resolution and reproducibility.",
+        "No dependency update automation (Renovate, Dependabot) and no vulnerability scanning (OWASP dependency-check, Snyk, etc.). SonarQube is configured in Jenkinsfile but sonar.skip=true is set in pom.xml properties.",
+        "Private Artifactory and Nexus registries are configured (artifactory-pg-internal.paytm.com, nexusartifactory.paytm.com), indicating some organizational dependency infrastructure exists. However, repositories use HTTP (not HTTPS) for most URLs."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "5 internal dependencies use -SNAPSHOT versions, making builds non-reproducible \u2014 any build can produce different results depending on when it runs.",
+          "recommendation": "Pin internal dependencies to release versions. Use a release process for internal libraries (autumn, utils, pgp-ff4j-strategy, common, cache) and reference stable release versions."
+        },
+        {
+          "severity": "high",
+          "issue": "Multiple dependencies have known security vulnerabilities: jsoup 1.8.3 (CVE-2015-6748, CVE-2021-37714), jackson-core 2.9.1 (multiple CVEs), jjwt 0.9.1. Many others are years out of date.",
+          "recommendation": "Upgrade all dependencies to latest stable versions. Add OWASP dependency-check-maven plugin to CI pipeline to scan for CVEs on every build."
+        },
+        {
+          "severity": "high",
+          "issue": "System-scoped JARs (checksum.jar, EncryptDecrypt.jar) are committed to the repo and bypass Maven dependency management. 4 jar files found in src/main/resources/jars/.",
+          "recommendation": "Publish these JARs to the internal Artifactory/Nexus repository and declare them as normal Maven dependencies with proper versions."
+        },
+        {
+          "severity": "medium",
+          "issue": "No dependency update automation configured (no Renovate, Dependabot, or similar). Dependencies appear to be manually managed with no regular update cadence.",
+          "recommendation": "Configure Renovate or Dependabot (if using Bitbucket, consider renovate-bot or a scheduled CI job running `mvn versions:display-dependency-updates`)."
+        },
+        {
+          "severity": "medium",
+          "issue": "No <dependencyManagement> section and no maven-enforcer-plugin to ensure dependency convergence and consistent versions across transitive dependencies.",
+          "recommendation": "Add a <dependencyManagement> section or use maven-enforcer-plugin with dependencyConvergence rule to prevent version conflicts."
+        },
+        {
+          "severity": "medium",
+          "issue": "Maven repositories configured with HTTP (not HTTPS): artifactory-pg-internal.paytm.com uses http:// for several repository URLs, vulnerable to MITM attacks.",
+          "recommendation": "Switch all repository URLs to HTTPS. Maven 3.8.1+ blocks HTTP repositories by default for security."
+        },
+        {
+          "severity": "low",
+          "issue": "Minimal test/compile scope separation \u2014 only 3 dependencies marked as test scope, 1 as provided, while many test-support libraries (extentreports, zxing, etc.) default to compile scope.",
+          "recommendation": "Review scope of all dependencies. Test reporting libraries, data generators (fabricator), and assertion libraries should use test scope."
+        }
+      ],
+      "inconclusive_aspects": [
+        "Parent POM (parent-automation 3.2.11-SNAPSHOT) may contain a <dependencyManagement> section that manages transitive dependency versions \u2014 cannot verify from this repo alone.",
+        "Internal Artifactory/Nexus may have vulnerability scanning policies configured at the repository level \u2014 cannot verify from this repo."
+      ]
+    },
+    "release_management": {
+      "score": 3,
+      "name": "Release & Change Management",
+      "confidence": "high",
+      "findings": [
+        "VERSION file exists (3.2.11-SNAPSHOT) and matches the pom.xml parent version, but uses SNAPSHOT suffix indicating no formal releases have been cut",
+        "CHANGELOG.md exists but is a skeleton just created by foundry init -- it has only an [unreleased] section with no versioned entries, no release history",
+        "Jenkinsfile has only Build, SonarQube Analysis, and Quality Gate stages -- no publish, deploy, release, or tag-based trigger steps",
+        "No maven-deploy-plugin, maven-release-plugin, or any release automation configured in pom.xml",
+        "No git tags found for release versioning -- commit history shows PR merges (RegRu1Feb2026, RegRu2Jan2026) but no formal version tags",
+        "No changelog automation tooling (semantic-release, release-please, git-cliff, towncrier) detected"
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "No release automation or versioning workflow exists -- VERSION file and CHANGELOG were scaffolded by foundry init but are not maintained or integrated into any CI/release process",
+          "recommendation": "Implement a release workflow: use maven-release-plugin or foundry release to automate version bumps, changelog generation, and git tagging on merge to master"
+        },
+        {
+          "severity": "high",
+          "issue": "No git tags for releases -- the repository has 2790+ PRs merged but no version tags, making it impossible to correlate test suite versions with the PGP platform versions they validate",
+          "recommendation": "Adopt a tagging strategy (e.g., v3.2.11) and tag releases when the suite is validated against a specific PGP release. Use tag-based triggers in Jenkins if needed"
+        },
+        {
+          "severity": "medium",
+          "issue": "Jenkinsfile only performs build and static analysis -- no release, artifact publishing, or deployment stages",
+          "recommendation": "Add a release stage to the Jenkinsfile that runs on tagged commits or the master branch, publishing the test artifact to the internal Maven repository and updating the changelog"
+        },
+        {
+          "severity": "medium",
+          "issue": "CHANGELOG.md has no versioned entries -- only an [unreleased] section with foundry-generated content",
+          "recommendation": "Begin maintaining the changelog with each PR merge, or integrate automated changelog generation (git-cliff, conventional-commits) into the release workflow"
+        },
+        {
+          "severity": "low",
+          "issue": "All dependencies use SNAPSHOT versions (autumn 3.2.11-SNAPSHOT, utils 4.0.0-SNAPSHOT, pgp-ff4j-strategy 76.0.0-SNAPSHOT) making builds non-reproducible",
+          "recommendation": "Pin to released dependency versions for tagged releases of the test suite, reserving SNAPSHOT versions for development branches only"
+        }
+      ],
+      "inconclusive_aspects": [
+        "Release/deployment orchestration may be handled by an external Jenkins pipeline or CI/CD system not defined in this repo's Jenkinsfile",
+        "The parent POM (parent-automation 3.2.11-SNAPSHOT) may define release plugins inherited by this project, but cannot be verified from this repo alone",
+        "Test suite deployment to QA environments may be triggered externally via Jenkins job parameters rather than in-repo automation"
+      ]
+    },
+    "git_practices": {
+      "score": 3,
+      "name": "Git & Collaboration Practices",
+      "confidence": "high",
+      "findings": [
+        "The .gitignore covers basic JVM patterns (target/, .idea/, *.iml, .DS_Store, .env) but has notable gaps: missing *.class, build/, out/, *.log, *.jar, *.pem, *.key patterns.",
+        "Commit messages lack any consistent convention \u2014 they range from bare JIRA IDs ('PGP-61332') to auto-generated Bitbucket messages ('edited online with Bitbucket') to merge descriptions. No conventional commit format is followed.",
+        "Hardcoded credentials are committed throughout the repository: database passwords in localconfig.properties (36+ files), server passwords in envServerCred.yaml files, JWT secrets, SHA keys, and a SonarQube token in the Jenkinsfile.",
+        "Four JAR binary files are committed directly to git (checksum.jar, EncryptDecrypt.jar, etc.) with no .gitattributes or Git LFS tracking.",
+        "No git hooks (pre-commit, husky, lefthook), no commit message linting (commitlint), and no CODEOWNERS file \u2014 zero automation safeguards for code quality at commit/push time.",
+        "CONTRIBUTING.md documents branching strategy and dev commands, and the project uses Bitbucket PRs with Jenkins CI (build + SonarQube quality gate), which is a positive collaboration practice."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "Hardcoded credentials committed to git across 36+ config files (DB passwords, JWT secrets, SonarQube token in Jenkinsfile line 19, server passwords in envServerCred.yaml)",
+          "recommendation": "Move all secrets to a vault (e.g., HashiCorp Vault) or environment variables. Use git-secrets or similar pre-commit hook to prevent future credential commits. Rotate all exposed credentials immediately."
+        },
+        {
+          "severity": "high",
+          "issue": "Binary JAR files (4 total) committed directly to git without LFS, increasing repo size and clone time",
+          "recommendation": "Migrate JARs to a proper Maven repository (Nexus/Artifactory) or use Git LFS. Add *.jar to .gitignore."
+        },
+        {
+          "severity": "medium",
+          "issue": "No commit message conventions or enforcement \u2014 messages are inconsistent (bare JIRA IDs, auto-generated text, vague descriptions)",
+          "recommendation": "Adopt Conventional Commits format and enforce via commitlint or a Bitbucket server-side hook. Require descriptive messages with JIRA ticket references."
+        },
+        {
+          "severity": "medium",
+          "issue": ".gitignore missing common JVM patterns: *.class, build/, out/, *.log, *.jar, *.pem, *.key",
+          "recommendation": "Expand .gitignore with comprehensive JVM patterns using a template like gitignore.io for Java/Maven/IntelliJ."
+        },
+        {
+          "severity": "medium",
+          "issue": "No pre-commit hooks or local automation to catch issues before push (no pre-commit-config.yaml, husky, or lefthook)",
+          "recommendation": "Add pre-commit hooks for at minimum: secrets scanning (git-secrets/detect-secrets), commit message format, and basic linting."
+        },
+        {
+          "severity": "low",
+          "issue": "No .gitattributes file for line ending normalization or diff/merge driver configuration",
+          "recommendation": "Add .gitattributes with '* text=auto' for consistent line endings across platforms."
+        }
+      ],
+      "inconclusive_aspects": [
+        "Bitbucket PR templates may be configured via Bitbucket web UI rather than in-repo files",
+        "Bitbucket default reviewers (equivalent to CODEOWNERS) may be configured via Bitbucket web UI",
+        "Branch permissions and merge checks may be enforced at the Bitbucket server level"
+      ]
+    },
+    "developer_experience": {
+      "score": 4,
+      "name": "Developer & Agent Experience",
+      "confidence": "high",
+      "findings": [
+        "CONTRIBUTING.md provides a reasonable 'getting started' section: prerequisites (JDK 11, Maven 3.x), build command, profile selection, and IDE setup with Lombok. This is the primary onboarding doc since there is no README.",
+        "Maven (pom.xml) serves as the task runner with test execution via `mvn test -DsuiteXmlFile=<suite>`, build via `mvn clean install`, and multi-profile support (15 environment profiles). However there is no Makefile or wrapper script simplifying these verbose commands.",
+        "No Maven wrapper (mvnw) or version pinning files (.sdkmanrc, .java-version, .tool-versions) are present, meaning Maven and JDK versions are not enforced per-clone \u2014 'works on my machine' risk.",
+        "No docker-compose, devcontainer, setup script, or .env.example exists. External service dependencies (MySQL, Redis, Kafka, MongoDB, Aerospike, Zookeeper) are assumed to be pre-provisioned in QA environments \u2014 no local dev setup path.",
+        "Strong AI agent configuration: CLAUDE.md, AGENTS.md with cast directory, .cursor/rules/pgp-automation.mdc (460+ lines of framework patterns), and .claude/commands/ for task workflow. This significantly helps AI-assisted development.",
+        "Hardcoded credentials throughout: settings.xml (encrypted Maven password), Jenkinsfile (SonarQube token), pom.xml (SMTP credentials), and all localconfig.properties files contain plaintext DB passwords, JWT keys, Redis URIs, and internal IPs. This is a critical security and DX issue."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "No README file exists. The repo-map.md explicitly marks 'primary readme' as N/A. CONTRIBUTING.md partially fills this gap but is not discoverable by default.",
+          "recommendation": "Create a README.md with project overview, prerequisites, quick start, architecture diagram, and links to CONTRIBUTING.md."
+        },
+        {
+          "severity": "high",
+          "issue": "No Maven wrapper (mvnw) or JDK version pinning (.sdkmanrc, .java-version). Maven version and JDK version are not enforced, creating 'works on my machine' problems.",
+          "recommendation": "Add Maven wrapper (`mvn wrapper:wrapper`) and a .sdkmanrc or .java-version file pinning JDK 11."
+        },
+        {
+          "severity": "high",
+          "issue": "No local development environment setup. Tests require MySQL, Redis, Kafka, MongoDB, Aerospike, and Zookeeper but there is no docker-compose or setup script to provision these locally.",
+          "recommendation": "Add a docker-compose.yml for local service dependencies, or at minimum document clearly that tests require VPN access to internal QA environments."
+        },
+        {
+          "severity": "high",
+          "issue": "Hardcoded credentials in committed files: settings.xml has encrypted Maven passwords, Jenkinsfile has a SonarQube token in plain text, pom.xml has SMTP credentials, and all localconfig.properties files contain plaintext DB passwords and JWT keys.",
+          "recommendation": "Move all secrets to environment variables or a secrets manager. Use placeholders in committed config files and document required env vars in a .env.example."
+        },
+        {
+          "severity": "medium",
+          "issue": "No Makefile or task runner wrapper. Build/test commands are verbose Maven invocations requiring knowledge of profiles and suite XML files.",
+          "recommendation": "Add a Makefile with `make build`, `make test SUITE=<name>`, `make lint` targets wrapping the Maven commands."
+        },
+        {
+          "severity": "medium",
+          "issue": "No .editorconfig or IDE-agnostic formatting configuration. Code style is enforced only by convention, with no checkstyle/PMD/spotbugs configured (sonar.skip=true).",
+          "recommendation": "Add .editorconfig for basic formatting rules and consider enabling at least one static analysis tool."
+        }
+      ],
+      "inconclusive_aspects": [
+        "Local development may intentionally require VPN access to internal QA infrastructure rather than local service provisioning \u2014 common pattern for enterprise QA automation repos",
+        "The parent POM (com.paytm.autumn:parent-automation:3.2.11-SNAPSHOT) and internal dependencies require access to internal Artifactory/Nexus repos, meaning external contributors cannot build this project without network access"
+      ]
+    },
+    "ai_readiness": {
+      "score": 7,
+      "name": "AI Agent Readiness",
+      "confidence": "high",
+      "findings": [
+        "Exceptionally detailed agent instructions: CLAUDE.md (~140 lines covering tech stack, repo layout, code style, testing, security, environment, git conventions, debugging, logging, and known tech debt), AGENTS.md (69 lines with cast directory), .cursor/rules/pgp-automation.mdc (465 lines with code examples for every pattern), .claude/commands/ (11 workflow commands), .foundry/casts/ (14 topic-specific files), CONTRIBUTING.md (50 lines with setup/dev commands/branching), SECURITY.md, and .foundry/vision.md with tech debt tracking. This is one of the most thorough agent instruction sets possible.",
+        "Deterministic build/test commands are clearly documented: `mvn clean install -DskipTests=true -s settings.xml -P<profile>` for builds and `mvn test -DsuiteXmlFile=testsuite/<suite>.xml -s settings.xml -P<profile>` for tests. pom.xml has testFailureIgnore=false for clear pass/fail exit codes. No interactive prompts in build/test paths.",
+        "Java 11 provides strong type safety, and code is highly searchable: zero Class.forName or ServiceLoader patterns found. Consistent patterns (extends PGPBaseTest, @Test annotations) make navigation straightforward. Hundreds of test classes with consistent structure across 200+ test files and 100+ testsuite XML files.",
+        "No pre-commit hooks, no lock files, and SNAPSHOT dependencies (parent-automation 3.2.11-SNAPSHOT, utils 4.0.0-SNAPSHOT, pgp-ff4j-strategy 76.0.0-SNAPSHOT) make builds non-reproducible. Internal Artifactory/Nexus required for dependency resolution means an agent cannot build without access to Paytm's internal network.",
+        "Hardcoded credentials pervasive in committed config files: DB passwords, JWT secrets, SMTP credentials in localconfig.properties across all profiles, SMTP password in pom.xml, and SonarQube token in Jenkinsfile. Acknowledged as critical tech debt but not yet remediated.",
+        "Static analysis completely disabled: sonar.skip=true in pom.xml, no checkstyle/SpotBugs/PMD configuration. No local lint command available for agents to run before submitting changes."
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "Hardcoded credentials in committed config files: DB passwords (pgal1p@y), JWT secrets, SMTP password (ptmautomation) in pom.xml, SonarQube token in Jenkinsfile, and dozens of credentials across localconfig.properties files in all profiles",
+          "recommendation": "Move all secrets to environment variables or a vault (e.g. HashiCorp Vault). Replace hardcoded values in localconfig.properties with ${ENV_VAR} placeholders. Use Jenkins credentials binding for SonarQube token. Create a .env.example documenting required variables."
+        },
+        {
+          "severity": "high",
+          "issue": "SNAPSHOT dependencies and no lock files make builds non-reproducible. Internal Artifactory/Nexus required means agents cannot resolve dependencies without Paytm network access",
+          "recommendation": "Pin dependency versions to release versions where possible. Consider using maven-enforcer-plugin to ban SNAPSHOT dependencies in release builds. Document network requirements in CONTRIBUTING.md and consider providing a dependency cache or offline resolution strategy."
+        },
+        {
+          "severity": "medium",
+          "issue": "No static analysis or linting available locally. sonar.skip=true in pom.xml, no checkstyle/SpotBugs/PMD configured. Agents have no way to verify code quality before submitting",
+          "recommendation": "Enable at minimum one local static analysis tool (checkstyle or SpotBugs) in the Maven build. Remove sonar.skip=true or make it profile-dependent. Add a maven-checkstyle-plugin with the project's style conventions."
+        },
+        {
+          "severity": "medium",
+          "issue": "No pre-commit hooks to catch common mistakes before commits. Agents rely entirely on CI for feedback",
+          "recommendation": "Add a pre-commit hook (via maven-git-hook-plugin or similar) that runs checkstyle and compilation. This gives agents immediate local feedback on style violations."
+        },
+        {
+          "severity": "low",
+          "issue": "No README.md for quick orientation. While CLAUDE.md and CONTRIBUTING.md partially fill this gap, a README is standard for human and agent discoverability",
+          "recommendation": "Add a README.md with project overview, prerequisites, setup, and quick-start commands. Can largely duplicate content from CONTRIBUTING.md and CLAUDE.md."
+        }
+      ],
+      "inconclusive_aspects": [
+        "Test infrastructure (Selenium Grid, Jenkins agents, Docker build environments) is provisioned externally per .foundry/vision.md non-goals \u2014 cannot evaluate CI pipeline effectiveness from this repo alone",
+        "Internal Artifactory (artifactory-pg-internal.paytm.com) and Nexus (nexusartifactory.paytm.com) availability \u2014 agent build feasibility depends on network access that cannot be verified locally",
+        "Parent POM (parent-automation 3.2.11-SNAPSHOT) and Autumn framework provide significant test infrastructure (PGPBaseTest, BaseApi, listeners) \u2014 the quality and navigability of those transitive dependencies cannot be evaluated from this repo"
+      ]
+    }
+  },
+  "penalties": {
+    "god_files": 0,
+    "hardcoded_secrets": 2,
+    "penalty_points": -4
+  },
+  "recommendations": {
+    "critical": [],
+    "high": [
+      {
+        "action": "No code coverage measurement or enforcement \u2014 no JaCoCo or equivalent plugin configured, no coverage thresholds.",
+        "impact": "Add JaCoCo Maven plugin with coverage reporting and set minimum coverage thresholds (e.g., 70% line coverage for helper/utility code in src/main/java).",
+        "effort": "MEDIUM"
+      },
+      {
+        "action": "CI pipeline (Jenkinsfile) does not execute tests \u2014 it only builds and runs SonarQube analysis. Tests are not validated on every push.",
+        "impact": "Add a test execution stage to the Jenkins pipeline that runs at least a smoke/regression suite on every build (e.g., mvn test -DsuiteXmlFile=testsuite/Regression.xml).",
+        "effort": "MEDIUM"
+      },
+      {
+        "action": "SonarQube static analysis is disabled (sonar.skip=true in pom.xml line 38), negating the quality gate in the Jenkinsfile.",
+        "impact": "Set sonar.skip to false and configure meaningful SonarQube quality gates for code smells, bugs, and security hotspots.",
+        "effort": "MEDIUM"
+      },
+      {
+        "action": "Zero static analysis or linting enforcement \u2014 no checkstyle, SpotBugs, PMD, ErrorProne, or formatter is configured or enforced in build or CI",
+        "impact": "Add maven-checkstyle-plugin with google_checks.xml or sun_checks.xml to pom.xml and configure it to fail the build on violations. Add SpotBugs or ErrorProne for bug detection. Integrate into the CI pipeline as a blocking step.",
+        "effort": "MEDIUM"
+      },
+      {
+        "action": "SonarQube analysis is disabled by default (sonar.skip=true in pom.xml) making the Jenkinsfile quality gate stage ineffective for regular builds",
+        "impact": "Remove `sonar.skip=true` from pom.xml properties or set it to false. Ensure SonarQube analysis runs on every CI build, not just optionally.",
+        "effort": "MEDIUM"
+      }
+    ]
+  },
+  "scoring_cost": {
+    "total_usd": 7.49,
+    "input_tokens": 4960071,
+    "output_tokens": 71486,
+    "total_tokens": 5031557
+  }
+}

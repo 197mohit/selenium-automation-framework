@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AI-Generated: 2025-01-02 - TestNG XML suite creation for PGP-61180 test cases -->
+<suite name="PGP-61180-AllowedTpapCloseOrderTests">
+    <test name="PGP-61180-AllowedTpapCloseOrderTestSuite">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.AllowedTpapCloseOrderTests">
+                <methods>
+                    <include name="testPayerVpaInAllowedTpapList"/>
+                    <include name="testCloseOrderNotHitWhenFF4JOffForAllowedTpaps"/>
+                    <include name="testCloseOrderHitWhenFF4JOnForAllowedTpaps"/>
+                    <include name="testCloseOrderNotHitWhenFF4JOffForRiskReject"/>
+                    <include name="testCloseOrderHitWhenFF4JOnForRiskReject"/>
+                    <include name="testCloseOrderNotHitForOtherErrors"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

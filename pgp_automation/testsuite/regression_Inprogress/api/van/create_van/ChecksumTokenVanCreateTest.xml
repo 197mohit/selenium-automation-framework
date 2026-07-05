@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="van_proxy" verbose="1" thread-count="20"
+       parallel="tests" data-provider-thread-count="3">
+    <parameter name="browser" value="chrome"/>
+    <test name="ChecksumTokenVanCreateTest">
+        <classes>
+            <class name="scripts.api.van.createVan.ChecksumTokenVanCreateTest"/>
+        </classes>
+    </test>
+</suite>

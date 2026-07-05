@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-DROP-2-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service Drop 2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsBankslistTid"/>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsTidBankName"/>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsTidtid"/>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsV2Tid"/>
+            <class name="scripts.api.mappingService.mappingDrop2.GetBankresponsecodesbankCodepayModeService"/>
+            <class name="scripts.api.mappingService.mappingDrop2.GetEmiOnDcEligibilityBy"/>
+            <class name="scripts.api.mappingService.mappingDrop2.GetMerchantStaticConfigMid"/>
+        </classes>
+    </test>
+</suite>

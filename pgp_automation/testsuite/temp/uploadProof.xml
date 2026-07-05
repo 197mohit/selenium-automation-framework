@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="upload proof " verbose="1" parallel="methods" thread-count="5">
+    <test name="upload proof">
+        <classes>
+            <class name="scripts.pgplusbo.UploadDisputeProof">
+                <methods>
+                    <include name="uploadProofDataPngFileformat"/>
+                    <include name="uploadProofDataPdfFileformat"/>
+                    <include name="documentAlreadyUploaded"/>
+                    <include name="uploadProofDataInvalidFileformat"/>
+                    <include name="uploadDocumentInvalidSignature"/>
+                    <include name="uploadDocumentMandetoryParamMissing"/>
+                    <include name="uploadDocumentInvalidDisputeId"/>
+                    <include name="uploadProofMaxFilesExceed"/>
+                    <include name="uploadDocumentSystemError"/>
+                    <include name="uploadDocumentRequestedParamsInvalid"/>
+                    <include name="uploadProofDataZipFileformat"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

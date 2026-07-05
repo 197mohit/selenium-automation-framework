@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": [
+    "merchantBusinessName",
+    "merchantDisplayName",
+    "merchantImageName",
+    "paytmMid",
+    "response"
+  ],
+  "properties": {
+    "merchantBusinessName": {
+      "type": "string"
+    },
+    "merchantDisplayName": {
+      "type": "string"
+    },
+    "merchantImageName": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "paytmMid": {
+      "type": "string"
+    },
+    "response": {
+      "type": "object",
+      "required": [
+        "resultCode",
+        "resultStatus",
+        "messaage"
+      ],
+      "properties": {
+        "resultCode": {
+          "enum": [
+            "00000"
+          ]
+        },
+        "resultStatus": {
+          "enum": [
+            "S"
+          ]
+        },
+        "messaage": {
+          "enum": [
+            "Success"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

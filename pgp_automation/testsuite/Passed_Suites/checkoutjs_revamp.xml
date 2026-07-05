@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS_Revamp_Suite" verbose="1" thread-count="15" parallel="tests">
+    <test name="CheckoutJS UPI Intent Flow UI REVAMP">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="ValidateUPIPaymodeUIchangeswithUPIIntentEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-38200">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="upi_LocckedIN_Fhidelable"/>
+                    <include name="EMI_LocckedIN_Fhidelable"/>
+                    <include name="upi_nonLocckedIN_hidelable"/>
+                    <include name="NB_nonLocckedIN_hidelable"/>
+                    <include name="card_LocckedIN_Fhidelable"/>
+                    <include name="card_LocckedIN_hidelable"/>
+                    <include name="NB_nonLocckedIN_Fhidelable"/>
+                    <include name="NB_LocckedIN_hidelable"/>
+                    <include name="categorize"/>
+                    <include name="EMI_nonLocckedIN_Fhidelable"/>
+                    <include name="EMISubElementJsItembased04"/>
+                    <include name="NB_LocckedIN_Fhidelable"/>
+                    <include name="card_nonLocckedIN_hidelable"/>
+                    <exclude name="addnpaycategarize"/>
+                    <include name="card_nonLocckedIN_Fhidelable"/>
+                    <include name="upi_nonLocckedIN_Fhidelable"/>
+                    <include name="EMISubElementJsItembased09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-29620 Maestro Card Test Cases for checkoutJS web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.MaestroCardCheckout">
+                <methods>
+                    <include name="verifyTxnWithoutEnteringExpandCvv"/>
+                    <exclude name="verifyMaestroCardinAddnPayFlow"/>
+                    <include name="verifyTxnWithoutCvvAndExpiryinLogoutState"/>
+                    <include name="verifyTxnViaEnteringExpdateAndCvv"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Channel Display Name 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.DisplayNameOnCheckout.CorrectingEmiAndBankMandate">
+                <methods>
+                    <include name="verifyChannelDisplayNameInConsoleInFPOResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases web UI REVAMP 1">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validate_wallet_unchecked_onEMIClose"/>
+                    <include name="validate_wallet_checked_onDismiss"/>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_forBM"/>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <exclude name="validate_popup_click_on_EMI"/>
+
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidExpiryDate"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC18"/>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="PGP_40763_TC_04_validateWallet_Selected"/>
+                    <include name="TC_001_VerifyBankmandatePaymodeAppearingOnCashierPage"/>
+                    <include name="verifyRupeeSymbolInPCFFlow"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jDisabled"/>
+                    <include name="verify_closed_wallet_user_error_message_when_all_paymodes_disabled_except_wallet"/>
+                    <include name="VerifyBankLogoforSavedVpa"/>
+                    <include name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="VerifyBankLogoforNB"/>
+                    <include name="TC001_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="verifyUPICollectIsDisabledForLessThan2k"/>
+                    <include name="PGP_39255_TC_08"/>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                    <include name="verifyNewUpiPollingPageAndSuccessTxn"/>
+                    <include name="PGP_27624_ValidateSuccessSubscriptionwithNativeJsonPrefN"/>
+                    <include name="PGP_Verify_CallbackURL"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="verifyQRDetailsShowingInFPOResponse"/>
+                    <include name="PGP_36505_VerifyNoNullPointerExceptionforMerchantStatusAPIs"/>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                    <include name="PGP_41787_TC03"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC06"/>
+                    <include name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <exclude name="EMI_PayOption_Visible_addNPay"/>
+                    <include name="removeEmiSubventionObjectfromCheckoutJSConfig"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="PGP_27624_ValidateUPITxnNativeJsonPrefN"/>
+                    <include name="ValidateBrandAndBusinessNameForRetryTxn"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC13"/>
+                    <include name="PGP_41787_TC14"/>
+                    <exclude name="Verify_txntype_parameter_displyedin_FetchBinDetailsAPI"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <exclude name="verifyPostpaidAsNOTdefaultforNoneFlow"/>
+                    <include name="PGP_41787_TC07"/>
+                    <include name="TC_0014_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="ValidateTxn_AvoidNullPointerException"/>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_1"/>
+                    <include name="UpiNumericIdTestCase_09"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="Verify_bankResultInfo_parameter_enabled_when_transaction_failed_for_offline_merchant_in_theia_merchantStatus_logs"/>
+                    <exclude name="VerifyDePrioritiseDC"/>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                    <include name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC"/>
+                    <include name="validatePayment_Instrument_Group_level_priority"/>
+                    <include name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <exclude name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jDisabled"/>
+                    <include name="TC002_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="TC_003_VerifyNBSelectedByDefault"/>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforCCTxnSpecificCashbackPromo"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="verifyMaskedMobileNumberInSendOTPAPI"/>
+                    <include name="PGP_41787_TC04"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jEnabled"/>
+                    <exclude name="verifyPostpaidAsDefaultforAddNPay"/>
+                    <exclude name="AddMoneyOnJsCheckoutWithNB"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC15"/>
+                    <include name="ValidateSuccessTxnUsingNB"/>
+                    <include name="TC_002_VerifyBankmandateTxn"/>
+                    <include name="PGP_41787_TC11"/>
+                    <include name="TC_002_Verify_Fields_are_noneditable"/>
+                    <include name="VerifyTxnPaidTimeFieldShouldReturnInResponse_ViaNB"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidCvv"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <exclude name="AddMoneyOnJsCheckoutWithDC"/>
+                    <include name="ValidatePendingTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                    <include name="verifying_hidePaytmBranding_false"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jEnabled"/>
+                    <include name="LoginScreenChanges"/>
+                    <include name="verifying_phone_number_and_email"/>
+                    <include name="VerifySopamount"/>
+                    <include name="verifyMaskedMobileNumberInFPOResponse"/>
+                    <include name="VerifyBankLogoforNB_TXN"/>
+                    <include name="PGP_41787_TC13"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnWithoutSpecificPromo"/>
+                    <include name="PGP_41787_TC09"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <exclude name="ValidatePPBLPasscodeTxt"/>
+                    <include name="verifying_hidePaytmBranding_Null"/>
+                    <include name="EMI_DCbasedonCategorization_CheckNumber"/>
+                    <include name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <include name="ValidateConfigName"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="verify_loader_is_displayed_during_success_transaction"/>
+                    <include name="PGP_41787_TC05"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC10"/>
+                    <include name="validatePayment_Instrument_Group_level_DEFAULT"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+                    <include name="verifying_FD_BalanceIsNotVisible"/>
+                    <include name="verifying_hidePaytmBranding_true"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC12"/>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                    <include name="Validate_Succesful_TXN_WalletOnly_Insufficient_Balance"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforConfigredMid"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <include name="ValidateSuccessTxnUsingUPI"/>
+                    <include name="VerifyCobrandedCards"/>
+                    <include name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                    <include name="TC_011_VerifySubsCreatedInInitState"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC14"/>
+                    <include name="EMI_DCbasedonCategorization_DBCheck"/>
+                    <include name="PGP_27014_ValidateSuccessUPISubscription"/>
+                    <include name="PGP_41787_TC08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="UpiNumericIdTestCase_06"/>
+                    <include name="t1"/>
+                    <include name="ValidateInstrumentCategorization"/>
+                    <include name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <include name="PGP_41787_TC12"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnDiscountPromo"/>
+                    <exclude name="verifying_FD_BalanceIsVisible"/>
+                    <include name="PGP_41787_TC02"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC20_ICICI"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled_LoggedIn"/>
+                    <include name="verifyUPICollectIsDisabledForGreaterThan2k"/>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="ValidateSuccessTxnUsingWalletviaSSOtoken"/>
+                    <exclude name="verifying_success_FD_txn"/>
+                    <include name="PGP_27624_PromoTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="PGP_41787_TC15"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                    <include name="EMI_DCbasedonCategorization_DefaultTrue"/>
+                    <include name="VerifyBankLogoInSavedCard"/>
+                    <include name="verifyLogoColor"/>
+                    <include name="PGP_39255_TC_09"/>
+                    <include name="Verify_txn_via_child_mid"/>
+                    <include name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <include name="verify_SavedBankMandate_Details"/>
+                    <include name="VerifyUPICollect_Via_Login"/>
+                    <include name="VERIFY_Rupee_SpecialCharacter_Rendering_onJSCheckout"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="VerifyUPICollect_Tab_loggedIN"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-31544, PGP-32815 and PGP-33587 - BankTransferCheckoutTest">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.BankTransferCheckoutTest">
+                <methods>
+                    <include name="validateResponse_WhenIdentificationnoNotprovided_inPaytmControlled"/>
+                    <include name="validate_ConvenienceFeesOnPCF_Merchant"/>
+                    <include name="validateResponseWhenVaninfoProvidedinInitTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PGP-33928 - Postpaid AddNpay checkoutJS web">-->
+<!--        <parameter name="theme" value="checkoutjs_web_revamp"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Native.checkoutjs.checkoutJSPostpaidAddNPay">-->
+<!--                <methods>-->
+<!--                    <exclude name="postpaidNotAvailableWhenDeselectedWallet"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="PGP-28430 - UI validation for blink checkout for ItemBased and AmountBased">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="EMISubCheckoutJsItembased09"/>
+                    <include name="multiOfferEMISubvention"/>
+                    <include name="EMISubCheckoutJsItembased05"/>
+                    <include name="singleOfferEMISubvention"/>
+                    <include name="verifyEMISubventionStrip_ForAmountBasedEMI"/>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="EMISubCheckoutJsItembased08"/>
+                    <include name="verifyEMISubventionStrip_ForStandardEMI"/>
+                    <include name="EMISubCheckoutJsItembased04"/>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                    <include name="verifyEMISubventionStrip_ForItemBasedEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PGP-27602 AddNPay Promo txns Native">-->
+<!--        <parameter name="isNativePlus" value="false"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Native.checkoutjs.CheckoutJsTests">-->
+<!--                <methods>-->
+<!--                    <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="CHECKOUTJS on Enhanced Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_NB_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_BANK_OFFER"/>
+                    <exclude name="verifyPostpaidAsNOTdefaultforNoneFlow"/>
+                    <include name="verifyMerchantname"/>
+                    <include name="JSCheckoutDomainOnEnhanced_DCTxn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_CCTxn"/>
+                    <exclude name="AddMoneyOnJsCheckoutOnEnhancedWithPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate upi intent on ios mweb">
+        <parameter name="mobileEmulation" value="iPhone SE"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="NO_mobile_no_passed_on_ios_mweb_intent"/>
+                    <exclude name="ios_mweb_intent_addnpay"/>
+                    <include name="Not_paytm_registered_no_passed_on_ios_mweb_intent"/>
+                    <include name="paytm_registered_no_passed_on_ios_mweb_intent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33730 Bank Offer on PCF Merchant Test Cases for CheckoutJS web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.BankOfferOnPCF">
+                <methods>
+                    <include name="TC_03"/>
+                    <include name="TC_01"/>
+                    <include name="TC_04"/>
+                    <include name="TC_05"/>
+                    <exclude name="TC_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-32214 Validating order amount in JS checkout UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.OrderAmountFpoV2">
+                <methods>
+                    <include name="TC_003_Validate_successSubs_withInitiateAmt"/>
+                    <include name="TC_001_OrderAmount_In_FPOv2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Successful Wallet only TXN with insufficient balance">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validatePayment_Instrument_Group_level_priority"/>
+                    <include name="Validate_Succesful_TXN_WalletOnly_Insufficient_Balance"/>
+                    <include name="Verify_bankResultInfo_parameter_enabled_when_transaction_failed_for_offline_merchant_in_theia_merchantStatus_logs"/>
+                    <include name="PGP_Verify_CallbackURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-29613_CheckoutJsMerchantElementTest">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <exclude name="loginstatePPBL"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="LogoutUPI"/>
+                    <exclude name="addandpayCC"/>
+                    <include name="integrateEMI"/>
+                    <include name="loginstateUPI"/>
+                    <include name="LogoutNB"/>
+                    <include name="integrateNB"/>
+                    <include name="loginstateNB"/>
+                    <exclude name="loginstateSavedVPA"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="EMISubElementJsItembased09"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="EMISubElementJsItembased04"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="integrateCard"/>
+                    <include name="integrateUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41787 for CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_41787_TC14"/>
+                    <include name="PGP_41787_TC02"/>
+                    <include name="PGP_41787_TC04"/>
+                    <include name="PGP_41787_TC05"/>
+                    <include name="PGP_41787_TC15"/>
+                    <include name="PGP_41787_TC03"/>
+                    <include name="PGP_41787_TC12"/>
+                    <include name="PGP_41787_TC09"/>
+                    <include name="PGP_41787_TC07"/>
+                    <include name="PGP_41787_TC13"/>
+                    <include name="PGP_41787_TC08"/>
+                    <include name="PGP_41787_TC11"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33611 - EMI subvention UI improvements for wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="singleOfferEMISubvention"/>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="multiOfferEMISubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="AddMoneyOnJsCheckoutWithDC"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnWithoutSpecificPromo"/>
+                    <exclude name="verifyPostpaidAsNOTdefaultforNoneFlow"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jDisabled"/>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_1"/>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="TC_011_VerifySubsCreatedInInitState"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforConfigredMid"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jEnabled"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC14"/>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC18"/>
+                    <include name="VerifyWebviewSupportOnJS_When_FlagDisabled"/>
+                    <include name="UpiNumericIdTestCase_06"/>
+                    <include name="verifyNewUpiPollingPageAndSuccessTxn"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="validatePayment_Instrument_Group_level_priority"/>
+                    <include name="Validate_Succesful_TXN_WalletOnly_Insufficient_Balance"/>
+                    <include name="PGP_27624_PromoTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="EMI_DCbasedonCategorization_DefaultTrue"/>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jEnabled"/>
+                    <include name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <include name="TC_002_VerifyBankmandateTxn"/>
+                    <include name="EMI_DCbasedonCategorization_DBCheck"/>
+                    <include name="Verify_bankResultInfo_parameter_enabled_when_transaction_failed_for_offline_merchant_in_theia_merchantStatus_logs"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC"/>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+                    <include name="PGP_27624_ValidateUPITxnNativeJsonPrefN"/>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC20_ICICI"/>
+                    <include name="ValidateSuccessTxnUsingUPI"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC13"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidCvv"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnDiscountPromo"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC12"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC10"/>
+                    <include name="TC_001_VerifyBankmandatePaymodeAppearingOnCashierPage"/>
+                    <include name="TC_003_VerifyNBSelectedByDefault"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="verifyUPICollectIsDisabledForGreaterThan2k"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="ValidatePCFforNB"/>
+                    <exclude name="Verify_txntype_parameter_displyedin_FetchBinDetailsAPI"/>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="ValidateSuccessTxnUsingNB"/>
+                    <include name="verifyRupeeSymbolInPCFFlow"/>
+                    <include name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="PGP_39255_TC_09"/>
+                    <include name="UpiNumericIdTestCase_09"/>
+                    <include name="ValidateConfigName"/>
+                    <include name="VERIFY_Rupee_SpecialCharacter_Rendering_onJSCheckout"/>
+                    <include name="verifying_phone_number_and_email"/>
+                    <exclude name="AddMoneyOnJsCheckoutWithDC"/>
+                    <include name="verifyUPICollectIsDisabledForLessThan2k"/>
+                    <include name="PGP_39255_TC_08"/>
+                    <include name="PGP_Verify_CallbackURL"/>
+                    <include name="TC_0014_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="ValidateTxn_AvoidNullPointerException"/>
+                    <include name="ValidateBrandAndBusinessNameForRetryTxn"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC06"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="EMI_DCbasedonCategorization_CheckNumber"/>
+                    <include name="t1"/>
+                    <exclude name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-26916 Creating subscriptions UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_35247_TC_01_YEAR"/>
+                    <include name="PGP_35247_TC_05_ONDEMAND"/>
+                    <include name="TC_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PGP-27602 AddNPay Promo txns Native+">-->
+<!--    <parameter name="isNativePlus" value="true"/>-->
+<!--    <classes>-->
+<!--    <class name="scripts.Native.checkoutjs.CheckoutJsTests">-->
+<!--        <methods>-->
+<!--            <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>-->
+<!--            <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>-->
+<!--        </methods>-->
+<!--    </class>-->
+<!--    </classes>-->
+<!--    </test>-->
+    <!-- New Cases from CheckoutJS Pg2 Added -->
+    <test name="PGP-45666 - checkoutJS web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - checkoutJS wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - app invoke">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_AppInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42134 Co Branding Footer | Prod Bug" parallel="tests" thread-count="2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_icici_cobranding_logo_header_footer_signedIn"/>
+                    <include name="Verify_icici_cobranding_logo_header_footer_signedOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PGP-41941 -Enhance">-->
+<!--        <parameter name="theme" value="checkoutjs_web_revamp"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Autologin.AutoLogin">-->
+<!--                <methods>-->
+<!--                    <include name="verifyUserLoggedInViaCokkiePostpaidaboveWallet_jsonEnhance"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="PGP-41941 -checkoutJS ">-->
+<!--        <parameter name="theme" value="checkoutjs_web_revamp"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Autologin.AutoLoginCheckoutJS">-->
+<!--                <methods>-->
+<!--                    <include name="verifyUserLoggedInViaCokkiePostpaidaboveWallet_checkoutjs"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="upi revamp checkoutjs web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjs mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjsonEnhanced web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                    <exclude name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjsonEnhanced mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <exclude name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp elementjs web">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyfetchBinResponseforAltVISA"/>
+                    <include name="verifyfetchBinResponseforAltRupay"/>
+                    <include name="verifyLPVResponseforAlternateIDVISA"/>
+                    <include name="verifyLPVResponseforAlternateIDRUPAY"/>
+                    <include name="verifySuccessAltIDGenerationforVISA"/>
+                    <include name="verifySuccessTxnforAlternateIDVISA"/>
+                    <include name="verifyRupayCardAltGenCall"/>
+                    <include name="verifyRupayCardAltGenCallOffus"/>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"/>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifySuccessAltIDGenerationforVISA"/>
+                    <include name="verifySuccessTxnforAlternateIDVISA"/>
+                    <include name="verifyRupayCardAltGenCall"/>
+                    <include name="verifyRupayCardAltGenCallOffus"/>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"/>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"/>
+                    <include name="verifyingRupayTxnforAltID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"/>
+                    <include name="verifyingGenerateAltIDforGuestCheckoutOnus"/>
+                    <include name="verifyingRupayTxnforAltID"/>
+                    <include name="verifyingRupayTxnforAltIDOnus"/>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOnus"/>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOffus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Upi UI Test for enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="UpiNumericIdTestCase_01"/>
+                    <include name="UpiNumericIdTestCase_02"/>
+                    <include name="UpiNumericIdTestCase_03"/>
+                    <include name="UpiNumericIdTestCase_04"/>
+                    <include name="UpiNumericIdTestCase_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Upi UI Test for CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="UpiNumericIdTestCase_06"/>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="UpiNumericIdTestCase_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="ElementJs UI sanity cases">-->
+<!--        <parameter name="theme" value="checkoutjse_web_revamp"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Native.checkoutjs.UiSanityElementJs">-->
+<!--                <methods>-->
+<!--                    <exclude name="addnpayCCtxn"/>-->
+<!--                    <exclude name="addnpayDCtxn"/>-->
+<!--                    <exclude name="addnpayNBtxn"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name=" checkoutjs UI sanity cases">-->
+<!--        <parameter name="theme" value="checkoutjs_web_revamp"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">-->
+<!--                <methods>-->
+<!--                    <exclude name="SuccessfuladdNpayCCTxn"/>-->
+<!--                    <exclude name="SuccessfuladdNpayNBTxn"/>-->
+<!--                    <exclude name="AddMoneyOnJsCheckoutWithDC"/>-->
+<!--                    <exclude name="AddMoneyOnJsCheckoutWithNB"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="PGP-49321">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest">
+                <methods>
+                    <include name="TestSuccessResponseAndOfferTextWithUserDetails"/>
+                    <include name="TestSuccessResponseWithUserDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging Tests">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_49001_TC01"/>
+                    <include name="PGP_49001_TC02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging Subscription Tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_49001_TC03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging CheckoutJs Tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <include name="PGP_49001_TC04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ElementJs  cases PGP-48836">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="no_Wallet_mid_cashierPage_loaded_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_loggedin"/>
+                    <include name="no_Wallet_mid_cashierPage_loaded_non_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_non_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_login_otp_txn"/>
+                    <include name="Wallet_only_cashierPage_loaded_loggedin_txn"/>
+                    <include name="Wallet_only_cashierPage_loaded_login_otp_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS cashierPage render based on Wallet paymode ">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingCCWhenWalletIsNotAvailableOnMID"/>
+                    <include name="ValidateSuccessTxnUsingCCWhenWalletIsNotAvailableOnMIDLoggedOut"/>
+                    <include name="ValidateWalletWhenWalletAndUPIonMID"/>
+                    <include name="ValidateSuccessTxnUsingUPIWhenWalletAndUPIonMID"/>
+                    <include name="ValidatWalletByEnteringPhoneNumber"/>
+                    <include name="ValidateWalletByEnteringPhoneNumberForWalletOnlyMID"/>
+                    <include name="ValidateWalletByEnteringSSOForWalletOnlyMID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ICB CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsICB">
+            </class>
+        </classes>
+    </test>
+    <test name="ElementJs  cases PGP-48507">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <exclude name="kfs_icici_dc"/>
+                    <exclude name="kfs_hdfc_dc_kfs_upper_text"/>
+                    <exclude name="kfs_icici_dc_adhere_text"/>
+                    <exclude name="kfs_icici_dc_adhere_text_link"/>
+                    <include name="kfs_icici_dc_kfs_upper_text"/>
+                    <exclude name="kfs_icici_dc_kfs_bank_date_text"/>
+                    <exclude name="kfs_icici_dc_kfs_upper_text"/>
+                    <include name="kfs_icici_dc_kfs_bank_date_text"/>
+                    <exclude name="kfs_icici_dc_kfs_table_text"/>
+                    <exclude name="kfs_icici_dc_kfs_disclaimer_text"/>
+                    <exclude name="kfs_icici_dc_kfs_loan_consent_text"/>
+                    <exclude name="kfs_hdfc_dc_adhere_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text_link"/>
+                    <exclude name="kfs_hdfc_dc_kfs_bank_date_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_text"/>
+                    <include name="kfs_hdfc_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_Verifivation"/>
+                    <exclude name="kfs_icici_dc_disabled"/>
+                    <exclude name="kfs_hdfc_dc_disabled"/>
+                    <exclude name="kfs_hdfc_dc"/>
+                    <include name="kfs_icici_dc_kfs_table_Verifivation"/>
+                    <include name="kfs_icici_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_icici_dc_kfs_loan_consent_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text"/>
+                    <exclude name="kfs_hdfc_dc_adhere_text_link"/>
+                    <include name="kfs_hdfc_dc_kfs_bank_date_text"/>
+                    <exclude name="kfs_hdfc_dc_kfs_table_text"/>
+                    <exclude name="kfs_hdfc_dc_kfs_disclaimer_text"/>
+                    <exclude name="kfs_hdfc_dc_kfs_table_Verifivation"/>
+                    <include name="kfs_icici_dc_disabled"/>
+                    <exclude name="kfs_hdfc_dc_disabled"/>
+                    <include name="kfs_hdfc_dc"/>
+                    <exclude name="kfs_icici_dc_kfs_table_Verifivation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ValidateWallet2FA">
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="validateWallet2FACorrectPasscode"/>
+                    <include name="validateWallet2FAIncorrectPasscode"/>
+                    <include name="validateWallet2FAEmptyPasscode"/>
+                    <include name="validateWallet2FAIncompletePasscode"/>
+                    <include name="validateWallet2FAForgotPasscode"/>
+                    <include name="validateWallet2FAWalletBalanceEqualTo5k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="ChargeFeeOnAddMoney_Flag ON  cases">-->
+<!--        <parameter name="theme" value="enhancedweb_revamp"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.ChargeFeeOnAddMoney">-->
+<!--                <methods>-->
+<!--                    <exclude name="addMoneyFeeTxn_ADDNPAY_CC_001"/>-->
+<!--                    <exclude name="addMoneyFeeTxn_ADDNPAY_CC_002"/>-->
+<!--                    <exclude name="addMoneyFeeTxn_ADDNPAY_CC_003"/>-->
+<!--                    <exclude name="addMoneyFeeTxn_ADDNPAY_CC_004"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="Js on Redirection UI sanity cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <exclude name="ValidateSuccessTxnUsingSavedVPA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="checkoutjs_web_revamp tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.RedirectionNewWindow">
+                <methods>
+                    <include name="validate_CC_CheckoutJSTxn"/>
+                    <include name="validate_DC_CheckoutJSTxn"/>
+                    <!--                    <include name="validate_PPBL_CheckoutJSTxn"/>-->
+                    <include name="validate_NB_CheckoutJSTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Single paymode on JS On Redirection">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.redirectionalflowP0NewCases">
+                <methods>
+                    <include name="verifySinglePaymodeEMI"/>
+                    <include name="verifySinglePaymodeCC"/>
+                    <include name="verifySinglePaymodeDC"/>
+                    <include name="verifySinglePaymodeNB"/>
+                    <include name="verifySinglePaymodeUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Login Component Reordering">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="ValidateTextPaymentOptions"/>
+                    <include name="ValidateLoginStrip"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PayViaNotification checkoutjs web cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.PayViaNotification">
+                <methods>
+                    <include name="payViaNotification_02"/>
+                    <include name="payViaNotification_04"/>
+                    <include name="payViaNotification_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PayViaNotification checkoutjs mweb cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.PayViaNotification">
+                <methods>
+                    <include name="payViaNotification_02"/>
+                    <include name="payViaNotification_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Bank Tranfer checkout flow">
+        <classes>
+            <class name="scripts.BankTransferCheckoutTest">
+                <methods>
+                    <include name="checkingBankTransfer"/>
+                    <include name="checkingBankTransfer"/>
+                    <include name="validate_BankForm_Page"/>
+                    <include name="validate_Confirm_Box"/>
+                    <include name="validate_CancelButton"/>
+                    <include name="validate_HowItsWorksScreen"/>
+                    <include name="validateProceedButtonFrom_HowItsWorksScreen"/>
+                    <include name="validate_ViewTermsAndConditionScreen"/>
+                    <include name="validate_ConvenienceFeesOnPCF_Merchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PAPR-6229 - CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforCC"/>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforDC"/>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Unmasked Access Token is Printing in Logs || Theia">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifymaksedAccessToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="check ultimate beneficiary sent in fpo request v1">
+        <parameter name="fpoVersion" value="v1"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="check ultimate beneficiary sent in fpo request v2">
+        <parameter name="fpoVersion" value="v2"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="check ultimate beneficiary sent in fpo request v5">
+        <parameter name="fpoVersion" value="v5"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hide Saved Card on CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="EatSureHideSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

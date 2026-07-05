@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Intent – Convenience Fee | UPI PSP" verbose="1">
+    <test name="UPI Intent – Convenience Fee | UPI PSP">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenWrongpayerPaymentInstrumentFeeisPassedWronginRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedWronginRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRWhenpayerPaymentInstrumentFeeisPassedasNullinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                    <include name="validateReqAuthSQRUPIPSPUpiCreditCardforMDRWhenpayerPaymentInstrumentFeeisPassedasNullinRequest"/>
+                    <include name="validateReqAuthSQRUPIPSPUpiCreditlineforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                    <include name="validateReqAuthSQRUPIPSPUpiPpiWalletforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                    <include name="validateReqAuthSQRUPIPSPUpisavingsforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

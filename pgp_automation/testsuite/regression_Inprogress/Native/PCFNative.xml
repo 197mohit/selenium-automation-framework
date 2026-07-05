@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PCFNative" verbose="1" parallel="methods" thread-count="20">
+    <test name="add money wallet pcf for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+                <methods>
+                    <include name="TC_AddMOneyWalletOnlyPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringNonPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="add money wallet pcf for Native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+                <methods>
+                    <include name="TC_AddMOneyWalletOnlyPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringNonPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="post convinence Native APIs">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+            </class>
+        </classes>
+    </test>
+</suite>

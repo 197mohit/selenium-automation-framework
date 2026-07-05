@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49170" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-49170 validate OrderItemId in subvention checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateOrterItemIdWhenAmountBasedPromoAndSubvention"/>
+                    <include name="ValidateOrterItemIdWhenItemBasedPromoAndAmountBasedSubvention"/>
+                    <include name="ValidateOrterItemIdWhenAmountBasedPromoAndItemBasedSubvention"/>
+                    <include name="ValidateOrterItemIdWhenItemBasedPromoAndItemBasedSubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

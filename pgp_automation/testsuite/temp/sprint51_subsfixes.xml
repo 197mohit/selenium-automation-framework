@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subs fixes" verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-23279 tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_23279_verifySuccessBankMandateNativeMFSIPwithhAppInvokeFlowUpfrontAmt"/>
+                    <include name="PGP_23279_verifySuccessBankMandateNativeSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJs_Wap_UI" verbose="1" thread-count="20" parallel="tests">
+    <test name="Postpaid ui msg mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg jaonredirection mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS UPI Intent Flow UI REVAMP">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <exclude name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisTrue"/>
+                    <exclude name="ValidateUPICollectpaymodeNotVisiblewithIntentOnlyEnabled"/>
+                    <exclude name="PGP_27157_ValidateBankOffersNotVisiblewithPWPMerchantfterLoggingIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS UPI Intent Flow">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="ValidateUPIPaymodeUIchangeswithUPIIntentEnabled"/>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisFalse"/>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisTrue"/>
+                    <include name="ValidateSuccessTxnUsingUPICollectwithIntentEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-50167">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.api.UPI.UPIErrorCode">
+                <methods>
+                    <include name="Overall_UPI_Limit_Exhaust"/>
+                    <include name="UPI_Collect_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_Intent_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_CC_PerTxn_Limit_Exhaust"/>
+                    <include name="Eligibility_UPICC_PPIWALLET"/>
+                    <include name="UPI_CC_NotAllowed"/>
+                    <include name="UPI_Collect_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_Intent_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_CC_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_Collect_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Daily_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_Daily_Limit_Exhaust"/>
+                    <include name="UPI_CC_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_Monthly_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_Weekly_Limit_Exhaust"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33611 - EMI subvention UI improvements for wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="multiOfferEMISubvention"/>
+                    <include name="EMISubCheckoutJsItembased04"/>
+                    <include name="EMISubCheckoutJsItembased05"/>
+                    <include name="EMISubCheckoutJsItembased08"/>
+                    <include name="EMISubCheckoutJsItembased09"/>
+                    <include name="verifyEMISubventionStrip_ForStandardEMI"/>
+                    <include name="verifyEMISubventionStrip_ForAmountBasedEMI"/>
+                    <include name="verifyEMISubventionStrip_ForItemBasedEMI"/>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                    <include name="singleOfferEMISubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate upi intent on ios mweb">
+        <parameter name="mobileEmulation" value="iPhone SE"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="NO_mobile_no_passed_on_ios_mweb_intent"/>
+                    <include name="ios_mweb_intent_addnpay"/>
+                    <include name="Not_paytm_registered_no_passed_on_ios_mweb_intent"/>
+                    <include name="paytm_registered_no_passed_on_ios_mweb_intent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnWithoutSpecificPromo"/>
+                    <include name="verifyPostpaidAsNOTdefaultforNoneFlow"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jDisabled"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_1"/>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="TC_011_VerifySubsCreatedInInitState"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforConfigredMid"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jEnabled"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC14"/>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC18"/>
+                    <include name="VerifyWebviewSupportOnJS_When_FlagDisabled"/>
+                    <include name="UpiNumericIdTestCase_06"/>
+                    <include name="verifyNewUpiPollingPageAndSuccessTxn"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="validatePayment_Instrument_Group_level_priority"/>
+                    <include name="Validate_Succesful_TXN_WalletOnly_Insufficient_Balance"/>
+                    <include name="PGP_27624_PromoTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="EMI_DCbasedonCategorization_DefaultTrue"/>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jEnabled"/>
+                    <include name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <include name="TC_002_VerifyBankmandateTxn"/>
+                    <include name="EMI_DCbasedonCategorization_DBCheck"/>
+                    <include name="Verify_bankResultInfo_parameter_enabled_when_transaction_failed_for_offline_merchant_in_theia_merchantStatus_logs"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC"/>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+                    <include name="PGP_27624_ValidateUPITxnNativeJsonPrefN"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC20_ICICI"/>
+                    <include name="ValidateSuccessTxnUsingUPI"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC13"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidCvv"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnDiscountPromo"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC12"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC10"/>
+                    <include name="TC_001_VerifyBankmandatePaymodeAppearingOnCashierPage"/>
+                    <include name="TC_003_VerifyNBSelectedByDefault"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="verifyUPICollectIsDisabledForGreaterThan2k"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="Verify_txntype_parameter_displyedin_FetchBinDetailsAPI"/>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="ValidateSuccessTxnUsingNB"/>
+                    <include name="verifyRupeeSymbolInPCFFlow"/>
+                    <include name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="PGP_39255_TC_09"/>
+                    <include name="UpiNumericIdTestCase_09"/>
+                    <include name="ValidateConfigName"/>
+                    <include name="VERIFY_Rupee_SpecialCharacter_Rendering_onJSCheckout"/>
+                    <include name="verifying_phone_number_and_email"/>
+                    <include name="AddMoneyOnJsCheckoutWithDC"/>
+                    <include name="verifyUPICollectIsDisabledForLessThan2k"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="PGP_39255_TC_08"/>
+                    <include name="PGP_Verify_CallbackURL"/>
+                    <include name="TC_0014_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="ValidateTxn_AvoidNullPointerException"/>
+                    <include name="ValidateBrandAndBusinessNameForRetryTxn"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC06"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="EMI_DCbasedonCategorization_CheckNumber"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="t1"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jDisabled"/>
+                    <include name="VerifyBankLogoInSavedCard"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <include name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - checkoutJS wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjs mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjsonEnhanced mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

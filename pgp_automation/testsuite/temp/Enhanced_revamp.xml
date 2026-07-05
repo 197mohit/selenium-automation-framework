@@ -1,0 +1,1300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Enhanced_revamp" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP-17114 - Subscription merchant preference for store card should not be mandatory">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.SubscriptionStoreCardNo"/>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="verifyNoRetryIfCountExhausted"/>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-14676 Auto Refund on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.AutoRefund">
+                <methods>
+                    <exclude name="fundBackUPICollectPeon"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16003 - Link Based Limit OTP breach on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifySuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPIEnhanceEnhanceWeb" parallel="methods" thread-count="5">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs"/>
+        </classes>
+    </test>
+
+    <test name="Food wallet refund" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.FoodWalletRefund">
+                    <methods>
+                        <include name="PGP_successfulFoodWalletRefund"/>
+                        <include name="PGP_failedRefund_WhenFoodNotPassedInCheckSum"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_CC"/>
+                        <include name="PGP_FailedFoodRefund_InvalidFoodParamInChecksum"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_FoodCCMainWallet"/>
+                        <include name="PGP_SuccessFoodPartialRefund_Hybrid_FoodMainWallet"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_PartialFoodMainWallet"/>
+                        <include name="PGP_FailedFoodRefund_Hybrid"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_FoodWalletRefundAmtExceed"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_notExceedsFoodWalletAmount"/>
+                        <include name="PGP_SuccessRefund_AddnPay"/>
+                        <include name="PGP_SuccessRefund_Partial_AddNPay"/>
+                        <include name="PGP_SuccessAdNPayRefund_WhenLimitBreached"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Offline Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="PGP_528_OfflinePGTxn_WithExpiredToken"/>
+                    <include name="PGP_527_OfflinePG_TxnWithInvalidToken"/>
+                    <include name="PGP_529_OfflinePGTxn"/>
+                    <include name="PGP_530_OfflineWalletTxn"/>
+                    <include name="PGP_531_OfflineTxn_UPI_Collect"/>
+                    <include name="PGP_532_OfflinePPBLTxn"/>
+                    <!--<include name="successOfflineTxn_postpaidOnboarding"/>-->  <!--Functionality is switched off on production-->
+                    <include name="PGP_532_OfflinePaytmCCTxn"/>
+                    <include name="PGP_529_OfflineHybTxn"/>
+                    <include name="PGP_529_OfflineAddnPayTxn"/>
+                    <include name="PGP_529_OfflineSavedCardTxn"/>
+                    <include name="PGP_529_OfflinePGTxnRiskReject"/>
+                    <include name="validatePGonlyWithLoginUsingDC"/>
+                    <include name="validatePGonlyWithLoginUsingSavedCard"/>
+                    <include name="validateAddNPayUsingDC"/>
+                    <include name="validateAddNPayUsingSavedCard"/>
+                    <include name="EMI_Offline_Card_Type_failure"/>
+                    <include name="validateRiskExtendInfoDuplicateModeDC"/>
+                    <include name="validateRiskExtendInfoDuplicateModeCC"/>
+                    <include name="validateRiskExtendInfoDuplicateModeNB"/>
+                    <include name="validateRiskExtendInfoCommaSeperatedDC"/>
+                    <include name="validateRiskExtendInfoPipeSeperatedSpecialDC"/>
+                    <include name="validateRiskExtendInfoPipeEMI"/>
+                    <include name="validateRiskExtendInfoPipePPI"/>
+                    <include name="validateRikExtendInfoMaxSize"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AOA">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.AOATxn">
+                    <methods>
+                        <include name="aoa_CC_S_withoutToken"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="CCBillPayment on enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_464_ccBillPaymentViaNB"/>
+                    <include name="PGP_465_ccBillPaymentViaDC"/>
+                    <include name="validateCCBillPaymentUsingDC"/>
+                    <include name="validateCCBillPaymentUsingSavedCard"/>
+                    <include name="validateCCBillPaymentUsingRetryDC"/>
+                    <include name="validateCCBillPaymentUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-21763 Subscription - enhancedweb_revamp" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                    <include name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <include name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCannotBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="PGP_21763_verifyInvalidSubsPaymodeMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="PGP_21763_verifyAddnPayNotAllowedMessage"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="OrderStatusV2 CustId Tests - enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.OrderStatusV2Tests">
+                <methods>
+                    <include name="verifyCustIdReturnedforSuccessTxn"/>
+                    <include name="verifyCustIdReturnedforFailureTxn"/>
+                    <include name="verifyCustIdReturnedforPendingTxn"/>
+                    <include name="verifyCustIdNotReturnedwhenMidNotConfigured"/>
+                    <include name="verifyCustIdReturnedforONUSMerchants"/>
+                    <include name="verifyCustIdReturnedforOFFUSMerchants"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EMI on enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFinMITxn"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardWhenExpiryDateIsEntered"/>
+                    <include name="verifyCorrectInfoMsgIsShownForEMIPaymodeWhenBajajFinservIsSelected"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardForAddNPayMerchant"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVV_IsNotEntered"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVVIsEntered"/>
+                    <include name="verifyEMITxnGetsFailedWhenCancelledOnBajajFinservAuthenticationPage"/>
+                    <include name="verifyRedirectionToBankPageWhenIncorrectOTP_IsEnteredForEMI_TxnWIthBajajFinservCard"/>
+                    <include name="SuccessfulOffusEMITxn"/>
+                    <include name="validateSuccessEMI_DC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_ppi on enhanced web" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_wallet_only on enhanced web" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Food wallet Txn on enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.FoodWalletTxns">
+                    <methods>
+                        <include name="PGP_successfulFoodWalletTxn_InsuffFoodBalance"/>
+                        <include name="PGP_successfulFoodWalletTxnWithSufficientFoodBal"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced web" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <exclude name="PGP_79_validateFailedTxnWithTxnAmntGreaterThanWalletByFraction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only on enhanced web" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="appInvoke Cases for PGP-29575">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="appInvokePCFNBNotLoggedIn"/>
+                    <include name="appInvokePCFNBLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26899_Ivr Notification Test Cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.IvrNotifyTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-31228 - Priority Test cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.StandardCheckoutPriority.PriorityTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-28936 enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedSuccessCCTxn"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenCardNumberIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenExpiryDetailsIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenCVVIsNotEntered"/>
+                    <include name="testLocalisedSuccessDCTxn"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCardNumberIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenExpiryDetailsIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCVVIsNotEntered"/>
+                    <include name="testLocalisedSuccessNBTxn"/>
+                    <include name="testLocalisedErrorMsgForNBTxnWhenNoBankIsSelected"/>
+                    <include name="testLocalisedSuccessPPITxn"/>
+                    <include name="testLocalisedErrorMsgForPPITxnWhenUserDoesNotHaveEnoughBalanceInWallet"/>
+                    <include name="testLocalisedSuccessUPITxn"/>
+                    <include name="testLocalisedErrorMsgForUPITxnWhenVPAIsNotEntered"/>
+                    <include name="testLocalisedSuccessPPBLTxn"/>
+                    <include name="testLocalisedSuccessPDCTxn"/>
+                    <include name="testLocalisedSuccessEMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32161 AddnpayCCdisable_enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="enhanced01"/>
+                    <include name="enhanced02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRMerchant TCs for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate"/>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate"/>
+        </classes>
+    </test>
+
+    <test name="PCFMerchant TCs for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.ScanNPayPCFCustomRate"/>
+        </classes>
+    </test>
+
+    <test name="PGP-31951 - GoodsInfoCheck_enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GoodsInfoCheck">
+                <methods>
+                    <include name="enhanced01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30576 Tests on enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validate_NbCount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32155 verifyAllInOneUpiQr">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyAllInOneUpiQr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 Enhanced ADDNPAY through UPI collect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForADDNPAYThroughUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 subscription ADDNPAY through UPI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForCreateSubsUsingAddnPayThroughUPIEnhancedFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29588 Enhanced subscription testcases for freq fortnight">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="verifySuccessfulCreateSubscriptionforFreqFortnight"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="enhancedweb_revamp ZESTBANK">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.ZESTBANK">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merchant Limit Verification">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.merchantLimitMigration">
+                <methods>
+                    <include name="PGP_1_dailylimitenhanced"/>
+                    <include name="PGP_2_weeklylimitenhanced"/>
+                    <include name="PGP_3_monthlylimitenhanced"/>
+                    <include name="PGP_4_dailylimitenhanced"/>
+                    <include name="PGP_5_weeklylimitenhanced"/>
+                    <include name="PGP_6_monthlylimitenhanced"/>
+                    <include name="PGP_7_dailylimitenhanced"/>
+                    <include name="PGP_8_weeklylimitenhanced"/>
+                    <include name="PGP_9_monthlylimitenhanced"/>
+                    <include name="PGP_10_addnpaydaily"/>
+                    <include name="PGP_11_addnpayweekly"/>
+                    <include name="PGP_12_addnpaymonthly"/>
+                    <include name="PGP_13_hybdaily"/>
+                    <include name="PGP_14_hybweekly"/>
+                    <include name="PGP_15_hybmonthly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BOB encryption tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.BOBEncryption.BOBEncryptionTests"/>
+        </classes>
+    </test>
+
+    <test name="Khatabook enhanceweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC001_KhatabookAppInvokeCC"/>
+                    <include name="TC002_KhatabookAppInvokeDC"/>
+                    <include name="TC003_KhatabookAppInvokeUPI"/>
+                    <include name="TC004_KhatabookAppInvokeNB"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC006_KhatabookAppInvokeHYBRID"/>
+                    <include name="TC007_KhatabookAppInvokeWallet"/>
+                    <include name="TC008_KhatabookAppInvokeCCforFailedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="enhancedweb_revamp BinResponse">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.BinInResponse">
+                <methods>
+                    <include name="validatelastfourdigitsbin_tc3"/>
+                    <include name="validatelastfourdigitsbin_tc4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Risk Verification on enhancedweb_revamp theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="SuccessfulPGOnlyCCTxnWhenUserLoggedInRiskAlertAccept"/>
+                    <include name="VerifyFailureWhenUserLoggedInAlertBack"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskPaytmPwd"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskOTPSMS"/>
+                    <include name="SuccessfulPGOnlyDCTxnWhenUserLoggedInRiskOTPEmail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Split Settlement enhancedweb_revamp theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.SplitSettlements"/>
+        </classes>
+    </test>
+
+    <test name="UPICollectAppName test for enahncedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPICollectAppName">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Retry Invalid OTP on Bank Direct Page">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RetryInvalidOTP"/>
+        </classes>
+    </test>
+
+    <test name="OTP Limit Enhanced WEB theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.OTPLimit">
+            </class>
+        </classes>
+    </test>
+    <test name="Non-matching Website TC's">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="testOfflinePGTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflineWalletTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflineTxn_UPI_CollectWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflinePPBLTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflinePaytmCCTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflineHybTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflineAddnPayTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testOfflineSavedCardTxnWhenNonMatchingWebsiteProvided"/>
+                    <include name="testAddNPayUsingDCWhenNonMatchingWebsiteProvided"/>
+                    <include name="testAddNPayUsingSavedCardWhenNonMatchingWebsiteProvided"/>
+                </methods>
+            </class>
+            <!--  <class name="scripts.DynamicQR">
+                  <methods>
+                      <include name="testOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                  </methods>
+              </class>
+              <class name="scripts.StaticQR">
+                  <methods>
+                      <include name="testOrderSuccessByDCWhenNonMatchingWebsiteProvided"/>
+                  </methods>
+              </class> -->
+        </classes>
+    </test>
+
+    <test name="KYC Regression on Enhanced Web theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.KYC"/>
+        </classes>
+    </test>
+
+    <test name="Advance Deposit on enhancedweb_revamp Theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AdvanceDeposit">
+                <methods>
+                    <include name="paymentViaAdvanceDeposit"/>
+                    <include name="lowBalanceErrorMessageAdvanceDeposit"/>
+                    <include name="t1"/>
+                    <include name="t2"/>
+                    <include name="t3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulHybridRefund"/>
+                    <include name="successfulMultiplePartialRefund"/>
+                    <include name="successfulPGOnlyDCRefund"/>
+                    <include name="successfulPartialRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="successfulWalletOnlyRefund"/>
+                    <include name="validatePPBLRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="WalletOnly with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                    <include name="PGP_160_failureWalletOnlyTxnWithZeroAmount"/>
+                    <include name="PGP_161_failureWalletOnlyTxnWithNegativeAmount"/>
+                    <include name="PGP_162_failureWalletOnlyTxnWithFractionAmountLTOne"/>
+                    <!--<include name="PGP_164_successfulWalletOnlyTxnWithOtherUser"/>--><!--commented as this are still to be automated-->
+                    <include name="PGP_165_failedWalletOnlyTxnWithBlockedTxnAmnt"/>
+                    <!--<include name="PGP_166_walletOnlyTxnWithMobileAutoPopulated"/>--><!--commented as this are still to be automated-->
+                    <!--<include name="PGP_167_walletOnlyTxnWithEmailIDAutoPopulated"/>--><!--commented as this are still to be automated-->
+                    <!--<include name="PGP_168_walletOnlyTxnWithMobileAutoPopulatedInCaseOfBothPresent"/>--><!--commented as this are still to be automated-->
+                    <include name="PGP_159_successfulWalletOnlyTxnInFractionGTOne"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hybrid with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                    <include name="hybrid_CC_S_withDecimalAmount"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                    <include name="hybrid_verifyWalletBalanceAfterLogin"/>
+                    <include name="hybrid_verifyAllPayModeOnCashier"/>
+                    <include name="hybrid_PPI_S_sufficientBalanceValidateWalletBalance"/>
+                    <include name="hybrid_verifySavedCardList"/>
+                    <include name="hybrid_SC_S"/>
+                    <include name="hybrid_SC_F_invalidCvv"/>
+                    <include name="hybrid_CC_S_walletBalanceZero"/>
+                    <include name="hybrid_DC_S"/>
+                    <include name="hybrid_NB_S"/>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                    <include name="hybrid_SC_S_withDCCard"/>
+                    <include name="hybrid_CC_F_invalidOTP"/>
+                    <include name="hybrid_CC_F_invalidCvv"/>
+                    <include name="hybrid_CC_F_invalidExpiry"/>
+                    <include name="hybrid_UPI_S"/>
+                    <!--<include name="hybrid_CC_S_loginOnCashier"/>--><!--commented as this are still to be automated-->
+                    <include name="hybrid_CC_F_retryCountBreached"/>
+                    <include name="hybrid_CC_retry_S"/>
+                    <include name="hybrid_PPBL_S"/>
+                    <include name="hybridErrorMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund status V1 - enhancedweb_revamp + Refund Refactoring Async/Sync">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <exclude name="verifySuccessfulRefundOnSubsViaCC_asyncStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Direct Bank Enhanced WEB theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.DirectBankTest">
+                <methods>
+                    <include name="verifySuccessfulPGOnlyTxn"/>
+                    <include name="verifySuccessfulRetriedPGOnlyTxn"/>
+                    <include name="verifySuccessfulPGOnlyTxnOnAddNpayMerchant"/>
+                    <include name="verifySuccessfulRetriedPGOnlyTxnOnAddNpayMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PaytmCC with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                    <include name="PGP_468_PostPaidBalanceLessThanTxn"/>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <include name="PGP_514_PostPaidSelectWhenWalletBalanceZero"/>
+                    <include name="PGP_516_BlankPasscode"/>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <!--<include name="PGP_517_PostPaidAndWalletInactive"/>--><!--commented as this are still to be automated-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund Async with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                    <include name="successfulPGOnlyDCRefund_async"/>
+                    <include name="successfulWalletOnlyRefund_async"/>
+                    <include name="successfulPGOnlyUPIRefund_async"/>
+                    <include name="successfulHybridRefund_async"/>
+                    <include name="successfulAddNPayRefund_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_async"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn_async"/>
+                    <include name="successfulMultiplePartialRefund_async"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount_async"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId_async"/>
+                    <include name="successfulRefundForWalletLimitBreach_async"/>
+                    <include name="partialRefundErrorMessageRedundantRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGOnly with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateCancelTxn_PGOnly"/>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_171_CCCancelOn3DPage"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_175_cardNotInBinCheckTxnAllowed"/>
+                    <include name="PGP_237_verifyPaymentModeOnCashierPage"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                    <include name="PGP_243_successfulPGOnlyTxnUsingAMEXCard"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_246_failedPGOnlyTxnWithLicenceExpiredDate"/>
+                    <include name="PGP_248_DCCancelOn3DPage"/>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountConfigured"/>
+                    <include name="PGP_251_verifySavedCardListAfterLogin"/>
+                    <include name="PGP_253_verifyPGOnlyTxnWithMaxRetryCount"/>
+                    <include name="PGP_254_verifyPGOnlyTxnWithRetryCountBreached"/>
+                    <include name="PGP_259_verifyPaymentModesOnCashierPageWhenUserLogedIn"/>
+                    <include name="PGP_260_successfulPGOnlyCCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+                    <include name="PGP_262_successfulNBTxnWhenUserLoggedIn"/>
+                    <include name="PGP_265_successfulPGOnlyTxnUsingAMEXCardWhenUserLoggedIn"/>
+                    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_269_verifySaveCardThroughDCTxn"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_271_verifyDCSavedCardTxn"/>
+                    <include name="PGP_275_validateSaveUPIForHybridTxn"/>
+                    <include name="PGP_276_validatePGTxnUsingSavedUPI"/>
+                    <include name="PGP_279_verifyInvalidCardNumberForPGOnlyTxn"/>
+                    <include name="PGP_280_verifyInvalidCVVForPGOnlyTxn"/>
+                    <include name="PGP_281_verifyInvalidOTPForPGOnlyTxn"/>
+                    <include name="PGP_282_verifyInvalidExpiryDateForPGOnlyTxn"/>
+                    <include name="checkUserRedirectedToBankWhenPaymentInitiatedUsingAMEXCard"/>
+                    <!--<include name="PGP_verifySaveCardWithoutLogin"/>--><!--commented as this are still to be automated-->
+                    <include name="validateSucessfullPPBLTransaction"/>
+                    <include name="vailidatePPBLRetry"/>
+                    <include name="vailidatePPBLRetryProcessTrxUsingCC"/>
+                    <include name="vailidatePPBLRetry_ProcessTrxUsingPPBL"/>
+                    <include name="validateInvalidPassCodeErrorMessage"/>
+                    <include name="validatePCFForPPBL"/>
+                    <include name="checkPaymentUsingBajajFinservCard"/>
+                    <include name="checkCardIndexNoPresentInResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                    <include name="checkPaymodesAvailableOnCashierPageWhichArePassedByMerchant"/>
+                    <include name="checkPaymodesNotAvailableOnCashierPageWhichArePassedAsDisabledByMerchant"/>
+                    <include name="validatePGOnlyRetryTxnUsingEMI"/>
+                    <include name="validatePGOnlyRetryTxnUsingSavedCard"/>
+                    <include name="savedCardInfoNotGettingSavedPGP17483"/>
+                    <include name="testTxnOfLessThan1NotAllowed"/>
+                    <include name="validateMobileNoIsNotMaskedWhenSSOtokenisPassed"/>
+                    <include name="validateMobileNoIsNotMaskedWhenMobileNoisNotPassed"/>
+                    <include name="validateRequestOTPMobileNonEditableYMobileNoIsMasked"/>
+                    <include name="validateMobileNonEditableYMobileNoIsMasked"/>
+                    <include name="riskRejectEnhancedFlow"/>
+                    <include name="verifyNBNotVisible"/>
+                    <include name="verifyOnlyNBIsVisible"/>
+                    <include name="verifyOnlyPPBLNBIsVisible"/>
+                    <include name="refreshPageAfterLoginAndProceed"/>
+                    <include name="refreshPageForLoggedInFlow"/>
+                    <include name="refreshNonLoggedInPage"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PeonTxn with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                    <include name="PGP_398_PeonPGonlyFail"/>
+                    <include name="PGP_399_PeonWalletOnlyPass"/>
+                    <include name="PGP_400_PeonWalletOnlyFail"/>
+                    <include name="PGP_401_PeonHybridPass"/>
+                    <include name="PGP_402_PeonHybridFail"/>
+                    <include name="PGP_403_PeonAddNPayPass"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_405_PeonAddNPayFail"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Autologin_enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Autologin.AutoLogin"/>
+        </classes>
+    </test>
+    <test name="COD with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="PGP_221_validateMsgCODTxnWithSomeWalletBalance"/>
+                    <include name="COD_VerifyMessageWithBalance"/>
+                    <include name="COD_S_withoutBalance"/>
+                    <include name="COD_S_withLessBalance"/>
+                    <include name="PPI_S_whenCODEnabledOnMerchant"/>
+                    <include name="COD_F_verifyCODNotVisiblewhenTxnAmountIsBelowThresoldAmount"/>
+                    <include name="COD_F_verifyCODVisiblewhenTxnAmountIsMoreThanThresoldAmount"/>
+                    <include name="CC_S_whenCODisEnabled"/>
+                    <include name="SC_S_whenCODisEnabled"/>
+                    <include
+                            name="COD_verifyllPayModesOnCashier"/>
+                    <include name="COD_S_withSufficientBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund Status Api with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundStatus">
+                <methods>
+                    <include name="validateRefundStatusResp_PGOnly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="enhancedweb_revamp MGV">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.mgv.TestMGVForHybridMerchant"/>
+            <class name="scripts.mgv.TestMgvForAddNPayMerchant"/>
+        </classes>
+    </test>
+
+    <test name="Peon checksum Validation Hybrid For Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.HybridPoenCheckSumValidation">
+                <methods>
+                    <include name="peonValidationHybridSuccessTxn"/>
+                    <include name="peonValidationHybridFailedTxn"/>
+                    <include name="peonValidationHybridSuccessTxnWithCC"/>
+                    <include name="peonValidationHybridFailedTxnWithDC"/>
+                    <include name="validatePeonWhenCardTokenisTrue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="session-compatibility">
+        <classes>
+            <class name="scripts.api.theia.CompatibilityTest"/>
+            <class name="scripts.api.theia.OfflineCompatibilityTest"/>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <parameter name="orderId" value="T1-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Thematic UI Test cases enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.ThematicTests">
+                <methods>
+                    <include name="t1"/>
+                    <include name="t3"/>
+                    <include name="t4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Prepaid cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidEnhancedTxn"/>
+                    <include name="appInvokeSuccessPrepaidTxn"/>
+                    <include name="addPaySuccessPrepaidTxnEnhanced"/>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                    <include name="retryPrepaid"/>
+                    <include name="pcfPrepaidEnhancedTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalse"/>
+                    <include name="FF4jOffNormalTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalseBinFalse"/>
+                    <include name="peonPrefDisabledPrepaidCard"/>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Enhanced Web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateCCBinCorporateMerchant"/>
+                    <include name="successNonCorporateCCBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successNonCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinCorporateMerchant"/>
+                    <include name="pendingCorporateDCBinCorporateMerchant"/>
+                    <include name="successDCCorporateDCBinCorporateMerchant"/>
+                    <include name="verifySpecialCharacterCustIdTxnGotSuccessloggedUser"/>
+                    <include name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                    <include name="VerifyUIChangesforSavedUPI"/>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                    <include name="VerifySuccessfullSavedUPITxnADDNPAY"/>
+                    <include name="VerifySuccessfullSavedUPITxnHYBRID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="temp-PGP-24778 : Enhanced WEB ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidCC"/>
+                    <include name="validateSuccessTransPaidDC"/>
+                    <include name="validateSuccessTransPaidNB"/>
+                    <include name="validateSuccessTransPaidUPI"/>
+                    <include name="validateSuccessTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="temp-enhancedweb_revamp Bank Mandate Redirectional flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate"/>
+        </classes>
+    </test>
+
+    <test name="PCF enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <exclude name="success_PCF_CC_Refund"></exclude>
+                    <exclude name="success_PCF_CC_Refund_Partial"></exclude>
+                    <exclude name="Failed_PCF_CC_Refund_Partial"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddMoney with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNBLessThan2000"/>
+                    <include name="PGP_410_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_411_validateTxnIsAllowedWhenValidSSOTokenIsPassed"/>
+                    <include name="PGP_412_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <include name="PGP_414_validateTxnNotAllowedWhenInvalidChannelIsPassed"/>
+                    <include name="PGP_415_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <include name="PGP_416_VerifyFailureWhenSSOTokenIsNotPassed"/>
+                    <include name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_418_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_420_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_421_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_422_VerifyTxnFailureWhenRequestTypeOtherThanAddMoney"/>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="PGP_285_AddMoneyFor0Amt"/>
+                    <include name="PGP_285_successfulAddMoneyDC"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="addMoneyFail"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                    <include name="testTxnOfLessThan1NotAllowed"/>
+                    <include name="testPayModeIsForwardedToAlipayInPaymentCashierPayForCCTxn"/>
+                    <include name="testPayModeIsForwardedToAlipayInPaymentCashierPayForDCTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddMoneyMP  with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_378_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_381_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_383_verifySuccessfulTxnUsingCC"/>
+                    <include name="PGP_384_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_385_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <include name="PGP_386_validateTxnNotAllowedWhenInvalidChannelIsPassed"/>
+                    <include name="PGP_387_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_390_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_394_verifySuccessfulTxnWhenPaymentViaNB"/>
+                    <include name="PGP_396_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="testTxnOfLessThan1NotAllowed"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddNPay  with enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_PPI_S_sufficientBal"/>
+                    <include name="addnPay_SC_S"/>
+                    <include name="addnPay_CC_S"/>
+                    <include name="addnPay_DC_S"/>
+                    <include name="addnPay_NB_S"/>
+                    <include name="addnPay_UPI_S"/>
+                    <include name="PGP_114_successfulAddNPayWithWalletPaymentModeInCheckoutPage"/>
+                    <include name="addnPay_CC_S_withSSOToken"/>
+                    <include name="PPI_S_AddnpayDisabled"/>
+                    <include name="addnPay_CC_S_CheckforCardSaved"/>
+                    <include name="addnPay_CC_S_ZeroBalance"/>
+                    <include name="addnPay_CC_S_loginOnCashier"/>
+                    <include name="addnPay_CC_F_3DPageCancel"/>
+                    <include name="addnPay_CC_F_ZeroAmount"/>
+                    <include name="addnPay_CC_F_NegativeAmt"/>
+                    <!--<include name="AddnPay_DC_S_LoginWithDiffUserOnCashierPage"/>--><!--commented as this are still to be automated-->
+                    <include name="addnPay_DC_S_VerifyWalletBalance"/>
+                    <include name="addnPay_verifyPaymentModeOnCashierPageBeforeLogin"/>
+                    <include name="addnPay_DC_S_withoutLogin"/>
+                    <include name="addnPay_CC_F_verifyResponsePage"/>
+                    <include name="addnPay_CC_P_verifyResponsePage"/>
+                    <include name="addnPay_DC_S_verifyTxnStatusList"/>
+                    <include name="addnPay_Retry_F_WhenRetryCountBreached"/>
+                    <include name="addnPay_Retry_VerifyRetry"/>
+                    <!--<include name="VerifySaveCardListOnCashierAfterLogin"/>-->
+                    <include name="addnPay_PPBL_S"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-PWP cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PWPEnhanced"/>
+        </classes>
+    </test>
+
+    <test name="PGP-27715 Corporate Card EMI Only enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMIOnlyMerchant"/>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMI_DC_OnlyMerchantWithoutCorporate"/>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMI_DC_OnlyMerchantCorporate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29219">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateTheResponseWhenInavlidChannelIdIsProvided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28959 - Tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.LogValidationScripts">
+                <methods>
+                    <include name="PGP_28959_VerifyPeonSentinLogsCCTxnOFFUS"/>
+                    <include name="PGP_28959_VerifyPeonSentinLogsCCTxnONUS"/>
+                    <include name="PGP_28959_VerifyPeonSentinLogsDCTxnOFFUS"/>
+                    <include name="PGP_28959_VerifyPeonSentinLogsDCTxnONUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28980 Pass Onus Identifier Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferPGOnlyCCtxnONUSMerchant"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferPGOnlyHybridtxnOFFUSMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28980 Pass Onus Identifier Refund">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferRefungDCtxnONUSMerchant"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferRefungDCtxnOFFUSMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29602 Feedback Test Cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.feedbackTest.FeedbackTesting"/>
+        </classes>
+    </test>
+
+    <!--    Deprecated CC/DC Flow after SI Hub Release-->
+<!--    <test name="Subscription_renewal_via_cc_dc on enhanced web">-->
+<!--        <parameter name="theme" value="enhancedweb_revamp"/>-->
+<!--        <parameter name="payMode" value="CC"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.subscription.subscriptionRenewalenhancedFlows.Subscription_renewal_via_cc_dc">-->
+<!--                <methods>-->
+<!--                    <exclude name="PGP_193_verifySuccessfulRenewalOnSubsViaDC"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <!--    Deprecated CC/DC Flow after SI Hub Release-->
+<!--    <test name="Subscription_via_cc_dc on enhanced web">-->
+<!--        <parameter name="theme" value="enhancedweb_revamp"/>-->
+<!--        <parameter name="payMode" value="CC"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.subscription.subscriptionFirstRequestnhancedFlows.Subscription_via_cc_dc"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="ScanNPay tests Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.ScanNPayTest">
+                <!--EXCLUDING BELOW METHOD AS FUNC IS DEPRECATED FOR NOW (https://jira.mypaytm.com/browse/PGP-20231)-->
+                <methods>
+                    <exclude name="validateFtchPayOpt_AddNPayMerch"/>
+                    <exclude name="validateFtchPayOpt_HybridMerch"/>
+                    <exclude name="validateQrCode_displayed_notLogIn_normMerch"/>
+                    <exclude name="validate_S_walletTxn_paytmQr"/>
+                    <exclude name="validate_S_CCTxn_paytmQr"/>
+                    <exclude name="validate_S_AddThenPay_txn"/>
+                    <exclude name="validate_S_DCTxn_paytmQr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Gift Voucher on enhanced web ">
+        <parameter name="theme" value="enhancedweb_revamp"></parameter>
+        <classes>
+            <class name="scripts.GiftVoucher">
+                <methods>
+                    <include name="gvAddMoney"/>
+                    <include name="gvAddNPay"/>
+                    <include name="gvHybrid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16662 - LOGIN Strip Disabled enhanced web and wap">
+        <classes>
+            <class name="scripts.UI.PaytmLoginStrip">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="PaytmLoginStrip"/>
+                </methods>
+            </class>
+            <class name="scripts.UI.PaytmLoginStrip">
+                <parameter name="theme" value="enhancedwap_revamp"/>
+                <parameter name="mobileEmulation" value="Nexus 5"/>
+                <parameter name="userAgent"
+                           value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+                <methods>
+                    <include name="PaytmLoginStrip"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HDFC UPI Collect for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.HDFCUPICollect">
+                    <methods>
+                        <include name="validateSuccessfulHDFCUPITxn"/>
+                        <include name="validateFailureHDFCUPITxn"/>
+                        <include name="refundHDFCUPI"/>
+                        <include name="successfulPartialRefund"/>
+                        <include name="validateSuccesfulHybridHDFCUPITxn"/>
+                        <include name="validateRetryTxnForHDFCUPI"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Direct HDDO Test cases - Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGDirectHddo">
+                <methods>
+                    <include name="verifySuccessfulPGOnlyTxnHDFCCard"/>
+                    <include name="verifySuccessfulPGOnlyTxnICICICard"/>
+                    <include name="visibilityOfBankLogo"/>
+                    <include name="ValidatewithInvalidOTP"/>
+                    <include name="ValidateMerchantRetryBreach"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26893 - Risk Reject Transit Wallet">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="riskRejectTransit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

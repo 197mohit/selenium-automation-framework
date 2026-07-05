@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-50747" verbose="1" parallel="tests" thread-count="2">
+    <test name="checkoutjs_web_revamp tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.RedirectionNewWindow">
+                <methods>
+                    <include name="validate_CC_CheckoutJSTxn"/>
+                    <include name="validate_DC_CheckoutJSTxn"/>
+<!--                    <include name="validate_PPBL_CheckoutJSTxn"/>-->
+                    <include name="validate_NB_CheckoutJSTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Redirection tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.RedirectionNewWindow">
+                <methods>
+                    <include name="CC_redirection_Txn"/>
+                    <include name="DC_redirection_Txn"/>
+<!--                    <include name="validatePPBLTransaction"/>-->
+                    <include name="validateNBTransaction"/>
+<!--                    <include name="validatePostpaidTransaction"/>-->
+                    <include name="Validate_UPI_COLLECT_Txn"/>
+                    <include name="validate_SavedCCTxn"/>
+<!--                    <include name="Validate_EMI_CC_Txn"/>-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

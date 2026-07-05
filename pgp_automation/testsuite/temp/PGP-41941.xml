@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Autologin checkoutjs" verbose="1">
+    <test name="PGP-41941 -Enhance">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Autologin.AutoLogin">
+                <methods>
+                    <include name="verifyUserLoggedInViaCokkiePostpaidaboveWallet_jsonEnhance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41941 -checkoutJS ">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Autologin.AutoLoginCheckoutJS">
+                <methods>
+                    <include name="verifyUserLoggedInViaCokkiePostpaidaboveWallet_checkoutjs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

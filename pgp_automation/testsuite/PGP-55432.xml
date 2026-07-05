@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-55432" verbose="1" thread-count="5" parallel="tests">
+    <test name="applyPromo Migration to Unified flow">
+        <parameter name="isNativePlus" value="true"></parameter>
+         <classes>
+             <class name="scripts.SimplifiedUnifiedOffers.ApplyPromoV2ToUnifiedFlow">
+                 <methods>
+                     <include name="testApplyPromoV2WithAccessToken"/>
+                     <include name="testApplyPromoV2WithSSOToken"/>
+                     <include name="testApplyPromoV2WithTxnToken"/>
+                     <include name="testApplyPromoV2WithSSOTokenForUPIPaymode"/>
+                     <include name="testApplyPromoV2WithSSOTokenForEMI_DCPaymode"/>
+                     <include name="testApplyPromoV2WithSSOTokenForItemBased"/>
+                     <include name="testApplyPromoV2WithSSOTokenForItemBasedPromoCodeProvided"/>
+                     <include name="testApplyPromoV2WithSSOTokenPromoCodeProvied"/>
+                     <include name="E2EEmiTxnWithapplyPromoApi"/>
+                     <include name="E2EEmiDCTxnWithapplyPromoApi"/>
+                     <include name="E2ECCTxnWithapplyPromoApi"/>
+                     <include name="E2ENBTxnWithapplyPromoApi"/>
+                     <include name="E2EDCTxnWithapplyPromoApi"/>
+                     <include name="E2EUPITxnWithapplyPromoApi"/>
+                     <include name="E2EEmiTxnWithapplyPromoApiItemBased"/>
+                     <include name="E2ENBTxnWithapplyPromoApiItemBased"/>
+                     <include name="TestE2ENBTxnForMinimalPromoMerchant"/>
+                     <include name="TestE2EEMITxnForMinimalPromoMerchant"/>
+                     <include name="TestE2EEMIDCTxnForMinimalPromoMerchant"/>
+                     <include name="TestE2ECCTxnForMinimalPromoMerchant"/>
+                     <include name="TestE2EUPITxnForMinimalPromoMerchant"/>
+                 </methods>
+             </class>
+         </classes>
+    </test>
+</suite>

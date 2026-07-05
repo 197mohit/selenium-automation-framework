@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Successful Wallet only TXN with insufficient balance" verbose="1">
+    <test name="Successful Wallet only TXN with insufficient balance">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Validate_Succesful_TXN_WalletOnly_Insufficient_Balance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

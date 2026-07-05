@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJsUPIIntent" verbose="1" parallel="tests" thread-count="12">
+    <test name="temp-PGP-19819 Khata | Callback to Khata system when Khata order payments are refunded for ledger reconciliation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataRefund">
+            </class>
+        </classes>
+    </test>
+</suite>

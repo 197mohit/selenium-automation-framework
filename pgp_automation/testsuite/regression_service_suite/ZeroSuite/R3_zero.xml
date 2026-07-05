@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R3 Zero Pass Suite" verbose="1" thread-count="12" parallel="tests">
+
+    <!-- Subscription Zero Pass Percentage TCs -->
+    <test name="Mandate Subcription Creation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.SubsMandate">
+                <methods>
+                    <include name="TC_SM027_nonbankMandateDebitDateIsEqualToFutureDateNative"/>
+                    <include name="TC_SM028_nonbankMandateDebitDateIsEqualToFutureDateMUTUALFUND"/>
+                    <include name="TC_SM024_bankMandateDebitDateIsEqualToFutureDate"/>
+                    <include name="TC_SM025_bankMandateDebitDateIsEqualToFutureDate"/>
+                    <include name="TC_SM009_ValidateSubs_Fail_NMS_activeSubsCountCompleted"/>
+                    <include name="TC_SM009_ValidateSubs_Fail_NS_activeSubsCountCompleted"/>
+                    <include name="TC_SM016_ValidateSubs_Fail_NMS_emptyStartDate"/>
+                    <include name="TC_SM006_ValidateSubs_Success_NMS_FIX"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoBMURL"/>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-23279 tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_23279_verifySuccessPPISubscriptionwithhAppInvokeFlowZeroAmt"/>
+                    <include name="PGP_23279_verifySuccessUPISubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26916 Creating subscriptions">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_35247_TC_04_FIX"/>
+                    <include name="PGP_35247_TC_03_DAY"/>
+                    <include name="PGP_35247_TC_02_MONTH"/>
+                    <include name="PGP_35247_TC_05_ONDEMAND"/>
+                    <include name="PGP_35247_TC_01_YEAR"/>
+                    <include name="verify_closed_wallet_user_error_message_SubsFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26916 Creating subscriptions(Included)">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="TC_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27716 - Native Plus cases for Pre Debit">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewBIMONTHLYDDCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27722 Saved Mandates Priority List Tests">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32821 - CC DC Filtered for grace days">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.cardsFilteredForGraceDays">
+                <methods>
+                    <include name="TC_006_CcDc_filteredIn_FPO"/>
+                    <include name="TC_001_CC_transactionFailed_for_GraceDays"/>
+                    <include name="TC_002_DC_transactionFailed_for_GraceDays"/>
+                    <include name="TC_004_nativeCC_transactionFailed_for_GraceDays"/>
+                    <include name="TC_005_nativeDC_transactionFailed_for_GraceDays"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription UPI UI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_39935_TC_SubsUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced wap" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="PGP_34_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountEqualsZero"/>
+                    <include name="PGP_33_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <include name="validateStartDateMoreThanTodayDate"/>
+                    <include name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOnePPIY"/>
+                    <include name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOnePPIYSubsonWalletEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced wap 2" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_30_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <include name="PGP_37658_ValidateUserRedirectingtoBMURL"/>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced web" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced web 1" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_30_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <include name="VerifyErrorMsgisshownforUPInotSupportingSubscription"/>
+                    <include name="PGP_37658_ValidateUserRedirectingtoBMURL"/>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only on enhanced wap" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <parameter name="transactionType" value="PGOnly"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_Tc1"/>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_Tc2"/>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_tc3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only on enhanced web" parallel="methods" thread-count="3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_Tc1"/>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_Tc2"/>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_tc3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPICollectNativeSubs" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_004_Native_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="Validate_PaymentServiceTypeNative_Subs_FullRefund"/>
+                    <include name="Validate_PaymentServiceTypeNative_Subs_PartialRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPIIntentNativeSubs" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_004_Native_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_004_Native_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPIRenewSubs" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_001_Renew_Subs_WithInGracePeriod"/>
+                    <include name="TC_001_Renew_MF_Subs_WithInGracePeriod"/>
+                    <include name="TC_001_Renew_RetryCountBreach"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Redirectional Zero Pass Percentage TCs in below mentioned Suite -->
+    <suite-files>
+        <suite-file path="redirectional_zero.xml"/>
+    </suite-files>
+
+</suite>

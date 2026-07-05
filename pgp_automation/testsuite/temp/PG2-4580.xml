@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Wallet CO Then Pay Invoke APP Txn " verbose="1">
+    <test name="Wallet CO Then Pay Invoke APP Test">
+        <classes>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validatePG2COThenPayFullTrafficYWalletSuccessInvokeAppTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

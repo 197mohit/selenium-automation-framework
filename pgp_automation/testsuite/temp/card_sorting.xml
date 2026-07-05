@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="COFT_THEIA" verbose="1" thread-count="1">
+    <test name="Card Sorting">
+        <classes>
+            <class name="scripts.coft.theia.CardSorting">
+                <methods>
+                    <include name="onusSorting"/>
+                    <include name="offusLoggedInSorting"/>
+                    <include name="offusNonLoggedInSorting"/>
+                    <include name="cacheCardRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

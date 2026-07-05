@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Enhanced_revamp" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="Verify enter Paytm Bank Passcode message on enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifying_FD_As_Paymode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SwiftExpressUI - PAPR-6911" verbose="1" parallel="methods" thread-count="1">
+    <test name="SwiftExpressUI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.SwiftExpressUITests"/>
+            <methods>
+                <include name="SwiftExpressUI_001"/>
+                <include name="SwiftExpressUI_002"/>
+                <include name="SwiftExpressUI_003"/>
+                <include name="SwiftExpressUI_004"/>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

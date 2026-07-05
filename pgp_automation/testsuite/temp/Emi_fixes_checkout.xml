@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29543" verbose="1">
+    <test name="Validate EMI Paymode colors on changing colors on JS configuration">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="verify successful Amount based emi on checkout js using access token">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="AmountBasedEMIOnCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

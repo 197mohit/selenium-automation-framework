@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Refund Async" verbose="1">
+    <test name="Refund Async" parallel="methods" thread-count="3">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.RefundAsync"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56997" verbose="1" thread-count="1" parallel="tests">
+    <test name="Changes to PG notifications logic for CA app">
+        <parameter name="theme" value="isNativePlus"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="pushNotifications_56997_001"/>
+                    <include name="pushNotifications_56997_002"/>
+                    <include name="pushNotifications_56997_003"/>
+                    <include name="pushNotifications_56997_004"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

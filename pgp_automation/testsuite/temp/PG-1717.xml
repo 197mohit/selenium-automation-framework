@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-1717 | RT2_APR_2026">
+    <test name="Support of access token in /api/v1/fetchPublicKey">
+        <classes>
+            <class name="scripts.api.theia.FetchPublicKey.FetchPublicKeyACCESSTest">
+                <methods>
+                    <include name="fetchPublicKeySuccess_algoKeyIdAndKeyPresent"/>
+                    <include name="fetchPublicKey_missingReferenceId"/>
+                    <include name="fetchPublicKey_nullMid"/>
+                    <include name="fetchPublicKey_invalidAccessToken"/>
+                    <include name="fetchPublicKey_midMismatchWithCreateToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

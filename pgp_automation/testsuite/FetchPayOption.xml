@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FPO_Suite" verbose="1" thread-count="12" parallel="methods">
+    <test name="FetchPayOptions">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1ResponseBody"/>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.GuestTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV5Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV5Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV5Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV5Test"/>
+        </classes>
+    </test>
+</suite>

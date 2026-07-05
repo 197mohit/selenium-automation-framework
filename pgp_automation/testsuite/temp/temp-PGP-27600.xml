@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-PGP-27600" verbose="1" parallel="methods" thread-count="4">
+    <test name="PGP-27600 Test Cases">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="payChannelNotBlankFPOv2"/>
+                    <include name="payChannelNotBlankFPOv2PayModeBlank"/>
+                    <include name="payChannelNotBlankFPOv1PPBL"/>
+                    <include name="payChannelNotBlankFPOv1PayModeBlank"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

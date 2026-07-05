@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Cases for PGP-58730 and PGP-58212">
+    <test name="PGP-58730">
+        <parameter name="JsType" value="checkoutjs"/>
+        <classes>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutNewFlowTest">
+                <methods>
+                    <include name="testCustomCheckoutNewFlow_EMI_BO_RUPAY_CARD_PAR_DISABLE"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutOldFlowTest">
+                <methods>
+                    <include name="testCustomCheckoutOldFlow_SingleItem_NoSubvention_And_BO_CCTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="testJsCheckoutNewFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_DC_with_Offer"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest">
+                <methods>
+                    <include name="testJsCheckoutOldFlow_EMI_BO_DINERS_CARD_PAR_DISABLE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-58212">
+        <parameter name="JsType" value="checkoutjs"/>
+        <classes>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="testJsCheckoutNewFlow_UnifiedOffers_Empty_CC"/>
+                    <include name="testJsCheckoutNewFlow_UnifiedOffers_Empty_EMI"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest">
+                <methods>
+                    <include name="testJsCheckoutOldFlow_UnifiedOffers_Empty_NB"/>
+                    <include name="testJsCheckoutOldFlow_UnifiedOffers_Empty_UPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

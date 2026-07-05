@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CC on UPI - BIN Details in Order status API" verbose="1">
+    <test name="CC on UPI - BIN Details in Order status API">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="validateBinNumberforgetTxnStatusApiwithUPIIntentforUpiCreditCard"/>
+                    <include name="validateBinNumberforgetTxnStatusApiwithUPICollectforUpiCreditCard"/>
+                    <include name="validateBinNumberforgetPaymentStatusApiwithUPIIntentforUpiCreditCard"/>
+                    <include name="validateBinNumberforgetPaymentStatusApiwithUPICollectforUpiCreditCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

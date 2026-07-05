@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-merchantLimitMigration" verbose="1">
+    <test name="Merchant Limit Verification">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Native.merchantLimitMigration">
+                <methods>
+                    <include name="PGP_16_offline_dc"/>
+                    <include name="PGP_17_offline_nb"/>
+                    <include name="PGP_18_offline_dc"/>
+                    <include name="PGP_19_offline_nb"/>
+                    <include name="PGP_20_offline_dc"/>
+                    <include name="PGP_21_offline_nb"/>
+                    <include name="PGP_22_dynamicqr_dc"/>
+                    <include name="PGP_23_dynamicqr_nb"/>
+                    <include name="PGP_24_dynamicqr_dc"/>
+                    <include name="PGP_25_dynamicqr_nb"/>
+                    <include name="PGP_26_dynamicqr_dc"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29580" verbose="1">
+    <test name="Subscription_via_cc_dc">
+    <parameter name="theme" value="enhancedwap"/>
+    <parameter name="mobileEmulation" value="Nexus 5"/>
+    <parameter name="userAgent"
+               value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedin_PPBL"/>
+                              <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedIn_Wallet"/>
+
+                               <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedIn_Bank_Mandate"/>
+                               <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_Wallet"/>
+                                <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_PPBL"/>
+                                <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_Bank_Mandate"/>
+                                <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_Balance"/>
+                                <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_PPBL"/>
+                                <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_BalanceWallet_SSOSent"/>
+                                <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_Bank_Mandate"/>
+                                <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_Balance"/>
+                                <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_BalanceWallet_SSoSent"/>
+                                <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC04_User_loggedIn_PPBL"/>
+                                <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_Bank_Mandate"/>
+                            </methods>
+                        </class>
+                    </classes>
+                </test>
+
+            </suite>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" verbose="1" parallel="methods" thread-count="20">
+    <test name="SmokeTest with enhancedCashier Theme">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+                </methods>
+            </class>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulMultiplePartialRefund"/>
+                </methods>
+            </class>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulHybridRefund_async"/>
+                </methods>
+            </class>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <include name="successfulWalletOnlyRefund_asyncStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SmokeTest with enhancedweb Theme">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi">
+                <methods>
+                    <include name="PGP_212_RenewalRequestWithinGracePeriod"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_24_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <include name="PGP_192_verifySuccessfulRenewalOnSubsViaCC"/>
+                </methods>
+            </class>
+            <class name="scripts.scanNPay.ScanNPayTest">
+                <methods>
+                    <include name="validate_S_walletTxn_IRCTCMerc_PRNtrue"/>
+                </methods>
+            </class>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_399_PeonWalletOnlyPass"/>
+                </methods>
+            </class>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_383_verifySuccessfulTxnUsingCC"/>
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                </methods>
+            </class>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                </methods>
+            </class>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="PGP_114_successfulAddNPayWithWalletPaymentModeInCheckoutPage"/>
+                </methods>
+            </class>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_UPI"/>
+                </methods>
+            </class>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <methods>
+                    <include name="PGP_529_OfflineAddnPayTxn"/>
+                    <include name="testOfflineTxn_UPI_CollectWhenNonMatchingWebsiteProvided"/>
+                    <include name="validatePGonlyWithLoginUsingSavedCard"/>
+
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test">
+                <methods>
+                    <include name="testParamIsEmiAvailableWhenEmiAvailableOnBin"/>
+                </methods>
+            </class>
+            <class name="scripts.BOBEncryption.BOBEncryptionTests">
+                <methods>
+                    <include name="t1_2"/>
+                </methods>
+            </class>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_S_withSufficientBalance"/>
+                </methods>
+            </class>
+            <class name="scripts.DirectBankTest">
+                <methods>
+                    <include name="verifySuccessfulPGOnlyTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulOffusEMITxn"/>
+                    <include name="validateSuccessOnusEMITxn_PgOnlyMerc_loggedInUser"/>
+                </methods>
+            </class>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_PPBL_S"/>
+                </methods>
+            </class>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="PGP_236_successfulIVRTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.FetchPayOptions">
+                <methods>
+                    <include name="TC_FPI_001"/>
+                    <include name="TC_FPI_026"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.FetchVPADetails">
+                <methods>
+                    <include name="TC_FVD_001"/>
+                </methods>
+            </class>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_291_SeamlessCCAndSavingCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Smoke Test with enhancedNative">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateUPITxn_DeferredCheckout_WithAmountInFetchPayOption"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_001"/>
+                    <include name="Verify_NativeAddMoneyUPI"/>
+                </methods>
+            </class>
+            <class name="scripts.StaticQR">
+                <methods>
+                    <include name="validateEnablePaymentModeTxnCC_UsingStaticQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Smoke Test with Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="TC_PT_001"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC_NPS002_ValidateSuccessPaymentOptions"/>
+                    <include name="TC_NPS008_ProcessVariableSubscriptionPPIYear"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="TC_NRS001_ProcessRenewSubs_VAR_PPI_MONTH"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
+
+

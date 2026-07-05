@@ -1,0 +1,160 @@
+PGOnly:
+  -
+    id: "atoRef79606157945546"
+    key: "_wL507XTyrwVv&Lx"
+AddMoney:
+  -
+    id: "atoRef79606157945546"
+    key: "_wL507XTyrwVv&Lx"
+AddMoneyMP:
+  -
+    id: "SCWMER90619707098260"
+    key: "123"
+AddnPay:
+  -
+    id: "atoRef79606157945546"
+    key: "123"
+WalletOnly:
+  -
+    id: "aMkxfQ94321833728427"
+    key: "123"
+Hybrid:
+  -
+    id: "hybref63266728877901"
+    key: "123"
+COD:
+  -
+    id: "BLlrVK40252326808372"
+    key: "123"
+PaytmExpress_Hybrid_Onus:
+  -
+    id: "SMLNOR26072634005735"
+    key: "qOkn2m84QkDoCjyn"
+PaytmExpress_Hybrid_Offus:
+  -
+    id: "SMLNOR59621499467570"
+    key: "qOkn2m84QkDoCjyn"
+PaytmExpress_Hybrid_PayModeDisabled:
+  -
+    id: "SMLNOR69592072331639"
+    key: "qOkn2m84QkDoCjyn"
+PaytmExpress_Hybrid_CCPayModeDisabled:
+  -
+    id: "SMLNOR55781808035314"
+    key: "qOkn2m84QkDoCjyn"
+PaytmExpress_AddnPay_Onus:
+  -
+    id: "SMLNAR03021859770648"
+    key: "qOkn2m84QkDoCjyn"
+PaytmExpress_AddnPay_Offus:
+  -
+    id: "SMLNAR18832667817251"
+    key: "qOkn2m84QkDoCjyn"
+TopUpExpress_Onus:
+  -
+    id: "SMLNOR26072634005735"
+    key: "qOkn2m84QkDoCjyn"
+TopUpExpress_Offus:
+  -
+    id: "SMLNOR59621499467570"
+    key: "qOkn2m84QkDoCjyn"
+EMI:
+  -
+    id: "emiall36557766260261"
+    key: "123"
+PGOnly_Retry:
+  -
+    id: "dHVGdl06025630427553"
+    key: "123"
+Hybrid_Retry:
+  -
+    id: "dHVGdl06025630427553"
+    key: "123"
+AddnPay_Retry:
+  -
+    id: "LFCCaR02989380867274"
+    key: "123"
+Seamless_Hybrid_Onus:
+  -
+    id: "SMLNOR26072634005735"
+    key: "qOkn2m84QkDoCjyn"
+Seamless_Hybrid_Offus:
+  -
+    id: "SMLNOR59621499467570"
+    key: "Pd4cwB5sZJ8caXMD"
+Seamless_Hybrid_PayModeDisabled:
+  -
+    id: "SMLNOR69592072331639"
+    key: "qOkn2m84QkDoCjyn"
+SeamlessNative_Hybrid_Onus:
+  -
+    id: "SMLNOR26072634005735"
+    key: "qOkn2m84QkDoCjyn"
+SeamlessNative_Hybrid_Offus:
+  -
+    id: "SMLNOR59621499467570"
+    key: "Pd4cwB5sZJ8caXMD"
+SeamlessNative_Hybrid_PayModeDisabled:
+  -
+    id: "SMLNOR69592072331639"
+    key: "qOkn2m84QkDoCjyn"
+PostConvMerchant:
+  -
+    id: "MerMRm54483090552146"
+    key: "123"
+FastForward:
+  -
+    id: "SMLNOR26072634005735"
+    key: "123"
+Subscription_PGOnly:
+  -
+    id: "sUbfnV16208371557529"
+    key: "123"
+SUBSCRIPTION_PGONLY_RETRY:
+  -
+    id: "dHVGdl06025630427553"
+    key: "123"
+SUBSCRIPTION_PPI:
+  -
+    id: "SubsCr99481989014371"
+    key: "123"
+SUBSCRIPTION_PPI_RETRY:
+  -
+    id: "LFCCaR02989380867274"
+    key: "123"
+SUBSCRIPTION_WALLET_ONLY:
+  -
+    id: "SubsCr99481989014371"
+    key: "123"
+ADDNPAYPEON:
+  -
+    id: "atoRef79606157945546"
+    key: "123"
+HYBPEON:
+  -
+    id: "PGP31899144818088675"
+    key: "123"
+WALLETPEON:
+  -
+    id: "aMkxfQ94321833728427"
+    key: "123"
+ALLPAYMODE:
+ -
+    id: "PGP31899144818088675"
+    key: "123"
+PPBLYONLY:
+ -
+    id: "ppblon29082929682408"
+    key: "#U2%l8dbrC6Dv&9g"
+PPBL_PAYTMCC_NOVPA:
+ -
+    id: "online40797048862522"
+    key: "123"
+PPBL_PAYTMCC_VPA:
+ -
+    id: "PGP31899144818088675"
+    key: "123"
+
+WALLET_DISABLED_UPI_ENABLED:
+  - id: "qa12ma28869899590144"
+    key: "fYJ70R@rua&VaQfn"

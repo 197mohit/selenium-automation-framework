@@ -1,0 +1,208 @@
+THEIA_FACADE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: theia
+    logPath: /paytm/logs/theia_facade.log
+    useEsForLogs: false
+
+THEIA_PRIMARY:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: theia
+    logPath: /paytm/logs/theia.log
+    useEsForLogs: false
+
+MAPPING_SERVICE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: mapping-service
+    logPath: /paytm/logs/mapping-service.log
+    useEsForLogs: false
+
+INSTAPROXY:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: instaproxy
+    logPath: /paytm/logs/instaproxy.log
+    useEsForLogs: false
+
+MERCHANT_STATUS:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: merchant-status
+    logPath: /paytm/logs/merchant-status.log
+    useEsForLogs: false
+
+PG_PROXY_NOTIFICATION:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: pgproxy-notification
+    logPath: /paytm/logs/pgproxy-notification.log
+    useEsForLogs: false
+
+SUBSCRIPTION:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: subscription
+    logPath: /paytm/logs/subscription.log
+    useEsForLogs: false
+
+BILLPROXY:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: billproxy
+    logPath: /paytm/logs/billproxy.log
+    useEsForLogs: false
+
+SAVEDCARDSERVICE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: savedcardservice
+    logPath: /paytm/logs/savedcardservice.log
+    useEsForLogs: false
+
+SAVEDCARDSERVICE_FACADE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: savedcardservice
+    logPath: /paytm/logs/savedcardservice_facade.log
+    useEsForLogs: false
+
+NOTIFICATION_QUEUE_HANDLER:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: notification-queue-handler
+    logPath: /paytm/logs/notificationQueueHandler.log
+    useEsForLogs: false
+
+COMMUNICATION_GATEWAY:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: communication-gateway
+    logPath: /paytm/logs/communicationGateway.log
+    useEsForLogs: false
+
+LINKSERVICE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: link
+    logPath: /paytm/logs/linkService.log
+    useEsForLogs: true
+
+LINKSERVICE_EVENT:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: link
+    logPath: /paytm/logs/events.log
+    useEsForLogs: true
+
+LINK_EXCHANGE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: link
+    logPath: /paytm/logs/link_exchange.log
+    useEsForLogs: true
+
+REFUND_SERVICE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: refund
+    logPath: /paytm/logs/refund.log
+    useEsForLogs: false
+
+WEB_SOCKET_CLUSTER:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: socketcluster
+    logPath: /paytm/logs/socketcluster/websocket.log
+    useEsForLogs: true
+
+ADMIN_PANEL:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: theia
+    logPath: /paytm/logs/theia-facade.log
+    useEsForLogs: true
+
+PAYMENTPOSTPROCESSOR:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: paymentpostprocessor
+    logPath: /paytm/logs/paymentPostProcessor.log
+    useEsForLogs: false
+
+PAYMENT_OPTION_FACADE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: payment-option-service
+    logPath: /paytm/logs/theia_facade.log
+    useEsForLogs: false
+
+
+PAYMENT_OPTION:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: payment-option-service
+    logPath: /paytm/logs/theia.log
+    useEsForLogs: false
+
+UPI_PSP_PROCESSOR:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: upi-psp-processor
+    logPath: /paytm/logs/upi_psp_processor.log
+    useEsForLogs: false
+
+DOWN_STEAM_REQUEST_RESPONSE:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: upi-psp-processor
+    logPath: /paytm/logs/down_steam_request_response.log
+    useEsForLogs: false
+
+THEIA_REQ_RESP:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: theia
+    logPath: /paytm/logs/theia_request_response.log
+    useEsForLogs: false
+
+REFUND_SERVICE_LOGS:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: refund
+    logPath: /paytm/logs/refund.log
+    useEsForLogs: false
+
+REFUND_FACADE_LOGS:
+  - ip: 10.170.84.182
+    user: qa_auto_jenkins
+    password: Paytm@1234
+    name: refund
+    logPath: /paytm/logs/refund_facade.log
+    useEsForLogs: false

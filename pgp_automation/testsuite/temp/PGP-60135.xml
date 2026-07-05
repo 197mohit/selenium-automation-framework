@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Confee Support - Create QR" verbose="1">
+    <test name="Confee Support - Create QR">
+        <classes>
+            <class name="scripts.api.theia.TheiaApiQrCreateTest">
+                <methods>
+                    <include name="validateonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateNativeSubscriptionOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateNativeMfSipOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonetrAsAcqIdonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonePlatformonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneMdrandPcfwithtrAsAcqIdonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonetrAsAcqIdonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonePlatformonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneMdrandPcfwithtrAsAcqIdonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateNativeSubscriptionOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateNativeMfSipOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateerrorcodeDQRO_0001onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeQR_1005onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0002onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0004onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0007onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateNativeRequestSubscriptionOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0008onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0009onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeQR_1007onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0001onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validatesuccessDQRforinvalidexpiryonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonetimeOnDemandQRwithInvalidChecksumforPTYBLI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

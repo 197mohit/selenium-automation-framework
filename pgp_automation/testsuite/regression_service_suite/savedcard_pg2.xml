@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_Save_Card_Suite_PG2" parallel="tests" thread-count="10">
+
+    <test name="FetchValidBinsAPI Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Global Vault and Local Vault">
+        <classes>
+            <class name="scripts.coft.theia.GlobalVaultAndLocalVault">
+                <methods>
+                    <include name="onusMerchantLoggedinFlow"/>
+                    <include name="ofusMerchantLoggedinFlow"/>
+                    <include name="ofusMerchantNonLoggedinFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SaveCardAdditionalApis">
+        <classes>
+            <class name="scripts.coft.savedCardService.DeleteCardbyMidCustIdTest"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalBinInfoTests"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalDeleteBinUserTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests"/>
+            <class name="scripts.coft.savedCardService.SavecardServicegetGcinV1Test"></class>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest"></class>
+        </classes>
+    </test>
+    <test name="EdcQrCintoGcInTest">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="verifycin_EdcQRFlow_NewCard"/>
+                    <include name="verifycin_EdcQRFlow_Tin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MS and PS last four digit">
+        <parameter name="isNativePlus" value="true"></parameter>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="lastFourDigitNotVisible"/>
+                    <include name="lastFourDigitVisible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46021">
+        <classes>
+            <class name="scripts.api.CC.CVV_Less_transaction">
+                <methods>
+                    <include name="Saved_HDFC_VISA_Success_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

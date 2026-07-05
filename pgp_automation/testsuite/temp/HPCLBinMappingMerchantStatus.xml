@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="HPCLBinMappingMerchantStatus" verbose="1">
+
+  <test name="HPCLBinMappingMerchantStatus">
+
+    <classes>
+      <class name="scripts.HPCLBinMappingMerchantStatus">
+        <methods>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JOff"/>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JON"/>
+          <include name="verifyBinIdentifierNotReturnedWhenPrefNotPresent"/>
+          <include name="verifybinIrcIdIsNotReturnedWhenPrefAndFF4JisOn"/>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JOffGetPaymentStatus"/>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JONGetPaymentStatus"/>
+          <include name="verifyBinIdentifierNotReturnedWhenPrefNotPresentGetPaymentStatus"/>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JOffGetTxnStatus"/>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JONGetTxnStatus"/>
+          <include name="verifyBinIdentifierNotReturnedWhenPrefNotPresentGetTxnStatus"/>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JOffHandlerInternalTxnStatus"/>
+          <include name="verifyBinIdentifierReturnedWhenPrefOnWithIRCTCFF4JONHandlerInternalTxnStatus"/>
+          <include name="verifyBinIdentifierNotReturnedWhenPrefNotPresentHandlerInternalTxnStatus"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

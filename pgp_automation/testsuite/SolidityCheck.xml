@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Solidity checks">
+    <!-- <test name="Solidity checks for automation " parallel="methods" thread-count="5">-->
+    <test name="Solidity checks for automation ">
+        <classes>
+            <class name="scripts.SolidityCheck.MerchantMigration"/>
+            <class name="scripts.SolidityCheck.ValidateMerchantConfig"/>
+            <class name="scripts.SolidityCheck.ResponseUrlValidation"/>
+            <class name="scripts.SolidityCheck.HealthCheck"/>
+            <class name="scripts.SolidityCheck.ValidateModules"/>
+            <class name="scripts.SolidityCheck.ValidateWallet"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-43930">
+    <test name="BffLayered field in FPO/FetchQrDetails">
+        <classes>
+            <class name="scripts.Qr.qr">
+                <methods>
+                    <include name="verify_bffLayerEnabled_in_FetchQRPaymentetails_FF4J_ON"/>
+                    <include name="verify_bffLayerEnabled_in_FPO_FF4J_ON"/>
+                    <include name="verify_bffLayerEnabled_in_FetchQRPaymentetails_FF4J_OFF"/>
+                    <include name="verify_bffLayerEnabled_in_FPO_FF4J_OFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

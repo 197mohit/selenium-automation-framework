@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33689" verbose="1">
+    <test name="Get Bank Code via IFSC Js">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+       <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC001_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="TC002_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="TC003_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Get Bank Code via IFSC">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="TC004_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+
+
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>

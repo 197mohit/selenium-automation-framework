@@ -1,0 +1,185 @@
+{
+  "createMerReq": {
+    "CREATED_BY": "sobeer_sales",
+    "ACTION": "Submit for Approval",
+    "MERCHANT_DETAILS": {
+      "MID": "",
+      "REQUEST_ID": "automation00077",
+      "USER_NAME": "16375712355821337",
+      "ACCOUNT_FOR": "unifiedMerchantPanel",
+      "SOURCE_ID": "OE",
+      "MERCHANT_TYPE": "NonSD",
+      "OFFLINE_ENABLED": "FALSE",
+      "ONLINE_SETTLEMENT": "FALSE",
+      "P2M_ENABLED": "FALSE",
+      "PPI_LIMITED_MERCHANT": "0",
+      "BUSINESS_NAME": "Automation Merchant",
+      "BUSINESS_TYPE": "PROPRIETORSHIP",
+      "CALLBACK_URL_ENABLED": "TRUE",
+      "CUSTOM": "CUSTOM",
+      "CUSTOM_NAME": "AUTOME",
+      "MERCHANT_NAME": "Automation Merchant",
+      "CURRENCY": "INR",
+      "REFUND_TO_BANK_ENABLED": "TRUE",
+      "MERCHANT_INDUSTRY_TYPE": "BIG",
+      "STORE_CARD_DETAILS": "NO",
+      "ADD_MONEY_ENABLE": "TRUE",
+      "CHECKSUM_ENABLED": "TRUE",
+      "NUMBER_OF_RETRY": "1",
+      "CATEGORY": "BFSI",
+      "SUB_CATEGORY": "Loans",
+      "INDUSTRY_TYPE": "Retail",
+      "BANKING_INDUSTRY": "BFSI",
+      "BANKING_SUB_INDUSTRY": "Other",
+      "WALLET_RECHARGE_OPT": "MANUAL_RECHARGE",
+      "PROFILE_ID": "1",
+      "WALLET_ONLY_ENABLED": "FALSE",
+      "EMAIL_ALERT": "TRUE",
+      "KYB_ID": "A0jg80x3uoyj268",
+      "CONVENIENCE_FEE_TYPE": "1",
+      "VALID_FROM": "01/25/2022",
+      "VALID_TO": "12/31/2028",
+      "MULTI_SUPPORT": "YES",
+      "HOW_MANY": "3",
+      "OCP": "TRUE",
+      "REQUEST_NAME": "AutoM",
+      "FIRST_NAME": "Automation",
+      "LAST_NAME": "Merchant",
+      "MOBILE_NUMBER": "5560919599",
+      "PHONE_NUMBER": "5560919599",
+      "P_EMAIL": "sourav.singh@paytm.com",
+      "MerchUniqRef": "merch4",
+      "ACCOUNT_PRIMARY": "FALSE",
+      "CAN_EDIT_PMOBILE": "TRUE",
+      "IS_SUB_USER": "FALSE",
+      "ADDRESS1": "Denmar",
+      "ADDRESS2": "MINE",
+      "ADDRESS3": "LINE3 For Add",
+      "COUNTRY": "India",
+      "STATE": "Delhi",
+      "CITY": "Central Delhi",
+      "PIN": "110011",
+      "SAME_AS_BUSINESS_ADDR": "FALSE",
+      "COMMUNICATION_ADDRESS1": "F 9201",
+      "COMMUNICATION_ADDRESS2": "Sector 26",
+      "COMMUNICATION_ADDRESS3": "NAveen Okhla",
+      "COMMUNICATION_COUNTRY": "India",
+      "COMMUNICATION_STATE": "Uttar Pradesh",
+      "COMMUNICATION_CITY": "Noida",
+      "COMMUNICATION_PIN": "201301",
+      "COMMUNICATION_LATITUDE": "28.09",
+      "COMMUNICATION_LONGITUDE": "27.19",
+      "ADDRESS_DETAILS": [
+        {
+          "TYPE": "BILLING",
+          "DETAILS": [
+            {
+              "ADDRESS1": "Denmar",
+              "ADDRESS2": "MINE",
+              "ADDRESS3": "LINE3 For Add",
+              "COUNTRY": "India",
+              "STATE": "Delhi",
+              "CITY": "Central Delhi",
+              "PIN": "110011",
+              "GSTIN": null
+            }
+          ]
+        }
+      ],
+      "KYC_BANK_NAME": "ICICI Bank",
+      "KYC_BANK_ACCOUNT_HOLDER_NAME": "TOUCH WOOD LIMITED",
+      "KYC_BANK_ACCOUNT_NO": "099100917997",
+      "KYC_BUSINESS_PAN_NO": "BUSPS7791H",
+      "KYC_AUTHORIZED_SIGNATORY_PAN_NO": "BUSPS7791H",
+      "KYC_BUSINESS_IFSC_NO": "ICIC0006622",
+      "KYC_AUTHORIZED_SIGNATORY_NAME": "Vishav",
+      "KYC_AUTHORIZED_SIGNATORY_ID_PROOF_NO": "BUSPS7791H",
+      "COMM_STAT_SELECT": "1",
+      "EMAIL_MERCHANT": "TRUE",
+      "EMAIL_CONSUMER": "FALSE",
+      "REQUEST_TYPE_NAME": "DEFAULT",
+      "WEBSITE_NAME": "paytm",
+      "SIZE_OF_KEY": "",
+      "SMS_MERCHANT": "TRUE",
+      "PRE_APPROVED_NB": "FALSE",
+      "POST_APPROVED_NB": "FALSE",
+      "PAYOUT_DAYS": "1",
+      "FLAG_MERCHANT": "FALSE",
+      "BILLING_ADDR_SAME_AS_BUSINESS_ADDR": "FALSE",
+      "API_DISABLED": "TRUE",
+      "LOB_STATUS": "TRUE",
+      "RA_STATUS": "TRUE",
+      "OB_CHANNEL": "UMP_WEB",
+      "RA_SCORE": "91.4",
+      "MP_CHECK": "NO",
+      "STATIC_PREF": [
+      ],
+      "DOCS_STATUS": "APPROVED",
+      "SOLUTION_TYPE": "OFFLINE",
+      "PREFERENCE": {
+      }
+    },
+    "URL_DETAILS": [
+      {
+        "WEBSITE_NAME": "retail",
+        "REQUEST_URL": "https://pgp-automation.paytm.in/mockbank/MerchantSite/bankResponse",
+        "RESPONSE_URL": "https://pgp-automation.paytm.in/mockbank/MerchantSite/bankResponse",
+        "PEON_URL": "https://pgp-automation.paytm.in/mockbank/peon",
+        "IMAGE_NAME": "paytm_log"
+      }
+    ],
+    "DOCS_DETAILS": {
+      "DETAILED_LIST": [
+        "PAN CARD"
+      ]
+    }
+  },
+  "configVelocity": {
+    "VELOCITIES": [
+      {
+        "VELOCITY_TYPE": "PER_MID",
+        "VELOCITY_DETAILS": {
+          "MAX_AMT_PER_DAY": "-1",
+          "MAX_AMT_PER_MONTH": "-1"
+        }
+      }
+    ]
+  },
+  "configureMbidAndInstrument": {
+    "configureMerchantCommission": {
+      "ACTION": "EDIT",
+      "COMMISSION": {
+        "FEE_TYPE": "simple",
+        "PERCENT_COMMISSION": "1.00",
+        "COMMISSION_TYPE_BOTH": "FALSE"
+      }
+    },
+    "TXN_TYPES": [
+      {
+        "TXN_TYPE": "Payments",
+        "PAY_MODES": [
+          {
+            "PAY_MODE": "PPI",
+            "COMMISSION": {
+              "FEE_TYPE": "simple",
+              "PERCENT_COMMISSION": "2.00",
+              "COMMISSION_TYPE_BOTH": "FALSE"
+            },
+            "FEE_RATE_FACTORS": [{
+              "FEE_LEVEL": {
+
+              },
+              "COMMISSION": {
+
+              }
+            }],
+            "BANKS": [
+
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "CUST_ID": "1001822960"
+}

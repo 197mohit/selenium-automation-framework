@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-55292" verbose="1" preserve-order="true">
+    <test name="Verify Offer strip is not coming if only subvention offers are there">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.CheckoutJsSimplifiedUnifiedOffer">
+                <methods>
+                    <include name="testOfferStripVisible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

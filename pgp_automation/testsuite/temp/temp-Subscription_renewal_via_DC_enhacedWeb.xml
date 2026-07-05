@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-Subscription_renewal_via_cc_dc" verbose="1" parallel="methods" thread-count="5">
+<test name="Subscription_renewal_via_cc_dc on enhanced web">
+    <parameter name="theme" value="enhancedweb"/>
+    <parameter name="payMode" value="DC"/>
+    <classes>
+        <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi"/>
+    </classes>
+</test>
+</suite>

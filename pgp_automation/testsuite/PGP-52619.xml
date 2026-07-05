@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPBLBANKAPI-PGP-52619" verbose="1" thread-count="1" parallel="tests">
+    <test name="PPBLBANKAPI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validatePPBLAccountFound"/>
+                    <include name="validatePPBLAccountNotFound"/>
+                    <include name="validatePPBLAccountFF4JFlagOFF"/>
+                    <include name="validateSkipingPPBLForNONSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PPBLBANKAPI NATIVE">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validatePPBLAccountFoundNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

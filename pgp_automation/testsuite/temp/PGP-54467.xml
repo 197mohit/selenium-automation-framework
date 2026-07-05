@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-54467">
+    <test name="Login Component Reordering">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="ValidateTextPaymentOptions"/>
+                    <include name="ValidateLoginStrip"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

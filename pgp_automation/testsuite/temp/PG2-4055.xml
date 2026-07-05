@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PG2-4055" verbose="1">
+    <test name="Validate UPIPush Full Traffic CO Then Pay Full , Partial Refund">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCoThenPayUpiPushPG2FullAsyncRefund"/>
+                    <include name="validateFullTrafficYSuccessCoThenPayUpiPushPG2PartialAsyncRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

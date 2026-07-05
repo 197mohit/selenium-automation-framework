@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression fix postpaid , upi push" verbose="1">
+    <test name="Verifying the interest for different banks based on the brand codes passed in the request ">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="validateUpiPushTxnWithSimplifiedPromo"/>
+                </methods>
+            </class>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-42113">
+    <test name="Verfiy txntype:ADDANDPAY is displayed in FetchBin Details API Response while making addnpay txn">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_txntype_parameter_displyedin_FetchBinDetailsAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

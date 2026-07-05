@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="healthchecks">
+    <!-- <test name="Solidity checks for automation " parallel="methods" thread-count="5">-->
+    <test name="Solidity checks for automation ">
+        <classes>
+            <class name="scripts.SolidityCheck.HealthCheck"/>
+            <class name="scripts.SolidityCheck.ValidateModules"/>
+        </classes>
+    </test>
+</suite>

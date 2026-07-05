@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Peon notification" verbose="1">
+    <test name="Peon notification" parallel="methods" thread-count="5">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.PeonTxn"/>
+        </classes>
+        <classes>
+            <class name="scripts.Native.NativePeon"></class>
+        </classes>
+    </test>
+</suite>

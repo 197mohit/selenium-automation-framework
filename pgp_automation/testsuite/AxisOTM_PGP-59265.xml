@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AxisOTM">
+
+    <test name="AxisOTM_Debit">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsAxisOTM">
+                <methods>
+                    <include name="TC_012_OTM_Subs_CreateSuccess"/>
+                    <include name="TC_013_OTM_mfSIP_CreateSuccess"/>
+                    <include name="TC_014_OTM_Subs_DebitSuccess"/>
+                    <include name="TC_015_OTM_mfSIP_DebitSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

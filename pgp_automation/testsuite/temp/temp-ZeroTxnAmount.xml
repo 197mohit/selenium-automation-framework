@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-ZeroTransactionalAmount">
+    <test name="ZeroTransactionalAmount" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTCForHybridTxn"/>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTC"/>
+                    <include name="validateSufficientAmountAtFetchPayAndInSufficientWhilePTCForPPI"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAY"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ZeroTransactionalAmountNative" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTCForHybridTxn"/>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTC"/>
+                    <include name="validateSufficientAmountAtFetchPayAndInSufficientWhilePTCForPPI"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAY"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="ZeroTransactionalAmountOffline" parallel="methods" thread-count="5">
+        <classes>
+            <class name="scripts.StaticQR">
+                <methods>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTCForHybridTxnOffline"/>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTCOffline"/>
+                    <include name="validateSufficientAmountAtFetchPayAndInSufficientWhilePTCForPPIOffline"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAYForOfflineTxn"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForOffline"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

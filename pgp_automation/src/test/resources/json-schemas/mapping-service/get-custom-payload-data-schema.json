@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "customPayloadList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/CustomPayloadList"
+          }
+        }
+      },
+      "required": [
+        "customPayloadList"
+      ],
+      "title": "Root"
+    },
+    "CustomPayloadList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "merchantId": {
+          "type": "string"
+        },
+        "configuration": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "configuration",
+        "id",
+        "merchantId",
+        "status"
+      ],
+      "title": "CustomPayloadList"
+    }
+  }
+}

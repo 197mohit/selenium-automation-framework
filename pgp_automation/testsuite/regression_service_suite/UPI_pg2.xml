@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_UPI_Suite_PG2" verbose="1" thread-count="10" parallel="tests">
+    <test name="walletInteroperability">
+        <classes>
+            <class name="scripts.Native.walletInteroperability">
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46539 checkoutJS" parallel="methods" thread-count="2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyNewUpiPollingPageAndSuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46539 enhanced" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyNewUpiPollingPageAndSuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46539 JS on redirection" parallel="methods" thread-count="2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyNewUpiPollingPageAndSuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

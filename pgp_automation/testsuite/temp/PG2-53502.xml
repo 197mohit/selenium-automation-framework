@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Error Codes And SuppercashOffers" verbose="1" parallel="tests" thread-count="4">
+    <test name="UPI SuperCashOffer">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="VerifyUpiSavingsRequestForOfflineandff4jEnable"/>
+                    <include name="VerifyUpiSavingsRequestForOfflineandff4jDisable"/>
+                    <include name="VerifyUpiSavingsRequestForOnlineff4jEnable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJs-UPI Creitline Eligibility">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.UPIErrorCode">
+                <methods>
+                    <include name="UPI_CreditLine_NotAllowed"/>
+                    <include name="UPI_CreditLineAndWallet_NotAllowed"/>
+                    <include name="UPI_CreditLineLocale_NotAllowed"/>
+                    <include name="UPICreditLineLimitExhaust"/>
+                    <include name="UPICreditLineAndWalletLimitExhaust"/>
+                    <include name="UPICreditLineLimitExhaustFromLocale"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="StdCheckout-UPI Creitline Eligibility">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.upiUITests">
+                <methods>
+                    <include name="UPICreditLineEligibilityStanderdCheckout"/>
+                    <include name="UPICreditLineAndWalletEligibilityStanderdCheckout"/>
+                    <include name="UPICreditLineEligibilityFromLocaleStanderdCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

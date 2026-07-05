@@ -1,0 +1,75 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "lookUpDataOldPgList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LookUpDataOldPGList"
+          }
+        }
+      },
+      "required": [
+        "lookUpDataOldPgList"
+      ],
+      "title": "Root"
+    },
+    "LookUpDataOldPGList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "category": {
+          "type": "string"
+        },
+        "subCategory": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "string"
+        },
+        "createdBy": {
+          "type": "integer"
+        },
+        "createdDate": {
+          "$ref": "../date-time-schema.json"
+        },
+        "modifiedBy": {
+          "type": "null"
+        },
+        "modifiedDate": {
+          "$ref": "../date-time-schema.json"
+        }
+      },
+      "required": [
+        "category",
+        "createdBy",
+        "createdDate",
+        "description",
+        "id",
+        "modifiedBy",
+        "modifiedDate",
+        "name",
+        "status",
+        "subCategory",
+        "value"
+      ],
+      "title": "LookUpDataOldPGList"
+    }
+  }
+}

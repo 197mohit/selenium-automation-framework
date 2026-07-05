@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-50859" verbose="1">
+    <test name="DQR | Custom Webhook for DLF">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="S2SDataForDLFMerchant_NQH_CC"/>
+                    <include name="S2SBodyForDLF_CG_CC"/>
+                    <include name="S2SDataForDLFMerchant_NQH_DC"/>
+                    <include name="S2SBodyForDLF_CG_DC"/>
+                    <include name="S2SDataForDLFMerchant_NQH_NB"/>
+                    <include name="S2SBodyForDLF_CG_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

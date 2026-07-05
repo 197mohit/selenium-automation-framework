@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Sub Type Cases" verbose="1" parallel="tests" thread-count="3">
+    <test name="UPI Sub Type Automation">
+
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiVoucher"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeelessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeeequaltobaseamount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

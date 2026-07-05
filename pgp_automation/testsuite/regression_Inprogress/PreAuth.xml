@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PreAuth" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-28980 Pass Onus Identifier Preauth">
+        <classes>
+            <class name="scripts.PreAuth">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferSuccesfulPreAuthTxnONUS"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferSuccesfulPreAuthTxnOFFUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

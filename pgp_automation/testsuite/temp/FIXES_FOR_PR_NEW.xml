@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AvsReqAuthTask" verbose="1" parallel="tests" thread-count="10">
+    <test name="AvsReqAuthTask test cases" parallel="methods" thread-count="5">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="callback_present_FF4J_Enabled"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UpiPPIWallet">
+                <methods>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCIntentTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCNotPresentIntentTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCDisabledIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitIntentTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCIntentCOTPTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

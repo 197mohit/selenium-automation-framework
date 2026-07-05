@@ -1,0 +1,1229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API_TestCases" verbose="1" thread-count="20"
+       parallel="tests" data-provider-thread-count="3">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="PGP-24062">
+        <classes>
+            <class name="scripts.api.theia.FastForwardTest"/>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test"/>
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.TxnTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV2Test"/>
+        </classes>
+    </test>
+    <test name="PGP-24758">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test"/>
+        </classes>
+    </test>
+    <test name="saved card api's">
+        <classes>
+            <class name="scripts.api.savedcardservice.UpdateTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SaveTrustedCardDetails"/>
+            <class name="scripts.api.savedcardservice.SaveTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SavedCardsByCardTypeSsoToken"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByUserIdTokenIdTokenType"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByCustIdMId"/>
+            <class name="scripts.api.savedcardservice.PGDeactivateSavedCard"/>
+            <!--<class name="scripts.api.savedcardservice.GetSavedRecentCCBillPaymentByCardId"/>not completed-->
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdCardNo"/>
+            <class name="scripts.api.savedcardservice.GetSavedcardsByUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdStatus"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdInstruments"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOToken"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOTokenUserIdMId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdSSOTokenChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdUserIdMIdCustId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetCard"/>
+            <class name="scripts.api.savedcardservice.GetCacheSavedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardByUserIdCardId"/>
+            <!--<class name="scripts.api.savedcardservice.DeleteSavedCardBySSOTokenUserIdCardId"/>not completed-->
+            <class name="scripts.api.savedcardservice.DeletePGSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.DeactivateSavedCard"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardMIdCustId"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardByUserId"/>
+            <!--<class name="scripts.api.savedcardservice.AddSavedCardByMIdCustId"/>not completed-->
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API) ">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <include name="fetchPayOptionForNonRiskRejectedUser"/>
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16003 - Link Based Limit OTP breach only API">
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifyBreachNumber"/>
+                    <include name="generateOTPLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Fetch payment instrument for offline txn">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_InvalidToken"/>
+                    <include name="FetchPayIns"/>
+                    <include name="FetchPayIns_saveCard"/>
+                    <include name="FetchPayIns_PPBL"/>
+                    <include name="FetchPayIns_creditcard"/>
+                    <include name="FetchPayIns_balance"/>
+                    <include name="FetchPayIns_netbanking"/>
+                    <include name="FetchPayIns_PaytmDigitalCredit"/>
+                    <include name="FetchPayIns_UPI"/>
+                    <include name="FetchPayIns_SavedVpaV2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="save card">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCard">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-23725-Correct Error Message Tests for different paymodes">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifySBICreditCardNotAllowedMsg"/>
+                    <include name="verifyHDFCCreditCardAllowedwhenHDFC_DC_CC_Enabled"/>
+                    <include name="verifyHDFCDebitNotAllowedwhenOnlyHDFC_CC_Enabled"/>
+                    <include name="verifyHDFCCreditCardAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletAddNPay"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletHybrid"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyHDFCDebitCardNotAllowedwithOnlyHDFC_CCEnabledSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-21763 Subscription - Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                    <include name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <include name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCannotBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidAppInvokeDeviceMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                    <include name="PGP_21763_verifyTxnAmtNotEqualtoMaxAmtMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="mapping Service API">
+        <classes>
+            <class name="scripts.api.mappingService.MappingService">
+                <methods>
+                    <include name="validateGetFormatter_fromDB"/>
+                    <include name="validateGetFormatter_fromRedis"/>
+                    <include name="validateGetBankDetails_APCODE_FromDB"/>
+                    <include name="validateGetBankDetails_APCODE_FromRedis"/>
+                    <include name="validateBankUrlInfo_fromDB"/>
+                    <include name="validateBankUrlInfo_fromRedis"/>
+                    <include name="validateGetPaytmId_FromDB"/>
+                    <include name="validateGetPaytmId_FromRedis"/>
+                    <include name="validateGetMerchContractPaymentInfo"/>
+                    <include name="validateGetEntityUrlInfoAPI_Request"/>
+                    <include name="validateGetEntityUrlInfoAPI_Response"/>
+                    <include name="validateLookUpPaymodeAPI_CC"/>
+                    <include name="validateGetPaytmProperties_API"/>
+                    <include name="validateMerchExtendedInfo"/>
+                    <include name="validateMerchPreferenceInfo"/>
+                    <include name="validateBankDetail_fromDatabase"/>
+                    <include name="validateEntityOfferDetail_fromRedis"/>
+                    <include name="validateEntityOfferDetail_fromDB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchBinDetails">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails"/>
+        </classes>
+    </test>
+
+    <test name="mlv">
+        <classes>
+            <class name="scripts.api.theia.InitiateTransaction">
+                <methods>
+                    <include name="testWhenAggMidKeyIsNotPassed"/>
+                    <include name="testWhenAggMidKeyIsPassedAsNull"/>
+                    <include name="testWhenNonExistentMidIsPassedAsAggMid"/>
+                    <include name="testWhenExistentMidIsPassedAsAggMidAndChecksumIsCreatedUsingChildMerchantKey"/>
+                    <include name="testWhenExistentMidIsPassedAsAggMidAndChecksumCreatedUsingAggMerchantKey"/>
+                    <include name="testWhenOfflineFlowKeyIsNotPassed"/>
+                    <include name="testWhenOfflineFlowKeyIsPassedAsNull"/>
+                    <include name="testWhenOfflineFlowKeyIsPassedAsFalse"/>
+                    <include name="testWhenOfflineFlowKeyIsPassedAsTrue"/>
+                    <include name="testWhenAggTypeKeyIsNotPassed"/>
+                    <include name="testWhenAggTypeKeyIsPassedAsNull"/>
+                    <include name="testWhenAggTypeKeyIsPassedAsORDER_CREATOR"/>
+                    <include name="testWhenOrderPricingInfoIsNotPassed"/>
+                    <include name="testWhenOrderPricingInfoIsPassed"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="test when non-mlv-supported qrCodeId is passed"/>
+                    <include name="test when mlv-supported qrCodeId is passed"/>
+                    <include name="test when mlvSupported == false given merchant supports mlv"/>
+                    <include name="test when mlvSupported key is not passed given merchant supports mlv"/>
+                    <include name="test when mlvSupported == true given merchant does not support mlv"/>
+                    <include name="test when mlvSupported == true given merchant supports mlv"/>
+                </methods>
+            </class>
+            <class name="scripts.api.merchantStatus.GetTxnStatus"/>
+            <class name="scripts.api.refund.AsyncRefund"/>
+            <class name="scripts.api.refund.RefundStatus"/>
+        </classes>
+    </test>
+
+    <test name="fetchmerinfo">
+        <classes>
+            <class name="scripts.FetchMerchantInfo">
+                <methods>
+                    <include name="verifyMerchantInfowithValidMid"/>
+                    <include name="invalidMidMerchantInfo"/>
+                    <include name="verifyMerchantInfowithSingleValidMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Upi Intent tests ">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native OTP Limit Breach">
+        <classes>
+            <class name="scripts.Native.LimitOTP">
+            </class>
+        </classes>
+    </test>
+
+    <test name="OrderStatusAPI Security related test Cases">
+        <classes>
+            <class name="scripts.api.statusAPI.OrderStatusAPI">
+            </class>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-CardTokenizeTest">
+        <classes>
+            <class name="scripts.CCBillPayments.CardTokenizeTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-CheckEligibilityTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FetchBinTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-FetchBinTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FetchBinTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-FulfilmentTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FulfilmentTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-StatusCheckTest">
+        <classes>
+            <class name="scripts.CCBillPayments.StatusCheckTest"/>
+        </classes>
+    </test>
+
+    <test name="EMISubvention API Test cases">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="getEmiDetailsForEMIEnabledMerchant"/>
+                    <include name="getEmiDetailsForEMIDisabledMerchant"/>
+                    <include name="getEmiDetailsForInvalidMID"/>
+                    <include name="getEmiDetailsForInvalidJWTToken"/>
+                    <include name="getEmiDetailsForBlankClientId"/>
+                    <include name="getEmiDetailsForInvalidClientId"/>
+                    <include name="verifyEmiDetailsForDiffMIDInRequestAndQueryParams"/>
+                    <include name="verifyEmiDetailsWithCCEMI"/>
+                    <include name="verifyEmiDetailsWithDCEMI"/>
+                    <include name="verifyEmiDetailsWithBajajFinEMI"/>
+                    <include name="verifyForAllEMIEnabled"/>
+                    <include name="checkEMIEligiBilityWithSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityWithEMIEnabledMID"/>
+                    <include name="checkEMIEligiBilityWithEMIDisabledMID"/>
+                    <include name="checkEMIEligiBilityWithBlankChannelCode"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeEnabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeDisabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeCreditCard"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnNonEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfSameBank"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfDifferntBank"/>
+                    <include name="checkEMIEligiBilityWithUserNotconfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityWithUserConfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityForChannelCodeHDFC"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityForChannelCodeICICI"/>
+                    <include name="checkEMIEligiBilityForChannelCodeBajajFN"/>
+                    <include name="checkEMIEligiBilityForChannelCodeAMEX"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved card open api tests">
+        <classes>
+            <class name="scripts.api.savecardService.SavedCardOpenApi"/>
+        </classes>
+    </test>
+
+    <test name="Promo OR Flow">
+        <classes>
+            <class name="scripts.or.FetchCardDetailsAPI"/>
+        </classes>
+    </test>
+    <test name="Promo And Flow">
+        <classes>
+            <class name="scripts.api.theia.FetchAllPaymentOffers"/>
+            <class name="scripts.api.theia.ProcessTransactionAPI"/>
+        </classes>
+    </test>
+    <test name="Instant Refund">
+        <classes>
+            <class name="scripts.api.instantrefund.AsyncRefund"/>
+            <class name="scripts.api.instantrefund.RefundAccountAdd"/>
+            <class name="scripts.api.instantrefund.RefundAccountQuery"/>
+            <class name="scripts.api.instantrefund.RefundAccountRemove"/>
+            <class name="scripts.api.instantrefund.RefundAccountValidate"/>
+            <class name="scripts.api.instantrefund.RefundConsultView"/>
+        </classes>
+    </test>
+
+    <test name="PGP-18000:Phone Update | User verification through saved cards">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCardByUserIdTest"/>
+        </classes>
+    </test>
+    <test name="PGP-17977 Send Failure reason Error Code to Notification Service">
+        <classes>
+            <class name="scripts.bopanel.FailureReasonNotificationService"/>
+        </classes>
+    </test>
+
+    <test name="Emi Subvention for Third Party native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+            </class>
+        </classes>
+    </test>
+    <test name="Emi Subvention for Third Party native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Logo Integration Tests">
+        <parameter name="theme" value="merchant"/>
+        <classes>
+            <class name="scripts.api.mappingService.logoIntegrationApi.UploadApi">
+                <methods>
+                    <include name="uploadMerchant"/>
+                    <include name="checkMerchant"/>
+                    <include name="fetchMerchant"/>
+                    <include name="deleteMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payments API's">
+        <classes>
+            <class name="scripts.api.theia.InitiateTransaction"/>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest"/>
+        </classes>
+    </test>
+    <test name="Payments API's 1">
+        <classes>
+            <class name="scripts.api.theia.FetchCardIndexNumber"/>
+            <class name="scripts.api.theia.CreateToken"/>
+        </classes>
+    </test>
+    <test name="Payments API's 2">
+        <classes>
+            <class name="scripts.api.theia.FetchMerchantUserInfo"/>
+            <class name="scripts.api.theia.FetchEmiPaymentChannels"/>
+        </classes>
+    </test>
+    <test name="Payments API's 3">
+        <classes>
+            <class name="scripts.api.theia.FetchBinAppDetails"/>
+            <class name="scripts.api.theia.ErrorJsp"/>
+        </classes>
+    </test>
+    <test name="Payments API's 4">
+        <classes>
+            <class name="scripts.api.theia.CloseOrder"/>
+            <class name="scripts.api.theia.CheckEmiEligibility"/>
+            <class name="scripts.api.theia.GetEmiDetails"/>
+        </classes>
+    </test>
+    <test name="Payments API's 5">
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test"/>
+        </classes>
+    </test>
+    <test name="theia API's 2">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.ChecksumVPAValidateV1Test"/>
+            <class name="scripts.api.theia.vpaValidate.TxnTokenVPAValidateV1Test"/>
+        </classes>
+    </test>
+    <test name="theia API's 3">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.SSOTokenVPAValidateV1Test"/>
+            <class name="scripts.api.theia.ValidateOtp"/>
+        </classes>
+    </test>
+    <test name="theia API's 4">
+        <classes>
+            <class name="scripts.api.theia.validateAndFetchMerchantInfo.JWTTokenValidateAndFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.UpdateTransactionDetail"/>
+        </classes>
+    </test>
+    <test name="theia API's 5">
+        <classes>
+            <class name="scripts.api.theia.SubmitKYC"/>
+            <class name="scripts.api.theia.ShowPaymentPage"/>
+        </classes>
+    </test>
+    <test name="theia API's 6">
+        <classes>
+            <class name="scripts.api.theia.SendOtp"/>
+            <class name="scripts.api.theia.FetchVpaDetails"/>
+        </classes>
+    </test>
+    <test name="theia API's 7">
+        <classes>
+            <class name="scripts.api.theia.FetchPromoCodeDetail"/>
+            <class name="scripts.api.theia.FetchPcfDetails"/>
+        </classes>
+    </test>
+    <test name="theia API's 8">
+        <classes>
+            <class name="scripts.api.theia.FetchPaymentPromotionAttributes"/>
+            <class name="scripts.api.theia.FetchPaymentInstruments"/>
+        </classes>
+    </test>
+    <test name="theia API's 9">
+        <classes>
+            <class name="scripts.api.theia.OrderPayUnipsp"/>
+            <class name="scripts.api.theia.checkUPIAccountExist.ChecksumUPIAccountExistTest"/>
+        </classes>
+    </test>
+    <test name="Loyality Points Fetch Balance info and fast forward TC's">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="successfulFetchBalanceLP"/>
+                    <include name="fetchBalanceOnUserNotHavingLP"/>
+                    <include name="fetchBalanceOnInvalidSSOTokenLP"/>
+                    <include name="fetchBalanceOnMidNotHavingLP"/>
+                    <include name="fetchBalanceWithInvalidPayModeLP"/>
+                    <include name="successFFTxnWithInvalidPayModeLP"/>
+                    <include name="invalidSSOtokenFastForwardLP"/>
+                    <include name="validSSOInvalidExchangeLP"/>
+                    <include name="txnAmountGreaterThanLP"/>
+                    <include name="payModeNotThereOnMerchantLP"/>
+                    <include name="payModeNotThereOnUserLP"/>
+                    <include name="ffExchangeNumberNegativeLP"/>
+                    <include name="exchangeNumberAlphaNumericLP"/>
+                    <include name="duplicateOrderIdLP"/>
+                    <include name="refundFullAmountLP"/>
+                    <include name="refundPartialAmountLP"/>
+                    <include name="expiredSSOTokenLP"/>
+                    <include name="newParamMerchantMLP"/>
+                    <include name="oldFlowMerchantIfNewParamNullLP"/>
+                    <include name="midNotListedInPropFFLP"/>
+                    <include name="invalidRootCustId"/>
+                    <include name="refundFullAmountMLP"/>
+                    <include name="validateSuccessPeonLP"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20110">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="verify after fetchQRPayment FetchPayV2 is hit and Txn is Successful through PTC"/>
+                    <include name="verify when FPO generateOrderFlag is true than Order is treated as seperate order w.r.t FetchQR payment order"/>
+                    <include name="verify generateorder flag is true for fetch QR the response order in FPO and PTC will float for successful txn"/>
+                    <include name="verify order is created through fetch QR float in FPO and PTC for successful txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25268- ChecksumApplyPromo">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test"/>
+        </classes>
+    </test>
+
+    <test name="PGP-22565 Mapping Service">
+        <classes>
+            <class name="scripts.api.mappingService.merchantPreferenceInfo.MerchantPrefInfo">
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-22565 Mapping Backend Validation">
+        <classes>
+            <class name="scripts.SolidityCheck.ValidateMerchantConfig">
+                <methods>
+                    <include name="validateOfflineDescText"/>
+                    <include name="validateOfflineDescFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-22190 Mapping Service">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantProfile">
+            </class>
+        </classes>
+    </test>
+    <test name="PromotionExpiry">
+        <classes>
+            <class name="scripts.api.ExpiryNotify.PromotionExpiry"/>
+        </classes>
+    </test>
+
+    <test name="Add Description FPO Tests - txntoken and Guest">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefDisabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Description FPO Tests - Mid + SSO - FPO V1, V2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled'"/>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is disabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is disabled'"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="E-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="P-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25567">
+        <classes>
+            <class name="scripts.flows.NativeTest"/>
+            <class name="scripts.flows.NativePlusTest"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+
+            </class>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of DC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals CIN of CC given merchant has applicable promos'/>
+                    <include
+                            name='test when body paymentOptions payMethod = BALANCE but user info not passed in request'/>
+                    <include name='test when min txn amt constraint is violated'/>
+                    <include name='test when max txn amt constraint is violated'/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API Tests">
+        <classes>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributeKey"/>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributePreference"/>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributeUPIKeys"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantIdMap"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantProfile"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantV1"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantContractDetails"/>
+            <class name="scripts.api.mappingService.merchantMigration.MerchantMigrationDetails"/>
+            <class name="scripts.api.mappingService.userInfo.UserV1"/>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API Tests 1">
+        <classes>
+            <class name="scripts.api.mappingService.GetResponseCodeAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromAlipayMidAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantKycInfoAPITest"/>
+            <class name="scripts.api.mappingService.GetDynamicWrapperConfigsAPITest"/>
+            <class name="scripts.api.mappingService.GetCustomPayloadDataAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsListFromBankCodesAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromMidAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromMidV2APITest"/>
+            <class name="scripts.api.mappingService.GetAggregatorBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetFormatterAPITest"/>
+            <class name="scripts.api.mappingService.GetBankUrlInfoAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsFromIdAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsListFromIdAPITest"/>
+            <class name="scripts.api.mappingService.GetPayMethodDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetBanksDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetAllBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetAllBankDetailsByPayModeAPITest"/>
+            <class name="scripts.api.mappingService.GetCardNetworkDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpFromIdTest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromIdTest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromCategoryAndSubCategoryAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromCategoryAndSubCategoryAndNameAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantApiURLInfoAPITest"/>
+        </classes>
+    </test>
+
+    <!-- <test name="RetryInfo Test" parallel="tests" thread-count="6">
+         <classes>
+             <class name="scripts.StaticQR">
+                 <methods>
+                     <include name="validateRetryInfoUsingFastForwardAPI_UsingStaticQR"/>
+                 </methods>
+             </class>
+         </classes>
+     </test> -->
+    <test name="PGP-22222 Idempotent cases">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateIdempotentCase1"/>
+                    <include name="validateIdempotentCase2"/>
+                    <include name="validateIdempotentCase3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="iconURL in savedMandates bankMandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="iconURLpayModeBankMandateNativeSubs"/>
+                    <include name="iconURLpayModeBankMandateNativeMFSIP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26586">
+        <classes>
+            <class name="scripts.api.merchantStatus.txnStatusApp.SSOTokenTxnStatusAppTest"/>
+            <class name="scripts.api.merchantStatus.txnStatusListApp.SSOTokenTxnStatusListAppTest"/>
+            <class name="scripts.api.theia.validateRefId.SSOTokenValidateRefIdTest"/>
+        </classes>
+    </test>
+    <test name="PGP-26075">
+        <classes>
+            <class name="scripts.api.theia.fetchPcfDetails.SSOTokenFetchPCFDetailsV1Test"/>
+        </classes>
+    </test>
+
+    <test name="Native UPI polling Tests">
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests"/>
+        </classes>
+    </test>
+
+    <test name="PGP-25875">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test"/>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_1">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test"/>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test body.simplifiedPaymentOffers is returned in response when body.simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test body.simplifiedPaymentOffers is not returned in response when body.simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body.fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body.fetchAllPaymentOffers = null"/>
+                    <include name="test when body.fetchAllPaymentOffers = ''"/>
+                    <include name="test when body.fetchAllPaymentOffers equals random value"/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant does not have promos configured'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals valid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals invalid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = false given merchant has promos configured'/>
+                    <include name="test when body.applyPaymentOffer is not provided"/>
+                    <include name="test when body.applyPaymentOffer = null"/>
+                    <include name="test when body.applyPaymentOffer = ''"/>
+                    <include name="test when body.applyPaymentOffer equals random value"/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="test body.simplifiedPaymentOffers is returned in response when body.simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test body.simplifiedPaymentOffers is not returned in response when body.simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body.fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body.fetchAllPaymentOffers = null"/>
+                    <include name="test when body.fetchAllPaymentOffers = ''"/>
+                    <include name="test when body.fetchAllPaymentOffers equals random value"/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant does not have promos configured'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals valid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals invalid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = false given merchant has promos configured'/>
+                    <include name="test when body.applyPaymentOffer is not provided"/>
+                    <include name="test when body.applyPaymentOffer = null"/>
+                    <include name="test when body.applyPaymentOffer = ''"/>
+                    <include name="test when body.applyPaymentOffer equals random value"/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25862">
+        <classes>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.AccessTokenFetchNBPaymentChannelsV1Test"/>
+        </classes>
+    </test>
+    <test name="PGP-25866">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.AccessTokenVPAValidateV1Test"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service">
+        <classes>
+            <class name="scripts.api.van.createVan.ChecksumTokenVanCreateTest"/>
+            <class name="scripts.api.van.createVan.JWTTokenVanCreateTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 1">
+        <classes>
+            <class name="scripts.api.van.vanPayment.JWTTokenVanPaymentTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 2">
+        <classes>
+            <class name="scripts.api.van.vanQuery.ChecksumTokenVanQueryTest"/>
+            <class name="scripts.api.van.vanQuery.JWTTokenVanQueryTest"/>
+        </classes>
+    </test>
+
+
+    <test name="van proxy service 3">
+        <classes>
+            <class name="scripts.api.van.vanSearch.JWTTokenVanSearchTest"/>
+            <class name="scripts.api.van.vanSearch.ChecksumTokenVanSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 4">
+        <classes>
+            <class name="scripts.api.van.updateVan.JWTTokenVanUpdateTest"/>
+            <class name="scripts.api.van.updateVan.ChecksumTokenVanUpdateTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 5">
+        <classes>
+            <class name="scripts.api.van.disableVan.ChecksumTokenVanDisableTest"/>
+            <class name="scripts.api.van.disableVan.JWTTokenVanDisableTest"/>
+        </classes>
+    </test>
+
+
+    <test name="NewDynamicQR flow">
+        <classes>
+            <class name="scripts.flows.NewDynamicQRTest"/>
+        </classes>
+    </test>
+    <test name="DeferredNative flow">
+        <classes>
+            <class name="scripts.flows.DeferredNativeTest"/>
+        </classes>
+    </test>
+    <test name="NativeOffline flow">
+        <classes>
+            <class name="scripts.flows.NativeOfflineTest"/>
+        </classes>
+    </test>
+    <test name="Merchant GetAgentInfo API">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetAgentInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-28416 - Offline Cases for SDKType">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateAIOSDKTypeParam"/>
+                    <include name="validateCUISDKTypeParam"/>
+                    <include name="validateSDKTypeParamWithoutCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27185 - Sending priority">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="Boss Panel with default merchant"/>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27185 - Sending priority Fetch QR V1">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="testFetchQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28967 Verify merchant name passed in promo flow">
+        <classes>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="PGP 28967 test merchant name in theia facade logs after paytm_cashback promo txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_1">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.GuestTokenFetchPayOptionsV1Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_4">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+
+    <test name="Merchant Request Type">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetMerchantRequestTypesTest"/>
+        </classes>
+    </test>
+
+    <test name="Card Index api changes">
+        <classes>
+            <class name="scripts.api.theia.fetchCardIdxNo.JWTTokenFetchCardIndexNoTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="WalletSettlement">
+        <classes>
+            <class name="scripts.WalletSetlement.WalletSettlementNotify"/>
+            <class name="scripts.WalletSetlement.WalletSettlementInstaproxy"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25879">
+        <classes>
+            <class name="scripts.Native.NativeMerchantStatus">
+                <methods>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingMLV"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingMLV"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingMLV"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingMLV"/>
+                </methods>
+            </class>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingStaticQR"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingStaticQR"/>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingStaticQR"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingStaticQR"/>
+                </methods>
+            </class>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisOFFPrefIsActiveForCC_UsingDynmQR"/>
+                    <include name="validateDirectFormParamNotInPTCFF4JFlagisOFFPrefNotActiveForCC_UsingDynmQR"/>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisONPrefNotActiveForCC_UsingDynmQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25870">
+        <classes>
+            <class name="scripts.mgv.TestNativeMGVFlow">
+                <methods>
+                    <include name="TC_PT_MGV_005"/>
+                    <include name="TC_PT_MGV_005_V2"/>
+                    <include name="TC_PT_MGV_006"/>
+                    <include name="TC_PT_MGV_007"/>
+                    <include name="TC_PT_MGV_008"/>
+                    <include name="TC_PT_MGV_009"/>
+                    <include name="TC_PT_MGV_010"/>
+                    <include name="TC_PT_MGV_011"/>
+                    <include name="TC_PT_MGV_012"/>
+                    <include name="TC_PT_MGV_012_V2"/>
+                    <include name="TC_PT_MGV_013"/>
+                    <include name="TC_PT_MGV_014"/>
+                    <include name="TC_PT_MGV_015"/>
+                    <include name="TC_PT_MGV_016"/>
+                    <include name="TC_PT_MGV_017"/>
+                    <include name="TC_PT_MGV_018"/>
+                    <include name="TC_PT_MGV_019"/>
+                    <include name="TC_PT_MGV_019_V2"/>
+                    <include name="TC_PT_MGV_020"/>
+                    <include name="TC_PT_MGV_021"/>
+                    <include name="TC_PT_MGV_022"/>
+                    <include name="TC_PT_MGV_023"/>
+                    <include name="TC_PT_MGV_024"/>
+                    <include name="TC_PT_MGV_025"/>
+                    <include name="TC_PT_MGV_026"/>
+                    <include name="TC_PT_MGV_026_V2"/>
+                    <include name="TC_PT_MGV_027"/>
+                    <include name="TC_PT_MGV_028"/>
+                    <include name="TC_PT_MGV_029"/>
+                    <include name="TC_PT_MGV_030"/>
+                    <include name="TC_PT_MGV_031"/>
+                    <include name="TC_PT_MGV_032"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-EMI Subvention Phase 2">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t29bankAPIPhase2"/>
+                    <include name="t30bankAPIPhase2"/>
+                    <include name="t31bankAPIPhase2"/>
+                    <include name="t32bankAPIPhase2"/>
+                    <include name="t33bankAPIPhase2"/>
+                    <include name="t34bankAPIPhase2"/>
+                    <include name="t35bankAPIPhase2"/>
+                    <include name="t36bankAPIPhase2"/>
+                    <include name="t37bankAPIPhase2"/>
+                    <include name="t38bankAPIPhase2"/>
+                    <include name="t39bankAPIPhase2"/>
+                    <include name="t40bankAPIPhase2"/>
+                    <include name="t41bankAPIPhase2"/>
+                    <include name="t42bankAPIPhase2"/>
+                    <include name="t43bankAPIPhase2"/>
+                    <include name="t44bankAPIPhase2"/>
+                    <include name="t45bankAPIPhase2"/>
+                    <include name="t46bankAPIPhase2"/>
+                    <include name="t47tenureAPIPhase2"/>
+                    <include name="t48tenureAPIPhase2"/>
+                    <include name="t49tenureAPIPhase2"/>
+                    <include name="t50tenureAPIPhase2"/>
+                    <include name="t51tenureAPIPhase2"/>
+                    <include name="t52tenureAPIPhase2"/>
+                    <include name="t53tenureAPIPhase2"/>
+                    <include name="t54tenureAPIPhase2"/>
+                    <include name="t55tenureAPIPhase2"/>
+                    <include name="t56tenureAPIPhase2"/>
+                    <include name="t57tenureAPIPhase2"/>
+                    <include name="t58tenureAPIPhase2"/>
+                    <include name="t59tenureAPIPhase2"/>
+                    <include name="t60tenureAPIPhase2"/>
+                    <include name="t61tenureAPIPhase2"/>
+                    <include name="t62tenureAPIPhase2"/>
+                    <include name="t63validateAPIPhase2"/>
+                    <include name="t64validateAPIPhase2"/>
+                    <include name="t65validateAPIPhase2"/>
+                    <include name="t66validateAPIPhase2"/>
+                    <include name="t67validateAPIPhase2"/>
+                    <include name="t68validateAPIPhase2"/>
+                    <include name="t69validateAPIPhase2"/>
+                    <include name="t70validateAPIPhase2"/>
+                    <include name="t71validateAPIPhase2"/>
+                    <include name="t72validateAPIPhase2"/>
+                    <include name="t73validateAPIPhase2"/>
+                    <include name="t74validateAPIPhase2"/>
+                    <include name="t75validateAPIPhase2"/>
+                    <include name="t76validateAPIPhase2"/>
+                    <include name="t77validateAPIPhase2"/>
+                    <include name="t78validateAPIPhase2"/>
+                    <include name="t79validateAPIPhase2"/>
+                    <include name="t80validateAPIPhase2"/>
+                    <include name="t81initiateAPIPhase2"/>
+                    <include name="t82initiateAPIPhase2"/>
+                    <include name="t83initiatePTCAPIPhase2"/>
+                    <include name="t84initiatePTCAPIPhase2"/>
+                    <include name="t85initiatePTCAPIPhase2"/>
+                    <include name="t86initiatePTCAPIPhase2"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                    <include name="t88initiatePTCAPIPhase2"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Fetch bin details">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="FBD_PCF_DC"></include>
+                    <include name="FBD_PCF_CC"></include>
+                    <include name="FBD_PCF_AMEX"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native.FetchVPADetails">
+        <classes>
+            <class name="scripts.Native.FetchVPADetails"/>
+        </classes>
+    </test>
+
+
+    <test name="FPO Native cases for PGP-21772">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                    <include name="enhancedOrderingLoggedIn"/>
+                    <include name="enhancedOrderingLogInCashierPage"/>
+                    <include name="enhancedOrderingHybrid"/>
+                    <include name="enhancedOrderingHybridSSO"/>
+                    <include name="enhancedOrderingAddMoneySSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

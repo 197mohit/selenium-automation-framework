@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notifications" verbose="1" parallel="methods" thread-count="5">
+    <test name="Notification API's">
+        <classes>
+            <class name="scripts.notificationLatestApi.VoidNotifyApi">
+                <methods>
+                    <include name="Test_001_VoidNotify_orderClosed"/>
+                    <include name="Test_002_VoidNotify_orderSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

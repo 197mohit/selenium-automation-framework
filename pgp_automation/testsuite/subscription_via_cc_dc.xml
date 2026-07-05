@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription_via_cc_dc" verbose="1">
+    <test name="Subscription_via_cc_dc">
+        <parameter name="theme" value="merchant"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AOA_Suite" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="AOA">
+    <parameter name="theme" value="enhancedweb_revamp">
+        <classes>
+            <class name="scripts.AOATxn"/>
+        </classes>
+    </parameter>
+    </test>
+
+    <test name="AOA Merchant Creation API's">
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifyingDelete_Acquiring_API"/>
+                    <include name="verifyingQuery_Acquiring_API"/>
+                    <include name="verifyingAddAcquiringAPI_UPI"/>
+                    <include name="verifyingAddAcquiringAPI_WALLET"/>
+                    <include name="verifyingAddAcquiringAPI_CREDIT_CARD"/>
+                    <include name="verifyingAddAcquiringAPI_DEBIT_CARD"/>
+                    <include name="verifyingAdd_CC_BILLDESK_GatewayAPI"/>
+                    <include name="verifyingAdd_CC_AVENUE_GatewayAPI"/>
+                    <include name="verifyingAdd_PAY_U_GatewayAPI"/>
+                    <include name="verifying_ADD_PAYTM_PG_GatewayAPI"/>
+                    <include name="verifyingAddMerchantAPI"/>
+                    <include name="PGP_37511_verifyMidPresence_getByAOAMidGatewayName"/>
+                    <include name="verifying_AddAcquiring_For_UnsupportedCardScheme"/>
+                    <include name="verifying_AddAcquiring_For_unsupportedCardSubTypes"/>
+                    <include name="verifying_AddAcquiring_For_unsupportedIssuingBanks"/>
+                    <include name="verifying_AddAcquiring_For_unsupportedUpiPayMethods"/>
+                    <include name="verifying_FPO_For_UnsupportedCardScheme"/>
+                    <include name="verifying_FPO_For_unsupportedCardSubTypes"/>
+                    <include name="verifying_FPO_For_unsupportedIssuingBanks"/>
+                    <include name="verifying_FPO_For_unsupportedUpiPayMethods"/>
+                    <include name="verifying_Request_Sent_To_TimeOutCentre"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AOA Merchant Transactions CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Successful_CC_TXN_"/>
+                    <include name="verifying_Successful_DC_TXN_"/>
+                    <include name="verifying_Successful_DirectOTP_BANK_TXN"/>
+                    <include name="verifying_Failed_DirectOTP_BANK_TXN"/>
+                    <include name="verifying_FailureTxn_VIA_Cancelling_BankPage"/>
+                    <include name="verifying_toUseDirectPayment_Flag_in_DirectOTP_BANK_TXN"/>
+                    <include name="verifying_formAOARequest_Flag_in_DirectOTP_BANK_TXN"/>
+                    <include name="verify_AOAWalletSupportonCheckoutJS"/>
+                    <include name="verify_AOAWalletSupportonElementJS"/>
+                    <include name="aoa_One_Time_EMI_Payments"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AOA Merchant Transaction Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Successful_CC_TXN_NATIVEPLUS"/>
+                    <include name="verifying_Successful_DC_TXN_NATIVEPLUS"/>
+                    <include name="verifying_Failure_DirectOTP_BANK_TXN_CheckoutJS"/>
+                    <include name="verifying_Successful_DC_TXN_NATIVEPLUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AOA Merchant Transaction CheckoutJS element Page">
+        <parameter name="checkoutjse_web" value="true"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Successful_DirectOTP_BANK_TXN_CheckoutJS_Element"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Upfront Amount Variation with FIX amount type">
+        <classes>
+            <class name="scripts.AOA.AOAMaxLife">
+                <methods>
+                    <include name="PGP_37533_VerifythatmidConversiontakesplaceonCreateSubs"/>
+                    <include name="PGP_37533_VerifythatmidConversiontakesplaceonPTCcall"/>
+                    <include name="PGP_37533_VerifythatTxnforPPBLCisonPgMIDandOrderID"/>
+                    <include name="PGP_37533_Verifye2eMaxLifeUPItxn"/>
+                    <include name="PGP_37533_VerifythatAOAMIDisreturnedinGetTxnStatusReponse"/>
+                    <include name="PGP_37533_VerifythatAOAMID_isabletoRefund"/>
+                    <include name="PGP_38073_VerifyPeonSentforSuccessMaxLifeUPItxn"/>
+                    <include name="PGP_38073_VerifyPeonSentforFailureMaxLifeUPItxn"/>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_CCTxn"/>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_UPITxn"/>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_DCTxn"/>
+                    <include name="PGP_38289_VerifyPeonSentforAOA_NBTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AOA Wallet native test case">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="nativeWalletFlow_AOA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify successful peon for AOA">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Success_Peon_AOA_CC_Txn"/>
+                    <include name="verifying_Success_Peon_AOA_NB_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

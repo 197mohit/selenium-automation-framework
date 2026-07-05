@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Verifying v5 for Checkoutjs test cases wap and web UI REVAMP 1" verbose="1">
+<test name="Checkoutjs v5 validation for  wap and web UI REVAMP" verbose="1">
+        <parameter name="theme" value="checkoutjs_wap_revamp"></parameter>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateConfigWithChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithParentAndChildThemeOverwriteEnabled"/>
+                    <include name="ValidateParentAndChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateSuccessTxnUsingNBAfterCCRetry"/>
+                    <include name="ValidateSuccessTxnUsingUPI"/>
+                    <include name="ValidateZeroRetry"/>
+                    <include name="VerifyWebviewSupportOnJS_When_FlagEnabled"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify version v5 for Web UI Revamp1 ">
+        <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateConfigWithChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithParentAndChildThemeOverwriteEnabled"/>
+                    <include name="ValidateParentAndChildMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateSuccessTxnUsingNBAfterCCRetry"/>
+                    <include name="ValidateZeroRetry"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+      <test name ="Verify version v5 for web UI revamp OrderAmountFpoV2 cases">
+      <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+      <classes>
+        <class name="scripts.OrderAmountFpoV2">
+        <methods>
+            <include name="TC_003_Validate_successSubs_withInitiateAmt"/>
+        </methods>
+        </class>
+       </classes>
+    </test>
+    </suite>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-59421" verbose="1" thread-count="5" parallel="tests">
+
+    <test name="Native PennyDrop PCF disabled">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="validatePennyDropSIP_51051000100000000052"/>
+                    <include name="validatePennyDropSubs_51051000100000000052"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Enhanced PennyDrop PCF disabled">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="validateEnhancedOrderCreateon_51051000100000000052"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

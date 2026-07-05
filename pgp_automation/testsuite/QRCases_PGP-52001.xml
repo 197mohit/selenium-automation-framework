@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-52001 : Scan and Pay | Location not available in Passbook for iOS txns" verbose="1" thread-count="2" parallel="methods">
+    <test name="PGP-52001 : Scan and Pay | Location not available in Passbook for iOS txns">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="TC09_PGP_52001"/>
+                    <include name="TC10_PGP_52001"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

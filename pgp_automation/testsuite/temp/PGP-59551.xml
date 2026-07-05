@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI PSP Consult Pcf Fee Validation" verbose="1">
+    <test name="UPI PSP CONSULT PCF FEE VALIDATION">
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiCreditLine"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

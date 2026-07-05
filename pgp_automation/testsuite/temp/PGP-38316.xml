@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38316">
+    <test name="FGW Mappings">
+        <classes>
+            <class name="scripts.notificationTemplate.PGP38316NewFGWMappingwithContextualErrorMessagesFailedSettlementTxn">
+                <methods>
+                    <include name="FgwBankFailSpecificReason_MerchantAutoWithdraw"/>
+                    <include name="FgwAccountFrozen_MerchantWithdraw"/>
+                    <include name="FgwBankFailSpecificReason_OnlineSettlement"/>
+                    <include name="FgwAccountFrozen_RealtimeSettlement"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ApplySuperCashAPI" verbose="1" thread-count="6" parallel="methods">
+    <test name="Apply SuperCash API Test">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-59017.xml">
+  <test name="Verify deeplink standardization is working fine">
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.DeeplinkStandardisation">
+      </class>
+    </classes>
+  </test>
+</suite>

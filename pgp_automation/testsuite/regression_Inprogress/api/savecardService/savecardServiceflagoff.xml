@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Savecard Service API" verbose="1" parallel="methods" thread-count="3">
+    <test name="Savecard Service API TCs">
+        <classes>
+            <class name="scripts.api.savedcardservice.getsavedcardbycustidmidchecksum.GetSavedCardByCustIdMIdChecksumFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbyssotoken.GetSavedCardBySSOTokenFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbycustidmid.PGGetSavedCardByCustIdMIdFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbyuseridtokenidtokentype.PGGetSavedCardByUserIdTokenIdTokenTypeFlagOffTest"/>
+        </classes>
+    </test>
+</suite>

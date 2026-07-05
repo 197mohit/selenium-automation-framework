@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58574 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-58574">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateUnifiedOfferTokenNotPresent_singleItemBasedOffer"/>
+                    <include name="validateUnifiedOfferTokenNotPresent_MultiItemBasedOffer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-50508" verbose="1">
+    <test name="Make bin info dynamic in Card service via v2 fetch all API">
+        <classes>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest">
+                <methods>
+                    <include name="requestToV2_fetchall_SavedCardByTokenType"/>
+                    <include name="requestToV2_fetchall_SavedCardByTokenType_SuccessResponse"/>
+                    <include name="requestToV2_fetchall_SavedCardByTokenType_response"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests">
+                <methods>
+                    <include name="requestToV2_fetchall_merchant_coft_card"/>
+                    <include name="requestToV2_fetchall_merchant_coft_card_SuccessResponse"/>
+                    <include name="V2fetchall_merchant_coft_card_Response"/>
+                    <include name="merchantCoftCard_Response_validate"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests">
+                <methods>
+                    <include name="requestToV2_fetchall_SavedCardByUser"/>
+                    <include name="requestToV2_fetchall_SavedCardByUserID_SuccessResponse"/>
+                    <include name="requestToV2_fetchall_SavedCardByUserID_Response"/>
+                    <include name="SavedCardByUserID_Response_Validate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

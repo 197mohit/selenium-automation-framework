@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPBL CO Then Pay Refund Txn " verbose="1">
+    <test name="PPBL CO Then Pay Refund Test">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateFullAsyncRefundCoThenPayPPBLTxnPG2MID"/>
+                    <include name="validatePartialAsyncRefundCoThenPayPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

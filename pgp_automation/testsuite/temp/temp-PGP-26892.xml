@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-26892" verbose="1" parallel="methods">
+    <test name="PGP-26892">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtWithoutDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithSameDetailsAfterDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterDeletingCachedKey"/>
+                    <include
+                            name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgWithoutDeletingCachedKey"/>
+                    <include
+                            name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgAfterDeletingCachedKey"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

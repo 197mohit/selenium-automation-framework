@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56497 JWT Support in v1Validate api response" verbose="1">
+    <test name="JWT Support in v1Validate api" >
+        <classes>
+            <class name="scripts.api.UPI.V1ValidateApiJWTSupport">
+                <methods>
+                    <include name="v1ValidateVpa_withJWT"/>
+                    <include name="v1ValidateVpa_withoutJWT"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

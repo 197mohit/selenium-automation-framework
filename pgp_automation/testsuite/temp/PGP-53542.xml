@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-53542" verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-53542 cases">
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinCOFTOfSameCard"/>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinCOFTOfDifferentCard"/>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinCOFTOfHDFCCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

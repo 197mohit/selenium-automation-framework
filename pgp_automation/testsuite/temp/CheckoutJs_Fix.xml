@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <include name="PGP_49001_TC04"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                    <include name="ValidateBrandAndBusinessNameForRetryTxn"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

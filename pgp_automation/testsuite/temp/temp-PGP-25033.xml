@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-25033" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-25033">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.GuestTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV2Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+</suite>

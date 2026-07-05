@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35652" verbose="1">
+    <test name="EMI subvention offer visibility on the payment page">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="verifyEMISubventionStrip_ForStandardEMI"/>
+                    <include name="verifyEMISubventionStrip_ForAmountBasedEMI"/>
+                    <include name="verifyEMISubventionStrip_ForItemBasedEMI"/>
+                    <include name="EMISubCheckoutJsItembased01"/>
+                    <include name="EMISubventionAmountBasedSuccess01"/>
+                    <include name="EMISubventionAmountBasedSuccess02"/>
+                    <include name="EMISubventionAmountBasedSuccess03"/>
+                    <include name="EMISubCheckoutJsItembased02"/>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                    <include name="EMISubCheckoutJsItembased04"/>
+                    <include name="EMISubCheckoutJsItembased05"/>
+                    <include name="EMISubCheckoutJsItembased06"/>
+                    <include name="EMISubCheckoutJsItembased07"/>
+                    <include name="EMISubCheckoutJsItembased11"/>
+                    <include name="EMISubCheckoutJsItembased09"/>
+                    <include name="EMISubCheckoutJsItembased08"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

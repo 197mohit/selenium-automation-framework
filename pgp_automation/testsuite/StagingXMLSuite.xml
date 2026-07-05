@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Staging Tests" verbose="1" thread-count="4" parallel="tests">
+    <listeners>
+        <listener class-name="com.paytm.listeners.StatusCounterListener"/>
+        <listener class-name="com.paytm.listeners.ScreenListener"></listener>
+    </listeners>
+    <test name="Staging Tests">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_49001_TC01"/>
+                    <include name="PGP_49001_TC02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging Subscription Tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_49001_TC03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging CheckoutJs Tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingNB"/>
+                    <include name="SuccessfulEmiDCTransactionUsingMobNoInInitiateAPI"/>
+                    <include name="validateSuccessTxnUsingSavedVPA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging Enhance Tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging Elementjs Tests">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UiSanityElementJs">
+                <methods>
+                    <include name="nbSuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Link Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.GetLinkInfoApi">
+                <methods>
+                    <include name="GetLinkInfo_001"/>
+                    <include name="GetLinkInfo_003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

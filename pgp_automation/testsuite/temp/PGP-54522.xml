@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-54522" verbose="1">
+    <test name="Risk Refund Consult ">
+        <classes>
+            <class name="scripts.RefundTest.RefundValidation">
+                <methods>
+                    <include name="validateriskrefundforRiskUser"/>
+                    <include name="validateriskrefundforRiskUserCC"/>
+                    <include name="validateriskrefundforCCNonLoggedInMoreThan50kFlagOn"/>
+                    <include name="validateriskrefundforNonLoggedMoreThan50kInFlagOn"/>
+                    <include name="validateriskrefundforCCNonLoggedInEqualto50kFlagOn"/>
+                    <include name="validateriskrefundforNonLoggedInEqualto50kFlagOn"/>
+                    <include name="validateriskrefundforCCNonLoggedInFlagOnlessthan50k"/>
+                    <include name="validateriskrefundCCforNonRiskUserFlagOn"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOn"/>
+                    <include name="validateriskrefundforCCNonRiskUserFlagOnmorethan50k"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOnmorethan50k"/>
+                    <include name="validateriskrefundforCCNonRiskUserFlagOnlessthan50k"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOnlessthan50k"/>
+                    <include name="validateriskrefundforCCNonRiskUserFlagOnequalto50k"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOnequalto50k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

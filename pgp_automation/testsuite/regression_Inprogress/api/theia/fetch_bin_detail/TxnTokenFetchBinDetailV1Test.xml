@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia APIs" verbose="1" parallel="methods" thread-count="10">
+    <test name="TxnTokenFetchBinDetailV1Test">
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test"/>
+        </classes>
+    </test>
+</suite>

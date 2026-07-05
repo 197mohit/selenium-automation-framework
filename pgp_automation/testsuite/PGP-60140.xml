@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notifications" verbose="1" parallel="methods" thread-count="5">
+
+    <test name="Digio Enach - AuthMode">
+        <classes>
+            <class name="scripts.BankMandate.DigioEnach">
+                <methods>
+                    <include name="TC_001_mandateAuth_blank"/>
+                    <include name="TC_002_mandateType_AADHAR"/>
+                    <include name="TC_003_mandateType_DEBIT_CARD"/>
+                    <include name="TC_004_mandateType_NET_BANKING"/>
+                    <include name="TC_005_mandateType_create_and_PTC"/>
+                    <include name="TC_006_mandateType_AADHAR_blankPTC"/>
+                    <include name="TC_007_mandateType_AADHAR_inPTC"/>
+                    <include name="TC_008_mandateType_NB_inPTC"/>
+                    <include name="TC_009_mandateType_DC_inPTC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

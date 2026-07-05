@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39476" verbose="1">
+    <test name="Fetch Payment Mode Status using Token Type Checksum">
+        <classes>
+            <class name="scripts.api.theia.FetchUserPayModeStatusTest">
+            </class>
+        </classes>
+    </test>
+</suite>

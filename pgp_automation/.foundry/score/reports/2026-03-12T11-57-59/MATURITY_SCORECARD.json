@@ -1,0 +1,218 @@
+{
+  "scoring_method": "deterministic",
+  "overall_score": {
+    "total": "84/120",
+    "percentage": 69.7,
+    "grade": "C",
+    "maturity_level": "Moderate",
+    "inconclusive_count": 0
+  },
+  "criteria_scores": {
+    "ai_readiness": {
+      "score": 10,
+      "name": "ai_readiness",
+      "confidence": "high",
+      "findings": [
+        "Found 2 matching file(s) for path pattern",
+        "Found 1 matching file(s) for path pattern"
+      ],
+      "issues": []
+    },
+    "cicd": {
+      "score": 6,
+      "name": "cicd",
+      "confidence": "high",
+      "findings": [
+        "Found 1 pattern match(es) in scanned files",
+        "Found 1 matching file(s) for path pattern"
+      ],
+      "issues": [
+        {
+          "severity": "medium",
+          "issue": "cicd-linting-in-pipeline",
+          "recommendation": "Add a linting step to the CI pipeline",
+          "evaluator": "cicd"
+        },
+        {
+          "severity": "high",
+          "issue": "cicd-tests-in-pipeline",
+          "recommendation": "Add a test execution step to the CI pipeline",
+          "evaluator": "cicd"
+        }
+      ]
+    },
+    "code_quality": {
+      "score": 4,
+      "name": "code_quality",
+      "confidence": "high",
+      "findings": [
+        "Found 790 matching file(s) for path pattern",
+        "Found 21336 code pattern match(es)"
+      ],
+      "issues": [
+        {
+          "severity": "medium",
+          "issue": "code-quality-has-formatter",
+          "recommendation": "Configure a code formatter in the project",
+          "evaluator": "code_quality"
+        },
+        {
+          "severity": "high",
+          "issue": "code-quality-has-linter",
+          "recommendation": "Configure a linter in the project",
+          "evaluator": "code_quality"
+        },
+        {
+          "severity": "low",
+          "issue": "code-quality-no-todo-fixme",
+          "recommendation": "Resolve TODO and FIXME comments in source code",
+          "evaluator": "code_quality"
+        }
+      ]
+    },
+    "dependencies": {
+      "score": 2,
+      "name": "dependencies",
+      "confidence": "medium",
+      "findings": [
+        "Found 48 pattern match(es) in scanned files"
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "dependencies-has-lock-file",
+          "recommendation": "Add a dependency lock file for reproducible builds",
+          "evaluator": "dependencies"
+        },
+        {
+          "severity": "medium",
+          "issue": "dependencies-no-wildcard-imports",
+          "recommendation": "Replace wildcard imports with explicit imports",
+          "evaluator": "dependencies"
+        },
+        {
+          "severity": "low",
+          "issue": "dependencies-no-wildcard-versions",
+          "recommendation": "Pin dependency versions instead of using wildcards",
+          "evaluator": "dependencies"
+        }
+      ]
+    },
+    "developer_experience": {
+      "score": 0,
+      "name": "developer_experience",
+      "confidence": "low",
+      "findings": [],
+      "issues": []
+    },
+    "documentation": {
+      "score": 10,
+      "name": "documentation",
+      "confidence": "high",
+      "findings": [
+        "Match count (223) meets threshold requirement",
+        "Found 1 matching file(s) for path pattern",
+        "Found 3 matching file(s) for path pattern",
+        "Found 13 pattern match(es) in scanned files",
+        "Found 2 pattern match(es) in scanned files"
+      ],
+      "issues": []
+    },
+    "git_practices": {
+      "score": 10,
+      "name": "git_practices",
+      "confidence": "high",
+      "findings": [
+        "Found 1 matching file(s) for path pattern",
+        "Git history analysis passed: found matching commits",
+        "Found 0 matching file(s) for path pattern",
+        "Git history analysis passed: found matching commits"
+      ],
+      "issues": []
+    },
+    "infrastructure": {
+      "score": 0,
+      "name": "infrastructure",
+      "confidence": "medium",
+      "findings": [],
+      "issues": [
+        {
+          "severity": "medium",
+          "issue": "infra-has-dockerfile",
+          "recommendation": "Add a Dockerfile for containerized deployment",
+          "evaluator": "infrastructure"
+        }
+      ]
+    },
+    "observability": {
+      "score": 10,
+      "name": "observability",
+      "confidence": "medium",
+      "findings": [
+        "Found 2 code pattern match(es)",
+        "Found 19 pattern match(es) in scanned files"
+      ],
+      "issues": []
+    },
+    "release_management": {
+      "score": 10,
+      "name": "release_management",
+      "confidence": "high",
+      "findings": [
+        "Git history analysis passed: found matching commits",
+        "Found 1 pattern match(es) in scanned files",
+        "Git history analysis passed: found matching commits",
+        "Git history analysis passed: found matching commits"
+      ],
+      "issues": []
+    },
+    "security": {
+      "score": 4,
+      "name": "security",
+      "confidence": "high",
+      "findings": [
+        "Found 0 code pattern match(es)",
+        "Found 0 code pattern match(es)"
+      ],
+      "issues": [
+        {
+          "severity": "high",
+          "issue": "security-bandit-in-ci",
+          "recommendation": "Add a static security analysis tool (SAST) to the CI pipeline",
+          "evaluator": "security"
+        },
+        {
+          "severity": "high",
+          "issue": "security-has-security-scanner",
+          "recommendation": "Add a security scanning configuration file",
+          "evaluator": "security"
+        },
+        {
+          "severity": "critical",
+          "issue": "security-no-hardcoded-secrets",
+          "recommendation": "Move hardcoded secrets to environment variables",
+          "evaluator": "security"
+        }
+      ]
+    },
+    "testing": {
+      "score": 8,
+      "name": "testing",
+      "confidence": "high",
+      "findings": [
+        "Found 930 matching file(s) for path pattern",
+        "Found 168 matching file(s) for path pattern",
+        "Match count (634) meets threshold requirement",
+        "Match count (626) meets threshold requirement"
+      ],
+      "issues": [
+        {
+          "severity": "medium",
+          "issue": "testing-has-conftest",
+          "recommendation": "Add a shared test configuration file (conftest or equivalent)",
+          "evaluator": "testing"
+        }
+      ]
+    }
+  }
+}

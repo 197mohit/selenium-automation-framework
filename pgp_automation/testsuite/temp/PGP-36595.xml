@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Autologin for appInvokeflow" verbose="1">
+    <test name="AppInvokeflow on enhance page">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Autologin.AutoLogin">
+                <methods>
+                    <include name="AutoLoginforappInvokeflow"/>
+                    <include name="AutologinRememberboxisunchecked"/>
+                    <include name="Autologinaftercookiecleared"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

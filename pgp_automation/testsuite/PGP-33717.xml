@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33717" verbose="1" thread-count="20" parallel="tests">
+    <test name="Saved Bank Mandate details for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="verify_SavedBankMandate_Details"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Saved Bank Mandate details for Checkout JS web">
+        <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+              <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_SavedBankMandate_Details"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

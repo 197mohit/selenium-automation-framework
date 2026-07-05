@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="MDR-PCF-147" verbose="1">
+    <test name="Verify PCF on merchant" parallel="methods" thread-count="1">
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative"/>
+            <methods>
+                <include name="verifyMDRPCFforProductCode147"/>
+            </methods>
+            <methods>
+                <include name="verifyMDRPCFnotAddedforProductCode147"/>
+            </methods>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="healthchecks">
+    <!-- <test name="Solidity checks for automation " parallel="methods" thread-count="5">-->
+    <test name="Solidity checks for automation ">
+        <classes>
+            <class name="scripts.SolidityCheck.HealthCheck"/>
+            <class name="scripts.SolidityCheck.ValidateModules"/>
+        </classes>
+    </test>
+    <test name="SmokeTest with enhancedWeb Theme" parallel="methods" thread-count="12" >
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_CC_S"/>
+                </methods>
+            </class>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="PGP_178_successfulOnusEMITxn"/>
+                </methods>
+            </class>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountConfigured"/>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                </methods>
+            </class>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_001"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

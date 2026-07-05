@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia_Suite" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="session-compatibility">
+        <classes>
+            <class name="scripts.api.theia.CompatibilityTest"/>
+            <class name="scripts.api.theia.OfflineCompatibilityTest"/>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <parameter name="orderId" value="T1-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="session-compatibility_1">
+        <classes>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

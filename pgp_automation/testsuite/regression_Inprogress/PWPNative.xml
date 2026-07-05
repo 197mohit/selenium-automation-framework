@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PWPNative" verbose="1" parallel="tests" thread-count="10">
+    <test name="temp-PWP cases for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PWPNative"/>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for Native ">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PWPNative"/>
+        </classes>
+    </test>
+</suite>

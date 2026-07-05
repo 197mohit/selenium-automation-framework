@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPBL Refund Txn " verbose="1">
+    <test name="PPBL Refund Test"><!-- These Tese Cases to be run only on QA8 profile-->
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="PPBLPG2FullAsyncRefund"/>
+                    <include name="PPBLPG2PartialAsyncRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

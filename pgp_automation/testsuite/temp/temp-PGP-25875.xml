@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-25875" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-25875">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test body.simplifiedPaymentOffers is returned in response when body.simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test body.simplifiedPaymentOffers is not returned in response when body.simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body.fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body.fetchAllPaymentOffers = null"/>
+                    <include name="test when body.fetchAllPaymentOffers = ''"/>
+                    <include name="test when body.fetchAllPaymentOffers equals random value"/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant does not have promos configured'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals valid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals invalid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = false given merchant has promos configured'/>
+                    <include name="test when body.applyPaymentOffer is not provided"/>
+                    <include name="test when body.applyPaymentOffer = null"/>
+                    <include name="test when body.applyPaymentOffer = ''"/>
+                    <include name="test when body.applyPaymentOffer equals random value"/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="test body.simplifiedPaymentOffers is returned in response when body.simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test body.simplifiedPaymentOffers is not returned in response when body.simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body.fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body.fetchAllPaymentOffers = null"/>
+                    <include name="test when body.fetchAllPaymentOffers = ''"/>
+                    <include name="test when body.fetchAllPaymentOffers equals random value"/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant does not have promos configured'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals valid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals invalid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = false given merchant has promos configured'/>
+                    <include name="test when body.applyPaymentOffer is not provided"/>
+                    <include name="test when body.applyPaymentOffer = null"/>
+                    <include name="test when body.applyPaymentOffer = ''"/>
+                    <include name="test when body.applyPaymentOffer equals random value"/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

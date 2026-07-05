@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RiskAddMoney" verbose="1" parallel="tests" thread-count="10">
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API) ">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <include name="fetchPayOptionForNonRiskRejectedUser"/>
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                    <include name="addMoneySavedCard"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="testGVScenario"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                    <include name="addMoneySavedCard"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="testGVScenario"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26893 - Risk Reject Transit Wallet">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="riskRejectTransit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

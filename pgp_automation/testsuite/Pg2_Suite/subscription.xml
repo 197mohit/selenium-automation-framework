@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription API" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="UPICollectNativeSubs" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="TC_004_Native_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <exclude name="Validate_PaymentServiceTypeNative_Subs_FullRefund"/>
+                    <exclude name="Validate_PaymentServiceTypeNative_Subs_PartialRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPIIntentNativeSubs" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="TC_004_Native_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <exclude name="TC_004_Native_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPIRenewSubs" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="TC_001_Renew_Subs_WithInGracePeriod"/>
+                    <exclude name="TC_001_Renew_MF_Subs_WithInGracePeriod"/>
+                    <exclude name="TC_001_Renew_RetryCountBreach"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-23725-Correct Error Message Tests for different paymodes">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyHDFCDebitCardNotAllowedwithOnlyHDFC_CCEnabledSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-21763 Subscription Renew - Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifySubsIDLengthValidationFailedMessage"/>
+                    <include name="verifyTxnAmountLengthValidationFailedMessage"/>
+                    <include name="verifyInvalidSavedCardIDMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-29589 - flexi subscription creation">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsMonth"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsYear"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsDay"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsWeek"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsBiMonthly"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsQuarter"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsSemiAnually"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsFortnight"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29589 - Flexi subscription testcases for renewal">
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithPPI"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithBankMandate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27716 - Native Plus cases for Pre Debit">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewCCMONTHDD"/>
+                    <include name="verifyRenewQUARTERDDDC"/>
+                    <include name="verifyRenewWEEKDDDC"/>
+                    <include name="verifyRenewCCONDEMANDDD"/>
+                    <include name="verifyRenewCCDAYDD"/>
+                    <!-- Exclude Zero Pass Percentage TCs
+                    <include name="verifyRenewBIMONTHLYDDCC"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32820 Validating siHubMode is not sent to P+">
+        <classes>
+            <class name="scripts.SIDetailsBlocked">
+                <methods>
+                    <exclude name="TC_002_siHubMode_notPassed_forWalletonly"/>
+                    <exclude name="TC_004_siHubMode_notPassed_forPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32817 PPI-N flow blocked for Subs">
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="TC_001_PPIN_txnFailed_forBlank_Paymode"/>
+                    <include name="TC_002_Wallet_Displayed_for_PPIN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28989 Native Plus" >
+        <classes>
+            <class name="scripts.SubscriptionDoubleOTP">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26916 Creating subscriptions">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <!--Exclued TCs are of Task PGP-33734 only needs to be executed in Revamp UI-->
+                    <exclude name="TC_01"/>
+                    <exclude name="TC_02"/>
+                    <exclude name="TC_03"/>
+                    <exclude name="TC_04"/>
+                    <exclude name="TC_05"/>
+                    <exclude name="TC_06"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="PGP_35247_TC_04_FIX"/>
+                    <exclude name="PGP_35247_TC_03_DAY"/>
+                    <exclude name="PGP_35247_TC_02_MONTH"/>
+                    <exclude name="PGP_35247_TC_05_ONDEMAND"/>
+                    <exclude name="PGP_35247_TC_01_YEAR"/>
+                    <exclude name="verify_closed_wallet_user_error_message_SubsFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26916 Creating subscriptions UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <exclude name="TC_05"/>
+                    <exclude name="TC_04"/>
+                    <exclude name="TC_01"/>
+                    <exclude name="TC_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29588 native Subscription testcases for freq fortnight">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifyBankMandateNotSupportedForFortnightFrequency"/>
+                    <include name="VerifySuccessfulSubsPPBLTxnForFreqFortnight"/>
+                    <include name="VerifySubsDetailsInFPOForSubsFrequencyFortnight"/>
+                    <include name="SuccessfulNativeMfSipWithFreqFORTNIGHT"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="E-Mandate Subscription tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <exclude name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefEnabled"/>
+                    <exclude name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymode"/>
+                    <exclude name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymodeandMandateType"/>
+                    <exclude name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefNotEnabled"/>
+                    <exclude name="VerifyBankNameinFPOEMandateForNATIVE_MF_SIP"/>
+                    <exclude name="VerifyBankNameinFPOEMandateForNATIVE_SUBSCRIPTION"/>
+                    <exclude name="iconURLpayModeBankMandateNativeSubs"/>
+                    <exclude name="iconURLpayModeBankMandateNativeMFSIP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="P-Mandate Subscription tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <exclude name="VerifyBankNameinFPOPMandateForNATIVE_MF_SIP"/>
+                    <exclude name="VerifyBankNameinFPOPMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Renew Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <exclude name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithPPI"/>
+                    <exclude name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithBankMandate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <exclude name="verifyHDFCDebitCardNotAllowedwithOnlyHDFC_CCEnabledSubscription"/>
+                    <exclude name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                    <exclude name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <exclude name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <exclude name="PGP_21763_verifyTxnAmountCannotBeGreaterthanMaxSubsAmountMessage"/>
+                    <exclude name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <exclude name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <exclude name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <exclude name="PGP_21763_verifyInvalidAppInvokeDeviceMessage"/>
+                    <exclude name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                    <exclude name="PGP_21763_verifyTxnAmtNotEqualtoMaxAmtMessage"/>
+                    <exclude name="verifySubsIDLengthValidationFailedMessage"/>
+                    <exclude name="verifyTxnAmountLengthValidationFailedMessage"/>
+                    <exclude name="verifyInvalidSavedCardIDMessage"/>
+                    <exclude name="PGP_18282_ValidateStatusAfterLoginNative"/>
+                    <exclude name="payChannelNotBlankFPOv2"/>
+                    <exclude name="payChannelNotBlankFPOv2PayModeBlank"/>
+                    <exclude name="payChannelNotBlankFPOv1PPBL"/>
+                    <exclude name="payChannelNotBlankFPOv1PayModeBlank"/>
+                    <exclude name="PGP_23279_verifySuccessBankMandateNativeSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifySuccessBankMandateNativeMFSIPwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifySuccessCCSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifySuccessCCSubscriptionwithhAppInvokeFlowZeroAmt"/>
+                    <exclude name="PGP_23279_verifySuccessDCSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifySuccessDCSubscriptionwithhAppInvokeFlowZeroAmt"/>
+                    <exclude name="PGP_23279_verifySuccessPPISubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifySuccessPPISubscriptionwithhAppInvokeFlowZeroAmt"/>
+                    <exclude name="PGP_23279_verifySuccessPPBLSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifySuccessPPBLSubscriptionwithhAppInvokeFlowZeroAmt"/>
+                    <exclude name="PGP_23279_verifySuccessUPISubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifyFailedCCSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="PGP_23279_verifyPendingCCSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <exclude name="verifyErrorMessageWhenMaxAmtandTxnAmtisZeroTypeVARIABLE"/>
+                    <exclude name="verifyErrorMessageWhenMaxAmtandTxnAmtisZeroTypeFIX"/>
+                    <exclude name="VerifyBankMandateNotSupportedForFortnightFrequency"/>
+                    <exclude name="VerifySuccessfulSubsPPBLTxnForFreqFortnight"/>
+                    <exclude name="VerifySubsDetailsInFPOForSubsFrequencyFortnight"/>
+                    <exclude name="SuccessfulNativeMfSipWithFreqFORTNIGHT"/>
+                    <exclude name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOneNativePPIN"/>
+                    <exclude name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOneNativePPINSubsOnWalletEnabled"/>
+                    <exclude name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOneNativePPIY"/>
+                    <exclude name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOneNativePPIYSubsOnWalletEnabled"/>
+                    <exclude name="TC_validateFailedDuringCreateSubs"/>
+                    <exclude name="verifyNativeWEEKsubsWithLessGraceperiod"/>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="PGP_37658_VerifythatUserisNavigatedtoBMURL"/>
+                    <exclude name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Bank Mandate Cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                    <include name="TC_002_Verify_Fields_are_noneditable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="E-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="P-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-18282 Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_18282_ValidateStatusAfterLoginNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27600 Test Cases">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="payChannelNotBlankFPOv2"/>
+                    <include name="payChannelNotBlankFPOv2PayModeBlank"/>
+                    <include name="payChannelNotBlankFPOv1PPBL"/>
+                    <include name="payChannelNotBlankFPOv1PayModeBlank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27722 Saved Mandates Priority List Tests">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefEnabled"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymodeandMandateType"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefNotEnabled"/>
+                    <!-- Exclude Zero Pass Percentage
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymode"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+<!--    R1 to R8 xml cases are deleted below cases are present here and R10 xml files-->
+
+    <test name="Mandate Subcription Creation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.SubsMandate">
+                <methods>
+                    <exclude name="TC_SM003_ValidateMndtNotCreated_NMS_amountGreat0"/>
+                    <exclude name="TC_SM003_ValidateMndtNotCreated_NS_amountGreat0"/>
+                    <exclude name="TC_SM015_ValidateSubs_Fail_NMS_enblRetryisNULL"/>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="TC_SM027_nonbankMandateDebitDateIsEqualToFutureDateNative"/>
+                    <exclude name="TC_SM028_nonbankMandateDebitDateIsEqualToFutureDateMUTUALFUND"/>
+                    <exclude name="TC_SM024_bankMandateDebitDateIsEqualToFutureDate"/>
+                    <exclude name="TC_SM025_bankMandateDebitDateIsEqualToFutureDate"/>
+                    <exclude name="TC_SM009_ValidateSubs_Fail_NMS_activeSubsCountCompleted"/>
+                    <exclude name="TC_SM009_ValidateSubs_Fail_NS_activeSubsCountCompleted"/>
+                    <exclude name="TC_SM016_ValidateSubs_Fail_NMS_emptyStartDate"/>
+                    <exclude name="TC_SM006_ValidateSubs_Success_NMS_FIX"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+    <!--Exclued TC's moved to include-->
+
+
+    <test name="Verify Subscription Error Message(TxnAmt=MaxAmt=0) for Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyErrorMessageWhenMaxAmtandTxnAmtisZeroTypeVARIABLE"/>
+                    <include name="verifyErrorMessageWhenMaxAmtandTxnAmtisZeroTypeFIX"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31174 Native Process Subscription">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyFpoResponseForAutoRefundMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27162 Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_27162_verifySubscriptionwhensubscriptionEnableRetryisZero"/>
+                    <include name="PGP_27162_verifySubscriptionwhensubscriptionEnableRetryisOne"/>
+                    <include name="PGP_27162_verifySubscriptionwhensubscriptionEnableRetryisGreaterThanOne"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Dynamic URL update for Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-39530 Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_39530_TC_01_Subs_GD_CC"/>
+                    <include name="PGP_39530_TC_02_Subs_GD_CC"/>
+                    <include name="PGP_39530_TC_03_Subs_GD_CC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- Exclude Zero Pass Percentage TCs
+   <test name="Subscription UPI UI">
+       <parameter name="theme" value="enhancedweb_revamp"/>
+       <classes>
+           <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+               <methods>
+                   <include name="PGP_39935_TC_SubsUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+
+    <test name="PGP-42982 - 3">
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC05_ValidateTheNewFieldsInFPO"/>
+                    <include name="TC06_ValidateTheNewFieldInFPOWhendeepLinkisFALSE"/>
+                    <include name="TC07_ValidateTheNewFieldInUpiPsp"/>
+                    <include name="TC08_ValidateSuccessFromUPIpspAPI"/>
+                    <include name="TC09_ValidateResponseWhenOrderIdIsInvalid"/>
+                    <include name="TC10_ValidateResponseWhenRequestTypeinNULL"/>
+                    <include name="TC11_ValidateFPOResponseForNATIVE_MF_SIP"/>
+                    <include name="TC12_ValidateSuccessResponseForNATIVE_MF_SIP"/>
+                    <include name="TC13_ValidateResponseWhenAmountTypeIsFix"/>
+                    <include name="TC14_ValidateResponseWhenAmountTypeIsVaraiableandForWeek"/>
+                    <include name="TC15_ValidateResponseWhenAmountTypeIsVaraiableandForQuarter"/>
+                    <include name="TC16_ValidateResponseWhenAmountTypeIsVaraiableForNATIVE_MF_SIP"/>
+                    <include name="TC17_ValidateResponseWhenAmountTypeIsVaraiableandForQuarter_NATIVE_MF_SIP"/>
+                    <include name="TC18_ValidateDeepLinkParameters"/>
+                    <include name="TC19_ValidateDeepLinkParametersForOndemandSubs"/>
+                    <include name="TC20_ValidateDeepLinkParametersForOndemandSubs_1"/>
+                    <include name="TC21_ValidateProductCode"/>
+                    <include name="TC22_ValidateProductCodeForNATIVE_MF_SIP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

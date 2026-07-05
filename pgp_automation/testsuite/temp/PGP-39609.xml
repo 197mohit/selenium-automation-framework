@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39609" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-39609 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="TC_01_BankMandateSubsRenewPPP"/>
+                </methods>
+            </class>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_02_UPISubsRenewPPP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

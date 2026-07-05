@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-BinMigration" verbose="1" thread-count="6" parallel="methods">
+    <test name="BankCardBinV1ApiTest">
+        <classes>
+            <class name="scripts.api.mappingService.BankCardBinV1ApiTest"/>
+        </classes>
+    </test>
+    <test name="BankCardBinApiTest">
+        <classes>
+            <class name="scripts.api.mappingService.BankCardBinApiTest"/>
+        </classes>
+    </test>
+    <test name="LowSuccessRate">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                <include name="testLowSuccessRateMessageWhenZeroSuccessRateis1"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

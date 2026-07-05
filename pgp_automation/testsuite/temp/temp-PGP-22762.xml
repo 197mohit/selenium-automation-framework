@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-22762" verbose="1">
+    <test name="PGP-22762 for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.RefundAsync">
+                    <methods>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementNB"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementDC"/>
+                        <include name="validateAsycRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateMasterRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateRefundHandlerAllowedForNonInstantSettlementTxn"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="PGP-22762 for Native Plus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.RefundAsync">
+                    <methods>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateAsycRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementNB"/>
+                        <include name="validateMasterRefundNotAllowedForInstantSettlementDC"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementNB"/>
+                        <include name="validateRefundHandlerNotAllowedForInstantSettlementDC"/>
+                        <include name="validateAsycRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateMasterRefundAllowedForNonInstantSettlementTxn"/>
+                        <include name="validateRefundHandlerAllowedForNonInstantSettlementTxn"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-7349" verbose="1" thread-count="5" parallel="methods">
+    <test name="PayeeMobileNumberAndpartnerReferenceNumberShouldComeInRespAuthResponseWhenItcomesinV3VpaAPIOfMerchantCenter">
+        <classes>
+            <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+                <methods>
+                    <include name="PayeeMobileNumberAndpartnerReferenceNumberShouldComeInRespAuthResponseWhenItcomesinV3VpaAPIOfMerchantCenter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

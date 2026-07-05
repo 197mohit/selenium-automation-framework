@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48426" verbose="1" parallel="tests" thread-count="1">
+    <test name="Subscription on postpaid">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="SubscriptionCheckStatusPostpaid"/>
+                    <include name="SubscriptionCheckStatusForINITSubs"/>
+                    <include name="SubscriptionCheckStatusForInvalidSubsID"/>
+                    <include name="SubscriptionCancelPostpaid"/>
+                    <include name="SubscriptionCancelForInvalidSubsID"/>
+                    <include name="SubscriptionCancelPOSTPAID_STATUS_NOTIFY_TOPIC"/>
+                    <include name="SubscriptionCheckStatusForCancelled"/>
+                    <include name="SubscriptionModifySUSPENDED"/>
+                    <include name="SubscriptionCheckStatusForSUSPENDED"/>
+                    <include name="SubscriptionPayloadToPOSTPAID_STATUS_NOTIFY_TOPICforSUSPENDED"/>
+                    <include name="SubscriptionActivateForSuspendedSubs"/>
+                    <include name="SubscriptionCheckStatusForActivateFromSuspended"/>
+                    <include name="SubscriptionPayloadPushedToPOSTPAID_STATUS_NOTIFY_TOPICForACTIVATE"/>
+                    <include name="SubscriptionModifyForInvalidSubsID"/>
+                    <include name="SubscriptionStatusModifyWithIncorrectStatus"/>
+                    <include name="PreNotifyStatusForPostpaidSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

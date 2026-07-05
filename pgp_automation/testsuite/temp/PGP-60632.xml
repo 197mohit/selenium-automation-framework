@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI PSP Consult Pcf Fee Validation" verbose="1">
+    <test name="UPI PSP CONSULT PCF FEE VALIDATION">
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiVoucher"/>
+                    <include name="validateTheiaUPIPSPReqAuthFlowinCOTP"/>
+                    <include name="validateTheiaUpiIntentPTCNonReqAuthFlowinCOTP"/>
+                    <include name="validateTheiaUpiCollectPTCNonReqAuthFlowinCOTP"/>
+                    <include name="validateUpiPspConsultOrderClosed"/>
+                    <include name="validateUpiPspConsultVpadoesnotexist"/>
+                    <include name="validateUpiPspConsultOrderdoesnotexist"/>
+                    <include name="validateUpiPspConsulttxnAmountInvalid"/>
+                    <include name="validateUpiPspConsultmidInvalid"/>
+                    <include name="validateUpiPspConsultMerchantIneligibleUPIPPIWALLET"/>
+                    <include name="validateUpiPspConsultMerchantIneligibleUPICREDITCARD"/>
+                    <include name="validateUpiPspConsultMerchantdoesnotsupportUPICREDITLINEInterestFree"/>
+                    <include name="validateUpiPspConsultMerchantdoesnotsupportUPICREDITLINEInterestBearing"/>
+                    <include name="validateUpiPspConsultMerchantdoesnotsupportUPICREDITLINEwithrandomsubAccountTypeValue"/>
+                    <include name="validateUpiPspConsulttxnFeemismatchUpiCreditCard"/>
+                    <include name="validateUpiPspConsulttxnFeemismatchUpiCreditLine"/>
+                    <include name="validateUpiPspConsulttxnFeemismatchUpiPpiWallet"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrwithrandompayerPaymentInstrument"/>
+                    <include name="validateUpiIntentRequestforcreditlinewhenCreditLineOnUpiRailedDisabled"/>
+                    <include name="validateUpiCollectRequestforcreditlinewhenCreditLineOnUpiRailedDisabled"/>
+                    <include name="validateUpiIntentRequestforcreditlinewhenCreditlinelimitisbreached"/>
+                    <include name="validateUpiCollectRequestforcreditlinewhenCreditlinelimitisbreached"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditCardMisMatchAmount"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLineMisMatchAmount"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiPpiWalletMisMatchAmount"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLineRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

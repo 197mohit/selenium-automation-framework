@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-23311 Merchant Request Type" verbose="1">
+    <test name="Merchant Request Type">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetMerchantRequestTypesTest"/>
+        </classes>
+    </test>
+</suite>

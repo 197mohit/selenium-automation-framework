@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-45282 Source: PG or Order in applysupercash offer api" verbose="1">
+    <test name="Applysupercash offer API hotfix test cases">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+                <methods>
+                    <include name="onusMerchantSourceOrderPromoNotNull"/>
+                    <include name="onusMerchantSourcePGPromoNotNull"/>
+                    <include name="offusMerchantSourcePGPromoNotNull"/>
+                    <include name="offusMerchantSourcePGPromoNull"/>
+                    <include name="offusMerchantSourceOrderPromoNotNull"/>
+                    <include name="offusMerchantSourceOrderPromoNull"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

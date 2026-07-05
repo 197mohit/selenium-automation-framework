@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27609" verbose="1">
+    <test name="PGP-27609">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateUPIPayModesWhenPrefEnabled"/>
+                    <include name="validateUPITxwForAddNPAYWhenUPINotEnabled"/>
+                    <include name="validateNewFlagIsTrueWhenPrefEnabled"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForFlipkartFlow"/>
+                    <include name="validateNewFlagWhenPrefIsDisableForFlipkartFlow"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForFlipkartFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

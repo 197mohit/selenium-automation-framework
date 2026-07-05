@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subs fixes" verbose="1" parallel="tests" thread-count="3">
+    <test name="Subscription_via_ppi on enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="validateStartDateMoreThanTodayDate"/>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name = "Subscription_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_ppi on enhanced web 1">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                    <methods>
+                        <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

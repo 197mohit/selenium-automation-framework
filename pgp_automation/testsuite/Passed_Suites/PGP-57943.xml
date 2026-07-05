@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57943">
+  <test name="Verify payerVpa and payerName is returened in MS response when pref UPI_PAYER_VPA and UPI_PAYER_NAME are ON">
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.PayerAndPayeeVpaInMSResponse">
+      </class>
+    </classes>
+  </test>
+</suite>

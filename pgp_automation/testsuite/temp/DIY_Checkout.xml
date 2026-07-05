@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-59292">
+    <test name="verifyDeviceImeiAndSourceInOfferApplyAndCheckoutResponse">
+        <classes>
+            <class name="scripts.EMITest.EMIDependentServiceTest">
+                <methods>
+                    <include name="verifyDeviceImeiAndSourceInOfferApplyAndCheckoutResponse"/>  
+                    <include name="verifyModelIDisNotGettingOverridenByProductIDWhenModelIDIsSentInRequest"/>  
+                    <include name="verifyModelIDisGettingOverridenByProductIDWhenModelIDIsNotSentInRequest"/>  
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

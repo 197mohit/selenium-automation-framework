@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "merchantBusinessName": {
+          "type": "string"
+        },
+        "merchantDisplayName": {
+          "type": "string"
+        },
+        "merchantImageName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "paytmMid": {
+          "type": "string"
+        },
+        "response": {
+          "$ref": "#/definitions/Response"
+        }
+      },
+      "required": [
+        "merchantBusinessName",
+        "merchantDisplayName",
+        "merchantImageName",
+        "paytmMid",
+        "response"
+      ],
+      "title": "Root"
+    },
+    "Response": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resultCode": {
+          "type": "string",
+          "enum": [
+            "00000"
+          ]
+        },
+        "resultStatus": {
+          "type": "string",
+          "enum": [
+            "S"
+          ]
+        },
+        "messaage": {
+          "type": "string",
+          "enum": [
+            "Success"
+          ]
+        }
+      },
+      "required": [
+        "messaage",
+        "resultCode",
+        "resultStatus"
+      ],
+      "title": "Response"
+    }
+  }
+}

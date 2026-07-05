@@ -1,0 +1,34 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS web fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="All in one negative preference">
+            <parameter name="theme" value="checkoutjs_web_revamp"/>
+            <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidatePRNFlagInFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS wap fixes">
+    <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

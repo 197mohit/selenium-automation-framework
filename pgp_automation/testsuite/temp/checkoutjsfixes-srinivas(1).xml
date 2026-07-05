@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Checkoutjs"  verbose="1">
+    <test name="checkoutjs wap fixes">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validateAddnPayViaCCDynamicLimit_CWAP"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC11"/>
+                    <include name="ValidateZeroRetry"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="checkoutjs web fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp">
+            <classes>
+                <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                    <methods>
+                        <include name="Verify_failure_transaction_with_ZestMoney"/>
+                        <include name="ExhaustAllRetryAvailable"/>
+                        <include name="TC_012_BankMandateSubscriptionDCPAymodeAmount0"/>
+                        <include name="TC_0014_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                        <include name="TC_013_ValidateSubsPurposeValueIsUpdatedForUpfrontAmountInMetaData"/>
+                        <include name="TC_011_VerifySubsCreatedInInitState"/>
+                        <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                        <include name="ValidateSuccessTxnUsingCCRetry"/>
+                        <include name="ValidateSuccessTxnUsingNBAfterCCRetry"/>
+                        <include name="PGP_27624_PromoTxnwithNativeJsonPrefNMerchant"/>
+                        <include name="verifyQRDetailsShowingInFPOResponse"/>
+                        <include name="Verify_text_user_has_closed_the_bank_popup_is_displayed_after_canceling_txn"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Autologin for checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp">
+            <classes>
+                <class name="scripts.Autologin.AutoLoginCheckoutJS">
+                    <methods>
+                        <include name="autologinforcheckoutjs"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

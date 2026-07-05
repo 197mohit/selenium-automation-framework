@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R6">
+    <suite-files>
+        <suite-file path="aoa.xml"/>
+        <suite-file path="billproxy.xml"/>
+        <suite-file path="emi.xml"/>
+        <suite-file path="LinkServicePg2.xml"/>
+    </suite-files>
+</suite>

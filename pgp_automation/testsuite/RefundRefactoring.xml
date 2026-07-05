@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Refund Refactoring cases" verbose="1">
+    <test name="Refund Refactoring Async/Sync">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <include name="refundCCWithJWTAsyncRefund"/>
+                    <include name="refundUPICCWithJWTAsyncRefundDisableFalse"/>
+                    <include name="refundDCWithJWTAsyncRefund"/>
+                    <include name="refundDCWithJWTAsyncRefundDisableFalse"/>
+                    <include name="refundUPIWithJWTAsyncRefund"/>
+                    <include name="refundPPIWithJWTAsyncRefund"/>
+                    <include name="refundPPIWithJWTAsyncRefundDisabledFalse"/>
+                    <include name="refundPPBLWithJWTAsyncRefundDisabledTrue"/>
+                    <include name="refundPPBLWithJWTAsyncRefundDisabledFalse"/>
+                    <include name="refundCCWithJWTSyncRefund"/>
+                    <include name="refundDCWithJWTSyncRefund"/>
+                    <include name="refundPPIWithJWTSyncRefund"/>
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,2059 @@
+BASIC_PREFERENCES:
+  - preferences:
+      - BIN_IN_RESPONSE: "N"
+        CHECKSUM_ENABLED: "Y"
+
+PGOnly:
+  - id: "FZDtRw99918314911277"
+    key: "CiW9LqdA6VgxkWy#"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+      - REFUND_SUCCESS_PEON_ENABLED: "YES"
+    extendInfos:
+      - isApiRefundAllowed: 1
+
+AddMoney:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+AddMoneyMP:
+  - id: "SCWMER90619707098260"
+    key: "qOkn2m84QkDoCjyn"
+
+AddnPay:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+    preferences:
+      - CORPORATE_CARD_CC: "Y"
+        CORPORATE_CARD_DC: "Y"
+        STORE CARD DETAILS: "YES"
+        PG_AUTOLOGIN_ENABLED: "Y"
+        RETURN_FEE_RATE_FACTORS: "Y"
+        ALLOW_POSTPAID_ON_ADDNPAY: "Y"
+
+PGOnly_RateLimit:
+  - id: "Ljriqy93269072346805"
+    key: "Ouox65JkkP@#fkpI"
+
+PGOnly_RateLimit2:
+  - id: "DFLQrP57911218981844"
+    key: "tWoLzGHeIYkO3!0_"
+
+WalletOnly:
+  - id: "jlk7Bf98142612842938"
+    key: "lml#GWgY#vW0Bb8w"
+
+Hybrid:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+        PREPAID_CARD: "N"
+        PG_AUTOLOGIN_ENABLED: "Y"
+        AUTO_REFUND_PEON_ENABLED: "Y"
+        BLOCK_BULK_APPLY_PROMO: "N"
+
+Hybrid_S:
+  - id: "gleuAz90728602331374"
+    key: "RB3MTaQXLUjcL7NU"
+
+Addnpay:
+  - id: "bqrqQs43114990845153"
+    key: "4BQyY9lPG8bZYB3M"
+
+COD:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+PGOnly_NativeOldFlow:
+  - id: "wjXrmE18329536771443"
+    key: "ZXjerZB4JHharRiX"
+
+PaytmExpress_Hybrid_Onus:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+PaytmExpress_Hybrid_Offus:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+PaytmExpress_Hybrid_PayModeDisabled:
+  - id: "syFftd35509588745501"
+    key: "qOkn2m84QkDoCjyn"
+
+PaytmExpress_Hybrid_CCPayModeDisabled:
+  - id: "uxExFv71960889279060"
+    key: "qOkn2m84QkDoCjyn"
+
+PaytmExpress_AddnPay_Onus:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+PaytmExpress_AddnPay_Offus:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+TopUpExpress_Onus:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+TopUpExpress_Offus:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+EMI:
+  - id: "AuEmiT45080993633101"
+    key: "KfGfg%2qR!z7A!wQ"
+
+PGOnly_Retry:
+  - id: "dZbxHf15041674388503"
+    key: "i_!PeRMH1&rrHeFU"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+
+Hybrid_Retry:
+  - id: "dZbxHf15041674388503"
+    key: "i_!PeRMH1&rrHeFU"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+
+AddnPay_Retry:
+  - id: "SOyGlG97546201904523"
+    key: "th3xBm7Ay0#SNQeu"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+
+Seamless_Hybrid_Onus:
+  - id: "arzoo128093250811422"
+    key: "zJ%rxdIQ&tvj5suU"
+
+Seamless_Hybrid_Offus:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+Seamless_Hybrid_PayModeDisabled:
+  - id: "syFftd35509588745501"
+    key: "qOkn2m84QkDoCjyn"
+
+SeamlessNative_Hybrid_Onus:
+  - id: "arzoo128093250811422"
+    key: "zJ%rxdIQ&tvj5suU"
+
+SeamlessNative_Hybrid_Offus:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+SeamlessNative_Hybrid_PayModeDisabled:
+  - id: "syFftd35509588745501"
+    key: "qOkn2m84QkDoCjyn"
+
+PostConvMerchant:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+FastForward:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+Subscription_PGOnly:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+    preferences:
+      - AUTO_APP_INVOKE_ALLOWED: "Y"
+        appInvokeAllowed: "Y"
+
+SUBSCRIPTION_BCHJS:
+  - id: "wmpFQX50593317914167"
+    Key: "wYbjlCjsTUaGW9lp"
+
+SUBSCRIPTION_AUTO_REFUND:
+  - id: "autref07208237212738"
+    key: "nL&NBNRi_tmwXYC#"
+
+SUBSCRIPTION_PGONLY_RETRY:
+  - id: "dZbxHf15041674388503"
+    key: "i_!PeRMH1&rrHeFU"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+
+SUBSCRIPTION_PPI:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+SUBSCRIPTION_WALLET_LIMIT:
+  - id: "prMmXb36830914306179"
+    key: "Iv&gYKR7%ikMuIXr"
+
+SUBSCRIPTION_PPI_RETRY:
+  - id: "SOyGlG97546201904523"
+    key: "th3xBm7Ay0#SNQeu"
+
+SUBSCRIPTION_WALLET_ONLY:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+SUBSCRIPTION_ADDNPAY:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+
+ADDNPAYPEON:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+HYBPEON:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+WALLETPEON:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+ADD_MONEY_ONLY:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+ADD_MONEY_WITH_RETRY:
+  - id: "SOyGlG97546201904523"
+    key: "th3xBm7Ay0#SNQeu"
+
+AddnPay_Disabled:
+  - id: "rjhkou44897486373119"
+    key: "&AgfGbpjPLFAs%VA"
+
+NonMigrated:
+  - id: ""
+    key: "123"
+
+LICENCE_EXPIRED_MERCHANT:
+  - id: "RupayT14050766099224"
+    key: "qOkn2m84QkDoCjyn"
+
+ADD_N_PAY_WITHOUT_CC_DC:
+  - id: "wElinK50699795654723"
+    key: ""
+
+PPBLYONLY:
+  - id: "HeFxJe59676630540214"
+    key: "H_0YPEzI7pdH5YXE"
+    preferences:
+      - PG_AUTOLOGIN_ENABLED: "Y"
+
+PPBL_NB_PCF:
+  - id: "ref3Ma57837912212660"
+    key: "MYbDTwYi2Be#gsGz"
+
+ALLPAYMODE:
+  - id: "BhkxmN47323455891141"
+    key: "!z7EoYlZ3dWAJY&2"
+    preferences:
+      - CORPORATE_CARD_CC: "Y"
+        STORE CARD DETAILS: "YES"
+EMIOnly:
+  - id: "tVLjGC41087180432704"
+    key: "TPJ4MUGztyK@wkzy"
+
+EMIOnly_DC:
+  - id: "dqLnMX07029769658668"
+    key: "rHFfNVyQtng_aU%a"
+
+LOGOMerchant:
+  - id: "14900056265068"
+    key: "zOe9EOqnm6xPUjpU"
+
+HDDOMERCHANT:
+  - id: "WMPVIe92722514252924"
+    key: "rc2ml#i15kezuxFz"
+
+#TODO: Acquiring not proper on merchant due to which PPBl test case are failing
+PPBL_PAYTMCC_VPA:
+  - id: "PGP31899144818088675"
+    key: "5p@e%ZyU&xDpQU%Z"
+
+NATIVE_HYBRID:
+  - id: "NtHybr31513265242017"
+    key: "4GX@qLVKdAs8X1do"
+    extendInfos:
+      - isApiRefundAllowed: 1
+
+NATIVE_WALLET_ONLY:
+  - id: "ntOegA33121758109414"
+    key: "DhR3Hf6bY&%&ZGaS"
+
+NATIVE_ADDNPAY:
+  - id: "NatAdd52558363504624"
+    key: "4Vrotss9R44@yjpv"
+    preferences:
+      - ALLOW_POSTPAID_ON_ADDNPAY: "Y"
+
+NATIVE_PROMO_HYBRID:
+  - id: "n6gjb683684198085235"
+    key: "abka6Ck60&HOS24b"
+
+NATIVE_EMI:
+  - id: "NtHybr31513265242017"
+    key: "4GX@qLVKdAs8X1do"
+
+NATIVE_HYBRID_RETRY:
+  - id: "noWyCr33354872716135"
+    key: "W@gZ03HK&MC6ZOlu"
+
+NATIVE_HDFO:
+  - id: "hybDir09449188421122"
+    key: "RRhof@Ybvr#t!09c"
+
+ICICI_IDEBIT_ENABLED:
+  - id: "341leu34940278108351"
+    key: "qa5z0584k588XZRu"
+
+FOOD_WALLET_PAYTMCC:
+  - id: "PExEMI73769038386135"
+    key: "i&FQgIo7X8iTlhz8"
+
+FOOD_MERCHANT_HYB:
+  - id: "PExEMI73769038386135"
+    key: "i&FQgIo7X8iTlhz8"
+
+FOOD_MERCHANT_ADDNPAY:
+  - id: "PccAdd06962524301291"
+    key: "dGRQd8aB9SB_xKoF"
+    preferences:
+      - STORE CARD DETAILS: "NO"
+
+PGONLY_EMI_MIN_MAX:
+  - id: "EMIEMI78657687990151"
+    key: "Z#RpRAd5A_VN!SMO"
+
+MUTUAL_FUND:
+  - id: "PYTMF234965532661825"
+    key: "GSTZpi@o!y8srVKb"
+
+MUTUAL_FUND_AGGR:
+  - id: "PYTMF547083007529221"
+    key: "2QU2I4VM8IBIMgu0"
+
+FLAT_PCF:
+  - id: "flaFee61923198013531"
+    key: "0RqkZn%nhWyA@wY5"
+    preferences:
+      - CORPORATE_CARD_CC: "Y"
+        CHARGE_AMOUNT_IN_RESPONSE: "Y"
+        RETURN_FEE_RATE_FACTORS: "Y"
+
+NETBANK_PCF:
+  - id: "NBPCF119529493331725"
+    key: "7#wqBiKFa!ihuR5#"
+    preferences:
+      - CORPORATE_CARD_CC: "Y"
+        CORPORATE_CARD_DC: "Y"
+        STORE CARD DETAILS: "YES"
+        PG_AUTOLOGIN_ENABLED: "Y"
+        RETURN_FEE_RATE_FACTORS: "Y"
+        CHARGE_AMOUNT_IN_RESPONSE: "Y"
+
+AMEX_PCF:
+  - id: "AmxPcf44713097016764"
+    key: "PWFQECUWlpT4bMVs"
+    preferences:
+      - CHARGE_AMOUNT_IN_RESPONSE: "Y"
+        RETURN_FEE_RATE_FACTORS: "Y"
+
+WALLETOnly_PCF:
+  - id: "walPcf85598571532753"
+    key: "mauO!d4vkoVGBMBJ"
+
+PGOnly_Pcf:
+  - id: "pcfPGo69986213925736"
+    key: "Fo_z4aZh!I_E1wwE"
+    preferences:
+      - DYNAMIC_CHARGE_TARGET: "N"
+        WithoutConvenienceFee: "Y"
+
+NON_MUTUAL_FUND:
+  - id: "FZDtRw99918314911277"
+    key: "CiW9LqdA6VgxkWy#"
+
+POSTCONV_DEFAULT:
+  - id: "MkUjXl43893309731317"
+    key: "%esqePI3&DxGfawq"
+
+POSTCONV_WALLET_ONLY:
+  - id: "iaPJlS79727272751291"
+    key: "YYLmu_dQ3GPHn4JA"
+
+UPI_INTENT:
+  - id: "MJUvnP17015630683119"
+    key: "_5Rj0hXYCY%OU23g"
+
+UPI_INTENT_PrefDisabled:
+  - id: "RFJoXI87792123660749"
+    key: "vHe#enDHB9W7z_vS"
+
+UPI_COLLECT_NATIVEMFSIP:
+  - id: "vUXcNh03723533992230"
+    key: "v679kkPAHur3fWZF"
+
+UPI_INTENTONLY:
+  - id: "5x7zf122350015858488"
+    key: "DQ4u6mYkduYG7W!I"
+
+HDFO_ADDNPAY:
+  - id: "hdfoAd21960341566327"
+    key: "Zb@KdRMVBkZ12UDA"
+
+DYNAMICQR:
+  - id: "jBROtS13365560412781"
+    key: "klNpPKI478sSHH#6"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+    extendInfos:
+      - isApiRefundAllowed: 1
+
+BANK_MANDATE:
+  - id: "I2Ru7S64657169765758"
+    key: "Howv43UHc#KiA&zz"
+
+SUBS_PPBL_MID:
+  - id: "XusvWR32772543428911"
+    key: "lEEsWsf#MbOcN_Ao"
+    preferences:
+      - AUTO_APP_INVOKE_ALLOWED: "N"
+        appInvokeAllowed: "Y"
+
+SUBS_BANK_MANDATE_MID:
+  - id: "jlAgOX81470431878453"
+    key: "_7hJGgu%7593Kpkt"
+    preferences:
+      - AUTO_APP_INVOKE_ALLOWED: "Y"
+        appInvokeAllowed: "Y"
+
+BANK_MANDATE_WO_ONDEMAND:
+  - id: "SDvNDe73291402719711"
+    key: "yaz%JlXNGzVuL6HT"
+
+BANK_MANDATE_LIMIT_1:
+  - id: "i8pEol62546972670335"
+    key: "2ZT#j!dK06Ba7Mip"
+
+BANK_MANDATE_NATIVE:
+  - id: "tBRE3y90711211094217"
+    key: "E2_nI17oeNO8Y%jD"
+
+BANK_MANDATE_MFSIP:
+  - id: "TrtaRh24627234053311"
+    key: "ec8fvkcU6zf7ZIOv"
+
+ADVANCE_DEPOSIT:
+  - id: "adadad98554577507199"
+    key: "YdRUPCl&i8zaWHu6"
+
+PPBLC_ONLY:
+  - id: "RBUoDc32430981918134"
+    key: "0zQNzT185!iFp6_F"
+
+REFUNDIMPS_HYBRID:
+  - id: "bGnCao46620984716293"
+    key: "lrd#fQ5#9m1Ar%EV"
+
+EMIDISABLEDMERCHANT:
+  - id: "TlKhyv54413014595199"
+    key: "Mgy495iV!7lVSl#1"
+
+BAJAJFINEMI:
+  - id: "8ljqoz75669712015762"
+    key: "8LtT0dIF3tv%UIf8"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+
+EMI_DC:
+  - id: "8u0jk277677047400643"
+    key: "!G7#4N5_gWavnWG4"
+
+Hybrid_WithoutEMI:
+  - id: "o0gli179444702046977"
+    key: "k_Ahr@VLZNoXz43v"
+
+NATIVE_RISK:
+  - id: "RISK2251891750852789"
+  - key: "qja37EI2DNM8K8ZQ"
+
+IRCTC_WalletOnly:
+  - id: "irctc252288328820953"
+    key: "vjtMgX0bnsP8kDhf"
+
+IRCTC_Wallet_withPRN:
+  - id: "witPRN63228974579456"
+    key: "53gVWaGhYC%KJQml"
+
+SPLIT_SETTLEMENT_PGONLY:
+  - id: "RtISDQ90597903425822"
+    key: "MsKtZWNpB%y1EnWe"
+
+SPLIT_SETTLEMENT_ADDNPAY:
+  - id: "uOfkto79984949931285"
+    key: "X7hs_XwGViYh8HZZ"
+
+SUBSCRIPTION_PGONLY_PEON_DISABLED:
+  - id: "qdYLGU06172841449457"
+    key: "GDN6Q2!lzPEYNhoE"
+
+PGONLY_COD_PEON_DISABLED:
+  - id: "qdYLGU06172841449457"
+    key: "GDN6Q2!lzPEYNhoE"
+
+REFUND_IMPSHYBRID:
+  - id: "NlX00Z50280715346658"
+    key: "@L9X%fxwL0_NUxcR"
+
+REFUND_IMPSPGONLY:
+  - id: "8VBL1Z16655774054840"
+    key: "jU2dLdWMpKut_T1&"
+
+ADDNPAY_PEON_DISABLED:
+  - id: "HQiVS430347197386802"
+    key: "A8TGi%aqOAmpsEe8"
+
+HYBRID_PEON_DISABLED:
+  - id: "KkpYrw08399604456934"
+    key: "6_L!iK4oip%RVe%E"
+    preferences:
+      - STORE CARD DETAILS: "NO"
+
+WALLET_ONLY_PEON_DISABLED:
+  - id: "pUDUkA38368842796134"
+    key: "7CBb&Q3uZYkFtcAh"
+
+NATIVE_HDFO_PEON_DISABLED:
+  - id: "SugNJH94572217424912"
+    key: "F#a3jwssK9@_K@Nw"
+
+ICIO_CC_Enabled_Merchant:
+  - id: "JSTODu13345472705284"
+    key: "%axYtCUtliHtXrJn"
+
+ICIO_CC_Enabled_Merchant_Retry:
+  - id: "iycJcy08329195616802"
+    key: "vf2!Eiq2&E2MXfaH"
+
+ZEST_MONEY:
+  - id: "taLxwS41132244183798"
+    key: "jVcAmvUwnEnDIbic"
+
+BIN_IN_RESPONSE_NATIVE:
+  - id: "PGOnly97546604217082"
+    key: "R8Xbv&Odsbwg%Ptz"
+    preferences:
+      - BIN_IN_RESPONSE: "Y"
+
+BIN_IN_RESPONSE_DISABLED:
+  - id: "PgOnl260673991821451"
+    key: "J4ZQunnRO_jnAox8"
+
+BIN_IN_RESPONSE_ADDNPAY:
+  - id: "AddNPa24555656999168"
+    key: "0kg9xBuF&3kc7R5R"
+    preferences:
+      - BIN_IN_RESPONSE: "Y"
+
+BIN_IN_RESPONSE_HYBRID:
+  - id: "Hybrid92229198587994"
+    key: "MLHQE2Mb0OgMmrIx"
+    preferences:
+      - BIN_IN_RESPONSE: "Y"
+
+BOB_ENCRYPTED:
+  - id: "ibXA8I94052615722690"
+    key: "5uqmiaLuS8U@Tjt&"
+    checksum_key: "DKIuSFeR#J27okOeUKh#SlS#bm2@rwQ#"
+    encrypt_key: "xf3ycMXgkcl_%aAmXdPKEk6vWDzwlii4"
+
+PCF_WITH_PCF_FEE_INFO_PREF_DISABLED:
+  - id: "m1Z4we75896879227396"
+    key: "KxL5zkW_o4RgoDVX"
+
+DAILY:
+  - id: "DAILYB05159092895372"
+    key: "o7IXL@BTifUHSJmt"
+
+WEEKLY:
+  - id: "WEEKLY74039472725484"
+    key: "Ixd1lKH%@l@IAv2s"
+
+MONTHLY:
+  - id: "MONTHL64560832560991"
+    key: "MSx!6sbTooPsOdja"
+
+ADD_DAILY:
+  - id: "ADDDAI08972495453631"
+    key: "ieEo3d4!#c2kgzwa"
+
+ADD_WEEKLY:
+  - id: "ADDWEE54787821517533"
+    key: "rBklPTizBkihLQPp"
+
+ADD_MONTHLY:
+  - id: "ADDMON30511456191175"
+    key: "&YQpDVozPu39I6oz"
+
+HYB_DAILY:
+- id: "HYBDAI89439874768281"
+  key: "3lFmyGbDdTTAS80y"
+
+HYB_WEEKLY:
+  - id: "HYBWEE67497764893233"
+    key: "byGkQvNQEEFZeQ28"
+
+HYB_MONTHLY:
+  - id: "HYBMON95289070614309"
+    key: "mqmPHW74FTZ6A70Y"
+
+MGV_HYBRID:
+  - id: "devMoh55353027502754"
+    key: "tbq@cCSQHRuo7Kqu"
+
+MGV_ADDNPAY:
+  - id: "mgvonl11080052374099"
+    key: "nvOYu%qMmXpXoDXp"
+
+MGV_WITHOUT_WALLET:
+  - id: "ANxm7G48904606208693"
+    key: "gV#whNPF64ozUXYV"
+
+BOB_ENCRYPTED_VAULT:
+  - id: "YyOth167411827868949"
+    key: "5uqmiaLuS8U@Tjt&"
+    checksum_key: "cuj&gA8w2C61COIwgc2&ACuOwi8C2uwC"
+    encrypt_key: "Cwu2C8iwOuCA&2cgwIOC16C2w8Ag&juc"
+
+LOGIN_STRIP_DISABLED:
+  - id: "Sahil125795628368237"
+    key: "jUz6YftdfZj09QHH"
+
+BLACKLISTED_MERCHANT:
+  - id: "Q8IjPp60363667412174"
+    key: "i73m3SWAtv4uYwgD"
+
+MGV_AGGREGATOR_CHILD:
+  - id: "childA04486755166308"
+    key: "Q4emNqhe0YHrdqph"
+
+ADDNPAY_RETRYCASES:
+  - id: "Vy7NVY67844897522817"
+    key: "b79goe!VR@2jXJ8s"
+
+Redirectional_Native:
+  - id: "Kx81rP68536096486751"
+    key: "uRkuB&JE!ArWtI8u"
+
+STATIC_PEON_DISABLED:
+  - id: "static24837842326463"
+    key: "LbPXa@66a3GnSX&A"
+
+MASKED_MOBILE_ENABLED:
+  - id: "CB5WgO52717239238300"
+    key: "xlUVB7bI6B5BTJtw"
+    preferences:
+      - STORE CARD DETAILS: "YES"
+        PREPAID_CARD: "Y"
+
+ADD_MONEY_PCF:
+  - id: "kScmet10765885100382"
+    key: "9wkg5zOLro@ZawC#"
+
+MGV_AGGREGATOR:
+  - id: "rahulA69044991936386"
+    key: "o5aAP&_arkfgl9jg"
+
+OTP_INJECT:
+  - id: "redire21151403276991"
+    key: "Q9GC3!GQy9BKKWoN"
+
+OTP_INJECT_RETRY:
+  - id: "retryy10160178114506"
+    key: "zMDwXUAfcMV&nkBK"
+
+INVALID_WEBPAY_URL:
+  - id: "webpay67090048145611"
+    key: "NNoUuYuYp6ZEfK%d"
+
+THEMATIC:
+  - id: "lOa1pW64576698978828"
+    key: "aMViIxX%HY%ckWmN"
+
+DYNAMIC_WEEKLY:
+  - id: "zklVoT85842636129805"
+    key: "jY#cKRffU0tDEQzl"
+
+PPBL_UPI_COLLECT:
+  - id: "RPgnxh17590322785507"
+    key: "EdvfzuuLdNh900B3"
+
+HDFC_UPI_COLLECT:
+  - id: "hdfupi22313996479874"
+    key: "c%nlTK4RocFxD&yU"
+    extendInfos:
+      - isApiRefundAllowed: 1
+
+HDFC_UPI_COLLECT_RETRY:
+  - id: "retHDF34060735223539"
+    key: "bdcQwz6vWBb!duMk"
+
+UPI_COLLECT_NATIVE:
+  - id: "8RI8dv00839836285730"
+    key: "7O3b%ewmvgTyBcdv"
+
+STATICQR_DIRECT_HDFO:
+  - id: "YFtfZ139115122025458"
+    key: "@#FAhU%a7lh3uTJO"
+
+DYNAMICQR_DIRECT_HDFO:
+  - id: "GsjDvV51912559683746"
+    key: "5WlpDeeo6PACNewo"
+
+DYNAMICQR_DIRECT_ICIO:
+  - id: "1pBcL311539137363008"
+    key: "9#EZZcwrJIVfVQbm"
+
+STATICQR_DIRECT_ICIO:
+  - id: "hETI4g80539185458603"
+    key: "8pK&&rPK9n7V4PDo"
+
+CLIENT_MAPPED_MERCHANT:
+  - id: "4TEAQO71553514450074"
+  - key: "qj1xeEvSh6gd#ldJ"
+
+DYNAMIC_DAILY:
+  - id: "Tn692819686433745937"
+    key: "9Tn569skSEte!sAy"
+
+DYNAMIC_MONTHLY:
+  - id: "2tvW4m08637110679976"
+    key: "@rrPWpViknt1RUD%"
+
+BANK_SECURITY_FORM_MERCHANT_HYBRID:
+  - id: "udICDT81795531604414"
+    key: "%Clt5dg1ty8Y_&dq"
+
+BANK_SECURITY_FORM_MERCHANT_ADDNPAY:
+  - id: "6mYFBG01953291315633"
+    key: "Aw#kAyq6Rm@vHJYq"
+
+LOYALTY_POINTS:
+  - id: "SrWT9h15469300216580"
+    key: "3T%Cn%dRuCyueiNC"
+    extendInfos:
+      - isApiRefundAllowed: 1
+
+PRIORITY_DEFAULT_MERCHANT:
+  - id: "limitm55111382437712"
+    key: "zeAht0mk%L9mBR4r"
+
+PRIORITY_HYBRID_MERCHANT:
+  - id: "guADuz68192834152949"
+    key: "3mqCaRwtFg!9rVuB"
+    preferences:
+      - nativeJsonRequest: "Y"
+        ENABLE_CHECKOUT_JS_ON_ENHANCED_FLOW: "N"
+        IS_JSCHECKOUT_CODE_INTEGRATED: "Y"
+
+PRIORITY_ADDPAY_MERCHANT:
+  - id: "63483387869782"
+    key: "YLdqly&xPcQlV%hN"
+
+UPI_CONSENT_PG:
+  - id: "FZDtRw99918314911277"
+    key: "CiW9LqdA6VgxkWy#"
+
+UPI_CONSENT_HYB:
+  - id: "AUTOME19638290371021"
+    key: "KO61@ne6OL4PpFfS"
+
+UPI_CONSENT_ADD:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+MLV:
+  - id: "97Ja1Y05628023170587"
+    key: "@@QPwzueY!aBKEREC"
+
+PWP_HYBRID_RETRY:
+  - id: "gjniyk20652645684650"
+    key: "AHP1mTTns5KZQA2e"
+
+COP:
+  - id: "cLZNms42294248770621"
+    key: "giMJ%E&9Z8QJA%h&"
+
+PWP_DEFAULT:
+  - id: "fRlAwr68853499547455"
+    key: "OjQJWf61#hjqBYlB"
+    preferences:
+      - CORPORATE_CARD_CC: "Y"
+        PAY_WITH_PAYTM: "Y"
+        S2S_REFUND_NOTIFY: "Y"
+        RETURN_FEE_RATE_FACTORS: "Y"
+    extendInfos:
+      - isApiRefundAllowed: 1
+
+PWP_HYBRID:
+  - id: "mhGXIi43174833054574"
+    key: "AlnAM4q&boBdX8sO"
+    preferences:
+      - AUTO_REFUND_PEON_ENABLED: "Y"
+        AUTO_REFUND_PEON_URL: "Y"
+        S2S_CHECKSUM_ENABLED: "Y"
+    extendsInfos:
+      - isApiRefundAllowed: 1
+
+PWP_HDFO_DIRECT:
+  - id: "xkBhxv28565061182286"
+    key: "1w2iw8npeF#HsFfm"
+
+PWP_MF:
+  - id: "guWJHG31770401389517"
+    key: "9Rmo1&HBFfyhyrme"
+
+EDC_PAY_CONFIRM:
+  - id: "EDCPAY95588074182958"
+    key: "%tgiy7%ul2L9tN9d"
+
+MDR_PCF:
+  - id: "MDRPCF32193046321421"
+    key: "t@pH5T!37R6kiBIr"
+
+SEAMLESS_MDR_PCF:
+  - id: "SEAMMD90935605483883"
+    key: "UHzGtPUdm5pyaHw%"
+
+PCF_MDR:
+  - id: "PCFMDR38686130076417"
+    key: "U2!rL4JB0BZYAeV#"
+
+PCF_SYNC_REFUND:
+  - id: "enATty70781663088954"
+    key: "M7gMKZqKToG2c2My"
+#GV_UPI_INTENT:
+#  - id: "TYv0Lh44765878429670"
+#    key: "TtAK2tgLZgzXPQ8h"
+#    STATIC_UPI_QR_CODE_ID: "28100505010118KPCREYC1JU"
+
+GV_UPI_INTENT:
+  - id: "Ze3dro08643292197998"
+    key: "4HNwPz5Ufrg850Kg"
+    STATIC_UPI_QR_CODE_ID: "281005050101L4DDUXTNKXHI"
+#PCF_GV_UPI_INTENT:
+#  - id: "vWNZYo11960328107066"
+#    key: "Gb3XY6_KxcAAr&cC"
+#    STATIC_UPI_QR_CODE_ID: "2810050501011IEGPBT9WX9B"
+PCF_GV_UPI_INTENT:
+  - id: "R8r59u33114521195494"
+    key: "#&Y_Y#etVOKf0&a!"
+    STATIC_UPI_QR_CODE_ID: "2810050501016A207E5D2K3V"
+
+QR_DISABLED:
+  - id: "a3HPTD67261878345579"
+    key: "Yk_rDiXFyLpuiv!0"
+
+UPI_NATIVE_SUBS:
+  - id: "WZYmms25691898910613"
+    key: "MOJSf#Y@z38B#gZ5"
+
+UPI_MUTUAL_MF:
+  - id: "TNqmdl65722327293876"
+    key: "W!SeBxB4MPUVVhIp"
+
+WALLET_SETTLEMENT:
+  - id: "AUTOMC13593989389981"
+    key: "LlGM@tRgpjjh%Y4J"
+
+STOCK_TRADE:
+  - id: "STOCK150464306585790"
+    key: "ghbUQBKyP%u7#f_7"
+
+CORPORATE_CARD_ONLY:
+  - id: "CORPOR13007750180259"
+    key: "vkzAUNdnZHt3bt3i"
+    preferences:
+      - CORPORATE_CARD_CC: "Y"
+        CORPORATE_CARD_DC: "Y"
+
+CORPORATE_CARD_PREPAID:
+  - id: "preCor63715870558307"
+    key: "8M18A95y&iL2574q"
+
+PCF_CUSTOM_RATE:
+  - id: "pcfPGo69986213925736"
+    key: "Fo_z4aZh!I_E1wwE"
+
+MDR_CUSTOM_RATE:
+  - id: "BhkxmN47323455891141"
+    key: "!z7EoYlZ3dWAJY&2"
+
+INSTANT_SETTLEMENT:
+  - id: "lZVIBP91186502166434"
+    key: "SHQPEyrt%eSx7ZPS"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+AGGR_INSTANT_SETTLEMENT:
+  - id: "iiUanN38487005390390"
+    key: "SHQPEyrt%eSx7ZPS"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+INSTANT_WO_SETTLEMENT_PAYMODE:
+  - id: "wUHILx78644370758315"
+    key: "srkdhTRiz!pr3!5W"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+EDCQR:
+  - id: "nUAkmI15793109513521"
+    key: "h!tc2jZ0H6Zu1Hl7"
+
+PCF_ONUS:
+  - id: "SjPzYc26628147795378"
+    key: "zIYGyHSirHS14LW5"
+
+ONLINE_SETTLEMENT:
+  - id: "PYTMFF33663797908579"
+    key: "EWfu%jgWx9umV5LA"
+
+ONLINE_SETTLEMENT_AGG:
+  - id: "PYTMFF46917198932914"
+    key: "NmIG&QpogT&Vsz1Z"
+
+WITHOUT_REQ_TYPE:
+  - id: "normid27075651332616"
+    key: "uRkuB&JE!ArWtI8u"
+
+JIO:
+  - id: "normid27075651332616"
+    key: "nR5Q98p5kF@gjtgT"
+    preferences:
+      - SUPPORT_TOKEN_TXN: "Y"
+        DYNAMIC_CHARGE_TARGET: "N"
+
+ODISHA_DYNAMIC_WRAPPER:
+  - id: "divine27281113265130"
+    key: "gPkKLU41W7jTu74Z"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+MAPPING_EMPTY_RESPONSE:
+  - id: "XujCgU92328148871618"
+    key: "qOkn2m84QkDoCjyn"
+
+EDC_RETRY:
+  - id: "WzKLto97040923976534"
+    key: "ucBEYJ4#qB5uWvRk"
+
+LINK_BASED_MERCHANT_WITH_PPBLC:
+  - id: "KWxyCY55590646247914"
+    key: "6!wP4mE%Y!qz5AEP"
+
+IVR:
+  - id: "xYNlxX08914370254594"
+    key: "7ADjYx24QoSXuusO"
+
+PRIORITY_LIST:
+  - id: "xYNlxX08914370254594"
+    key: "7ADjYx24QoSXuusO"
+
+DEFAULT_PRIORITY_LIST:
+  - id: "efUilK12530926810427"
+    key: "%IQXeGQE7UDJVHQt"
+
+EDC_HDFC_CC:
+  - id: "edcqr127547921768424"
+    key: "VWPYxnB@oDL6#K&Q"
+
+ADDnPAY_DISABLE:
+  - id: "IuEZPj65568519473444"
+    key: "kjnSQyKF7ECym1r2"
+
+PPI1:
+  - id: "midreg34138897672899"
+    key: "bm82T4hikEPWwHF#"
+
+PPI2:
+  - id: "midreg83252598072045"
+    key: "sXp1j3YyZDV#DQ@T"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+XIAOMI1:
+  - id: "emixiO56925105119569"
+    key: "XMeVrzZX0THeMy5e"
+
+XIAOMI2:
+  - id: "emixiT83974637766986"
+    key: "&qbzlcwdpFN5DaOV"
+
+XIAOMI3:
+  - id: "emixiH53000803665689"
+    key: "AAHdzISf5X4%qjzT"
+
+XIAOMI4:
+  - id: "emixiP15585280514141"
+    key: "XFvl0T1rJ_3K@yyx"
+
+PAYTMONLY_QR:
+  - id: "qeyfkh02569354355103"
+    key: "_bhHYWrtYHm2s9O8"
+
+BLOCK_BULK_APPLY:
+  - id: "JBTESV37063164863198"
+    key: "ehOBG0eF9DYGVp7U"
+    preferences:
+      - BLOCK_BULK_APPLY_PROMO: "Y"
+
+AUTOINVOKE:
+  - id: "jmhLAA96092340202954"
+    key: "Tg1m@v8__QBu2qmM"
+
+PPI2_MF:
+  - id: "brLgtA19889329229937"
+    key: "SbrBhHmSShgK5QFj"
+
+HYBRID_DISCOUNT:
+  - id: "OPNgCF23211225139422"
+    key: "fZNoqQI&TTiGOPh6"
+
+QR_NEGATIVE_PREF_ON:
+  - id: "OiFoYP52917789975259"
+    key: "fC8FQ@Ga1srJGR_n"
+    preferences:
+      - ENHANCE_QR_DISABLED: "Y"
+
+QR_NEGATIVE_PREF_OFF:
+  - id: "EPNEhc09912801754333"
+    key: "HtWEJ9lJMal8rd#!"
+    preferences:
+      - ENHANCE_QR_DISABLED: "N"
+
+DIFFERENT_ROI_EMI:
+  - id: "BStgBi76007014560704"
+    key: "wXuGQFrrSzv#9Q#7"
+    preferences:
+      - SUBVENTED_EMI_RATE: "Y"
+
+PG_OFFUS:
+  - id: "BvxAlU72990171406792"
+    key: "14y20T65ApCv#hU#"
+
+THEMATIC_PREFERENCE:
+  - id: "EPNEhc09912801754333"
+    key: "HtWEJ9lJMal8rd#!"
+
+EMI_DC_MERCHANT:
+  - id: "YPPgXE70067023174280"
+    key: "cpKlPiOVtAP0KSRY"
+
+CUSTOMFEEPCF:
+  - id: "aMQRln88758409399270"
+    key: "Sx0Zses%%k80E&mz"
+    preferences:
+      - DYNAMIC_CHARGE_TARGET: "Y"
+        WithoutConvenienceFee: "Y"
+
+NEWHYBRID:
+  - id: "NgEeUb99669503170724"
+    key: "#6fOfiEj63h7GMWu"
+    preferences:
+      - LOCALE_ENABLE: "Y"
+
+DATA_ENRICHMENT_MID_1:
+  - id: "offmer69097319482894"
+    key: "E!1jEkvSf_jQ6o6A"
+
+DATA_ENRICHMENT_MID_2:
+  - id: "rxjcQD33421900627720"
+    key: "Wmk9W0!jfAoU3iJu"
+
+DATA_ENRICHMENT_MID_3:
+  - id: "upiint27395045868635"
+    key: "ph8pVJJsgiiy9f4J"
+
+MAESTRO_CARD:
+  - id: "szpjva37435411211758"
+    key: "S9onuIjr0r19h@4p"
+    preferences:
+      - RETURN_TXN_PAID_TIME_IN_RESPONSE: "Y"
+
+NATIVEJSON_N:
+  - id: "SvRtnG29212727571654"
+    key: "FXR!&c9azto_F&HN"
+
+BANKTRANSFER_MERCHANT_CONTROL:
+  - id: "midreg29938808306479"
+    key: "QAZ%EUga!08LE#5x"
+
+BANKTRANSFER_PAYTM_CONTROL:
+  - id: "jJsAEx89002157356483"
+    key: "Nc1@zpy@Wo%Y1LSN"
+
+BANKTRANSFER_DISABLED:
+  - id: "PeiiOR27102903162917"
+    key: "jM5Q8A67G%KEg&@k"
+
+BANKTRANSFER_PCF_MERCHANT:
+  - id: "midreg70058033653532"
+    key: "T_hN05mXiQsx!b7s"
+
+BANKTRANSFER_PCF_PAYTM:
+  - id: "midreg20456301792134"
+    key: "Rs6U%6tvPTX1!h_F"
+
+BANKTRANSFER_RETRY:
+  - id: "midreg69005438180852"
+    key: "U2zm5hVJQ@f9%1Nr"
+
+NOCHECKSUM_DCSUBVENTION:
+  - id: "nochck55694802232555"
+    key: "2UxCYpEn2FQcE3MO"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+NOCHECKSUM_PCF:
+  - id: "pcfnch30175036569195"
+    key: "wcOcVzuQ%92Lr6cW"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+FLEXI_SUBSCRIPTION:
+  - id: "FGOUwa23233518627185"
+    key: "7RmK4fE_xOChOdPW"
+    preferences:
+      - FLEXI_SUBSCRIPTION_ENABLED: "Y"
+
+DEALS_MID:
+  - id: "dealss26247708863115"
+    key: "crIBe2KhGwhZfJFz"
+    preferences:
+      - OFFLINE_DEALS: "Y"
+
+EMI_LIMIT:
+  - id: "EMILIM42808734119429"
+    key: "h#zu&TdIP7ElNBp%"
+
+SIHUB_Subs:
+  - id: "sihub137503422988896"
+    key: "OxSQr3WuW7mb8cq9"
+
+SUBSCRIPTION_UPI:
+  - id: "SThUTj49794059271099"
+    key: "45SccS9DiymC7Lij"
+
+BANKOFFER_ON_PCF:
+  - id: "LnMBUx74739870511885"
+    key: "L4&YjM459%ixrNhJ"
+    preferences:
+      - WithoutConvenienceFee: "Y"
+
+ONE_RETRY:
+  - id: "zDkvsW80861232830289"
+    key: "CIuGAKfw9WGEKWp_"
+
+LOGO_MID:
+  - id: "zDkvsW80861232830289"
+    key: "CIuGAKfw9WGEKWp_"
+
+LOGO_MERCHANT:
+  - id: "logooo95156884699651"
+    key: "8Q0eD7YK6toPeKrk"
+
+SUBSCRIPTION:
+  - id: "fYbWSI83985272406659"
+    key: "cadx84V&K3wvSEFv"
+
+PG_JS_RETRY:
+  - id: "JSAuto95309158355121"
+    key: "QpJ8LaTtESVz6tFc"
+
+NEW_CHECKOUTJS:
+  - id: "JSCHEK79260767606743"
+    key: "%gK4QFe93ST@#dvd"
+
+UPI:
+  - id: "eqDjIP48457080602284"
+    key: "S#4b%tcc0T3lxRZS"
+    preferences:
+      - DISABLE_UPI_COLLECT_FOR_NON_LOGGEDIN: "Y"
+
+DISABLED_LOGIN_STRIP_PREF:
+  - id: "MyBskC17613127067521"
+    key: "GEt3hkged4Mqzuny"
+
+DISABLED_LOGIN_STRIP_FLAG_ENABLED:
+  - id: "vTXqXv19591529935760"
+    key: "aZH2RfCwbAf#ePeZ"
+
+IDEMPOTENT:
+  - id: "SUBSJS41416169593452"
+    key: "jOPu8c7Nr2TuxBix"
+
+VERSION_CHANGE:
+  - id: "tQtAJB86015038453301"
+    key: "lsYfo&&RVxQ7vCZa"
+
+AUTO_APP:
+  - id: "Yukbfk74709686220508"
+    key: "rshe%d&4lr_D6c2u"
+
+AddnPay_refund:
+  - id: "uCXRVz11734349188080"
+    key: "NCAjdIgrVblL@9u9"
+
+Hybrid_Txn:
+  - id: "gleuAz90728602331374"
+    key: "RB3MTaQXLUjcL7NU"
+
+PPBL_ONBOARDING:
+  - id: "sanity19166241422677"
+    key: "Lc#!omtL@sp#GnW0"
+
+FD_PAYMODE:
+  - id: "nEABxg87180794692862"
+    key: "mgsvKyB&%nF1N25&"
+
+UPI_SUBS:
+  - id: "eosweE02496420648016"
+    key: "wmqaWbh7JO1QSHpJ"
+
+PEON_ENABLED:
+  - id: "fWbcvq68536642375328"
+    key: "GqLCdy&1wrAA6LsP"
+
+Parent_Mid:
+  - id: "XiACFT79276620023474"
+    key: "ovvnHM94AiDZa67S"
+
+Child_Mid:
+  - id: "Clglyx83650085022272"
+    key: "rTeszSQLDv1PxoOg"
+
+Refund_auto:
+  - id: "aHQrFa01762224832449"
+    key: "2BZGnl71AdnwG1XK"
+
+PCF_VERIFFY:
+  - id: "pcfnbm53287767276352"
+    key: "a5rLZGGX7HS26NbR"
+
+NON_VERIFED:
+  - id: "yHHuYW37226844521703"
+    key: "fG#kRUV&UxL30E5f"
+
+UNGROUPED_PAYMODES_FLAG_ENABLED:
+  - id: "instmC48213751724802"
+    key: "OLV2#UQM1N98eBea"
+
+Instrument_Categorization:
+  - id: "instrE71417265704025"
+    key: "P5GJ@WIJKY2jv#vi"
+
+MDR_PCF_code147:
+  - id: "bUhcjy26445658578681"
+    key: "lxJLop6rSBkFp6bK"
+
+VPA_RETRY:
+  - id: "QkPCcB15012757476713"
+    key: "GBU1p6Oq5EKOBMKw"
+
+SEAMLESS_PREPAID:
+  - id: "UEjPHu02469820109661"
+    key: "WTB2DPzb90A%dkbu"
+
+MUTUALFUND_AGGR:
+  - id: "PYTMF225131757646207"
+    key: "geqtSZyX5J38wzOR"
+
+MUTUALFUND:
+  - id: "PYTMF367939229461853"
+    key: "gZH_D3ffavryURHP"
+
+UPI_COLLECT:
+  - id: "FtGlAF65380020958800"
+    key: "VdWGFZ_pkXXP&cZ8"
+
+WebviewSupportOnJS:
+  - id: "webSup57558147057977"
+    key: "E14X4ogCY2aeYLSq"
+
+WebviewSupport_FlagOff:
+  - id: "webFOn60231786452876"
+    key: "bNigZ8w3z%OyU6GR"
+
+UPICollectSavedVPA:
+  - id: "addVPA98364778110951"
+    key: "T8DTrpffR_%3LwFy"
+
+NO_CHANGE:
+  - id: "normal47663942719365"
+    key: "u1HulbyYldx7maB@"
+
+DIRECT_OTP_JS:
+  - id: "UuDaPW98410602927563"
+    key: "JZAr7hhIEl#_E_6o"
+ADDnPAY_CCLIMIT:
+  - id: "OkTcIl39765688575558"
+    key: "72lQtqx#w2fjrEvP"
+
+AOA_MERCHANT_PG:
+  - id: "nyAsZC59963652712948"
+    key: "#gSXVUj95R%HdvZ@"
+
+OTP_BANK_PAGE:
+  - id: "otpban13584319068763"
+    key: "TCB1mKTkgH99i7w1"
+
+POSTPAID_BLOCK_ALLOW_PREF_N:
+  - id: "KBoLXb89857824000397"
+    key: "UvPs@GcLKIN4UK&E"
+    preferences:
+      - BLOCK_POSTPAID_ON_ADDNPAY: "N"
+        ALLOW_POSTPAID_ON_ADDNPAY: "N"
+
+POSTPAID_BLOCK_PREF_Y:
+  - id: "feRfIA23697912730174"
+    key: "Y64r7H0O5bChos4w"
+    preferences:
+      - BLOCK_POSTPAID_ON_ADDNPAY: "Y"
+        ALLOW_POSTPAID_ON_ADDNPAY: "N"
+
+POSTPAID_BLOCK_ALLOW_PREF_Y:
+  - id: "OmVOWj74155029125639"
+    key: "5RuWMjfHM#HAy2A@"
+    preferences:
+      - BLOCK_POSTPAID_ON_ADDNPAY: "Y"
+        ALLOW_POSTPAID_ON_ADDNPAY: "Y"
+
+POSTPAID_ALLOW_ALLOW_PREF_Y:
+  - id: "aiohXf45812564980029"
+    key: "C_JVRw1dFZ%mSADn"
+    preferences:
+      - BLOCK_POSTPAID_ON_ADDNPAY: "N"
+        ALLOW_POSTPAID_ON_ADDNPAY: "Y"
+
+UPI_RETRY_ENABLED:
+  - id: "TSTVPA09483065960654"
+    key: "CZc&VGAcqd0O8g6J"
+
+MERCHANT_UPI_PPI_CC_DC_SUBS:
+  - id: "abhtew34543439653998"
+    key: "j7DBQGH&SK%fqkez"
+
+MINIMAL_PROMO_MERCHANT_Y:
+  - id: "mJEVsi54672444248233"
+    key: "yKL#jCx7DpjJdRaC"
+    preferences:
+      - MINIMAL_PROMO_MERCHANT: "Y"
+
+MINIMAL_PROMO_MERCHANT_N:
+  - id: "uWJXYI74179890589965"
+    key: "BBPGEbSmupeI13hI"
+    preferences:
+      - MINIMAL_PROMO_MERCHANT: "N"
+
+AOA_MERCHANT:
+  - id: "216820000007673160926"
+    key: "BBPGEbSmupeI13hI"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+AOA_MERCHANT_HDFO:
+  - id: "216820000007863063965"
+    key: "BBPGEbSmupeI13hI"
+    preferences:
+      - nativeJsonRequest: "Y"
+
+AppInvoke:
+  - id: "WUVMEm88988509106559"
+    key: "VQnNu6hZEmvRQiX5"
+    preferences:
+      - PG_AUTOLOGIN_ENABLED: "Y"
+
+POSTPAIDANDUPI:
+  - id: "uktaKv81379474652545"
+    key: "WVqYPi5qttHvnR8o"
+
+LINK_TRANSACTION:
+  - id: "SIgKmW85235084384561"
+    key: "RNdPDzPIk8rvv%s1"
+
+DCC_PCF:
+  - id: "rJjOKR22118556203877"
+    key: "7ymYYvOgL4MhP96d"
+
+DISABLE:
+  - id: "disabl29788837478873"
+    key: "IisMeacbNwVqBUbB"
+
+JS_Checkout_Paytm_Domain:
+  - id: "SThUTj49794059271099"
+    key: "45SccS9DiymC7Lij"
+    preference:
+      - ENABLE_CHECKOUT_JS_ON_ENHANCED_FLOW: "Y"
+
+HDFO:
+  - id: "JzlvxR10374874198874"
+    key: "m@6Nh#Hynh4E8XgC"
+    preferences:
+      - nativeJsonRequest: "Y"
+
+HYBRID_MID:
+  - id: "vreLaU46464937020171"
+    key: "iOBR1QvgDZFj2&H_"
+
+Meghalaya_Merchant:
+  - id: "Meghaa70655202233845"
+    key: "qZ4gqDl@%cFzk#0h"
+
+MerchantWithdrawSettlement:
+  - id: "WDRW0085675424571941"
+    key: "#8siYdm6maovZf_X"
+
+MerchantAutoWithdrawSettlement:
+  - id: "AWmer049300169082092"
+    key: "uIFgqHZxAsQiyTiA"
+
+MerchantOnlineSettlement:
+  - id: "OSmer016242347703115"
+    key: "Hu%3rfh0ec!32keP"
+
+TWSSettlementMerchant:
+  - id: "TWSmer95290043173949"
+    key: "Ml&PMHw!&07O3Y7C"
+
+REFUND_HYBRID:
+  - id: "cLZNms42294248770621"
+    key: "giMJ%E&9Z8QJA%h&"
+
+BW_InstantSettlement:
+  - id: "AUTOME55882957986694"
+    key: "axKsn36jMYrYz5nN"
+
+BW_Only:
+  - id: "bw010176990078914535"
+    key: "hHs6lwipm0RKQ3xW"
+
+NonBW_OS:
+  - id: "AUTOME96366044242639"
+    key: "bpScQ7c&KzuszjDL"
+
+UPIPUSHNEW:
+  - id: "autupi86169595050624"
+    key: "BL2ztBRG1FdZ3fnF"
+
+UPIPUSHHYB:
+  - id: "hybaut15173910469352"
+    key: "8Pbu6A%jpO&&p6CS"
+
+UPIPUSHAAP:
+  - id: "addupi39702501087939"
+    key: "CzSa7tRgA_imqL41"
+
+MIGRATIONDETAIL:
+  - id: "AUTOME19638290371021"
+    key: "CzSa7tRgA_imqL41"
+
+UPIPUSHPG2:
+  - id: "abhtew66813828235768"
+    key: "hZh0YRPDgLNI%7X7"
+
+UPIPUSHPG2FF4JNOPREFYES:
+  - id: "abhtew16411146643539"
+    key: "0s_lBIEOsa7%JbAd"
+
+UPIPG2FF4JDISABLED:
+  - id: "abhtew97420566338485"
+    key: "bwD5!v7!hHKGu9!W"
+
+OFFERMID:
+  - id: "YRfsHa55002149964486"
+    key: "bwD5!v7!hHKGu9!W"
+
+PG2FF4JYESPREFNO:
+  - id: "abhtew15450295914920"
+    key: "TkeQ9qtrdZNXLNYU"
+
+Bank_Transfer_MF_Parent:
+  - id: "PYTMF128822903796200"
+    key: "eBPALNgjBMvFRTDZ"
+
+Bank_Transfer_MF_Child:
+  - id: "PYTMF212774133311822"
+    key: "Ap6Oh9dCajXhDE5L"
+
+EMISubvention:
+  - id: "AUTOME38670547501420"
+    key: "%nL8jOaQphr@d&W8"
+
+LINK_PGONLY:
+  - id: "testli61258254741921"
+    key: "qZ4gqDl@%cFzk#0h"
+
+LINK_PGONLY_MF:
+  - id: "bxOMNS49814198661147"
+    key: "qZ4gqDl@%cFzk#0h"
+
+LINK_PGONLY_ST:
+  - id: "XIKiJh27422061885632"
+    key: "qZ4gqDl@%cFzk#0h"
+
+ENABLE_DISABLE_PAYMODE:
+  - id: "Online97162038260814"
+    key: "oPT2%05P8aFA9pTK"
+
+ENABLE_DISABLE_PAYMENT_BUTTON:
+  - id: "allIn122884870737445"
+    key: "qZ4gqDl@%cFzk#0h"
+
+ENABLE_DISABLE_OFFLINE_LINK:
+  - id: "normal37202063821691"
+    key: "qZ4gqDl@%cFzk#0h"
+
+
+POS_ID:
+  - id: "AUTOME73653890273983"
+    key: "gSpyL2&eH5khDNmN"
+
+Result_Code_Enable:
+  - id: "YHbNrA82426118451179"
+    key: "b4k@Ms&g!T2RM37!"
+
+Result_Code_Disabled:
+  - id: "vzwiym42113492362425"
+    key: "abCNf33zo_6xw1!G"
+
+PPBL_NB:
+  - id: "ppblOn85917781590951"
+    key: "gSpyL2&eH5khDNmN"
+
+LINK_OFFLINE:
+  - id: "linksO38457083060859"
+    key: "Pf0iLaX5WkZaOk8E"
+
+LINK_SKIPLOGIN:
+  - id: "linkss36852415719681"
+    key: "%E_wIQeXsrX7ZmU#"
+
+LINK_SKIPLOGIN_ONLINE:
+  - id: "skipLo55456765394177"
+    key: "uaWNobMimVqSV2Qs"
+
+LINK_ALLIN_ONE:
+  - id: "linkss11469051756321"
+    key: "%E_wIQeXsrX7ZmU#"
+
+LINK_ALLIN_ONE_OFFLINE:
+  - id: "aLLinO15587650970393"
+    key: "Y4dUqxftONizFvsr"
+LINK_PGONLY_OFFLINE:
+  - id: "linksO38457083060859"
+    key: "qZ4gqDl@%cFzk#0h"
+
+AOA_VISA:
+  - id: "216820000007990192484"
+    key: "#gSXVUj95R%HdvZ@"
+
+AOA_PREPAID:
+  - id: "216820000008000932069"
+    key: "#gSXVUj95R%HdvZ@"
+
+AOA_ISSUINGBANK:
+  - id: "216820000008006449998"
+    key: "#gSXVUj95R%HdvZ@"
+
+AOA_UPIPAYMETHOD:
+  - id: "216820000008006496468"
+    key: "#gSXVUj95R%HdvZ@"
+
+MCC_CODE_MERCH:
+  - id: "goldii83121310353320"
+    key: "3K1plauYVtheF84b"
+
+NULL_MERCHANT:
+  - id: ""
+    key: "CiW9LqdA6VgxkWy#"
+
+LINK_SD:
+  - id: "PPILI121428600635462"
+    key: "%E_wIQeXsrX7ZmU#"
+
+LINK_SD_OFFLINE:
+  - id: "PPILI119185164900189"
+    key: "%E_wIQeXsrX7ZmU#"
+
+BRAND_EMI:
+  - id: "HrELbn89468854035759"
+    key: "kIzq23LIy2P6l4Ow"
+
+QR_LOGIN_PREFERENCE_N:
+  - id: "abcdef24617364224114"
+    key: "ke0#BY5RV9Boue7_"
+
+QR_LOGIN_PREFERENCE_Y:
+  - id: "ppblOF84286339761381"
+    key: "uaWNobMimVqSV2Qs"
+
+WALLET_2FA_DISABLED:
+  - id: "FIXES134840114074700"
+    key: "ymr7QOXFjmt#b@8X"
+
+MISMATCHED_INPUT:
+  - id: "hybrid19321073860827"
+    key: "%E_wIQeXsrX7ZmU#"
+
+
+SHOPPERSTOP_CO_BRANDED :
+  - id: "giJuiL61251721544999"
+    key: "JAXob0mqD1BwoeQ@"
+
+LINK_SPLIT_SETTLEMENT_AGG:
+  - id: "Splits50781612685970"
+    key: "xVNU0Ka6Nda534C#"
+
+AOA_SUBS_UPI:
+  - id: "216820000008098367958"
+    key: "wmqaWbh7JO1QSHpJ"
+
+PCF_MERCHANT:
+  - id : "PCFSHU05325463990324"
+    key: "7p1FK8nElw&vrA@5"
+
+MDR_INTL_MERC:
+  - id : "sPOKkH82607104833027"
+    key : "n2aJCDv8#45jM70F"
+
+PG2_CO_THEN_PAY_FULL_TRAFFIC_Y:
+  - id: "fudtbl51495893312904"
+    key: "DD5giYtO%9VLaHG5"
+
+SUBS_ALL_PAYMODES:
+  - id: "FIXES113664603021411"
+    key: "D8hRIe4v@Rpt1OgQ"
+
+LOGIN_STRIP:
+  - id: "gmkLSn64007450319701"
+    key: "UX1ue9y2cUt0uCP2"
+
+
+QR_MERCHANT:
+  - id: "FIXES134840114074700"
+    key: "ymr7QOXFjmt#b@8X"
+    preferences:
+      - ENHANCE_QR_DISABLED: "N"
+      - ALLOW_LOGIN_ON_DESKTOP: "Y"
+      - DISABLED_LOGIN_STRIP: "N"
+
+DTO_FIELDS_ALIPAYMID:
+  - id: "216820000008274988690"
+    key: "YUpbc&DagC9HJrce"
+NO_REQUEST_TYPE_MID:
+  - id: "AUTOME47222717161827"
+    key: "RNdPDzPIk8rvv%s1"
+
+
+BRAND_BO_DISC_HDFC:
+  - id: "flipau00062526539986"
+    key: "bRYjSKE%r!Loh@fT"
+
+BRAND_MERCHANT_BO_DISC_HDFC:
+  - id: "abcaut24060254743322"
+    key: "papPc1#ZS0f_nj0J"
+
+BRAND_BO_DISC_BAJAJ:
+  - id: "autoau16555684330155"
+    key: "4M6b!bLAyU4xlNVq"
+
+DEACTIVATED_WALLET:
+  - id: "PNBIev18896709091273"
+    key: "R4teyA_vJ6&6@kT%"
+
+BRAND_BO_DISC_BAJAJ_HDFC:
+  - id: "XEbLTD66843139311013"
+    key: "47Y!TENYyWASQvhM"
+RESELLER_MID:
+  - id: "NewRes25790027766217"
+    key: "FJ9Ne&5gMcdD9Nx5"
+
+PG2_COP_FULL_TRAFFIC_Y:
+  - id: "TestQA28104868053768"
+    key: "fJbS%KhX15Sxh&EC"
+
+PG2_FF4J_THEIAENABLE_YES_REFUND_NO:
+  - id: "AUTOMA49597569639803"
+    key: "DD1vfhBqv&8we3Gx"
+
+LINK_SD_PPI1:
+  - id: "PPILI121428600635462"
+    key: "DD1vfhBqv&8we3Gx"
+
+WALLET_OFFER_ONUS:
+  - id: "SIhdMQ37445716545448"
+    key: "zwz6v2Lhde6ovwfA"
+MASKED_MID:
+  - id: "SIhdMQ37445716545448"
+    key: "zwz6v2Lhde6ovwfA"
+    preferences:
+      - ENABLE_CHECKOUT_JS_ON_ENHANCED_FLOW: "Y"
+
+
+
+FETCH_PAYMODES_STATUS:
+  - id: "Status75697420725875"
+    key: "20DctY9Ay8m04Q5&"
+
+LOYALTY_POINT:
+  - id: "autupi86169595050624"
+    key: "BL2ztBRG1FdZ3fnF"
+
+EDC_SUCCESS_DC:
+  - id: "kakaPh16275122083599"
+    key: "zTSrSeF3#Ub0auWJ"
+
+POSTPAID_TRUE:
+  - id: "abcdef82489063791655"
+    key: "8@JS6l6odybmyKZV"
+
+
+ICON_ON_MERCHANT_TC15:
+  - id: "MERCH253121509748577"
+    key: "#sFLS8wJDbTjcP5Z"
+
+ICON_ON_MERCHANT_TC14:
+  - id: "ICON1389525715991307"
+    key: "zxHzDW6oaS6lhkWs"
+
+ICON_ON_MERCHANT_TC05:
+  - id: "ICON1250973719235949"
+    key: "gR_lSnWzhN#%sKnI"
+
+ICON_ON_MERCHANT_TC06:
+  - id: "ICON1484461771724419"
+    key: "ZQTnNksbzGS5dOri"
+
+ICON_ON_MERCHANT_TC08:
+  - id: "ICON1131184799697510"
+    key: "Y7GQdWMzTWiloXML"
+
+PG2_COP_FULL_TRAFFIC_Y_Retry:
+  - id: "ZYXWVU42739007724870"
+    key: "GiE#YhWMeijk7jna"
+
+ADD_NEW_UPI:
+  - id: "AutoFT28045199573659"
+    key: "3RHRMLxFdqn0arQ6"
+
+ADD_NEW_UPI_ONUS:
+  - id: "AutoON14109411026425"
+    key: "houpKS_5ECro%vW9"
+
+APOSTROPHE_MERCHANT:
+  - id : "EjIhgB98256577321779"
+    key: "ewFZESWvNYV6TVyR"
+
+PG2_ENABLED_CO_THEN_PAY:
+  - id: "jhgaqw19262838985307"
+    key: "THid5IiyG%r5TPlf"
+LINK_SD_PPI3:
+  - id: "xmWhjQ54095645184593"
+    key: "DD1vfhBqv&8we3Gx"
+
+PG2_CO_THEN_PAY_FULL_TRAFFIC_Y_Retry:
+  - id: "RETRYA22893107172834"
+    key: "@8ndojSlVzXaHyEl"
+
+ICICI_COBRANDING_CHILD_MID:
+  - id: "VbmvJC15238096059986"
+    key: "_2sQe50wE3y@3OD4"
+
+ICICI_COBRANDING_PARENT_MID:
+  - id: "GLYdVw93588318630491"
+    key: "IHcPWn7@FAzCHhHQ"
+PAYMENT_BUTTON_OFF:
+  - id: "LinkPM09867540924173"
+    key: "q9OmpYvJMAkMJfZh"
+ADD_N_PAY_OVERRIDE:
+  - id: "oslNsk40930791373567"
+    key: "WiBz8TcxU9ic7uoe"
+
+PAYMENT_BUTTON_ON:
+  - id: "LPOMss12630580590106"
+    key: "Vh@HHAtfSB&eRXxh"
+
+PAYMENT_BUTTON_DISABLE_OFF:
+  - id: "PayBtn76339676380615"
+    key: "wX1DdJJem@RBUrg9"
+
+SAVE_DEFAULT_SETTINGS:
+  - id: "SfTeQw80034142344431"
+    key: "DD1vfhBqv&8we3Gx"
+ADDNPAY_OVERRIDE_SUBS:
+  - id: "NIdjbE43089827573124"
+    key: "RNjSnS25N5Xn_QMh"
+
+PAYTM_LOGO:
+  - id: "hUGwrN96697361454912"
+    key: "_2KQrg@g#qvwdwmk"
+    preferences:
+      - PAYTM_PA_LOGO_ENABLED: "Y"
+
+SUBS_UI_TEXT:
+  - id: "MERCH680349479766752"
+    key: "TA4e0f8fexi__YkY"
+
+MAX_AMOUNT_CHECK:
+  - id: "LinkLT04525067530437"
+    key: "igS#o1Vwc7KoVN@r"
+
+BANK_MANDATE_BM:
+  - id: "MERCH196882425908892"
+    key: "bAsYt2rObFm%k3gm"
+
+Parent_MID_ICICI:
+  - id: "51724478108294"
+    key: "@dMkJ5G@7NxoMYes"
+
+Child_MID_ICICI:
+  - id: "iwjXfU48393981277578"
+    key: "Vm%obAGCSIFyOg_R"
+
+EDC_LINK_ONLINE:
+  - id: "admins41398576779506"
+    key: "EUlvjqb39UiCEKX&"
+
+TWOFA_POSTPAID:
+  - id: "AUTOME71527070987185"
+    key: "Uoa2Iod3WmBURKui"
+    preferences:
+      - PP_2FA: "Y"
+
+TWOFA_POSTPAID1:
+  - id: "UyEEQj14366732716943"
+    key: "LM#ZU_Ave_3hkYVM"
+    preferences:
+      - PP_2FA: "N"
+
+TWOFA_NO_POSTPAID:
+  - id: "twUNWt43265593677574"
+    key: "V7FJfQNqGpVyWJBx"
+
+IOS_UPI_INTENT:
+  - id: "QjBTUr33307196108232"
+    key: "RH#nCMCiYq6B2czF"
+    preferences:
+      - ENABLE_UPI_INTENT_ON_IOS_MWEB: "Y"
+
+IOS_INTENT_NOPREF:
+  - id: "sHEsCN90930925580010"
+    key: "2Xf_ADVjBfLIFFma"
+    preferences:
+      - ENABLE_UPI_INTENT_ON_IOS_MWEB: "N"
+
+AOA_PEON:
+  - id: "216820000008634129112"
+    key: "KO61@ne6OL4PpFfS"
+
+ITEM_LEVEL_PROMO:
+  - id: "CRUIZO30120206686716"
+    key: "j769Ds0a0ZTSILom"
+    preferences:
+      - CHECKSUM_ENABLED: "N"
+
+LOCATIONPOPUPTRUE:
+  - id: "PayBtn76339676380615"
+    key: "wX1DdJJem@RBUrg9"
+
+LOCATIONPOPUPFALSE:
+  - id: "AUTOME58799263375771"
+    key: "Ico0o7jYEs&7iJcx"
+
+COFT_MERCHANT_3P:
+  - id: "KakaD775479088085832"
+    key: "2AI64ct4#vmS6H4p"
+
+
+CHILD_COBRANDING_MID:
+  - id: "HRSHCF06247372764665"
+    key: "N#xM5ev#PrqwCW1q"
+
+CHILD_COBRANDING_PREF_ENABLED:
+  - id: "HRSHCB53826753700323"
+    key: "khI&XTv_0l%r9#QO"
+
+RESELLER_COBRANDING_MID:
+  - id: "HRSHCE44598388088972"
+    key: "TGED5JxRgjvSJUCs"
+
+UNIQUE_EMI_PLANS:
+  - id: "eaixsb87489767755050"
+    key: "1ITv6ULtE@@ViSm2"
+
+
+
+EMI_SUBVENTION_OFFERS:
+  - id: "OSwepu14234651141338"
+    key: "IlF%Y8x8#Jax5u3_"
+
+
+ADDNPAY_LIMIT:
+  - id: "WALLIM63113421572964"
+    key: "4R6vDayOQejAsPFl"
+
+
+IRCTC_Country_Code:
+  - id: "irctc682073055395855"
+    key: "U3ldp4zV2S_ZtpeO"
+
+Payment_Adapter_Config_PCF_MID:
+  - id: "TCcJSY29975605086421"
+    key: "bmAgZkqUtW%C4@yc"
+
+Payment_Adapter_Config_MDRPCF_MID:
+  - id: "NHYecn81927321431748"
+    key: "zUS3i9@5iUJ%TmF4"
+WALLET_ONLY_INSUFFICIENT_BAL:
+  - id: "AUTOMA77102708450076"
+    key: "Zxm6hcOD0U1XBZYd"
+
+Payment_Adapter_Config_MDR_MID:
+  - id: "aPDaVm59814768511894"
+    key: "bHrztssQUYGSyS55"
+
+PG2_ENABLED_PCF_Platform_MID:
+  - id: "nkktaa33790309986201"
+    key: "d8T7I5uAsiBtACX%"
+
+PG2_ENABLED_MDRPCF_Platform_MID:
+  - id: "YdCRuT61233256876963"
+    key: "DIwngzAUxnIqpDA2"
+
+FULL_PG2_TRAFFIC_ENABLED_COP_PCF_TXN_SLAB_MID:
+  - id: "vOGAQk42961689924577"
+    key: "rhhgv@vqK%sMFqWC"
+
+FULL_PG2_TRAFFIC_ENABLED_COP_MDRPCF_TXN_SLAB_MID:
+  - id: "IJIIXx66929223786470"
+    key: "G2zU_DygOiF2YVk"
+
+FULL_PG2_TRAFFIC_ENABLED_COTP_PCF_PLATFORM_TXN_SLAB_MID:
+  - id: "BdilSr63407604346105"
+    key: "3vvdvKC4ok8lWQCB"
+
+FULL_PG2_TRAFFIC_ENABLED_COTP_MDRPCF_PLATFORM_TXN_SLAB_MID:
+  - id: "GoGSaL41866918028438"
+    key: "d4AkJO6RVeeXcGG1"
+
+PG2_CC_PG2_ENABLED:
+  - id: "AUTOQ833080652298034"
+    key: "Ev7Tc79jkFssB93H"
+PG2_CC_FULL_TRAFFIC_ENABLED:
+  - id: "AUTOQ846869232206781"
+    key: "Ps@NIo#ikeftbJnF"
+
+
+ADD_N_PAY_FREEZE:
+  - id: "CzIbOA49795493101948"
+    key: "_oUztctfjA4LWbJm"
+
+RAILWIRE_PARENT_MID:
+  - id: "Splits50781612685970"
+    key: "xVNU0Ka6Nda534C#"
+
+RAILWIRE_CHILD_MID:
+  - id: "geXyvcmP581144877221"
+    key: "xVNU0Ka6Nda534C#"
+
+HYBRID_FREEZE:
+  - id: "vVekeQ76993847642657"
+    key: "zTkqg6hlmBtm3iJT"
+
+PENNYDROP:
+  - id: "ATMASE02640790202301"
+    key: "nteh&TuEofTh@N98"
+
+SUBS_REFUND_FALSE:
+  - id: "FLIPKA23772562208857"
+    key: "al51ALJ9m03Gm4vv"
+
+AUTOREFUND_FALSE:
+  - id: "MERCHB54437825648666"
+    key: "GdF87VUJk_p&@iIn"
+
+POSTPAID_ERROR_MSG:
+  - id: "AUTOMA18099445526978"
+    key: "J2ssd%fbB0D6jX#H"
+
+Instrument_Categorization_BOSS:
+  - id: "MERCHB54437825648666"
+    key: "GdF87VUJk_p&@iIn"
+
+CUSTOMISATION_ON_CASHIERPAGE:
+  - id: "FLIPKA23772562208857"
+    key: "al51ALJ9m03Gm4vv"
+
+DARK_THEME:
+  - id: "AUTOMA97571707891707"
+    key: "3hjAENIl5El9D7iH"
+
+Notification_Merchant:
+  - id: "JCCJul16350383136093"
+    key: "rZaOdlGVmBSe0MVj"
+
+PAYTM_EXPRESS_ADDMONEY:
+  - id: "htaomF71580526224124"
+    key: "GcIAEhlx!UJbnplM"
+
+EDC_EMI_MERCH:
+  - id: "EDCEMI79488378555519"
+    key: "a%uc1Oxm#UYkgkPF"
+
+MDR_PCF_MERCH:
+  - id: "mdrpcf37078811560744"
+    key: "&AXsCg@xPf75Oi@w"
+
+ADD_MONEY_MERCH:
+  - id: "cuu5PN33033033550100"
+    key: "&DtM8iZCHLnC%xxb"
+
+ADD_MONEY_HDFC:
+  - id: "fGd5Bs72513526000146"
+    key: "%kR3c#CYFQbuY&ud"
+
+BANK_TRANSFER_MERCH:
+  - id: "tSVDnw70324942963680"
+    key: "%@tsug0Y&eOAGS4W"
+
+ADD_MONEY_WALLET_MERCH:
+  - id: "normid26870553491146"
+    key: "qj5U5oKc%YyZ6kNE"
+
+ADD_MONEY_ALLPAYMODE_MERCH:
+  - id: "ajV1C074927721731512"
+    key: "Ea_0jajv!mS3smaX"
+
+QR_Subscription_Merchant:
+  - id: "qrsubs14321314071832"
+    key: "_hZA6xBa_UCJgdNG"
+Edc_Emi:
+  - id: "AutoSK63996576383141"
+    key: "99B@Qtj3HY7X1MTW"
+
+
+QR_ENABLED_MERCHANT:
+    - id: "automa77050345581314"
+      key: "NLvGrDmTyu9AVzTi"
+
+QR_ENABLED_MERCHANT_JS:
+  - id: "automa90302809744492"
+    key: "cs2NRI4HxQCJFrvd"
+
+NON_UPI_MERCHANT:
+  - id: "AUTOMA94536106114105"
+    key: "d4QoxIbL9EYPgHAC"
+BANK_MANDATE_NPCI:
+  - id: "qa8mid52490196971518"
+    key: "0oPyf%pJ9LT9a0Wu"

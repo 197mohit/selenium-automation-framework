@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39909">
+    <test name="Verify the UI Text for the Subscription Flow when values in MerchantStaticConfig DB updated for JS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_1"></include>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_forBM"></include>
+                    </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify the UI Text for the Subscription Flow when values in MerchantStaticConfig DB updated for Stdcheckout">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_1"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify the UI Text for the Subscription Flow when values in MerchantStaticConfig DB updated">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="PGP_37934_Verify_Subs_UI_Text"></include>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_forBM"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

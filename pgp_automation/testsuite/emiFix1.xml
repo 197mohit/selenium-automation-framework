@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fixes">
+    <test name="EMI Fixes1">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="checkEMIEligiBilityWithEMITypeCreditCard"/>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="verifyTextScriptBrandEmiCases_forHDFCBank_whenBankContributionGreaterThanZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

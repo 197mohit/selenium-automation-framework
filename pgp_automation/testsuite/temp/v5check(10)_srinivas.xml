@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="ValidateBrandAndBusinessNameForRetryTxn"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs wap revamp">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

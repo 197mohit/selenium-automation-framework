@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notification_Suite_UI" verbose="1" thread-count="10" parallel="tests">
+    <test name="PGP-39455">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="acquiringCloseNotifyNotifyWithCC"/>
+                    <include name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                    <include name="verifyPaymentNotifyWithCC"/>
+                    <include name="acquiringCloseNotifyNotifyWithPPI"/>
+                    <include name="verifyPaymentNotifyWithAddnPay"/>
+                    <include name="successfulPGOnlyDCEventsPPSL"/>
+                    <include name="successfulPGOnlyWalletEventsPPSL"/>
+                    <include name="verifyPaymentNotifyWithUPI"/>
+                    <include name="successfulPGOnlyNBEventsPPSL"/>
+                    <include name="successfulPGOnlyEMIEventsPPSL"/>
+                    <include name="successfulPGOnlyCCEventsPPSL"/>
+                    <include name="verifyPaymentNotifyWithDC"/>
+                    <include name="acquiringCloseNotifyNotifyWithDC"/>
+                    <include name="successfulPGOnlyUPIEventsPPSL"/>
+                    <include name="verifyPaymentNotifyWithNB"/>
+                    <include name="verifyPaymentNotifyWithWallet"/>
+                    <include name="acquiringCloseNotifyNotifyWithNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PeonTxn Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PeonTxn Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- New Cases from Notification Pg2 Added -->
+    <test name="PGP_43686">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="successfulPGOnlyCCEventsPPSL"/>
+                    <include name="successfulPGOnlyDCEventsPPSL"/>
+                    <include name="successfulPGOnlyWalletEventsPPSL"/>
+                    <include name="successfulPGOnlyUPIEventsPPSL"/>
+                    <include name="successfulPGOnlyPostpaidEventsPPSL"/>
+                    <include name="successfulPGOnlyEMIEventsPPSL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="verifyPaymentNotify with diff paymodes in pgproxy notification logs">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="verifyPaymentNotifyWithCC"/>
+                    <include name="verifyPaymentNotifyWithDC"/>
+                    <include name="verifyPaymentNotifyWithNB"/>
+                    <include name="verifyPaymentNotifyWithUPI"/>
+                    <include name="verifyPaymentNotifyWithAddnPay"/>
+                    <include name="verifyPaymentNotifyWithHybrid"/>
+                    <include name="verifyPaymentNotifyWithWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Acquiring Close Notify hit for different Paymodes ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="acquiringCloseNotifyNotifyWithCC"/>
+                    <include name="acquiringCloseNotifyNotifyWithDC"/>
+                    <include name="acquiringCloseNotifyNotifyWithNB"/>
+                    <include name="acquiringCloseNotifyNotifyWithUPI"/>
+                    <include name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                    <include name="acquiringCloseNotifyNotifyWithHybrid"/>
+                    <include name="acquiringCloseNotifyNotifyWithPPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Changes required at UI and Notification for PG UPI Collect process to remove the polling checkoutjs flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                    <include name="verify_that_PG_merchant_payload_is_pushed_to_UPI_COLLECT_PG_topic_AOA_Txn"/>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_PG_CheckoutJs"/>
+                    <include name="disableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Changes required at UI and Notification for PG UPI Collect process to remove the polling enhanced flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verify_that_PG_merchant_payload_is_pushed_to_UPI_COLLECT_PG_topic_PG_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Close_Order">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.AcquiringOrderCloseNotify"/>
+        </classes>
+    </test>
+    <test name="Refund_Success">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.RefundNotify"/>
+        </classes>
+    </test>
+    <test name="Acquiring Close Notify">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.AcquiringOrderCloseNotify"/>
+        </classes>
+    </test>
+</suite>

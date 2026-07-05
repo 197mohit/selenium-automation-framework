@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56062" verbose="1" parallel="tests" thread-count="3">
+
+    <test name="PGP-56062 Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="onlypromocode_in_offerDiscovery"/>
+                    <include name="multipromocode_in_offerDiscovery"/>
+                    <include name="promocodeId_withSubventionId_offerDiscovery"/>
+                    <include name="promocode_Id_in_offerDiscovery"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

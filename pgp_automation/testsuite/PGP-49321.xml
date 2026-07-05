@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49321" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-49321">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest">
+                <methods>
+                    <include name="TestSuccessResponseAndOfferTextWithUserDetails"/>
+                    <include name="TestSuccessResponseWithUserDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

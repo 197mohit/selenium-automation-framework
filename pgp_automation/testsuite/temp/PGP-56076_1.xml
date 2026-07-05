@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-56076" verbose="1">
+    <test name="CVV Validation handling for Card transcation ">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="CVValidationforDinerswith_3_NumericDigits"/>
+                    <include name="CVValidationforDinerswith_4_NumericDigits"/>
+                    <include name="CVValidationforDinerswith_2_NumericDigits"/>
+                    <include name="CVValidationforDinerswith_3_NumericDigitsandSpaceBetweenThem"/>
+                    <include name="CVValidationforDinerswith_3_NumericDigitsandSpaceAfterCvv"/>
+                    <include name="CVValidationforDinerswith_3_AlphaNumericDigits"/>
+                    <include name="CVValidationforDinerswith_3_SpecialCharNumericDigits"/>
+                    <include name="CVValidationforAMEXwith_4_NumericDigits"/>
+                    <include name="CVValidationforAMEXwith_3_NumericDigits"/>
+                    <include name="CVValidationforAMEXwith_5_NumericDigits"/>
+                    <include name="CVValidationforAMEXwith_4_NumericDigitsandSpaceBetweenThem"/>
+                    <include name="CVValidationforAMEXwith_4_NumericDigitsandSpaceAfterCvv"/>
+                    <include name="CVValidationforAMEXwith_4_AlphaNumericDigits"/>
+                    <include name="CVValidationforAMEXwith_4_SpecialCharNumericDigits"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

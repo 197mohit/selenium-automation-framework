@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "paramsList": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "entityId": {
+              "type": "integer"
+            },
+            "fieldName": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "entityId",
+            "fieldName"
+          ]
+        }
+      ]
+    },
+    "successfullyProcessed": {
+      "type": "boolean"
+    },
+    "entityId": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "paramsList",
+    "successfullyProcessed",
+    "entityId"
+  ]
+}

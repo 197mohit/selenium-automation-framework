@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Redirection_P0_Cases" verbose="1" parallel="methods" thread-count="5">
+    <listeners>
+        <listener class-name="com.paytm.listeners.StatusCounterListener"/>
+        <listener class-name="com.paytm.listeners.ScreenListener"/>
+    </listeners>
+    <test name="Redirectionflow">
+        <parameter name="theme" value="enhancedweb_revamp"></parameter>
+        <classes>
+            <class name="scripts.UI.redirectionalflowP0NewCases"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="REDIRECTION FIX" verbose="1" >
+
+    <test name="Verify bank otp page is visible(auto submit from browser should fail on insta redirect) if 'MERCHANT_REDIRECT_FLOW_ENABLED' is set to 'Y' in merchant_preference_info table in PGPDB but NKMB/MASTER/DC/ICICI combination does not exists in 'redirect_channel_config' table in PGPDB">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.otpInject.OTPInjection">
+                    <methods>
+                    <include name="successTxnIfCombinationDoesntExist"/>
+                    </methods>
+             </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Login Screen changes">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.PGOnly">
+                    <methods>
+                        <include name="loginScreenChanges"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Validate successful EMI_DC transaction">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.EMI">
+                    <methods>
+                        <include name="validateSuccessEMI_DC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Hybrid:  Verify the payment modes sequencing is as per the list returned from the mapping service API when the preference is active.">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.UI.EnhancedUITests">
+                    <methods>
+                        <include name="enhancedOrderingHybrid"/>
+                        <include name="enhancedOrderingLogInCashierPage"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Subscription transaction when app is not installed but user is logged in (Balance)">
+        <parameter name="theme" value="enhancedwap_revamp">
+            <classes>
+                <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                    <methods>
+                        <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedIn_Wallet"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

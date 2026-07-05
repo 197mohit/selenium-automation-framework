@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="UpiNumericIdTestCase_06"/>      
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyLoginWithOTP"/>     
+                    <include name="verifyUPIwithPCF"/> 
+                    <include name="verifyDCwithPCF"/> 
+                    <include name="validateSucessfullLoginWithCorrectOtp"/>            
+                </methods>
+            </class>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyRupayCardAltGenCallOffus"/>            
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="cancelPendingOrder" verbose="1">
+    <test name="cancelPendingOrder in checkout JS test cases - NEW UI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePendingTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <include name="ValidatePendingTxnWhenCancelPendingOrderFlagIsFALSE"/>
+                    <include name="ValidateSUCCESSTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <include name="ValidateFAILTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

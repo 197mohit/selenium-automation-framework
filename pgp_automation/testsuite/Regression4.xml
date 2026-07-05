@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression4" verbose="1" thread-count="12"
+       parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <test name="temp-PGP-19819 Khata | Callback to Khata system when Khata order payments are refunded for ledger reconciliation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataRefund">
+            </class>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_1">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.GuestTokenFetchPayOptionsV1Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25033_4">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test"/>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25114">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifySpecialCharacterCustIdTxnGotSuccessloggedUser"/>
+                    <include name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Request Type">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetMerchantRequestTypesTest"/>
+        </classes>
+    </test>
+
+    <test name="Split settlement For Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeMF"/>
+        </classes>
+    </test>
+
+    <test name="Split settlement for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeMF"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25114 for Native">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="SpecialCharCustIdTxnSuccessfulForloggedInUser"/>
+                    <include name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-Prepaid cases for enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidEnhancedTxn"/>
+                    <include name="appInvokeSuccessPrepaidTxn"/>
+                    <include name="addPaySuccessPrepaidTxnEnhanced"/>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                    <include name="retryPrepaid"/>
+                    <include name="pcfPrepaidEnhancedTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalse"/>
+                    <include name="FF4jOffNormalTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalseBinFalse"/>
+                    <include name="peonPrefDisabledPrepaidCard"/>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="tempPrepaid cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidEnhancedTxn"/>
+                    <include name="appInvokeSuccessPrepaidTxn"/>
+                    <include name="addPaySuccessPrepaidTxnEnhanced"/>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                    <include name="retryPrepaid"/>
+                    <include name="pcfPrepaidEnhancedTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalse"/>
+                    <include name="FF4jOffNormalTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalseBinFalse"/>
+                    <include name="peonPrefDisabledPrepaidCard"/>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Prepaid cases for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidNativeTxn"/>
+                    <include name="addPaySuccessPrepaidTxnNative"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-Prepaid cases for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidNativeTxn"/>
+                    <include name="addPaySuccessPrepaidTxnNative"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Rent Payment Risk Info for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskAcceptNotNullForCC"/>
+                        <include name="validateRiskAcceptNotNullForDC"/>
+                        <include name="validateRiskAcceptNotNullForUPI"/>
+                        <include name="validateRiskAcceptNotNullForHybrid"/>
+                        <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                        <include name="validateRiskAcceptNotNullForPPBL"/>
+                        <include name="validateRiskInfoNullForCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Rent Payment Risk Info for  Native Plus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskAcceptNotNullForCC"/>
+                        <include name="validateRiskAcceptNotNullForDC"/>
+                        <include name="validateRiskAcceptNotNullForUPI"/>
+                        <include name="validateRiskAcceptNotNullForHybrid"/>
+                        <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                        <include name="validateRiskAcceptNotNullForPPBL"/>
+                        <include name="validateRiskInfoNullForCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+
+    <test name="Deffered for risk testcases for rent">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateRiskAcceptNotNullForCC"/>
+                    <include name="validateRiskAcceptNotNullForDC"/>
+                    <include name="validateRiskAcceptNotNullForUPI"/>
+                    <include name="validateRiskAcceptNotNullForHybrid"/>
+                    <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                    <include name="validateRiskAcceptNotNullForPPBL"/>
+                    <include name="validateRiskInfoNullForCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Card Index api changes">
+        <classes>
+            <class name="scripts.api.theia.fetchCardIdxNo.JWTTokenFetchCardIndexNoTest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Enhanced Web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateCCBinCorporateMerchant"/>
+                    <include name="successNonCorporateCCBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successNonCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinCorporateMerchant"/>
+                    <include name="pendingCorporateDCBinCorporateMerchant"/>
+                    <include name="successDCCorporateDCBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Enhanced WAP">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateCCBinCorporateMerchant"/>
+                    <include name="successNonCorporateCCBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successNonCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinCorporateMerchant"/>
+                    <include name="pendingCorporateDCBinCorporateMerchant"/>
+                    <include name="successDCCorporateDCBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="successfulSeamlessCorporateCC"/>
+                    <include name="successfulSeamlessCorporateDC"/>
+                    <include name="successfulSeamlessCorporateEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on PWP merchant">
+        <classes>
+            <class name="scripts.PWPEnhanced">
+                <methods>
+                    <include name="successfulSeamlessCorporateCC"/>
+                    <include name="successfulSeamlessCorporateDC"/>
+                    <include name="successfulSeamlessCorporateEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Hybrid merchant">
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="successCorporateHybridCCBinCorporateMerchant"/>
+                    <include name="successCorporateHybridDCBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards through AddNPay Flow">
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="successCorporateAddPayCCBinCorporateMerchant"/>
+                    <include name="successCorporateAddPayDCBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards txn on PCF flows">
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="successCorporateCCPCF"/>
+                    <include name="successCorporateDCPCF"/>
+                    <include name="successCorporateCCPCFNonCorporate"/>
+                    <include name="successCorporateDCPCFNonCorporate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Prepaid txn on Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="prepaidCorporateCard"/>
+                    <include name="prepaidCorporateInternationalCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Prepaid txn on Native Plus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="prepaidCorporateCard"/>
+                    <include name="prepaidCorporateInternationalCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

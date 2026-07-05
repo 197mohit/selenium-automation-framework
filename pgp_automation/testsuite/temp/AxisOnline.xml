@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI" verbose="1" parallel="tests" thread-count="3">
+  <test name="Axis UPI Online Integration Test">
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V1ValidateVpaTest"/>
+      <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V4ValidateVpaTest"/>
+      <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.AxisUpiOnlineTransactionsTest"/>
+    </classes>
+  </test>
+</suite>

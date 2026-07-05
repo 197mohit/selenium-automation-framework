@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-44212" verbose="1" parallel="tests" thread-count="2">
+    <test name="checkoutjs_web_revamp tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                    <include name="ValidateUITextMsgTestsScanNpay"/>
+                    <include name="ValidateUITextMsgTestLoginQR"/>
+                    <include name="ValidateUITextMsgLoginQR"/>
+                    <include name="ValidateUITextMsgTestLoginOTP"/>
+                    <include name="ValidateUITextMsgTestLoginQRAndLoginOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="enhancedweb_revamp tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                    <include name="ValidateUITextMsgTestLoginOTPEnhancedflow"/>
+                    <include name="ValidateUITextMsgTestLoginQREnhancedflow"/>
+                    <include name="ValidateUITextMsgLoginQREnhancedflowWithSavedCard"/>
+                    <include name="ValidateUITextMsgLoginOTPEnhancedflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

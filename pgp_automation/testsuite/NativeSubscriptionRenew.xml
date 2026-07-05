@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NativeRenewSubscription" verbose="1" parallel="methods" thread-count="4">
+    <test name="Native Renew Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription"/>
+        </classes>
+    </test>
+</suite>

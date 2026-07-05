@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="toVerifyNewKafkaTopic_inSuccess_Txn"/>
+                    <include name="toVerifyNewKafkaTopic_inFailure_Txn"/>
+                    <include name="toVerifyNewKafkaTopic_inPending_Txn"/>
+                    <include name="VerifyUPICollect_Tab"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <include name="VerifyUPICollect_Tab_loggedIN"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled_LoggedIn"/>
+                    <include name="VerifyUPICollect_Via_Login"/>
+                    <include name="VerifySopamount"/>
+                    <include name="ValidatePayButtonWithSelectedPaymode"/>
+                    <include name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

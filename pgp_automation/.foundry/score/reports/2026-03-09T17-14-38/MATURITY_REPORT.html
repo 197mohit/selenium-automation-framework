@@ -1,0 +1,99 @@
+<h1>Repository Maturity Report</h1>
+<p><strong>Score</strong>: 46/120 (38.3%, F)
+<strong>Date</strong>: 2026-03-09
+<strong>Repository</strong>: pgp_automation
+<strong>Maturity Level</strong>: Critical</p>
+<h2>Summary</h2>
+<p>The PGP automation test suite has an impressive test corpus (14,597 tests across 898 files) and strong AI agent configuration, but is critically undermined by pervasive hardcoded credentials committed across 36+ files, a CI pipeline that never executes tests, and zero static analysis enforcement. Security posture and code hygiene are the weakest areas, while AI agent readiness is the standout strength. Immediate remediation of credential exposure and CI gaps is essential before addressing other maturity dimensions.</p>
+<h2>Score Breakdown</h2>
+<p>| Criterion | Score | Confidence | Key Finding |
+|-----------|-------|------------|-------------|
+| AI Agent Readiness | 7/10 | high | Exceptionally detailed agent instructions (CLAUDE.md, AGENTS.md, 14 cast files, .cursor rules) |
+| Testing &amp; Quality Assurance | 6/10 | high | Massive test suite but no coverage tooling, CI never runs tests, SonarQube disabled |
+| CI/CD Pipeline | 4/10 | high | Jenkinsfile exists with quality gate, but tests skipped (-DskipTests=true), no lint stages |
+| Infrastructure &amp; Deployment | 4/10 | high | 14+ environment profiles, but 300+ hardcoded secrets across config files |
+| Observability &amp; Reliability | 4/10 | high | Three reporting frameworks (Allure, Extent, ReportPortal) but 1,593 System.out.println calls |
+| Documentation &amp; Knowledge | 4/10 | high | No README.md; CONTRIBUTING.md partially fills gap; minimal Javadoc |
+| Developer &amp; Agent Experience | 4/10 | high | No Maven wrapper, no local dev setup, no .editorconfig or formatting tools |
+| Dependency Management | 3/10 | high | Outdated deps with known CVEs (jackson 2.9, jsoup 1.8), 5 SNAPSHOT deps, system-scoped JARs |
+| Release &amp; Change Management | 3/10 | high | No release automation, no git tags, skeleton CHANGELOG, VERSION stuck on SNAPSHOT |
+| Git &amp; Collaboration Practices | 3/10 | high | Credentials in git, binary JARs committed, no commit conventions, incomplete .gitignore |
+| Code Hygiene &amp; Maintainability | 2/10 | high | No linting, 200+ wildcard imports, 15K-line god class, 134 printStackTrace() calls |
+| Security Posture | 2/10 | high | 87+ hardcoded secrets, no SAST, no dependency scanning, HTTP artifact repos |</p>
+<p><strong>Penalties Applied</strong>: -4 points (hardcoded secrets: -4)</p>
+<h2>Top Issues</h2>
+<ul>
+<li><strong>CRITICAL: Hardcoded credentials everywhere</strong> -- 87+ plaintext passwords, JWT keys, DB credentials, SonarQube tokens, and SMTP passwords committed across 13+ localconfig.properties files, Jenkinsfile, pom.xml, settings.xml, and Java source code. Immediate rotation and remediation required.</li>
+<li><strong>HIGH: CI pipeline never runs tests</strong> -- Jenkinsfile uses <code>-DskipTests=true</code> and has no test stage. For a QA automation repo, this defeats the core purpose.</li>
+<li><strong>HIGH: SonarQube disabled by default</strong> -- <code>sonar.skip=true</code> in pom.xml negates the quality gate in the Jenkinsfile, leaving zero static analysis enforcement.</li>
+<li><strong>HIGH: No static analysis or linting</strong> -- No checkstyle, SpotBugs, PMD, ErrorProne, or formatter configured anywhere in the build or CI.</li>
+<li><strong>HIGH: Severely outdated dependencies with known CVEs</strong> -- jackson-core 2.9.1, jsoup 1.8.3 (CVE-2015-6748, CVE-2021-37714), jjwt 0.9.1, guice 4.1.0. No OWASP dependency-check or vulnerability scanning.</li>
+<li><strong>HIGH: No code coverage measurement</strong> -- No JaCoCo or equivalent configured; no coverage thresholds enforced.</li>
+<li><strong>HIGH: No README.md</strong> -- The single most important documentation file is missing; acknowledged as tech debt.</li>
+<li><strong>HIGH: SNAPSHOT dependencies</strong> -- 5 internal dependencies use -SNAPSHOT versions, making builds non-reproducible.</li>
+<li><strong>HIGH: System-scoped JARs committed to git</strong> -- checksum.jar and EncryptDecrypt.jar bypass Maven dependency resolution.</li>
+<li><strong>HIGH: No release automation or git tags</strong> -- 2,790+ PRs merged but no version tags, no release workflow.</li>
+</ul>
+<h2>Inconclusive Areas</h2>
+<p>Several aspects could not be fully evaluated because configuration likely lives outside this repository:</p>
+<ul>
+<li><strong>CI test execution</strong>: Test execution may be handled by separate Jenkins jobs or external orchestration (the 100+ testsuite XML files and ReportPortal integration suggest regular execution from outside this repo).</li>
+<li><strong>Branch protection &amp; PR rules</strong>: Bitbucket server-side settings (required reviewers, merge checks, branch permissions) are not visible in repository files.</li>
+<li><strong>SonarQube enforcement</strong>: May be enforced for specific branches or PR builds via Jenkins pipeline parameters not visible in the Jenkinsfile.</li>
+<li><strong>Dependency vulnerability scanning</strong>: May be handled at an organization level (centralized Snyk or Nexus IQ) with no evidence in this repo.</li>
+<li><strong>Parent POM configuration</strong>: The parent POM (<code>parent-automation:3.2.11-SNAPSHOT</code>) may include additional plugins, dependency management, or analysis configuration not visible here.</li>
+<li><strong>ReportPortal dashboards</strong>: Disabled by default (<code>rp.enable=false</code>) but likely enabled in CI jobs externally.</li>
+<li><strong>Internal wiki/Confluence</strong>: Developer documentation and architecture docs may exist outside this repo.</li>
+<li><strong>Docker agent image</strong>: The Jenkins Docker agent (<code>build_env:v1</code>) is maintained in a separate infra repo.</li>
+</ul>
+<h2>Recommendations</h2>
+<h3>High Priority</h3>
+<ol>
+<li>
+<p><strong>Remediate all hardcoded credentials immediately.</strong> Move secrets to HashiCorp Vault or environment variables. Replace plaintext values in localconfig.properties with <code>${env.VAR}</code> placeholders. Rotate all exposed credentials (DB passwords, JWT keys, SonarQube token, SMTP password). Add git-secrets or detect-secrets as a pre-commit hook to prevent future leaks. <em>Effort: HIGH, Impact: Fixes the single biggest security and compliance risk.</em></p>
+</li>
+<li>
+<p><strong>Add a test execution stage to the CI pipeline.</strong> Add a dedicated Test stage to the Jenkinsfile that runs at least a smoke suite: <code>mvn test -s settings.xml -DsuiteXmlFile=testsuite/Regression.xml</code>. Archive test reports and add failure notifications. <em>Effort: MEDIUM, Impact: Validates the core purpose of this QA automation repo on every build.</em></p>
+</li>
+<li>
+<p><strong>Enable static analysis.</strong> Remove <code>sonar.skip=true</code> from pom.xml. Add maven-checkstyle-plugin (with google_checks.xml) and SpotBugs with FindSecBugs plugin. Configure these as blocking CI steps. <em>Effort: MEDIUM, Impact: Catches code quality, security, and style issues automatically.</em></p>
+</li>
+</ol>
+<h3>Medium Priority</h3>
+<ol>
+<li>
+<p><strong>Upgrade outdated dependencies and add vulnerability scanning.</strong> Update jackson-core, jsoup, jjwt, guice, and other outdated libraries. Add OWASP dependency-check-maven plugin to the CI pipeline. Switch all artifact repository URLs from HTTP to HTTPS. <em>Effort: MEDIUM.</em></p>
+</li>
+<li>
+<p><strong>Add code coverage with JaCoCo.</strong> Configure JaCoCo Maven plugin with reporting and set minimum thresholds (e.g., 70% for helper/utility code in src/main/java). <em>Effort: LOW.</em></p>
+</li>
+<li>
+<p><strong>Create a README.md.</strong> Consolidate content from CLAUDE.md and CONTRIBUTING.md into a proper README covering project purpose, prerequisites, setup, test execution, and repo layout. <em>Effort: LOW.</em></p>
+</li>
+<li>
+<p><strong>Add Maven wrapper and JDK version pinning.</strong> Run <code>mvn wrapper:wrapper</code> and add a <code>.sdkmanrc</code> or <code>.java-version</code> file pinning JDK 11. Add <code>.editorconfig</code> for consistent formatting. <em>Effort: LOW.</em></p>
+</li>
+<li>
+<p><strong>Implement release workflow.</strong> Adopt git tagging (e.g., v3.2.11), configure maven-release-plugin or foundry release, and maintain the CHANGELOG. Pin internal dependencies to release versions for tagged releases. <em>Effort: MEDIUM.</em></p>
+</li>
+</ol>
+<h3>Low Priority</h3>
+<ol>
+<li>
+<p><strong>Replace System.out.println with proper logging.</strong> Adopt SLF4J + Logback with a logback.xml configuration. Replace 1,593 println calls and 134 printStackTrace() calls with structured logger calls. <em>Effort: HIGH (volume of changes).</em></p>
+</li>
+<li>
+<p><strong>Migrate system-scoped JARs.</strong> Publish checksum.jar and EncryptDecrypt.jar to internal Artifactory/Nexus and declare them as normal Maven dependencies. Add <code>*.jar</code> to .gitignore. <em>Effort: LOW.</em></p>
+</li>
+<li>
+<p><strong>Adopt commit message conventions.</strong> Implement Conventional Commits format and enforce via commitlint or Bitbucket server-side hook. Add a CODEOWNERS file for review routing. <em>Effort: LOW.</em></p>
+</li>
+</ol>
+<hr />
+<h2>Scoring Cost</h2>
+<p>| Metric | Value |
+|--------|-------|
+| Total cost | $7.49 |
+| Input tokens | 4,960,071 |
+| Output tokens | 71,486 |
+| Total tokens | 5,031,557 |</p>

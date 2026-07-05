@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49543" verbose="1" thread-count="1">
+    <test name="PGP-49543">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="tc_01"/>
+                    <include name="tc_02"/>
+                    <include name="tc_03"/>
+                    <include name="tc_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

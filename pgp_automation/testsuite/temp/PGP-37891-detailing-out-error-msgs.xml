@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PeonTxn(PGP-37891)" verbose="1">
+
+    <test name="ResultCode Preference TestCases for enhancedweb_revamp">
+
+        <parameter name="theme" value="enhancedweb_revamp"/>
+
+        <classes>
+
+            <class name="scripts.PeonTxn">
+
+                <methods>
+
+                    <include name="PGP_37891_DetailingOutErrorMsgsForMerchant"/>
+
+                    <include name="PGP_37891_DetailingOutErrorResCodeDisable"/>
+
+                    <include name="PGP_37891_DetailingOutErrorResCodeNotConfig"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

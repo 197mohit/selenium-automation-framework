@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ProcessTransactionTests" verbose="1" parallel="methods" thread-count="20">
+    <test name="SCW Native AddMoney Cases">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateFullKYCWalletNewFlow"/>
+                    <include name="validateFullKYCSavedCardWalletNewFlow"/>
+                    <include name="validateFullKYCGVNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-23725-Correct Error Message Tests for different paymodes">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifySBICreditCardNotAllowedMsg"/>
+                    <include name="verifyHDFCCreditCardAllowedwhenHDFC_DC_CC_Enabled"/>
+                    <include name="verifyHDFCDebitNotAllowedwhenOnlyHDFC_CC_Enabled"/>
+                    <include name="verifyHDFCCreditCardAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletAddNPay"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletHybrid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Plus Add Money">
+    <parameter name="isNativePlus" value="true">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                    <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                    <include name="Verify_NativeAddMoneyRetry"/>
+                    <include name="Verify_NativeAddMoneyDC"/>
+                    <include name="Verify_NativeAddMoneyNBLessThan2000Rs"/>
+                    <include name="Verify_NativeAddMoneyNBGreaterThan2000"/>
+                    <include name="Verify_NativeAddMoneyUPI"/>
+                    <include name="Verify_NativeAddMoneyCC"/>
+                </methods>
+            </class>
+        </classes>
+    </parameter>
+    </test>
+
+    <test name="Native Add Money">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                        <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                        <include name="Verify_NativeAddMoneyRetry"/>
+                        <include name="Verify_NativeAddMoneyDC"/>
+                        <include name="Verify_NativeAddMoneyNBLessThan2000Rs"/>
+                        <include name="Verify_NativeAddMoneyNBGreaterThan2000"/>
+                        <include name="Verify_NativeAddMoneyUPI"/>
+                        <include name="Verify_NativeAddMoneyCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Native Plus Process Txn">
+        <parameter name="isNativePlus" value="true">
+            <parameter name="theme" value="enhancedweb"/>
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_PPBL_Success"/>
+                        <include name="TC_PT_COD_Failure_WithoutToken"/>
+                        <include name="TC_PT_COD_Failure"/>
+                        <include name="TC_PT_015"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                        <include name="TC_PT_014"/>
+                        <include name="TC_PT_025_CC"/>
+                        <include name="TC_PT_016"/>
+                        <include name="TC_PT_043"/>
+                        <include name="TC_PT_hybridWithoutFetchPayOption"/>
+                        <include name="verifyRestrictCCPromo_TC_20"/>
+                        <include name="verifyRestrictDCPromo_TC_20"/>
+                        <include name="verifyRestrictPPIPromo_TC_20"/>
+                        <include name="verifyCCPromo_TC_16"/>
+                        <include name="verifyDCPromo_TC_16_1"/>
+                        <include name="verifyWalletPromo_TC_15"/>
+                        <include name="TC_PT_002"/>
+                        <include name="TC_PT_003"/>
+                        <include name="TC_PT_004"/>
+                        <include name="TC_PT_005"/>
+                        <include name="TC_PT_006"/>
+                        <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                        <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                        <include name="TC_PT_035"/>
+                        <include name="TC_PT_037"/>
+                        <include name="TC_13"/>
+                        <include name="TC_07"/>
+                        <include name="TC_PT_001"/>
+                        <include name="TC_PT_COD_Success"/>
+                        <include name="TC_PT_EMI_Success"/>
+                        <include name="TC_PT_0CostEMI_Success"/>
+                        <include name="verifyRestrictDCPromo_TC_20_1"/>
+                        <include name="TC_PT_028"/>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_025"/>
+                        <include name="TC_PT_EMI_Hyb_Success"/>
+                        <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                        <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                        <include name="TC_PT_BAJAJ_EMI_Success"/>
+                        <include name="checkCardIndexNoPresentInProcessTransactionApiResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                        <include name="checkNativeAddMoneyTxn"/>
+                        <include name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                        <include name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                        <include name="EMI_Native_Bank_failure"/>
+                        <include name="testPPBLPayModeIsDisabledOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                        <include name="testErrMsgIsDisplayedOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                        <include name="testNextPayModeIsSelectedOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Direct Bank Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Direct Bank Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NonMatchingWebsite">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="testOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByDCWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByNBWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByPPIWhenNonMatchingWebsiteProvided"/>
+                        <include name="testAddNPayOrderSuccessWhenNonMatchingWebsiteProvided"/>
+                        <include name="testHybridOrderSuccessWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByUPIWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessBySCWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByCODWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByEMIWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByHDFCDirectChannelWhenNonMatchingWebsiteProvided"/>
+                        <include name="testRetriedAddMoneyOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByPPBLWhenNonMatchingWebsiteProvided"/>
+                        <include name="testOrderSuccessByPaytmCCWhenNonMatchingWebsiteProvided"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+
+    <test name="Check Display Message Tests - Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PGP_17782_ValidateSingleQuotesinRespMsgReplacedWithBlanks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Check Display Message Tests - NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PGP_17782_ValidateSingleQuotesinRespMsgReplacedWithBlanks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payment Retry Count Testcases - native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="ValidatePaymentsRetryCountEqualsFive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payment Retry Count Testcases - native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="ValidatePaymentsRetryCountEqualsFive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Close Order Native Tests - Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyOrderClosedWithTxnFailureWhenMidNotExemptedfromCloseOrder"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Close Order Native Tests - Native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyOrderClosedWithTxnFailureWhenMidNotExemptedfromCloseOrder"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Add Description FPO Tests - txntoken and Guest">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefDisabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-13158 for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="verifyReturnVPAforSuccessfulNativeTxnOFFUSMerchant"/>
+                        <include name="verifyReturnVPAforFailedTxnOFFUSMerchant"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="PGP-27167 - Verify MerchantuniqueReference - Native Only" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PGP_27167_verifyMERC_UNQ_REFinTxnStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27167 - Verify Txn Amount is Updated - Native" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyUpdateTxnApiTxnAmountDecreased"/>
+                    <include name="verifyUpdateTxnApiTxnAmountIncreased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27167 - Verify Txn Amount is Updated - Native+" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyUpdateTxnApiTxnAmountDecreased"/>
+                    <include name="verifyUpdateTxnApiTxnAmountIncreased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25114 for Native">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="SpecialCharCustIdTxnSuccessfulForloggedInUser"/>
+                    <include name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Rent Payment Risk Info for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskAcceptNotNullForCC"/>
+                        <include name="validateRiskAcceptNotNullForDC"/>
+                        <include name="validateRiskAcceptNotNullForUPI"/>
+                        <include name="validateRiskAcceptNotNullForHybrid"/>
+                        <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                        <include name="validateRiskAcceptNotNullForPPBL"/>
+                        <include name="validateRiskInfoNullForCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Rent Payment Risk Info for  Native Plus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskAcceptNotNullForCC"/>
+                        <include name="validateRiskAcceptNotNullForDC"/>
+                        <include name="validateRiskAcceptNotNullForUPI"/>
+                        <include name="validateRiskAcceptNotNullForHybrid"/>
+                        <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                        <include name="validateRiskAcceptNotNullForPPBL"/>
+                        <include name="validateRiskInfoNullForCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Corporate Cards Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24851">
+        <!--Already included in SplitSettlement class-->
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyMFSplitSettlementFailureWithEscape"/>
+                    <include name="verifyNativeSplitSettlementWithoutEscape"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-20695">
+    <classes>
+    <class name="scripts.Native.ProcessTransactionTests">
+        <methods>
+            <include name="verifyAddNPayWalletLimitBreachedWithCOP"/>
+            <include name="verifyAddNPayWalletLimitBreachedNativeWithoutCOP"/>
+            <include name="verifyGVWalletLimitBreachedAddNPay"/>
+        </methods>
+    </class>
+    </classes>
+    </test>
+
+    <test name="temp-PGP-24778 : Native Plus" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateTransPaidCC"/>
+                    <include name="validateTransPaidDC"/>
+                    <include name="validateTransPaidNB"/>
+                    <include name="validateTransPaidUPI"/>
+                    <include name="validateTransPaidPPI"/>
+                    <include name="validateSuccessTransPaidPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+            <test name="temp-PGP-24778 : Native">
+                <parameter name="isNativePlus" value="false"/>
+                <classes>
+                    <class name="scripts.Native.ProcessTransactionTests">
+                        <methods>
+                            <include name="validateTransPaidCC"/>
+                            <include name="validateTransPaidDC"/>
+                            <include name="validateTransPaidNB"/>
+                            <include name="validateTransPaidUPI"/>
+                            <include name="validateTransPaidPPI"/>
+                            <include name="validateSuccessTransPaidPPBL"/>
+                        </methods>
+                    </class>
+
+                </classes>
+            </test>
+
+            <test name="PGP-27715 Corporate Card EMI Only Native">
+                <parameter name="isNativePlus" value="false">
+                    <classes>
+                        <class name="scripts.Native.ProcessTransactionTests">
+                            <methods>
+                                <include name="PGP_27715_validateOnlyEMIMerchantwithCorporateBin"/>
+                                <include name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                            </methods>
+                        </class>
+                    </classes>
+                </parameter>
+            </test>
+            <test name="PGP-27715 Corporate Card EMI Only Native+">
+                <parameter name="isNativePlus" value="true">
+                    <classes>
+                        <class name="scripts.Native.ProcessTransactionTests">
+                            <methods>
+                                <include name="PGP_27715_validateOnlyEMIMerchantwithCorporateBin"/>
+                                <include name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                            </methods>
+                        </class>
+                    </classes>
+                </parameter>
+            </test>
+
+    <test name="Native PTCTCs">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForFlipkartFlow"/>
+                    <include name="validateNewFlagWhenPrefIsDisableForFlipkartFlow"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForFlipkartFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

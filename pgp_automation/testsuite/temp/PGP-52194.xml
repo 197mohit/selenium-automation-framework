@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-52194" verbose="1">
+    <test name="Verify V2/Order/Checkout API ">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="verifyDCEMIForv2OrderCheckout"/>
+                    <include name="verifyStandardEMIForv2OrderCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

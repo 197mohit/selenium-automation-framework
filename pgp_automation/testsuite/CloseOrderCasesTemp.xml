@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Close Order Native Testcases Temp" verbose="1">
+    <test name="Close Order Native Tests - Native" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyOrderClosedWithTxnFailureWhenMidNotExemptedfromCloseOrder"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Close Order Native Tests - Native plus" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyOrderClosedWithTxnFailureWhenMidNotExemptedfromCloseOrder"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

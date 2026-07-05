@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UpiLiteLimitCases" verbose="1" parallel="tests" thread-count="4">
+    <test name="UpiLiteLimitCases">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <include name="validateUpiPushLiteTxnAmountMoreThenTxnLimit"/>
+                    <include name="validateUpiPushLiteTxnAmountMoreThenDailyLimit"/>
+                    <include name="validateUpiPushLiteTxnAmountMoreThenMonthlyLimit"/>
+                    <include name="validateUpiPushLiteTxnAmountMoreThenTxnLimitCotp"/>
+                    <include name="validateUpiPushLiteTxnAmountMoreThenDailyLimitCotp"/>
+                    <include name="validateUpiPushLiteTxnAmountMoreThenMonthlyLimitCotp"/>
+                    <include name="ValidateRiskReject"/>
+                    <include name="ValidateTxnLimit3pPsp"/>
+                    <include name="ValidateDailyLimit3pPsp"/>
+                    <include name="ValidateMonthlyLimit3pPsp"/>
+                    <include name="ValidateTxnLimitForUPILite3pPspDynamicQR"/>
+                    <include name="ValidateDailyLimitForUPILite3pPspDynamicQR"/>
+                    <include name="ValidateMonthlyLimitForUPILite3pPspDynamicQR"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.walletInteroperability">
+                <methods>
+                    <include name="ValidateTxnLimitForUPICc3pPsp"/>
+                    <include name="ValidateDailyLimitForUPICc3pPsp"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPsp"/>
+                    <include name="ValidateMerchantIneligibleForUPIWallet"/>
+                    <include name="ValidateTxnLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateDailyLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPspDynamicQR"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="ValidateRiskRejectForUPICc"/>
+                    <include name="ValidateMerchantIneligibleForUPICc"/>
+                    <include name="ValidateMerchantIneligibleForUPICcDynamicQr"/>
+                    <include name="ValidateTxnLimitForUPICc3pPsp"/>
+                    <include name="ValidateDailyLimitForUPICc3pPsp"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPsp"/>
+                    <include name="ValidateTxnLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateDailyLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPspDynamicQR"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="ValidateTxnLimitForUPIPush"/>
+                    <include name="ValidateDailyLimitForUPIPush"/>
+                    <include name="ValidateMonthlyLimitForUPIPush"/>
+                    <include name="ValidateTxnLimitForUPIPushCotp"/>
+                    <include name="ValidateDailyLimitForUPIPushCotp"/>
+                    <include name="ValidateMonthlyLimitForUPIPushCotp"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UPICollectTransactionPG2">
+                <methods>
+                    <include name="ValidateTxnLimitForUPICollect"/>
+                    <include name="ValidateDailyLimitForUPICollect"/>
+                    <include name="ValidateMonthlyLimitForUPICollect"/>
+                    <include name="ValidateTxnLimitForUPICollectCotp"/>
+                    <include name="ValidateDailyLimitForUPICollectCotp"/>
+                    <include name="ValidateMonthlyLimitForUPICollectCotp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

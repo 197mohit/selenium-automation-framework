@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="VPA" verbose="1" thread-count="5"
+       parallel="tests">
+    <test name="Native.FetchVPADetails">
+        <classes>
+            <class name="scripts.Native.FetchVPADetails"/>
+        </classes>
+    </test>
+    <test name="Native Plus Process Txn">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                        <include name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                        <include name="TC_PT_hybridWithoutFetchPayOption"/>
+                        <include name="TC_PT_015"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                        <include name="TC_PT_PPBL_Success"/>
+                        <include name="TC_PT_018_UPI"/>
+                        <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                        <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                        <include name="Verify_NativeAddMoneyRetry"/>
+                        <include name="Verify_NativeAddMoneyDC"/>
+                        <include name="Verify_NativeAddMoneyNB"/>
+                        <include name="Verify_NativeAddMoneyUPI"/>
+                        <include name="Verify_NativeAddMoneyCC"/>
+
+
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Native Add Money">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                        <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                        <include name="Verify_NativeAddMoneyRetry"/>
+                        <include name="Verify_NativeAddMoneyDC"/>
+                        <include name="Verify_NativeAddMoneyNB"/>
+                        <include name="Verify_NativeAddMoneyUPI"/>
+                        <include name="Verify_NativeAddMoneyCC"/>
+
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+
+    <test name="AddMoneyMP-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_396_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddNPay">
+    <parameter name="theme" value="merchant4"/>
+    <classes>
+    <class name="scripts.AddNPay">
+    <methods>
+    <include name="AddnPay_PPI_S_sufficientBal"/>
+    <include name="AddnPay_SC_S"/>
+    <include name="addnPay_CC_S"/>
+    <include name="AddnPay_DC_S"/>
+    <include name="AddnPay_NB_S"/>
+    <include name="AddnPay_UPI_S"/>
+    </methods>
+    </class>
+    </classes>
+    </test>
+
+    <test name="Hybrid">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                    <include name="hybrid_CC_S_withDecimalAmount"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_CC_S_loginOnCashier"/>
+                    <include name="hybrid_CC_F_retryCountBreached"/>
+                    <include name="hybrid_CC_retry_S"/>
+                    <include name="hybrid_PPBL_S"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="AddMoneyMP">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_394_verifySuccessfulTxnWhenPaymentViaNB"/>
+                    <include name="PGP_396_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Fetch payment instrument for offline txn">
+    <parameter name="theme" value="merchant4">
+    <classes>
+    <class name="scripts.api.Offline.FetchPayInstrumentTest">
+    <methods>
+        <include name="FetchPayIns_SavedVpaV2"/>
+        <include name="PGP_189_verifyTxnCancellationAtBankWithSavedCard"/>
+        <include name="PGP_verifyFailedSubs_FromExpiredSaveCard"/>
+
+    </methods>
+    </class>
+    </classes>
+    </parameter>
+    </test>
+
+
+    <test name="Subscription_via_wallet_only">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_190_verifyVPA_GettingSavedForSuccessfulTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddMoney">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGOnly">
+    <parameter name="theme" value="merchant4"/>
+    <classes>
+    <class name="scripts.PGOnly">
+    <methods>
+    <include name="PGP_170_successfulPGOnlyCC"/>
+    <include name="PGP_171_CCCancelOn3DPage"/>
+    <include name="PGP_174_successfulNBTxn"/>
+    <include name="PGP_175_cardNotInBinCheckTxnAllowed"/>
+    <include name="PGP_237_verifyPaymentModeOnCashierPage"/>
+    <include name="PGP_239_successfulPGOnlyDC"/>
+    <include name="PGP_243_successfulPGOnlyTxnUsingAMEXCard"/>
+    <include name="PGP_244_successfulPGOnlyUPI"/>
+    <include name="PGP_246_failedPGOnlyTxnWithLicenceExpiredDate"/>
+    <include name="PGP_248_DCCancelOn3DPage"/>
+    <include name="PGP_249_savedCardCancelOn3DPage"/>
+    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountConfigured"/>
+    <include name="PGP_251_verifySavedCardListAfterLogin"/>
+    <include name="PGP_253_verifyPGOnlyTxnWithMaxRetryCount"/>
+    <include name="PGP_254_verifyPGOnlyTxnWithRetryCountBreached"/>
+    <include name="PGP_259_verifyPaymentModesOnCashierPageWhenUserLogedIn"/>
+    <include name="PGP_260_successfulPGOnlyCCTxnWhenUserLoggedIn"/>
+    <include name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+    <include name="PGP_262_successfulNBTxnWhenUserLoggedIn"/>
+    <include name="PGP_265_successfulPGOnlyTxnUsingAMEXCardWhenUserLoggedIn"/>
+    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+    <include name="PGP_269_verifySaveCardThroughDCTxn"/>
+    <include name="PGP_270_verifyCCSavedCardTxn"/>
+    <include name="PGP_271_verifyDCSavedCardTxn"/>
+    <include name="PGP_275_validateSaveUPIForHybridTxn"/>
+    <include name="PGP_276_validatePGTxnUsingSavedUPI"/>
+    </methods>
+    </class>
+    </classes>
+    </test>
+
+
+
+
+
+
+
+
+</suite>
+

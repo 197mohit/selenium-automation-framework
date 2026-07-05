@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SanitySuite" verbose="1">
+    <test name="SanityTest" parallel="tests" thread-count="5">
+        <parameter name="theme" value="merchant"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                    <include name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                </methods>
+            </class>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_CC_S"/>
+                    <include name="PGP_121_zeroWalletBalance"/>
+                    <include name="AddnPay_CC_F_3DPageCancel"/>
+                    <include name="AddnPay_CC_F_CashierPageCancel"/>
+                    <include name="AddnPay_CC_S_CheckforCardSaved"/>
+                    <include name="PGP_108_successfulAddNPaySaveCard"/>
+                    <include name="AddnPay_PPI_S_sufficientBal"/>
+                    <include name="AddnPay_Retry_VerifyRetry"/>
+                </methods>
+            </class>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_S_withoutBalance"/>
+                    <include name="COD_S_withLessBalance"/>
+                    <include name="PGP_221_validateMsgCODTxnWithSomeWalletBalance"/>
+                    <include name="COD_VerifyMessageWithBalance"/>
+                </methods>
+            </class>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="PGP_178_successfulEMITxn"/>
+                    <include name="PGP_179_validateBankAllPlans"/>
+                </methods>
+            </class>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="PGP_236_successfulIVRTxn"/>
+                    <include name="PGP_437_IVR_InsufficientBalance"/>
+                    <include name="PGP_439_ExpiredToken"/>
+                    <include name="PGP_446_NegativeAmount"/>
+                    <include name="PGP_444_TxnAmount_0"/>
+                    <include name="PGP_451_PaytmToken"/>
+                    <include name="PGP_452_TxnToken"/>
+                    <include name="PGP_454_WithoutPaymode"/>
+                    <include name="PGP_461_MerchantUniquePassed"/>
+                </methods>
+            </class>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                    <include name="hybrid_CC_F_cancelOn3Dpage"/>
+                    <include name="hybrid_CC_S_withDecimalAmount"/>
+                    <include name="hybrid_CC_F_cancelCashierPage"/>
+                    <include name="hybrid_DC_F_cancelCashierPage"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_CC_S_walletBalanceZero"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                </methods>
+            </class>
+
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="PGP_406_successfulPtmXpressCC"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_237_verifyPaymentModeOnCashierPage"/>
+                    <include name="PGP_171_CCCancelOn3DPage"/>
+                    <include name="PGP_172_CCCancelCashierPage"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_175_cardNotInBinCheckTxnAllowed"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountCofigured"/>
+                </methods>
+            </class>
+            <class name="scripts.PostConvenience">
+                <methods>
+                    <parameter name="theme" value="merchant3"/>
+                    <include name="PGP_408_successfulPostConvTxnUsingWallet"/>
+                </methods>
+            </class>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                    <include name="PGP_289_successfulSeamlessDC"/>
+                    <include name="PGP_290_SeamlessCCWithoutSavedCard"/>
+                    <include name="PGP_291_SeamlessCCAndSavingCard"/>
+                    <include name="PGP_292_SeamlessCCUsingSavedCard"/>
+                    <include name="PGP_293_successfulSeamlessNB"/>
+                </methods>
+            </class>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="successfulSeamlessNativeCC"/>
+                    <include name="PGP_289_successfulSeamlessNativeDC"/>
+                    <include name="PGP_290_SeamlessNativeCCWithoutSavedCard"/>
+                    <include name="PGP_291_SeamlessNativeCCAndSavingCard"/>
+                    <include name="PGP_292_SeamlessNativeCCUsingSavedCard"/>
+                    <include name="PGP_293_successfulSeamlessNativeNB"/>
+                </methods>
+            </class>
+            <class name="scripts.TopUpExpress">
+                <methods>
+                    <include name="PGP_407_successfulTopupXpressCC"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <parameter name="payMode" value="CC"/>
+                <methods>
+                    <include name="PGP_24_successfulPaymentWithOutSavedCard"/>
+                    <include name="PGP_25_successfulPaymentWithSavedCard"/>
+                    <include name="PGP_7_errMsgOnZeroTxnAmt"/>
+                    <include name="PGP_70_validateNoChangeInTxnAmtInCaseOfRetry"/>
+                    <include name="PGP_75_SuccessfulCCSubscription"/>
+                    <include name="PGP_100_txnWithCC_SavedCardWhenPayModeIsDC"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_36_successfulPPIwoSavedCard"/>
+                    <include name="PGP_30_zeroAmtPaymentWithoutSavedCard"/>
+                    <include name="PGP_76_txnWhenWalletBalanceLessThanTxnAmt"/>
+                    <include name="PGP_78_txnWhenWalletBalanceEqualsTxnamnt"/>
+                    <include name="PGP_79_failedTxnWithTxnAmntGreaterThanWalletBalanceByFraction"/>
+                    <include name="PGP_83_txnWithSSOTokenLogin"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="successfulTxnForInsufficientBalance"/>
+                    <include name="PGP_180_verifySuccessfulTxn"/>
+                    <include name="PGP_185_verifySuccessfulTxnForZeroTxnAmtAndZeroWalletBalance"/>
+                    <include name="PGP_186_verifyCardSaveAfterSuccessfulTxn"/>
+                    <include name="PGP_191_verifySuccessfulTxnViaVPA"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <include name="PGP_192_verifySuccessfulRenewalOnSubsViaCC"/>
+                    <include name="PGP_193_verifySuccessfulRenewalOnSubsViaDC"/>
+                    <include name="PGP_194_verifyRenewalFailureWhenSavedCardIsRemoved"/>
+                    <include name="PGP_204_RenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_208"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaPpi">
+                <methods>
+                    <include name="PGP_220_RenewalRequestAfterSubscriptionContractExpired"/>
+                    <include name="PGP_195_RenewalRequestWhenSufficientWalletBalance"/>
+                    <include name="PGP_196_RenewalRequestWhenInsufficientWalletBalance"/>
+                    <include name="PGP_197_RenewalRequestWhenZeroWalletBalance"/>
+                    <include name="PGP_202_verifyRenewalRequestWhenZeroWalletBalanceAndSubsRequestViaS2S"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_211_RenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_198_RenewalRequestWhenSufficientWalletBalance"/>
+                    <include name="PGP_199_RenewalRequestWhenInsufficientWalletBalance"/>
+                    <include name="PGP_209_multipleRenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_202_verifyRenewalRequestWhenZeroWalletBalanceAndSubsRequestViaS2S"/>
+                </methods>
+            </class>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                    <include name="PGP_159_successfulWalletOnlyTxnInFraction"/>
+                    <include name="PGP_160_failureWalletOnlyTxnWithZeroAmount"/>
+                    <include name="PGP_161_failureWalletOnlyTxnWithNegativeAmount"/>
+                    <include name="PGP_162_failureWalletOnlyTxnWithFractionAmount"/>
+                    <include name="PGP_164_successfulWalletOnlyTxn"/>
+                    <include name="PGP_163_cancelWalletOnlyTxn"/>
+                    <include name="PGP_166_walletOnlyTxnWithMobileAutoPopulated"/>
+                    <include name="PGP_167_walletOnlyTxnWithEmailIDAutoPopulated"/>
+                    <include name="PGP_168_walletOnlyTxnWithMobileAutoPopulated"/>
+                    <include name="PGP_165_failedWalletOnlyTxnWithBlockedTxnAmnt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

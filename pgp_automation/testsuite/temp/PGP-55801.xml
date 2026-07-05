@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-55801" verbose="1">
+    <test name="Validate PGP-55801">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="testNoEmiSubventionServiceCallGoesToPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

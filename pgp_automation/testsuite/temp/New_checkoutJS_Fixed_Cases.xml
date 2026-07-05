@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_1"/>  
+                    <include name="ValidateSuccessTxnUsingUPI"/>  
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC08"/>  
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

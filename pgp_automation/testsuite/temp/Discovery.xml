@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DiscoveryAPI" verbose="1" thread-count="20" parallel="tests">
+    <test name="Discovery API">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest"/>
+        </classes>
+    </test>
+</suite>

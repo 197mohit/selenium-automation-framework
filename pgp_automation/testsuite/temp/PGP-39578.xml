@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39578" verbose="1" parallel="tests" thread-count="3">
+    <test name="Max Life AOA - One Time EMI Payments">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="aoa_One_Time_EMI_Payments"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

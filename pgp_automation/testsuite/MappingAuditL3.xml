@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-Audit-L3-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service Audit L3 API ">
+        <classes>
+            <class name="scripts.api.mappingService.AuditL3Apis.CommonV1GetMerchant"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBankdetailsOldpgcode"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBankmasterdetailsV1Paymode"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBanksdetailslistfromCodesV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBanksdetailslistfromidsV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetLookupfromidV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetLookupPREFERENCESV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetMerchantdataNameV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetMerchantdataPaytmidV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetV1Bankmasterdetails"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetVendorSplitDetailsV3"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.MappingV3"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.MerchantGetExtendedInfoV4"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.MerchantV3PaytmMerchantIdList"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.QueryMerchantExtendedInfoV3"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.QueryMerchantMigrationDetailsV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.QueryMerchantMigrationDetailsV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.UserV3"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.UserV3willcreate"/>
+        </classes>
+    </test>
+</suite>

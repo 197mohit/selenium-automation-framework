@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-55692" verbose="1" thread-count="1" parallel="tests">
+    <test name="Verify Offer Widget Discovery">
+        <classes>
+            <class name="scripts.OfferJS.OfferWidgetDiscoveryE2E">
+                <methods>
+                    <include name="testOfferDiscoveryWidgetE2E"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

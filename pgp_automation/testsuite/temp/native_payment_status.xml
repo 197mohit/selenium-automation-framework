@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--
+  native_payment_status.xml
+  Suite for native payment status endpoints:
+    POST /merchant-status/api/v1/getPaymentStatus
+    POST /merchant-status/api/v1/v2/getPaymentStatus
+    POST /merchant-status/api/v1/v5/order/status
+
+  Run with:
+    mvn clean test -DsuiteXmlFile=testsuite/temp/native_payment_status.xml \
+      -Denv=staging -Dbrowser=chrome
+
+  Test IDs covered:
+    MS-NATIVE-01..04  /api/v1/getPaymentStatus  negative paths
+    MS-NATIVE-05      /api/v1/getPaymentStatus  CC success (requires live payment)
+    MS-NATIVE-06..07  /api/v1/v2/getPaymentStatus  negative paths
+    MS-NATIVE-08      /api/v1/v2/getPaymentStatus  CC success (requires live payment)
+    MS-NATIVE-09..10  /api/v1/v5/order/status  validation (blank orderId / blank MID)
+    MS-NATIVE-11      /api/v1/v5/order/status  CAPTURE txnType branch
+    MS-NATIVE-12      /api/v1/v5/order/status  VOID txnType branch
+-->
+<suite name="NativePaymentStatus_Suite" verbose="1" thread-count="4" parallel="tests">
+
+    <!-- ===== /api/v1/getPaymentStatus — negative/validation paths ===== -->
+    <test name="NativePaymentStatus - getPaymentStatus Blank OrderId">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_BlankOrderId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePaymentStatus - getPaymentStatus Blank MID">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePaymentStatus - getPaymentStatus Invalid Checksum">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_InvalidChecksum"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePaymentStatus - getPaymentStatus Order Not Found">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== /api/v1/getPaymentStatus — happy path (requires actual CC payment) ===== -->
+    <test name="NativePaymentStatus - getPaymentStatus CC Success">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatus_CC_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== /api/v1/v2/getPaymentStatus — negative/validation paths ===== -->
+    <test name="NativePaymentStatus - v2/getPaymentStatus Blank OrderId">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatusV2_BlankOrderId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePaymentStatus - v2/getPaymentStatus Order Not Found">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatusV2_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== /api/v1/v2/getPaymentStatus — happy path (requires actual CC payment) ===== -->
+    <test name="NativePaymentStatus - v2/getPaymentStatus CC Success">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeGetPaymentStatusV2_CC_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- ===== /api/v1/v5/order/status — PreAuth capture/void paths ===== -->
+    <test name="NativePaymentStatus - v5/order/status Blank OrderId">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeCaptureStatus_BlankOrderId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePaymentStatus - v5/order/status Blank MID">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeCaptureStatus_BlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePaymentStatus - v5/order/status CAPTURE txnType OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeCaptureStatus_CAPTURE_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePaymentStatus - v5/order/status VOID txnType OrderNotFound">
+        <classes>
+            <class name="scripts.merchantStatus.NativePaymentStatusTests">
+                <methods>
+                    <include name="nativeCaptureStatus_VOID_OrderNotFound"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

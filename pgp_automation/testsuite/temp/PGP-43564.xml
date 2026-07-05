@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-43551" verbose="1" thread-count="3">
+    <test name="PGP-43551">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC01_ValidateBankAccountFeatureList"/>
+                    <include name="TC02_ValidateBankAccountFeatureList_ReqType_NATIVE_SUBSCRIPTION"/>
+                    <include name="TC03_ValidateBankAccountFeatureList_ReqType_NATIVE_SUBSCRIPTION_PAY"/>
+                    <include name="TC04_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP"/>
+                    <include name="TC05_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP_PAY"/>
+                    <include name="TC06_ValidateBankAccountFeatureList_ReqType_NULL"/>
+                    <include name="TC07_ValidateResponseWhenReuqestTypeisNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

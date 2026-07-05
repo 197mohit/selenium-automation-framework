@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Verify Advance Filter Boss PG2-12876">
+    <test name="Verify Advance Filter Boss">
+        <classes>
+            <class name="scripts.api.UPI.UPICollectTransactionPG2">
+                <methods>
+                    <include name="verifyAdvanceFilteronBossDisableUPIPaymethod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

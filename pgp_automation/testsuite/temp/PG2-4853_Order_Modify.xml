@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PG2-4853_Order_Modify" verbose="1">
+    <test name="Validate Full Traffic Internal Order Modify through Postpaid, Wallet, UPI">
+        <classes>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateFullTrafficCOPSuccessInternalOrderModifyPostPaidTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCOPWalletInternalOrderModifyTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

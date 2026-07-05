@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36427">
+    <test name="Verify isAutoRefund is true in FPO response of subscription created for merchant whose AutoRefund is enabled">
+        <classes>
+            <class name="scripts.notificationTemplate.TestGetNotificationGlobalConfig"/>
+            <class name="scripts.notificationTemplate.TestEmailTemplate"/>
+            <class name="scripts.notificationTemplate.TestSmsTemplate"/>
+        </classes>
+    </test>
+</suite>

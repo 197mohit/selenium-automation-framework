@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="v5 FPO fixes" verbose="1" parallel="tests" thread-count="2">
+    <test name="v5 FPO fixes">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_28965_verifySavedCardAlreadySelectedWhenLocalStorageEmptyWalletBalInsufficient"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedHybridTxnwithZeroBalanceinWallet"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedAddNPayHybridTxn"/>
+                    <include name="PGP_29696_autologin_checkoutJS"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="v5 FPO fixes web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedGVWalletTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="ValidateSuccessTxnUsingCCWhichNewUDFParam"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="v5 FPO fixes ff4j">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jEnabled"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsCheckoutandFF4jDisabled"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jEnabled"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

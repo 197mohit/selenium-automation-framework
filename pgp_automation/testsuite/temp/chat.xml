@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-48130" verbose="1">
+    <test name="Block chat payment cases">
+        <classes>
+            <class name="scripts.api.theia.chatpayment.chatpayment">
+                <methods>
+                    <include name="BlockchatpaymentPTC"/>
+                    <include name="BlockchatpaymentFastforward"/>
+                    <include name="BlockchatpaymentPTCregexcheck"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

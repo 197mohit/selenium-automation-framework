@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS 6 fixes" verbose="1" parallel="tests" thread-count="3">
+    <test name="CHECKOUTJS element on web Test cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+            </class>
+        </classes>
+    </test>
+</suite>

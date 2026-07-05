@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27722 Saved Mandates Priority List" verbose="1" parallel="methods" thread-count="4">
+    <test name="PGP-27722 Saved Mandates Priority List Tests">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefEnabled"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymode"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymodeandMandateType"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefNotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

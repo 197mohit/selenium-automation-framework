@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJsMerchantElement" verbose="1" parallel="methods" thread-count="3">
+    <test name="CheckoutJsMerchantElementTest">
+        <parameter name="theme" value="checkoutjse_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+            </class>
+        </classes>
+    </test>
+</suite>

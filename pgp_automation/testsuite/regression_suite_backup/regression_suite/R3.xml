@@ -1,0 +1,1104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression 3" verbose="1" thread-count="20" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <!--Native enhanced TC's-->
+    <parameter name="browser" value="chrome"/>
+    <test name="AddMoneyMP-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_378_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_381_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_383_verifySuccessfulTxnUsingCC"/>
+                    <include name="PGP_384_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_387_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_390_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_394_verifySuccessfulTxnWhenPaymentViaNB"/>
+                    <include name="PGP_396_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <parameter name="browser" value="chrome"/>
+    <test name="Penny Drop for AddMoney">
+        <parameter name="theme" value="merchantLow|ccdc"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="checkSavedCardFormerchantLowccdc"/>
+                    <include name="checkUserAbleToSaveCC"/>
+                    <include name="checkUserAbleToSaveDC"/>
+                    <parameter name="theme" value="enhancedwap_revamp">
+                        <include name="checkSavedCardForOthertheme"/>
+                    </parameter>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddNPay-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_PPI_S_sufficientBal"/>
+                    <include name="addnPay_SC_S"/>
+                    <include name="addnPay_CC_S"/>
+                    <include name="addnPay_DC_S"/>
+                    <include name="addnPay_NB_S"/>
+                    <include name="addnPay_UPI_S"/>
+                    <include name="PGP_114_successfulAddNPayWithWalletPaymentModeInCheckoutPage"/>
+                    <include name="addnPay_CC_S_withSSOToken"/>
+                    <include name="PPI_S_AddnpayDisabled"/>
+                    <include name="addnPay_CC_S_CheckforCardSaved"/>
+                    <include name="addnPay_CC_S_ZeroBalance"/>
+                    <include name="addnPay_CC_S_loginOnCashier"/>
+                    <include name="addnPay_CC_F_3DPageCancel"/>
+                    <include name="addnPay_CC_F_ZeroAmount"/>
+                    <include name="addnPay_CC_F_NegativeAmt"/>
+                    <include name="addnPay_DC_S_VerifyWalletBalance"/>
+                    <include name="addnPay_verifyPaymentModeOnCashierPageBeforeLogin"/>
+                    <include name="addnPay_DC_S_withoutLogin"/>
+                    <include name="addnPay_CC_F_verifyResponsePage"/>
+                    <include name="addnPay_CC_P_verifyResponsePage"/>
+                    <include name="addnPay_Retry_VerifyRetry"/>
+                    <include name="addnPay_PPBL_S"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hybrid-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                    <include name="hybrid_CC_S_withDecimalAmount"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                    <include name="hybrid_verifyWalletBalanceAfterLogin"/>
+                    <include name="hybrid_verifyAllPayModeOnCashier"/>
+                    <include name="hybrid_PPI_S_sufficientBalanceValidateWalletBalance"/>
+                    <include name="hybrid_verifySavedCardList"/>
+                    <include name="hybrid_SC_S"/>
+                    <include name="hybrid_SC_F_invalidCvv"/>
+                    <include name="hybrid_CC_S_walletBalanceZero"/>
+                    <include name="hybrid_DC_S"/>
+                    <include name="hybrid_NB_S"/>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                    <include name="hybrid_SC_S_withDCCard"/>
+                    <include name="hybrid_CC_F_invalidOTP"/>
+                    <include name="hybrid_CC_F_invalidCvv"/>
+                    <include name="hybrid_CC_F_invalidExpiry"/>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_CC_F_retryCountBreached"/>
+                    <include name="hybrid_CC_retry_S"/>
+                    <include name="hybrid_UPI_F_withInvalidPin"/>
+                    <include name="hybrid_NB_S_uncheckWalletwithSufficientBalance"/>
+                    <include name="hybrid_UPI_S_sufficientBal"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Express Addmoney txn">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <exclude name="validateFullKYCWalletCC"/>
+                    <exclude name="validateFullKYCWalletSavedCC"/>
+                    <exclude name="validateMinKYCWalletLimitNotBreached"/>
+                    <exclude name="validateMinKYCWalletLimitBreached"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateNoKYCWalletLimitBreached"/>
+                    <exclude name="validateFullKYCGV"/>
+                    <exclude name="validateFullKYCGVSavedCC"/>
+                    <exclude name="validateMinKYCLimitNotBreachedGV"/>
+                    <exclude name="validateMinKYCLimitBreachedGV"/>
+                    <exclude name="validateNoKYCGV"/>
+                    <exclude name="validateFullKYCDC"/>
+                    <exclude name="validateMinKycNB"/>
+                    <exclude name="validateNoKYCDC"/>
+
+                    <exclude name="testTxnOfLessThan1NotAllowed"/>
+                    <exclude name="Failed_AddMoney_BreachLimit"/>
+                    <exclude name="verifyResponseMessageForRiskRejectTxnForCC"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money using Retry Saved Card on Wap Theme">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNBLessThan2000"/>
+                    <include name="PGP_410_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_411_validateTxnIsAllowedWhenValidSSOTokenIsPassed"/>
+                    <include name="PGP_412_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+
+
+                    <include name="PGP_416_VerifyFailureWhenSSOTokenIsNotPassed"/>
+                    <include name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_418_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_420_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_421_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_422_VerifyTxnFailureWhenRequestTypeOtherThanAddMoney"/>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="PGP_285_AddMoneyFor0Amt"/>
+                    <include name="PGP_285_successfulAddMoneyDC"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="addMoneyFail"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28989 Native Plus" parallel="methods" thread-count="6">
+        <classes>
+            <class name="scripts.SubscriptionDoubleOTP">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27186 close order API V2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.colseOrderv2.CloseOrder">
+                <methods>
+                    <include name="closeOrderSsoToken"/>
+                    <include name="closeOrderTxnToken"/>
+                    <include name="closeOrderInvalidSsoToken"/>
+                    <include name="closeOrderInvalidTxnToken"/>
+                    <include name="closeOrderInvalidOrderidVaildTxnToken"/>
+                    <include name="closeOrderInvalidChecksum"/>
+                    <include name="closeOrderChecksumToken"/>
+                    <include name="closeOrderSsoSuccessNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenSuccessNativePlusTxn"/>
+                    <include name="closeOrderChecksumSuccessNativePlusTxn"/>
+                    <include name="closeOrderSsoSuccessNativeTxn"/>
+                    <include name="closeOrderTxnTokenSuccessNativeTxn"/>
+                    <include name="closeOrderChecksumSuccessNativeTxn"/>
+                    <include name="closeOrderSsoSuccessEnhanceTxn"/>
+                    <include name="closeOrderChecksumSuccessEnhanceTxn"/>
+                    <include name="closeOrderSsoFailureNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenFailureNativePlusTxn"/>
+                    <include name="closeOrderChecksumFailureNativePlusTxn"/>
+                    <include name="closeOrderSsoFailureNativeTxn"/>
+                    <include name="closeOrderTxnTokenFailureNativeTxn"/>
+                    <include name="closeOrderChecksumFailureNativeTxn"/>
+                    <include name="closeOrderSsoPendingNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenPendingNativePlusTxn"/>
+                    <include name="closeOrderChecksumPendingNativePlusTxn"/>
+                    <include name="closeOrderSsoPendingNativeTxn"/>
+                    <include name="closeOrderTxnTokenPendingNativeTxn"/>
+                    <include name="closeOrderChecksumPendingNativeTxn"/>
+                    <include name="closeOrderSsoPendingEnhanceTxn"/>
+                    <include name="closeOrderChecksumPendingEnhanceTxn"/>
+                    <include name="closeOrderSsoSuccessOfflineTxn"/>
+                    <include name="closeOrderSSoAddMoneySuccess"/>
+                    <include name="closeOrderChecksumAddMoneySuccess"/>
+                    <include name="closeOrderSSoAddMoneyFailure"/>
+                    <include name="closeOrderChecksumAddMoneyFailure"/>
+                    <include name="closeOrderSSoAddMoneyPending"/>
+                    <include name="closeOrderChecksumAddMoneyPending"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Plus ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <exclude name="validateIdempotentCase1"/>
+                    <exclude name="validateIdempotentCase2"/>
+                    <exclude name="validateIdempotentCase3"/>
+                    <exclude name="validateSDKTypeAIO_SDK_PGPCP"/>
+                    <exclude name="validateSDKTypeCUI_SDK_PGPCP"/>
+                    <exclude name="validateSDKTypeAIO_SDK_PGCOP"/>
+                    <exclude name="validateSDKTypeCUI_SDK_PGCOP"/>
+                    <exclude name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                    <exclude name="SpecialCharCustIdTxnSuccessfulForloggedInUser"/>
+                    <exclude name="TC_PT_039"/>
+
+                    <exclude name="TC_10"/>
+                    <exclude name="TC_12"/>
+                    <exclude name="hybridPostpaidTxnFailWhenInsufficientAmount"/>
+                    <exclude name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <exclude name="validateSucessfullPCFTransactionviaICICINB"/>
+                    <exclude name="validateSucessfullPCFTransactionviaPPBL"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenKeyIsRemovedTwiceandWithRetry"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenTxnkeyRemovedFromSessionRedis"/>
+                    <exclude name="validateNoKYCDC"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateAmountZeroAtFetchPayAndSufficientWhilePTCForADDNPAY"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20"/>
+                    <exclude name="verifyNBPromo_TC_17"/>
+                    <exclude name="TC_PT_022"/>
+
+                    <exclude name="TC_PT_BAJAJ_EMI_Success"/>
+                    <exclude name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <exclude name="PGP_27167_verifyMERC_UNQ_REFinTxnStatus"/>
+                    <exclude name="mutualFundRiskReject"/>
+                    <exclude name="verifyRestrictDCPromo_TC_20_1"/>
+                    <exclude name="TC_PT_041"/>
+                    <exclude name="TC_PT_042"/>
+                    <exclude name="TC_PT_025"/>
+                    <exclude name="checkEmiTxnUsingAmexCreditCard"/>
+                    <exclude name="verifyGVWalletLimitBreachedAddNPay"/>
+                    <exclude name="verifyAddNPayWalletLimitBreachedWithCOP"/>
+                    <exclude name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testADDNPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentSession"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentStatic"/>
+                    <exclude name="validateCancelTxn_Native"/>
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalance"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <!--Native EMI Txn is not Supported-->
+                    <exclude name="TC_PT_EMI_Hyb_Success"/>
+                    <exclude name="TC_PT_EMI_Success"/>
+                    <exclude name="TC_PT_039"/>
+
+                    <exclude name="checkEmiTxnUsingAmexCreditCard"/>
+                    <exclude name="TC_10"/>
+                    <exclude name="TC_12"/>
+                    <exclude name="hybridPostpaidTxnFailWhenInsufficientAmount"/>
+                    <exclude name="successCorporateEMIBinCorporateMerchant"/>
+                    <exclude name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <exclude name="verifyAddNPayWalletLimitBreachedWithCOP"/>
+                    <exclude name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testADDNPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentSession"/>
+                    <exclude name="testALPVforFlagTheiaBlackListTrueTheiaDisableTrueTheiaLPVMIDTrueKeyAlreadyPresentStatic"/>
+
+                    <exclude name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalance"/>
+                    <exclude name="validateSucessfullPCFTransactionviaICICINB"/>
+                    <exclude name="validateSucessfullPCFTransactionviaPPBL"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenKeyIsRemovedTwiceandWithRetry"/>
+                    <exclude name="validateSuccessfulTxnWithSameOrderWhenTxnkeyRemovedFromSessionRedis"/>
+                    <exclude name="validateNoKYCDC"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="verifyNBPromo_TC_17"/>
+                    <exclude name="TC_PT_022"/>
+                    <exclude name="TC_PT_BAJAJ_EMI_Success"/>
+
+                    <exclude name="TC_PT_0CostEMI_Success"/>
+                    <exclude name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <exclude name="PGP_27167_verifyMERC_UNQ_REFinTxnStatus"/>
+                    <exclude name="mutualFundRiskReject"/>
+                    <exclude name="TC_PT_041"/>
+
+                    <exclude name="TC_PT_042"/>
+                    <exclude name="TC_PT_025"/>
+                    <exclude name="TC_PT_041"/>
+                    <exclude name="VerifySolutionWiseMdrForOfflineTxn"/>
+                    <exclude name="getOtpMerchantPage"/>
+                    <exclude name="getOtpMerchantPageWhenPrefIsBank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29010 Validating priority of UPI in fpo" parallel="methods" thread-count="6">
+        <classes>
+            <class name="scripts.PriorityParamUPI">
+            </class>
+        </classes>
+    </test>
+
+    <test name="appInvoke Cases for PGP-29575">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="appInvokePCFNBNotLoggedIn"/>
+                    <include name="appInvokePCFNBLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26916 Creating subscriptions">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <!--Exclued TCs are of Task PGP-33734 only needs to be executed in Revamp UI-->
+                    <exclude name="TC_01"/>
+                    <exclude name="TC_02"/>
+                    <exclude name="TC_03"/>
+                    <exclude name="TC_04"/>
+                    <exclude name="TC_05"/>
+                    <exclude name="TC_06"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <exclude name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30175 Validating HDFC EMI is blocked for EDC">
+        <classes>
+            <class name="scripts.EdcHdfcEmiBlocked">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26899_Ivr Notification Test Cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.IvrNotifyTest"/>
+        </classes>
+    </test>
+
+
+    <test name="PGP-31223 Deferred Checkout FPO Response">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDeferredCheckoutFPOResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-29613_CheckoutJsMerchantElementTest">
+        <parameter name="theme" value="checkoutjse_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31228 - Priority Test cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.StandardCheckoutPriority.PriorityTest">
+                <methods>
+                    <exclude name="ValidatePaymodeSequenceInFetchPaymentPageonPassingPaymodeSequenceInitiateAPI"/>
+                    <exclude name="ValidatePriorityListonDefaultflow"/>
+                    <exclude name="ValidatePriorityListonEnhancedwebLogin"/>
+                    <exclude name="ValidatepriorityListonEnhancedwebWithoutLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28936 enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+
+
+
+                    <include name="testLocalisedErrorMsgForCCTxnWhenCVVIsNotEntered"/>
+
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCardNumberIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenExpiryDetailsIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCVVIsNotEntered"/>
+
+
+
+                    <include name="testLocalisedErrorMsgForPPITxnWhenUserDoesNotHaveEnoughBalanceInWallet"/>
+                    <include name="testLocalisedSuccessUPITxn"/>
+                    <include name="testLocalisedErrorMsgForUPITxnWhenVPAIsNotEntered"/>
+                    <include name="testLocalisedSuccessPPBLTxn"/>
+                    <include name="testLocalisedSuccessPDCTxn"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28936 enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedErrorMsgForPPITxnWhenUserDoesNotHaveEnoughBalanceInWallet"/>
+                    <include name="testLocalisedSuccessPPBLTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31208 AppInvoke_bugtest">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokeBugtest">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29580 Subscription_via_cc_dc">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedin_PPBL"/>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedIn_Wallet"/>
+
+                    <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_Wallet"/>
+                    <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_PPBL"/>
+
+                    <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_Balance"/>
+                    <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_PPBL"/>
+                    <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_BalanceWallet_SSOSent"/>
+
+                    <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_Balance"/>
+                    <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_BalanceWallet_SSoSent"/>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC04_User_loggedIn_PPBL"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31206 MerchantProfileTests">
+        <classes>
+            <class name="scripts.MerchantProfileTests"/>
+        </classes>
+    </test>
+
+    <test name="PGP-30746 FetchBalanceTests">
+        <classes>
+            <class name="scripts.FetchBalanceTests"/>
+        </classes>
+    </test>
+
+    <test name="PGP-32214 Validating order amount in JS checkout">
+        <parameter name="theme" value="checkoutjs_web"></parameter>
+        <classes>
+            <class name="scripts.OrderAmountFpoV2"/>
+        </classes>
+    </test>
+
+    <test name="PGP-32161 AddnpayCCdisable_enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="enhanced01"/>
+                    <include name="enhanced02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-32161 AddnpayCCdisable_nativeplus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="naiveplus01"/>
+                    <include name="naiveplus02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-32161 AddnpayCCdisable_appinvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="appInvoke01"/>
+                    <include name="appInvoke02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30155 AppInvoke Promo cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="SuccessfulTransactionWithInstantDiscountWhenValidatePromoIsTrue"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsTrue"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsFalse"/>
+                    <include name="SuccessfullTransactionWithInstantDiscountWhenValidatePromoIsFalse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31951 - GoodsInfoCheck_enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GoodsInfoCheck">
+                <methods>
+                    <include name="enhanced01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-31951 - GoodsInfoCheck_nativeplus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GoodsInfoCheck">
+                <methods>
+                    <include name="nativePlus01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-31951 - GoodsInfoCheck_appinvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.GoodsInfoCheck">
+                <methods>
+                    <include name="showPaymentPage01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30168 EMI_DC cases">
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifyEmiDcVisibleInFPOAndPerformSuccessfulTransaction"/>
+                    <include name="verifyEmiDcNotVisibleInFPOformobNoWithEmiDcNotConfigured"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithoutMobNoInInitiateApi"/>
+                    <include name="verifyEmiDcVisibleInFPOPerformSuccessfulTransactionWithAccessToken"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenformobNoWithEmiDcNotConfigured"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenWithoutMobNoInCreateTokenApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29551 Access token FPO test cases">
+        <classes>
+            <class name="scripts.api.savedcardservice.AccessTokenSavedCards"/>
+        </classes>
+    </test>
+
+    <test name="PGP-30576 Tests on EnhancedWap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validate_NbCount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30576 Tests on EnhancedWeb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validate_NbCount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32155 verifyAllInOneUpiQr">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyAllInOneUpiQr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32214 Validating order amount in JS checkout UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+        <classes>
+            <class name="scripts.OrderAmountFpoV2"/>
+        </classes>
+    </test>
+
+    <test name="PGP-26916 Creating subscriptions UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <exclude name="TC_05"/>
+                    <exclude name="TC_04"/>
+                    <exclude name="TC_01"/>
+                    <exclude name="TC_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheckoutJS UPI Intent Flow UI REVAMP">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+            <methods>
+            <exclude name="ValidateUPIPaymodeUIchangeswithUPIIntentEnabled"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases web UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <exclude name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="ValidateCashbackPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="Verify_theme_is_changed_for_Merchant"/>
+                    <exclude name="VerifyUpiChanges"/>
+
+                    <exclude name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <exclude name="TC_012_BankMandateSubscriptionDCPAymodeAmount0"/>
+                    <exclude name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <exclude name="TC_015_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <exclude name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+
+                    <exclude name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC19"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <exclude name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid"/>
+
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid_NonLoggedIn"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid_NonLoggedIn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_AddNPayTxns"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_HybridTxns"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterTwoNBTxnandLastCCTxn"/>
+
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterThreeNBTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBPCFTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <exclude name="verify_Login_Strip_When_FlagEnabled"/>
+                    <exclude name="verify_Login_Strip_When_PrefEnabled"/>
+
+                    <exclude name="t2"/>
+                    <exclude name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                    <exclude name="verifying_FD_BalanceIsVisible"/>
+                    <exclude name="verifying_FD_BalanceIsNotVisible"/>
+                    <exclude name="VerifyWebviewSupportOnJS_When_FlagDisabled"/>
+                    <exclude name="VerifyWebviewSupportOnJS_When_FlagEnabled"/>
+                    <exclude name="validateAddnPayViaCCDynamicLimit_CWAP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <exclude name="FooterBackgroundColourDoNotChangeOnChangingHeaderbackGroundColour"/>
+                    <exclude name="FooterTextColourDoNotChangeOnChangingHeaderTextColour"/>
+                    <exclude name="FooterBackgroundColourDoesntChangeOnChangingHeaderBackgroundColourFromConfig"/>
+                    <exclude name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>
+                    <exclude name="SuccessfulEmiDCTransactionUsingMobNoInInitiateAPI"/>
+                    <exclude name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <exclude name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                    <exclude name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIWithoutLogin"/>
+                    <exclude name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIWithLogin"/>
+                    <exclude name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIAfterAllRetriesExhausted"/>
+                    <exclude name="ValidatePendingTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <exclude name="ValidatePendingTxnWhenCancelPendingOrderFlagIsFALSE"/>
+                    <exclude name="ValidateSUCCESSTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <exclude name="ValidateFAILTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <exclude name="PGP_28691_BulkPromoShouldNotHitWhenBLOCK_BULK_APPLY_PROMOisActive"/>
+                    <exclude name="PGP_27624_SuccessQRTxnUsingCCwithNativeJsonPrefN"/>
+                    <exclude name="ValidateQRDetailsAndSuccessTxnUsingCC"/>
+                    <exclude name="ValidateQRDetailsAndSuccessTxnUsingWallet"/>
+                    <exclude name="ValidateQRDetailsAndFailedTxnUsingCC"/>
+                    <exclude name="ValidatePRNFlagInFPO"/>
+                    <exclude name="ValidateQRDetailsAndPRNSuccessTxnUsingCC"/>
+                    <exclude name="ValidateQRCodeAndUPIFlagAtCashierPage"/>
+                    <exclude name="ValidateQRDetailsAndUPIQRSuccessTxnUsingUPI"/>
+                    <exclude name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                    <exclude name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <exclude name="VerifyTxnPaidTimeFieldShouldReturnInResponse_ViaNB"/>
+                    <exclude name="TC_001_Verify_Fields_are_editable"/>
+                    <exclude name="TC_002_Verify_Fields_are_noneditable"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid_NonLoggedIn"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid_NonLoggedIn"/>
+                    <exclude name="VerifyBankLogoforNB"/>
+                    <exclude name="VerifyBankLogoInSavedCard"/>
+                    <exclude name="VerifyBankLogoforSavedVpa"/>
+                    <exclude name="VerifyBankLogoforEMI"/>
+                    <exclude name="verifyLogoColor"/>
+                    <exclude name="toVerifyNewKafkaTopic_inSuccess_Txn"/>
+                    <exclude name="toVerifyNewKafkaTopic_inFailure_Txn"/>
+                    <exclude name="toVerifyNewKafkaTopic_inPending_Txn"/>
+                    <exclude name="TC001_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="TC002_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="TC003_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="VerifyUPICollect_Tab"/>
+                    <exclude name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <exclude name="VerifyUPICollect_Tab_loggedIN"/>
+                    <exclude name="VerifyUPICollect_Tab_when_PrefDisabled_LoggedIn"/>
+                    <exclude name="VerifyUPICollect_Via_Login"/>
+                    <exclude name="VerifyErrorMsgisshownforUPIotherthanPaytmOrBhim"/>
+                    <exclude name="VerifyErrorMsgisshownforUPInotSupportingSubscription"/>
+                    <exclude name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <exclude name="verify_SavedBankMandate_Details"/>
+                    <exclude name="Verify_successful_transaction_with_ZestMoney"/>
+                    <exclude name="Verify_failure_transaction_with_ZestMoney"/>
+                    <exclude name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="ValidateCashbackPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="ValidatePayButtonWithSelectedPaymode"/>
+                    <exclude name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                    <exclude name="VerifySopamount"/>
+                    <exclude name="Verify_theme_is_changed_for_Merchant"/>
+                    <exclude name="LoginScreenChanges"/>
+                    <exclude name="ValidatePPBLPasscodeTxt"/>
+                    <exclude name="verify_Login_Strip_When_FlagEnabled"/>
+                    <exclude name="verify_Login_Strip_When_PrefEnabled"/>
+                    <exclude name="verifying_FD_BalanceIsNotVisible"/>
+                    <exclude name="verifying_FD_BalanceIsVisible"/>
+                    <exclude name="VerifyYesNoComingAfterClickOnBackButton"/>
+                    <exclude name="VerifyResponceWhenClickYesForCancelTxn"/>
+                    <exclude name="Verifying_PayMode_LOGO_Colors"/>
+                    <exclude name="Verify_txn_via_child_mid"/>
+
+                    <exclude name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <exclude name="TC_005_VerifyManuallyEntering3FieldsAppear"/>
+                    <exclude name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <exclude name="TC_012_BankMandateSubscriptionDCPAymodeAmount0"/>
+                    <exclude name="TC_003_VerifyNBSelectedByDefault"/>
+                    <exclude name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <exclude name="TC_015_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <exclude name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <exclude name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <exclude name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC19"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <exclude name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <exclude name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_AddNPayTxns"/>
+
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_HybridTxns"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterTwoNBTxnandLastCCTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterThreeNBTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBPCFTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <exclude name="t2"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                    <exclude name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforCheckoutJs"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBPCFTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <exclude name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <exclude name="t2"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <exclude name="verifyPCFAndTextForNonLoggedInFlow"/>
+                    <exclude name="verifyPCFAndTextForLoggedInFlow"/>
+                    <exclude name="ValidateInstrumentCategorization"/>
+                    <exclude name="ValidateInstrumentCategorization_When_FlagEnabled"/>
+                    <exclude name="VerifySolutionWiseMdrForOnlineTxn"/>
+                    <exclude name="validateAddnPayViaCCDynamicLimit_CWEB"/>
+                    <exclude name="verifying_success_FD_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22997 AND flow SCM ApplyPrommo">
+        <classes>
+            <class name="scripts.Promo.ANDFlow.ApplyPromoSCM"/>
+        </classes>
+    </test>
+
+    <test name="PGP-22997 OR flow SCM FPO">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.ORFPOSCM"/>
+        </classes>
+    </test>
+
+    <test name="PGP-22997 OR flow SCM FetchCardDetails">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.FetchCardDetailsSCM"/>
+        </classes>
+    </test>
+
+    <test name="PGP-29609 Verify the successful UPI Intent subscription txn with all possible freq units">
+        <!--        <parameter name="theme" value="enhancedwap_revamp"/>-->
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_26700_verifySuccessUPIIntentSubsTxnOnEnhancedPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 Enhanced ADDNPAY through UPI collect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForADDNPAYThroughUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 subscription ADDNPAY through UPI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForCreateSubsUsingAddnPayThroughUPIEnhancedFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 AppInvoke ADDNPAY through UPI">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForAppInvokeAddNPayThroughUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30748">
+        <classes>
+            <class name="scripts.DifferentRoiForEmiTransaction.DifferentRoiForEmiTransaction"/>
+            <class name="scripts.api.mappingService.GetBrandEmiDetailsApi"/>
+        </classes>
+    </test>
+
+    <test name="PGP-32156 EMISubventionUsingTxnTokenApiTests">
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <exclude name="emisub24"></exclude>
+                    <exclude name="emisub25"></exclude>
+                    <exclude name="emisub26"></exclude>
+                    <exclude name="emisub27"></exclude>
+                    <exclude name="emisub28"></exclude>
+                    <exclude name="emisub29"></exclude>
+                    <exclude name="emisub30"></exclude>
+                    <exclude name="emisub31"></exclude>
+                    <exclude name="emisub32"></exclude>
+                    <exclude name="emisub33"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32156 EMISubventionUsingTxnTokenAppinvokeTests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <include name="emisub24"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29588 native Subscription testcases for freq fortnight">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifyBankMandateNotSupportedForFortnightFrequency"/>
+                    <include name="VerifySuccessfulSubsPPBLTxnForFreqFortnight"/>
+                    <include name="VerifySubsDetailsInFPOForSubsFrequencyFortnight"/>
+                    <include name="SuccessfulNativeMfSipWithFreqFORTNIGHT"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29588 Enhanced subscription testcases for freq fortnight">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="verifySuccessfulCreateSubscriptionforFreqFortnight"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31212 Link Payment">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUPINotVisibleOnLinkPaymentCashierPage"/>
+                    <include name="ValidateSuccessfulLinkPayment"/>
+
+                    <include name="VerifyUPINotVisibleInvoiceLinkCashierPage"/>
+
+                    <include name="VerifyUPINotVisibleNative_STCashierPage"/>
+                    <include name="ValidateSuccessfulNativeSTLinkPayment"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28691 Block bulk apply Pref check for show payment page">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="PGP_28691_BulkPromoShouldNotHitWhenBLOCK_BULK_APPLY_PROMOisActiveForShowPaymentPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CHECKOUTJS on Enhanced Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_CCTxn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_DCTxn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_UPITxn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_NB_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_ADD_N_PAY_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_HYBRID_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_Exhausted_Retry_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_EMI_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_DIRECT_BANK_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_BANK_OFFER"/>
+                    <include name="JSCheckoutDomainOnEnhanced_SUBS_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

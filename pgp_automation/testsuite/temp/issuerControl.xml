@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="COFT_Theia" verbose="1" parallel="tests" thread-count="7">
+    <test name="Issuer Control">
+        <classes>
+            <class name="scripts.coft.theia.IssuerControl">
+                <methods>
+                    <include name="fetchBinBlocked"/>
+                    <include name="fetchBinAllowed"/>
+                    <include name="fpoBlocked"/>
+                    <include name="fpoAllowed"/>
+                    <include name="ptcBlockedCard"/>
+                    <include name="ptcBlockedSavedCard"/>
+                    <include name="ptcAllowedCard"/>
+                    <include name="ptcAllowedSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

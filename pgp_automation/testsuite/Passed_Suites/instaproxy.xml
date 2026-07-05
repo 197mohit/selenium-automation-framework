@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Instaproxy_Suite" verbose="1" thread-count="20" parallel="classes">
+  <test name="InstaproxyUpiPaymentRequestTest">
+        <classes>
+            <class name="scripts.api.Instaproxy.InstaproxyUpiPaymentRequestTest">
+                <methods>
+                    <include name="postUpiPaymentRequest_executeStyle"/>
+                    <include name="postUpiPaymentRequest_executeStyleWithHeaders"/>
+                    <include name="verifyUpiCreditlineNotPassedWhenPrefEnabled"/>
+                    <include name="verifyUpiCreditlineIsPassedWhenPrefDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+      <test name="BankResponseServiceCoverage">
+        <classes>
+            <class name="scripts.Instaproxy.BankResponseServiceCoverageTest"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="load cashier page and do cc/dc txn and cancel txn by selecting option donot have access to registered mobile number"
+       verbose="1">
+    <test name="Cancelling the txn by choosing the option donot have access to registered mobile number ">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_text_user_has_closed_the_bank_popup_is_displayed_after_canceling_txn"/>
+                 </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

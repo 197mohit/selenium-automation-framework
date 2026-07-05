@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1" parallel="tests" thread-count="3">
+    <test name="CheckoutJS fixes 1">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingNBAfterCCRetry"/>
+                    <include name="ValidateSuccessTxnAddNPay"/>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforCheckoutJs"/>
+                    <include name="ValidatePendingTxnWithoutTimerAndWithoutCloseOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Bank offer fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.BankOfferOnPCF">
+                <methods>
+                    <include name="TC_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

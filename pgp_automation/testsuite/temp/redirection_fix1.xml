@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="REDIRECTION FIX" verbose="1" >
+
+    <test name="Validate Failed Trx with CC and Process it using PPBL">
+        <parameter name="theme" value="enhancedwap_revamp">
+            <classes>
+                <class name="scripts.PGOnly">
+                    <methods>
+                        <include name="vailidatePPBLRetry_ProcessTrxUsingPPBL"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Validate that TxnPaidTime should be return in response of call back api for CC txn">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.PGOnly">
+                    <methods>
+                        <include name="VerifyTxnPaidTimeFieldShouldReturnInResponse_ViaCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Verify PUSH_APP_DATA, with groupedMerchantPayOption">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.PGOnly">
+                    <methods>
+                        <include name="ValidateInstrumentCategorization"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

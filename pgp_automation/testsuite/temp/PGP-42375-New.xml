@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Renewals with Prenotify for Ondemand Frequency" verbose="1">
+    <test name="Verify Subscription Renewals till T+2 days ">
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMANDSameDayRenewal"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_OneDaysRenewal"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_TwoDaysRenewal"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_ThreeDaysRenewal"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

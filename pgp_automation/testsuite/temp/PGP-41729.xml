@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-41729" verbose="1">
+    <test name="EMI support for Access Token">
+        <parameter name="theme" value="checkoutjs_wap_revamp"></parameter>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="verifyEMISupportforAccessTokenbankSelect"/>
+                    <include name="verifyEMISupportforAccessTokennewCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

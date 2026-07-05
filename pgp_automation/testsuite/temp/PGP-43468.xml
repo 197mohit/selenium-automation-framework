@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-43468" verbose="1" thread-count="3">
+    <test name="PGP-43468 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC01_ValidateQrIsNotDsiplayed"/>
+                    <include name="TC02_ValidateQRisNotDisplayed_UPI_INACTIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43468 - 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC03_ValidateQRisNotDisplayed"/>
+                    <include name="TC04_ValidateQRisNotDisplayed_UPI_INACTIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43468 - 3">
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC05_ValidateQRisNotDisplayed_NATIVE"/>
+                    <include name="TC06_ValidateQRisNotDisplayed_UPI_INACTIVE_NATIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

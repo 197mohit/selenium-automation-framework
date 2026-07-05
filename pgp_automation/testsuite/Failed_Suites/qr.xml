@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QR_Suite_Failed" verbose="1" thread-count="20" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <test thread-count="20" verbose="0" name="EDCQR TCs" parallel="tests">
+        <classes>
+            <class name="scripts.EDCQR">
+                <methods>
+                    <include name="edcPOSEDCCC"/>
+                    <include name="edcPOSEDCDC"/>
+                    <include name="edc46DC"/>
+                    <include name="edc46CC"/>
+                    <include name="edc47DC"/>
+                    <include name="edc47CC"/>
+                    <include name="defaultEDCDC"/>
+                    <include name="defaultEDCCC"/>
+                    <include name="edcPOSEDCEMI"/>
+                    <include name="defaultEDCEMI"/>
+                    <include name="edc46EMI"/>
+                    <include name="edc47EMI"/>
+                    <include name="cashPosDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="temp-Dynamic QR Test Cases" parallel="tests">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable003"/>
+                    <include name="validateCUISDKTypeParam"/>
+                    <include name="verifyMerchant_txn_status_EDCdynamicqr_flow_TXN_FAILURE"/>
+                    <include name="validateSDKTypeParamWithoutCOP"/>
+                    <include name="validateSucesPPBLTxn_UsingDynmQR"/>
+                    <include name="validateErrorCodeInFastForwardAPIWhenDQRExpires"/>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParamforUPI"/>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="verifycin_EdcQRFlow_Tin"/>
+                    <include name="verifyMerchant_txn_status_EDCdynamicqr_flow_TXN_SUCCESS"/>
+                    <include name="validateTxnAmount15SubWallet12AvailableBalanceMW10FW10"/>
+                    <include name="validateDCTxn_UsingDynmQR"/>
+                    <include name="verifyPosIdGenerateQr_UsingDynmQR"/>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_be_display_in_the_fetch_qr_details_repsone_pref_ff4j_is_on"/>
+                    <include name="validateErrorCodeInV1PTCWhenOrderIsClosedForDQR"/>
+                    <include name="verifyPosIdGenerateQr_UsingDynmQrFastForword"/>
+                    <include name="validateSuccessTxnUsingZeroCostEMI_UsingDynmQR"/>
+                    <include name="validateErrorCodeInFastForwardAPIWhenOrderIsClosedForDQR"/>
+                    <include name="validateRetryEDCMerchantCC"/>
+                    <include name="validateCCTxn_UsingDynmQR"/>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisONPrefNotActiveForCC_UsingDynmQR"/>
+                    <include name="validateRetryEDCMerchantEmi"/>
+                    <include name="validateTxnAmount15SubWallet3AvailableBalanceMW10FW10"/>
+                    <include name="validateTxnAmount10SubWallet7AvailableBalanceMW10FW10PTC"/>
+                    <include name="validateSuccessTxnUsingBALANCE_UsingDynmQR"/>
+                    <include name="validateSuccessTxnUsingEMI_UsingDynmQR"/>
+                    <include name="verifyMerchant_txn_status_EDCdynamicqr_flow_TXN_PENDING"/>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="verifycin_EdcQRFlow_NewCard"/>
+                    <include name="validateSuccessTxnUsingBALANCE_PCF_UsingDynmQR"/>
+                    <include name="verifyPosIdFastFarword_UsingDynamicQR"/>
+                    <include name="incorrectMID"/>
+                    <include name="validateTxnAmount25SubWallet15AvailableBalanceMW10FW10"/>
+                    <include name="verifyMerchantinfoDynamicQR"/>
+                    <include name="validateSuccessTxnUsing_intent_PCF_UsingDynmQR"/>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParamforPPI"/>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisOFFPrefIsActiveForCC_UsingDynmQR"/>
+                    <include name="validateTxnAmount25SubWallet12AvailableBalanceMW10FW10"/>
+                    <include name="validateNBTxn_UsingDynmQR"/>
+                    <include name="validateTxnAmount10SubWallet7AvailableBalanceMW10FW10"/>
+                    <include name="verifyPosIdPtceQr_UsingDynmQR"/>
+                    <include name="validateCardIsSaved_UsingDynmQR"/>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParam"/>
+                    <include name="emptyTxnToken"/>
+                    <include name="validateSuccessTxnUsingSvdCard_UsingDynmQR"/>
+                    <include name="validateSuccessTxnUsing_intent_UsingDynmQR"/>
+                    <include name="incorrectSSOToken"/>
+                    <include name="validateErrorCodeInV1PTCWhenDQRExpires"/>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_be_displayed_in_the_fetch_qr_details_repsone_pref_is_off_ff4j_is_on"/>
+                    <include name="validateAIOSDKTypeParam"/>
+                    <include name="validateDirectFormParamNotInPTCFF4JFlagisOFFPrefNotActiveForCC_UsingDynmQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="temp-Static QR Test Cases" parallel="tests">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="validateDCTxn_UsingStaticQR"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_be_displayed_in_the_fetch_qr_details_repsone_pref_is_off_ff4j_is_on"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingStaticQR"/>
+                    <include name="validateqrCodeId_qrDeepLink"/>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingStaticQR"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingStaticQR"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_be_display_in_the_fetch_qr_details_repsone_pref_ff4j_is_on"/>
+                    <include name="Verify_sms_notification_BW_only"/>
+                    <include name="validateEMITxn_UsingStaticQR"/>
+                    <include name="validateGV_Txn_UsingStaticQR"/>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisFalseinFastFwdTxn_UsingStaticQR"/>
+                    <include name="validateEMI_PCF_Txn_UsingStaticQR"/>
+                    <include name="validatePostpaid_PCF_Txn_UsingStaticQR"/>
+                    <include name="validateGV_PCF_Txn_UsingStaticQR"/>
+                    <include name="verifyPosIdCOPStaticQR_GenerateQrAndPtcReq"/>
+                    <include name="verifyextendinfoCOPStaticQR"/>
+                    <include name="Verify_sms_notification_BW_Instantsettlement"/>
+                    <include name="validateUPITxn_UsingStaticQR"/>
+                    <include name="verifyPosIdCOPStaticQR_GenerateQrForFastFwd"/>
+                    <include name="Verify_sms_notification_NonBW_only"/>
+                    <include name="validateBalanceTxn_UsingStaticQR"/>
+                    <include name="verifyPosIdCOPStaticQR_GenerateQrAndFastFwdReq"/>
+                    <include name="validateCC_PCF_Txn_UsingStaticQR"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="validateNB_PCF_Txn_UsingStaticQR"/>
+                    <include name="validateZeroCostEMITxn_UsingStaticQR"/>
+                    <include name="verifyPosIdCOPStaticQR_GenerateQr"/>
+                    <include name="validatePPBLTxn_UsingStaticQR"/>
+                    <include name="validateDC_PCF_Txn_UsingStaticQR"/>
+                    <include name="validatePostpaid_Txn_UsingStaticQR"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingStaticQR"/>
+                    <include name="Verify_PPBL_Wallet_PaytmPostpaid_currency_value_is_showing_in_response"/>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisFalseinPPBLTxn_UsingStaticQR"/>
+                    <include name="validateBalance_PCF_Txn_UsingStaticQR"/>
+                    <include name="validateCCTxnFailure_UsingStaticQR_TxnAmountMoreThanLimit"/>
+                    <include name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_display_in_the_fetch_qr_details_repsone"/>
+                    <include name="validateSuccessTxn_UsingSavedCardStaticQR"/>
+                    <include name="validateNBTxn_UsingStaticQR"/>
+                    <include name="validateCCTxn_UsingStaticQR"/>
+                    <include name="Verify_PPBL_PaytmPostpaid_balance_is_null_in_response"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="MDRMerchant TCs for Enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorDCTxnForMDRScanNPay"/>
+                    <include name="successfulFeeFactorCCInternationalMoreThan25TxnForMDRScanNPay"/>
+                    <include name="successfulFeeFactorNBForSlabMDRScanNPay"/>
+                    <include name="successfulFeeFactorDCPrePaidCardScanNPay"/>
+                    <include name="successfulFeeFactorCCInternationalLessThan25TxnForMDRScanNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="temp-ScanNpay All in 1 QR tests" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.AllInOneQrTests">
+                <methods>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_be_display_in_the_fpo_repsone_pref_ff4j_is_on"/>
+                    <include name="validate_S_wallet_PCF_Txn_allIn1Qr"/>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_be_displayed_in_the_fpo_repsone_pref_is_off_ff4j_is_on"/>
+                    <include name="validate_S_postpaid_Txn_allIn1Qr"/>
+                    <include name="validate_S_dc_Txn_allIn1Qr"/>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_and_should_not_display_in_the_fpo_response"/>
+                    <include name="validate_S_wallet_Txn_allIn1Qr"/>
+                    <include name="validate_Alert_Msg_For_Onus_allIn1Qr"/>
+                    <include name="validate_S_NB_Txn_allIn1Qr"/>
+                    <include name="validate_S_GV_Txn_allIn1Qr"/>
+                    <include name="validate_S_AthenP_Txn_allIn1Qr"/>
+                    <include name="validate_qrNotDisplayed"/>
+                    <include name="validate_Alert_Msg_For_allIn1Qr"/>
+                    <include name="validate_S_intentTxn_allIn1Qr"/>
+                    <include name="validate_S_EMI_Txn_allIn1Qr"/>
+                    <include
+                            name="Verify_postpaid2FAThresholdValue_and_postpaid2FAEnabled_should_be_true_display_in_the_fpo_repsone"/>
+                    <include name="validate_S_cc_Txn_allIn1Qr"/>
+                    <include name="validate_No_Alert_Msg_For_allIn1Qr_after_loggingIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="PCFMerchant TCs for Enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.ScanNPayPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorDCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                    <include name="successfulFeeFactorNBTxnSlabBasedforAmountLessThan100ForPCF"/>
+                    <include name="successfulFeeFactorDCPrepaidTxnForPCF_MDR"/>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorNBTxnSlabBasedforAmountMoreThan100LessThan200ForPCF"/>
+                    <include name="successfulFeeFactorNBTxnSlabBasedforAmountMore200ForPCFTOMDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="Mapping Service API Tests" parallel="tests">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantProfile">
+                <methods>
+                    <include name="test QR components in Merchant Profile from Database when Id is paytm"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="PGP-27185 - Sending priority Fetch QR V2" parallel="tests">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsV2APITest">
+                <methods>
+                    <include name="testFetchQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="ScanNPay tests Enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.ScanNPayTest">
+                <methods>
+                    <include name="validateQrCode_displayed_notLogIn_IRCTCMerch"/>
+                    <include name="validate_S_walletTxn_IRCTCMerc_PRNtrue"/>
+                    <include name="validateFtchQRPayDetails_HybridMerch"/>
+                    <include name="validate_PRNSectionDisplayed"/>
+                    <include name="validateFtchQrPayDetails_upiMerch"/>
+                    <include name="validateQrCode_displayed_LogIn_UPIMerch"/>
+                    <include name="validateQrCode_displayed_notLogIn_upiMerch"/>
+                    <include name="validateFtchQRPayDetails_AddNPayMerch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="NewDynamicQR flow" parallel="tests">
+        <classes>
+            <class name="scripts.flows.NewDynamicQRTest">
+                <methods>
+                    <include name="executeFetchQRPaymentDetailsAPI"/>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for CC pay mode in case of risk pass"/>
+                    <include name="executeQRCreateAPI"/>
+                    <include name="test eventLinkId is not coming in response in case of risk reject"/>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for NB pay mode in case of risk pass"/>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for DC pay mode in case of risk pass"/>
+                    <include name="test eventLinkId is not coming in response in case of risk verify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsAndFailedTxnUsingCC"/>
+                    <include name="ValidateQRDetailsAndPRNSuccessTxnUsingCC"/>
+                    <include name="ValidateQRDetailsAndSuccessTxnUsingWallet"/>
+                    <include name="ValidateQRDetailsAndUPIQRSuccessTxnUsingUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web revamp"
+          parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsAndFailedTxnUsingCC"/>
+                    <include name="ValidateQRDetailsAndPRNSuccessTxnUsingCC"/>
+                    <include name="ValidateQRDetailsAndSuccessTxnUsingWallet"/>
+                    <include name="ValidateQRDetailsAndUPIQRSuccessTxnUsingUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42679">
+        <classes>
+            <class name="scripts.Qr.qr">
+                <methods>
+                    <include name="Verify_isAddMoneyPayOptionsAvailable_true_user_postpaid_merchant_nonpostpaid"/>
+                    <include name="Verify_isAddMoneyPayOptionsAvailable_true_user_nonpostpaid_merchant_postpaid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44212 checkoutjs_web_revamp tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                   <include name="ValidateUITextMsgLoginQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44212 enhancedweb_revamp tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                    <include name="ValidateUITextMsgLoginOTPEnhancedflow"/>
+                    <include name="ValidateUITextMsgTestLoginQREnhancedflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    </tests>-->
+</suite>

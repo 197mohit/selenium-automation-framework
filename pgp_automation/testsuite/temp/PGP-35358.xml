@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35358">
+    <test name="Verify SOP amount left align in the scrolled header of the cashier page">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifySopamount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

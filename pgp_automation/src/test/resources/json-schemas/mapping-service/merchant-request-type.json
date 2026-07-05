@@ -1,0 +1,78 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "errorSchema": {
+      "type": "object",
+      "required": [
+        "code",
+        "message",
+        "offendingPath",
+        "offendingMethod",
+        "offendingLine"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            500,
+            404
+          ]
+        },
+        "message": {
+          "enum": [
+            "Mid does not exist",
+            "No request types available for this mid",
+            "HTTP 404 Not Found"
+          ]
+        },
+        "offendingPath": {
+          "enum": [
+            "MappingServiceHelper.javacom.paytm.pgplus.mapping.service.rest.helper.MappingServiceHelper",
+            "ServerRuntime.javaorg.glassfish.jersey.server.ServerRuntime$2"
+          ]
+        },
+        "offendingMethod": {
+          "enum": [
+            "run",
+            "getMerchantRequestTypes"
+          ]
+        },
+        "offendingLine": {
+          "type": "integer"
+        }
+      }
+    },
+    "successSchema": {
+      "type": "object",
+      "required": [
+        "requestTypes",
+        "paytmMid"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "requestTypes": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "paytmMid": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/errorSchema"
+    },
+    {
+      "$ref": "#/definitions/successSchema"
+    }
+  ]
+}

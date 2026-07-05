@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loyality Points" parallel="methods" thread-count="20">
+    <test name="Loyality Points Expiry Notification">
+        <classes>
+            <class name="scripts.IVRFastForward">
+            <methods>
+                <include name="verifyLoyalityPointExpiry_Notification_ForPRE_Expiry"/>
+                <include name="verifyLoyalityPointExpiry_Notification_ForPOST_Expiry"/>
+                <include name="verifyLoyalityPointExpiry_Notification_ForPreExpiry_MoreThan_OneUser"/>
+                <include name="verifyLoyalityPointExpiry_Notification_ForPostExpiry_MoreThan_OneUser"/>
+                <include name="verifyLoyalityPointExpiry_Notification_ForPreExpiry_AND_ForPostExpiry"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

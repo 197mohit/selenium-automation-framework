@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI_Offline_Suite" verbose="1" thread-count="2" parallel="tests">
+  <test name="Upi Validate Vpa Test">
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.UpiPspValidateVpaTest">
+      </class>
+    </classes>
+  </test>
+  <test name=" UPIPSP PROCESSOR upi interest free and interest bear credit line">
+    <classes>
+      <class name="scripts.api.UPI.UpiPspProcessorTests">
+        <methods>
+          <include
+            name="validateUPIPSPProcessorofflineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineBlacklistedY"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineBlacklistedY"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineRailsYabove2000"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineRailsYabove2000"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineSuperBlacklistedY"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineSuperBlacklistedY"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineSuperBlacklistedN"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineSuperBlacklistedN"/>
+          <include
+            name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+          <include
+            name="validateUPIPSPProcessoronlineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineBlacklistedY"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineBlacklistedY"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestFreeCreditLineRailsYabove2000"/>
+          <include name="validateUPIPSPProcessoronlineBigInterestBearCreditLineRailsYabove2000"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="PGP-56708_RISK_RULES">
+    <classes>
+      <class name="scripts.api.UPI.Risk_Rules_In_OrderPayUpipsp">
+        <methods>
+          <include name="ValidateRiskParam_IN_UPIPspV1OrderPay"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="Remove legacy UPIPSP PROCESSOR code for CC on UPI and other UPI subtypes">
+    <classes>
+      <class name="scripts.api.UPI.UpiPspProcessorTests">
+        <methods>
+          <include
+            name="validateUPIPSPProcessorforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+          <include
+            name="validateUPIPSPProcessorforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+          <include
+            name="validateUPIPSPProcessorforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+          <include
+            name="validateUPIPSPProcessorforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+          <include
+            name="validateUPIPSPProcessorforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+          <include
+            name="validateUPIPSPProcessorforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+          <include name="validateUPIPSPProcessorforOnlineMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+          <include name="validateUPIPSPProcessorforOnlineMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+          <include
+            name="validateUPIPSPProcessorUPICCforOfflineSmallMerchantforAmountGreaterThan2000"/>
+          <include name="validateUPIPSPProcessorUPICCforOfflineSmallMerchantforAmountLessThan2000"/>
+          <include
+            name="validateUPIPSPProcessorUPIPPIWalletforOfflineSmallMerchantforAmountGreaterThan2000"/>
+          <include
+            name="validateUPIPSPProcessorUPIPPIWALLETforOfflineSmallMerchantforAmountLessThan2000"/>
+          <include
+            name="validateUPIPSPProcessorUPICreditLineforOfflineSmallMerchantforAmountGreaterThan2000"/>
+          <include
+            name="validateUPIPSPProcessorUPICreditLineforOfflineSmallMerchantforAmountLessThan2000"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CC"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPIPPIWALLET"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPICREDITLINE"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CCNotEnabled"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPIPPIWALLETNotEnabled"/>
+          <include name="validateUPIPSPProcessorforOnusMerchantforUPICREDITLINENotEnabled"/>
+          <include name="validateUPIPSPProcessorforWrongJWT"/>
+
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="UPIPSP PROCESSOR upi interest free and interest bear credit line1">
+    <classes>
+      <class name="scripts.api.UPI.UpiPspProcessorTests">
+        <methods>
+          <include
+            name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineSuperBlacklistedY"/>
+          <include
+            name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineSuperBlacklistedY"/>
+          <include
+            name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineSuperBlacklistedN"/>
+          <include
+            name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineSuperBlacklistedN"/>
+          <include
+            name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+          <include
+            name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineSuperBlacklistedNabove2000"/>
+          <include name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineBlacklistedY"/>
+          <include name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineBlacklistedY"/>
+          <include name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineRailsYabove2000"/>
+          <include name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineRailsYabove2000"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineSuperBlacklistedY"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineSuperBlacklistedY"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineSuperBlacklistedN"/>
+          <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineSuperBlacklistedN"/>
+          <include
+            name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="UPI CreditLine For Offline transaction">
+    <classes>
+      <class name="scripts.api.UPI.creditLine.CreditLine_Offline_DQRTest">
+        <methods>
+          <include name="payerPaymentInstrument_On_Insta_JUSPay"/>
+          <include name="Ineligible_Small_MID_Blacklisted"/>
+          <include name="CreditLineEligible_Small_MID"/>
+          <include name="TxnAmt_2000_not_allowed_ON_CL"/>
+          <include name="TxnAmt_2000_allowed_ON_CL"/>
+          <include name="Txn_Not_allowed_ON_CL_BIG_MID"/>
+          <include name="Txn_Not_allowed_ON_CL_BIG_MID_NoPref"/>
+          <include name="AllTxnt_allowed_ON_CL_BIG_MID"/>
+          <include name="payerPaymentInstrument_On_Insta_YesBank"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name=" UPIPSP PROCESSOR e-rupi Voucher on UPI Consumption">
+    <classes>
+      <class name="scripts.api.UPI.UpiPspProcessorTests">
+        <methods>
+          <include name="validateSQRUPIPSPProcessorforUPI_VOUCHER"/>
+          <include name="validateDQRUPIPSPProcessorforUPI_VOUCHER"/>
+          <include name="validateSQRUPIPSPProcessorforVOUCHER"/>
+          <include name="validateDQRUPIPSPProcessorforVOUCHER"/>
+          <include name="validateSQRUPIPSPProcessorforVOUCHER1"/>
+          <include name="validateDQRUPIPSPProcessorforVOUCHER1"/>
+          <include name="validateReqAuthUPIPSPVoucherSQRFlow"/>
+          <include name="validateReqAuthUPIPSPVoucherDQRFlow"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="Offline UPI e2e flow">
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.OcilYesBankTest"></class>
+    </classes>
+  </test>
+  <test name="AllowedTpap validation">
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.AllowedTpapQRCreateTests"></class>
+      <class name="scripts.UPI.OfflineUpi.AllowedTpapQRCreatePPSLTests"></class>
+    </classes>
+  </test>
+  <test
+    name="PGP-60400: Changes in Create Order API (for YBL) - addition of errorCode, errorMessage in request when ff4j flag ON">
+    <parameter name="isNativePlus" value="true"/>
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+        <methods>
+          <include name="testErrorCode20001188_FlagON"/>
+          <include name="testErrorCode20001189_FlagON"/>
+          <include name="testNoErrorCode_FlagON"/>
+          <include name="testOtherErrorCode_FlagON"/>
+          <include name="testErrorCodeNull_FlagON"/>
+          <include name="testErrorCodeBlank_FlagON"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+
+  <test
+    name="PGP-60400: Changes in Create Order API (for YBL) - addition of errorCode, errorMessage in request when ff4j flag Off">
+    <parameter name="isNativePlus" value="true"/>
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+        <methods>
+          <include name="testErrorCode20001188_FlagOFF"/>
+          <include name="testNoErrorCode_FlagOFF"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="UPI Intent – Convenience Fee | UPI PSP">
+    <classes>
+      <class name="scripts.api.UPI.UpiPspProcessorTests">
+        <methods>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenWrongpayerPaymentInstrumentFeeisPassedWronginRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedWronginRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenWrongpayerPaymentInstrumentFeeisPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenpayerPaymentInstrumentFeeisPassedwithWrongtxnAmountinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRPCFWhenpayerPaymentInstrumentFeeisnotPassedinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditCardforMDRWhenpayerPaymentInstrumentFeeisPassedasNullinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiCreditlineforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpiPpiWalletforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingsforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+          <include name="validateReqAuthSQRUPIPSPUpiCreditCardforMDRWhenpayerPaymentInstrumentFeeisPassedasNullinRequest"/>
+          <include name="validateReqAuthSQRUPIPSPUpiCreditlineforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+          <include name="validateReqAuthSQRUPIPSPUpiPpiWalletforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+          <include name="validateReqAuthSQRUPIPSPUpisavingsforMDRWhenpayerPaymentInstrumentFeeisPassedNullinRequest"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="UpiPsp Processor Deep Link Standardisation">
+    <classes>
+      <class name="scripts.api.UPI.UpiPspProcessorTests">
+        <methods>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingswhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPUpisavingswhenRandomacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPMDRPCFUpiCreditCardforpayerPaymentInstrumentFeewhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+          <include name="validateOnlineReqAuthDQRUPIPSPMDRPCFUpiCreditCardforAndpayerPaymentInstrumentFeeNotPassedwhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="PGP-60910 - PPBL UPI CreateOrder Validation Tests" parallel="methods" thread-count="2">
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+        <methods>
+          <include name="testOrderRequestReceivedAtPgInRespAuthForV2CreateOrder"/>
+          <include name="testEpochTimestampInOrderRequestReceivedAtPgForV2CreateOrder"/>
+          <include name="testOrderRequestReceivedAtPgInRespAuthForV3CreateOrder"/>
+          <include name="testEpochTimestampInOrderRequestReceivedAtPgForV3CreateOrder"/>
+          <exclude name="testPaymentAggregatorAndMidInQueryParamForSqRequest"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="UPI-PSP E2E Transaction Tests">
+    <parameter name="theme" value="enhancedweb"/>
+    <parameter name="isNativePlus" value="true"/>
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.DQRCreationOnAcqId">
+        <methods>
+          <include name="tc01_VerifyE2ESQRTransaction"/>
+          <include name="tc02_VerifyE2ESQRTransactionRetry"/>
+          <include name="tc03_VerifyE2EDQRTransactionWithAcquirementId"/>
+          <include name="tc04_VerifyE2EDQRTransactionWithOrderId"/>
+        </methods>
+      </class>
+      <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+        <methods>
+          <include name="testInitiationModeAndPurposeCodeInCallback"></include>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="PG-4737 | Enable PPI on UPI at UPI PSP Processor">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforOnlinePPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Null"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforOnlineUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Null"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1" parallel="tests" thread-count="3">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                    <include name="PGP_27624_PromoTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="PGP_27624_SplitSettlementTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="PGP_27624_ValidateCCTxnNativeJsonPrefN"/>
+                    <include name="ValidatePCFwithAmexCard"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs wap revamp">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27624_ValidateSuccessSubscriptionwithNativeJsonPrefN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

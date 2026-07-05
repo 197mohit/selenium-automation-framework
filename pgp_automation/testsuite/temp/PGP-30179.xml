@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Checksum Issue Aggerator Merchants">
+    <test name="ChecksumIssueAggrMerchants">
+        <classes>
+            <class name="scripts.ChecksumIssueAggregatorMerchants"/>
+        </classes>
+    </test>
+</suite>

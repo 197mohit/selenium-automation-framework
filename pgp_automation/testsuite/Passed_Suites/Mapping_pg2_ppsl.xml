@@ -1,0 +1,668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-PG2-API" verbose="1" parallel="classes" thread-count="15">
+    <test name="Mapping Service PG2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiringMid">
+                <methods>
+                    <include name="verifyQueryMerchantAcquiringMidApi_03"/>
+                    <include name="verifyQueryMerchantAcquiringMidApi_04"/>
+                    <include name="verifyQueryMerchantAcquiringMidApi_05"/>
+                    <include name="verifyQueryMerchantAcquiringMidApi_01"/>
+                    <include name="verifyQueryMerchantAcquiringMidApi_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetPreferenceInfo">
+                <methods>
+                    <include name="verifyMerchantGetPreferenceInfoAPI"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantApiUrlInfo">
+                <methods>
+                    <include name="verifyMerchantApiUrlInfoApi_01"/>
+                    <include name="verifyMerchantApiUrlInfoApi_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantAttributeGetSubscriptionDetai">
+                <methods>
+                    <include name="verifyMerchantAttributeGetSubscriptionDetaiapi_02"/>
+                    <include name="verifyMerchantAttributeGetSubscriptionDetaiapi_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantMigrationContractDetails">
+                <methods>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiSuccessResponse"/>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiContractBasicSuccessResp"/>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiContractBasic"/>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiProductCondition"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midBlank"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midNull"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midSpace"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midRandom"/>
+                </methods>
+            </class>
+
+<!--            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV2QueryContractItem">-->
+<!--                <methods>-->
+<!--                    <include name="MerchantV2QueryContractItem_02"/>-->
+<!--                    <include name="MerchantV2QueryContractItem_01"/>-->
+<!--                    <include name="MerchantV2QueryContractItem_03"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--            <class name="scripts.api.mappingService.PG2MappingApis.PaymentInfoFee">-->
+<!--                <methods>-->
+<!--                    <include name="PaymentInfoFee_01"/>-->
+<!--                    <include name="PaymentInfoFee_02"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV1API">
+                <methods>
+                    <include name="MerchantV1Api_03"/>
+                    <include name="MerchantV1Api_02"/>
+                    <include name="verifyMerchantV1APIApi"/>
+                </methods>
+            </class>
+<!--            <class name="scripts.api.mappingService.PG2MappingApis.QueryContractItem">-->
+<!--                <methods>-->
+<!--                    <include name="QueryMerchantContractItem_04"/>-->
+<!--                    <include name="QueryContractApi_05"/>-->
+<!--                    <include name="QueryContractApi_06"/>-->
+<!--                    <include name="verifySuccessfullResponseOfQueryContractItemApi"/>-->
+<!--                    <include name="QueryContractApi_03"/>-->
+<!--                    <include name="QueryContractApi_02"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantPrefInfo">
+                <methods>
+                    <include name="verifyQueryMerchantPrefInfoAPI"/>
+                </methods>
+            </class>
+<!--            <class name="scripts.api.mappingService.PG2MappingApis.MerchantQueryContractDetail">-->
+<!--                <methods>-->
+<!--                    <include name="verifySuccessfullResponseOfQueryContractItemApi"/>-->
+<!--                    <include name="verifySuccessfullResponseOfResultInfoInApi"/>-->
+<!--                    <include name="MerchantQueryContractdetail_02"/>-->
+<!--                    <include name="MerchantQueryContractdetail_03"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_midBlank"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_midNull"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_midSpace"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_midRandom"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_ContractStatusNull"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_ContractStatusSpace"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_ContractStatusRandom"/>-->
+<!--                    <include name="MerchantQueryContractdetailNegativeCases_productCodeNull"/>-->
+<!--                    <include name="MerchantQueryContractdetail_04"/>-->
+<!--                    <include name="MerchantQueryContractdetail_05"/>-->
+<!--                    <include name="MerchantQueryContractdetail_06"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantMigrationContractDetails_V2">
+                <methods>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiSuccessResponse"/>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiContractBasicSuccessResp"/>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiContractBasic"/>
+                    <include name="verifyQueryMerchantMigrationContractDetailsApiProductCondition"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midBlank"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midNull"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midSpace"/>
+                    <include name="MerchantQueryContractdetailNegativeCases_midRandom"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetExtendedInfo">
+                <methods>
+                    <include name="verifyMerchantGetExtendedInfoApi_01"/>
+                    <include name="verifyMerchantGetExtendedInfoApi_02"/>
+                    <include name="verifyMerchantGetExtendedInfoApi_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetAlipayId">
+                <methods>
+                    <include name="GetAlipayId_03"/>
+                    <include name="GetPaytmId_02"/>
+                    <include name="GetPaytmId_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKey">
+                <methods>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApi_3"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantAttributeAdditional">
+                <methods>
+                    <include name="verifyMerchantAttributeAdditionalapi_02"/>
+                    <include name="verifyMerchantAttributeAdditionalapi_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.UserGetMerchantExtendedInfo">
+                <methods>
+                    <include name="verifyUserGetMerchantExtendedInfoApi_01"/>
+                    <include name="verifyUserGetMerchantExtendedInfoApi_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKeyWithoutPaymodeandCliendId">
+                <methods>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApiWithoutPaymodeandClientId_02"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantQueryAcquiring">
+                <methods>
+                    <include name="verifyMerchantQueryAcquiringApi_01"/>
+                    <include name="verifyMerchantQueryAcquiringApi_02"/>
+                    <include name="verifyMerchantQueryAcquiringApi_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.merchantDeviceDetails">
+                <methods>
+                    <include name="verifyMerchantDeviceDetailWithV2TID"/>
+                    <include name="verifyMerchantDeviceDetailWithTIDAndbankname_03"/>
+                    <include name="verifyMerchantDeviceDetailWithTIDAndbankname_01"/>
+                    <include name="verifyMerchantDeviceDetailWithV2TID_02"/>
+                    <include name="verifyMerchantDeviceDetailWithTID_02"/>
+                    <include name="verifyMerchantDeviceDetailWithTID_03"/>
+                    <include name="verifyMerchantDeviceDetailWithTIDAndbankname_02"/>
+                    <include name="verifyMerchantDeviceDetailWithTID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantidMap">
+                <methods>
+                    <include name="GetAlipayId_01"/>
+                    <include name="GetAlipayId_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKeyWithPaymode">
+                <methods>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApi_02"/>
+                    <include name="verifySuccessfullResponseOfMerchantAttributeApi_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiring">
+                <methods>
+                    <include name="verifyQueryMerchantAcquiringapi_01"/>
+                    <include name="verifyQueryMerchantAcquiringapi_03"/>
+                    <include name="verifyQueryMerchantAcquiringapi_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityurlinformid">
+                <methods>
+                    <include name="verifyEntityurlinformidapi_02"/>
+                    <include name="verifyEntityurlinformidapi_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantgGetPreferenceinfosext">
+                <methods>
+                    <include name="verifyMerchantgGetPreferenceinfosextApi"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantProfile">
+                <methods>
+                    <include name="verifyMerchantProfile_02"/>
+                    <include name="verifyMerchantProfile_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetThematicDetails">
+                <methods>
+                    <include name="Successfull_Response_of_Thematic_Detail"/>
+                </methods>
+            </class>
+<!--            <class name="scripts.api.mappingService.PG2MappingApis.CommonV1GetContractPaymentInfo">-->
+<!--                <methods>-->
+<!--                    <include name="verifyCommonV1GetContractPaymentInfoApi"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMbid">
+                <methods>
+                    <include name="verifyGetMbidApi_01"/>
+                    <include name="verifyGetMbidApi_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityEdcChannelInfo">
+                <methods>
+                    <include name="verifyEntityEdcChannelInfoAPI"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_HDUSAcquiringInactive"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_otherThanHDFC_SMS_PAYMENT_LINK"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_otherThanHDUS"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_differentBankTID"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_otherThanHFPP"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_terminalStatusNotActive"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_NegativeCaseMidIsRandom"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_NegativeCaseMidIsSpace"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_NegativeCaseMidIsNull"/>
+                    <include name="verifyEntityEdcChannelInfoAPI_NegativeCaseBlankMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 1 API ">
+        <classes>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetResponsecodedetailsPaytmResponseCode">
+                <methods>
+                    <include name="verifyGetResponsecodedetailsPaytmResponseCode_01"/>
+                    <include name="verifyGetResponsecodedetailsPaytmResponseCode_02"/>
+                    <include name="verifyGetResponsecodedetailsPaytmResponseCode_03"/>
+                    <include name="verifyGetResponsecodedetailsPaytmResponseCode_04"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.NotificationFetchTemplateConfiguration">
+                <methods>
+                    <include name="verifyNotificationFetchTemplateConfiguration_02"/>
+                    <include name="verifyNotificationFetchTemplateConfiguration_03"/>
+                    <include name="verifyNotificationFetchTemplateConfiguration_01"/>
+                    <include name="verifyNotificationFetchTemplateConfiguration_04"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.mappingService.MappingDrop1Apis.DccSupportedCurrencyListAcquirerIICTC1IN">
+                <methods>
+                    <include name="verifyGetPspSchema_01"/>
+                    <include name="verifyGetPspSchema_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetPspSchema">
+                <methods>
+                    <include name="verifyGetPspSchema_01"/>
+                    <include name="verifyGetPspSchema_02"/>
+                    <include name="verifyGetPspSchema_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.BankmasterdetailsPaymodeApi">
+                <methods>
+                    <include name="verifyBankmasterdetailsPaymodeApi_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.CommonV1Get">
+                <methods>
+                    <include name="CommonV1Get_04"/>
+                    <include name="CommonV1Get_05"/>
+                    <include name="CommonV1Get_03"/>
+                    <include name="CommonV1Get_02"/>
+                    <include name="CommonV1Get_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetLimitMerchantTypePPI_LIMIT_1">
+                <methods>
+                    <include name="verifyGetLimitMerchantTypePPI_LIMIT_1_02"/>
+                    <include name="verifyGetLimitMerchantTypePPI_LIMIT_1_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetNotificationTemplate">
+                <methods>
+                    <include name="GetNotificationTemplate_02"/>
+                    <include name="GetNotificationTemplate_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetResponsecodedetailsResultcode">
+                <methods>
+                    <include name="verifyGetResponsecodedetailsResultcode_04"/>
+                    <include name="verifyGetResponsecodedetailsResultcode_01"/>
+                    <include name="verifyGetResponsecodedetailsResultcode_02"/>
+                    <include name="verifyGetResponsecodedetailsResultcode_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetGlobalConfigACQUIRER_CURRENCY_IICPC1IN">
+                <methods>
+                    <include name="verifyGetGlobalConfigACQUIRER_CURRENCY_IICPC1IN_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.UserV1TypePaytmIdWillcreate">
+                <methods>
+                    <include name="verifyUserV1TypePaytmId_01"/>
+                    <include name="verifyUserV1TypePaytmId_02"/>
+                    <include name="verifyUserV1TypePaytmId_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetBanksDetailslistfromCodes">
+                <methods>
+                    <include name="verifyGetBanksDetailslistfromCodes_02"/>
+                    <include name="verifyGetBanksDetailslistfromCodes_03"/>
+                    <include name="verifyGetBanksDetailslistfromCodes_04"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetBankdetailsBankCode">
+                <methods>
+                    <include name="verifyGetBankdetailsBankCode_01"/>
+                    <include name="verifyBankdetailsAlipaycodeApi_02"/>
+                    <include name="verifyBankdetailsAlipaycodeApi_04"/>
+                    <include name="verifyBankdetailsAlipaycodeApi_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 2 APIs ">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop2.GetBankresponsecodesbankCodepayModeService">
+                <methods>
+                    <include name="GetBankresponsecodesbankCodepayModeService_02"/>
+                    <include name="GetBankresponsecodesbankCodepayModeService_04"/>
+                    <include name="GetBankresponsecodesbankCodepayModeService_03"/>
+                    <include name="GetBankresponsecodesbankCodepayModeService_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsV2Tid">
+                <methods>
+                    <include name="VerifyDeviceDetailsV2Tid_03"/>
+                    <include name="VerifyDeviceDetailsV2Tid_02"/>
+                    <include name="VerifyDeviceDetailsV2Tid_04"/>
+                    <include name="VerifyDeviceDetailsV2Tid_01"/>
+                    <include name="VerifyDeviceDetailsV2Tid_05"/>
+                    <include name="VerifyDeviceDetailsV2Tid_06"/>
+                    <include name="VerifyDeviceDetailsV2Tid_07"/>
+                    <include name="VerifyDeviceDetailsV2Tid_08"/>
+                    <include name="VerifyDeviceDetailsV2Tid_09"/>
+                    <include name="VerifyDeviceDetailsV2Tid_10"/>
+                    <include name="VerifyDeviceDetailsV2Tid_11"/>
+                    <include name="VerifyDeviceDetailsV2Tid_12"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsTidBankName">
+                <methods>
+                    <include name="VerifyDeviceDetailsTidBankName_02"/>
+                    <include name="VerifyDeviceDetailsTidBankName_04"/>
+                    <include name="VerifyDeviceDetailsTidBankName_03"/>
+                    <include name="VerifyDeviceDetailsTidBankName_05"/>
+                    <include name="VerifyDeviceDetailsTidBankNamed_01"/>
+                    <include name="VerifyDeviceDetailsTidBankName_06"/>
+                    <include name="VerifyDeviceDetailsTidBankName_07"/>
+                    <include name="VerifyDeviceDetailsTidBankName_08"/>
+                    <include name="VerifyDeviceDetailsTidBankName_09"/>
+                    <include name="VerifyDeviceDetailsTidBankName_10"/>
+                    <include name="VerifyDeviceDetailsTidBankName_11"/>
+                    <include name="VerifyDeviceDetailsTidBankName_12"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.mappingService.mappingDrop2.GetEmiOnDcEligibilityBy">
+                <methods>
+                    <include name="VerifyGet_Emi_On_Dc_EligibilityBy_02"/>
+                    <include name="VerifyGet_Emi_On_Dc_EligibilityBy_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop2.GetMerchantStaticConfigMid">
+                <methods>
+                    <include name="VerifyGetMerchantStaticConfigMid_05"/>
+                    <include name="VerifyGetMerchantStaticConfigMid_02"/>
+                    <include name="VerifyGetMerchantStaticConfigMid_04"/>
+                    <include name="VerifyGetMerchantStaticConfigMid_01"/>
+                    <include name="VerifyGetMerchantStaticConfigMid_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsBankslistTid">
+                <methods>
+                    <include name="VerifyDeviceDetailsBankslistTid_03"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_02"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_05"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_01"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_04"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_06"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_07"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_08"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_09"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_10"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_11"/>
+                    <include name="VerifyDeviceDetailsBankslistTid_12"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantGetExtendedInfoV3MerchantId">
+                <methods>
+                    <include name="verifyMerchantGetExtendedInfoV3Api_02"/>
+                    <include name="verifyMerchantGetExtendedInfoV3Api_01"/>
+                    <include name="verifyMerchantGetExtendedInfoV3Api_03"/>
+                    <include name="ComapreOldandNewApiResponse_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.GetPaytmidV1OldpgId">
+                <methods>
+                    <include name="ComapreOldandNewApiResponse_02"/>
+                    <include name="GetPaytmIdV1_01"/>
+                    <include name="GetPaytmIdV1_04"/>
+                    <include name="ComapreOldandNewApiResponse_01"/>
+                    <include name="GetPaytmIdV1_02"/>
+                    <include name="GetPaytmIdV1_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantLogoInfoV1OldpgMid">
+                <methods>
+                    <include name="MerchantLogoInfoV1OoldpgMid_02"/>
+                    <include name="MerchantLogoInfoV1OoldpgMid_03"/>
+                    <include name="MerchantLogoInfoV1OoldpgMid_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantV3Paytm">
+                <methods>
+                    <include name="verifyMerchantV3APIApi_01"/>
+                    <include name="ComapreOldandNewApiResponse_01"/>
+                    <include name="MerchantV3Api_03"/>
+                    <include name="MerchantV3Api_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.GetOldpgIdMerchantId">
+                <methods>
+                    <include name="GetPaytmIdV1_04"/>
+                    <include name="GetPaytmIdV1_02"/>
+                    <include name="GetGetOldpgIdMerchantId_01"/>
+                    <include name="GetPaytmIdV1_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantGetExtendedInfoV3MerchantIdClientId">
+                <methods>
+                    <include name="verifyMerchantGetExtendedInfoV3Api_03"/>
+                    <include name="verifyMerchantGetExtendedInfoV3Api_01"/>
+                    <include name="verifyMerchantGetExtendedInfoV3Api_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 3 API ">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop3.Getcardnetworkdetails">
+                <methods>
+                    <include name="verifycardnetworkdetails_01"/>
+                    <include name="verifycardnetworkdetails_03"/>
+                    <include name="verifycardnetworkdetails_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop3.Fetchentityignoreparams">
+                <methods>
+                    <include name="VerifyFetchentityignoreparams2"/>
+                    <include name="VerifyFetchentityignoreparams1"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop3.Getpaymethoddetails">
+                <methods>
+                    <include name="verifypaymethoddetails_02"/>
+                    <include name="verifypaymethoddetails_03"/>
+                    <include name="verifypaymethoddetails_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop3.Usergetusermid">
+                <methods>
+                    <include name="VerifyUsergetusermid1"/>
+                    <include name="VerifyUsergetusermid2"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop3.merchantidmap">
+                <methods>
+                    <include name="Verifymerchantidmap3"/>
+                    <include name="Verifymerchantidmap2"/>
+                    <include name="Verifymerchantidmap1"/>
+                    <include name="Verifymerchantidmap4"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop3.Entityurlinfoformid">
+                <methods>
+                    <include name="Verifyentityurlinfoformid1"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop3.Getformatter">
+                <methods>
+                    <include name="VerifyGet_Formatter_Details2"/>
+                    <include name="VerifyGet_Formatter_Details1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Mapping Service Audit changes API ">
+        <classes>
+            <class name="scripts.api.mappingService.Auditapichanges.bankdetailsfromidoldandnew"/>
+            <class name="scripts.api.mappingService.Auditapichanges.getbankdetailsv1bankcode"/>
+            <class name="scripts.api.mappingService.Auditapichanges.merchantidmapv3"/>
+            <class name="scripts.api.mappingService.mappingDrop3.merchantidmap">
+                <methods>
+                    <include name="Verifymerchantidmap5"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Mapping Service Audit L3 API ">
+        <classes>
+            <class name="scripts.api.mappingService.AuditL3Apis.CommonV1GetMerchant"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBankdetailsOldpgcode"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBankmasterdetailsV1Paymode"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBanksdetailslistfromCodesV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetBanksdetailslistfromidsV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetLookupfromidV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetLookupPREFERENCESV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetMerchantdataNameV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetMerchantdataPaytmidV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.GetV1Bankmasterdetails"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.MappingV3"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.MerchantGetExtendedInfoV4"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.MerchantV3PaytmMerchantIdList"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.QueryMerchantExtendedInfoV3"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.QueryMerchantMigrationDetailsV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.QueryMerchantMigrationDetailsV1"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.UserV3"/>
+            <class name="scripts.api.mappingService.AuditL3Apis.UserV3willcreate"/>
+        </classes>
+    </test>
+
+    <test name="Block chat payment cases">
+        <classes>
+            <class name="scripts.api.theia.chatpayment.chatpayment">
+                <methods>
+                    <include name="BlockchatpaymentPTC"/>
+                    <include name="BlockchatpaymentFastforward"/>
+                    <include name="BlockchatpaymentPTCregexcheck"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+
+    <!-- Moved to PureHybrid.xml
+    <test name="PGP-48994 Pure Hybrid Suite Std checkout">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PureHybrid.PureHybrid">
+                <methods>
+                    <include name="verifyPureHybrid_01"/>
+                    <include name="verifyPureHybrid_02"/>
+                    <include name="verifyPureHybrid_03"/>
+                    <include name="verifyPureHybrid_04"/>
+                    <include name="verifyPureHybrid_12"/>
+                    <include name="verifyPureHybrid_13"/>
+                    <include name="verifyPureHybrid_15"/>
+                    <include name="verifyPureHybrid_16"/>
+                    <include name="verifyPureHybrid_17"/>
+                    <include name="verifyPureHybrid_20"/>
+                    <include name="verifyPureHybrid_21"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48994 Pure Hybrid Suite checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.PureHybrid.PureHybrid">
+                <methods>
+                    <include name="verifyPureHybrid_05"/>
+                    <include name="verifyPureHybrid_06"/>
+                    <include name="verifyPureHybrid_07"/>
+                    <include name="verifyPureHybrid_08"/>
+                    <include name="verifyPureHybrid_11"/>
+                    <include name="verifyPureHybrid_14"/>
+                    <include name="verifyPureHybrid_18"/>
+                    <include name="verifyPureHybrid_19"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48994 Pure Hybrid Suite Native">
+        <classes>
+            <class name="scripts.PureHybrid.PureHybrid">
+                <methods>
+                    <include name="verifyPureHybrid_22"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48994 Pure Hybrid Suite Deals">
+        <classes>
+            <class name="scripts.Deals.DealsTests">
+                <methods>
+                    <include name="successfulDealsOnlyHybridCCTransactionViaCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48994 Addnapay Hybrid Suite">
+        <classes>
+            <class name="scripts.PureHybrid.AddnPayHybrid">
+                <methods>
+                    <include name="validate_AddnpayHYBRID_Txn_01"/>
+                    <include name="validate_AddnpayHYBRID_Txn_02"/>
+                    <include name="validate_AddnpayHYBRID_Txn_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+-->
+
+    <test name="PGP-50905">
+        <classes>
+            <class name="scripts.api.mappingService.StatusFlagApi"/>
+        </classes>
+    </test>
+
+    <test name="PGP-49861">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.mappingService.AlipayRemoval">
+                <methods>
+                    <include name="validateMappingAPITheiaMerchantstatusRefund"/>
+                    <include name="validateMappingApiTheiaMerchantStatus"/>
+                    <include name="validateMappingApiTheia"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-49861-checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.mappingService.AlipayRemoval">
+                <methods>
+                    <include name="validatepaymodeMappingApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Mapping Service Drop 3 APIs">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop3.Getmerchantattributekeywithmidandidtype"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getmerchantattributekeywithmididtypeandpaymode"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getmerchantresponsecode"/>
+        </classes>
+    </test>
+
+
+</suite>

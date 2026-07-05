@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AI-Generated: 2026-05-25 - Configuration -->
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CrossBorder Import" verbose="1" thread-count="3">
+
+    <test name="CrossBorder ImportInititae">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.crossBorder.Import">
+                <methods>
+                    <include name="TC_01_verifyTransactionToken_crossBorderInitTxn"></include>
+                    <include name="TC_02_verifyTransactionToken_crossBorderInitTxn"></include>
+                    <include name="TC_03_verifyTransactionTokenFailed_crossBorderInitTxn"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

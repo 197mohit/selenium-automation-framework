@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>   
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="upi_nonLocckedIN_hidelable"/>   
+                </methods>
+            </class>
+            <class name="scripts.UI.redirectionalflowP0NewCases">
+                <methods>
+                    <include name="verifySinglePaymodeDC"/>   
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

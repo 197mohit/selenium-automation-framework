@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI-Fixes">
+    <test name="EMI Fixes for EMI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulOffusEMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes for PGOnly">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validatePGOnlyRetryTxnUsingEMI"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

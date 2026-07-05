@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="appInvoke" verbose="1" thread-count="1">
+    <test name="appInvoke Cases for PGP-29575">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="appInvokePCFNBNotLoggedIn"/>
+                    <include name="appInvokePCFNBLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

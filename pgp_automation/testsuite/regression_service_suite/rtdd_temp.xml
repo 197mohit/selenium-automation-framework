@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RTDD Suite" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP-26586">
+        <classes>
+            <class name="scripts.api.merchantStatus.txnStatusApp.SSOTokenTxnStatusAppTest">
+                <methods>
+                    <!-- Excluding Zero Pass Percentage TCs -->
+                    <exclude name="test when order is failure"></exclude>
+                </methods>
+            </class>
+            <class name="scripts.api.merchantStatus.txnStatusListApp.SSOTokenTxnStatusListAppTest">
+                <methods>
+                    <!-- Excluding Zero Pass Percentage TCs -->
+                    <exclude name="test when order is failure"/>
+                    <exclude name="test when order is pending"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRMerchant TCs for Native Flow">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.DeferredMDRCustomRate"/>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.NativeMDRCustomRate"/>
+        </classes>
+    </test>
+
+    <test name="MDRMerchant TCs for Nativeplus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.DeferredMDRCustomRate"/>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.NativeMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="MDRMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate"/>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulFeeFactorCCInternationalMoreThan25TxnForMDRScanNPay"/>
+                    <exclude name="ScanNPayMDRCustomRate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MDRMerchant TCs for Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="MDRMerchant TCs">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.OfflineMDRCustomRate"/>
+        </classes>
+    </test>
+
+    <test name="PCFMerchant TCs for Native Flow">
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.NativePCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Nativeplus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.NativePCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.ScanNPayPCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate"/>
+        </classes>
+    </test>
+
+    <test name="HDFC UPI Collect for enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.HDFCUPICollect">
+                    <methods>
+                        <include name="validateSuccessfulHDFCUPITxn"/>
+                        <include name="validateFailureHDFCUPITxn"/>
+                        <include name="successfulPartialRefund"/>
+                        <include name="validateSuccesfulHybridHDFCUPITxn"/>
+                        <include name="validateRetryTxnForHDFCUPI"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="HDFC UPI Collect for enhancedwap" >
+        <parameter name="theme" value="enhancedwap_revamp">
+            <parameter name="mobileEmulation" value="Nexus 5">
+                <parameter name="userAgent"
+                           value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25">
+                    <classes>
+                        <class name="scripts.HDFCUPICollect">
+                            <methods>
+                                <include name="validateSuccessfulHDFCUPITxn"/>
+                                <include name="validateFailureHDFCUPITxn"/>
+                            </methods>
+                        </class>
+                    </classes>
+                </parameter>
+            </parameter>
+        </parameter>
+    </test>
+
+    <test name="HDFC UPI Collect for Native" >
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.HDFCUPICollect">
+                <methods>
+                    <include name="verifyNormalUPINative"/>
+                    <exclude name="verifyUPINativeHybrid"/>
+                    <include name="verifyNormalFailureUPINative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HDFC UPI Collect for Native Plus" >
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.HDFCUPICollect">
+                <methods>
+                    <include name="verifyNormalUPINative"/>
+                    <exclude name="verifyUPINativeHybrid"/>
+                    <include name="verifyNormalFailureUPINative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Loyality Points IVRFastForward TCs">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <!-- Excluding Zero Pass Percentage TCs -->
+                    <exclude name="exchangeNumberAlphaNumericLP"/>
+                    <exclude name="ffExchangeNumberNegativeLP"/>
+                    <exclude name="validSSOInvalidExchangeLP"/>
+                    <exclude name="validateSuccessPeonLP"/>
+                    <exclude name="riskRejectAutoDebit"/>
+                    <exclude name="testRiskRejectIVRFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulPaytmNBTxnForMDRPlusPCFAppInvokeUsingRetry"/>
+                    <exclude name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <exclude name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                    <!-- Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulEMITxnForMDRPlusPCF"/>
+                    <exclude name="successfulNBTxnForMDRPlusPCF"/>
+                    <exclude name="successfulPaytmNBTxnForMDRPlusPCFAppInvoke"/>
+                    <exclude name="successfulPaytmNBTxnForMDRPlusPCFAppInvokeUsingRetry"/>
+                    <exclude name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <exclude name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                    <exclude name="successfulUPITxnForMDRPlusPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF seamless and seamless NB">
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulSeamlessTxnWithCC"/>
+                    <include name="successfulSeamlessTxnWithDC"/>
+                    <include name="successfulSeamlessTxnWithNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                    <!-- Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulPaytmDCTxnForMDRPlusPCFAppInvoke"/>
+                    <exclude name="successfulPaytmNBTxnForMDRPlusPCFAppInvoke"/>
+                    <exclude name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <exclude name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="PCFMDR on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulCCTxnForMDRPlusPCF"/>
+                    <exclude name="successfulDCTxnForMDRPlusPCF"/>
+                    <exclude name="successfulPaytmDCTxnForMDRPlusPCFAppInvoke"/>
+                    <exclude name="successfulEMITxnForMDRPlusPCF"/>
+                    <exclude name="successfulNBTxnForMDRPlusPCF"/>
+                    <exclude name="successfulPaytmNBTxnForMDRPlusPCFAppInvoke"/>
+                    <exclude name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <exclude name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                    <exclude name="successfulUPITxnForPCFPlusMDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR seamless and seamless NB">
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <include name="successfulSeamlessTxnWithCC"/>
+                    <include name="successfulSeamlessTxnWithDC"/>
+                    <include name="successfulSeamlessTxnWithNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative">
+                <methods>
+                    <!-- Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="add money wallet pcf for Native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+                <methods>
+                    <include name="TC_AddMOneyWalletOnlyPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringNonPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="post convinence Native APIs">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="TC_PCF_ADDNPAY"/>
+                    <exclude name="TC_PCF_AddNPayWithZeroWalletbalance"/>
+                    <exclude name="TC_PT_002"/>
+                    <exclude name="TC_PT_003"/>
+                    <exclude name="TC_PCF_PPI"/>
+                    <exclude name="TC_PT_001"/>
+                    <exclude name="TC_PCF_SaveCard"/>
+                    <exclude name="TC_PT_SaveCardAmex"/>
+                    <exclude name="TC_PCF_UPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Prepaid cases for enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidEnhancedTxn"/>
+                    <include name="appInvokeSuccessPrepaidTxn"/>
+                    <include name="addPaySuccessPrepaidTxnEnhanced"/>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                    <include name="retryPrepaid"/>
+                    <include name="successPrepaidWithPeonFlagFalse"/>
+                    <include name="FF4jOffNormalTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalseBinFalse"/>
+                    <include name="peonPrefDisabledPrepaidCard"/>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+                    <!--Excluding Zero Pass Percentage TCs
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                    <include name="pcfPrepaidEnhancedTxn"/> -->
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="tempPrepaid cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidEnhancedTxn"/>
+                    <include name="appInvokeSuccessPrepaidTxn"/>
+                    <include name="addPaySuccessPrepaidTxnEnhanced"/>
+                    <include name="savedCardPrepaidEnhancedTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalse"/>
+                    <include name="FF4jOffNormalTxn"/>
+                    <include name="successPrepaidWithPeonFlagFalseBinFalse"/>
+                    <include name="peonPrefDisabledPrepaidCard"/>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+                    <!-- Excluding Zero Pass Percentage TCs
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                    <include name="pcfPrepaidEnhancedTxn"/>
+                    <include name="retryPrepaid"/> -->
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Prepaid cases for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidNativeTxn"/>
+                    <!-- Excluding Zero Pass Percentage TCs
+                    <include name="addPaySuccessPrepaidTxnNative"/> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Prepaid cases for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidNativeTxn"/>
+                    <include name="addPaySuccessPrepaidTxnNative"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Prepaid txn on Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="prepaidCorporateCard"/>
+                    <!-- Excluding Zero Pass Percentage TCs
+                    <include name="prepaidCorporateInternationalCard"/> -->
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Prepaid txn on Native Plus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="prepaidCorporateCard"/>
+                    <!-- Excluding Zero Pass Percentage
+                    <include name="prepaidCorporateInternationalCard"/> -->
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-24245 for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.PrepaidCard">
+                    <methods>
+                        <include name="successPrepaidNativeTxnInitiateFPOFetchBinPTC"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateFetchBinProcess"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateProcess"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiateFPOFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiatePTC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="PGP-24245 for NativePlus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.PrepaidCard">
+                    <methods>
+                        <include name="successPrepaidNativeTxnInitiateFPOFetchBinPTC"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateFetchBinProcess"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateProcess"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiateFPOFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiatePTC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <!-- PWP is not supported>
+    <test name="temp-PWP cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PWPEnhanced">
+                <methods>
+
+                    <exclude name="PWP_18_failedPWPOnlyHybridCC"/>
+                    <exclude name="PWP_14_successfulPWPHybridEMIDC"/>
+                    <exclude name="PWP_21_successfulPWPHybridDirect"/>
+                    <exclude name="PWP_20_successfulPWPHybridRetry"/>
+                    <exclude name="PWP_37_successfulPWPHybridShowPaymentPageEMIDC"/>
+                    <exclude name="PWP_08_successfulPWPOnlyPaytmToSaveCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PWPEnhanced">
+                <methods>
+
+                    <exclude name="PWP_18_failedPWPOnlyHybridCC"/>
+                    <exclude name="PWP_14_successfulPWPHybridEMIDC"/>
+                    <exclude name="PWP_21_successfulPWPHybridDirect"/>
+                    <exclude name="PWP_20_successfulPWPHybridRetry"/>
+                    <exclude name="PWP_37_successfulPWPHybridShowPaymentPageEMIDC"/>
+                    <exclude name="PWP_08_successfulPWPOnlyPaytmToSaveCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PWPNative">
+                <methods>
+
+                    <exclude name="PWP_14_successfulPWPHybridEMINative"/>
+                    <exclude name="PWP_15_successfulPWPHybridEMIDCNative"/>
+                    <exclude name="PWP_18_successfulPWPHybridMutualFund"/>
+                    <exclude name="PWP_19_successfulPWPHybridPPBLNativeRetry"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for Native ">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PWPNative">
+                <methods>
+
+                    <exclude name="PWP_14_successfulPWPHybridEMINative"/>
+                    <exclude name="PWP_15_successfulPWPHybridEMIDCNative"/>
+                    <exclude name="PWP_18_successfulPWPHybridMutualFund"/>
+                </methods>
+            </class>
+        </classes>
+    </test -->
+
+
+    <test name="AddNPay-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_DC_S_verifyTxnStatusList"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddNPay-enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_DC_S_verifyTxnStatusList"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-19819 Khata | Callback to Khata system when Khata order payments are refunded for ledger reconciliation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataRefund">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="peonShouldSentToMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

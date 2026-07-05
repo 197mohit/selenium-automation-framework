@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-24411" verbose="1">
+    <test name="PGP-24411 Enhanced Cases">
+        <classes>
+            <class name="scripts.RefundStatus">
+                <parameter name="theme" value="enhancedweb"/>
+                <methods>
+                    <include name="verifyUniqueTxnId"/>
+                    <include name="verifyUniqueTxnIdAlphaNumeric"/>
+                    <include name="validateFullRefund"/>
+                    <include name="validateHybridRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-53495 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-53495">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateFetchPaymentOptionWhenEMIDCPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCWithICICIBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCWithNOBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAndEMIPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAndEMIWithBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAllBankAndEMIICICIBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCWithHDFCBankAndEMIWithAllBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAndEMIAndCreditCardPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCPassedInEnablePaymentModeAndTxnAmoutLessThanMinEMIAmount"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCPassedInEnablePaymentModeAndTxnAmoutGreaterThanMaxEMIAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

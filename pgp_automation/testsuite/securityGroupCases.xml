@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Security Suite">
+    <groups>
+        <run>
+            <include name="Security"/>
+        </run>
+    </groups>
+    <test name="V1ValidateApiJWTSupport">
+        <classes>
+            <class name="scripts.api.UPI.V1ValidateApiJWTSupport"/>
+        </classes>
+    </test>
+
+    <test name="SSOTokenApplyPromoV1Test">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="SSOTokenApplyPromoV2Test">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test"/>
+        </classes>
+    </test>
+   <!-- <test name="StaticQR">
+        <classes>
+            <class name="scripts.StaticQR"/>
+        </classes>
+    </test>-->
+    <test name="JWTTokenVanPaymentTest">
+        <classes>
+            <class name="scripts.api.van.vanPayment.JWTTokenVanPaymentTest"/>
+        </classes>
+    </test>
+    <test name="JWTTokenValidateAndFetchMerchantInfoV1Test">
+        <classes>
+            <class name="scripts.api.theia.validateAndFetchMerchantInfo.JWTTokenValidateAndFetchMerchantInfoV1Test"/>
+        </classes>
+    </test>
+    <test name="SaveCardByTokenTypeTest">
+        <classes>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest"/>
+        </classes>
+    </test>
+    <test name="SavedCardByMidCustIdTests">
+        <classes>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests"/>
+        </classes>
+    </test>
+    <test name="ChecksumVPAValidateV1Test">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.ChecksumVPAValidateV1Test"/>
+        </classes>
+    </test>
+    <test name="ProcessTransactionAPI">
+        <classes>
+            <class name="scripts.api.theia.ProcessTransactionAPI"/>
+        </classes>
+    </test>
+</suite>
+
+

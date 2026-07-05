@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-60429">
+    <test name="Passing EDC_ID and MerchantUniqueReference params in UMP_NOTIFY payload from paymentNotify API">
+        <classes>
+            <class name="scripts.notification.PaymentNotifyTest">
+                <methods>
+                    <include name="Test_001_PaymentNotify_CustomParameters"/>
+                    <include name="Test_002_PaymentNotify_CustomParameters_EDC_ID_Empty"/>
+                    <include name="Test_003_PaymentNotify_CustomParameters_MerchantUniqueReference_Empty"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> 

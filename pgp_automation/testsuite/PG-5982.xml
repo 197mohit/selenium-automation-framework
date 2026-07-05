@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-5982 | Subscription Retry" verbose="1" thread-count="5" parallel="tests">
+
+    <test name="PG-5982 subscription retry - enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="verifyRetryEnabled_onSubscriptionTransaction"/>
+                    <include name="verifyRetry_isSuccessfullyAttempted"/>
+                    <include name="verifyRetryDisabled_forSubscriptionTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PG-5982 subscription retry - checkout js">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.CheckoutJsUPICollectSubs">
+                <methods>
+                    <include name="verifyRetryEnabled_onSubscriptionTransaction"/>
+                    <include name="verifyRetry_isSuccessfullyAttempted"/>
+                    <include name="verifyRetryDisabled_forSubscriptionTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

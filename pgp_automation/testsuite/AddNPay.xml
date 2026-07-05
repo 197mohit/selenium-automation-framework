@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Direct Bank Native" verbose="1" thread-count="20" parallel="tests">
+    <test name="Direct Bank Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Direct Bank Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="OTP Retry on direct Page for Native txn">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateInvalidOTPRetryNative"/>
+                    <include name="AvailabilityOfResendOTPLinkNative"/>
+                    <include name="AvailabilityOfGotToBankSiteLinkNative"/>
+                    <include name="ResendOTPUsingResendLinkAfterEnteringInvalidOTPNative"/>
+                    <include name="OTPIsRequiredMessageIfPayedWithoutEnteringOTPNative"/>
+                    <include name="LastOTPResendButtonWillDisappearNative"/>
+                    <include name="ValidateTheiaSubmitRetryCountReflectsNumberOfRetryAttemptsNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="OTP Retry on direct Page for Native plus txn">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateInvalidOTPRetryNative"/>
+                    <include name="AvailabilityOfResendOTPLinkNative"/>
+                    <include name="AvailabilityOfGotToBankSiteLinkNative"/>
+                    <include name="ResendOTPUsingResendLinkAfterEnteringInvalidOTPNative"/>
+                    <include name="OTPIsRequiredMessageIfPayedWithoutEnteringOTPNative"/>
+                    <include name="LastOTPResendButtonWillDisappearNative"/>
+                    <include name="ValidateTheiaSubmitRetryCountReflectsNumberOfRetryAttemptsNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

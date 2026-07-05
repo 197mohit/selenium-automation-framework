@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPSL-406" verbose="1" parallel="tests" thread-count="3">
+    <test name="PPSL-406 Paytm Handle Errors">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V1ValidateVpaTest">
+                <methods>
+                    <include name="VerifyVPAwithPaytmthrowsError"/>
+                    <include name="VerifyNumericIDmappedwithPaytmthrowsError"/>
+                    <include name="VerifyVPAwithPaytmthrowsNoError"/>
+                    <include name="VerifyNumericIDmappedwithPaytmthrowsNoError"/>
+                </methods>
+            </class>
+            <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V4ValidateVpaTest">
+                <methods>
+                    <include name="VerifyVPAwithPaytmthrowsError"/>
+                    <include name="VerifyVPAwithPaytmthrowsNoError"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33485" verbose="1" thread-count="20" parallel="tests">
+    <test name="Verify transaction sms for BW merchant">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="Verify_sms_notification_BW_Instantsettlement"></include>
+                    <include name="Verify_sms_notification_BW_only"></include>
+                    <include name="Verify_sms_notification_NonBW_only"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

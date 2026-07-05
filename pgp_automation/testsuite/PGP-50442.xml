@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notifications" verbose="1" parallel="methods" thread-count="5">
+    <test name="Notification API's">
+        <classes>
+            <class name="scripts.notification.MerchantNotifyTest">
+                <methods>
+                    <include name="Merchant_Notify_SMS_OS_001"/>
+                    <include name="Merchant_Notify_SMS_OS_002"/>
+                    <include name="Merchant_Notify_Push_OS_001"/>
+                    <include name="Merchant_Notify_Push_OS_002"/>
+                    <include name="Merchant_Notify_SMS_TWS_001"/>
+                    <include name="Merchant_Notify_SMS_TWS_002"/>
+                    <include name="Merchant_Notify_Push_TWS_001"/>
+                    <include name="Merchant_Notify_Push_TWS_002"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

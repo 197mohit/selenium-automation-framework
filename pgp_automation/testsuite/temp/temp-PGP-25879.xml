@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-25879" parallel="methods">
+    <test name="PGP-25879">
+        <classes>
+            <class name="scripts.Native.NativeMerchantStatus">
+                <methods>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingMLV"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingMLV"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingMLV"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingMLV"/>
+                </methods>
+            </class>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingStaticQR"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingStaticQR"/>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingStaticQR"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingStaticQR"/>
+                </methods>
+            </class>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisOFFPrefIsActiveForCC_UsingDynmQR"/>
+                    <include name="validateDirectFormParamNotInPTCFF4JFlagisOFFPrefNotActiveForCC_UsingDynmQR"/>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisONPrefNotActiveForCC_UsingDynmQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

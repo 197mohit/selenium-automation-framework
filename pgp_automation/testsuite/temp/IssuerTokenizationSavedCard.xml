@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="IssuerTokenizationSavedCardCases" verbose="1">
+
+  <test name="IssuerTokenizationSavedCardCases">
+
+    <classes>
+      <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests">
+        <methods>
+          <include name="VerifyBothTokens"/>
+          <include name="VerifyOnlyIssuerTokens"/>
+          <include name="VerifyOnlyNetworkTokens"/>
+          <include name="VerifyOnlyNetworkTokenWhenTokenTypeNotSent"/>
+          <include name="VerifyNetworkIsReturnedIfNetworkIsSaved"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

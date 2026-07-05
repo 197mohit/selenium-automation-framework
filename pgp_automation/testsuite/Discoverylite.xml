@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Discovery Lite">
+    <test name="DiscoveryLiteAccessToken">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest">
+                <methods>
+                    <include name="testProcessDiscoveryLiteResponseTrue"/>
+                    <include name="testProcessDiscoveryLiteResponseFalse"/>
+                    <include name="testProcessDiscoveryLiteResponseTrueForDebitCard"/>
+                    <include name="testProcessDiscoveryLiteResponseTrueForEMIItembased"/>
+                    <include name="testProcessDiscoveryLiteResponseTrueAmountBasedPromoBydefaultTrue"/>
+                    <include name="testProcessDiscoveryLiteResponseFalseAmountBasedPromoBydefaultTrue"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed2"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed3"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="DiscoveryLiteTxnTokenToken">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest">
+                <methods>
+                    <include name="testProcessDiscoveryLiteResponseTrue"/>
+                    <include name="testProcessDiscoveryLiteResponseFalse"/>
+                    <include name="testProcessDiscoveryLiteResponseTrueForDebitCard"/>
+                    <include name="testProcessDiscoveryLiteResponseTrueForEMIItembased"/>
+                    <include name="testProcessDiscoveryLiteResponseTrueAmountBasedPromoBydefaultTrue"/>
+                    <include name="testProcessDiscoveryLiteResponseFalseAmountBasedPromoBydefaultTrue"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed2"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed3"/>
+                    <include name="testThatDiscoveryShouldFailWhenItemObjectPassed4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="DiscoveryLiteChecksumTokenToken">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest">
+                <methods>
+                    <include name="testProcessDiscoveryLiteResponseTrue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

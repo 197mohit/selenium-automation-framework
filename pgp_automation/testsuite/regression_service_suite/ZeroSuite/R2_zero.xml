@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R2 Zero Pass Suite" verbose="1" thread-count="12" parallel="tests">
+
+    <!--Promo Zero Pass Percentage TCs -->
+    <test name="applyPromoSuccessCheckoutPromoFailLogged">
+        <classes>
+            <class name="scripts.Promo.AND_Flow.ApplyPromoSuccessCheckoutPromoFailLogged">
+                <methods>
+                    <include name="validateApplyPromo_ApplyPromoSuccessAndCheckoutFailCC1"/>
+                    <include name="validateApplyPromo_ApplyPromoSuccessAndCheckoutFailDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases web UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Plus ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyRestrictDCPromo_TC_20"/>
+                    <include name="verifyDCPromo_TC_16_1"/>
+                    <include name="verifyRestrictDCPromo_TC_20_1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyDCPromo_TC_16_1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchPromoCodeDetails-2">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests - DirectBankTest">
+        <classes>
+            <class name="scripts.PGDirectHddo">
+                <methods>
+                    <include name="verifySuccessfulPromoTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_008"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22997 OR flow SCM FPO">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.ORFPOSCM">
+                <methods>
+                    <include name="validateORFlowFPOandInitiate_using_CIN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25567">
+        <classes>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="test if tncUrl present in apply promo response if ff4j flag ON"/>
+                    <include name="Verify successful refund of ECOM token transaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30155 AppInvoke Promo cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="SuccessfullTransactionWithInstantDiscountWhenValidatePromoIsFalse"/>
+                    <include name="SuccessfulTransactionWithInstantDiscountWhenValidatePromoIsTrue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24050 Promo cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_24050_verifyTxnAmountAndpromoOffersListNotVisiblewhenDiscountPromoPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24050 Promo cases for enhancedwap 2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_24050_verifyBulkOffersareAppliedwhenPromoNotPassed"/>
+                    <include name="PGP_24050_verifyTxnAmountAndpromoOffersListNotVisibleWhenCashbackPromoPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Theia 2 Zero Pass Percentage TCs in below mentioned Suite -->
+    <suite-files>
+        <suite-file path="theia2_zero.xml"/>
+    </suite-files>
+
+</suite>

@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46510" verbose="1">
+    <test name="Txnstatus app Api">
+        <classes>
+            <class name="com.paytm.api.theia.Txnstatushandlerinternal">
+                <methods>
+                    <include name="validatechargeamountintxnstatuswhenpreferenceisY"/>
+                    <include name="validatechargeamountintxnstatuswhenpreferenceisN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

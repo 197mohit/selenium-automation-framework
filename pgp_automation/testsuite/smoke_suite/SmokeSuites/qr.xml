@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QR" verbose="1" thread-count="3" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <!-- <test name="All-in-One QR Checkoutjs UI test cases Web revamp">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="All-in-One QR Checkoutjs UI test cases Web">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="QR">
+        <classes>
+            <class name="scripts.Qr.qr">
+                <methods>
+                    <include name="Verify_isAddMoneyPayOptionsAvailable_true_user_postpaid_merchant_nonpostpaid"/>
+                    <include name="Verify_isAddMoneyPayOptionsAvailable_true_user_nonpostpaid_merchant_postpaid"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    <test name="Online qr cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ReqauthFlowUPIIntentTest">
+                <methods>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndUPI_CREDIT_CARDIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndPPI_WALLETIsSelectedAsPayerPaymentInstrument"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Offline qr cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPI.OfflineUpi.DQRCreationOnAcqId">
+                <methods>
+                    <include name="tc04_VerifyE2EDQRTransactionWithOrderId"/>
+                </methods>
+            </class>
+        
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                        <include name="validateUpiIntentUpiPspConsultformdrUpiSavings"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

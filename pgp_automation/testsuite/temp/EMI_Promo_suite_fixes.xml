@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fixes" verbose="1" parallel="methods" thread-count="1">
+    <test name="EMI Fix Promo Suite">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenPaymethodEMI_DCIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodCreditCardIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodDebitCardIsProvided"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaased"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_BOEligibleAmountPaasedNB"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_Only_BOEligibleAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_BoeligibleAmountPaasedEMI_DC"/>
+                    <include name="Test_Error_Response_06"/>
+                    <include name="Test_Error_Response_08"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest">
+                <methods>
+                    <include name="TestfailedResponseWhenLessThan1RsPricePass"/>
+                    <include name="TestfailedResponseWhenPriceAndAmountIsDifferent"/>
+                    <include name="TestfailedResponseWhenQuantityIsMoreThanOne"/>
+                    <include name="TestFailedResponseWhenInvalidTenureValueIsProvided"/>
+                    <include name="TestFailedResponseWhenInvalidTenureUnitIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodDebitCardIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodEMIDCIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodCreditCardwithBankOfferIsProvided"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaased"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_BOEligibleAmountPaasedNB"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_Only_BOEligibleAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_BoeligibleAmountPaasedEMI_DC"/>
+                    <include name="TestFailureOfferApply_MoreThan10Items"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyChecksumTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenPaymethodCreditCardIsProvided"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyAccessTokenTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenPaymethodCreditCardIsProvided"/>
+                </methods>
+            </class>
+            <class name="scripts.SimplifiedUnifiedOffers.ApplyPromoV2ToUnifiedFlow">
+                <methods>
+                    <include name="testApplyPromoV2WithSSOTokenForItemBasedPromoCodeProvided"/>
+                    <include name="testApplyPromoV2WithSSOTokenPromoCodeProvied"/>
+                    <include name="TestE2ENBTxnForMinimalPromoMerchant"/>
+                    <include name="TestE2ECCTxnForMinimalPromoMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Emi_Suite_UI" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-28430 UI validation for blink checkout for ItemBased and AmountBased">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="EMISubCheckoutJsItembased04"/>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="singleOfferEMISubvention"/>
+                    <include name="verifyEMISubventionStrip_ForStandardEMI"/>
+                    <include name="EMISubCheckoutJsItembased08"/>
+                    <include name="verifyEMISubventionStrip_ForItemBasedEMI"/>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                    <include name="verifyEMISubventionStrip_ForAmountBasedEMI"/>
+                    <include name="multiOfferEMISubvention"/>
+                    <include name="EMISubCheckoutJsItembased05"/>
+                    <include name="EMISubCheckoutJsItembased09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_MaxAmount_nonLoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_maxAmount"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="validateSavedEmiTxn_PgOnly_LoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount_nonLoggedIn"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="validate emi plans button is disabled in case of Invalid Bins- Checkout JS flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="EMI_DCbasedonCategorization_CheckNumber"/>
+                    <include name="verifySelectEmiPlanButtonDisabledforInvalidBins_NBFCsFlow"/>
+                    <include name="EMI_DCbasedonCategorization_DefaultTrue"/>
+                    <include name="EMI_DCbasedonCategorization_DBCheck"/>
+                    <include name="verifySelectEmiPlanButtonDisabledforInvalidBins_NewCardFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases web UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="PGP_39255_TC_08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="PGP_39255_TC_09"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CHECKOUTJS on Enhanced Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_EMI_Txn"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+    <test name="EMI on enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_maxAmount"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount_nonLoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_MaxAmount_nonLoggedIn"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33611 - EMI subvention UI improvements for wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="multiOfferEMISubvention"/>
+                    <include name="EMISubCheckoutJsItembased04"/>
+                    <include name="EMISubCheckoutJsItembased05"/>
+                    <include name="EMISubCheckoutJsItembased08"/>
+                    <include name="EMISubCheckoutJsItembased09"/>
+                    <include name="verifyEMISubventionStrip_ForStandardEMI"/>
+                    <include name="verifyEMISubventionStrip_ForAmountBasedEMI"/>
+                    <include name="verifyEMISubventionStrip_ForItemBasedEMI"/>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                    <include name="singleOfferEMISubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <include name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="ZERO_WALLET_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="validate e2e txn for bank offer">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.BankOfferHotfix">
+                <methods>
+                    <include name="validateInitiateTxnAPI"/>
+                    <include name="validateInitiateTxnAPISuccessE2E"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnCheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyCOPEmiInfoForRedirection"/>
+                    <include name="BankVerifiedName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="validate fields for EMI txn">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateFieldsForEMICCForCOP"/>
+                    <include name="ValidateFieldsForEMICCForCOTP"/>
+                    <include name="ValidateFieldsForEMIDCForCOP"/>
+                    <include name="ValidateFieldsForEMIDCForCOTP"/>
+                    <include name="ValidateFieldsForEMICCPromoAndSubventionForCOP"/>
+                    <include name="ValidateFieldsForEMICCPromoAndSubventionForCOTP"/>
+                    <include name="ValidateFieldsForEMICCSubventionForCOP"/>
+                    <include name="ValidateFieldsForEMICCSubventionForCOTP"/>
+                    <include name="ValidateFieldsForEMICCPromoForCOP"/>
+                    <include name="ValidateFieldsForEMICCPromoForCOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49320 enhanced-web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateLoanAmountInCreateOrderAndPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49320 checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingCC"/>
+                    <include name="validateLoanAmountWithSpecificPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJs  cases PGP-48507">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfs_icici_dc"/>
+                    <include name="kfs_hdfc_dc_kfs_upper_text"/>
+                    <include name="kfs_icici_dc_adhere_text"/>
+                    <include name="kfs_icici_dc_adhere_text_link"/>
+                    <include name="kfs_icici_dc_kfs_upper_text"/>
+                    <include name="kfs_icici_dc_kfs_bank_date_text"/>
+                    <include name="kfs_icici_dc_kfs_table_text"/>
+                    <include name="kfs_icici_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_icici_dc_kfs_loan_consent_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text_link"/>
+                    <include name="kfs_hdfc_dc_kfs_bank_date_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_text"/>
+                    <include name="kfs_hdfc_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_Verifivation"/>
+                    <include name="kfs_icici_dc_disabled"/>
+                    <include name="kfs_hdfc_dc_disabled"/>
+                    <include name="kfs_hdfc_dc"/>
+                    <include name="kfs_icici_dc_kfs_table_Verifivation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BAJAJFN_NONDBD">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDABSOLUTEZERO"/>
+                    <include name="TXNFailureBajajFNRetryDisable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BAJAJFN_NONDBD checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDABSOLUTEZEROJS"/>
+                    <include name="BankFormFailureBajajFNRetryDisable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify v2/applyPromo request/response body for EMI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateApplyPromoForEMICCPromoAndSubventionForCOP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoAndSubventionForCOTP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoForCOP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoForCOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49170 validate OrderItemId in subvention checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateOrterItemIdWhenAmountBasedPromoAndSubvention"/>
+                    <include name="ValidateOrterItemIdWhenItemBasedPromoAndAmountBasedSubvention"/>
+                    <include name="ValidateOrterItemIdWhenAmountBasedPromoAndItemBasedSubvention"/>
+                    <include name="ValidateOrterItemIdWhenItemBasedPromoAndItemBasedSubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-52271 Checkout EMI DC">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="VerifyEMI_DCTxnWithPCF"/>
+                    <include name="VerifyEMI_DCTxnWithPCFWithPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Imei">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.ImeiValidation.imei">
+                    <methods>
+                        <include name="brandIdErrorCase"/>
+                        <include name="invalidActionErrorCase"/>
+                        <include name="skuCodeErrorCase"/>
+                        <include name="imeiErrorCase"/>
+                        <include name="dealerCodeErrorCase"/>
+                        <include name="stateCodeErrorCase"/>
+                        <include name="stateCodeAndDealreCodeMandatoryCase"/>
+                        <include name="stateCodeAndDealreCodeNonMandatoryCase"/>
+                        <include name="stateCodeAndDealreCodeNonMandatoryPassedCase"/>
+                    </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Theia validation Service migration to Affordability">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.ImeiValidation.imei">
+                <methods>
+                    <include name="AVSpreValidateRequestForrouteToAVSIsTrue_PaymentOffers"/>
+                    <include name="AVSpreValidateRequestForrouteToAVSIsTrue_Subvention"/>
+                    <include name="preValidateRequestToAVSforBLOCK_PaymentOffers"/>
+                    <include name="preValidateRequestToAVSforBLOCK_Subvention"/>
+                    <include name="preValidateRequestToAVSforBLOCKProductIDAsSkuCode_PaymentOffers"/>
+                    <include name="preValidateRequestToAVSforBLOCKProductIDAsSkuCode_Subvention"/>
+                    <include name="preValidateSuccessFromAVS_PaymentOffers"/>
+                    <include name="preValidateSuccessFromAVS_Subvention"/>
+                    <include name="postValidateRequestToAVSForActionUNBLOCK_PaymentOffers"/>
+                    <include name="postValidateRequestToAVSForActionUNBLOCK_Subvention"/>
+                    <include name="postValidateRequestToAVSforUNBLOCKProductIDAsSkuCode_PaymentOffers"/>
+                    <include name="postValidateRequestToAVSforUNBLOCKProductIDAsSkuCode_Subvention"/>
+                    <include name="postValidateSuccessFromAVS_PaymentOffers"/>
+                    <include name="postValidateSuccessFromAVS_Subvention"/>
+                    <include name="unBlockWithoutBlockError_PaymentOffers"/>
+                    <include name="unBlockWithoutBlockError_Subvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

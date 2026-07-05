@@ -1,0 +1,79 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp",
+        "requestId",
+        "version"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "valid": {
+          "type": "boolean"
+        },
+        "cmId": {
+          "type": "string"
+        },
+        "vpa": {
+          "type": "string"
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string"
+            },
+            "resultMsg": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

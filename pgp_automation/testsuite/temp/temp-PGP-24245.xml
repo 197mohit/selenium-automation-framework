@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-24245" verbose="1" parallel="tests" thread-count="5">
+    <test name="PGP-24245 for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.PrepaidCard">
+                    <methods>
+                        <include name="successPrepaidNativeTxnInitiateFPOFetchBinPTC"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateFetchBinProcess"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateProcess"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiateFPOFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiatePTC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test> 
+    <test name="PGP-24245 for NativePlus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.PrepaidCard">
+                    <methods>
+                        <include name="successPrepaidNativeTxnInitiateFPOFetchBinPTC"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateFetchBinProcess"/>
+                        <include name="successPrepaidNativeTxnFetchBinInitiateProcess"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiateFPOFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeFetchBinPTC"/>
+                        <include name="peonPrefDisabledPrepaidCardNativeInitiatePTC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

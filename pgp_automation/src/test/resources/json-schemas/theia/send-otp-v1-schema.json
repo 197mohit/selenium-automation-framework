@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "head": {
+          "$ref": "#/definitions/Head"
+        },
+        "body": {
+          "$ref": "#/definitions/Body"
+        }
+      },
+      "required": [
+        "body",
+        "head"
+      ],
+      "title": "Root"
+    },
+    "Body": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "resultInfo": {
+          "$ref": "#/definitions/ResultInfo"
+        }
+      },
+      "required": [
+        "extraParamsMap",
+        "resultInfo"
+      ],
+      "title": "Body"
+    },
+    "ResultInfo": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resultStatus": {
+          "enum": [
+            "SUCCESS"
+          ]
+        },
+        "resultCode": {
+          "enum": [
+            "01"
+          ]
+        },
+        "resultMsg": {
+          "enum": [
+            "Otp sent to phone"
+          ]
+        },
+        "resultMsgRegional": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "resultCode",
+        "resultMsg",
+        "resultStatus"
+      ],
+      "title": "ResultInfo"
+    },
+    "Head": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "pattern": "^[0-9]{13,}$"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "required": [
+        "requestId",
+        "responseTimestamp",
+        "version"
+      ],
+      "title": "Head"
+    }
+  }
+}

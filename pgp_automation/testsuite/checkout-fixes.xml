@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1" parallel="tests" thread-count="2">
+    <test name="CheckoutJS wap fixes">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <include name="ValidatePCFRetryBreachTxn"/>
+                    <include name="VerifyWebviewSupportOnJS_When_FlagEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS wap UPI fixes">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="ValidateUPIPaymodeUIchangeswithUPIIntentEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS web fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="TC_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS web mastero fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.MaestroCardCheckout">
+                <methods>
+                    <include name="verifyMaestroCardinAddnPayFlow"/>
+                    <include name="verifyTxnViaEnteringExpdateAndCvv"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkout element fixes">
+        <parameter name="theme" value="checkoutjse_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="promocodeloginMaestro"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

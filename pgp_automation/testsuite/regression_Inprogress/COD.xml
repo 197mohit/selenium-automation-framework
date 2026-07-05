@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="COD" verbose="1" parallel="methods" thread-count="12">
+    <test name="COD-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_VerifyMessageWithBalance"/>
+                    <include name="COD_S_withoutBalance"/>
+                    <include name="COD_S_withLessBalance"/>
+                    <include name="PPI_S_whenCODEnabledOnMerchant"/>
+                    <include name="COD_F_verifyCODNotVisiblewhenTxnAmountIsBelowThresoldAmount"/>
+                    <include name="COD_F_verifyCODVisiblewhenTxnAmountIsMoreThanThresoldAmount"/>
+                    <include name="CC_S_whenCODisEnabled"/>
+                    <include name="SC_S_whenCODisEnabled"/>
+                    <include name="COD_verifyllPayModesOnCashier"/>
+                    <include name="COD_S_withSufficientBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="COD with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="PGP_221_validateMsgCODTxnWithSomeWalletBalance"/>
+                    <include name="COD_VerifyMessageWithBalance"/>
+                    <include name="COD_S_withoutBalance"/>
+                    <include name="COD_S_withLessBalance"/>
+                    <include name="PPI_S_whenCODEnabledOnMerchant"/>
+                    <include name="COD_F_verifyCODNotVisiblewhenTxnAmountIsBelowThresoldAmount"/>
+                    <include name="COD_F_verifyCODVisiblewhenTxnAmountIsMoreThanThresoldAmount"/>
+                    <include name="CC_S_whenCODisEnabled"/>
+                    <include name="SC_S_whenCODisEnabled"/>
+                    <include name="COD_verifyllPayModesOnCashier"/>
+                    <include name="COD_S_withSufficientBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Success COD Txn from PGOnly Merchant">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_S_withPGOnlyMercWithZeroBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

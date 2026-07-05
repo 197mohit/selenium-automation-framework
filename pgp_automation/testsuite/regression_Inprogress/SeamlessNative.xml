@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SeamlessNative" verbose="1" parallel="tests" thread-count="6">
+    <test name="SeamlessNative">
+        <classes>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="PGP_359_successfulSeamlessNativeCC"/>
+                    <include name="PGP_360_successfulSeamlessNativeDC"/>
+                    <include name="PGP_361_SeamlessNativeCCWithoutSavedCard"/>
+                    <include name="PGP_362_SeamlessNativeCCAndSavingCard"/>
+                    <include name="PGP_363_SeamlessNativeCCUsingSavedCard"/>
+                    <include name="PGP_364_successfulSeamlesNativeNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

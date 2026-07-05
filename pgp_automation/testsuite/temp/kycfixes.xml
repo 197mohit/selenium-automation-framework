@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="KYC"  verbose="1">
+    <test name="verifying kyc page">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.KYC">
+                <methods>
+                    <include name="validateKYCDocumentPageVisibility"/>
+                    <include name="enterIncorrectVoterIDDetails"/>
+                    <include name="enterVoterIDNumberButEmptyName"/>
+                    <include name="enterVoterIDNameButEmptyNumber"/>
+                    <include name="enterIncorrectPANCARDDetails"/>
+                    <include name="enterPANCARDNumberButEmptyName"/>
+                    <include name="enterPANCARDNameButEmptyNumber"/>
+                    <include name="enterIncorrectDrivingLicenseDetails"/>
+                    <include name="enterDrivingLicenseNumberButEmptyName"/>
+                    <include name="enterDrivingLicenseNameButEmptyNumber"/>
+                    <include name="enterIncorrectPassportDetails"/>
+                    <include name="enterPassportNumberButEmptyName"/>
+                    <include name="enterPassportNameButEmptyNumber"/>
+                    <include name="enterIncorrectNREGAJobCardDetails"/>
+                    <include name="enterNREGAJobCardNumberButEmptyName"/>
+                    <include name="enterNREGAJobCardNameButEmptyNumber"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

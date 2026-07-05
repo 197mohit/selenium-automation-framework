@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39088" verbose="1">
+    <test name="validate emi plans button is disabled in case of Invalid Bins- Checkout JS flow" parallel="methods" thread-count="14">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifySelectEmiPlanButtonDisabledforInvalidBins_NewCardFlow"/>
+                    <include name="verifySelectEmiPlanButtonDisabledforInvalidBins_NBFCsFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="validate emi plans button is disabled in case of Invalid Bins- Enhanced flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifySelectEmiPlanButtonDisabledforInvalidBins"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

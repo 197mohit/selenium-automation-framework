@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_Theia_Suite_PG2" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="PGP-46810 : Risk Error Message Handling on 3P Add Money Flow">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="addMoneyRiskReject_01"/>
+                    <include name="addMoneyRiskReject_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Charge amount test cases - pg2-12060">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifySucessfulTxnon20and02PC"/>
+                    <include name="verifySucessfulTxnon20and101PC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-46752">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validateTimeoutObjectWithFlagOffCORequest"/>
+                    <include name="validateTimeoutObjectWithFlagOnCORequest"/>
+                    <include name="validateTimeoutObjectWithFlagOffCOPRequest"/>
+                    <include name="validateTimeoutObjectWithFlagOnCOPRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Applysupercash offer API hotfix test cases">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+                <methods>
+                    <include name="onusMerchantSourceOrderPromoNotNull"/>
+                    <include name="onusMerchantSourcePGPromoNotNull"/>
+                    <include name="offusMerchantSourcePGPromoNotNull"/>
+                    <include name="offusMerchantSourcePGPromoNull"/>
+                    <include name="offusMerchantSourceOrderPromoNotNull"/>
+                    <include name="offusMerchantSourceOrderPromoNull"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI CC ">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisN"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="NativePlusOnOfflineMerchantWhenPreferenceIsOFF"/>
+                    <include name="NativePlusOnOfflineMerchantWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods><include name="NativeOnOfflineMerchantWhenPreferenceIsOFF"/>
+                    <include name="NativeOnOfflineMerchantWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOn"/>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOff"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsOff_API_Y"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsON_API_Y"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Add Money Express Hotfix">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="ccBlockforExpressAddMoney"/>
+                    <include name="successfulAddMoneyExpressCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ValidateTipDetails">
+        <classes>
+            <class name="scripts.api.theia.scanAndPayTipAmount.scanAndPayTipAmountTest"/>
+        </classes>
+    </test>
+    <test name="fetchBinDetailWithNativeOTPReq Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC01"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC02"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithCardNo_TC03"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC04"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC05"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithTxnToken_TC06"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC01"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC02"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC03"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC04"/>
+                    <exclude name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

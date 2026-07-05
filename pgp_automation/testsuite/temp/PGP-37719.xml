@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subvention offer on checkout page" verbose="1">
+    <test name="PGP-37719">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="multiOfferEMISubvention"/>
+                    <include name="multiOfferEMISubvention_offerPage"/>
+                    <include name="multiOfferEMISubvention_offerPage2"/>
+                    <include name="singleOfferEMISubvention"/>
+                    <include name="singleOfferEMISubvention_offerPage"/>
+                    <include name="singleOfferEMISubvention_offerPage2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

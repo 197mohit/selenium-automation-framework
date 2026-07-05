@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MonthlyLinkTxnLimit" verbose="1" parallel="methods" thread-count="1">
+    <test name="MonthlyLinkTxnLimit">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.MonthlyLinkTxnLimit"/>
+        </classes>
+    </test>
+
+
+
+</suite>

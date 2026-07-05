@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28935" verbose="1" parallel="methods">
+    <test name="PGP-28935">
+        <classes>
+            <class name="scripts.flows.LinkBasedPaymentNativeMFTest"/>
+            <class name="scripts.flows.LinkBasedPaymentNativeSTTest"/>
+            <class name="scripts.flows.LinkBasedPaymentInvoiceNativeMFTest"/>
+            <class name="scripts.flows.LinkBasedPaymentInvoiceNativeSTTest"/>
+        </classes>
+    </test>
+</suite>

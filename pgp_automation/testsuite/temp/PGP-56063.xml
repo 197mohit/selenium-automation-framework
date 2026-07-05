@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMICardBinInUnified" verbose="1" parallel="methods" thread-count="2">
+    <test name="Card Bin sent in Offer Checkout">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_ApplyOffer"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedUnified"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedOld"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo_AltId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

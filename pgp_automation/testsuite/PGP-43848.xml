@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-43848">
+  <test name="Cancel API">
+    <parameter name="theme" value="enhancedweb_revamp"/>
+      <classes>
+        <class name="scripts.RefundAsync">
+            <methods>
+                <include name="reversal_01"/>
+                <include name="reversal_02"/>
+                <include name="reversal_03"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

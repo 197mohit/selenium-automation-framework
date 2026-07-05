@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_Subscription_Suite_PG2 " verbose="1" thread-count="20" parallel="tests">
+
+    <test name="Verify responses of FPO for BM merchant">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.bankmandate.Emandate">
+                    <methods>
+                        <include name="listOfUpdatedNPCIBanksinFPO"></include>
+                        <include name="listOfUpdatedNPCIBanksinFPOwithAuthMode"></include>
+                        <include name="validateFetchMandateListAPI"></include>
+                        <include name="validateSuccessTxnfromBMwithLatestNPCI"></include>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Verify responses of FPO for BM merchant P_MANDATE">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.bankmandate.Pmandate">
+                    <methods>
+                        <include name="listOfUpdatedNPCIBanksinFPOforPMandate"></include>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="PGP-43551">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC01_CheckFPOResponse_AccountNoPassed"/>
+                    <include name="TC02_CheckFPOResponse_AccountNotPassed"/>
+                    <include name="TC03_CheckFPOResponse_AccountNoIncorrect"/>
+                    <include name="TC04_CheckFPOResponse_AccountNoNumeric"/>
+                    <include name="TC05_CheckFPOResponse_AccountNoPassedAsNULL"/>
+                    <include name="TC06_ValidateCreateSubscriptionResponse_RequestTypeNULL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"></include>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"></include>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"></include>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"></include>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"></include>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"></include>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"></include>
+                    <include name="validateStartDateMoreThanTodayDate"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"></include>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"></include>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"></include>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"></include>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"></include>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"></include>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"></include>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"></include>
+                    <include name="validateStartDateMoreThanTodayDate"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"></include>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation4">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"></include>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation5">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_39255_TC_01"></include>
+                    <include name="PGP_39255_TC_04"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation6">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_39255_TC_01"></include>
+                    <include name="PGP_39255_TC_04"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation7">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="payChannelNotBlankFPOv1PayModeBlank"></include>
+                    <include name="payChannelNotBlankFPOv1PPBL"></include>
+                    <include name="payChannelNotBlankFPOv2"></include>
+                    <include name="payChannelNotBlankFPOv2PayModeBlank"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43551-1">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC01_ValidateBankAccountFeatureList"/>
+                    <include name="TC02_ValidateBankAccountFeatureList_ReqType_NATIVE_SUBSCRIPTION"/>
+                    <include name="TC03_ValidateBankAccountFeatureList_ReqType_NATIVE_SUBSCRIPTION_PAY"/>
+                    <include name="TC04_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP"/>
+                    <include name="TC05_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP_PAY"/>
+                    <include name="TC06_ValidateBankAccountFeatureList_ReqType_NULL"/>
+                    <include name="TC07_ValidateResponseWhenReuqestTypeisNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Checkout JS UI Changes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_41837_TC01_BankMandateJS"/>
+                    <include name="PGP_41837_TC02_BankMandateJS"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueJCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSUPItCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSWalletCTA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Redirectional UI Changes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="PGP_41837_TC01_BankMandateEnhance"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueEnhnaceTexts"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseEnhnaceTexts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

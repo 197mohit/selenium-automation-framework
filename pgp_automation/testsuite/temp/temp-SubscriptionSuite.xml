@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription" verbose="1" parallel="tests" thread-count="20">
+
+    <test name="Subscription_renewal_via_cc_dc on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <exclude name="PGP_193_verifySuccessfulRenewalOnSubsViaDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_renewal_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi"/>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_renewal_via_wallet_only on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_cc_dc on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <exclude name="PGP_79_validateFailedTxnWithTxnAmntGreaterThanWalletByFraction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeProcessSubscription"/>
+        </classes>
+    </test>
+
+    <test name="Native Renew Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessRenewSubscription"/>
+        </classes>
+    </test>
+
+    <test name="E-Mandate Subscription tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate"/>
+        </classes>
+    </test>
+
+    <test name="P-Mandate Subscription tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate"/>
+        </classes>
+    </test>
+
+</suite>

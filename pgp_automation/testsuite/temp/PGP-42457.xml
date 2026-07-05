@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-42457" verbose="1" parallel="tests" thread-count="2">
+    <test name="Verify the loader is displayed during the transaction">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_loader_is_displayed_during_success_transaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

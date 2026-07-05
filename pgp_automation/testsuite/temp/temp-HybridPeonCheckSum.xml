@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Checksum Peon Hybrid">
+    <test name="Peon checksum Validation Hybrid For Enhanced">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.HybridPoenCheckSumValidation">
+                <methods>
+                    <include name="peonValidationHybridSuccessTxn"/>
+                    <include name="peonValidationHybridFailedTxn"/>
+                    <include name="peonValidationHybridSuccessTxnWithCC"/>
+                    <include name="peonValidationHybridFailedTxnWithDC"/>
+                    <include name="validatePeonWhenCardTokenisTrue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Peon checksum Validation Hybrid for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.HybridPoenCheckSumValidation">
+                <methods>
+                    <include name="peonValidationHybridSucessForNative"/>
+                    <include name="peonValidationHybridFailureForNative"/>
+                    <include name="validatePeonChecksumCardTokenTrueNativeTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Push CO Then Pay PG2_ENABLED Native+ Txn " verbose="1">
+    <test name="UPI Push CO Then Pay PG2_ENABLED Native+ Test">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validatePG2EnabledCoThenPaySuccessUPIPUSHTxnPG2MID"/>
+                    <include name="validatePG2EnabledCoThenPayFailUPIPUSHTxnPG2MID"/>
+                    <include name="validatePG2EnabledCoThenPayPendingUPIPUSHTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

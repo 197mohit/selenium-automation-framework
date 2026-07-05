@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="pgp_45265_upi" verbose="1" parallel="methods" thread-count="10">
+    <test name="PGP-45265">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.PGP_45265"/>
+        </classes>
+    </test>
+</suite>

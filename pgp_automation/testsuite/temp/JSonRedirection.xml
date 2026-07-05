@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI-Sanity_JSonRedirection" verbose="1" thread-count="5" parallel="tests">
+    <test name="UI sanity cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+            </class>
+        </classes>
+    </test>
+</suite>

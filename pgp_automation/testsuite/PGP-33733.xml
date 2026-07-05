@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33733" verbose="1">
+    <test name="bank Mandate Cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+       <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                    <include name="TC_002_Verify_Fields_are_noneditable"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="bank Mandate Cases Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="TC_001_Verify_Fields_are_noneditable"/>
+                    <include name="TC_002_Verify_Fields_are_editable"/>
+
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+</suite>

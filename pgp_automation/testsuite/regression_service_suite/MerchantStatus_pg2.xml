@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_MerchantStatus_Suite_PG2" verbose="1" thread-count="10" parallel="tests">
+    <test name="v1/TxnStatus LastFourDigits Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests">
+                <methods>
+                    <include name="ValidateLASTFOURDIGITSSuccessTxn1"/>
+                    <include name="ValidateLASTFOURDIGITSFailureTxn2"/>
+                    <include name="ValidateLASTFOURDIGITSPendingTxn3"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentSuccessTxn4"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentFailureTxn5"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentPendingTxn6"/>
+                    <include name="ValidateLASTFOURDIGITSPresentSuccessTINTxn7"/>
+                    <include name="ValidateLASTFOURDIGITSPresentFailureTINTxn8"/>
+                    <include name="ValidateLASTFOURDIGITSPresentPendingTINTxn9"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentSuccessTINTxn10"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentFailureTINTxn11"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentPendingTINTxn12"/>
+                    <include name="ValidateLASTFOURDIGITSPresentSUCCESSTOKENTxn13"/>
+                    <include name="ValidateLASTFOURDIGITSPresentPendingTOKENTxn14"/>
+                    <include name="ValidateLASTFOURDIGITSPresentFailureTOKENTxn15"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentSuccessTOKENTxn16"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentFailureTOKENTxn17"/>
+                    <include name="ValidateLASTFOURDIGITSPresentEMITxn18"/>
+                    <include name="ValidateLASTFOURDIGITSPresentEMITxn19"/>
+                    <include name="ValidateLASTFOURDIGITSPresentEMITxn20"/>
+                    <exclude name="verifyTransactionStatusinHybridPendingUPITxn"/>
+                    <exclude name="verifyTransactionStatusinHybridSuccessUPITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS 2 fixes" verbose="1" parallel="tests" thread-count="3">
+
+    <test name="CHECKOUTJS on web Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validatePollingPageIsNotInNewWinowAndSuccessTxnUsingUPICollect"/>
+                    <include name="verifyPCFAndTextForLoggedInFlow"/>
+                    <include name="Verify_text_user_has_closed_the_bank_popup_is_displayed_after_canceling_txn"/>
+                    <include name="verify_closed_wallet_user_error_message"/>
+                    <include name="verify_closed_wallet_user_error_message_SubsFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CHECKOUTJS on Bank transfer Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.BankTransferCheckoutTest">
+                <methods>
+                    <include name="validateTxn_whenMerchantControlledApplied_paytmControlledReceived_LogIn"/>
+                    <include name="validateTxn_whenPaytmControlledApplied_merchantControlledReceived_LogIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

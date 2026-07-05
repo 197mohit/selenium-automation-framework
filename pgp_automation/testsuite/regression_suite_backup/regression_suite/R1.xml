@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression 1" verbose="1" thread-count="20" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <test name="TestRetryPayModes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RetryPayModes.TestRetryPayModes"/>
+        </classes>
+    </test>
+
+    <test name="PGP-17114 - Subscription merchant preference for store card should not be mandatory">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.SubscriptionStoreCardNo">
+                <methods>
+                    <exclude name="savedCardIdGeneratedPPI"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="verifyNoRetryIfCountExhausted"/>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-24062" parallel="classes" thread-count="2">
+        <classes>
+            <class name="scripts.api.theia.FastForwardTest"/>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test"/>
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.TxnTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV2Test"/>
+        </classes>
+    </test>
+    <test name="PGP-24758" parallel="classes" thread-count="1">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test"/>
+        </classes>
+    </test>
+    <test name="saved card api's">
+        <classes>
+            <class name="scripts.api.savedcardservice.UpdateTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SaveTrustedCardDetails"/>
+            <class name="scripts.api.savedcardservice.SaveTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SavedCardsByCardTypeSsoToken"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByUserIdTokenIdTokenType"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByCustIdMId"/>
+            <class name="scripts.api.savedcardservice.PGDeactivateSavedCard"/>
+            <!--<class name="scripts.api.savedcardservice.GetSavedRecentCCBillPaymentByCardId"/>not completed-->
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdCardNo"/>
+            <class name="scripts.api.savedcardservice.GetSavedcardsByUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdStatus"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdInstruments"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOToken"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOTokenUserIdMId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdSSOTokenChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdUserIdMIdCustId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetCard"/>
+            <class name="scripts.api.savedcardservice.GetCacheSavedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardByUserIdCardId"/>
+            <!--<class name="scripts.api.savedcardservice.DeleteSavedCardBySSOTokenUserIdCardId"/>not completed-->
+            <class name="scripts.api.savedcardservice.DeletePGSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.DeactivateSavedCard"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardMIdCustId"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardByUserId"/>
+            <!--<class name="scripts.api.savedcardservice.AddSavedCardByMIdCustId"/>not completed-->
+        </classes>
+    </test>
+
+    <test name="Add Money Express Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money MP Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money Uber Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add N Pay Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Deferred Fee on AddMoney Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateFullKYCWalletNewFlow"/>
+                    <include name="validateFullKYCWalletSavedCCNewFlow"/>
+                    <include name="validateMinKYCWalletWalletNewApp"/>
+
+                    <include name="validateFullKYCGVSavedCCNewAPP"/>
+                    <include name="validateNoKYCGVNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native AddMoney 3rd Party Fee Cases">
+        <classes>
+            <class name="scripts.Native.NativeAddMoneyTP">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="verifyNoRetryIfCountExhausted"/>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API) ">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+
+                    <include name="validatePTCDifferentMerchant"/>
+
+                    <include name="noRiskFeeForNormalMerchant"/>
+
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+
+                    <include name="addMoneySavedCard"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+
+                    <include name="validatePTCDifferentMerchant"/>
+
+
+                    <include name="noRiskFeeForNormalMerchant"/>
+
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+
+                    <include name="addMoneySavedCard"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-14676 Auto Refund on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.AutoRefund">
+                <methods>
+                    <exclude name="fundBackUPICollectPeon"></exclude>
+                    <exclude name="fundBackPaytmCCPeon"></exclude>
+                    <exclude name="fundBackBalance"></exclude>
+                    <exclude name="fundBackHybrid"></exclude>
+                    <exclude name="refundUPIIntentPeon"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16003 - Link Based Limit OTP breach only API">
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifyBreachNumber"/>
+                    <include name="generateOTPLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP 16003 - Link Based Limit OTP breach on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifySuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16003 - Link Based Limit OTP breach on enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifySuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

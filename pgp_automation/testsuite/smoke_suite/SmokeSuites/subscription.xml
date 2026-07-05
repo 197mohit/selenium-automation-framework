@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription" verbose="1" thread-count="4" parallel="methods">
+<!--    <test name="Deferred Checkout txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateDeferredFlowSubsTxnE2EWallet"/>
+                    <include name="validateDeferredFlowSubsTxnE2EUPI"/>
+                    <include name="validateDeferredFlowSubsTxnE2EPPBL"/>
+                    <include name="validateDeferredFlowSubsTxnE2EBM"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <!-- <include name="TC_NPS009_ProcessFixSubscriptionPPIDay"/> -->
+                    <include name="VerifySubsDetailsInFPOForSubsFrequencyFortnight"/>
+                    <include name="TC04_PGP_48382"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

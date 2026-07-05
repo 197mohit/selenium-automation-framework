@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="EDC_pending_dynamic_QR " verbose="1">
+
+    <test name="Dynamicqredctestcases">
+
+        <classes>
+
+            <class name="scripts.DynamicQRNew">
+
+                <methods>
+
+                    <include name="verifyMerchant_txn_status_EDCdynamicqr_flow_TXN_SUCCESS"/>
+
+                    <include name="verifyMerchant_txn_status_EDCdynamicqr_flow_TXN_PENDING"/>
+
+                    <include name="verifyMerchant_txn_status_EDCdynamicqr_flow_TXN_FAILURE"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

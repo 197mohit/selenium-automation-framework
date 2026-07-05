@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56596_Blocking_OCL_Saved_Card" verbose="1" thread-count="1">
+    <test name="PGP-56596_Blocking_OCL_Saved_Card">
+        <classes>
+            <class name="scripts.api.theia.Blocking_SavedCard_QRAndDQR">
+                <methods>
+                    <include name="fetchAll_call_NotIn_SQ_FQR"/>
+                    <include name="fetchAll_call_In_SQ_FQR"/>
+                    <include name="fetchAll_call_NotIn_DQR_FQR"/>
+                    <include name="savedCard_Present_On_ONLINE_Not_On_OFFLINE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

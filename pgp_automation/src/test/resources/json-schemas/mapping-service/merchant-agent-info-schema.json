@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "array",
+  "minItems": 0,
+  "items": {
+    "type": "object",
+    "required": [
+      "id",
+      "parentMid",
+      "childMid",
+      "agentId",
+      "status",
+      "extendedInfo"
+    ],
+    "properties": {
+      "id": {
+        "type": "number"
+      },
+      "parentMid": {
+        "type": "string",
+        "minLength": 1
+      },
+      "childMid": {
+        "type": "string",
+        "minLength": 1
+      },
+      "agentId": {
+        "type": "string",
+        "minLength": 1
+      },
+      "status": {
+        "enum": [true]
+      },
+      "extendedInfo": {
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    },
+    "additionalProperties": false
+  }
+}

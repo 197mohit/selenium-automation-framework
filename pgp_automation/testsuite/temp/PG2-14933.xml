@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PG2-14933" verbose="1">
+    <test name="Merchant Center Limit Center Static Limit">
+        <classes>
+            <class name="scripts.MerchantLimtiCenter">
+                <methods>
+                    <include name="validatesubPayModeRemainingLimitsforOfflineSmall"/>
+                    <include name="validatesubPayModeRemainingLimitsforOfflineNull"/>
+                    <include name="validatesubPayModeRemainingLimitsforOfflineBig"/>
+                    <include name="validatesubPayModeRemainingLimitsforOnline"/>
+                    <include name="validateFQRsubPayModeRemainingLimitsforOfflineSmall"/>
+                    <include name="validateFQRsubPayModeRemainingLimitsforOfflineNull"/>
+                    <include name="validateFQRsubPayModeRemainingLimitsforOfflineBig"/>
+                    <include name="validateFQRsubPayModeRemainingLimitsforOnline"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

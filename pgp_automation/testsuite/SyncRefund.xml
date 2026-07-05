@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SyncRefund" verbose="1" parallel="methods" thread-count="12">
+    <test name="SyncRefund Testcaseds">
+        <classes>
+        <class name="scripts.Refund">
+            <methods>
+                <include name="successfulPGOnlyCCSyncRefund"/>
+                <include name="successfulPGOnlyDCSyncRefund"/>
+                <include name="successfulWalletOnlySyncRefund"/>
+                <include name="successfulPGOnlyUPISyncRefund"/>
+                <include name="successfulHybridSyncRefund"/>
+                <include name="successfulAddNPaySyncRefund"/>
+                <include name="successfulRefundOfBaseAmountInPostConvenienceTxn_Sync"/>
+                <include name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn_async"/>
+                <include name="successfulPartialRefund_async"/>
+                <include name="invalidChecksumMsgForSyncRefund"/>
+                <include name="verifyMerchantIdNotComingInReq"/>
+                <include name="verifyAmountNotComingInReq"/>
+                <include name="verifyRefundAmountGreaterThanInTxnAmount"/>
+                <include name="verifyOrdderIdNotSameAsTxn"/>
+                <include name="verifyPartialAmountLessThanOne"/>
+                <include name="verifyAmountToDestinationToInstant"/>
+                <include name="verifyAmountToDestinationToSourceIfIMPSMerchantButCCtxn"/>
+                <include name="verifyRefundFailureOfAlreadySuccessfulRefund_sync"/>
+                <include name="verifyRefundFailureOfFailedPGOnlyTxn_sync"/>
+                <include name="partialRefundRefundTwiceForSyncRefund"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+</suite>

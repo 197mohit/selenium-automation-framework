@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28980 Verify ONUS Identifier" verbose="1" parallel="tests" thread-count="2">
+
+    <test name="PGP-28980 Pass Onus Identifier Enhanced">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferPGOnlyCCtxnONUSMerchant"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferPGOnlyHybridtxnOFFUSMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28980 Pass Onus Identifier Refund">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferRefungDCtxnONUSMerchant"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferRefungDCtxnOFFUSMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28980 Pass Onus Identifier Preauth">
+        <classes>
+            <class name="scripts.PreAuth">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferSuccesfulPreAuthTxnONUS"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferSuccesfulPreAuthTxnOFFUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

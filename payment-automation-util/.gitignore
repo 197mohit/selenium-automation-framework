@@ -1,0 +1,9 @@
+*.project
+*.iml
+/.idea/
+/target/
+/allure-results/
+
+# macOS Finder
+.DS_Store
+**/.DS_Store

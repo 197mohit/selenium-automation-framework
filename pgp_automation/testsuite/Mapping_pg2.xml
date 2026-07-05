@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-PG2-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service PG2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.PG2MappingApis.CommonV1GetContractPaymentInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetAlipayId"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityurlinformid"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityurlinformidV2"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMbid"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKey"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKeyWithoutPaymodeandCliendId"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKeyWithPaymode"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantdata"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantidMap"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantLogoInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetThematicDetails"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.LogoCobrandingDetail"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantApiUrlInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantAttributeAdditional"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantAttributeGetSubscriptionDetai"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.merchantDeviceDetails"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetExtendedInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetPreferenceInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantgGetPreferenceinfosext"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantProfile"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantQueryAcquiring"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantQueryContractDetail"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV1API"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV1MerchantList"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV2QueryContractItem"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.PaymentInfoFee"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryContractItem"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiring"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiringMid"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantMigrationContractDetails"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantPrefInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.UserGetMerchantExtendedInfo"/>
+        </classes>
+    </test>
+</suite>

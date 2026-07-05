@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Meghalaya" verbose="1">
+    <test name="Meghalaya testing">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Meghalaya">
+                <methods>
+                    <include name="verifyingLogsFromServer_DC"/>
+                    <include name="verifyingLogsFromServer_CC"/>
+                    <include name="verifyingLogsFromServer_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

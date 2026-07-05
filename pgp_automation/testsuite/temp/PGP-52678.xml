@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-52678" verbose="1" thread-count="1">
+    <test name="Integrate Bin Center Client | Instaproxy">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Instaproxy.InstaproxyValidation">
+                <methods>
+                    <include name="CC_TXN_fetchBinRequest_ToBinCenter_FromInsta"/>
+                    <include name="DC_TXN_fetchBinRequest_ToBinCenter_FromInsta"/>
+                    <include name="EMI_TXN_fetchBinRequest_ToBinCenter_FromInsta"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Corporate Cards Suite" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="Corporate Cards on Enhanced Web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateCCBinCorporateMerchant"/>
+                    <include name="successNonCorporateCCBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successNonCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinCorporateMerchant"/>
+                    <include name="pendingCorporateDCBinCorporateMerchant"/>
+                    <include name="successDCCorporateDCBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Enhanced WAP">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateCCBinCorporateMerchant"/>
+                    <include name="successNonCorporateCCBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successNonCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinNonCorporateMerchant"/>
+                    <include name="failureCorporateDCBinCorporateMerchant"/>
+                    <include name="failureCorporateCCBinCorporateMerchant"/>
+                    <include name="pendingCorporateDCBinCorporateMerchant"/>
+                    <include name="successDCCorporateDCBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="successfulSeamlessCorporateCC"/>
+                    <include name="successfulSeamlessCorporateDC"/>
+                    <include name="successfulSeamlessCorporateEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on PWP merchant">
+        <classes>
+            <class name="scripts.PWPEnhanced">
+                <methods>
+                    <include name="successfulSeamlessCorporateCC"/>
+                    <include name="successfulSeamlessCorporateDC"/>
+                    <include name="successfulSeamlessCorporateEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Hybrid merchant">
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="successCorporateHybridCCBinCorporateMerchant"/>
+                    <include name="successCorporateHybridDCBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards through AddNPay Flow">
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="successCorporateAddPayCCBinCorporateMerchant"/>
+                    <include name="successCorporateAddPayDCBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards txn on PCF flows">
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="successCorporateCCPCF"/>
+                    <include name="successCorporateDCPCF"/>
+                    <include name="successCorporateCCPCFNonCorporate"/>
+                    <include name="successCorporateDCPCFNonCorporate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Prepaid txn on Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="prepaidCorporateCard"/>
+                    <include name="prepaidCorporateInternationalCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Prepaid txn on Native Plus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="prepaidCorporateCard"/>
+                    <include name="prepaidCorporateInternationalCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Corporate Cards Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58596" verbose="1">
+    <test name="Enable Disable PaymentMode Bin Level">
+        <classes>
+            <class name="scripts.EnableDisablePaymentModeBinLevel">
+                <methods>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith5DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith9DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith10DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith6DigitsBinsandChannels"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith6DigitsalphanumbericBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith5DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith9DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith10DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith6DigitsBinsandChannels"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith6DigitsalphanumbericBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledDebitCardDisabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledDebitCardinvalidBinDisabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledDebitCardDisabledCreditCardPaymodeInvalidBin"/>
+                    <include name="verifyFPOwithEnabledsavedCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithEnabledDebitCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithEnabledsavedEMIPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledDebitCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedEMIPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedCreditCardPaymode"/>
+                    <include name="verifyFPOwithDisabledDebitCardPaymode"/>
+                    <include name="verifyFPOwithDisabledsavedEMIPaymode"/>
+                    <include name="verifyFPOwithDisabledsavedBinUpiPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedBinUpiPaymode"/>
+                    <include name="verifyFPOwithEnabledsavedBinUpiPaymodewith6DigitsBins"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

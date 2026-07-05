@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI UI improvement PGP-33611" verbose="1">
+    <test name="Validate the UI changes for EMI">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="EMISubElementJsItembased01"/>
+                    <include name="EMISubventionAmountBasedSuccess01"/>
+                    <include name="EMISubventionAmountBasedSuccess02" />
+                    <include name="EMISubventionAmountBasedSuccess03"/>
+                    <include name="EMISubElementJsItembased02"/>
+                    <include name="EMISubElementJsItembased03" />
+                    <include name="EMISubElementJsItembased04"/>
+                    <include name="EMISubElementJsItembased05"/>
+                    <include name="EMISubElementJsItembased06" />
+                    <include name="EMISubElementJsItembased07"/>
+                    <include name="EMISubElementJsItembased08"/>
+                    <include name="EMISubventionAmountBasedSuccess04" />
+                    <include name="EMISubElementJsItembased09"/>
+                    <include name="EMISubElementJsItembased10"/>
+                    <include name="EMISubventionAmountBasedSuccess05" />
+                    <include name="EMISubElementJsItembased11" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJsRevamp2" verbose="1" thread-count="15" parallel="tests">
+    <test name="verifyPopupAndSparkles for offers">
+        <parameter name="theme" value="checkoutjs_web_revamp_2"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyPopupAndSparkles"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="Checkoutjs Revamp - Card Field Validation">
+        <parameter name="theme" value="checkoutjs_web_revamp_2"/>
+        <classes>
+            <class name="scripts.CheckoutjsRevamp">
+                <methods>
+                    <include name="ValidateCardFieldAcceptsComplete16DigitCardNumber"/>
+                    <include name="ValidateCardWithExpiredYearDoesNotCompleteSuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

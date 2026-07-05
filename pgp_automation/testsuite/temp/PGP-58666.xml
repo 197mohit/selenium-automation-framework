@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="upiinterestfreeandinterestbearcreditline" verbose="1">
+    <test name=" UPIPSP PROCESSOR upi interest free and interest bear credit line">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateUPIPSPProcessorofflinesmallInterestBearCreditLineRailsYabove2000"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateUPIPSPProcessorofflineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

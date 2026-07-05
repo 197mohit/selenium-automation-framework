@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49014" verbose="1" thread-count="5" parallel="tests">
+
+    <test name="Native Subs Wallet FPO">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="InativeWallet_returned_in_v2FPO"/>
+                    <include name="InativeWallet_returned_in_v5FPO"/>
+                    <include name="ActiveWallet_returned_in_v2FPO"/>
+                    <include name="ActiveWallet_returned_in_v5FPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Wallet FPO">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="InativeWallet_returned_in_v2FPO_response"/>
+                    <include name="InativeWallet_returned_in_v5FPO_response"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
+

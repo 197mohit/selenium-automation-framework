@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS 2 fixes" verbose="1" parallel="tests" thread-count="3">
+
+    <test name="CHECKOUTJS on web Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="ValidatePCFwithAmexCard"/>
+                    <include name="ValidatePCFRetryBreachTxn"/>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="ValidatePCFwithWallet"/>
+                    <include name="verifyPCFAndTextForNonLoggedInFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CHECKOUTJS on wap Test cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="integrateEMI"/>
+                    <include name="loginstateSCANnPAY"/>
+                    <include name="logoutstateSCANnPAYG"/>
+                    <include name="loginstateUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CHECKOUTJS on wap Test cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="ValidatePCFwithAmexCard"/>
+                    <include name="ValidatePCFRetryBreachTxn"/>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="ValidatePCFwithWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

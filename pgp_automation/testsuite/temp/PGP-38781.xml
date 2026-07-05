@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38781" verbose="1">
+    <test name="EMI Suvention Object is non mandatory in CheckoutJS config for TXN_TOKEN">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="removeEmiSubventionObjectfromCheckoutJSConfig"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

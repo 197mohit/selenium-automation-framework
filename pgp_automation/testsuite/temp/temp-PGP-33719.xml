@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33719" verbose="1" parallel="methods" thread-count="4">
+    <test name="PGP-33719:promoAmount in Simplified Promo Flow API Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <include name="ValidateCashbackPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33719:promoAmount in Simplified Promo Flow API Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <include name="ValidateCashbackPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-33719:promoAmount in Simplified Promo Flow CheckoutJS ">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforCheckoutJs"/>
+                    <include name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-33719:promoAmount in Simplified Promo Flow Appinvoke Flow ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforAppInvoke"/>
+                    <include name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

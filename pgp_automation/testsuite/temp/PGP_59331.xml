@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" EMINEWFLOWTEST" verbose="1">
+    <test name="Saved Card should not be visible on checkout page when theis preference HIDE_SAVED_CARDS_JS is on">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="EatSureHideSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SavedCardVaultSplit" verbose="1">
+
+  <test name="SavedCardVaultSplit">
+
+    <classes>
+        <class name="scripts.coft.savedCardService.HandlerInternalBinInfoTests">
+          <methods>
+            <include name="VerifyPPBLCardsAreReturnedWhenSentInQueryParam"/>
+            <include name="VerifyNoOCLCardsAreReturnedWhenPPBLSentInQueryParam"/>
+            <include name="VerifyOCLCardsAreReturnedWhenSentInQueryParam"/>
+            <include name="VerifyNoPPBLCardsAreReturnedWhenOCLSentInQueryParam"/>
+            <include name="VerifyForPendingOCLTokens"/>
+            <include name="VerifyNoPendingPPBLTokenIsReturned"/>
+            <include name="VerifyPendingPPBLTokenAreReturned"/>
+            <include name="VerifyNoPendingOCLTokenIsReturned"/>
+            <include name="VerifyVaultIdentifierInFetchAllAndFetchPendingTokenRequest"/>
+          </methods>
+        </class>
+      <class name="scripts.coft.savedCardService.HandlerInternalDeleteBinUserTests">
+        <methods>
+          <include name="VerifyUserIsAbleToDeleteActivePPBLToken"/>
+          <include name="VerifyUserIsAbleToDeletePendingOclToken"/>
+          <include name="VerifyUserIsAbleToDeletePendingPPBLToken"/>
+          <include name="VerifyOCLTokenForSameCardIsAlsoDeletedWhileDeletingPPBLToken"/>
+          <include name="VerifyPPBLTokenForSameCardIsAlsoDeletedWhileDeletingOCLToken"/>
+          <include name="VerifyPPBLTokenForDifferentCardIsNotDeletedWhileDeletingOclCard"/>
+          <include name="VerifyOCLTokenForDifferentCardIsNotDeletedWhileDeletingPPBLCard"/>
+        </methods>
+      </class>
+
+      <class name="scripts.coft.savedCardService.SavedCardByUserIdTests">
+        <methods>
+          <include name="VerifyPendingTokensAreNotReturnedInSuccessResponse"/>
+          <include name="VerifyPendingPPBLTokensAreNotReturnedInSuccessResponse"/>
+          <include name="VerifyActivePPBLTokensAreNotReturnedInSuccessResponse"/>
+        </methods>
+      </class>
+      <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest">
+        <methods>
+          <include name="verifySuccessResponseSSOInCaseOfPending"/>
+          <include name="verifySuccessResponseSSOInCaseOfPendingPPBL"/>
+          <include name="verifySuccessResponseSSOInCaseOfActivePPBL"/>
+        </methods>
+      </class>
+
+    </classes>
+  </test>
+</suite>

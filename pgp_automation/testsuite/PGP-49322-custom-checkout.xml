@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49322-custom-checkout" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-49322-custom-checkout">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestDetailExtendInfoForAmountBased"/>
+                    <include name="validateDetailExtendInfoForAmtBasedAndPromo"/>
+                    <include name="TestCOPForItemBasedAndPromo1"/>
+                    <include name="TestCOPForItemBased1"/>
+                    <include name="TestCOPForOnlypromoForCustomCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

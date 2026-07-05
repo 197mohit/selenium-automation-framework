@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-32817" verbose="1" parallel="tests" thread-count="4">
+    <test name="PPI-N flow blocked for Subs">
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+
+                    <include name="TC_001_PPIN_txnFailed_forBlank_Paymode"></include>
+                    <include name="TC_002_Wallet_Displayed_for_PPIN"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

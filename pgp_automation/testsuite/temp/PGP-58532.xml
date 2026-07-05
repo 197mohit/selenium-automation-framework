@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58532">
+    <test name="Verify subvention amount should not come in FPO response under simplifiedUnifiedOffers">
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifySubventionAmountNotPresentForMultiItem"/>
+                    <include name="verifySubventionAmountNotPresentForSingleItem"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

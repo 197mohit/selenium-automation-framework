@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AOA MaxLife UPI Subs" verbose="1" thread-count="2" parallel="tests">
+    <test name="Upfront Amount Variation with FIX amount type">
+        <classes>
+            <class name="scripts.AOA.AOAMaxLife">
+                <methods>
+                    <include name="PGP_37533_VerifythatmidConversiontakesplaceonCreateSubs"/>
+                    <include name="PGP_37533_VerifythatmidConversiontakesplaceonPTCcall"/>
+                    <include name="PGP_37533_VerifythatTxnforPPBLCisonPgMIDandOrderID"/>
+                    <include name="PGP_37533_Verifye2eMaxLifeUPItxn"/>
+                    <include name="PGP_37533_VerifythatAOAMIDisreturnedinGetTxnStatusReponse"/>
+                    <include name="PGP_37533_VerifythatAOAMID_isabletoRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

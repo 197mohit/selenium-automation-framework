@@ -1,0 +1,184 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "definitions": {
+    "DATE": {
+      "pattern": "^([0-9]{4}-[0-1][0-9]-[0-3][0-9] [0-2][0-9]:[0-5][0-9]:[0-5][0-9]\\.0|[0-9]{2}:[0-9]{2} PM, [0-9]{2} [A-Z][a-z]{2} [0-9]{4}|)$"
+    },
+    "AMOUNT": {
+      "pattern": "^[0-9]+.[0-9]{2}$",
+      "maxLength": 10
+    },
+    "TXN_ID": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "ORDER_ID": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 50
+    },
+    "STATUS": {
+      "enum": [
+        "TXN_SUCCESS",
+        "TXN_FAILURE",
+        "PENDING"
+      ]
+    }
+  },
+  "required": [
+    "MID",
+    "ORDERID",
+    "BANKTXNID",
+    "TXNAMOUNT",
+    "CURRENCY",
+    "STATUS",
+    "RESPCODE",
+    "RESPMSG",
+    "CHECKSUMHASH"
+  ],
+  "properties": {
+    "MID": {
+      "type": "string",
+      "minLength": 20,
+      "maxLength": 20
+    },
+    "TXNID": {
+      "$ref": "#/definitions/TXN_ID"
+    },
+    "ORDERID": {
+      "$ref": "#/definitions/ORDER_ID"
+    },
+    "BANKTXNID": {
+      "type": "string",
+      "pattern": "^([0-9]+|)$"
+    },
+    "TXNAMOUNT": {
+      "$ref": "#/definitions/AMOUNT"
+    },
+    "CURRENCY": {
+      "enum": [
+        "INR"
+      ]
+    },
+    "STATUS": {
+      "$ref": "#/definitions/STATUS"
+    },
+    "RESPCODE": {
+      "enum": [
+        "01",
+        "227"
+      ]
+    },
+    "RESPMSG": {
+      "type": "string",
+      "minLength": 1
+    },
+    "TXNDATE": {
+      "$ref": "#/definitions/DATE"
+    },
+    "GATEWAYNAME": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 15
+    },
+    "BANKNAME": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "PAYMENTMODE": {
+      "enum": [
+        "CC",
+        "DC",
+        "NB",
+        "UPI",
+        "PPI",
+        "PAYTMCC",
+        "Paytm Postpaid",
+        "EMI"
+      ]
+    },
+    "CHECKSUMHASH": {
+      "type": "string",
+      "maxLength": 108
+    },
+    "CHARGEAMOUNT": {
+      "$ref": "#/definitions/AMOUNT"
+    },
+    "LASTFOURDIGITS": {
+      "pattern": "^[0-9]{4}$"
+    },
+    "cardHash": {
+      "type": "string",
+      "minLength": 64,
+      "maxLength": 64
+    },
+    "BIN": {
+      "pattern": "^[0-9]{6}$"
+    },
+    "ERROR_CODE": {
+      "pattern": "^[0-9]+$"
+    },
+    "ERROR_MESSAGE": {
+      "type": "string",
+      "minLength": 1
+    },
+    "LINK_BASED_PAYMENT": {
+      "enum": [
+        "true"
+      ]
+    },
+    "MERCHANT_NAME": {
+      "type": "string",
+      "minLength": 1
+    },
+    "MERC_UNQ_REF": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ORDER_ID": {
+      "$ref": "#/definitions/ORDER_ID"
+    },
+    "PAYMENT_STATUS": {
+      "$ref": "#/definitions/STATUS"
+    },
+    "SHOW_VIEW_FLAG": {
+      "enum": [
+        "PAYMENT_SCREEN"
+      ]
+    },
+    "TRANSACTION_ID": {
+      "$ref": "#/definitions/TXN_ID"
+    },
+    "TXN_AMOUNT": {
+      "$ref": "#/definitions/AMOUNT"
+    },
+    "TXN_DATE": {
+      "$ref": "#/definitions/DATE"
+    },
+    "UDF_1": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cardScheme": {
+      "type": "string",
+      "pattern": "[A-Z]+"
+    },
+    "LINK_TYPE": {
+      "enum": [
+        "INVOICE"
+      ]
+    },
+    "ACCNUMVERSUCCESS": {
+      "enum": [
+        "false"
+      ]
+    },
+    "VPA": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}

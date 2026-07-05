@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-59428" verbose="1">
+    <test name="Order Timeout Not getting captured correctly in Online Intent">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="verifyThatOrderTimeoutisCapturedwhenFlagisOnCOP"/>
+                    <include name="verifyThatOrderTimeoutisCapturedwhenFlagisOnPayOrder"/>
+                    <include name="verifyPaymentTimeoutFieldShouldNotBePresentInLogs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

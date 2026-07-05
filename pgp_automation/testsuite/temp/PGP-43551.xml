@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-43551" verbose="1" thread-count="3">
+    <test name="PGP-43551">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC01_CheckFPOResponse_AccountNoPassed"/>
+                    <include name="TC02_CheckFPOResponse_AccountNotPassed"/>
+                    <include name="TC03_CheckFPOResponse_AccountNoIncorrect"/>
+                    <include name="TC04_CheckFPOResponse_AccountNoNumeric"/>
+                    <include name="TC05_CheckFPOResponse_AccountNoPassedAsNULL"/>
+                    <include name="TC06_ValidateCreateSubscriptionResponse_RequestTypeNULL"/>
+                 </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

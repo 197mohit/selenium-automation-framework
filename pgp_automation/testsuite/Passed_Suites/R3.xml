@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R3">
+    <listeners>
+        <listener class-name="com.paytm.listeners.MasterReport"/>
+        <listener class-name="com.paytm.listeners.StatusCounterListener"/>
+        <listener class-name="com.paytm.listeners.ScreenListener"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="redirectional.xml"/>
+<!--        <suite-file path="qr.xml"/> -->
+        <suite-file path="rtdd.xml"/>
+    </suite-files>
+</suite>

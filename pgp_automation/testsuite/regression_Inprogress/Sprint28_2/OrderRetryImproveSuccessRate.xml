@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OrderRetryImproveSuccessRate" verbose="1" parallel="tests" thread-count="10">
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="verifyNoRetryIfCountExhausted"/>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="verifyNoRetryIfCountExhausted"/>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

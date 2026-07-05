@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp"
+      ],
+      "properties": {
+        "signature": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "responseTimestamp": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string",
+              "minLength": 1
+            },
+            "resultMsg": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "vanDetails": {
+          "type":
+            "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "identificationNo",
+              "merchantPrefix",
+              "responseStatus"
+            ],
+            "properties": {
+              "van": {
+                "type": "string",
+                "minLength": 1
+              },
+              "beneficiaryName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "identificationNo": {
+                "type": "string",
+                "minLength": 1
+              },
+              "merchantPrefix": {
+                "type": "string",
+                "minLength": 1
+              },
+              "active": {
+                "type": "boolean"
+              },
+              "bankName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "ifscCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "responseStatus": {
+                "enum": [
+                  "SUCCESS",
+                  "FAILURE"
+                ]
+              },
+              "errorCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "errorMessage": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

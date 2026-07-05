@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs suite">
+<test name="PGP-41281 CheckoutJS">
+    <parameter name="theme" value="checkoutjs_web_revamp"/>
+    <classes>
+        <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+            <methods>
+                <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_without_applying_customisation"/>
+                <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_customisation_on_parent_and_child_mid"/>
+                <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_cashierpage_applying_style_in_checkoutconfig"/>
+                <include name="Verify_childmid_parentmid_display_as_null_in_response"/>
+                <include name="ValidateChildMIDThemeOverwriteEnabled"/>
+                <include name="ValidateParentAndChildMIDThemeOverwriteEnabled"/>
+                <include name="ValidateConfigWithParentMIDThemeOverwriteEnabled"/>
+                <include name="ValidateConfigWithChildMIDThemeOverwriteEnabled"/>
+                <include name="ValidateConfigWithParentAndChildThemeOverwriteEnabled"/>
+                <include name="verifyLogoColor"/>
+                <include name="Verify_icici_cobranding_logo_and_theme_is_displayed_on_cashierpage_without_applying_customisation"/>
+                <include name="Verify_icici_cobranding_logo_and_theme_is_displayed_on_cashierpage_applying_style_in_checkoutconfig"/>
+            </methods>
+        </class>
+    </classes>
+</test>
+    <test name="link service cobranding">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CobrandingTest">
+                <methods>
+                    <include name="Verify_icici_cobranding_logo_and_headercolor_is_displayed_on_paymentlinks_without_applying_customisation_on_childmid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

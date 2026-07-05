@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePPBLPasscodeTxt"/>
+                    <include name="verify_Login_Strip_When_FlagEnabled"/>
+                    <include name="verify_Login_Strip_When_PrefEnabled"/>
+                    <include name="Verifying_PayMode_LOGO_Colors"/>
+                    <include name="verifying_FD_BalanceIsVisible"/>
+                    <include name="verifying_FD_BalanceIsNotVisible"/>
+                    <include name="VerifyYesNoComingAfterClickOnBackButton"/>
+                    <include name="VerifyResponceWhenClickYesForCancelTxn"/>
+                    <include name="Verify_txn_via_child_mid"/>
+                    </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

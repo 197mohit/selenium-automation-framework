@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPGP-441_verify_popup_and_sparkles_suite" verbose="1">
+    <test name="verifyPopupAndSparkles">
+        <parameter name="theme" value="checkoutjs_web_revamp_2"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyPopupAndSparkles"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

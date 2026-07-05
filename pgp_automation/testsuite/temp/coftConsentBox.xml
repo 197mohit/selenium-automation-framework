@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="COFT_THEIA" verbose="1" thread-count="1">
+    <test name="Coft Consent Box">
+        <classes>
+            <class name="scripts.coft.theia.CoftConsentBox">
+                <methods>
+                    <include name="onusSuccess"/>
+                    <include name="onusFailure1"/>
+                    <include name="onusFailure2"/>
+                    <include name="offusGVEnabledSuccess"/>
+                    <include name="offusGVEnabledFailure1"/>
+                    <include name="offusGVEnabledFailure2"/>
+                    <include name="offustridConfiguredSuccess"/>
+                    <include name="offustridConfiguredFailure1"/>
+                    <include name="offustridConfiguredFailure2"/>
+                    <include name="offustridNotConfiguredFailure"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

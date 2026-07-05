@@ -1,0 +1,145 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp",
+        "version"
+      ],
+      "properties": {
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        },
+        "requestId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "paymentOffers": {
+          "type": "array",
+          "uniqueItems": true,
+          "minItems": 0,
+          "items": {
+            "type": "object",
+            "required": [
+              "offer",
+              "termsUrl",
+              "termsTitle",
+              "validUpto",
+              "promocode",
+              "isPromoVisible",
+              "validFrom"
+            ],
+            "properties": {
+              "offer": {
+                "type": "object",
+                "required": [
+                  "icon",
+                  "text",
+                  "title"
+                ],
+                "properties": {
+                  "icon": {
+                    "type": "string"
+                  },
+                  "text": {
+                    "type": "string"
+                  },
+                  "title": {
+                    "type": "string"
+                  },
+                  "textRegional": {
+                    "type": "string"
+                  },
+                  "titleRegional": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "termsUrl": {
+                "type": "string"
+              },
+              "termsTitle": {
+                "type": "string"
+              },
+              "validUpto": {
+                "type": "string"
+              },
+              "promocode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "isPromoVisible": {
+                "enum": [
+                  "true"
+                ]
+              },
+              "validFrom": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string"
+            },
+            "resultMsg": {
+              "type": "string"
+            },
+            "resultCodeId": {
+              "type": "null"
+            },
+            "resultMsgRegional": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "extraParamsMap": {
+          "type": "null"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

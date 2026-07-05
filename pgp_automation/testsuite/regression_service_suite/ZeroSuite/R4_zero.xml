@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R4 Zero Pass Suite" verbose="1" thread-count="12" parallel="tests">
+
+    <!-- Theia Zero Pass Percentage TCs -->
+    <test name="Native.FetchBinDetails" parallel="methods" thread-count="5">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="guestKeyInSessionRedisTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payments API's 1">
+        <classes>
+            <class name="scripts.api.theia.FetchCardIndexNumber">
+                <methods>
+                    <include name="test unable to fetch card index no when cardExpiry equals past value"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Payments API's 5">
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test">
+                <methods>
+                    <include name="testForBajajfnBinWhenSupported"/>
+                    <include name="testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test">
+                <methods>
+                    <include name="test able to fetch bin details when bin equals MAESTRO bin"/>
+                    <include name="testForBajajfnBinWhenSupported"/>
+                    <include name="testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-24062" parallel="classes" thread-count="2">
+        <classes>
+            <class name="scripts.api.theia.FastForwardTest">
+                <methods>
+                    <include name="testSuccess"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test">
+                <methods>
+                    <include name="fetch BIN when CC_EMI is enabled"/>
+                    <include name="fetch BIN when DC_EMI is enabled"/>
+                    <include name="testForBajajfnBinWhenSupported"/>
+                    <include name="testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <include name="test when body mid = null"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant and user both do not have PAYTM_DIGITAL_CREDIT configured"/>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant has PAYTM_DIGITAL_CREDIT configured but user does not"/>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given user has PAYTM_DIGITAL_CREDIT configured but merchant does not"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-24758" parallel="classes" thread-count="1">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test tncUrl when FF4J applyPromoSendResponseTncUrl flag is enabled on mid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25862">
+        <classes>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.AccessTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <include name="test when head token equals expired token"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25866">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.AccessTokenVPAValidateV1Test">
+                <methods>
+                    <include name="test unable to validate vpa when body vpa equals random numerical value"/>
+                    <include name="test when head token equals expired token"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_1">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test">
+                <methods>
+                    <include name="test when head token equals expired token"/>
+                    <include name="test when head token is not provided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27608">
+        <classes>
+            <class name="scripts.api.theia.SendOtpV4Test">
+                <methods>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is not passed"/>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is passed"/>
+                    <include name="test when merchant has send otp v5 flag enabled and requestType is NATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="session-compatibility">
+        <classes>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <parameter name="orderId" value="T2-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="theia API's 2">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.ChecksumVPAValidateV1Test">
+                <methods>
+                    <include name="test unable to validate vpa when body vpa equals random numerical value"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.vpaValidate.TxnTokenVPAValidateV1Test">
+                <methods>
+                    <include name="test unable to validate vpa when body vpa equals random numerical value"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="theia API's 3">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.SSOTokenVPAValidateV1Test">
+                <methods>
+                    <include name="test unable to validate vpa when body vpa equals random numerical value"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="TxnTokenFetchBalanceInfoV1Test">
+        <classes>
+            <class name="scripts.api.theia.fetchBalance.TxnTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant and user both do not have PAYTM_DIGITAL_CREDIT configured"/>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant has PAYTM_DIGITAL_CREDIT configured but user does not"/>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given user has PAYTM_DIGITAL_CREDIT configured but merchant does not"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- CheckoutJS Revamp Zero Pass Percentage TCs in below mentioned Suite -->
+    <suite-files>
+        <suite-file path="checkoutjs_revamp_zero.xml"/>
+    </suite-files>
+
+</suite>

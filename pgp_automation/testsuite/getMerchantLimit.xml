@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Get Merchant Limit" verbose="1" >
+    <test name="Merchant Limit API mapping">
+        <classes>
+            <class name="scripts.api.mappingService.GetLimitMerchantTest">
+            </class>
+        </classes>
+    </test>
+</suite>

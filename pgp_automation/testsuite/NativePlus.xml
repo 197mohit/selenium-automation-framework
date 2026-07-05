@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native Plus" verbose="1" parallel="tests" thread-count="2">
+    <test name="Native Plus" parallel="methods" thread-count="14">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_COD_Failure_WithoutToken"/>
+                    <include name="TC_PT_COD_Failure"/>
+                    <include name="TC_PT_015"/>
+                    <include name="TC_PT_014"/>
+                    <include name="TC_PT_025_CC"/>
+                    <include name="TC_PT_016"/>
+                    <include name="TC_PT_043"/>
+                    <include name="verifyRestrictCCPromo_TC_20"/>
+                    <include name="verifyRestrictDCPromo_TC_20"/>
+                    <include name="verifyRestrictPPIPromo_TC_20"/>
+                    <include name="verifyCCPromo_TC_16"/>
+                    <include name="verifyDCPromo_TC_16_1"/>
+                    <include name="verifyWalletPromo_TC_15"/>
+                    <include name="TC_PT_002"/>
+                    <include name="TC_PT_003"/>
+                    <include name="TC_PT_004"/>
+                    <include name="TC_PT_005"/>
+                    <include name="TC_PT_006"/>
+                    <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                    <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                    <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                    <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                    <include name="TC_PT_035"/>
+                    <include name="TC_PT_037"/>
+                    <include name="TC_13"/>
+                    <include name="TC_07"/>
+                    <include name="TC_PT_001"/>
+                    <include name="TC_PT_COD_Success"/>
+                    <include name="TC_PT_EMI_Success"/>
+                    <include name="TC_PT_0CostEMI_Success"/>
+                    <include name="verifyRestrictDCPromo_TC_20_1"/>
+                    <include name="TC_PT_028"/>
+                    <include name="TC_PT_018"/>
+                    <include name="TC_PT_025"/>
+                    <include name="TC_PT_EMI_Hyb_Success"/>
+                    <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                    <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                    <include name="TC_PT_030"/>
+                    <include name="TC_PT_039"/>
+                    <include name="TC_PT_040"/>
+                    <include name="TC_PT_041"/>
+                    <include name="TC_PT_046"/>
+                    <include name="verifyNBPromo_TC_17"/>
+                    <include name="TC_PT_PPBL_Success"/>
+                    <include name="TC_PT_PostPaid_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="TC_PT_001"/>
+                    <include name="TC_PT_002"/>
+                    <include name="TC_PT_003"/>
+                    <include name="TC_PT_016"/>
+                    <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

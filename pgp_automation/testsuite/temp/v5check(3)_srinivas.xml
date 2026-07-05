@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePendingTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <include name="ValidateSUCCESSTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <include name="ValidateFAILTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <include name="ValidateParentMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateConfigWithParentMIDThemeOverwriteEnabled"/>
+                    <include name="ValidateSuccessTxnUsingCCRedirectFalse"/>
+                    <include name="ValidateSuccessTxnUsingCCWhenMIDNull"/>
+                    <include name="VerifyTxnPaidTimeFieldShouldReturnInResponse_ViaNB"/>
+                    <include name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforPCF"/>
+                    <include name="VerifyBankLogoforNB"/>
+                    <include name="VerifyBankLogoInSavedCard"/>
+                    <include name="VerifyBankLogoforSavedVpa"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

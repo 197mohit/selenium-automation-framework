@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-34687" verbose="1">
+    <test name="Version Change">
+       <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_theme_is_changed_for_Merchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

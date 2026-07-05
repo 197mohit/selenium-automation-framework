@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33728" verbose="1" thread-count="20" parallel="tests">
+    <test name="Verifying Topic : DYNAMIC_QR for old theme">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="toVerifyNewKafkaTopic_inSuccess_Txn"></include>
+                    <include name="toVerifyNewKafkaTopic_inFailure_Txn"></include>
+                    <include name="toVerifyNewKafkaTopic_inPending_Txn"></include>
+                </methods>
+           </class>
+        </classes>
+    </test>
+    <test name="Verifying Topic : DYNAMIC_QR for new theme">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="toVerifyNewKafkaTopic_inSuccess_Txn"></include>
+                    <include name="toVerifyNewKafkaTopic_inFailure_Txn"></include>
+                    <include name="toVerifyNewKafkaTopic_inPending_Txn"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

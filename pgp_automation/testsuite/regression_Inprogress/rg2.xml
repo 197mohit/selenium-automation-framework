@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AddNPay" verbose="1">
+    <suite-files>
+        <suite-file path="HybridPoenCheckSumValidation.xml"/>
+        <suite-file path="Idebit.xml"/>
+        <suite-file path="IVRFastForward.xml"/>
+        <suite-file path="KYC.xml"/>
+        <suite-file path="LogValidationScripts.xml"/>
+        <suite-file path="OAuth_MidClientID.xml"/>
+        <suite-file path="OrderStatusV2Tests.xml"/>
+        <suite-file path="OTPLimit.xml"/>
+        <suite-file path="PaytmDigitalCard.xml"/>
+        <suite-file path="PayTMExpress.xml"/>
+        <suite-file path="PeonTxn.xml"/>
+        <suite-file path="PGDirectHddo.xml"/>
+        <suite-file path="PGOnly.xml"/>
+        <suite-file path="PostConvenience.xml"/>
+        <suite-file path="PostCovEnhance.xml"/>
+        <suite-file path="PreAuth.xml"/>
+    </suite-files>
+</suite>

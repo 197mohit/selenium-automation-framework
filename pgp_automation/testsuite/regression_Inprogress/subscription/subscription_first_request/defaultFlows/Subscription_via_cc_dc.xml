@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription_via_cc_dc" verbose="1" parallel="tests" thread-count="10">
+    <test name="Subscription_via_cc_dc">
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="testCardIndexNoIsPresentInOutputWhenCardTokenRequiredIsTrueInOrder"/>
+                    <include name="testCardIndexNoIsPresentInOutputWhenCardTokenRequiredIsFalseInOrder"/>
+                    <include name="testCardHashIsPresentInOutput"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_cc_dc">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_8_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <include name="PGP_67_ValidateTxnWithDCSavedCardWhenPayModeIsCC"/>
+                    <include name="PGP_100_alidateTxnWithCCSavedCardWhenPayModeIsDC"/>
+                    <include name="PGP_75_ValidateSuccessfulCCSubscriptionWithSSOTokenLogin"/>
+                    <include name="PGP_23_validatePayModesWithoutSavedCard"/>
+                    <include name="PGP_4_validatePayModesWithSavedCard"/>
+                    <include name="PGP_74_ValidateSavedCardsDisplayedInCorrectSequence"/>
+                    <include name="PGP_24_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                    <include name="PGP_25_ValidateSuccessfulPaymentWithSavedCard"/>
+                    <include name="PGP_80_validateTxnAmtGreaterThanSubsMaxAmt"/>
+                    <include name="PGP_60_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="PGP_62_ValidateS2StxnWithValidSavedCardAndTxnAmntZero"/>
+                    <include name="PGP_84_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_63_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_86_validateS2StxnWithBlankSSOToken"/>
+                    <include name="PGP_85_validateS2StxnWithInvalidSSOToken"/>
+                    <include name="PGP_22_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_26_ValidateSuccessfulZeroAmtPaymentWithSavedCard"/>
+                    <include name="PGP_2_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_5_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <include name="PGP_7_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountEqualsZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

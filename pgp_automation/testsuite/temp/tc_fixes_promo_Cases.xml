@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PromoCases" verbose="1">
+
+    <test name="PromoTestCases">
+
+        <classes>
+
+            <class name="scripts.Native.FetchPromoCodeDetails">
+
+                <methods>
+
+                    <include name="PaymentOffersFlow_PromoON"/>
+
+                    <include name="ValidateTncUrlPresentInApplyPromoForCashbackPromo"/>
+
+                    <include name="ValidateTncUrlNotPresentInApplyPromoForCashbackPromo"/>
+
+                    <include name="PGP_27167_ValidateCashbackPromoInPaymentOffersFlow"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

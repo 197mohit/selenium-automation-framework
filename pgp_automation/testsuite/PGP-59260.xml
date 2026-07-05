@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-59260" verbose="1">
+    <test name="Facilitate card offer expiry for PFM | PGP-59260">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verify_V1_PTC_cardExpiryDiff"/>
+                    <include name="verify_Logs_cardExpiryDiff"/>
+                    <include name="verify_V1_PTC_cardExpirySame"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

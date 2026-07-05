@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-56308" verbose="1">
+    <test name="Validate PGP-56308">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEmiDetails">
+                <methods>
+                    <include name="testGetEmiDetailsDynamically"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGOnly" verbose="1">
+    <test name="PGOnly" parallel="methods" thread-count="4">
+        <classes>
+            <class name="scripts.api.statusAPI.OrderStatusAPI"/>
+        </classes>
+    </test>
+</suite>

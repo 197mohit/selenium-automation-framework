@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-PG2-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service PG2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.PG2MappingApis.CommonV1GetContractPaymentInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetAlipayId"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityurlinformid"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetEntityurlinformidV2"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMbid"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKey"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKeyWithoutPaymodeandCliendId"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantAttributeKeyWithPaymode"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantdata"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantidMap"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetMerchantLogoInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.GetThematicDetails"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.LogoCobrandingDetail"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantApiUrlInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantAttributeAdditional"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantAttributeGetSubscriptionDetai"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.merchantDeviceDetails"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetExtendedInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetPreferenceInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantgGetPreferenceinfosext"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantProfile"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantQueryAcquiring"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantQueryContractDetail"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV1API"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV1MerchantList"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV2QueryContractItem"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.PaymentInfoFee"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryContractItem"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiring"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiringMid"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantMigrationContractDetails"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantPrefInfo"/>
+            <class name="scripts.api.mappingService.PG2MappingApis.UserGetMerchantExtendedInfo"/>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 1 API ">
+        <classes>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.BankdetailsAlipaycodeApi"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.BankmasterdetailsPaymodeApi"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.CommonV1Get"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.DccSupportedCurrencyListAcquirerIICTC1IN"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetBankdetailsBankCode"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetBanksDetailslistfromCodes"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetGlobalConfigACQUIRER_CURRENCY_IICPC1IN"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetLimitMerchantTypePPI_LIMIT_1"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetMerchantlogoinfoV2Mid"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetNotificationTemplate"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetPspSchema"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetResponsecodedetailsPaytmResponseCode"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetResponsecodedetailsResultcode"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.MerchantAgentGetAgentInfoIdType"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.NotificationFetchTemplateConfiguration"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.UserV1TypePaytmId"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.UserV1TypePaytmIdWillcreate"/>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 2 APIs ">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsBankslistTid"/>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsTidBankName"/>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsTidtid"/>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsV2Tid"/>
+            <class name="scripts.api.mappingService.mappingDrop2.GetBankresponsecodesbankCodepayModeService"/>
+            <class name="scripts.api.mappingService.mappingDrop2.GetEmiOnDcEligibilityBy"/>
+            <class name="scripts.api.mappingService.mappingDrop2.GetMerchantStaticConfigMid"/>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 3 API ">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop3.Entityurlinfoformid"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Fetchentityignoreparams"/>
+            <class name="scripts.api.mappingService.mappingDrop3.fetchlogo"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getcardnetworkdetails"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getformatter"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getpaymethoddetails"/>
+            <class name="scripts.api.mappingService.mappingDrop3.merchantidmap"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Usergetusermid"/>
+        </classes>
+    </test>
+    <test name="Mapping Service Drop 2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.GetOldpgIdMerchantId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.GetPaytmidV1OldpgId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantGetExtendedInfoV3MerchantId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantGetExtendedInfoV3MerchantIdClientId"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantLogoInfoV1OldpgMid"/>
+            <class name="scripts.api.mappingService.MappingAuditL2Apis.MerchantV3Paytm"/>
+        </classes>
+    </test>
+</suite>

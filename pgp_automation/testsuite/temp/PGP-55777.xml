@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-55777" verbose="1">
+    <test name="Risk Refund Consult ">
+        <classes>
+            <class name="scripts.RefundTest.RefundValidation">
+                <methods>
+                    <include name="validateriskrefundforRiskUserMasterRefund"/>
+                    <include name="validateriskrefundforRiskUserCCMasterRefund"/>
+                    <include name="validateriskrefundforCCNonLoggedInMoreThan50kFlagOnMasterRefund"/>
+                    <include name="validateriskrefundforNonLoggedMoreThan50kInFlagOnMasterRefund"/>
+                    <include name="validateriskrefundforCCNonLoggedInEqualto50kFlagOnMasterRefund"/>
+                    <include name="validateriskrefundforNonLoggedInEqualto50kFlagOnMasterRefund"/>
+                    <include name="validateriskrefundforCCNonLoggedInFlagOnlessthan50kMasterRefund"/>
+                    <include name="validateriskrefundCCforNonRiskUserFlagOnMasterRefund"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOnMasterRefund"/>
+                    <include name="validateriskrefundforCCNonRiskUserFlagOnmorethan50kMasterRefund"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOnmorethan50kMasterRefund"/>
+                    <include name="validateriskrefundforCCNonRiskUserFlagOnlessthan50kMasterRefund"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOnlessthan50kMasterRefund"/>
+                    <include name="validateriskrefundforCCNonRiskUserFlagOnequalto50kMasterRefund"/>
+                    <include name="validateriskrefundforNonRiskUserFlagOnequalto50kMasterRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-45673" verbose="1">
+    <test name="Applying Promo Directly from Offer Strip">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ApplyOffer"/>
+                    <include name="ApplyOfferOnEMI"/>
+                    <include name="ApplyOfferOnUPI"/>
+                    <include name="ApplyOfferOnWallet"/>
+                    <include name="ApplyOfferOnPostpaid"/>
+                    <include name="ApplyOfferOnCard"/>
+                    <include name="ApplyOfferOnNetbanking"/>
+                    <include name="ApplyOfferOnWalletForPreLogin"/>
+                    <include name="ApplyOfferOnPostpaidForPreLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

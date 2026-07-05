@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Disable Login Strip cases" verbose="1" thread-count="12"
+       parallel="tests">
+    <test name="Disable Login Strip for Enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verify_Login_Strip_When_FlagEnabled"/>
+                    <include name="verify_Login_Strip_When_PrefEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Disable Login Strip for CheckoutJS web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_Login_Strip_When_FlagEnabled"/>
+                    <include name="verify_Login_Strip_When_PrefEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

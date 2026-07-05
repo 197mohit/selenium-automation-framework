@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Merchant_Status_Suite" verbose="1" thread-count="15" parallel="tests">
+
+    <!-- PGP-40233 for NativePlus: excluded - all cases are /merchant-status/getTxnListStatus -->
+    <!--
+    <test name="PGP-40233 for NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_01"/>
+                    <include name="txnStatusNativeInvalid_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+    <test name="PGP-40230 for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus_02"/>
+                    <include name="txnStatusInit_02"/>
+                    <include name="txnStatusClosed_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40231 for NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInit"/>
+                    <include name="txnStatusNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-36505 - Merchant-Status: mapping id can't be null exceptions">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_36505_VerifyNoNullPointerExceptionforMerchantStatusAPIs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42086 for AppInvoke Flow">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.AppInvokeMerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatus_02"/>
+                    <include name="txnStatusClosed_02"/>
+                    <include name="txnStatusInvalid_05"/>
+                    <include name="txnStatusInit_02"/>
+                    <!-- txnStatusInvalid_01 excluded: /merchant-status/getTxnListStatus -->
+                    <include name="txnStatusInit_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40230 for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInit_02"/>
+                    <include name="txnStatusNative_02"/>
+                    <include name="txnStatusNativeClosed_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- PGP-40233 for enhancedweb_revamp: excluded - all cases are /merchant-status/getTxnListStatus -->
+    <!--
+    <test name="PGP-40233 for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusClosed_01"/>
+                    <include name="txnStatusInvalid_01"/>
+                    <include name="txnStatus_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+    <test name="PGP-40231 for enhancedwap_revamp">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatusNative"/>
+                    <include name="txnStatusNativeInit_03"/>
+                    <!-- txnStatus_01, txnStatusNative_01, txnStatusNativeInvalid_01, txnStatusClosed_01, txnStatusInvalid_01 excluded: /merchant-status/getTxnListStatus -->
+                    <include name="txnStatusClosed_02"/>
+                    <include name="txnStatusInvalidNative_05"/>
+                    <include name="lastFourDigitNotVisible"/>
+                    <include name="txnStatusNativeInit"/>
+                    <include name="txnStatusInvalid_05"/>
+                    <include name="txnStatusInit"/>
+                    <include name="txnStatus"/>
+                    <include name="txnStatusInit_03"/>
+                    <include name="txnStatusInit_02"/>
+                    <include name="txnStatusNativeInit_04"/>
+                    <include name="txnStatus_02"/>
+                    <!-- txnStatusNativeClosed_01 excluded: /merchant-status/getTxnListStatus -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40231 for enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatus"/>
+                    <include name="txnStatusInit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40230 for NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInit_02"/>
+                    <include name="txnStatusNative_02"/>
+                    <include name="txnStatusNativeClosed_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- PGP-40233 for Native: excluded - all cases are /merchant-status/getTxnListStatus -->
+    <!--
+    <test name="PGP-40233 for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative_01"/>
+                    <include name="txnStatusNativeInvalid_01"/>
+                    <include name="txnStatusNativeClosed_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+    <test name="PGP-40231 for CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <!-- txnStatus_01, txnStatusClosed_01, txnStatusInvalid_01 excluded: /merchant-status/getTxnListStatus -->
+                    <include name="txnStatusInit_02"/>
+                    <include name="txnStatusInit_05"/>
+                    <include name="txnStatusInit_06"/>
+                    <include name="txnStatus_02"/>
+                    <include name="txnStatus_06"/>
+                    <include name="txnStatus"/>
+                    <include name="txnStatusClosed_02"/>
+                    <include name="txnStatusInvalid_03"/>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatusInit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40231 for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="v1/TxnStatus LastFourDigits Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests">
+                <methods>
+                    <include name="ValidateLASTFOURDIGITSSuccessTxn1"/>
+                    <include name="ValidateLASTFOURDIGITSFailureTxn2"/>
+                    <include name="ValidateLASTFOURDIGITSPendingTxn3"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentSuccessTxn4"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentFailureTxn5"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentPendingTxn6"/>
+                    <include name="ValidateLASTFOURDIGITSPresentSuccessTINTxn7"/>
+                    <include name="ValidateLASTFOURDIGITSPresentFailureTINTxn8"/>
+                    <include name="ValidateLASTFOURDIGITSPresentPendingTINTxn9"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentSuccessTINTxn10"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentFailureTINTxn11"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentPendingTINTxn12"/>
+                    <include name="ValidateLASTFOURDIGITSPresentSUCCESSTOKENTxn13"/>
+                    <include name="ValidateLASTFOURDIGITSPresentPendingTOKENTxn14"/>
+                    <include name="ValidateLASTFOURDIGITSPresentFailureTOKENTxn15"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentSuccessTOKENTxn16"/>
+                    <include name="ValidateLASTFOURDIGITSNotPresentFailureTOKENTxn17"/>
+                    <include name="ValidateLASTFOURDIGITSPresentEMITxn18"/>
+                    <include name="ValidateLASTFOURDIGITSPresentEMITxn19"/>
+                    <include name="ValidateLASTFOURDIGITSPresentEMITxn20"/>
+                    <exclude name="verifyTransactionStatusinHybridPendingUPITxn"/>
+                    <exclude name="verifyTransactionStatusinHybridSuccessUPITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49402">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="UDFParams_PEON_RequestType_NATIVE_FF4J_True"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify  Nick Name characters substring">
+        <classes>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateNickName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="ChargeFeeOnAddMoneycases">-->
+<!--        <classes>-->
+<!--            <class name="scripts.ChargeFeeOnAddMoney">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="Merchant Center client Id">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="validateLoginQRClientIdfromMerchantCenter"/>
+                    <include name="validateLoginQRClientIdfromCache"/>
+                    <include name="validateLoginQRClientIdfromCacheUPI"/>
+                    <include name="validateLoginQRClientIdnotPresentonMerchantCenter"/>
+                    <include name="validateLoginQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-52001 : Scan and Pay | Location not available in Passbook for iOS txns">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="TC01_PGP_52001"/>
+                    <include name="TC02_PGP_52001"/>
+                    <include name="TC03_PGP_52001"/>
+                    <include name="TC04_PGP_52001"/>
+                    <include name="TC05_PGP_52001"/>
+                    <include name="TC06_PGP_52001"/>
+                    <include name="TC07_PGP_52001"/>
+                    <include name="TC08_PGP_52001"/>
+                    <include name="TC09_PGP_52001"/>
+                    <include name="TC10_PGP_52001"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CC on UPI - BIN Details in Order status API">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="validateBinNumberforgetTxnStatusApiwithUPIIntentforUpiCreditCard"/>
+                    <include name="validateBinNumberforgetTxnStatusApiwithUPICollectforUpiCreditCard"/>
+                    <include name="validateBinNumberforgetPaymentStatusApiwithUPIIntentforUpiCreditCard"/>
+                    <include name="validateBinNumberforgetPaymentStatusApiwithUPICollectforUpiCreditCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Remitter Bank Field Name is MS APIs">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="verifyThatRemitterBankNameDetailsIsShowngetPaymentStatus"/>
+                    <include name="verifyThatRemitterBankNameDetailsIsShowngetTxnStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+      <test name="PG-1776">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="verifyTxnPaidTimeInMerchantStatusForSuccessTxn"/>
+                    <include name="verifyTxnPaidTimeInMerchantStatusForFailureTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="Validate final payment amount for Upi Intent PCF">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateFinalPaymentAmountForUpiIntentPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

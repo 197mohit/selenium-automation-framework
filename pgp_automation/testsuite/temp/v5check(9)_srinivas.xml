@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS web fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="verifyStandardEMIEmiInfo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,545 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "clientId",
+        "responseTimestamp",
+        "requestId",
+        "mid",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "clientId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        },
+        "requestId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "mid": {
+          "type": "string",
+          "minLength": 1
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "orderId",
+        "paymentMode",
+        "custId",
+        "bankName",
+        "extendInfo",
+        "merchantInfo",
+        "prn",
+        "resultInfo",
+        "txnAmount",
+        "txnId"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "orderId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "paymentMode": {
+          "enum": [
+            "PPI"
+          ]
+        },
+        "custId": {
+          "type": "string",
+          "minLength": 1
+        },
+        "bankTxnId": {
+          "pattern": "^[0-9]+$"
+        },
+        "bankName": {
+          "enum": [
+            "WALLET"
+          ]
+        },
+        "extendInfo": {
+          "type": "object",
+          "required": [
+            "totalTxnAmount",
+            "CUST_ID",
+            "preDebitRenewal",
+            "graceDays",
+            "PAYTM_USER_ID",
+            "merchantAddress.cityName",
+            "merchantAddress.address1",
+            "isEnhancedNative",
+            "communicationManager",
+            "merchantName",
+            "isMerchantLimitUpdatedForPay",
+            "mccCode",
+            "merchantUniqueReference",
+            "linkBasedInvoicePayment",
+            "topupAndPay",
+            "isMerchantLimitEnabledForPay",
+            "userMobile",
+            "aoaSubsOnPgMid",
+            "clientIP",
+            "additionalInfo",
+            "merchantAddress.countryName",
+            "merchantOnPaytm",
+            "callBackURL",
+            "payerDeviceId",
+            "requestType",
+            "merchantLimitEnabled",
+            "udf1",
+            "udf2",
+            "udf3",
+            "merchantLimitUpdated",
+            "merchantAddress.zipCode",
+            "subsRenewOrderAlreadyCreated",
+            "linkBasedNonInvoicePayment",
+            "offlineFlow",
+            "productCode",
+            "merchantAddress.areaName",
+            "merchantPhone",
+            "merchantAddress.stateName",
+            "merchantAddress.address2",
+            "merchantTransId",
+            "custID",
+            "paytmMerchantId",
+            "autoRenewal",
+            "autoRetry",
+            "cardTokenRequired",
+            "flowType",
+            "enhancedNative",
+            "checkoutJsAppInvokePayment",
+            "paymodeIdentifier",
+            "pushDataToDynamicQR",
+            "platformFallbackDisabled",
+            "fromAoaMerchant"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "totalTxnAmount": {
+              "pattern": "^[0-9]+(\\.[0-9]{1,2})?$"
+            },
+            "ROUTE": {
+              "type": "string"
+            },
+            "aoaSubsOnPgMid": {
+              "type": "string"
+            },
+            "platformFallbackDisabled": {
+              "type": "string"
+            },
+            "CUST_ID": {
+              "type": "string",
+              "minLength": 1
+            },
+            "preDebitRenewal": {
+              "enum": [
+                "false"
+              ]
+            },
+            "graceDays": {
+              "enum": [
+                "0"
+              ]
+            },
+            "PAYTM_USER_ID": {
+              "pattern": "^[0-9]+$"
+            },
+            "merchantAddress.cityName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "merchantAddress.address1": {
+              "type": "string",
+              "minLength": 1
+            },
+            "isEnhancedNative": {
+              "enum": [
+                "false"
+              ]
+            },
+            "communicationManager": {
+              "enum": [
+                "false"
+              ]
+            },
+            "merchantName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "isMerchantLimitUpdatedForPay": {
+              "enum": [
+                "false"
+              ]
+            },
+            "mccCode": {
+              "type": "string",
+              "minLength": 1
+            },
+            "merchantUniqueReference": {
+              "type": "string"
+            },
+            "linkBasedInvoicePayment": {
+              "enum": [
+                "false"
+              ]
+            },
+            "topupAndPay": {
+              "enum": [
+                "false"
+              ]
+            },
+            "isMerchantLimitEnabledForPay": {
+              "enum": [
+                "false"
+              ]
+            },
+            "userMobile": {
+              "pattern": "^[0-9]+$"
+            },
+            "clientIP": {
+              "type": "string",
+              "minLength": 1
+            },
+            "additionalInfo": {
+              "type": "string"
+            },
+            "alipayMerchantId": {
+              "pattern": "^[a-zA-Z0-9]*$"
+            },
+            "merchantAddress.countryName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "merchantOnPaytm": {
+              "enum": [
+                "false",
+                "true"
+              ]
+            },
+            "callBackURL": {
+              "type": "string",
+              "minLength": 1
+            },
+            "payerDeviceId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "requestType": {
+              "enum": [
+                "OFFLINE"
+              ]
+            },
+            "merchantLimitEnabled": {
+              "enum": [
+                "false"
+              ]
+            },
+            "udf1": {
+              "type": "string",
+              "minLength": 1
+            },
+            "udf2": {
+              "type": "string",
+              "minLength": 1
+            },
+            "udf3": {
+              "type": "string",
+              "minLength": 1
+            },
+            "merchantLimitUpdated": {
+              "enum": [
+                "false"
+              ]
+            },
+            "merchantAddress.zipCode": {
+              "pattern": "[0-9]{6}"
+            },
+            "subsRenewOrderAlreadyCreated": {
+              "enum": [
+                "false"
+              ]
+            },
+            "linkBasedNonInvoicePayment": {
+              "enum": [
+                "false"
+              ]
+            },
+            "offlineFlow": {
+              "enum": [
+                "false"
+              ]
+            },
+            "productCode": {
+              "pattern": "[0-9]+"
+            },
+            "merchantAddress.areaName": {
+              "type": "string"
+            },
+            "merchantPhone": {
+              "pattern": "91-[0-9]{10}"
+            },
+            "merchantAddress.stateName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "merchantAddress.address2": {
+              "type": "string",
+              "minLength": 1
+            },
+            "merchantTransId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "custID": {
+              "type": "string",
+              "minLength": 1
+            },
+            "paytmMerchantId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "autoRenewal": {
+              "enum": [
+                "false"
+              ]
+            },
+            "autoRetry": {
+              "enum": [
+                "false"
+              ]
+            },
+            "cardTokenRequired": {
+              "enum": [
+                "false"
+              ]
+            },
+            "flowType": {
+              "enum": [
+                "TRANSACTION"
+              ]
+            },
+            "enhancedNative": {
+              "enum": [
+                "false"
+              ]
+            },
+            "merchantKybId": {
+              "type": "string",
+              "minLength": 1
+            },
+            "checkoutJsAppInvokePayment": {
+              "type": "string"
+            },
+            "paymodeIdentifier": {
+              "type": "string"
+            },
+            "pushDataToDynamicQR": {
+              "type": "string"
+            },
+            "fromAoaMerchant": {
+              "type": "string"
+            }
+          }
+        },
+        "merchantInfo": {
+          "type": "object",
+          "required": [
+            "mccCode",
+            "address",
+            "phone",
+            "name"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "mccCode": {
+              "type": "string",
+              "minLength": 1
+            },
+            "address": {
+              "type": "object",
+              "required": [
+                "zipCode",
+                "cityName",
+                "address1",
+                "address2",
+                "areaName",
+                "stateName",
+                "countryName"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "zipCode": {
+                  "pattern": "^[0-9]{6}$"
+                },
+                "cityName": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "address1": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "address2": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "areaName": {
+                  "type": "string"
+                },
+                "stateName": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "countryName": {
+                  "pattern": "^[a-zA-Z0-9]*$"
+                }
+              }
+            },
+            "phone": {
+              "pattern": "^91-[0-9]{10}$"
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "prn": {
+          "enum": [
+            ""
+          ]
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "TXN_SUCCESS",
+                "TXN_FAILURE"
+              ]
+            },
+            "resultCode": {
+              "enum": [
+                "01",
+                "235"
+              ]
+            },
+            "resultMsg": {
+              "enum": [
+                "Txn Successful.",
+                "Wallet balance Insufficient"
+              ]
+            }
+          }
+        },
+        "txnAmount": {
+          "pattern": "^[0-9]+(\\.[0-9]{1,2})?$"
+        },
+        "txnId": {
+          "pattern": "^[0-9]+$"
+        },
+        "retryInfo": {
+          "type": "object",
+          "required": [
+            "blockerMessage",
+            "merchantName",
+            "failureLogo",
+            "failureHeader",
+            "failureMessage",
+            "failureType",
+            "popupEnable",
+            "buttons"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "blockerMessage": {
+              "enum": [
+                "Your payment has been failed due to wallet Balance Insufficient"
+              ]
+            },
+            "merchantName": {
+              "type": "string",
+              "minLength": 1
+            },
+            "failureLogo": {
+              "type": "string",
+              "minLength": 1
+            },
+            "failureHeader": {
+              "enum": [
+                "Payment Failed"
+              ]
+            },
+            "failureMessage": {
+              "enum": [
+                "Balance Not Enough"
+              ]
+            },
+            "failureType": {
+              "enum": [
+                "MODIFY"
+              ]
+            },
+            "popupEnable": {
+              "enum": [
+                true
+              ]
+            },
+            "buttons": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "text",
+                  "buttonAction"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "text": {
+                    "enum": [
+                      "Retry Payment",
+                      "Use other payment options "
+                    ]
+                  },
+                  "buttonAction": {
+                    "enum": [
+                      "PROCEED_TO_PAY",
+                      "BACK_TO_CASHIER"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

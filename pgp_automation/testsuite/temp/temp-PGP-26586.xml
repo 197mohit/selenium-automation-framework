@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-26586" parallel="methods" thread-count="20">
+    <test name="PGP-26586">
+        <classes>
+            <class name="scripts.api.merchantStatus.txnStatusApp.SSOTokenTxnStatusAppTest"/>
+            <class name="scripts.api.merchantStatus.txnStatusListApp.SSOTokenTxnStatusListAppTest"/>
+            <class name="scripts.api.theia.validateRefId.SSOTokenValidateRefIdTest"/>
+        </classes>
+    </test>
+</suite>

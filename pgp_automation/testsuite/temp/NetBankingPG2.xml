@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="NetBankingPG2">
+    <test name="Net Banking test cases">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validateSuccessNBTxnPG2MID"/>
+                    <include name="validatePendingNBTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validatePendingNBTxnPG2MIDCloseOrderV2ThenCheckMerchantStatus"/>
+                    <include name="userNotPrsentInFF4JNBTxnRoutedToPPlus"/>
+                    <include name="midNotPrsentInFF4JButPrefEnabledNBRoutedToPG2PendingTxn"/>
+                    <include name="userPrsentMidNotPresentInFF4JNBTxnRoutedToPPlus"/>
+                    <include name="validateCOPFullTrafficPendingNBTxnPG2MID"/>
+                    <include name="validateFullTrafficCOPSuccessNBTxn"/>
+                    <include name="validateFullTrafficCOTPPendingNBTxn"/>
+                    <include name="validateFullTrafficCOTPSuccessNBTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLSuccessCheckoutJSPageTxn"/>
+                    <include name="validateSuccessNBTxnPG2ENABLEDPref"/>
+                    <include name="validateSuccessHDFCNBTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

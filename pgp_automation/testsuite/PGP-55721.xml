@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subcription on link" verbose="1">
+    <test name="Update Next Billing Date Label on Subscription Link Landing Page">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Subscription_link_Date_UI_001"/>
+                    <include name="Subscription_link_Date_UI_002"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

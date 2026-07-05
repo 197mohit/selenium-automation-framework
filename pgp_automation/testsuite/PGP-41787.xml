@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-41787" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-41787 for CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_41787_TC01"/>
+                    <include name="PGP_41787_TC02"/>
+                    <include name="PGP_41787_TC03"/>
+                    <include name="PGP_41787_TC04"/>
+                    <include name="PGP_41787_TC05"/>
+                    <include name="PGP_41787_TC06"/>
+                    <include name="PGP_41787_TC07"/>
+                    <include name="PGP_41787_TC08"/>
+                    <include name="PGP_41787_TC09"/>
+                    <include name="PGP_41787_TC10"/>
+                    <include name="PGP_41787_TC11"/>
+                    <include name="PGP_41787_TC12"/>
+                    <include name="PGP_41787_TC13"/>
+                    <include name="PGP_41787_TC14"/>
+                    <include name="PGP_41787_TC15"/>
+                    <include name="PGP_41787_TC16"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41787 for CheckoutJSonEnhanced">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="PGP_41787_TC01"/>
+                    <include name="PGP_41787_TC02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41787 for Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_41787_TC01"/>
+                    <include name="PGP_41787_TC02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

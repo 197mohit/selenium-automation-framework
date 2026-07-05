@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" verbose="1">
+    <test name="SmokeTest with enhancedCashier Theme" parallel="methods" thread-count="20">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SmokeTest with merchant4 Theme" parallel="methods" thread-count="20">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                </methods>
+            </class>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_CC_S"/>
+                </methods>
+            </class>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_S_withoutBalance"/>
+                </methods>
+            </class>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="PGP_178_successfulOnusEMITxn"/>
+                </methods>
+            </class>
+
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="PGP_236_successfulIVRTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                </methods>
+            </class>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="PGP_successfulPtmX2pressCC"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountConfigured"/>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                </methods>
+            </class>
+            <class name="scripts.PostConvenience">
+                <methods>
+                    <parameter name="theme" value="enhancedweb"/>
+                    <include name="PGP_408_successfulPostConvTxnUsingWallet"/>
+                </methods>
+            </class>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                </methods>
+            </class>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="PGP_359_successfulSeamlessNativeCC"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_24_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                </methods>
+            </class>
+            <class name="scripts.TopUpExpress">
+                <methods>
+                    <include name="PGP_407_successfulTopupXpressCC"/>
+                </methods>
+            </class>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <parameter name="theme" value="enhancedweb"/>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.Refund">
+                <methods>
+                    <parameter name="theme" value="enhancedweb"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                </methods>
+            </class>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <parameter name="theme" value="enhancedweb"/>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_001"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <include name="PGP_192_verifySuccessfulRenewalOnSubsViaCC"/>
+                </methods>
+            </class>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <parameter name="theme" value="enhancedweb"/>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                </methods>
+            </class>
+            <!--<class name="scripts.LinkBasePayment">
+                <methods>
+                    <include name="PGPM_855_successfulLinkBasedPaymentThroughWalletOnly"/>
+                </methods>
+            </class>-->
+        </classes>
+    </test>
+</suite>
+
+
+
+
+

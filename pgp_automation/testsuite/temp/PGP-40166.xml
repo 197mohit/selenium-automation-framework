@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39255 " verbose="1" thread-count="3">
+    <test name="PGP-39255 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_39255_TC_01"/>
+                    <include name="PGP_39255_TC_02"/>
+                    <include name="PGP_39255_TC_03"/>
+                    <include name="PGP_39255_TC_04"/>
+                    <include name="PGP_39255_TC_05"/>
+                    <include name="PGP_39255_TC_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-39255 - 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_39255_TC_07"/>
+                    <include name="PGP_39255_TC_08"/>
+                    <include name="PGP_39255_TC_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

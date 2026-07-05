@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="KYB Limit">
+    <test name="KYB Limit">
+        <classes>
+            <class name="scripts.MerchantLimtiCenter">
+                <methods>
+                    <include name="validateKYBDailyLimit"/>
+                    <include name="validateKYBMonthlyLimit"/>
+                    <include name="validateKYBNoLimitExceed"/>
+                    <include name="validateKYBDailyLimitAmount20001"/>
+                    <include name="validateKYBMonthlyLimitAmount30001"/>
+                    <include name="validateKYBNoLimitExceedAmount20"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

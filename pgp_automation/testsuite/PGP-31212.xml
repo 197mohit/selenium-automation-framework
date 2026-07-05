@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Link Payment" verbose="1">
+    <test name="Link Payment">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUPINotVisibleOnLinkPaymentCashierPage"/>
+                    <include name="ValidateSuccessfulLinkPayment"/>
+                    <include name="VerifyUPINotVisibleNative_MFCashierPage"/>
+                    <include name="VerifyUPINotVisibleInvoiceLinkCashierPage"/>
+                    <include name="ValidateSuccessfulNativeMFLinkPayment"/>
+                    <include name="VerifyUPINotVisibleNative_STCashierPage"/>
+                    <include name="ValidateSuccessfulNativeSTLinkPayment"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

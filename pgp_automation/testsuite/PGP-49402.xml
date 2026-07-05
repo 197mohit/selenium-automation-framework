@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49402" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-49402">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="UDFParams_PEON_RequestType_NATIVE_FF4J_True"/>
+                    <include name="UDFParams_PEON_RequestType_NATIVE_MF_FF4J_True"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

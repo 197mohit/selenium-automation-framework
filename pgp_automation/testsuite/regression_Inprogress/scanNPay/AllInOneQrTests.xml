@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AllInOneQrTests" verbose="1" parallel="tests" thread-count="10">
+    <test name="temp-ScanNpay All in 1 QR tests">
+        <classes>
+            <class name="scripts.scanNPay.AllInOneQrTests"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AllowedTpap QR Create Tests Suite" verbose="1">
+    <test name="AllowedTpap QR Create API Tests">
+        <classes>
+            <class name="scripts.UPI.OfflineUpi.AllowedTpapQRCreateTests"> </class>
+            <class name="scripts.UPI.OfflineUpi.AllowedTpapQRCreatePPSLTests"></class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R5">
+    <suite-files>
+        <suite-file path="misc.xml"/>
+        <suite-file path="savedcard.xml"/>
+        <suite-file path="gv.xml"/>
+        <suite-file path="sts.xml"/>
+    </suite-files>
+</suite>

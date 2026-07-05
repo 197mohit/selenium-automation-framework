@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Save_Card_Suite" parallel="tests" thread-count="2">
+   <test name="Saved Card API cases">
+       <classes>
+           <class name="scripts.PGOnly">
+           <methods>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+
+            </methods>
+           </class>
+           <class name="scripts.coft.theia.IssuerTokenizationOnGuestCheckout">
+                <methods>
+                    <include name="issuerTokenGuestCheckoutAxis"/>
+                    <include name="issuerTokenGuestCheckoutHDFC"/>
+                    <include name="issuerTokenGuestCheckoutICICI"/>
+                </methods>
+           </class>
+       </classes>
+   </test>
+<!--    <test name="Saved Card FPO">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+</suite>

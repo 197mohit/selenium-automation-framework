@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28522 UPI Refund payment service test" verbose="1" parallel="methods">
+    <test name="CheckoutJS Tests with NativeJSONRequest N">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="Validate_PaymentServiceTypeNative_Subs_FullRefund"/>
+                    <include name="Validate_PaymentServiceTypeNative_Subs_PartialRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Redirection fixes" verbose="1">
+    <test name="Redirection fixes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforCC"/>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforDC"/>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R1">
+    <listeners>
+        <listener class-name="com.paytm.listeners.MasterReport"></listener>
+    </listeners>
+    <suite-files>
+        <suite-file path="Testng1.xml"/>
+        <suite-file path="Testng3.xml"/>
+    </suite-files>
+</suite>

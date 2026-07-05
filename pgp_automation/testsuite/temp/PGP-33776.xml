@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33776" verbose="1">
+    <test name="Validate pay on bank otp page for native transaction via CC.">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.NativePaycall">
+                <methods>
+                    <include name="payOnBankForNativeTxnCCPayMode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

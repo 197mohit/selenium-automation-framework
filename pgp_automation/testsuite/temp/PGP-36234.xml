@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutjsTests"  verbose="1">
+    <test name="verifying net banking logos">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyBankLogoforNB_TXN"/>
+                    <include name="VerifyBankLogoforNB_RETRY_TXN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

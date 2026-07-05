@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Checkoutjs_Suite" verbose="1" parallel="methods" thread-count="4">
+    <test name="Card Shortcut">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.CardShortInFPO">
+                <methods>
+                    <include name="VISA_shortcut_Offus"/>
+                    <include name="DINERS_shortcut_offus"/>
+                    <include name="DINERS_shortcutFor_ONUS"/>
+                    <include name="VISA_shortcut_JSCHECKOUT"/>
+                    <include name="VISA_shortcut_Offus_On_JSCheckout"/>
+                    <include name="SaveCardOn_shortcut_Txn_JSCheckout"/>
+                    <include name="SUCCESS_TXN_WITH_TOKEN_ON_JSCheckout"/>
+                    <include name="MASTER_shortcutFor_ONUS_ON_JSCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35337" verbose="1">
+    <test name="Verify enter Paytm Bank Passcode message">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePPBLPasscodeTxt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify enter Paytm Bank Passcode message on enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="ValidatePPBLPasscodeTxt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

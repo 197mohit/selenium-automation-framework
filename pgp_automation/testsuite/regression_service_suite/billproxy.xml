@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Billproxy_Suite" verbose="1" thread-count="10" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="CCBillPayment on EnhancedWeb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_464_ccBillPaymentViaNB"/>
+                    <include name="PGP_465_ccBillPaymentViaDC"/>
+                    <include name="validateCCBillPaymentUsingDC"/>
+
+                    <include name="validateCCBillPaymentUsingRetryDC"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CCBillPayment on EnhancedWap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="payMode" value="CC"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_464_ccBillPaymentViaNB"/>
+                    <include name="PGP_465_ccBillPaymentViaDC"/>
+                    <include name="validateCCBillPaymentUsingDC"/>
+
+                    <include name="validateCCBillPaymentUsingRetryDC"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-CheckEligibilityCINTest">
+        <classes>
+            <class name="scripts.CCBillPayments.CheckEligibilityUsingCINTest"/>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-CheckEligibilityTINTest">
+        <classes>
+            <class name="scripts.CCBillPayments.CheckEligibilityUsingTINTest">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="checkEligibiltyFailureForMasterTIN"/>
+                    <exclude name="checkEligibiltySuccessForExpiredToken"/>
+                    <exclude name="checkEligibiltySuccessForTIN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-FetchBinTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FetchBinTest"/>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-FulfilmentTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FulfilmentTest"/>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-FulfilmentTestUsingTIN">
+        <classes>
+            <class name="scripts.CCBillPayments.FulfilmentUsinTIN">
+                <methods>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="FailureFulfilmentForTIN"/>
+                    <exclude name="FulfilmentForExpiredTIN"/>
+                    <exclude name="PendingFulfilmentForTIN"/>
+                    <exclude name="SuccessFulfilmentForTIN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-StatusCheckTestUsingCIN">
+        <classes>
+            <class name="scripts.CCBillPayments.StatusCheckTest"/>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-StatusCheckTestUsingTIN">
+        <classes>
+            <class name="scripts.CCBillPayments.StatusCheckTIN">
+                <methods>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="FailureStatusQueryForTIN"/>
+                    <exclude name="StatusQueryForExpiredTIN"/>
+                    <exclude name="PendingStatusQueryForTIN"/>
+                    <exclude name="SuccessStatusQueryForTIN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-CardTokenizeTest">
+        <classes>
+            <class name="scripts.CCBillPayments.CardTokenizeTest">
+                <methods>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="cardTokenizeUsingValidCreditCardId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Check Display Message Tests - Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_17782_ValidateSingleQuotesinRespMsgReplacedWithBlanks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Check Display Message Tests - Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_17782_ValidateSingleQuotesinRespMsgReplacedWithBlanks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32476 - CC Variant Test Cases">
+        <classes>
+            <class name="scripts.CCVariant.CCVariantTest"/>
+        </classes>
+    </test>
+
+</suite>

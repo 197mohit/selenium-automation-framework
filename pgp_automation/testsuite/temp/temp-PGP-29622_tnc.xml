@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29622-tncurl"  verbose="1" parallel="methods" thread-count="1">
+
+    <test name="tncUrl in apply promo response controlled by ff4j">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateTncUrlNotPresentInApplyPromoForCashbackPromo"/>
+                    <include name="ValidateTncUrlPresentInApplyPromoForCashbackPromo"/>
+                    <include name="ValidateTncUrlNotPresentInApplyPromoForDiscountPromo"/>
+                    <include name="ValidateTncUrlPresentInApplyPromoForDiscountPromo"/>
+                </methods>
+            </class>
+
+            <class name="scripts.flows.NativeTest">
+                <methods>
+                    <include name="test if tncUrl not present in apply promo response if ff4j flag OFF"/>
+                </methods>
+            </class>
+
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="test if tncUrl present in apply promo response if ff4j flag ON"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

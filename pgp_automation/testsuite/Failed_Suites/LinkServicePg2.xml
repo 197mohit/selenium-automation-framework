@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LinkServicePG2_Failed" verbose="1" parallel="methods" thread-count="1">
+    <test thread-count="1" verbose="0" name="LinkServicePG2 with theme checkoutjs_web_revamp" parallel="methods">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.MaxAmountCheck">
+                <methods>
+                    <include name="MaxAmountCheckFixed_01"/>
+                    <include name="MaxAmountCheckInvoice_01"/>
+                    <include name="MaxAmountCheckPaymentBtn_01"/>
+                    <include name="MaxAmountCheck_Skip_Login_01"/>
+                    <include name="MaxAmountCheckGeneric_01"/>
+                </methods>
+            </class> <!-- scripts.api.linkservice.MaxAmountCheck -->
+            <class name="scripts.api.linkservice.KafkaMessagePayload">
+                <methods>
+                    <include name="MessagePayload_17"/>
+                    <include name="MessagePayload_15"/>
+                    <include name="MessagePayload_14"/>
+                    <include name="MessagePayload_02"/>
+                    <include name="MessagePayload_11"/>
+                </methods>
+            </class> <!-- scripts.api.linkservice.KafkaMessagePayload -->
+            <class name="scripts.api.linkservice.EnableDisablePayModesTest">
+                <methods>
+                    <include name="PaymodeEanbleDisable_07"/>
+                    <include name="PaymodeEanbleDisable_11"/>
+                </methods>
+            </class> <!-- scripts.api.linkservice.EnableDisablePayModesTest -->
+            <class name="scripts.api.linkservice.LinkTxnOneCrore">
+                <methods>
+                    <include name="Skip_Login_002_1"/>
+                    <include name="All_in1_002"/>
+                    <include name="Create_Order_002"/>
+                    <include name="All_in1_001"/>
+                    <include name="Create_Order_001"/>
+                    <include name="Create_Order_003"/>
+                    <include name="Skip_Login_002_2_OFFLINE"/>
+                    <include name="Skip_Login_003"/>
+                    <include name="Skip_Login_001"/>
+                    <include name="Merchant_Display_Name_for_GenericLink"/>
+                    <include name="All_in1_003_1"/>
+                    <include name="All_in1_003_2_OFFLINE"/>
+                    <include name="All_in1_003_2"/>
+                    <include name="Paymentform_01"/>
+                    <include name="Merchant_Display_Name_for_FixedLink"/>
+                    <include name="Paymentform_03"/>
+                    <include name="Skip_Login_002_2"/>
+                    <include name="Paymentform_02"/>
+                </methods>
+            </class> <!-- scripts.api.linkservice.LinkTxnOneCrore -->
+            <class name="scripts.api.linkservice.PaymentButtonsDisabled">
+                <methods>
+                    <include name="PaymentButton_08"/>
+                    <include name="PaymentButton_05"/>
+                </methods>
+            </class> <!-- scripts.api.linkservice.PaymentButtonsDisabled -->
+            <class name="scripts.api.linkservice.LocationPopUpTests">
+                <methods>
+                    <include name="locationPopUp_001"/>
+                </methods>
+            </class> <!-- scripts.api.linkservice.LocationPopUpTests -->
+        </classes>
+    </test> <!-- LinkServicePG2 with theme checkoutjs_web_revamp -->
+</suite> <!-- LinkServicePG2 -->

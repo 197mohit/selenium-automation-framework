@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-50552">
+    <test name="Verify fpo resp for subs txn">
+        <parameter name="theme" value="native"/>
+        <classes>
+            <class name="scripts.api.FPO.SubsUpiAutopay">
+                <methods>
+                    <include name="PPBLPresence_Flag_Off_MultipleAcct_Substxn"/>
+                    <include name="PPBLPresence_Flag_On_MultipleAcct_Substxn"/>
+                    <include name="PPBLPresence_Flag_Off_SingleAcct_Substxn"/>
+                    <include name="PPBLPresence_Flag_On_SingleAcct_Substxn"/>
+                    <include name="PPBLPresence_Flag_On_MultipleAcct_Addnpay"/>
+                    <include name="PPBLPresence_Flag_On_MultipleAcct_Normaltxn"/>
+                    <include name="PPBLPresence_Flag_Off_MultipleAcct_Addnpay"/>
+                    <include name="PPBLPresence_Flag_Off_MultipleAcct_Normaltxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

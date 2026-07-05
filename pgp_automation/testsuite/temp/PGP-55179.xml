@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-55179" verbose="1" preserve-order="true">
+    <test name="Verify expected parameters come in PTC response if UPI Push/Lite txn fails">
+        <parameter name="theme" value="nativeplus"/>
+         <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="ValidateIncorrectPinPTCResp_UPIPush_Pref_On"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPILite_Pref_On"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPIPush_Pref_Off"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPILite_Pref_Off"/>
+                    <include name="ValidateSuccessPTCResp_UPIPush_Pref_On"/>
+                    <include name="ValidateSuccessPTCResp_UPILite_Pref_On"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

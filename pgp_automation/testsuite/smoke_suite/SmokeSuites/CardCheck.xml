@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Card PreCheck" verbose="1" thread-count="20" parallel="tests">
+    <test name="Validate CardBins">
+        <classes>
+            <class name="scripts.api.binUpdate.BinUpdateVerify"/>
+        </classes>
+    </test>
+</suite>

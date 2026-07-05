@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-20306" parallel="methods" thread-count="20">
+    <test name="PGP-20306">
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="testCardIndexNoIsPresentInOutputWhenCardTokenRequiredIsTrueInOrder"/>
+                    <include name="testCardIndexNoIsAbsentInOutputWhenCardTokenRequiredIsFalseInOrder"/>
+                    <include name="testCardIndexNoIsAbsentInOutputWhenCardTokenRequiredParamIsNotPassedInOrder"/>
+                    <include name="testCardHashIsPresentInOutput"/>
+                </methods>
+            </class>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="testCardIndexNoIsPresentInOutputWhenCardTokenRequiredIsTrueInOrder"/>
+                    <include name="testCardIndexNoIsPresentInOutputWhenCardTokenRequiredIsFalseInOrder"/>
+                    <include name="testCardHashIsPresentInOutput"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

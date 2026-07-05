@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Logo Integration" verbose="1">
+    <test name="Logo Integration Tests" parallel="methods" thread-count="4">
+        <parameter name="theme" value="merchant"/>
+        <classes>
+            <class name="scripts.api.mappingService.logoIntegrationApi.UploadApi">
+            <methods>
+                <include name="uploadMerchant"/>
+                <include name="checkMerchant"/>
+                <include name="fetchMerchant"/>
+                <include name="deleteMerchant"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

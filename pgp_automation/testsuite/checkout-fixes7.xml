@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS 6 fixes" verbose="1" parallel="tests" thread-count="3">
+
+    <test name="CHECKOUTJS on web Test cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC11"/>
+                    <include name="verify_closed_wallet_user_error_message_when_all_paymodes_disabled_except_wallet"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs_subscription"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="ValidateSuccessTxnAddNPay"/>
+                    <include name="validate_vpa_msg_logs_addnpay"/>
+                    <include name="PGP_27624_ValidateUPITxnNativeJsonPrefN"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="verify_closed_wallet_user_error_message"/>
+                    <include name="ValidateSuccessTxnUsingUPI"/>
+                    <include name="ValidateHybridWalletAndUPITxnWithCashback"/>
+                    <include name="VerifyErrorMsgisshownforUPInotSupportingSubscription"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforUPITxnWithoutSpecificPromo"/>
+                    <include name="VerifyErrorMsgisshownforUPIotherthanPaytmOrBhim"/>
+                    <include name="validate_vpa_msg_logs_subscription"/>
+                    <include name="validate_vpa_msg_logs"/>
+                    <include name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <include name="validate_vpa_msg_AddnPay"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

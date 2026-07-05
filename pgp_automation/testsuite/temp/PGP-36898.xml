@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36898" verbose="1">
+    <test name="Validate CC pay button is inactive and Disable state message is disabled">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validate_DisablePaymodeonEnhance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

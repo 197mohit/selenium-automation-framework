@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38629" verbose="1" thread-count="10" parallel="tests">
+    <test name="Verify refererurl in">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.PaymentCashierPay.RefererUrl">
+                <methods>
+                    <include name="refererurlenhanced"/>
+                    <include name="refererurlappinvoke"/>
+                    <include name="refererurlenhacedCOP"/>
+                    <include name="refererurlappinvokeCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.PaymentCashierPay.RefererUrl">
+                <methods>
+                    <include name="refererurlcheckoutjs"/>
+                    <include name="refererurlcheckoutjsCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

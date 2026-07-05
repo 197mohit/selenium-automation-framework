@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-PGP-28186 Provide Support for product code in Emi details API" verbose="1" parallel="methods" thread-count="3">
+    <test name="Provide Support for product code in Emi details API test">
+        <classes>
+            <class name="scripts.api.theia.GetEmiDetails">
+                <methods>
+                    <include name="testThatEMIdetailsShouldBefetchedForProductCode51051000100000000001"/>
+                    <include name="testThatEMIdetailsShouldBefetchedForProductCode51051000100000000014"/>
+                    <include name="testThatEMIdetailsShouldBefetchedFor51051000100000000001ProductCodeWhenProductCodeIsNotProvidedInrequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-32152">
+    <test name="Verify while doing txn on CC/DC text successfully push dwh payload in the kafka topic payment_notify_dwh is present only once in notificationqueuehandler">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="Verifying_text_in_notificationqueuehandler"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

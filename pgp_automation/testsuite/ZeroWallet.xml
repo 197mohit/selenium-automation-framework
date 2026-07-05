@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WalletOnly" verbose="1" thread-count="4" parallel="tests">
+    <test name="Wallet Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="ZERO_WALLET_05"/>
+                    <include name="ZERO_WALLET_06"/>
+                    <include name="ZERO_WALLET_07"/>
+                    <include name="ZERO_WALLET_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Wallet Native">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="ZERO_WALLET_02"/>
+                    <include name="ZERO_WALLET_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Wallet checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="ZERO_WALLET_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

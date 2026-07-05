@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48406" verbose="1" parallel="methods" thread-count="5">
+    <test name="PGP-48406 with theme checkoutjs_web_revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+       <classes>
+           <class name="scripts.TxnFlowPushKafka">
+               <methods>
+                   <include name="validateFlowforCheckoutJsDCTxnAndtopicPushInKafka"/>
+                   <include name="validateFlowforCheckoutJsNBTxnAndtopicPushInKafka"/>
+                   <include name="validateFlowforCheckoutJsCCTxnAndtopicPushInKafka"/>
+                   <include name="validateFlowforCheckoutJsUPITxnAndtopicPushInKafka"/>
+                   <include name="validateSucessfullJsOnRedirectionDCTransaction"/>
+                   <include name="validateSucessfullJsOnRedirectionCCTransaction"/>
+                   <include name="validateSucessfullJsOnRedirectionUPITransaction"/>
+                   <include name="validateSucessfullJsOnRedirectionAppInvokeDCTransaction"/>
+                   <include name="validateSucessfullJsOnRedirectionAppInvokeCCTransaction"/>
+                   <include name="validateSucessfullJsOnRedirectionAppInvokeUPITransaction"/>
+               </methods>
+           </class>
+       </classes>
+    </test>
+    <test name="PGP-48406 with theme enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.TxnFlowPushKafka">
+                <methods>
+                    <include name="validateSucessfullStandardCheckoutCCTransaction"/>
+                    <include name="validateSucessfullStandardCheckoutDCTransaction"/>
+                    <include name="validateSucessfullStandardCheckoutNBTransaction"/>
+                    <include name="validateSucessfullStandardCheckoutUPITransaction"/>
+                    <include name="validateSucessfullStandardCheckoutAppInvokeDCTransaction"/>
+                    <include name="validateSucessfullStandardCheckoutAppInvokeCCTransaction"/>
+                    <include name="validateSucessfullStandardCheckoutAppInvokeUPITransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

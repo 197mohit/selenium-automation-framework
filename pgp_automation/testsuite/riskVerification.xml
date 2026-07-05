@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Functional_Regression" verbose="1" thread-count="3"
+       parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <test name="Risk Verification on Default Theme">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="PGP_260b_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="PGP_260c_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="PGP_260d_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="PGP_260e_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="PGP_260_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="PGP_01_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpsms"/>
+                    <include name="PGP_05_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpemail"/>
+                    <include name="PGP_08_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpemail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Risk Verification on WAP Theme">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="payMode" value="CC"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="PGP_260_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="PGP_26_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="PGP_03_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpsms"/>
+                    <include name="PGP_07_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpemail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Risk Verification Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="PGP_260c_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                    <include name="TC_PT_001_RISK"/>
+                    <include name="PGP_04_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpsms"/>
+                    <include name="PGP_08_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpemail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Risk Verification on WEB theme">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RiskReject">
+                <methods>
+                    <include name="PGP_02_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpsms"/>
+                    <include name="PGP_04_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpsms"/>
+                    <include name="PGP_06_successfulPGOnlyDCTxnWhenUserLoggedIn_Risk_otpemail"/>
+                    <include name="PGP_260a_successfulPGOnlyCCTxnWhenUserLoggedIn_Risk"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

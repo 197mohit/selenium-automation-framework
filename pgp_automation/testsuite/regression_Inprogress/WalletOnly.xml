@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WalletOnly" verbose="1" parallel="tests" thread-count="10">
+    <test name="WalletOnly with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                    <include name="PGP_160_failureWalletOnlyTxnWithZeroAmount"/>
+                    <include name="PGP_161_failureWalletOnlyTxnWithNegativeAmount"/>
+                    <include name="PGP_162_failureWalletOnlyTxnWithFractionAmountLTOne"/>
+                    <!--<include name="PGP_164_successfulWalletOnlyTxnWithOtherUser"/>--><!--commented as this are still to be automated-->
+                    <include name="PGP_165_failedWalletOnlyTxnWithBlockedTxnAmnt"/>
+                    <!--<include name="PGP_166_walletOnlyTxnWithMobileAutoPopulated"/>--><!--commented as this are still to be automated-->
+                    <!--<include name="PGP_167_walletOnlyTxnWithEmailIDAutoPopulated"/>--><!--commented as this are still to be automated-->
+                    <!--<include name="PGP_168_walletOnlyTxnWithMobileAutoPopulatedInCaseOfBothPresent"/>--><!--commented as this are still to be automated-->
+                    <include name="PGP_159_successfulWalletOnlyTxnInFractionGTOne"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="WalletOnly-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                    <include name="PGP_160_failureWalletOnlyTxnWithZeroAmount"/>
+                    <include name="PGP_161_failureWalletOnlyTxnWithNegativeAmount"/>
+                    <include name="PGP_162_failureWalletOnlyTxnWithFractionAmountLTOne"/>
+                    <include name="PGP_159_successfulWalletOnlyTxnInFractionGTOne"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-21561">
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R11">
+    <suite-files>
+        <suite-file path="theia_pg2.xml"/>
+        <suite-file path="emi_pg2.xml"/>
+        <suite-file path="checkoutjs_pg2.xml"/>
+        <suite-file path="notification_pg2.xml"/>
+        <suite-file path="savedcard_pg2.xml"/>
+        <suite-file path="subscription_pg2.xml"/>
+        <suite-file path="qr_pg2.xml"/>
+        <suite-file path="promo_pg2.xml"/>
+        <suite-file path="redirection_pg2.xml"/>
+        <suite-file path="ElementJs_pg2.xml"/>
+        <suite-file path="MerchantStatus_pg2.xml"/>
+    </suite-files>
+</suite>

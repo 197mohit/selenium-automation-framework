@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EdcEmiLink-set bin in apply req" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-57869">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+            <methods>
+                <include name="cardBinInApplyReq"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

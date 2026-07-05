@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/Response"
+        },
+        "bankDetailsList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/BankDetailsList"
+          }
+        }
+      },
+      "required": [
+        "bankDetailsList",
+        "response"
+      ],
+      "title": "Root"
+    },
+    "BankDetailsList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "bankName": {
+          "type": "string"
+        },
+        "bankCode": {
+          "type": "string"
+        },
+        "logoUrl": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bankCode",
+        "bankName",
+        "displayName",
+        "logoUrl"
+      ],
+      "title": "BankDetailsList"
+    },
+    "Response": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resultCode": {
+          "type": "string",
+          "enum": [
+            "00000"
+          ]
+        },
+        "resultStatus": {
+          "type": "string",
+          "enum": [
+            "S"
+          ]
+        },
+        "messaage": {
+          "type": "string",
+          "enum": [
+            "Success"
+          ]
+        }
+      },
+      "required": [
+        "messaage",
+        "resultCode",
+        "resultStatus"
+      ],
+      "title": "Response"
+    }
+  }
+}

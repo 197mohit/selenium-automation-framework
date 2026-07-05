@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-44577" verbose="1" parallel="methods" thread-count="5">
+    <test name="PGP-44577 UPI Intent Retry">
+        <classes>
+            <class name="scripts.api.UPI.UPI_Intent_Disable">
+                <methods>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_MWeb()"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_MWeb"/>
+                    <include name="UPI_INTENTEnabled_FPOV5_IOS_MWeb_nullWorkFlow"/>
+                    <include name="UPI_INTENTEnabled_FPOV5_Andriod_MWeb_nullWorkFlow"/>
+
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_APP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

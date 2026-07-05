@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-Payment_retry" verbose="1" parallel="methods"
+       thread-count="2">
+    <parameter name="browser" value="chrome"/>
+    <test name="Payment Retry Info for Wallet txn">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalance"/>
+                    <include name="validateResultInfoForpaymentRetryDueToInsufficientWalletBalanceWhenRetryNotPresentMerchant"/>
+                </methods>
+            </class>
+            <class name="scripts.StaticQR">
+                <methods>
+                    <include name="validateRetryInfoWalletRetryMerchantOfflineTxn"/>
+                    <include name="validateRetryInfoNotPresentForWalletWithoutRetryMerchantOfflineTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

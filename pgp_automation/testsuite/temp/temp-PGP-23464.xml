@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-23464 Merchant UPI polling Native" verbose="1">
+    <test name="Native UPI polling Tests" parallel="methods" thread-count="4">
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests"/>
+        </classes>
+    </test>
+</suite>

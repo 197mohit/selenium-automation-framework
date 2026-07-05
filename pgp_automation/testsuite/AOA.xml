@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-AOA" verbose="1" parallel="methods" thread-count="5">
+    <test name="AOA Merchant Creation API's">
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifyingDelete_Acquiring_API"></include>
+                    <include name="verifyingQuery_Acquiring_API"></include>
+                    <include name="verifyingAddAcquiringAPI_UPI"></include>
+                    <include name="verifyingAddAcquiringAPI_WALLET"></include>
+                    <include name="verifyingAddAcquiringAPI_CREDIT_CARD"></include>
+                    <include name="verifyingAddAcquiringAPI_DEBIT_CARD"></include>
+                    <include name="verifyingAdd_CC_BILLDESK_GatewayAPI"></include>
+                    <include name="verifyingAdd_CC_AVENUE_GatewayAPI"></include>
+                    <include name="verifyingAdd_PAY_U_GatewayAPI"></include>
+                    <include name="verifying_ADD_PAYTM_PG_GatewayAPI"></include>
+                    <include name="verifyingAddMerchantAPI"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AOA Merchant Transactions CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Successful_CC_TXN_"></include>
+                    <include name="verifying_Successful_DC_TXN_"></include>
+                    <include name="verifying_Successful_DirectOTP_BANK_TXN"></include>
+                    <include name="verifying_Failed_DirectOTP_BANK_TXN"></include>
+                    <include name="verifying_FailureTxn_VIA_Cancelling_BankPage"></include>
+                    <include name="verifying_toUseDirectPayment_Flag_in_DirectOTP_BANK_TXN"></include>
+                    <include name="verifying_formAOARequest_Flag_in_DirectOTP_BANK_TXN"></include>
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AOA Merchant Transaction Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Successful_CC_TXN_NATIVEPLUS"></include>
+                    <include name="verifying_Successful_DC_TXN_NATIVEPLUS"></include>
+                    <include name="verifying_Failure_DirectOTP_BANK_TXN_CheckoutJS"></include>
+                    <include name="verifying_Successful_DC_TXN_NATIVEPLUS"></include>
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AOA Merchant Transaction CheckoutJS element Page">
+        <parameter name="checkoutjse_web" value="true"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Successful_DirectOTP_BANK_TXN_CheckoutJS_Element"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJsEMINewFlowTest" verbose="1">
+    <test name="Restricted Tenures">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="RestrictedTenuresPassedInInitiateRequestWillLeadToSuccessTxnForCorrectTenuresInProcessTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="verifyOriginalCardHashForStandardEMIUsingRupayCardScheme"/>
+                    <include name="verifyOriginalCardHashForStandardFlowUsingVISACardScheme"/>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBankEMICaseForSingleOffer"/>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBrandEMICaseForMultipleOffer"/>
+                    <include name="subventionPercentInOrderModify"/>
+                    <include name="cardBinInApplyReq"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI PSP Consult Confee less than base amount Validation" verbose="1">
+    <test name="UPI PSP Consult Confee less than base amount Validation">
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeelessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpisavingsfee0lessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeeequaltobaseamount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

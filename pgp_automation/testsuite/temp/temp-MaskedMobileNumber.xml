@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-MaskedMobileNumber" verbose="1">
+    <test name = "PGP-17114 - Masked Mobile Number when PG_MOBILE_NON_EDITABLE is set to Y" parallel="methods" thread-count="10">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+            <methods>
+                <include name="validateMobileNoIsNotMaskedWhenSSOtokenisPassed"/>
+                <include name="validateMobileNoIsNotMaskedWhenMobileNoisNotPassed"/>
+                <include name="validateRequestOTPMobileNonEditableYMobileNoIsMasked"/>
+                <include name="validateMobileNonEditableYMobileNoIsMasked"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

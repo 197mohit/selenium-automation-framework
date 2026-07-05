@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-31220"  verbose="1">
+    <test name="PGP-31220 check BinTokenization">
+            <classes>
+                <class name="scripts.Native.FetchBinDetails">
+                    <methods>
+                        <include name="verifyBinTokenizationFalse"/>
+                        <include name="verifyBinTokenizationTrue"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+</suite>

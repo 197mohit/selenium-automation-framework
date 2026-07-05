@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Postpaid error codes" >
+
+    <test name="POSTPAID ACCOUNT STATUS MSG">
+
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+
+        <classes>
+
+            <class name="scripts.PaytmDigitalCard">
+
+                <methods>
+
+                    <include name="postpaidMessage_expiredAccount"/>
+
+                    <include name="postpaidMessage_blockedAccount"/>
+
+                    <include name="postpaidMessage_frozenAccount"/>
+
+                </methods>
+
+            </class>
+
+        </classes>
+
+    </test>
+
+</suite>

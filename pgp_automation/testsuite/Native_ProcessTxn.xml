@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native process txn" verbose="1">
+    <test name="Process txn Native" parallel="methods" thread-count="15">
+        <parameter name="theme" value="merchant"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests"/>
+        </classes>
+    </test>
+</suite>

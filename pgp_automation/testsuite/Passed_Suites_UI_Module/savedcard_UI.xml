@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Save_Card_Suite_UI" parallel="tests" thread-count="10">
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+
+                    <include name="VerifyBankLogoInSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGOnly with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FetchValidBinsAPI Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="HPCL bin mapping in merchant-status">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.HPCLBinMappingMerchantStatus">
+            </class>
+        </classes>
+    </test>
+    <test name="fetchBinDetailWithNativeOTPReq Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC01"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC02"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithCardNo_TC03"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC04"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC05"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithTxnToken_TC06"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC01"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC02"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC03"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC04"/>
+                    <exclude name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC05"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

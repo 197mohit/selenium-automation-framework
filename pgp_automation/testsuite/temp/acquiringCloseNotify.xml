@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="subsfixes" verbose="1">
+    <!--<test name="Acquiring Close Notify hit for different Paymodes ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="acquiringCloseNotifyNotifyWithCC"/>
+                    <include name="acquiringCloseNotifyNotifyWithDC"/>
+                    <include name="acquiringCloseNotifyNotifyWithNB"/>
+                    <include name="acquiringCloseNotifyNotifyWithUPI"/>
+                    <include name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                    <include name="acquiringCloseNotifyNotifyWithHybrid"/>
+                    <include name="acquiringCloseNotifyNotifyWithPPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+-->
+    <test name="Acquiring Close Notify">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.AcquiringOrderCloseNotify"/>
+        </classes>
+    </test>
+</suite>

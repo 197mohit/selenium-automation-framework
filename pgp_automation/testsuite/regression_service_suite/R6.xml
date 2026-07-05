@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R6">
+    <suite-files>
+        <suite-file path="temprefund.xml"/>
+        <suite-file path="merchantstatus.xml"/>
+        <suite-file path="qr.xml"/>
+        <suite-file path="rtdd_pg2.xml"/>
+    </suite-files>
+</suite>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fixes" verbose="1">
+    <test name="EMI Fixes" parallel="tests" thread-count="1">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionAPIsMigration">
+                <methods>
+                    <include name="verifyCheckoutAPIhitsDiscoveryAPIItem"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes 2" parallel="tests" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyValidateHavingAmexAndPTCHavingHDFCPlanID"/>
+                    <include name="verifyValidateHavingAmexAndPTCHavingAMEXIncorrectPlanID"/>
+                    <include name="verifyFailureTxnforValidateHavingAmexAndPTCHavinCOFTOfAMEXAndIncorrectPlanID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenEMIProvided"/>
+                </methods>
+            </class>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestPFOForSimplifiedUnifiedOffer009"/>
+                    <include name="TestSuccessTxnSimplifiedUnifiedOffer09"/>
+                    <include name="TestSuccessTxnSimplifiedUnifiedOffer10"/>
+                    <include name="TestSuccessTxnSimplifiedUnifiedOffer11"/>
+                    <include name="TestSuccessTxnSimplifiedUnifiedOffer13"/>
+                    <include name="TestSuccessTxnSimplifiedUnifiedOffer012"/>
+                    <include name="TestSuccessTxnSimplifiedUnifiedOffer24"/>
+                    <include name="validateGetPaymentStatusForItemOnly"/>
+                    <include name="TestE2ESuccessTxnWithPostpaid_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestE2ESuccessResponseWhenItembasedbankOfferAppliedforNBTxn"/>
+                    <include name="TestE2ESuccessTxnWithPostpaid_01"/>
+                    <include name="FlowTypeBrand_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_with_itemPasssed"/>
+                    <include name="FlowType_AMOUNT_BASED_SUBVENTION_when_both_amountBasedBankOffer_false_and_amountBasedSubvention_true_with_itemPasssed"/>
+                    <include name="FlowType_AMOUNT_BASED_OFFERS_when_both_amountBasedBankOffer_true_and_amountBasedSubvention_false_with_itemPasssed"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEmiEligibilityNewFlow">
+            </class>
+        </classes>
+    </test>
+</suite>

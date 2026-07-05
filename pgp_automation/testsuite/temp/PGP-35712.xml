@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35712">
+    <test name="Verify that for wrapper enabled mid otp on bank page should come">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="getOtpMerchantPage"/>
+                    <include name="getOtpMerchantPageWhenPrefIsBank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

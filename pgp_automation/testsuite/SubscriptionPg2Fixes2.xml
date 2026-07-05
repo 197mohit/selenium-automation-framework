@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Fixes New">
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_002_Native_MF_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_003_Native_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_003_Native_MF_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_004_Native_MF_Subs_AccountNumFalseAndValid"></include>
+                    <include name="TC_003_Native_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"></include>
+                    <include name="TC_002_Native_MF_Subs_AccountNumTrueAndInvalid"></include>
+                    <include name="TC_001_Native_MF_Subs_AccountNumTrueAndValid"></include>
+                    <include name="TC_004_Native_MF_Subs_FreqIsBlank"></include>
+                    <include name="TC_004_Native_Subs_FreqIsBlank"></include>
+                    <include name="TC_002_Native_Subs_FreqGreaterthan1_PaymodeBlank"></include>
+                    <include name="TC_002_Native_MF_Subs_FreqGreaterthan1_PaymodeBlank"></include>
+                    <include name="TC_002_Native_MF_Subs_StartDateIsFuture"></include>
+                    <include name="TC_002_Native_Subs_StartDateIsFuture"></include>
+                    <include name="TC_001_Native_MF_Subs_OnDemandValidations"></include>
+                    <include name="TC_001_Native_Subs_OnDemandValidations"></include>
+                    <include name="TC_007_Native_MF_Subs_FreqUnitWeek"></include>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"></include>
+                    <include name="TC_001_Native_MF_Subs_FreqUnitDay"></include>
+                    <include name="TC_002_Native_MF_Subs_FreqUnitMonth"></include>
+                    <include name="TC_004_Native_MF_Subs_FreqUnitQuater"></include>
+                    <include name="TC_006_Native_MF_Subs_FreqUnitSemiAnually"></include>
+                    <include name="TC_003_Native_MF_Subs_FreqUnitYear"></include>
+                    <include name="TC_005_Native_Subs_FreqUnitBiMonthly"></include>
+                    <include name="TC_001_Native_Subs_FreqUnitDay"></include>
+                    <include name="TC_002_Native_Subs_FreqUnitMonth"></include>
+                    <include name="TC_004_Native_Subs_FreqUnitQuater"></include>
+                    <include name="TC_006_Native_Subs_FreqUnitSemiAnually"></include>
+                    <include name="TC_007_Native_Subs_FreqUnitWeek"></include>
+                    <include name="TC_003_Native_Subs_FreqUnitYear"></include>
+                    <include name="TC_008_Native_MF_Subs_FreqUnitOnDemand"></include>
+                    <include name="TC_008_Native_Subs_FreqUnitOnDemand"></include>
+                    <include name="TC_002_Native_Subs_EnableRetryGreaterThan2PaymodeBlank"></include>
+                    <include name="TC_002_Native_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"></include>
+                    <include name="TC_002_Native_MF_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_003_Native_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 1">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_002_Native_MF_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_003_Native_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_003_Native_MF_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_004_Native_MF_Subs_AccountNumFalseAndValid"></include>
+                    <include name="TC_003_Native_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"></include>
+                    <include name="TC_001_Native_MF_Subs_AccountNumTrueAndValid"></include>
+                    <include name="TC_004_Native_MF_Subs_FreqIsBlank"></include>
+                    <include name="TC_004_Native_Subs_FreqIsBlank"></include>
+                    <include name="TC_002_Native_Subs_FreqGreaterthan1_PaymodeBlank"></include>
+                    <include name="TC_002_Native_MF_Subs_FreqGreaterthan1_PaymodeBlank"></include>
+                    <include name="PGP_40525_TC_02_Native_Subs"></include>
+                    <include name="PGP_40525_TC_01_Native_Subs"></include>
+                    <include name="TC_002_Native_MF_Subs_StartDateIsFuture"></include>
+                    <include name="TC_002_Native_Subs_StartDateIsFuture"></include>
+                    <include name="TC_004_Native_Subs_FreqUnitQuater"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 3">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_002_Renew_Subs_AmountTypeVariable_Freq_Day"></include>
+                    <include name="TC_001_Renew_Subs_MultipleRenewal"></include>
+                    <include name="TC_001_Renew_Subs_AmountTypeFix_Freq_Month"></include>
+                    <include name="TC_002_Renew_Subs_AmountTypeVariable_Freq_ONDEMAND"></include>
+                    <include name="TC_007_Renew_Subs_AmountTypeVariable_Freq_SemiAnnually"></include>
+                    <include name="TC_004_Renew_Subs_AmountTypeVariable_Freq_Week"></include>
+                    <include name="TC_003_Renew_Subs_AmountTypeFix_Freq_Year"></include>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMANDSameDayRenewal"></include>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_OneDaysRenewal"></include>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_TwoDaysRenewal"></include>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_ThreeDaysRenewal"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 4">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"></include>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"></include>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"></include>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"></include>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"></include>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_StartDateIsFuture"></include>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"></include>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"></include>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"></include>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"></include>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"></include>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"></include>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"></include>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"></include>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"></include>
+                    <include name="TC_001_Enhanced_Subs_FreqUnitDay"></include>
+                    <include name="TC_002_Enhanced_Subs_FreqUnitMonth"></include>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"></include>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"></include>
+                    <include name="TC_006_Enhanced_Subs_FreqUnitSemiAnually"></include>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 5">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"></include>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"></include>
+                    <include name="UpiNumericIdCmid_01"></include>
+                    <include name="UpiNumericId_01"></include>
+                    <include name="UpiNumericIdCmid_02"></include>
+                    <include name="UpiVpaCases_01"></include>
+                    <include name="UpiVpaCases_02"></include>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"></include>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"></include>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"></include>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"></include>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_StartDateIsFuture"></include>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"></include>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"></include>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"></include>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"></include>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"></include>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"></include>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"></include>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"></include>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"></include>
+                    <include name="TC_001_Enhanced_Subs_FreqUnitDay"></include>
+                    <include name="TC_002_Enhanced_Subs_FreqUnitMonth"></include>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"></include>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"></include>
+                    <include name="TC_006_Enhanced_Subs_FreqUnitSemiAnually"></include>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"></include>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Updation of Merchants, Preferences and Assertion fixes of subscription suite 6">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="UpiNumericIdCmid_01"></include>
+                    <include name="UpiNumericId_01"></include>
+                    <include name="UpiNumericIdCmid_02"></include>
+                    <include name="UpiVpaCases_01"></include>
+                    <include name="UpiVpaCases_02"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

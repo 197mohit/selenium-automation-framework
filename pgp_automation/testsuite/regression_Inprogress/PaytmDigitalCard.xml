@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PaytmDigitalCard" verbose="1" parallel="tests" thread-count="10">
+    <test name="PaytmCC with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                    <include name="PGP_468_PostPaidBalanceLessThanTxn"/>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                    <include name="PGP_469successfulPostPaidTxn_fromPGOnly"/>
+                    <include name="PGP_470_InvalidPassCode_PgOnly"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <include name="PGP_514_PostPaidSelectWhenWalletBalanceZero"/>
+                    <include name="PGP_516_BlankPasscode"/>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PaytmCC with enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                    <include name="PGP_469successfulPostPaidTxn_fromPGOnly"/>
+                    <include name="PGP_470_InvalidPassCode_PgOnly"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <include name="PGP_516_BlankPasscode"/>
+                    <include name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

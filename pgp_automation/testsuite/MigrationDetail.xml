@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="tmp-Mapping-Service-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service API TCs 1">
+        <classes>
+            <class name="scripts.api.mappingService.migrationDetailsInfo.GetExtendedInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API TCs 2">
+        <classes>
+            <class name="scripts.api.mappingService.migrationDetailsInfo.GetMigrationDetailTest"/>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API TCs 3">
+        <classes>
+            <class name="scripts.api.mappingService.migrationDetailsInfo.MappingApisTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-38488">
+        <classes>
+            <class name="scripts.api.mappingService.GetMccCode"></class>
+        </classes>
+    </test>
+
+    <test name="Get Reseller Mid PGP-39099">
+        <classes>
+            <class name="scripts.api.mappingService.GetResellerMidTest"></class>
+        </classes>
+    </test>
+
+</suite>

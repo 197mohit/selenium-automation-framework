@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="FullSwipeOffersSuite" verbose="1" parallel="false">
+  <test name="FullSwipeOffersTests">
+    <parameter name="isNativePlus" value="true"/>
+    <classes>
+      <class name="scripts.EMITest.CustomCheckout.FullSwipeOffers">
+        <methods>
+          <include name="testFullSwipeOfferTxn_CC_AffordabilityLogs"/>
+          <include name="testFullSwipeOfferTxn_CC_AcquiringLogs"/>
+          <include name="testFullSwipeOfferTxn_DC_AffordabilityAndAcquiringPayOrderLogs"/>
+          <include name="testFullSwipeOfferTxn_HDFC_EMI_AffordabilityAndAcquiringPayOrderLogs"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-6375 Cases" verbose="1">
+    <test name="LINK TXN FOR PCF AND MDR MERCHANT">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifySucessEdcLinkTxnForPcfAndMdrMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

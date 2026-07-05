@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Prioritise Settlement Account UPI Profile" verbose="1">
+    <test name=" Prioritise Settlement Account UPI Profile">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileFPO"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileV5FPO"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileSubscriptionFPO"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileFPOwhenaccountisemptystring"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileV5FPOwhenaccountisemptystring"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileSubscriptionFPOwhenaccountisemptystring"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileFPOwhenItineraryDisplayURLisempty"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileV5FPOwhenItineraryDisplayURLisnull"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileSubscriptionFPOPriorityUpiAccountisnull"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

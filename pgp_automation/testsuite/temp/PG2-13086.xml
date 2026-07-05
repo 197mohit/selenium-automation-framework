@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia Injestion validation" verbose="1">
+    <test name="Theia Injestion Validation">
+        <classes>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validatestandardcheckoutflowwithappinvoke"/>
+                    <include name="validatestandardcheckoutflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notification_Suite_Failed" verbose="1" thread-count="10" parallel="tests">
+    <test thread-count="10" verbose="0" name="Addition of fields in DTOs" parallel="tests">
+        <classes>
+            <class name="scripts.PgproxyNotificationTest">
+                <methods>
+                    <include name="StopSettlementSMSForTWSMerchantwithflagon"/>
+                    <include name="StopWithdrawSMSForBWMerchantwithflagon"/>
+                    <include name="CheckFieldOfDTOinRTSettlement"/>
+                    <include name="CheckFieldOfDTOinRefundApi"/>
+                    <include name="SendAutoWithdrawSMSForBWMerchantwithflagon"/>
+                </methods>
+            </class> <!-- scripts.PgproxyNotificationTest -->
+        </classes>
+    </test> <!-- Addition of fields in DTOs -->
+    <test thread-count="10" verbose="0" name="PGP-37195" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationLogs">
+                <methods>
+                    <include name="verifyLowPriorityOfFailedPGOnlyTxn"/>
+                    <include name="successfulPGOnlyCCEvents"/>
+                </methods>
+            </class> <!-- scripts.notification.NotificationLogs -->
+        </classes>
+    </test> <!-- PGP-37195 -->
+    <test thread-count="10" verbose="0" name="FGW Mappings - PGP-38316" parallel="tests">
+        <classes>
+            <class name="scripts.notificationTemplate.PGP38316NewFGWMappingwithContextualErrorMessagesFailedSettlementTxn">
+                <methods>
+                    <include name="FgwAccountFrozen_MerchantWithdraw"/>
+                    <include name="FgwAccountFrozen_RealtimeSettlement"/>
+                    <include name="FgwBankFailSpecificReason_OnlineSettlement"/>
+                    <include name="FgwBankFailSpecificReason_MerchantAutoWithdraw"/>
+                </methods>
+            </class> <!-- scripts.notificationTemplate.PGP38316NewFGWMappingwithContextualErrorMessagesFailedSettlementTxn -->
+        </classes>
+    </test> <!-- FGW Mappings - PGP-38316 -->
+    <test thread-count="10" verbose="0" name="PGP-37474 - 1" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="verifyPaymentNotifyWithHybrid"/>
+                    <include name="validateTopicForRTDD_CC"/>
+                    <include name="validateTopicForRTDD_AddNPay"/>
+                    <include name="validateTopicForRTDD_PPBL"/>
+                    <include name="validateTopicForRTDD_UPI"/>
+                    <include name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                    <include name="acquiringCloseNotifyNotifyWithHybrid"/>
+                    <include name="verifyPaymentNotifyWithAddnPay"/>
+                </methods>
+            </class> <!-- scripts.notification.NotificationTest -->
+        </classes>
+    </test> <!-- PGP-37474 - 1 -->
+    <test thread-count="10" verbose="0" name="NativePeon" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                    <include name="retryTxnUsingSavedCard"/>
+                    <include name="TC_PT_002"/>
+                    <include name="verifyRetryCase_whenRetryIsDoneUsingCC"/>
+                    <include name="pgWithoutLoginTxnUsingSavedCard"/>
+                </methods>
+            </class> <!-- scripts.Native.NativePeon -->
+        </classes>
+    </test> <!-- NativePeon -->
+    <test thread-count="10" verbose="0" name="Native Plus Peon" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                    <include name="retryTxnUsingSavedCard"/>
+                    <include name="TC_PT_002"/>
+                    <include name="verifyRetryCase_whenRetryIsDoneUsingCC"/>
+                    <include name="pgWithoutLoginTxnUsingSavedCard"/>
+                </methods>
+            </class> <!-- scripts.Native.NativePeon -->
+        </classes>
+    </test> <!-- Native Plus Peon -->
+    <test thread-count="10" verbose="0" name="PeonTxn Enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_399_PeonWalletOnlyPass"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_37891_DetailingOutErrorMsgsForMerchant"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                    <include name="isPeonSuccessfulAfterTransaction"/>
+                    <include name="PGP_37891_DetailingOutErrorResCodeDisable"/>
+                    <include name="PGP_398_PeonPGonlyFail"/>
+                    <include name="validateRiskRejectMessage"/>
+                    <include name="PGP_37891_DetailingOutErrorResCodeNotConfig"/>
+                    <include name="validatePeonForLimitBreach"/>
+                    <include name="PGP_403_PeonAddNPayPass"/>
+                    <include name="PGP_405_PeonAddNPayFail"/>
+                </methods>
+            </class> <!-- scripts.PeonTxn -->
+        </classes>
+    </test> <!-- PeonTxn Enhancedwap -->
+    <test thread-count="10" verbose="0" name="PeonTxn Enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_399_PeonWalletOnlyPass"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_37891_DetailingOutErrorMsgsForMerchant"/>
+                    <include name="PGP_400_PeonWalletOnlyFail"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                    <include name="isPeonSuccessfulAfterTransaction"/>
+                    <include name="PGP_37891_DetailingOutErrorResCodeDisable"/>
+                    <include name="PGP_398_PeonPGonlyFail"/>
+                    <include name="validateRiskRejectMessage"/>
+                    <include name="PGP_37891_DetailingOutErrorResCodeNotConfig"/>
+                    <include name="validatePeonForLimitBreach"/>
+                    <include name="PGP_403_PeonAddNPayPass"/>
+                    <include name="PGP_405_PeonAddNPayFail"/>
+                </methods>
+            </class> <!-- scripts.PeonTxn -->
+        </classes>
+    </test> <!-- PeonTxn Enhancedweb -->
+    <test thread-count="10" verbose="0" name="PGP-39455" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="acquiringCloseNotifyNotifyWithUPI"/>
+                    <include name="successfulPGOnlyPostpaidEventsPPSL"/>
+                </methods>
+            </class> <!-- scripts.notification.NotificationTest -->
+        </classes>
+    </test> <!-- PGP-39455 -->
+    <test name="Refund_Success">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.RefundNotify">
+                <methods>
+                    <include name="verifyRefundNotify_AddNPay"/>
+                    <include name="verifyRefundSuccessNotify_AddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP_43686">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+            <classes>
+                <class name="scripts.notification.NotificationTest">
+                    <methods>
+                        <include name="successfulPGOnlyPostpaidEventsPPSL"/>
+                        <include name="successfulPGOnlyWalletEventsPPSL"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+    <test name="Notification API's">
+        <classes>
+            <class name="scripts.notification.CaptureNotifyTest">
+                <methods>
+                    <include name="Test_001_CaptureNotify"/>
+                </methods>
+            </class>
+            <class name="scripts.notification.DeductionNotifyTest">
+                <methods>
+                    <include name="Test_001_DeductionNotify"/>
+                    <include name="Test_002_DeductionNotify"/>
+                    <include name="Test_003_DeductionNotify"/>
+                </methods>
+            </class>
+            <class name="scripts.notification.VoidNotifyTest">
+                <methods>
+                    <include name="Test_001_VoidNotify"/>
+                    <include name="Test_002_VoidNotify"/>
+                </methods>
+            </class>
+            <class name="scripts.notification.FundBackNotifyTest">
+                <methods>
+                    <include name="Test_001_FundBackNotify_CC_closed"/>
+                    <include name="Test_002_FundBackNotify_CC_expired"/>
+                    <include name="Test_003_FundBackNotify_CC_repeatPay"/>
+                    <include name="Test_004_FundBackNotify_UPI_closed"/>
+                    <include name="Test_005_FundBackNotify_UPI_expired"/>
+                    <include name="Test_006_FundBackNotify_UPI_repeatPay"/>
+                    <include name="Test_007_FundBackNotify_DC_closed"/>
+                    <include name="Test_008_FundBackNotify_DC_expired"/>
+                    <include name="Test_009_FundBackNotify_DC_repeatPay"/>
+                    <include name="Test_010_FundBackNotify_Balance_closed"/>
+                    <include name="Test_011_FundBackNotify_BALANCE_expired"/>
+                    <include name="Test_012_FundBackNotify_BALANCE_repeatPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="scripts.notification.AcquiringOrderCloseNotify.acquiringOrderCloseNotify_CCtifyTest">
+        <classes>
+            <class name="scripts.notification.MerchantNotifyTest">
+                <methods>
+                    <include name="Merchant_Notify_Fail_001"/>
+                    <include name="Merchant_Notify_Fail_002"/>
+                    <include name="Merchant_Notify_Fail_003"/>
+                    <include name="Merchant_Notify_Fail_004"/>
+                    <include name="Merchant_Notify_Fail_005"/>
+                    <include name="Merchant_Notify_Fail_006"/>
+                    <include name="Merchant_Notify_Fail_007"/>
+                    <include name="Merchant_Notify_Fail_008"/>
+                    <include name="Merchant_Notify_Success_001"/>
+                    <include name="Merchant_Notify_SMS_OS_001"/>
+                    <include name="Merchant_Notify_SMS_OS_002"/>
+                    <include name="Merchant_Notify_Push_OS_001"/>
+                    <include name="Merchant_Notify_Push_OS_002"/>
+                    <include name="Merchant_Notify_SMS_TWS_001"/>
+                    <include name="Merchant_Notify_SMS_TWS_002"/>
+                    <include name="Merchant_Notify_Push_TWS_001"/>
+                    <include name="Merchant_Notify_Push_TWS_002"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Close_Order">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.AcquiringOrderCloseNotify">
+                <methods>
+                    <include name="acquiringOrderCloseNotify_PPBL_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-39455_New">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <exclude name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                    <include name="acquiringCloseNotifyNotifyWithPPI"/>
+                    <exclude name="verifyPaymentNotifyWithAddnPay"/>
+                    <include name="successfulPGOnlyWalletEventsPPSL"/>
+                    <include name="verifyPaymentNotifyWithWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Acquiring Close Notify hit for different Paymodes ">
+    <parameter name="theme" value="enhancedweb_revamp"/>
+    <classes>
+        <class name="scripts.notification.NotificationTest">
+            <methods>
+                <exclude name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                <exclude name="acquiringCloseNotifyNotifyWithHybrid"/>
+                <include name="acquiringCloseNotifyNotifyWithPPI"/>
+            </methods>
+        </class>
+    </classes>
+    </test>
+
+    <test name="PGP-49711-3">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHTemplate_Push"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_CGData_PUSH"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHTemplate_Push"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_CGData_PUSH"/>
+                    <include name="DEFAULT_NQHDLTTemplateID_Push"/>
+                    <include name="DEFAULT_NQHTemplateHEADER_Push"/>
+                    <include name="DEFAULT_NQHTemplate_Push"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHTemplate_Push"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_RISK_REJECTED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_RISK_REJECTED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_RISK_REJECTED_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHTemplate_Push"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHTemplate_Push"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHDLTTemplateID_Push"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHTemplateHEADER_Push"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHTemplate_Push"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHTemplate_Push"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHTemplate_Push"/>
+                    <include name="FGW_WALLET_FROZEN_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_WALLET_FROZEN_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_WALLET_FROZEN_NQHTemplate_Push"/>
+                    <include name="FGW_WALLET_FROZEN_CGData_PUSH"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHTemplate_Push"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-49711-2">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="FGW_ACCOUNT_BLOCKED_CGData"/>
+                    <include name="FGW_AMOUNT_WALLET_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_BANK_FAIL_SPECIFIC_REASON_NQHDLTTemplateID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-49711">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHDLTTemplateIID"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHTemplate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Changes required at UI and Notification for PG UPI Collect process to remove the polling checkoutjs flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                    <include name="verify_that_PG_merchant_payload_is_pushed_to_UPI_COLLECT_PG_topic_AOA_Txn"/>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_PG_CheckoutJs"/>
+                    <include name="disableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Notification_Suite -->

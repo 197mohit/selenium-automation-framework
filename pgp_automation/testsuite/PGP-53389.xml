@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Error Message Change in PTC">
+    <test name="Error Message Change in PTC">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="VerifyTheResponseMessagewheninvalidPlanIdProvidedForEMI"/>
+                    <include name="VerifyTheResponseMessagewheninvalidPlanIdProvidedForEMIDC"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdSentNotConfiguredOnMIDProvidedForEMI"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdSentNotConfiguredOnMIDProvidedForEMIDC"/>
+                    <include name="VerifyTheResponseMessagewhenPayModeIsEMIDCAndCCCardProvided"/>
+                    <include name="VerifyTheResponseMessagewhenPayModeIsEMIAndDCCardProvided"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdIsofHDFCBankAndCardNumberIsOfICICIEMIDC"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdIsofICICIBankAndCardNumberIsOfHDFCEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

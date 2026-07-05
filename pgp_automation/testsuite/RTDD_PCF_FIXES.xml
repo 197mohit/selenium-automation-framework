@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ShopperStop" verbose="1" thread-count="10" parallel="tests">
+    <test name="PCFMerchant TCs for Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.ScanNPayPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Native Flow">
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Nativeplus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

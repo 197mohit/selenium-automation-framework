@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Billproxy Cases" verbose="1" parallel="tests" thread-count="3">
+    <test name="Billproxy Automation">
+
+        <classes>
+            <class name="scripts.CCBillPayments.CardDetailsUsingTIN">
+                <methods>
+                    <include name="ValidateSuccessRespWithTIN1"/>
+                    <include name="ValidateFailureRespWithTIN2"/>
+                    <include name="ValidateDeadTokenRespWithTIN3"/>
+                    <include name="ValidateInvalidSignatureRespWithTIN4"/>
+                </methods>
+            </class>
+
+            <class name="scripts.CCBillPayments.CardDetailsUsingSSO">
+                <methods>
+                    <include name="ValidateSuccessRespWithTIN1"/>
+                    <include name="ValidateFailureRespWithTIN2"/>
+                    <include name="ValidateDeadTokenRespWithTIN3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

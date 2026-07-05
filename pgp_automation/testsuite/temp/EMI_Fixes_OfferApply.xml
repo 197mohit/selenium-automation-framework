@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMIFixOfferApply" verbose="1" parallel="methods" thread-count="2">
+    <test name="EMI Fix Offer Apply">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest">
+                <methods>
+                    <include name="TestSuccessOfferApplywithMultipleItem_EMI_OfferSpecified"/>
+                    <include name="TestSuccessOfferApplywithMultipleItem_CC_OfferSpecified"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

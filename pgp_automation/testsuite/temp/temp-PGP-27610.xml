@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27161 Verify Subscription Error Message(TxnAmt=MaxAmt=0)" verbose="1" parallel="methods" thread-count="1">
+    <test name="Verify Subscription Error Message(TxnAmt=MaxAmt=0) for Enhanced">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateUPITxnForAddNPAYWhenUPINotEnabledForSubs"/>
+                    <include name="validateUPITxnForAddNPAYWhenUPIEnabled"/>
+                    <include name="validateUPITxnForAddNPAYWhenUPINotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="tmp-Mapping-Service-API" verbose="1"  parallel="tests" thread-count="12">
+    <test name="Mapping Service API Tests">
+        <classes>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributeKey"/>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributePreference"/>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributeUPIKeys"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantIdMap"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantProfile"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantV1"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantContractDetails"/>
+            <class name="scripts.api.mappingService.merchantMigration.MerchantMigrationDetails"/>
+            <class name="scripts.api.mappingService.userInfo.UserV1"/>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API TCs 1">
+        <classes>
+            <class name="scripts.api.mappingService.MappingService"/>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API TCs 2">
+        <classes>
+            <class name="scripts.api.mappingService.logoIntegrationApi.UploadApi"/>
+            <class name="scripts.api.mappingService.BankCardBinApiTest"/>
+            <class name="scripts.api.mappingService.BankCardBinV1ApiTest"/>
+            <class name="scripts.api.mappingService.GetAllBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetAggregatorBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetAllBankDetailsByPayModeAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsListFromBankCodesAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsListFromIdAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsFromIdAPITest"/>
+        </classes>
+    </test>
+
+
+    <test name="Mapping Service API TCs 3">
+        <classes>
+            <class name="scripts.api.mappingService.GetCardNetworkDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetCustomPayloadDataAPITest"/>
+            <class name="scripts.api.mappingService.GetDynamicWrapperConfigsAPITest"/>
+            <class name="scripts.api.mappingService.GetFetchEntityIgnoreParamTest"/>
+            <class name="scripts.api.mappingService.GetFormatterAPITest"/>
+            <class name="scripts.api.mappingService.GetLimitMerchantTest"/>
+            <class name="scripts.api.mappingService.GetLookUpAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromCategoryAndSubCategoryAndNameAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromCategoryAndSubCategoryAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromIdTest"/>
+            <class name="scripts.api.mappingService.GetLookUpFromIdTest"/>
+        </classes>
+    </test>
+
+
+    <test name="Mapping Service API TCs 4">
+        <classes>
+            <class name="scripts.api.mappingService.GetMerchantApiURLInfoAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantKycInfoAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromAlipayMidAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromMidV2APITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromMidAPITest"/>
+            <class name="scripts.api.mappingService.GetPayMethodDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetResponseCodeAPITest"/>
+        </classes>
+    </test>
+
+
+
+    <test name="PGP-33726">
+        <classes>
+            <class name="scripts.api.mappingService.userInfo.GetBankListUsingTID"/>
+        </classes>
+    </test>
+
+
+    <test name="PGP-30748">
+        <classes>
+            <class name="scripts.api.mappingService.GetBrandEmiDetailsApi"/>
+        </classes>
+    </test>
+
+    <test name="PGP-22565 Mapping Service">
+        <classes>
+            <class name="scripts.api.mappingService.merchantPreferenceInfo.MerchantPrefInfo">
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-22565 Mapping Backend Validation">
+        <classes>
+            <class name="scripts.SolidityCheck.ValidateMerchantConfig">
+                <methods>
+                    <include name="validateOfflineDescText"/>
+                    <include name="validateOfflineDescFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+
+    <test name="Mapping Service API Tests 1">
+        <classes>
+            <class name="scripts.api.mappingService.GetBankUrlInfoAPITest"/>
+            <class name="scripts.api.mappingService.GetBanksDetailsAPITest"/>
+        </classes>
+    </test>
+
+
+
+    <test name="Merchant GetAgentInfo API">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetAgentInfoTest"/>
+        </classes>
+    </test>
+
+
+    <test name="Merchant Request Type">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetMerchantRequestTypesTest"/>
+        </classes>
+    </test>
+
+</suite>

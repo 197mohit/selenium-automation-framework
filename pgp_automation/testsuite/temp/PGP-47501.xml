@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Txnrefidindebitcall" verbose="1" parallel="tests" thread-count="3">
+    <test name="Verify TXNREFID in INSTA LOGS">
+        <classes>
+            <class name="scripts.Instaproxy.txnRefIdindebitcall">
+                <methods>
+                    <include name="validatePGTXNREFIDINDEBITCALLfornormaltxn"/>
+                    <include name="validatePGTXNREFIDINDEBITCALLfornormaltxnCheckoutJSPageTxn"/>
+                    <include name="PGTXNREFIDINDEBITCALLfornormaltxnEnhancedFlow"/>
+                    <include name="PGTXNREFIDINDEBITCALLforaddandpaytxnenhancedFlow"/>
+                    <include name="PGTXNREFIDINDEBITCALLforaddandpaytxncheckoutjsFlow"/>
+                    <include name="validatePGTXNREFIDINDEBITCALLforaddandpaytxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

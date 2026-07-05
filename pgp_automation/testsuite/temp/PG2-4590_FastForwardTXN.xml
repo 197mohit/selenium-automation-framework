@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-4590_FastForwardTXN" verbose="1">
+    <test name="Wallet CO Then Pay PG2_ENABLED , Wallet COP Full Traffic Y Fast Forward">
+        <classes>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validatePG2EnabledCoThenPaySuccessWalletTxnPG2MID"/>
+                    <include name="validatePG2EnabledCoThenPayFailWalletTxnPG2MID"/>
+                    <include name="validatePG2COPFullTrafficYSuccessFastForwardTxn"/>
+                    <include name="validatePG2COPYSuccessFastForwardTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

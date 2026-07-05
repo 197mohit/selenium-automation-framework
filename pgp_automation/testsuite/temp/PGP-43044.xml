@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-AOA" verbose="1" >
+    <test name="Changes required at UI and Notification for PG UPI Collect process to remove the polling checkoutjs flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                    <include name="verify_that_PG_merchant_payload_is_pushed_to_UPI_COLLECT_PG_topic_AOA_Txn"/>
+                    <include name="enableSocketBasedPollingForUPICollect_true_on_PG_CheckoutJs"/>
+                    <include name="disableSocketBasedPollingForUPICollect_true_on_AOA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Changes required at UI and Notification for PG UPI Collect process to remove the polling enhanced flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verify_that_PG_merchant_payload_is_pushed_to_UPI_COLLECT_PG_topic_PG_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

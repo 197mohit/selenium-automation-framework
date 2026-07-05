@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Flexi subscription testcases" verbose="1">
+    <test name="Flexi subscription testcases for renewal">
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithPPI"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithBankMandate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Flexi subscription testcases for renewal with upi">
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="flexi subscription creation">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsMonth"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsYear"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsDay"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsWeek"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsBiMonthly"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsQuarter"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsSemiAnually"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsFortnight"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

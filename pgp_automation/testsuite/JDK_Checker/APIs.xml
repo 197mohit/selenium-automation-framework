@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="API's" verbose="1" thread-count="15" parallel="classes">
+    <test name="Native Initiate Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction"/>
+        </classes>
+    </test>
+    <test name="PGP-37815 V5 FPO">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV5Test">
+                <methods>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for non-paytm instruments"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('emi') when m payModes contains('emi')"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test when body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="assertAllSavedCCPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                    <exclude name="setTxnToken"/>
+                    <exclude name="checkResponseForMultiplePayModesProvided"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="Verify UPIPUSHEXPRESS present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is true"/>
+                    <exclude name="test body merchantPayOption paymentModes nb payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for non app invoke flow even when addNPayOnUPIPushSupported is true"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is false"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

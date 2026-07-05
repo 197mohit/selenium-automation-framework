@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" verbose="1" parallel="tests" thread-count="1">
+
+    <test name="SmokeTest with enhanced WEB Theme" parallel="methods" thread-count="10">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+<!--                        <class name="scripts.AddMoneyUber">-->
+<!--                            <methods>-->
+<!--                                <include name="PGP_285_successfulAddMoneyCC"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+<!--                        <class name="scripts.AddNPay">-->
+<!--                            <methods>-->
+<!--                                <include name="addnPay_CC_S"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+<!--                        <class name="scripts.COD">-->
+<!--                            <methods>-->
+<!--                                <include name="COD_S_withoutBalance"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+<!--                        <class name="scripts.IVRFastForward">-->
+<!--                            <methods>-->
+<!--                                <include name="PGP_236_successfulIVRTxn"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+                        <class name="scripts.Hybrid">
+                            <methods>
+                                <include name="hybrid_CC_S"/>
+                            </methods>
+                        </class>
+<!--                        <class name="scripts.PayTMExpress">-->
+<!--                            <methods>-->
+<!--                                <include name="PGP_successfulPtmX2pressCC"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+                        <class name="scripts.PostCovEnhance">
+                            <methods>
+                                <include name="Verify_FeeOnCashierPageForAllPayModes_forFlatCommision"/>
+                            </methods>
+                        </class>
+<!--                        <class name="scripts.TopUpExpress">-->
+<!--                            <methods>-->
+<!--                                <include name="PGP_407_successfulTopupXpressCC"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+                        <class name="scripts.WalletOnly">
+                            <methods>
+                                <include name="PGP_158_successfulWalletOnlyTxn"/>
+                            </methods>
+                        </class>
+                        <class name="scripts.PaytmDigitalCard">
+                            <methods>
+                                <include name="PGP_469_successfulPostPaidTxn"/>
+                            </methods>
+                        </class>
+                        <class name="scripts.AddMoneyExpress">
+                            <methods>
+                                <include name="successfulAddMoney_CheckForSaveCard"/>
+                            </methods>
+                        </class>
+                        <class name="scripts.postConvenience.PostConvenience">
+                            <methods>
+                                <include name="PGP_500"/>
+                            </methods>
+                        </class>
+<!--                        <class name = "scripts.Sprint28ubscriptionStoreCardNo">-->
+<!--                            <methods>-->
+<!--                                <include name="savedCardIdGeneratedCC"/>-->
+<!--                                <include name="assertSubsCreatedForEnhancedFlowCC"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+
+<!--                        <class name="scripts.PWPNative">-->
+<!--                            <methods>-->
+<!--                                <include name="PWP_03_successfulPWPOnlyNBNative"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+                        <class name="scripts.PWPEnhanced">
+                            <methods>
+                                <include name="PWP_04_successfulPGOnlyPPBL"/>
+                            </methods>
+                        </class>
+                        <class name="scripts.Native.Khata.KhataBook">
+                            <methods>
+                                <include name="TC007_KhatabookAppInvokeWallet"/>
+                            </methods>
+                        </class>
+
+                        <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate">
+                            <methods>
+                                <include name="successfulFeeFactorNBForSlabMDR"/>
+                            </methods>
+                        </class>
+                        <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate">
+                            <methods>
+                                <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                            </methods>
+                        </class>
+
+<!--                        <class name="scripts.scanNPay.ScanNPayTest">-->
+<!--                            <methods>-->
+<!--                                <include name="validate_S_walletTxn_IRCTCMerc_PRNtrue"/>-->
+<!--                                <include name="validate_PRNSectionDisplayed"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+
+<!--                        <class name="scripts.PGOnly">-->
+<!--                            <methods>-->
+<!--                                <include name="PGP_268_verifySaveCardThroughCCTxn"/>-->
+<!--                                <include name="PGP_270_verifyCCSavedCardTxn"/>-->
+<!--                            </methods>-->
+<!--                        </class>-->
+
+                        <class name="scripts.Autologin.AutoLogin">
+                            <methods>
+                                <include name="autologin_validateCookie"/>
+                            </methods>
+                        </class>
+
+                        <class name="scripts.mgv.TestNativeMGVFlow">
+                            <methods>
+                                <include name="TC_PT_MGV_002"/>
+                            </methods>
+                        </class>
+                        <class name="scripts.MDRPCF.MDRPCF">
+                            <methods>
+                                <include name="successfulCCTxnForMDRPlusPCF"/>
+                            </methods>
+                        </class>
+                        <class name="scripts.CCBillPayment">
+                            <methods>
+                                <include name="PGP_464_ccBillPaymentViaNB"/>
+                            </methods>
+                        </class>
+
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription_via_wallet_only" verbose="1" parallel="tests" thread-count="12">
+    <test name="Subscription_via_wallet_only">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_186_verifyCardSaveAfterSuccessfulTxn"/>
+                    <include name="PGP_184_verifySuccessfulTxnForInsufficientBalanceViaNB"/>
+                    <include name="PGP_181_verifySuccessfulTxnForInsufficientBalanceViaCC"/>
+                    <include name="PGP_182_verifySuccessfulTxnForInsufficientBalanceViaDC"/>
+                    <include name="PGP_183_verifySuccessfulTxnForInsufficientBalanceViaUPI"/>
+                    <include name="PGP_180_verifySuccessfulTxnUsingWalletOnly"/>
+                    <include name="PGP_187_verifySuccessfulTxnUsingSavedCard"/>
+                    <include name="PGP_188_verifyTxnCancellationAtBank"/>
+                    <include name="PGP_189_verifyTxnCancellationAtBankWithSavedCard"/>
+                    <include name="PGP_190_verifyVPA_GettingSavedForSuccessfulTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

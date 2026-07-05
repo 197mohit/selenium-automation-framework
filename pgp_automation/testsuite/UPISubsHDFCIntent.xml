@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription" verbose="1"  parallel="tests" thread-count="5">
+
+    <test name="HDFC Intent Native cases">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_HDFC_Subs_Intet_Ondemand"></include>
+                    <include name="TC_002_HDFC_Subs_Intet_Month"></include>
+                    <include name="TC_003_HDFC_Subs_Intet_Year"></include>
+                    <include name="TC_004_HDFC_Subs_Intet_WEEK"></include>
+                    <include name="TC_005_HDFC_Subs_Intet_BIMONTHLY"></include>
+                    <include name="TC_006_HDFC_Subs_Intet_QUARTER"></include>
+                    <include name="TC_007_HDFC_Subs_Intet_SEMIANNUALLY"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

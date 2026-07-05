@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Refund_Suite_Failed" verbose="1" thread-count="12" parallel="tests">
+    <test thread-count="12" verbose="0" name="PGP-14676 Auto Refund on enhanced web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.AutoRefund">
+                <methods>
+                    <include name="PGP_verifyAutoRefundWithAmountEqualToLimitAmount"/>
+                    <include name="PGP_verifyAutoRefundWithAmountLessThanLimitAmount"/>
+                </methods>
+            </class> <!-- scripts.Sprint28.AutoRefund -->
+        </classes>
+    </test> <!-- PGP-14676 Auto Refund on enhanced web -->
+    <test thread-count="12" verbose="0" name="Refund Status Api with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundStatus">
+                <methods>
+                    <include name="validateRefundStatusResp_PGOnly"/>
+                </methods>
+            </class> <!-- scripts.RefundStatus -->
+        </classes>
+    </test> <!-- Refund Status Api with enhancedweb -->
+    <test thread-count="12" verbose="0" name="PCF enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="success_PCF_CC_Refund"/>
+                    <include name="success_PCF_CC_Refund_Partial"/>
+                </methods>
+            </class> <!-- scripts.PostCovEnhance -->
+        </classes>
+    </test> <!-- PCF enhancedweb -->
+    <test thread-count="12" verbose="0" name="PCF enhancewap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="success_PCF_CC_Refund"/>
+                    <include name="success_PCF_CC_Refund_Partial"/>
+                </methods>
+            </class> <!-- scripts.PostCovEnhance -->
+        </classes>
+    </test> <!-- PCF enhancewap -->
+    <test thread-count="12" verbose="0"
+          name="temp-PGP-19819 Khata | Callback to Khata system when Khata order payments are refunded for ledger reconciliation"
+          parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataRefund">
+                <methods>
+                    <include name="peonShouldSentToMerchant"/>
+                </methods>
+            </class> <!-- scripts.Native.Khata.KhataRefund -->
+        </classes>
+    </test> <!-- temp-PGP-19819 Khata | Callback to Khata system when Khata order payments are refunded for ledger reconciliation -->
+    <test thread-count="12" verbose="0" name="temp PGP-22762 for Native" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="refundStatus_01"/>
+                    <include name="initAsyncRefund"/>
+                    <include name="closedAsyncRefund"/>
+                    <include name="masterRefundStatus_01"/>
+                    <include name="successfulAddNPayRefund_async"/>
+                </methods>
+            </class> <!-- scripts.RefundAsync -->
+        </classes>
+    </test> <!-- temp PGP-22762 for Native -->
+    <test thread-count="12" verbose="0" name="temp PGP-22762 for Native Plus" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="refundStatus_01"/>
+                    <include name="initAsyncRefund"/>
+                    <include name="closedAsyncRefund"/>
+                    <include name="masterRefundStatus_01"/>
+                </methods>
+            </class> <!-- scripts.RefundAsync -->
+        </classes>
+    </test> <!-- temp PGP-22762 for Native Plus -->
+    <test thread-count="12" verbose="0" name="PGP-28980 Pass Onus Identifier Refund" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferRefungDCtxnONUSMerchant"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="successfulAddNPaySyncRefund"/>
+                </methods>
+            </class> <!-- scripts.Refund -->
+        </classes>
+    </test> <!-- PGP-28980 Pass Onus Identifier Refund -->
+    <test thread-count="12" verbose="0" name="Native Plus ProcessTransactionTests" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_039"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native Plus ProcessTransactionTests -->
+    <test thread-count="12" verbose="0" name="Native ProcessTransactionTests" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_039"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native ProcessTransactionTests -->
+    <test thread-count="12" verbose="0" name="SyncRefund" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulRefundOfBaseAmountInPostConvenienceTxn_Sync"/>
+                    <include name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn_async"/>
+                </methods>
+            </class> <!-- scripts.Refund -->
+        </classes>
+    </test> <!-- SyncRefund -->
+    <test thread-count="12" verbose="0" name="Refund with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="validatePPBLRefund"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <include name="successfulMultiplePartialRefund"/>
+                    <include name="successfulPartialRefund"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                </methods>
+            </class> <!-- scripts.Refund -->
+        </classes>
+    </test> <!-- Refund with enhancedweb -->
+    <test thread-count="12" verbose="0" name="Refund-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="validatePPBLRefund"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <include name="successfulMultiplePartialRefund"/>
+                    <include name="successfulPartialRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                </methods>
+            </class> <!-- scripts.Refund -->
+        </classes>
+    </test> <!-- Refund-enhancedwap -->
+    <test thread-count="12" verbose="0" name="temp-SyncRefund Testcases" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulPGOnlyCCSyncRefund"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="successfulPGOnlyUPISyncRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_sync"/>
+                    <include name="partialRefundRefundTwiceForSyncRefund"/>
+                    <include name="successfulPGOnlyDCSyncRefund"/>
+                    <include name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn_async"/>
+                    <include name="successfulRefundOfBaseAmountInPostConvenienceTxn_Sync"/>
+                    <include name="verifyAmountToDestinationToSourceIfIMPSMerchantButCCtxn"/>
+                </methods>
+            </class> <!-- scripts.Refund -->
+        </classes>
+    </test> <!-- temp-SyncRefund Testcases -->
+    <test thread-count="12" verbose="0" name="PGP-24411 Enhanced Cases" parallel="tests">
+        <classes>
+            <class name="scripts.RefundStatus">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="verifyUniqueTxnIdAlphaNumeric"/>
+                    <include name="verifyUniqueTxnId"/>
+                    <include name="validateFullRefund"/>
+                </methods>
+            </class> <!-- scripts.RefundStatus -->
+        </classes>
+    </test> <!-- PGP-24411 Enhanced Cases -->
+    <test thread-count="12" verbose="0" name="Refund Async-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="closedUPIRefundAsync"/>
+                    <include name="refundStatus"/>
+                    <include name="closedRefundAsync"/>
+                    <include name="initRefundAsync"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_async"/>
+                    <include name="initUPIRefundAsync"/>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                    <include name="successfulMultiplePartialRefund_async"/>
+                </methods>
+            </class> <!-- scripts.RefundAsync -->
+        </classes>
+    </test> <!-- Refund Async-enhancedwap -->
+    <test thread-count="12" verbose="0" name="Refund Async with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="closedUPIRefundAsync"/>
+                    <include name="refundStatus"/>
+                    <include name="closedRefundAsync"/>
+                    <include name="initRefundAsync"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_async"/>
+                    <include name="initUPIRefundAsync"/>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                    <include name="successfulMultiplePartialRefund_async"/>
+                </methods>
+            </class> <!-- scripts.RefundAsync -->
+        </classes>
+    </test> <!-- Refund Async with enhancedweb -->
+    <test thread-count="12" verbose="0" name="Food wallet refund" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.FoodWalletRefund">
+                <methods>
+                    <include name="PGP_failedRefund_WhenFoodNotPassedInCheckSum"/>
+                    <include name="PGP_SuccessRefund_Partial_AddNPay"/>
+                    <include name="PGP_SuccessFoodRefund_Hybrid_notExceedsFoodWalletAmount"/>
+                    <include name="PGP_SuccessFoodRefund_Hybrid_PartialFoodMainWallet"/>
+                    <include name="PGP_SuccessFoodRefund_Hybrid_FoodWalletRefundAmtExceed"/>
+                    <include name="PGP_successfulFoodWalletRefund"/>
+                    <include name="PGP_FailedFoodRefund_Hybrid"/>
+                    <include name="PGP_SuccessFoodRefund_Hybrid_CC"/>
+                    <include name="PGP_FailedFoodRefund_InvalidFoodParamInChecksum"/>
+                    <include name="PGP_SuccessFoodPartialRefund_Hybrid_FoodMainWallet"/>
+                    <include name="PGP_SuccessFoodRefund_Hybrid_FoodCCMainWallet"/>
+                </methods>
+            </class> <!-- scripts.FoodWalletRefund -->
+        </classes>
+    </test> <!-- Food wallet refund -->
+    <test thread-count="12" verbose="0" name="Refund status V1 - enhancedweb + Refund Refactoring Async/Sync"
+          parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <include name="refundCCWithJWTAsyncRefund"/>
+                    <include name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn_asyncStatus"/>
+                    <include name="successfulAddNPayRefund_asyncStatus"/>
+                    <include name="successfulRefundOfBaseAmountInPostConvenienceTxn_asyncStatus"/>
+                    <include name="successfulRefundOfBaseAmountWithFeeInPostConvenienceTxn_asyncStatus"/>
+                    <include name="refundUPICCWithJWTAsyncRefundDisableFalse"/>
+                    <include name="successfulPartialRefund_asyncStatus"/>
+                    <include name="successfulPGOnlyCCRefund_asyncStatus"/>
+                    <include name="successfulMultiplePartialRefund_asyncStatus"/>
+                    <include name="refundCCWithJWTSyncRefund"/>
+                </methods>
+            </class> <!-- scripts.RefundStatusV1 -->
+        </classes>
+    </test> <!-- Refund status V1 - enhancedweb + Refund Refactoring Async/Sync -->
+    <test thread-count="12" verbose="0" name="Refund status V1 - enhancedwap + Refund Refactoring Async/Sync"
+          parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <include name="refundCCWithJWTAsyncRefund"/>
+                    <include name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn_asyncStatus"/>
+                    <include name="successfulAddNPayRefund_asyncStatus"/>
+                    <include name="successfulRefundOfBaseAmountInPostConvenienceTxn_asyncStatus"/>
+                    <include name="successfulRefundOfBaseAmountWithFeeInPostConvenienceTxn_asyncStatus"/>
+                    <include name="refundUPICCWithJWTAsyncRefundDisableFalse"/>
+                    <include name="successfulPartialRefund_asyncStatus"/>
+                    <include name="successfulPGOnlyCCRefund_asyncStatus"/>
+                    <include name="successfulMultiplePartialRefund_asyncStatus"/>
+                    <include name="refundCCWithJWTSyncRefund"/>
+                </methods>
+            </class> <!-- scripts.RefundStatusV1 -->
+        </classes>
+    </test> <!-- Refund status V1 - enhancedwap + Refund Refactoring Async/Sync -->
+    <test name="PGP-48011 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48011 Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC03"/>
+                    <include name="PAPR_4754_TC04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Refund Suite -->

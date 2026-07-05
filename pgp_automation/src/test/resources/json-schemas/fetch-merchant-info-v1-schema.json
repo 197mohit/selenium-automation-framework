@@ -1,0 +1,142 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "requestId",
+        "responseTimestamp",
+        "version"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "extraParamsMap",
+        "resultInfo"
+      ],
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string"
+            },
+            "resultMsg": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "appInvokeAllowed": {
+          "enum": [
+            true
+          ]
+        },
+        "mccCode": {
+          "type": "string"
+        },
+        "merchantInfoResp": {
+          "type": "object",
+          "required": [
+            "bankVerifiedName",
+            "merDispname",
+            "merBusName",
+            "P2P_Disabled",
+            "merLogoUrl"
+          ],
+          "properties": {
+            "bankVerifiedName": {
+              "type": "null"
+            },
+            "merDispname": {
+              "type": "string"
+            },
+            "merBusName": {
+              "type": "string"
+            },
+            "P2P_Disabled": {
+              "type": "boolean"
+            },
+            "merLogoUrl": {
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "txnAmount": {
+          "type": "object",
+          "required": [
+            "currency",
+            "value"
+          ],
+          "properties": {
+            "currency": {
+              "enum": [
+                "INR"
+              ]
+            },
+            "value": {
+              "type": "string",
+              "pattern": "^[0-9]+(\\.[0-9]{1,2})?$"
+            }
+          },
+          "additionalProperties": false
+        },
+        "promoCodeApplied": {
+          "enum": [
+            "true",
+            "false"
+          ]
+        },
+        "isSubscription": {
+          "enum": [
+            true,
+            false
+          ]
+        }
+      },
+
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

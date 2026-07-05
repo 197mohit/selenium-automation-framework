@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48949" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-48949 validate emiType and subventionType  in COP request on custom flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="SubventionTypeDISCOUNTandEmiTypeBrandEMIinCOP"/>
+                    <include name="SubventionTypeCASHBACKandEmiTypeBrandEMIinCOP"/>
+                    <include name="SubventionEMITypeBankEMIinCOP"/>
+                    <include name="emiTypeRetailerEMIinCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48949 validate emiType and subventionType  in COP request on simplified flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestSimplifiedUnifiedOfferSubventionTypeDISCOUNT"/>
+                    <include name="TestSimplifiedUnifiedOfferEMITypeBankEMI"/>
+                    <include name="TestSimplifiedUnifiedOfferSubventionTypeDISCOUNTemiTypeRetailerEMI"/>
+                    <include name="TestSimplifiedUnifiedOfferSubventionTypeCASHBACKemiTypeBrandEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

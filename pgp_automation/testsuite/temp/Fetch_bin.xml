@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Fetch_binTest_cases" verbose="1">
+
+    <test name="Verify coft fetch bin changes">
+
+        <classes>
+
+            <class name="scripts.coft.theia.Fetch_Bin_Change">
+
+
+            </class>
+        </classes>
+    </test>
+</suite>

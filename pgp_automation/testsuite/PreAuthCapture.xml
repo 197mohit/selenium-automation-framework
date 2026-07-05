@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PreAuth-Capture-Release-Flow" verbose="1">
+    <test name="PGP-61253 | PreAuth single and multiCapture flow">
+        <classes>
+            <class name="scripts.api.PreAuthCapture.PreAuthCapture">
+                <methods>
+                   <include name="verifyPreAuthWithMultiCaptureFalse_CC_Txn"/>
+                   <include name="verifyCaptureTxn_CC_Txn"/>
+                   <include name="verifyPartialCapture_Release_Flow_CC_Txn"/>
+                   <include name="verifyDownPayment_multiCaptureTrue_CC_EMI_Txn"/>
+                   <include name="verifyDownPayment_Release_Flow_multiCaptureTrue_CC_EMI_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

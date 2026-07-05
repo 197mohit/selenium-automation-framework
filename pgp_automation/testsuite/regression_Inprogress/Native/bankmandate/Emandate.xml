@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Emandate" verbose="1" parallel="tests" thread-count="12">
+    <test name="E-Mandate Subscription tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate"/>
+        </classes>
+    </test>
+
+    <test name="E-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="iconURL in savedMandates bankMandate">
+    <classes>
+        <class name="scripts.Native.bankmandate.Emandate">
+            <methods>
+                <include name="iconURLpayModeBankMandateNativeSubs"/>
+                <include name="iconURLpayModeBankMandateNativeMFSIP"/>
+            </methods>
+        </class>
+    </classes>
+    </test>
+
+    <test name="temp-Native Flow For Bank Mandate" >
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="TC_NativeMFSubs_EM_001_ValidateDBWhenSubsInitiatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_002_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_003_ValidateDBWhenCompletingNPCIFormSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_004_ValidateDBWhenResponseSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_005_ValidateSuccessRenewSubsWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_001_ValidateDBWhenSubsInitiatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_002_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_003_ValidateDBWhenSubsCompletingFormWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_004_ValidateDBWhenSubsCallBackSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_005_ValidateSuccessRenewSubsWhenTxnAmtGreaterThan0"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27722 Saved Mandates Priority List Tests">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefEnabled"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymode"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandateBlankPaymodeandMandateType"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefNotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

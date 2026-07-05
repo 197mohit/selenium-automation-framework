@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="POS ID/ QR lifecycle management" verbose="1">
+    <test name="PGP-58194">
+        <classes>
+            <class name="scripts.Qr.PosIdQR">
+                <methods>
+                    <include name="prefSMS_001"/>
+                    <include name="prefSMS_002"/>
+                    <include name="prefSMS_003"/>
+                    <include name="prefSMS_004"/>
+                    <include name="prefSMS_005"/>
+                    <include name="prefWHATSAPP_001"/>
+                    <include name="prefWHATSAPP_002" />
+                    <include name="prefDEFAULT_001" />
+                    <include name="prefDEFAULT_002" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Deling header and footer" verbose="1">
+    <test name="Delinking header and footer - Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="FooterBackgroundColourDoNotChangeOnChangingHeaderbackGroundColour"/>
+                    <include name="FooterTextColourDoNotChangeOnChangingHeaderTextColour"/>
+                    <include name="FooterBackgroundColourDoesntChangeOnChangingHeaderBackgroundColourFromConfig"/>
+                    <include name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

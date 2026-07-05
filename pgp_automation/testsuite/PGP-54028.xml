@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMISubvention" verbose="1" parallel="methods" thread-count="2">
+    <test name="Custom checkout">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestE2ESuccessResponseWhenPartialSubventionAndBoAmountprovided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialSubventionProvided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvidedNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Offer Apply SSO Token">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaased"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_BOEligibleAmountPaasedNB"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_Only_BOEligibleAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_BoeligibleAmountPaasedEMI_DC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Offer Apply Txn Token">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaased"/>
+                    <include name="Test_api_response_when_both_SubventionAmountAndBOEligibleAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_BOEligibleAmountPaasedNB"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_SubventionAmountPaasedEMI_DC"/>
+                    <include name="Test_api_response_when_Only_BOEligibleAmountPaasedEMI"/>
+                    <include name="Test_api_response_when_Only_BoeligibleAmountPaasedEMI_DC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Simplified offers">
+        <parameter name="isNativePlus"  value="true"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestE2ESuccessResponseWhenPartialSubventionAndBoAmountprovided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvided"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialBankOfferAmountProvidedNB"/>
+                    <include name="TestE2ESuccessResponseWhenOnlyPartialSubventionProvided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

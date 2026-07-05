@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48381" verbose="1" thread-count="3">
+    <test name="PGP-48381- 1">
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC01_PGP_48381"/>
+                    <include name="TC02_PGP_48381"/>
+                    <include name="TC03_PGP_48381"/>
+                    <include name="TC04_PGP_48381"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48381- 2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone SE"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC05_PGP_48381"/>
+                    <include name="TC06_PGP_48381"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

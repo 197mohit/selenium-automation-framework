@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-51768" verbose="1">
+    <test name="Scan  Pay | QR Code inactive handling for 3P Apps">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validatePG2COPUPIPSPNonExpiredFlagOn"/>
+                    <include name="validatePG2COPUPIPSPExpiredFlagOn"/>
+                    <include name="validatePG2COPUPIPSPNonExpiredFlagOff"/>
+                    <include name="validatePG2COPUPIPSPExpiredFlagOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

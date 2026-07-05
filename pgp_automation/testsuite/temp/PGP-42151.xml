@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="irctc_bin" verbose="1" thread-count="15" parallel="classes">
+    <test name="Irctc Bin">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Irctc.Irctc">
+                <methods>
+                    <include name="irctcBinTxnSBIVB003"/>
+                    <include name="irctcBinTxnSBIVP001"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

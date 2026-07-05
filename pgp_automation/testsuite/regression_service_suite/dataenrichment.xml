@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Data_Enrichment_Suite" verbose="1" thread-count="10" parallel="methods">
+
+
+    <test name="Native Plus test cases" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="verifyPaymentBizInfoForEMI_DCCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Native test cases" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="verifyPaymentBizInfoForEMI"/>
+                    <exclude name="verifyPaymentBizInfoForEMICOP"/>
+                    <exclude name="verifyPaymentBizInfoForEMI_DCCOP"/>
+                    <exclude name="verifyPaymentBizInfoForOldEMISubvention"/>
+                    <exclude name="verifyPaymentBizInfoForOldEMISubventionCOP"/>
+                    <exclude name="verifyRiskParametersInDeferredNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Enhanced web test cases" parallel="methods" thread-count="3">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <exclude name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWeb"/>
+                    <exclude name="validateDeviceTypeFieldInTabletDevice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Enhanced mWeb test cases" parallel="methods" thread-count="3">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <exclude name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWeb"/>
+                    <exclude name="validateDeviceTypeFieldInTabletDevice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="osType, browserType, deviceModel, deviceManufacturer fields validation tests in Enhanced Native IOS mWeb test cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWeb"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="deviceType value = tablet field validation tests in Enhanced Native test cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPad"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="validateDeviceTypeFieldInTabletDevice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkout js web test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <exclude name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWebInCheckoutJs"/>
+                    <exclude name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsWEBAndMWebInCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkout js mWeb test cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <exclude name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWebInCheckoutJs"/>
+                    <exclude name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsWEBAndMWebInCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="osType, browserType, deviceModel, deviceManufacturer fields validation tests in Checkout js IOS mWeb test cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWebInCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="osType, browserType, deviceModel, deviceManufacturer fields validation tests in Checkout js mWeb test cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsWEBAndMWebInCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

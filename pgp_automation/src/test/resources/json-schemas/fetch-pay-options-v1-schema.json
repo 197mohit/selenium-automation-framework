@@ -1,0 +1,484 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "head": {
+      "$id": "#/properties/head",
+      "type": "object",
+      "required": [
+        "requestId",
+        "responseTimestamp",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "$id": "#/properties/head/properties/requestId",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "responseTimestamp": {
+          "$id": "#/properties/head/properties/responseTimestamp",
+          "type": "string"
+        },
+        "version": {
+          "$id": "#/properties/head/properties/version",
+          "type": "string",
+          "const": "v1"
+        }
+      }
+    },
+    "body": {
+      "$id": "#/properties/body",
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "extraParamsMap": {
+          "$id": "#/properties/body/properties/extraParamsMap",
+          "type": "null"
+        },
+        "resultInfo": {
+          "$id": "#/properties/body/properties/resultInfo",
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "resultStatus": {
+              "$id": "#/properties/body/properties/resultInfo/properties/resultStatus",
+              "type": "string",
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "$id": "#/properties/body/properties/resultInfo/properties/resultCode",
+              "type": "string"
+            },
+            "resultMsg": {
+              "$id": "#/properties/body/properties/resultInfo/properties/resultMsg",
+              "type": "string"
+            }
+          }
+        },
+        "merchantDetails": {
+          "$id": "#/properties/body/properties/merchantDetails",
+          "type": "object",
+          "required": [
+            "mcc",
+            "merchantVpa",
+            "merchantName",
+            "merchantLogo"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "mcc": {
+              "$id": "#/properties/body/properties/merchantDetails/properties/mcc",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "merchantVpa": {
+              "$id": "#/properties/body/properties/merchantDetails/properties/merchantVpa",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "merchantName": {
+              "$id": "#/properties/body/properties/merchantDetails/properties/merchantName",
+              "type": "string"
+            },
+            "merchantLogo": {
+              "$id": "#/properties/body/properties/merchantDetails/properties/merchantLogo",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "addMoneyMerchantDetails": {
+          "$id": "#/properties/body/properties/addMoneyMerchantDetails",
+          "type": "object",
+          "required": [
+            "mcc",
+            "merchantVpa",
+            "merchantName",
+            "merchantLogo"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "mcc": {
+              "$id": "#/properties/body/properties/addMoneyMerchantDetails/properties/mcc",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "merchantVpa": {
+              "$id": "#/properties/body/properties/addMoneyMerchantDetails/properties/merchantVpa",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "merchantName": {
+              "$id": "#/properties/body/properties/addMoneyMerchantDetails/properties/merchantName",
+              "type": "string"
+            },
+            "merchantLogo": {
+              "$id": "#/properties/body/properties/addMoneyMerchantDetails/properties/merchantLogo",
+              "type": [
+                "string",
+                "null"
+              ]
+            }
+          }
+        },
+        "walletOnly": {
+          "$id": "#/properties/body/properties/walletOnly",
+          "type": "boolean"
+        },
+        "zeroCostEmi": {
+          "$id": "#/properties/body/properties/zeroCostEmi",
+          "type": "boolean"
+        },
+        "pcfEnabled": {
+          "$id": "#/properties/body/properties/pcfEnabled",
+          "type": "boolean"
+        },
+        "nativeJsonRequestSupported": {
+          "$id": "#/properties/body/properties/nativeJsonRequestSupported",
+          "type": "boolean"
+        },
+        "orderId": {
+          "$id": "#/properties/body/properties/orderId",
+          "type": "string",
+          "format": "uuid"
+        },
+        "activeMerchant": {
+          "$id": "#/properties/body/properties/activeMerchant",
+          "type": "boolean"
+        },
+        "oneClickMaxAmount": {
+          "$id": "#/properties/body/properties/oneClickMaxAmount",
+          "type": "string"
+        },
+        "userDetails": {
+          "$id": "#/properties/body/properties/userDetails",
+          "type": "object",
+          "required": [
+            "paytmCCEnabled",
+            "kyc",
+            "username",
+            "mobile"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "paytmCCEnabled": {
+              "$id": "#/properties/body/properties/userDetails/properties/paytmCCEnabled",
+              "type": "boolean"
+            },
+            "kyc": {
+              "$id": "#/properties/body/properties/userDetails/properties/kyc",
+              "type": "boolean"
+            },
+            "username": {
+              "$id": "#/properties/body/properties/userDetails/properties/username",
+              "type": "string"
+            },
+            "mobile": {
+              "$id": "#/properties/body/properties/userDetails/properties/mobile",
+              "type": "string",
+              "pattern": "^[1-9][0-9]{9}$"
+            }
+          }
+        },
+        "loginInfo": {
+          "$id": "#/properties/body/properties/loginInfo",
+          "type": "object",
+          "required": [
+            "userLoggedIn",
+            "pgAutoLoginEnabled",
+            "mobileNumberNonEditable"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "userLoggedIn": {
+              "$id": "#/properties/body/properties/loginInfo/properties/userLoggedIn",
+              "type": "boolean"
+            },
+            "pgAutoLoginEnabled": {
+              "$id": "#/properties/body/properties/loginInfo/properties/pgAutoLoginEnabled",
+              "type": "boolean"
+            },
+            "mobileNumberNonEditable": {
+              "$id": "#/properties/body/properties/loginInfo/properties/mobileNumberNonEditable",
+              "type": "boolean"
+            }
+          }
+        },
+        "addDescriptionMandatory": {
+          "$id": "#/properties/body/properties/addDescriptionMandatory",
+          "type": "boolean"
+        },
+        "onTheFlyKYCRequired": {
+          "$id": "#/properties/body/properties/onTheFlyKYCRequired",
+          "type": "boolean"
+        },
+        "paymentFlow": {
+          "$id": "#/properties/body/properties/paymentFlow",
+          "type": "string"
+        },
+        "merchantPayOption": {
+          "$id": "#/properties/body/properties/merchantPayOption",
+          "type": "object",
+          "required": [
+            "savedMandateBanks",
+            "paymentModes",
+            "savedInstruments",
+            "userProfileSarvatra",
+            "activeSubscriptions"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "savedMandateBanks": {
+              "$id": "#/properties/body/properties/merchantPayOption/properties/savedMandateBanks",
+              "type": [
+                "array",
+                "null"
+              ]
+            },
+            "paymentModes": {
+              "$id": "#/properties/body/properties/merchantPayOption/properties/paymentModes",
+              "type": "array",
+              "minItems": 0,
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/body/properties/merchantPayOption/properties/paymentModes/items",
+                "type": "object"
+              }
+            },
+            "savedInstruments": {
+              "$id": "#/properties/body/properties/merchantPayOption/properties/savedInstruments",
+              "type": "array",
+              "minItems": 0,
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/body/properties/merchantPayOption/properties/savedInstruments/items",
+                "type": "object"
+              }
+            },
+            "userProfileSarvatra": {
+              "$id": "#/properties/body/properties/merchantPayOption/properties/userProfileSarvatra",
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "activeSubscriptions": {
+              "$id": "#/properties/body/properties/merchantPayOption/properties/activeSubscriptions",
+              "type": [
+                "object",
+                "null"
+              ]
+            }
+          }
+        },
+        "addMoneyPayOption": {
+          "$id": "#/properties/body/properties/addMoneyPayOption",
+          "type": "object",
+          "required": [
+            "savedMandateBanks",
+            "paymentModes",
+            "savedInstruments",
+            "userProfileSarvatra",
+            "activeSubscriptions"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "savedMandateBanks": {
+              "$id": "#/properties/body/properties/addMoneyPayOption/properties/savedMandateBanks",
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "paymentModes": {
+              "$id": "#/properties/body/properties/addMoneyPayOption/properties/paymentModes",
+              "type": [
+                "array",
+                "null"
+              ],
+              "minItems": 0,
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/body/properties/addMoneyPayOption/properties/paymentModes/items",
+                "type": "object",
+                "required": [
+                  "displayName",
+                  "isDisabled",
+                  "payChannelOptions",
+                  "priority",
+                  "onboarding",
+                  "paymentMode",
+                  "isHybridDisabled",
+                  "feeAmount",
+                  "taxAmount",
+                  "totalTransactionAmount"
+                ],
+                "additionalProperties": false,
+                "properties": {
+                  "displayName": {
+                    "type": "string"
+                  },
+                  "isDisabled": {
+                    "type": "object",
+                    "required": [
+                      "status",
+                      "msg"
+                    ],
+                    "additionalProperties": true,
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "true",
+                          "false"
+                        ]
+                      },
+                      "msg": {
+                        "type": [
+                          "string",
+                          "null"
+                        ]
+                      },
+                      "merchantAccept": {
+                        "type": "string",
+                        "enum": [
+                          "true",
+                          "false"
+                        ]
+                      },
+                      "userAccountExist": {
+                        "type": "string",
+                        "enum": [
+                          "true",
+                          "false"
+                        ]
+                      }
+                    }
+                  },
+                  "payChannelOptions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object"
+                    }
+                  },
+                  "priority": {
+                    "type": "string",
+                    "format": "number"
+                  },
+                  "prepaidCardSupported": {
+                    "type": "boolean"
+                  },
+                  "onboarding": {
+                    "type": "boolean"
+                  },
+                  "paymentMode": {
+                    "type": "string"
+                  },
+                  "isHybridDisabled": {
+                    "type": "boolean"
+                  },
+                  "feeAmount": {
+                    "type": "null"
+                  },
+                  "taxAmount": {
+                    "type": "null"
+                  },
+                  "totalTransactionAmount": {
+                    "type": "null"
+                  }
+                }
+              }
+            },
+            "savedInstruments": {
+              "$id": "#/properties/body/properties/addMoneyPayOption/properties/savedInstruments",
+              "type": "array",
+              "minItems": 0,
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/body/properties/addMoneyPayOption/properties/savedInstruments/items"
+              }
+            },
+            "userProfileSarvatra": {
+              "$id": "#/properties/body/properties/addMoneyPayOption/properties/userProfileSarvatra",
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "activeSubscriptions": {
+              "$id": "#/properties/body/properties/addMoneyPayOption/properties/activeSubscriptions",
+              "type": [
+                "object",
+                "null"
+              ]
+            }
+          }
+        },
+        "merchantLimitInfo": {
+          "$id": "#/properties/body/properties/merchantLimitInfo",
+          "type": "object",
+          "required": [
+            "merchantRemainingLimits",
+            "excludedPaymodes",
+            "message"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "merchantRemainingLimits": {
+              "$id": "#/properties/body/properties/merchantLimitInfo/properties/merchantRemainingLimits",
+              "type": "array",
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/body/properties/merchantLimitInfo/properties/merchantRemainingLimits/items"
+              }
+            },
+            "excludedPaymodes": {
+              "$id": "#/properties/body/properties/merchantLimitInfo/properties/excludedPaymodes",
+              "type": "array",
+              "additionalItems": true,
+              "items": {
+                "$id": "#/properties/body/properties/merchantLimitInfo/properties/excludedPaymodes/items",
+                "type": "string"
+              }
+            },
+            "message": {
+              "$id": "#/properties/body/properties/merchantLimitInfo/properties/message",
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

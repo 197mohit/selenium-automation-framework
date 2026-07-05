@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-44577" verbose="1" parallel="methods" thread-count="3">
+    <test name="PGP-44577 UPI Intent Retry">
+        <classes>
+            <class name="scripts.genrateESNTest.generateEsnTest">
+                <methods>
+                    <include name="newESN_BankFormOptimizedFlow"/>
+                    <include name="newESN_NormaTxnFlow"/>
+                    <include name="newESN_Normal_NativeSubsFlow"/>
+                    <include name="CheckPref_In_PreferenceInfoExt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-2620">
+    <test name="Verify PG2 PostPaid Txn">
+        <classes>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateSuccessPostPaidTxnPG2MID"/>
+                    <include name="validateFailedPostPaidTxnPG2MID"/>
+                    <include name="validatePendingPostPaidTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validatePendingPostPaidTxnPG2MIDCloseOrderV2ThenCheckMerchantStatus"/>
+                    <include name="validatePendingPostPaidTxnPG2MIDTheiaCloseOrderThenCheckMerchantStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

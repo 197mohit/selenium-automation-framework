@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS_Revamp_Suite" verbose="1" thread-count="12" parallel="methods">
+
+    <test name="CHECKOUTJS on Enhanced Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_UPITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases web UI REVAMP 1">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoBMURL"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <include name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <include name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid_NonLoggedIn"/>
+                    <include name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/>
+                    <include name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <include name="TC_015_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyQRDetailsShowingInFPOResponse"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <include name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/>
+                    <include name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <include name="TC_015_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC08"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC14"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC05"/>
+                    <include name="PGP_36557_Configurable_Icons_for_Login_via_OTP_and_Login_via_QR_TC15"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29613_CheckoutJsMerchantElementTest">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="promocodelogoutNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29620 Maestro Card Test Cases for checkoutJS web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.MaestroCardCheckout">
+                <methods>
+                    <include name="verifySavedMaestroCardOnEMiPayMode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28430 - UI validation for blink checkout for ItemBased and AmountBased">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ItemBasedEMIOnCheckoutJs"/>
+                    <include name="AmountBasedEMIOnCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <test name="PGP-33611 - EMI subvention UI improvements for wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ItemBasedEMIOnCheckoutJs"/>
+                    <include name="AmountBasedEMIOnCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

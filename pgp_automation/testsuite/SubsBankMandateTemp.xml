@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "BankMandate_Suite" verbose="1" thread-count="6" parallel="tests">
+    <test name="E-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+            <methods>
+                <include name="VerifyBankNameinFPOEMandateForNATIVE_MF_SIP"/>
+                <include name="VerifyBankNameinFPOEMandateForNATIVE_SUBSCRIPTION"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="P-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

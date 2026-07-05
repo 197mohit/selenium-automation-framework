@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-Drop-3-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service Drop 3 API ">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop3.Entityurlinfoformid"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Fetchentityignoreparams"/>
+            <class name="scripts.api.mappingService.mappingDrop3.fetchlogo"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getcardnetworkdetails"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getformatter"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Getpaymethoddetails"/>
+            <class name="scripts.api.mappingService.mappingDrop3.merchantidmap"/>
+            <class name="scripts.api.mappingService.mappingDrop3.Usergetusermid"/>
+        </classes>
+    </test>
+</suite>

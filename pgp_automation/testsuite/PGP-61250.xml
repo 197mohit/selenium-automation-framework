@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PennyDrop flow routed on gateway of Actual MID">
+
+    <test name="UPI PennyDrop flow routed on gateway of Actual MID">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_MF_Subs_PennyDropGateway"/>
+                    <include name="TC_002_Native_Subs_PennyDropGateway"/>
+                    <include name="TC_003_Native_MF_Subs_CashierPayParams"/>
+                    <include name="TC_004_Native_MF_Subs_CashierPayParams"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Cards PennyDrop flow routed on gateway of Actual MID">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC_001_Native_SIP_Cards_CashierPayParams"/>
+                    <include name="TC_002_Native_SIP_Cards_CashierPayParams"/>
+                    <include name="TC_003_Native_SIP_Cards_RoutingGateway"/>
+                    <include name="TC_004_Native_Subs_Cards_RoutingGateway"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46477" verbose="1" >
+    <test name="validate e2e txn for bank offer">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.BankOfferHotfix">
+                <methods>
+                    <include name="validateInitiateTxnAPI"/>
+                    <include name="validateInitiateTxnAPISuccessE2E"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

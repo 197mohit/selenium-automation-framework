@@ -1,0 +1,525 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LinkServicePG2" verbose="1" parallel="tests" thread-count="10">
+    <test name="LinkServicePG2 without theme">
+        <classes>
+            <class name="scripts.api.linkservice.UpdateLinkApi">
+                <methods>
+                    <include name="updateLink_03"/>
+                    <include name="updateLink_05"/>
+                    <include name="updateLink_06"/>
+                    <include name="updateLink_05"/>
+                    <include name="updateLink_02"/>
+                    <include name="updateLink_01"/>
+                    <include name="updateLink_02"/>
+                    <include name="updateLink_02"/>
+                    <include name="updateLink_01"/>
+                    <include name="updateLink_07"/>
+                    <include name="updateLink_05"/>
+                    <include name="updateLink_04"/>
+                    <include name="updateLink_03"/>
+                    <include name="updateLink_01"/>
+                    <include name="updateLink_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.ArchiveLinkApiTest">
+                <methods>
+                    <include name="archiveLink_03"/>
+                    <include name="archiveLink_05"/>
+                    <include name="archiveLink_07"/>
+                    <include name="archiveLink_02"/>
+                    <include name="archiveLink_01"/>
+                    <include name="archiveLink_12"/>
+                    <include name="archiveLink_09"/>
+                    <include name="archiveLink_11"/>
+                    <include name="archiveLink_08"/>
+                    <include name="archiveLink_10"/>
+                    <include name="archiveLink_04"/>
+                    <include name="archiveLink_06"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.SaveDefaultSettingsApi">
+                <methods>
+                    <include name="FalseAndRemoveDaysAfterIssueDateAndDaysBeforeExpiry"/>
+                    <include name="TrueAndRemoveChannels"/>
+                    <include name="TrueAndChangeChannels"/>
+                    <include name="TrueAndRemoveChannelsAndDaysBeforeExpiry"/>
+                    <include name="FalseAndDaysBeforeExpiryAndDaysBeforeExpiryAsNull"/>
+                    <include name="FalseAndChangeChannelsToNull"/>
+                    <include name="FalseAndChangeDaysBeforeExpiryAsNull"/>
+                    <include name="FalseAndAddDuplicateForDaysBeforeExpiry"/>
+                    <include name="FalseAndChangeDaysBeforeExpiryToNegative"/>
+                    <include name="TrueAndRemoveDaysBeforeExpiryAndDaysAfterIssueDate"/>
+                    <include name="FalseAndAddMoreThan5Reminders"/>
+                    <include name="FalseAndChangeValueOfChannels"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.FetchDefaultSettingsTest">
+                <methods>
+                    <include name="fetchDefaultSettings_02"/>
+                    <include name="fetchDefaultSettings_02"/>
+                    <include name="fetchDefaultSettings_02"/>
+                    <include name="fetchDefaultSettings_01"/>
+                    <include name="fetchDefaultSettings_01"/>
+                    <include name="fetchDefaultSettings_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.ExpireLinkApiTest">
+                <methods>
+                    <include name="expireLink_03"/>
+                    <include name="expireLink_10"/>
+                    <include name="expireLink_09"/>
+                    <include name="expireLink_02"/>
+                    <include name="expireLink_06"/>
+                    <include name="expireLink_05"/>
+                    <include name="expireLink_01"/>
+                    <include name="expireLink_07"/>
+                    <include name="expireLink_08"/>
+                    <include name="expireLink_04"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.IsNewMerchantApiTest">
+                <methods>
+                    <include name="isNewMerchant_04"/>
+                    <include name="isNewMerchant_01"/>
+                    <include name="isNewMerchant_03"/>
+                    <include name="isNewMerchant_01"/>
+                    <include name="isNewMerchant_01"/>
+                    <include name="isNewMerchant_05"/>
+                    <include name="isNewMerchant_05"/>
+                    <include name="isNewMerchant_02"/>
+                    <include name="isNewMerchant_04"/>
+                    <include name="isNewMerchant_03"/>
+                    <include name="isNewMerchant_03"/>
+                    <include name="isNewMerchant_02"/>
+                    <include name="isNewMerchant_05"/>
+                    <include name="isNewMerchant_02"/>
+                    <include name="isNewMerchant_04"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.ResendNotificationApiTest">
+                <methods>
+                    <include name="resendNotificationLink_04"/>
+                    <include name="resendNotificationLink_02"/>
+                    <include name="resendNotificationLink_03"/>
+                    <include name="resendNotificationLink_03"/>
+                    <include name="resendNotificationLink_04"/>
+                    <include name="resendNotificationLink_02"/>
+                    <include name="resendNotificationLink_01"/>
+                    <include name="resendNotificationLink_01"/>
+                    <include name="resendNotificationLink_04"/>
+                    <include name="resendNotificationLink_03"/>
+                    <include name="resendNotificationLink_02"/>
+                    <include name="resendNotificationLink_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.FetchLinkApiTest">
+                <methods>
+                    <include name="Fetchlink_01"/>
+                    <include name="FetchlinkFortemplate_21"/>
+                    <include name="FetchlinkFortemplate_20"/>
+                    <include name="Fetchlink_10"/>
+                    <include name="Fetchlink_08"/>
+                    <include name="Fetchlink_11"/>
+                    <include name="Fetchlink_09"/>
+                    <include name="Fetchlink_12"/>
+                    <include name="Fetchlink_16"/>
+                    <include name="Fetchlink_24"/>
+                    <include name="Fetchlink_05"/>
+                    <include name="Fetchlink_07"/>
+                    <include name="Fetchlink_04"/>
+                    <include name="Fetchlink_13"/>
+                    <include name="Fetchlink_02"/>
+                    <include name="Fetchlink_18"/>
+                    <include name="FetchlinkFortemplate_19"/>
+                    <include name="Fetchlink_06"/>
+                    <include name="Fetchlink_14"/>
+                    <include name="FetchlinkFortemplate_23"/>
+                    <include name="Fetchlink_03"/>
+                    <include name="Fetchlink_17"/>
+                    <include name="Fetchlink_15"/>
+                    <include name="FetchlinkFortemplate_22"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.SaveOrUpdateLinkDefaultSettingsApiTest">
+                <methods>
+                    <include name="saveDefault_06"/>
+                    <include name="saveDefault_03"/>
+                    <include name="saveDefault_01"/>
+                    <include name="saveDefault_04"/>
+                    <include name="saveDefault_03"/>
+                    <include name="saveDefault_02"/>
+                    <include name="saveDefault_05"/>
+                    <include name="saveDefault_04"/>
+                    <include name="saveDefault_06"/>
+                    <include name="saveDefault_03"/>
+                    <include name="saveDefault_02"/>
+                    <include name="saveDefault_01"/>
+                    <include name="saveDefault_01"/>
+                    <include name="saveDefault_04"/>
+                    <include name="saveDefault_06"/>
+                    <include name="saveDefault_02"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.linkservice.AmountCheckAtUITest">
+                <methods>
+                    <include name="MaxAmountCheckUI_02"/>
+                    <include name="MaxAmountCheckUI_05"/>
+                    <include name="MaxAmountCheckUI_04"/>
+                    <include name="MaxAmountCheckUI_02"/>
+                    <include name="MaxAmountCheckUI_03"/>
+                    <include name="MaxAmountCheckUI_01"/>
+                    <include name="MaxAmountCheckUI_04"/>
+                    <include name="MaxAmountCheckUI_01"/>
+                    <include name="MaxAmountCheckUI_03"/>
+                    <include name="MaxAmountCheckUI_05"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="createLink_01"/>
+                    <include name="createLink_08"/>
+                    <include name="createLink_15"/>
+                    <include name="createLink_17"/>
+                    <include name="createLink_01"/>
+                    <include name="createLink_13"/>
+                    <include name="createLink_17"/>
+                    <include name="createLink_11"/>
+                    <include name="createLink_01"/>
+                    <include name="createLink_03"/>
+                    <include name="createLink_10"/>
+                    <include name="createLink_02"/>
+                    <include name="createLink_07"/>
+                    <include name="createLink_16"/>
+                    <include name="createLink_14"/>
+                    <include name="createLink_10"/>
+                    <include name="createLink_19"/>
+                    <include name="createLink_14"/>
+                    <include name="createLink_20"/>
+                    <include name="createLink_05"/>
+                    <include name="createLink_08"/>
+                    <include name="createLink_16"/>
+                    <include name="createLink_18"/>
+                    <include name="createLink_15"/>
+                    <include name="createLink_13"/>
+                    <include name="createLink_10"/>
+                    <include name="createLink_07"/>
+                    <include name="createLink_04"/>
+                    <include name="createLink_06"/>
+                    <include name="createLink_14"/>
+                    <include name="createLink_07"/>
+                    <include name="createLink_09"/>
+                    <include name="createLink_08"/>
+                    <include name="createLink_15"/>
+                    <include name="createLink_17"/>
+                    <include name="createLink_12"/>
+                    <include name="createLink_02"/>
+                    <include name="createLink_09"/>
+                    <include name="createLink_09"/>
+                    <include name="createLink_02"/>
+                    <include name="createLink_13"/>
+                    <include name="createLink_16"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LinkServicePG2 with theme enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.GenerateTxnToken">
+                <methods>
+                    <include name="GenerateTxnToken_008"/>
+                    <include name="GenerateTxnToken_0010"/>
+                    <include name="GenerateTxnToken_001"/>
+                    <include name="GenerateTxnToken_003"/>
+                    <include name="GenerateTxnToken_009"/>
+                    <include name="GenerateTxnToken_002"/>
+                    <include name="GenerateTxnToken_0011"/>
+                    <include name="GenerateTxnToken_004"/>
+                    <include name="GenerateTxnToken_007"/>
+                    <include name="GenerateTxnToken_006"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.GetLinkInfoApi">
+                <methods>
+                    <include name="GetLinkInfo_001"/>
+                    <include name="GetLinkInfo_003"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.LinkReportDownloadApi">
+                <methods>
+                    <include name="LinksReportDownload_006"/>
+                    <include name="LinksReportDownload_004"/>
+                    <include name="LinksReportDownload_002"/>
+                    <include name="LinksReportDownload_001"/>
+                    <include name="LinksReportDownload_008"/>
+                    <include name="LinksReportDownload_007"/>
+                    <include name="LinksReportDownload_0010"/>
+                    <include name="LinksReportDownload_009"/>
+                    <include name="LinksReportDownload_005"/>
+                    <include name="LinksReportDownload_003"/>
+                    <include name="LinksReportDownload_0011"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.getLinkDetail">
+                <methods>
+                    <include name="Link_Detail_0010"/>
+                    <include name="Link_Detail_0012"/>
+                    <include name="Link_Detail_0013"/>
+                    <include name="Link_Detail_007"/>
+                    <include name="Link_Detail_0011"/>
+                    <include name="Link_Detail_0017"/>
+                    <include name="Link_Detail_0021"/>
+                    <include name="Link_Detail_005"/>
+                    <include name="Link_Detail_0020"/>
+                    <include name="Link_Detail_0014"/>
+                    <include name="Link_Detail_0018"/>
+                    <include name="Link_Detail_0019"/>
+                    <include name="Link_Detail_0015"/>
+                    <include name="Link_Detail_004"/>
+                    <include name="Link_Detail_006"/>
+                    <include name="Link_Detail_009"/>
+                    <include name="Link_Detail_008"/>
+                    <include name="Link_Detail_0016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LinkServicePG2 with theme checkoutjs_web_revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.MaxAmountCheck">
+                <methods>
+                    <include name="MaxAmountCheckInvoice_02"/>
+                    <include name="MaxAmountCheck_Skip_Login_02"/>
+                    <include name="MaxAmountCheckPaymentBtn_03"/>
+                    <include name="MaxAmountCheckGeneric_03"/>
+                    <include name="MaxAmountCheckPaymentBtn_02"/>
+                    <include name="MaxAmountCheckFixed_03"/>
+                    <include name="MaxAmountCheck_Paymentform_02"/>
+                    <include name="MaxAmountCheckGeneric_02"/>
+                    <include name="MaxAmountCheck_Paymentform_01"/>
+                    <include name="MaxAmountCheckFixed_02"/>
+                    <include name="MaxAmountCheckInvoice_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.PaymentButtonsDisabled">
+                <methods>
+                    <include name="PaymentButton_02"/>
+                    <include name="PaymentButton_07"/>
+                    <include name="PaymentButton_06"/>
+                    <include name="PaymentButton_01"/>
+                    <include name="PaymentButton_04"/>
+                    <include name="PaymentButtonDisable_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.CustomerJourneyChangesCheckoutJS">
+                <methods>
+                    <include name="GenericPaymentLink_PPI1"/>
+                    <include name="FixedPaymentLinkUI_PPI1"/>
+                    <include name="InvoicePaymentLinkUI_PPI3"/>
+                    <include name="InvoicePaymentLinkUI_PPI1"/>
+                    <include name="GenericPaymentLinkUI_PPI3"/>
+                    <include name="InvoicePaymentLink_PPI3"/>
+                    <include name="FixedPaymentLinkUI_PPI3"/>
+                    <include name="GenericPaymentLinkUI_PPI1"/>
+                    <include name="InvoicePaymentLink_PPI1"/>
+                    <include name="FixedPaymentLink_PPI1"/>
+                    <include name="FixedPaymentLink_PPI3"/>
+                    <include name="GenericPaymentLink_PPI3"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.EdcLinkSafetyTipTest">
+                <methods>
+                    <include name="EDC_Link_SafetyTip_01"/>
+                    <include name="EDC_Link_SafetyTip_03"/>
+                    <include name="EDC_Link_SafetyTip_04"/>
+                    <include name="EDC_Link_SafetyTip_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.EnableDisablePayModesTest">
+                <methods>
+                    <include name="PaymodeEanbleDisable_02"/>
+                    <include name="PaymodeEanbleDisable_01"/>
+                    <include name="PaymodeEanbleDisable_10"/>
+                    <include name="PaymodeEanbleDisable_08"/>
+                    <include name="PaymodeEanbleDisable_04"/>
+                    <include name="PaymodeEanbleDisable_12"/>
+                    <include name="PaymodeEanbleDisable_05"/>
+                    <include name="PaymodeEanbleDisable_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.LocationPopUpTests">
+                <methods>
+                    <include name="locationPopUp_003"/>
+                    <include name="locationPopUp_004"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.initiateTxnApi">
+                <methods>
+                    <include name="Initiate_Txn_0015"/>
+                    <include name="Initiate_Txn_0030"/>
+                    <include name="Initiate_Txn_001"/>
+                    <include name="Initiate_Txn_005"/>
+                    <include name="Initiate_Txn_008"/>
+                    <include name="Initiate_Txn_0014"/>
+                    <include name="Initiate_Txn_002"/>
+                    <include name="Initiate_Txn_0031"/>
+                    <include name="Initiate_Txn_007"/>
+                    <include name="Initiate_Txn_0016"/>
+                    <include name="Initiate_Txn_0019"/>
+                    <include name="Initiate_Txn_0012"/>
+                    <include name="Initiate_Txn_0032"/>
+                    <include name="Initiate_Txn_0029"/>
+                    <include name="Initiate_Txn_003"/>
+                    <include name="Initiate_Txn_0022"/>
+                    <include name="Initiate_Txn_0018"/>
+                    <include name="Initiate_Txn_0011"/>
+                    <include name="Initiate_Txn_0035"/>
+                    <include name="Initiate_Txn_004"/>
+                    <include name="Initiate_Txn_009"/>
+                    <include name="Initiate_Txn_0013"/>
+                    <include name="Initiate_Txn_0017"/>
+                    <include name="Initiate_Txn_0010"/>
+                    <include name="Initiate_Txn_006"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.OTPConsultApi">
+                <methods>
+                    <include name="GenerateTxnToken_001"/>
+                    <include name="GenerateTxnToken_005"/>
+                    <include name="GenerateTxnToken_004"/>
+                    <include name="GenerateTxnToken_006"/>
+                    <include name="GenerateTxnToken_003"/>
+                    <include name="GenerateTxnToken_002"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.KafkaMessagePayload">
+                <methods>
+                    <include name="MessagePayload_03"/>
+                    <include name="MessagePayload_13"/>
+                    <include name="MessagePayload_04"/>
+                    <include name="MessagePayload_01"/>
+                    <include name="MessagePayload_10"/>
+                    <include name="MessagePayload_09"/>
+                    <include name="MessagePayload_05"/>
+                    <include name="MessagePayload_06"/>
+                    <include name="MessagePayload_08"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.linkEMISubvention">
+                <methods>
+                    <include name="EMISubvention_0014"/>
+                    <include name="EMISubvention_0028"/>
+                    <include name="EMISubvention_004"/>
+                    <include name="EMISubvention_003"/>
+                    <include name="EMISubvention_0011"/>
+                    <include name="EMISubvention_007"/>
+                    <include name="EMISubvention_001"/>
+                    <include name="EMISubvention_008"/>
+                    <include name="EMISubvention_0024"/>
+                    <include name="EMISubvention_0018"/>
+                    <include name="EMISubvention_0012"/>
+                    <include name="EMISubvention_002"/>
+                    <include name="EMISubvention_0027"/>
+                    <include name="EMISubvention_0020"/>
+                    <include name="EMISubvention_0015"/>
+                    <include name="EMISubvention_0010"/>
+                    <include name="EMISubvention_0019"/>
+                    <include name="EMISubvention_0022"/>
+                    <include name="EMISubvention_0021"/>
+                    <include name="EMISubvention_0017"/>
+                    <include name="EMISubvention_006"/>
+                    <include name="EMISubvention_0016"/>
+                    <include name="EMISubvention_0023"/>
+                    <include name="EMISubvention_0025"/>
+                    <include name="EMISubvention_005"/>
+                    <include name="EMISubvention_009"/>
+                    <include name="EMISubvention_0013"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SingleTxnLinks">
+        <classes>
+            <class name="scripts.api.linkservice.SingleTxnLinks"/>
+        </classes>
+    </test>
+    <test name="PGP-35107">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink"/>
+        </classes>
+    </test>
+    <test name="TotalPaymentAmountAllowed">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.TotalPaymentAmountAllowed"/>
+        </classes>
+    </test>
+    <test name="StoreQrCheckout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.StoreQrCheckout"/>
+        </classes>
+    </test>
+    <test name="BrandEmiNewUrl">
+        <classes>
+            <class name="scripts.api.linkservice.BrandEmiNewUrl"/>
+        </classes>
+    </test>
+
+
+    <test name="HdfcDigipos">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.HdfcDigipos"/>
+        </classes>
+    </test>
+    <test name="SupportForSenderContext">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.SupportForSenderContext"/>
+        </classes>
+    </test>
+    <test name="super router merchant task">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.SuperRouterMerchantTask"/>
+        </classes>
+    </test>
+    <test name="PGP-52775">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Link_Payment_NewLogic"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Apostrophe in link Description">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Link_Apostrophe_desc_SuccessTxn001"/>
+                    <include name="Link_Apostrophe_desc_FailedTxn001"/>
+                    <include name="Link_Apostrophe_desc_SuccessTxn002"/>
+                    <include name="Link_Apostrophe_desc_FailedTxn002"/>
+                    <include name="Link_Apostrophe_desc_SuccessTxn003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-55982 AXIS DQR for Links">
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Link_Payment_E2E_Success_Txn_NEWDQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

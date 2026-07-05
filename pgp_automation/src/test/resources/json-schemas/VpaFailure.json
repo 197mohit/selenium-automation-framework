@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "head": {
+      "type": "object",
+      "properties": {
+        "responseTimestamp": {
+          "type": "string"
+        },
+        "requestId": {
+          "type": "null"
+        },
+        "version": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "responseTimestamp",
+        "requestId",
+        "version"
+      ]
+    },
+    "body": {
+      "type": "object",
+      "properties": {
+        "valid": {
+          "type": "boolean"
+        },
+        "resultInfo": {
+          "type": "object",
+          "properties": {
+            "resultStatus": {
+              "type": "string"
+            },
+            "resultCode": {
+              "type": "string"
+            },
+            "resultMsg": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ]
+        }
+      },
+      "required": [
+        "valid",
+        "resultInfo"
+      ]
+    }
+  },
+  "required": [
+    "head",
+    "body"
+  ]
+}

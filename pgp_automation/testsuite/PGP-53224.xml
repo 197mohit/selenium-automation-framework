@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-53224" verbose="1" thread-count="2" parallel="methods">
+    <test name="Cust ID in Promo APIs">
+        <classes>
+            <class name="scripts.Promo.ANDFlow.AndFpoSCM">
+                <methods>
+                    <include name="validateCUSTIDPassedV2FPOSSO"/>
+                    <include name="validateCUSTIDPassedV1FPOSSO"/>
+                    <include name="validateCUSTIDPassedV5FPOSSO"/>
+                    <include name="validateCUSTIDPassedV2FPOTxnToken"/>
+                    <include name="validateCUSTIDPassedV5FPOTxnToken"/>
+                    <include name="validateCUSTIDPassedV1FPOTxnToken"/>
+                    <include name="validateCUSTIDPassedV2FPOTxnTokenwithoutSSO"/>
+                    <include name="validateCUSTIDPassedV5FPOTxnTokenwithoutSSO"/>
+                    <include name="validateCUSTIDPassedV1FPOTxnTokenwithoutSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

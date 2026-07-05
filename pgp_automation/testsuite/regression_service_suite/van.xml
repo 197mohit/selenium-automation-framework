@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Van_Suite" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="van proxy service">
+        <classes>
+            <class name="scripts.api.van.createVan.ChecksumTokenVanCreateTest"/>
+            <class name="scripts.api.van.createVan.JWTTokenVanCreateTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 1">
+        <classes>
+            <class name="scripts.api.van.vanPayment.JWTTokenVanPaymentTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 2">
+        <classes>
+            <class name="scripts.api.van.vanQuery.ChecksumTokenVanQueryTest"/>
+            <class name="scripts.api.van.vanQuery.JWTTokenVanQueryTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 3">
+        <classes>
+            <class name="scripts.api.van.vanSearch.JWTTokenVanSearchTest"/>
+            <class name="scripts.api.van.vanSearch.ChecksumTokenVanSearchTest"/>
+        </classes>
+    </test>
+
+    <test name="van proxy service 4">
+        <classes>
+            <class name="scripts.api.van.updateVan.JWTTokenVanUpdateTest">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage -->
+                    <exclude name="Validate the response of update van api when activate a deactivated van"/>
+                </methods>
+            </class>
+            <class name="scripts.api.van.updateVan.ChecksumTokenVanUpdateTest">
+                <!-- Exclude Zero Pass Percentage -->
+                <methods>
+                    <exclude name="Validate the response of update van api when activate a deactivated van"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="van proxy service 5">
+        <classes>
+            <class name="scripts.api.van.disableVan.ChecksumTokenVanDisableTest"/>
+            <class name="scripts.api.van.disableVan.JWTTokenVanDisableTest"/>
+        </classes>
+    </test>
+
+</suite>

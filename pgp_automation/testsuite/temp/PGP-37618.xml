@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-37618">
+    <test name="Verify UPI Push PG2 Txn">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="validateSuccessUpiPushTxnPG2MID"/>
+                    <include name="validateFailedUpiPushTxnPG2MID"/>
+                    <include name="pendingUpiPushTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="pendingUpiPushTxnPG2MIDCloseOrderV2ThenCheckMerchantStatus"/>
+                    <include name="pendingUpiPushTxnPG2MIDTheiaCloseOrderThenCheckMerchantStatus"/>
+                    <include name="userNotPrsentInFF4JUPIPushTxnRoutedToPPlus"/>
+                    <include name="midNotPrsentInFF4JButPrefEnabledUPIPushTxnRoutedToPG2PendingTxn"/>
+                    <include name="userPrsentMidNotPresentInFF4JUPIPushTxnRoutedToPPlus"/>
+                    <include name="midNotPresentInFF4JTheiaStatusPrefDisabledCloseOrderFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

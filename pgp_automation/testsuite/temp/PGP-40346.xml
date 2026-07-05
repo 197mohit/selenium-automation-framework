@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs suite">
+    <test name="PGP-41896">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_infobuttonMessage_is_not_empty_FrozenUser"/>
+                    <include name="Verify_infobuttonMessage_is_not_empty_DeactiveUser"/>
+                    <include name="Verify_infobuttonMessage_is_not_empty_OnHoldUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56210 Emi Eligibility Code coverage" verbose="1">
+    <test name="Emi Eligibility New Flow" parallel="methods" thread-count="4">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEmiEligibilityNewFlow"/>
+        </classes>
+    </test>
+</suite>

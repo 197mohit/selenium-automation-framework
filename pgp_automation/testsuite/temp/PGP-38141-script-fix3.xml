@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="FetchCardDetails" verbose="1">
+
+    <test name="FetchCardDetails">
+
+        <classes>
+            <class name="scripts.Promo.ORRFlow.FetchCardDetailsSCM">
+                <methods>
+                    <include name="validateFetchCardDetails_SCM_with_CIN"/>
+                    <include name="validateFetchCardDetails_SCM_with_New_Card"/>
+                </methods>
+            </class>
+            <class name="scripts.flows.NativePlusTest">
+            <methods>
+            <include name="PGP 28967 test merchant name in theia facade logs after paytm_cashback promo txn"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-24028" verbose="1" parallel="classes" thread-count="20">
+    <test name="PGP-24028">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.VPAValidateV1Test"/>
+            <class name="scripts.api.theia.ValidateOtp"/>
+            <class name="scripts.api.theia.validateAndFetchMerchantInfo.JWTTokenValidateAndFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.UpdateTransactionDetail"/>
+            <class name="scripts.api.theia.SubmitKYC"/>
+            <class name="scripts.api.theia.ShowPaymentPage"/>
+            <class name="scripts.api.theia.SendOtp"/>
+            <class name="scripts.api.theia.GuestFetchPaymentOptions"/>
+            <class name="scripts.api.theia.FetchVpaDetails"/>
+            <class name="scripts.api.theia.FetchPromoCodeDetail"/>
+            <class name="scripts.api.theia.FetchPcfDetails"/>
+            <class name="scripts.api.theia.FetchPaymentPromotionAttributes"/>
+            <class name="scripts.api.theia.FetchPaymentInstruments"/>
+            <class name="scripts.api.theia.FetchMerchantUserInfo"/>
+            <class name="scripts.api.theia.FetchMerchantInfo"/>
+            <class name="scripts.api.theia.FetchEmiPaymentChannels"/>
+            <class name="scripts.api.theia.FetchBinAppDetails"/>
+            <class name="scripts.api.theia.ErrorJsp"/>
+            <class name="scripts.api.theia.CloseOrder"/>
+            <class name="scripts.api.theia.CheckEmiEligibility"/>
+        </classes>
+    </test>
+</suite>

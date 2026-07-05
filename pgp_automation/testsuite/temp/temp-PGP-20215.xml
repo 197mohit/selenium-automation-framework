@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TEMP-PGP-20215" verbose="1">
+    <test name="PGP-20215- EDC Pay Confirm">
+        <classes>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb">
+                <methods>
+                    <include name="edcPayConfirm1"/>
+                    <include name="edcPayConfirm2"/>
+                    <include name="edcPayConfirm3"/>
+                    <include name="edcPayConfirm4"/>
+                </methods>
+                </parameter>
+            </class>
+        </classes>
+    </test>
+</suite>

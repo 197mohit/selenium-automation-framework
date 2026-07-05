@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SubscriptionAPI_Failed" verbose="1" thread-count="20" parallel="tests">
+ <test thread-count="20" verbose="0" name="PGP-18282 Native" parallel="tests">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_18282_ValidateStatusAfterLoginNative"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.NativeProcessSubscription -->
+        </classes>
+    </test> <!-- PGP-18282 Native -->
+    <test thread-count="20" verbose="0" name="P-Mandate" parallel="tests">
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class> <!-- scripts.Native.bankmandate.Pmandate -->
+        </classes>
+    </test> <!-- P-Mandate -->
+    <test thread-count="20" verbose="0" name="PGP-27722 Saved Mandates Priority List Tests" parallel="tests">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefNotEnabled"/>
+                    <include name="listOfUpdatedNPCIBanksinFPOwithAuthMode"/>
+                    <include name="listOfUpdatedNPCIBanksinFPO"/>
+                    <include name="TC_EM001_ValidateDBWhenSubsInitiated"/>
+                    <include name="listOfUpdatedNPCIBanksinFPO"/>
+                    <include name="listOfUpdatedNPCIBanksinFPOwithAuthMode"/>
+                    <include name="validateFetchMandateListAPI"/>
+                    <include name="validateSuccessTxnfromBMwithLatestNPCI"/>
+                    <include name="PGP_27722_VerifyPriorityinFPOResponseEMandatewithPrefEnabled"/>
+                </methods>
+            </class> <!-- scripts.Native.bankmandate.Emandate -->
+        </classes>
+    </test> <!-- PGP-27722 Saved Mandates Priority List Tests -->
+    <test thread-count="20" verbose="0" name="PGP-31174 Native Process Subscription" parallel="tests">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyFpoResponseForAutoRefundMerchant"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.NativeProcessSubscription -->
+        </classes>
+    </test> <!-- PGP-31174 Native Process Subscription -->
+    <test thread-count="20" verbose="0" name="PGP-32817 PPI-N flow blocked for Subs" parallel="tests">
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="TC_002_Wallet_Displayed_for_PPIN"/>
+                    <include name="TC_001_PPIN_txnFailed_forBlank_Paymode"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- PGP-32817 PPI-N flow blocked for Subs -->
+    <test thread-count="20" verbose="0" name="PGP-28989 Native Plus" parallel="tests">
+        <classes>
+            <class name="scripts.SubscriptionDoubleOTP">
+                <methods>
+                    <include name="TC_SDO003_ValidateAuthorizeFlagFPOAfterOTPValidation"/>
+                    <include name="TC_SDO005_ValidateAuthorizeFlagFPOAfterOTPValidation"/>
+                    <include name="TC_SDO001_ValidateAuthorizeFlagFPOBeforeOTPValidation"/>
+                    <include name="TC_SDO002_ValidateAuthorizeFlagFPOAfterOTPValidation"/>
+                    <include name="TC_SDO004_ValidateAuthorizeFlagFPOAfterOTPValidation"/>
+                </methods>
+            </class> <!-- scripts.SubscriptionDoubleOTP -->
+        </classes>
+    </test> <!-- PGP-28989 Native Plus -->
+    <test thread-count="20" verbose="0" name="PGP-39530 Native" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_39530_TC_02_Subs_GD_CC"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionUPI"/>
+                    <include name="TC_NPS015_ProcessAddnpayFIXSubscriptionUPI"/>
+                    <include name="PGP_39530_TC_01_Subs_GD_CC"/>
+                    <include name="TC_NPS015_ProcessAddnpayFixSubscriptionCC"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionNB"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionDC"/>
+                    <include name="TC_NPS015_ProcessAddnpayVariableSubscriptionCC"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.NativeProcessSubscription -->
+        </classes>
+    </test> <!-- PGP-39530 Native -->
+    <test thread-count="20" verbose="0" name="Mandate Subcription Creation" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.SubsMandate">
+                <methods>
+                    <include name="peonNotSentForZeroBMNativeMF"/>
+                    <include name="TC_SM021_ValidatePTC_Fail_NMS_invalidPayMode"/>
+                    <include name="TC_SM010_ValidateSubs_Fail_NMS_expDateLess_todayDate"/>
+                    <include name="TC_SM008_ValidateSubs_Fail_NMS_maxAmountGrtrConfigAmt"/>
+                    <include name="peonNotSentForZeroBMNativeSubs"/>
+                    <include name="TC_SM007_ValidateSubs_Fail_NMS_PayMode_CC"/>
+                    <include name="TC_SM008_ValidateSubs_Fail_NS_maxAmountGrtrConfigAmt"/>
+                    <include name="TC_022_ValidateFPO_DC_PaymodeSupported"/>
+                    <include name="TC_023_ValidateFPO_blank_PaymodeSupported"/>
+                    <include name="TC_SM007_ValidateSubs_Success_NMS_PayMode_BM_DC"/>
+                </methods>
+            </class> <!-- scripts.Native.bankmandate.SubsMandate -->
+        </classes>
+    </test> <!-- Mandate Subcription Creation -->
+    <test thread-count="20" verbose="0" name="PGP-29589 - Flexi subscription testcases for renewal" parallel="tests">
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithPPI"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithBankMandate"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.ProcessRenewSubscription -->
+        </classes>
+    </test> <!-- PGP-29589 - Flexi subscription testcases for renewal -->
+    <test thread-count="20" verbose="0" name="PGP-29588 native Subscription testcases for freq fortnight"
+          parallel="tests">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifySuccessfulSubsPPBLTxnForFreqFortnight"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.NativeProcessSubscription -->
+        </classes>
+    </test> <!-- PGP-29588 native Subscription testcases for freq fortnight -->
+    <test thread-count="20" verbose="0" name="P-Mandate Subscription tests" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="TC_NativeMF_PM_Subs002_ValidateDBWhenSubsCallBackSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_PM004_ValidateUploadDownload"/>
+                    <include name="TC_NativeSubs_PM_001_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_PM001_ValidateDBWhenSubsCreated"/>
+                    <include name="TC_NativeSubs_PM_002_ValidateDBWhenSubsCallBackSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_PM_001_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_PM003_ValidateSuccessRenewSubs"/>
+                    <include name="TC_PM002_ValidateDBWhenSubsCallbackSent"/>
+                </methods>
+            </class> <!-- scripts.Native.bankmandate.Pmandate -->
+        </classes>
+    </test> <!-- P-Mandate Subscription tests -->
+    <test thread-count="20" verbose="0" name="E-Mandate Subscription tests" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="TC_NativeMFSubs_EM_002_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                    <include name="validateFetchMandateListAPI"/>
+                    <include name="TC_NativeMFSubs_EM_004_ValidateDBWhenResponseSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_003_ValidateDBWhenSubsCompletingFormWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeSubs_EM_004_ValidateDBWhenSubsCallBackSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_003_ValidateDBWhenCompletingNPCIFormSentWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_NativeMFSubs_EM_005_ValidateSuccessRenewSubsWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_EM002_ValidateDBWhenSubsCreated"/>
+                    <include name="TC_EM004_ValidateSuccessRenewSubs"/>
+                    <include name="TC_NativeSubs_EM_005_ValidateSuccessRenewSubsWhenTxnAmtGreaterThan0"/>
+                    <include name="TC_EM003_ValidateDBWhenSubsCallBackSent"/>
+                    <include name="validateSuccessTxnfromBMwithLatestNPCI"/>
+                    <include name="TC_NativeSubs_EM_002_ValidateDBWhenSubsCreatedWhenTxnAmtGreaterThan0"/>
+                </methods>
+            </class> <!-- scripts.Native.bankmandate.Emandate -->
+        </classes>
+    </test> <!-- E-Mandate Subscription tests -->
+    <test thread-count="20" verbose="0" name="PGP-32820 Validating siHubMode is not sent to P+" parallel="tests">
+        <classes>
+            <class name="scripts.SIDetailsBlocked">
+                <methods>
+                    <include name="TC_003_siHubMode_notPassed_forPPBL"/>
+                </methods>
+            </class> <!-- scripts.SIDetailsBlocked -->
+        </classes>
+    </test> <!-- PGP-32820 Validating siHubMode is not sent to P+ -->
+    <test thread-count="20" verbose="0" name="PGP-29589 - flexi subscription creation" parallel="tests">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsSemiAnually"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsFortnight"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsQuarter"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsBiMonthly"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsDay"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsMonth"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsYear"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsWeek"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.NativeProcessSubscription -->
+        </classes>
+    </test> <!-- PGP-29589 - flexi subscription creation -->
+    <test thread-count="20" verbose="0" name="Bank Mandate Cases" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                </methods>
+            </class> <!-- scripts.Native.checkoutjs.CheckoutJsTests -->
+        </classes>
+    </test> <!-- Bank Mandate Cases -->
+    <test thread-count="20" verbose="0" name="Native Renew Subscription" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewBMONDEMANDDD"/>
+                    <include name="subsWithPPBLAndFPO"/>
+                    <include name="subsBlankWithPPI"/>
+                    <include name="subsWithPPBL"/>
+                    <include name="verifyRenewBIMONTHLYDDCC"/>
+                    <include name="TC_NRS001_ProcessRenewSubs_VAR_PPI_MONTH"/>
+                    <include name="verifySubsIDLengthValidationFailedMessage"/>
+                    <include name="verifyTxnAmountLengthValidationFailedMessage"/>
+                    <include name="verifyRenewWEEKDDDC"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.ProcessRenewSubscription -->
+        </classes>
+    </test> <!-- Native Renew Subscription -->
+    <test thread-count="20" verbose="0" name="PGP-42982 - 3" parallel="tests">
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC05_ValidateTheNewFieldsInFPO"/>
+                    <include name="TC11_ValidateFPOResponseForNATIVE_MF_SIP"/>
+                    <include name="TC21_ValidateProductCode"/>
+                    <include name="TC19_ValidateDeepLinkParametersForOndemandSubs"/>
+                    <include name="TC20_ValidateDeepLinkParametersForOndemandSubs_1"/>
+                    <include name="TC18_ValidateDeepLinkParameters"/>
+                    <include name="TC06_PGP_48381"/>
+                </methods>
+            </class> <!-- scripts.UpiQrFlow -->
+        </classes>
+    </test> <!-- PGP-42982 - 3 -->
+    <test thread-count="20" verbose="0" name="PGP-26916 Creating subscriptions" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="sC_VIA_PPI01"/>
+                    <include name="PGP_40026_TC_02_VerifyAdditionalUPIHandles"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueJCTA"/>
+                    <include name="PGP_41837_TC01_BankMandateJS"/>
+                    <include name="PGP_40026_TC_01_VerifyDefaultUPIHandles"/>
+                    <include name="PGP_41837_TC02_BankMandateJS"/>
+                    <include name="PGP_40026_TC_BankMandateDefaultAuthMode"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSWalletCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSUPItCTA"/>
+                    <include name="sC_VIA_DC15"/>
+                    <include name="sC_VIA_PPI"/>
+                </methods>
+            </class> <!-- scripts.SubscriptionBlinkCheckout -->
+        </classes>
+    </test> <!-- PGP-26916 Creating subscriptions -->
+    <test thread-count="20" verbose="0" name="PGP-26916 Creating subscriptions UI REVAMP" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_40026_TC_02_VerifyAdditionalUPIHandles"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueJCTA"/>
+                    <include name="PGP_35247_TC_04_FIX"/>
+                    <include name="PGP_41837_TC01_BankMandateJS"/>
+                    <include name="PGP_35247_TC_01_YEAR"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSWalletCTA"/>
+                    <include name="TC_03"/>
+                    <include name="PGP_35247_TC_02_MONTH"/>
+                    <include name="sC_VIA_PPI01"/>
+                    <include name="PGP_40026_TC_01_VerifyDefaultUPIHandles"/>
+                    <include name="PGP_41837_TC02_BankMandateJS"/>
+                    <include name="PGP_40026_TC_BankMandateDefaultAuthMode"/>
+                    <include name="verify_closed_wallet_user_error_message_SubsFlow"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSUPItCTA"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"/>
+                    <include name="PGP_35247_TC_03_DAY"/>
+                    <include name="sC_VIA_DC15"/>
+                    <include name="sC_VIA_PPI"/>
+                </methods>
+            </class> <!-- scripts.SubscriptionBlinkCheckout -->
+        </classes>
+    </test> <!-- PGP-26916 Creating subscriptions UI REVAMP -->
+    <test thread-count="20" verbose="0" name="UPICollectNativeSubs" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_MF_Subs_FailureTransaction"/>
+                    <include name="TC_002_Native_Subs_FreqUnitMonth"/>
+                    <include name="TC_008_Native_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_001_Native_Subs_Failure_ErrorCode"/>
+                    <include name="TC_006_Native_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_002_Native_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_007_Native_Subs_FreqUnitWeek"/>
+                    <include name="TC_003_Native_Subs_FreqUnitYear"/>
+                    <include name="TC_005_Native_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_001_Native_Subs_FreqUnitDay"/>
+                    <include name="TC_003_Native_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_001_Native_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="TC_004_Native_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Native_Subs_FailureTransaction"/>
+                    <include name="TC_001_NativeMF_SIP_Subs_Failure_ErrorCode"/>
+                    <include name="TC_001_Native_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_003_Native_MF_Subs_FreqUnitYear"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPICollectNativeSubs -->
+        </classes>
+    </test> <!-- UPICollectNativeSubs -->
+    <test thread-count="20" verbose="0" name="Native Process Subscription" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsSemiAnually"/>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIMonth"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsQuarter"/>
+                    <include name="TC05_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP_PAY"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsDay"/>
+                    <include name="verifyFpoResponseForAutoRefundMerchant"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsYear"/>
+                    <include name="TC_NPS008_ProcessVariableSubscriptionPPIYear"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsWeek"/>
+                    <include name="PGP_39530_TC_01_Subs_GD_CC"/>
+                    <include name="TC_NPS017_ProcessVariableSubscriptionPPIQuarter"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsFortnight"/>
+                    <include name="TC03_ValidateBankAccountFeatureList_ReqType_NATIVE_SUBSCRIPTION_PAY"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsBiMonthly"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsMonth"/>
+                    <include name="PGP_39530_TC_02_Subs_GD_CC"/>
+                    <include name="TC_NPS019_ProcessVariableSubscriptionPPISemiAnnually"/>
+                    <include name="TC07_ValidateResponseWhenReuqestTypeisNATIVE_SUBSCRIPTION"/>
+                    <exclude name="TC_NPS015_ProcessAddnpayVariableSubscriptionDC"/>
+                    <exclude name="TC_NPS015_ProcessAddnpayFixSubscriptionCC"/>
+                    <include name="TC_NPS015_ProcessAddnpayFixSubscriptionDC"/>
+                    <exclude name="TC_NPS015_ProcessAddnpayVariableSubscriptionCC"/>
+                    <include name="TC_NPS015_ProcessAddnpayFixSubscriptionNB"/>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIDay"/>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIYear"/>
+                    <include name="TC_NPS018_ProcessVariableSubscriptionPPIBimonthly"/>
+                    <include name="TC_NPS007_ProcessVariableSubscriptionPPIDay"/>
+                    <include name="TC_NPS005_ProcessVariableSubscriptionPPIMonth"/>
+                    <include name="TC_NPS016_ProcessVariableSubscriptionPPIWeek"/>
+                    <include name="VerifyisAddNPayFlagForCreateSubsUsingAddnPayThroughUPI"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.NativeProcessSubscription -->
+        </classes>
+    </test> <!-- Native Process Subscription -->
+    <test thread-count="20" verbose="0" name="UPIRenewSubs" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_OneDaysRenewal"/>
+                    <include name="TC_007_Renew_Subs_AmountTypeVariable_Freq_SemiAnnually"/>
+                    <include name="TC_001_Renew_Subs_Failed_DifferentAmountSent"/>
+                    <include name="TC_002_Renew_Subs_AmountTypeVariable_Freq_ONDEMAND"/>
+                    <include name="TC_001_Renew_Failure_Subs_NotPerFrequency"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMANDSameDayRenewal"/>
+                    <include name="TC_004_Renew_Subs_AmountTypeVariable_Freq_Week"/>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithUPI"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_ThreeDaysRenewal"/>
+                    <include name="TC_002_Prenotify_Past_Date"/>
+                    <include name="TC_005_Renew_Subs_AmountTypeFix_Freq_Quarter"/>
+                    <include name="TC_001_Renew_Subs_MultipleRenewal"/>
+                    <include name="TC_003_Renew_MF_Subs_AmountTypeVariable_Freq_Year"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_TwoDaysRenewal"/>
+                    <include name="TC_004_Renew_MF_Subs_AmountTypeVariable_Freq_Week"/>
+                    <include name="TC_002_Renew_Subs_AmountTypeVariable_Freq_Day"/>
+                    <include name="TC_006_Renew_MF_Subs_AmountTypeVariable_Freq_BiMonthly"/>
+                    <include name="TC_001_Renew_Subs_AmountTypeFix_Freq_Month"/>
+                    <include name="TC_001_Renew_Failure_Subs_UPIIntent"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPIRenewSubs -->
+        </classes>
+    </test> <!-- UPIRenewSubs -->
+    <test thread-count="20" verbose="0" name="UPIIntentNativeSubs" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_Subs_Failure_ErrorCode"/>
+                    <include name="TC_008_Native_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Native_Subs_FreqUnitMonth"/>
+                    <include name="TC_008_Native_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Native_Subs_StartDateIsFuture"/>
+                    <include name="TC_004_Native_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_001_Native_MF_Subs_FailureTransaction"/>
+                    <include name="TC_001_Native_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_005_Native_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_003_Native_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_002_Native_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_006_Native_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_001_Native_Subs_FreqUnitDay"/>
+                    <include name="TC_004_Native_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_004_Native_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Native_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Native_Subs_FailureTransaction"/>
+                    <include name="TC_004_Native_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Native_Subs_FreqUnitYear"/>
+                    <include name="TC_003_Native_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_007_Native_Subs_FreqUnitWeek"/>
+                    <include name="TC_002_Native_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_002_Native_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_004_Native_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Native_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_003_Native_MF_Subs_FreqUnitYear"/>
+                    <include name="TC_007_Native_MF_Subs_FreqUnitWeek"/>
+                    <include name="TC_001_Native_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="PGP_40525_TC_01_Native_Subs"/>
+                    <include name="PGP_40525_TC_02_Native_Subs"/>
+                    <include name="TC_001_NativeMF_SIP_Subs_Failure_ErrorCode"/>
+                    <include name="TC_001_Native_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_006_Native_MF_Subs_FreqUnitSemiAnually"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPIIntentNativeSubs -->
+        </classes>
+    </test> <!-- UPIIntentNativeSubs -->
+
+    <test name="Deferred Checkout txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateDeferredFlowSubsTxnE2EWallet"/>
+                    <include name="validateDeferredFlowSubsTxnE2EPPBL"/>
+                    <include name="validateDeferredFlowSubsTxnE2EBM"/>
+                    <include name="validateSendOTPAPI"/>
+                    <include name="validateValidateOTPAPI"/>
+                    <include name="validateFetchBalanceAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test><!-- Deferred Checkout txn's via Native+ Flow -->
+
+    <test name="Alternate ID txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateDeferredFlowSubsTxnE2EPPBL"/>
+                    <include name="validateDeferredFlowSubsTxnE2EBM"/>
+                    <include name="validateSendOTPAPI"/>
+                    <include name="validateValidateOTPAPI"/>
+                    <include name="validateFetchBalanceAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test><!-- Alternate ID txn's via Native Flow -->
+
+    <test name="Merchant Updation7">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="payChannelNotBlankFPOv1PayModeBlank"/>
+                    <include name="payChannelNotBlankFPOv1PPBL"/>
+                    <include name="payChannelNotBlankFPOv2"/>
+                    <include name="payChannelNotBlankFPOv2PayModeBlank"/>
+                </methods>
+            </class>
+        </classes>
+    </test><!-- Merchant Updation7 -->
+
+    <test name="Native Process Subscription without theme">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="payChannelNotBlankFPOv1PayModeBlank"/>
+                    <include name="payChannelNotBlankFPOv1PPBL"/>
+                    <include name="payChannelNotBlankFPOv2PayModeBlank"/>
+                    <include name="payChannelNotBlankFPOv2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-27716 - Native Plus cases for Pre Debit">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewWEEKDDDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription on postpaid">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="SubscriptionCheckStatusPostpaid"/>
+                    <include name="SubscriptionCheckStatusForINITSubs"/>
+                    <include name="SubscriptionCheckStatusForInvalidSubsID"/>
+                    <include name="SubscriptionCancelPostpaid"/>
+                    <include name="SubscriptionCancelForInvalidSubsID"/>
+                    <include name="SubscriptionCancelPOSTPAID_STATUS_NOTIFY_TOPIC"/>
+                    <include name="SubscriptionCheckStatusForCancelled"/>
+                    <include name="SubscriptionModifySUSPENDED"/>
+                    <include name="SubscriptionCheckStatusForSUSPENDED"/>
+                    <include name="SubscriptionPayloadToPOSTPAID_STATUS_NOTIFY_TOPICforSUSPENDED"/>
+                    <include name="SubscriptionActivateForSuspendedSubs"/>
+                    <include name="SubscriptionCheckStatusForActivateFromSuspended"/>
+                    <include name="SubscriptionPayloadPushedToPOSTPAID_STATUS_NOTIFY_TOPICForACTIVATE"/>
+                    <include name="SubscriptionModifyForInvalidSubsID"/>
+                    <include name="SubscriptionStatusModifyWithIncorrectStatus"/>
+                    <include name="PreNotifyStatusForPostpaidSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription on postpaid new">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="RenewForPostpaidSubscription"/>
+                    <include name="RenewActiveInDBForPostpaidSubscription"/>
+                    <include name="renewFailForFutureDatePDNPostpaidSubscription"/>
+                    <include name="renewFailForNoPDNPostpaidSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify responses of FPO for BM merchant P_MANDATE">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.bankmandate.Pmandate">
+                    <methods>
+                        <include name="listOfUpdatedNPCIBanksinFPOforPMandate"/>
+                        <include name="ValidateDisplayNameInResponseOfFPOForRequestTypeNATIVE_MF_SIP"/>
+                        <include name="ValidateDisplayNameInResponseOfFPOForRequestTypeNativeSubscription"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="PGP-32820 Validating siHubMode is not sent to 1P+">
+        <classes>
+            <class name="scripts.SIDetailsBlocked">
+                <methods>
+                    <include name="TC_006_siHubMode_notPassed_forPPI"/>
+                    <include name="TC_001_siHubMode_notPassed_forUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49014 Native Subs Wallet FPO">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="InativeWallet_returned_in_v2FPO"/>
+                    <include name="InativeWallet_returned_in_v5FPO"/>
+                    <include name="ActiveWallet_returned_in_v2FPO"/>
+                    <include name="ActiveWallet_returned_in_v5FPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49543">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="tc_01"/>
+                    <include name="tc_02"/>
+                    <include name="tc_03"/>
+                    <include name="tc_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-47458">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="gd_00"/>
+                    <include name="gd_01"/>
+                    <include name="gd_02"/>
+                    <include name="gd_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="P-Mandate Subscription tests-1">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="listOfUpdatedNPCIBanksinFPOforPMandate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Subscription API -->

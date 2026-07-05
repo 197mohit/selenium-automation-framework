@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-60953">
+    <test name="Verify error message for ROUTING_FAILED">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyErrorMessageFor_ROUTING_FAILED"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

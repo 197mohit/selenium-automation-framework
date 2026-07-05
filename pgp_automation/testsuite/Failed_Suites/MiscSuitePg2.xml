@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Misc_Theia_Suite_Failed" verbose="1" parallel="methods" thread-count="15">
+<test thread-count="15" verbose="0" name="Native Plus ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateFullKYCSavedCardWalletNewFlow"/>
+                    <include name="enablePayModeAsPPBL"/>
+                    <include name="enablePayModePPBLNBSuccessPaytmPostpaidCheckoutJS"/>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="Verify_NativeAddMoneyCC"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForAddnPayTxn"/>
+                    <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                    <include name="Verify_NativeAddMoneyDC"/>
+                    <include name="checkNativeAddMoneyTxn"/>
+                    <include name="TC_PT_014"/>
+                    <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                    <include name="TC_PT_015"/>
+                    <include name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <include name="SixDigitOTPErrorMsg"/>
+                    <include name="getOtpMerchantPage"/>
+                    <include name="validateRiskAcceptNotNullForDC"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="testOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletAddNPay"/>
+                    <include name="testADDnPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <include name="validateRiskAcceptNotNullForUPI"/>
+                    <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                    <include name="validatePgOnlyWithLoginTxnForMutualFundsviaSavedCard"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateRiskExtendedInfoWithURLs"/>
+                    <include name="verifyRiskExtendedInfoURLParamsWithRetry"/>
+                    <include name="verifyHDFCDebitNotAllowedwhenOnlyHDFC_CC_Enabled"/>
+                    <include name="validateRiskExtendedInfoURLParamswithExplicitCallBackUrl"/>
+                    <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="verifyRestrictPPIPromo_TC_20"/>
+                    <include name="Verify_expiredCardNotFoundInFetchPayInstrument"/>
+                    <include name="validateRiskAcceptNotNullForPPBL"/>
+                    <include name="validateRiskAcceptNotNullForCC"/>
+                    <include name="verifyWalletPromo_TC_15"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefEnabled"/>
+                    <include name="ResendOTPUsingResendLinkAfterEnteringInvalidOTPNative"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateNewFlagWhenPrefIsDisableForFlipkartFlow"/>
+                    <include name="validateInvalidOTPRetryNative"/>
+                    <include name="validatePgOnlyWithLoginTxnForMutualFundsviaDC"/>
+                    <include name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDTrue"/>
+                    <include name="testOrderSuccessBySCWhenNonMatchingWebsiteProvided"/>
+                    <include name="DurationOfErrorMsg"/>
+                    <include name="validatePgOnlyWithOutLoginTxnForMutualFundsviaSavedCard"/>
+                    <include name="validateRiskInfoNullForCC"/>
+                    <include name="getOtpMerchantPageWhenPrefIsBank"/>
+                    <include name="testAddNPayOrderSuccessWhenNonMatchingWebsiteProvided"/>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForFlipkartFlow"/>
+                    <include name="testOrderSuccessByUPIWhenNonMatchingWebsiteProvided"/>
+                    <include name="Verify_NativeAddMoneyRetry"/>
+                    <include name="enablePayModePPBLNBSuccessPaytmPostpaidEnhanced"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="TC_PT_044"/>
+                    <include name="TC_PT_043"/>
+                    <include name="validateOtpV2APICredAllowed"/>
+                    <include name="verifyReturnVPAforFailedTxnOFFUSMerchant"/>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="verifyRestrictCCPromo_TC_20"/>
+                    <include name="validateOtpV2APISuccessResponse"/>
+                    <include name="ValidateTheiaSubmitRetryCountReflectsNumberOfRetryAttemptsNative"/>
+                    <include name="TC_PT_PostPaid_Success"/>
+                    <include name="verifyReturnVPAforSuccessfulNativeTxnOFFUSMerchant"/>
+                    <include name="VerifyBanklogoOnDirectPage"/>
+                    <include name="nativeTxnWithFetchBalanceAfterSubmission"/>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisNotPassedinNativeTxn"/>
+                    <include name="validateRiskExtendedInfoURLParamswithRiskAmount"/>
+                    <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                    <include name="AvailabilityOfResendOTPLinkNative"/>
+                    <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="TC_PT_020"/>
+                    <include name="VerifySolutionWiseMdrForOfflineTxn"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="TC_PT_021"/>
+                    <include name="Verify_RiskReject"/>
+                    <include name="validateFullKYCWalletNewFlow"/>
+                    <include name="Verify_NativeAddMoneyNBGreaterThan2000"/>
+                    <include name="testLPVforFlagTheiaBlacListTrueTheiaDisableTrueTheiaLPVMIDTrue"/>
+                    <include name="verifySBICreditCardNotAllowedMsg"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="testLPVforFlagTheiaBlackListFalseTheiaDisableFalseTheiaLPVMIDTrue"/>
+                    <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                    <include name="TC_PT_PPBL_Success"/>
+                    <include name="testOrderSuccessByPaytmCCWhenNonMatchingWebsiteProvided"/>
+                    <include name="LastOTPResendButtonWillDisappearNative"/>
+                    <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                    <include name="testRetriedAddMoneyOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                    <include name="TC_11"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefEnabled"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnDynamicQr"/>
+                    <include name="validateSDKTypeCUI_SDK_PGPCPNativePlus"/>
+                    <include name="AvailabilityOfGotToBankSiteLinkNative"/>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="OTPIsRequiredMessageIfPayedWithoutEnteringOTPNative"/>
+                    <include name="TC_06"/>
+                    <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                    <include name="TC_05"/>
+                    <include name="testOrderSuccessByHDFCDirectChannelWhenNonMatchingWebsiteProvided"/>
+                    <include name="validateFullKYCGVNewFlow"/>
+                    <include name="TC_07"/>
+                    <include name="enablePayModeAsNB"/>
+                    <include name="AmountEMISimplifiedSubvention_peonON_MerchantStatusON"/>
+                    <include name="testErrMsgIsDisplayedOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testPPBLPayModeIsDisabledOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="IPv4clientIpFundTopUp"/>
+                    <include name="validateTransPaidPPI"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletHybrid"/>
+                    <exclude name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForAddnPayTxn"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForPPITxn"/>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTC"/>
+                    <include name="validateSufficientAmountAtFetchPayAndInSufficientWhilePTCForPPI"/>
+                    <include name="TC_PT_005"/>
+                    <include name="TC_PT_006"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTC"/>
+                    <include name="testOrderSuccessByPPIWhenNonMatchingWebsiteProvided"/>
+                    <include name="IPv4clientIpCashierPay"/>
+                    <include name="IPv6clientIpCashierPay"/>
+                    <include name="IPv6clientIpFundTopUp"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native Plus ProcessTransactionTests -->
+    <test thread-count="15" verbose="0" name="Native  ProcessTransactionTests2" parallel="methods">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="enablePayModePPBLNBSuccessPaytmPostpaidCheckoutJS"/>
+                    <include name="enablePayModeAsPPBL"/>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForAddnPayTxn"/>
+                    <include name="TC_PT_014"/>
+                    <include name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                    <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                    <include name="TC_PT_015"/>
+                    <include name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <include name="checkNativeAddMoneyTxn"/>
+                    <include name="SixDigitOTPErrorMsg"/>
+                    <include name="getOtpMerchantPage"/>
+                    <include name="validateRiskAcceptNotNullForDC"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="testOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletAddNPay"/>
+                    <include name="testADDnPayLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDFalse"/>
+                    <include name="validateRiskAcceptNotNullForUPI"/>
+                    <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                    <include name="validatePgOnlyWithLoginTxnForMutualFundsviaSavedCard"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateRiskExtendedInfoWithURLs"/>
+                    <include name="validateFullKYCSavedCardWalletNewFlow"/>
+                    <include name="verifyRiskExtendedInfoURLParamsWithRetry"/>
+                    <include name="verifyHDFCDebitNotAllowedwhenOnlyHDFC_CC_Enabled"/>
+                    <include name="validateRiskExtendedInfoURLParamswithExplicitCallBackUrl"/>
+                    <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="Verify_expiredCardNotFoundInFetchPayInstrument"/>
+                    <include name="validateRiskAcceptNotNullForPPBL"/>
+                    <include name="validateRiskAcceptNotNullForCC"/>
+                    <include name="validateRiskAcceptNotNullForHybrid"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefEnabled"/>
+                    <include name="ResendOTPUsingResendLinkAfterEnteringInvalidOTPNative"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateNewFlagWhenPrefIsDisableForFlipkartFlow"/>
+                    <include name="validateInvalidOTPRetryNative"/>
+                    <include name="validatePgOnlyWithLoginTxnForMutualFundsviaDC"/>
+                    <include name="testLPVforFlagTheiaBlackListTrueTheiaDisableFalseTheiaLPVMIDTrue"/>
+                    <include name="testOrderSuccessBySCWhenNonMatchingWebsiteProvided"/>
+                    <include name="DurationOfErrorMsg"/>
+                    <include name="validatePgOnlyWithOutLoginTxnForMutualFundsviaSavedCard"/>
+                    <include name="validateRiskInfoNullForCC"/>
+                    <include name="getOtpMerchantPageWhenPrefIsBank"/>
+                    <include name="TC_PT_hybridWithoutFetchPayOption"/>
+                    <include name="testAddNPayOrderSuccessWhenNonMatchingWebsiteProvided"/>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="Verify_NativeAddMoneyCC"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForFlipkartFlow"/>
+                    <include name="testOrderSuccessByUPIWhenNonMatchingWebsiteProvided"/>
+                    <include name="Verify_NativeAddMoneyRetry"/>
+                    <include name="TC_PT_EMI_Hyb_Success"/>
+                    <include name="enablePayModePPBLNBSuccessPaytmPostpaidEnhanced"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="TC_PT_044"/>
+                    <include name="TC_PT_043"/>
+                    <include name="validateOtpV2APICredAllowed"/>
+                    <include name="verifyReturnVPAforFailedTxnOFFUSMerchant"/>
+                    <include name="successCCCorporateBinCorporateMerchant"/>
+                    <include name="validateNewFlagIsTrueWhenPrefIsEnableForHotstarFlow"/>
+                    <include name="validateOtpV2APISuccessResponse"/>
+                    <include name="ValidateTheiaSubmitRetryCountReflectsNumberOfRetryAttemptsNative"/>
+                    <include name="TC_PT_PostPaid_Success"/>
+                    <include name="verifyReturnVPAforSuccessfulNativeTxnOFFUSMerchant"/>
+                    <include name="VerifyBanklogoOnDirectPage"/>
+                    <include name="nativeTxnWithFetchBalanceAfterSubmission"/>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisNotPassedinNativeTxn"/>
+                    <include name="validateRiskExtendedInfoURLParamswithRiskAmount"/>
+                    <include name="AvailabilityOfResendOTPLinkNative"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="TC_PT_020"/>
+                    <include name="VerifySolutionWiseMdrForOfflineTxn"/>
+                    <include name="successCorporateDCBinCorporateMerchant"/>
+                    <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="TC_PT_021"/>
+                    <include name="Verify_RiskReject"/>
+                    <include name="validateFullKYCWalletNewFlow"/>
+                    <include name="Verify_NativeAddMoneyDC"/>
+                    <include name="Verify_NativeAddMoneyNBGreaterThan2000"/>
+                    <include name="testLPVforFlagTheiaBlacListTrueTheiaDisableTrueTheiaLPVMIDTrue"/>
+                    <include name="verifySBICreditCardNotAllowedMsg"/>
+                    <include name="Native_Retry_DirectChannel"/>
+                    <include name="testLPVforFlagTheiaBlackListFalseTheiaDisableFalseTheiaLPVMIDTrue"/>
+                    <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                    <include name="testOrderSuccessByPaytmCCWhenNonMatchingWebsiteProvided"/>
+                    <include name="LastOTPResendButtonWillDisappearNative"/>
+                    <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                    <include name="testRetriedAddMoneyOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                    <include name="testHybridOrderSuccessWhenNonMatchingWebsiteProvided"/>
+                    <include name="verifyRetryCase_InitiateCC_RetryUsingDirectChannel"/>
+                    <include name="TC_PT_016"/>
+                    <include name="TC_11"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefEnabled"/>
+                    <include name="validateSDKTypeCUI_SDK_PGPCPNativePlus"/>
+                    <include name="AvailabilityOfGotToBankSiteLinkNative"/>
+                    <include name="Native_Success_DirectChannel"/>
+                    <include name="OTPIsRequiredMessageIfPayedWithoutEnteringOTPNative"/>
+                    <include name="TC_06"/>
+                    <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                    <include name="TC_05"/>
+                    <include name="testOrderSuccessByHDFCDirectChannelWhenNonMatchingWebsiteProvided"/>
+                    <include name="validateFullKYCGVNewFlow"/>
+                    <include name="TC_07"/>
+                    <include name="AmountEMISimplifiedSubvention_peonON_MerchantStatusON"/>
+                    <include name="testErrMsgIsDisplayedOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testPPBLPayModeIsDisabledOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="IPv4clientIpFundTopUp"/>
+                    <include name="validateTransPaidPPI"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletHybrid"/>
+                    <exclude name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForAddnPayTxn"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForPPITxn"/>
+                    <include name="validateSuccessfulTxnWithAmountlessWhileFetchPayAndIncreaseWhilePTC"/>
+                    <include name="validateSufficientAmountAtFetchPayAndInSufficientWhilePTCForPPI"/>
+                    <include name="TC_PT_005"/>
+                    <include name="TC_PT_006"/>
+                    <include name="validateAmountZeroAtFetchPayAndSufficientWhilePTC"/>
+                    <include name="testOrderSuccessByPPIWhenNonMatchingWebsiteProvided"/>
+                    <include name="IPv4clientIpCashierPay"/>
+                    <include name="IPv6clientIpCashierPay"/>
+                    <include name="IPv6clientIpFundTopUp"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native  ProcessTransactionTests2 -->
+    <test thread-count="15" verbose="0" name="DeferredNative flow" parallel="methods">
+        <classes>
+            <class name="scripts.flows.DeferredNativeTest">
+                <methods>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for CC pay mode in case of risk pass"/>
+                    <include name="executeFetchPayOptionsAPI"/>
+                    <include name="test eventLinkId is not coming in response in case of risk reject"/>
+                </methods>
+            </class> <!-- scripts.flows.DeferredNativeTest -->
+        </classes>
+    </test> <!-- DeferredNative flow -->
+    <test name="PGP-20953 visa single click">
+    <classes>
+    <class name="scripts.VisaSingleClick.DeEnrollCardTest">
+        <methods>
+            <include name="DeEnrolCardWithTxnTokenAndInvalidAppId"/>
+            <include name="DeEnrollCardWithAccesstokenAndInvalidAppId"/>
+            <include name="DeEnrolCardWithChecksumAndInavlidAppId"/>
+            <include name="DeEnrolCardWithSSOInvalidappId"/>
+        </methods>
+    </class>
+    </classes>
+    </test>
+    <test name="PGP-45369 CBR for TopUp and AddNPay">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnableCBRForTopupAndAddAndPayTxn">
+                <methods>
+                    <include name="RequestToProcessRoutingEngineTopUpCC"/>
+                    <include name="ResponseToProcessRoutingEngineTopUp"/>
+                    <include name="channelPreferenceInFUND_ORDER_PAYRequestTopUpFlow"/>
+                    <include name="RequestToProcessRoutingEngineDC"/>
+                    <include name="RequestToProcessRoutingEngineAddMoneyExpressCC"/>
+                    <include name="ResponseToProcessRoutingEngineAddMoneyExpress"/>
+                    <include name="channelPreferenceInFUND_ORDER_PAYRequestAddMoneyExpressFlow"/>
+                    <include name="RequestToProcessRoutingEngineAddNPayCC"/>
+                    <include name="ResponseToProcessRoutingEngineAddNPay"/>
+                    <include name="channelPreferenceInPAYMENT_CASHIER_PAYRequestAddNPayFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Add Money 4k Limit">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="validateccAddnPayLimitinFPOwhenbalanceisZero"/>
+                    <include name="validateccAddnPayLimitinFPOwhenbalanceisNonZero"/>
+                    <include name="validateccAddnPayLimitinFPOwhenWalletisNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOwhenaddnpayAndCCNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOwhenaddnpayNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOwhenCCNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenbalanceisZero"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenbalanceisNonZero"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenWalletisNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenaddnpayAndCCNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenaddnpayNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenCCNotAllowedonMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Add Money Express Hotfix">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="ccBlockforExpressAddMoney"/>
+                    <include name="successfulAddMoneyExpressCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46810 : Risk Error Message Handling on 3P Add Money Flow">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="addMoneyRiskReject_01"/>
+                    <include name="addMoneyRiskReject_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-50394 Wallet reactivation test cases automation">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.Wallet.WalletReactivation">
+                <methods>
+                    <include name="activeWallet"/>
+                    <include name="activeWallet_ios"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_ON"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_OFF"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_OFF"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_balanceZero_android"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_balanceZero_ios"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_balanceSixThousand_Android"/>
+                    <include name="frozenWallet_Pref_N_reactivationFlag_ON_Android"/>
+                    <include name="frozenWallet_Pref_N_reactivationFlag_ON_IOS"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_ANDROID"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_IOS"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_ANDROID_appversionless"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_IOS_Appversionless"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_ON_IOS"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_OFF_IOS"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_OFF_IOS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ValidateWalletRemoval">
+        <classes>
+            <class name="scripts.api.FPO.walletRemovedInFPO">
+                <methods>
+                    <include name="walletRemovedfromFpo_ZerotoOneBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_ZerotoOneBalance_FF4JOn"/>
+                    <include name="walletRemovedfromFpo_SufficientBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_DebitFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFpo_OverallFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFpo_DebitFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_OverallFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFpo_CreditFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_ZerotoOneBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_ZerotoOneBalance_FF4JOn"/>
+                    <include name="walletRemovedfromFqr_SufficientBalance_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_DebitFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFqr_OverallFreeze_FF4JOn"/>
+                    <include name="walletRemovedfromFqr_DebitFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_OverallFreeze_FF4JOff"/>
+                    <include name="walletRemovedfromFqr_CreditFreeze_FF4JOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify ultimate beneficiary details for ppbl Txn">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateCOPUltimateBeneNameInPPBLtxn"/>
+                    <include name="validateCOthenpayUltimateBeneNameInPPBLtxn"/>
+                    <include name="validateCOPUltimateBeneNamemorethanfiftycharactersInPPBLtxn"/>
+                    <include name="validateCOTHENPAYPUltimateBeneNamemorethanfiftycharactersInPPBLtxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Applysupercash offer API hotfix test cases">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+                <methods>
+                    <include name="onusMerchantSourceOrderPromoNotNull"/>
+                    <include name="onusMerchantSourcePGPromoNotNull"/>
+                    <include name="offusMerchantSourcePGPromoNotNull"/>
+                    <include name="offusMerchantSourcePGPromoNull"/>
+                    <include name="offusMerchantSourceOrderPromoNotNull"/>
+                    <include name="offusMerchantSourceOrderPromoNull"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46752">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validateTimeoutObjectWithFlagOffCORequest"/>
+                    <include name="validateTimeoutObjectWithFlagOnCORequest"/>
+                    <include name="validateTimeoutObjectWithFlagOffCOPRequest"/>
+                    <include name="validateTimeoutObjectWithFlagOnCOPRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="NativePlusOnOfflineMerchantWhenPreferenceIsOFF"/>
+                    <include name="NativePlusOnOfflineMerchantWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="NativeOnOfflineMerchantWhenPreferenceIsOFF"/>
+                    <include name="NativeOnOfflineMerchantWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOn"/>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOff"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsOff_API_Y"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsON_API_Y"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+     <test name="AVS task test cases">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="NameEMailCodeCountryCodePhoneNumberHouseNoCityStateShoudBeVisibleForCollectCompleteAVS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Misc Theia Suite -->

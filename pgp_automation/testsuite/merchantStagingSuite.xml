@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" verbose="1">
+    <test name="SmokeTest" parallel="methods" thread-count="4">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                </methods>
+            </class>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

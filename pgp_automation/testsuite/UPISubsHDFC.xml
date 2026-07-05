@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription" verbose="1"  parallel="tests" thread-count="5">
+
+    <test name="HDFC Collect Native cases">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_Native_Subs_Month"></include>
+                    <include name="TC_002_Native_Subs_ONDEMAND"></include>
+                    <include name="TC_003_Native_Subs_Year"></include>
+                    <include name="TC_004_Native_Subs_WEEK"></include>
+                    <include name="TC_005_Native_Subs_QUARTER"></include>
+                    <include name="TC_006_Native_Subs_BI_MONTHLY"></include>
+                    <include name="TC_007_Native_Subs_SEMI_ANNUALLY"></include>
+                <!--    <include name="TC_008_Native_Subs_FORTNIGHT"></include> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HDFC Collect Redirectional cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_Enhanced_Subs_Month"/>
+                    <include name="TC_002_Enhanced_Subs_ONDEMAND"/>
+                    <include name="TC_003_Enhanced_Subs_YEAR"/>
+                    <include name="TC_004_Enhanced_Subs_WEEK"/>
+                    <include name="TC_005_Enhanced_Subs_QUARTER"/>
+                    <include name="TC_006_Enhanced_Subs_BI_MONTHLY"/>
+                    <include name="TC_007_Enhanced_Subs_SEMI_ANNUALLY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HDFC Collect RedirectionalC cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_checkoutJS_Subs_Month"/>
+                    <include name="TC_002_checkoutJS_Subs_ONDEMAND"/>
+                    <include name="TC_003_checkoutJS_Subs_WEEK"/>
+                    <include name="TC_004_checkoutJS_Subs_YEAR"/>
+                    <include name="TC_005_checkoutJS_Subs_QUARTER"/>
+                    <include name="TC_006_checkoutJS_Subs_BI_MONTHLY"/>
+                    <include name="TC_007_checkoutJS_Subs_SEMI_ANNUALLY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

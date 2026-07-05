@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-52897 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-52897">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsOnlyAmountBasedSubventionForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsOnlyAmountBasedBankOfferForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsAmountBasedSubventionAndBankOfferForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsNoParamsForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsAmountBasedSubventionAndAmountBasedBankOfferFalseForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsAmountBasedSubventionAndAmountBasedBankOfferFalseAndItemNullForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsOnlyItemObjectForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersAndFetchAllItemOffersObjectForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersObjectContainsItemBasedSubventionAndAmountBasedPromoForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersObjectContainsItemObjectAndAmountBasedBankOfferAndApplyPaymentOfferIsFalseForDeferredFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="COFT_Theia" verbose="1" parallel="tests" thread-count="7">
+    <test name="Global Vault and Local Vault">
+        <classes>
+            <class name="scripts.coft.theia.GlobalVaultAndLocalVault">
+                <methods>
+                    <include name="onusMerchantLoggedinFlow"/>
+                    <include name="ofusMerchantLoggedinFlow"/>
+                    <include name="ofusMerchantNonLoggedinFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

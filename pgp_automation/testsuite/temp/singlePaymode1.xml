@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49206" verbose="1" thread-count="5" parallel="tests">
+    <test name="Single paymode on JS Checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="verifySinglePaymodeEMI"/>
+                    <include name="verifySinglePaymodeCC"/>
+                    <include name="verifySinglePaymodeDC"/>
+                    <include name="verifySinglePaymodeNB"/>
+                    <include name="verifySinglePaymodeUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Single paymode on JS On Redirection">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.redirectionalflowP0NewCases">
+                <methods>
+                    <include name="verifySinglePaymodeEMI"/>
+                    <include name="verifySinglePaymodeCC"/>
+                    <include name="verifySinglePaymodeDC"/>
+                    <include name="verifySinglePaymodeNB"/>
+                    <include name="verifySinglePaymodeUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

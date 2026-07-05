@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-20447" verbose="1" thread-count="3"
+       parallel="methods">
+    <test name="PGP-20447:verify Response message for Risk amount for TOP UP Express">
+        <classes>
+            <class name="scripts.TopUpExpress">
+                <methods>
+                    <include name="verifyResponseMessageForRiskRejectTxnForDC"/>
+                    <include name="verifyResponseMessageForRiskRejectTxnForCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-20447:verify Response message for Risk amount for Add Money Express">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="verifyResponseMessageForRiskRejectTxnForCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-20447:verify Response message for Risk amount for PayTM Express">
+        <classes>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="verifyResponseMessageForRiskRejectTxnForCC"/>
+                    <include name="verifyResponseMessageForRiskRejectTxnForDC"/>
+                    <include name="verifyResponseMessageForRiskRejectTxnForNB"/>
+                    <include name="verifyResponseMessageForRiskRejectTxnForPPI"/>
+                    <include name="verifyResponseMessageForRiskRejectTxnForEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

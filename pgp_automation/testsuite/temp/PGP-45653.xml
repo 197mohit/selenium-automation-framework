@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-DROP-2-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service Drop 2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsBankslistTid">
+            <methods>
+                <include name="VerifyDeviceDetailsBankslistTid_07"/>
+                <include name="VerifyDeviceDetailsBankslistTid_08"/>
+                <include name="VerifyDeviceDetailsBankslistTid_09"/>
+                <include name="VerifyDeviceDetailsBankslistTid_10"/>
+                <include name="VerifyDeviceDetailsBankslistTid_11"/>
+                <include name="VerifyDeviceDetailsBankslistTid_12"/>
+            </methods>
+        </class>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsTidBankName">
+                <methods>
+                    <include name="VerifyDeviceDetailsTidBankName_07"/>
+                    <include name="VerifyDeviceDetailsTidBankName_08"/>
+                    <include name="VerifyDeviceDetailsTidBankName_09"/>
+                    <include name="VerifyDeviceDetailsTidBankName_10"/>
+                    <include name="VerifyDeviceDetailsTidBankName_11"/>
+                    <include name="VerifyDeviceDetailsTidBankName_12"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsTidtid">
+                <methods>
+                    <include name="VerifyDeviceDetailsTidtid_07"/>
+                    <include name="VerifyDeviceDetailsTidtid_08"/>
+                    <include name="VerifyDeviceDetailsTidtid_09"/>
+                    <include name="VerifyDeviceDetailsTidtid_10"/>
+                    <include name="VerifyDeviceDetailsTidtid_11"/>
+                    <include name="VerifyDeviceDetailsTidtid_12"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.mappingDrop2.DeviceDetailsV2Tid">
+                <methods>
+                    <include name="VerifyDeviceDetailsV2Tid_07"/>
+                    <include name="VerifyDeviceDetailsV2Tid_08"/>
+                    <include name="VerifyDeviceDetailsV2Tid_09"/>
+                    <include name="VerifyDeviceDetailsV2Tid_10"/>
+                    <include name="VerifyDeviceDetailsV2Tid_11"/>
+                    <include name="VerifyDeviceDetailsV2Tid_12"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

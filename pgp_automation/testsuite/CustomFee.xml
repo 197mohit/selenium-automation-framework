@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PWP cases" verbose="1" parallel="tests" thread-count="10">
+    <test name="MDRMerchant TCs for Native Flow">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.DeferredMDRCustomRate"/>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.NativeMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="MDRMerchant TCs for Nativeplus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.DeferredMDRCustomRate"/>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.NativeMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="MDRMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate"/>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="MDRMerchant TCs for Enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="MDRMerchant TCs">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.OfflineMDRCustomRate"/>
+        </classes>
+    </test>
+
+    <test name="PCFMerchant TCs for Native Flow">
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.NativePCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Nativeplus Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.NativePCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.ScanNPayPCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate"/>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription" verbose="1" parallel="tests" thread-count="20">
+    <test name="subscription_field_validations">
+        <parameter name="theme" value="merchant4"/>
+        <parameter name="transactionType" value="PGOnly"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionFieldValidations">
+                <methods>
+                    <include name="PGP_45_validateErrorForCustIdBlank"/>
+                    <include name="PGP_64_validateCashierPageForSsoTokenBlank"/>
+                    <include name="PGP_66_validateCashierPageForSsoTokenExpiredValue"/>
+                    <include name="PGP_20_validateCashierPageForSubsPaymentModeBlank"/>
+                    <include name="PGP_21_validateCashierPageForSubsPPIOnlyBlank"/>
+                    <include name="PGP_99_validateCashierPageForSubsPPIOnlyInvalid"/>
+                    <include name="PGP_61_validateCashierPageForSaveCardIdBlankAndCallTypeBlank"/>
+                    <include name="PGP_44_validateOopsPageForIndustryTypeIdBlank"/>
+                    <include name="PGP_38_validateOopsPageOnRequestTypeInvalid"/>
+                    <include name="PGP_65_validateOopsPageForSsoTokenInvalid"/>
+                    <include name="PGP_55_validateOopsPageForSubsEnableRetryBlank"/>
+                    <include name="PGP_98_validateOopsPageForSubsPaymentModeInvalid"/>
+                    <include name="PGP_52_validateOopsPageForSubsAmountFix"/>
+                    <include name="PGP_12_validateOopsPageForSubsAmountBlank"/>
+                    <include name="PGP_51_validateOopsPageForSubsAmountInvalid"/>
+                    <include name="PGP_19_validateOopsPageForSubsExpiryDateBlank"/>
+                    <include name="PGP_53_validateOopsPageForSubsFrequencyInvalid"/>
+                    <include name="PGP_14_validateOopsPageForSubsFrequencyBlank"/>
+                    <include name="PGP_69_validateOopsPageForSubsGraceDaysInvalid"/>
+                    <include name="PGP_17_validateOopsPageForSubsGraceDaysBlank"/>
+                    <include name="PGP_13_validateOopsPageForSubsMaxAmountBlank"/>
+                    <include name="PGP_68_validateOopsPageForSubsMaxAmountInvalid"/>
+                    <include name="PGP_18_validateOopsPageForSubsRetryEnabledBlank"/>
+                    <include name="PGP_97_validateOopsPageForSubsRetryEnabledInvalid"/>
+                    <include name="PGP_16_validateOopsPageForSubsStartDateBlank"/>
+                    <include name="PGP_462_validateOopsPageForTransactionAmountBlank"/>
+                    <include name="PGP_48_validateOopsPageForTransactionAmountNonNumeric"/>
+                    <include name="PGP_46_validateOopsPageForWebsiteBlank"/>
+                    <include name="PGP_47_validateOopsPageForWebsiteInvalid"/>
+                    <include name="PGP_58_validateOopsPageForSubsStartDateLTCurrentDate"/>
+                    <include name="PGP_56_validateOopsPageWhenSubsStartDateGTSubsExpiryDate"/>
+                    <include name="PGP_42_validateOopsPageForexpiredLicencedMid"/>
+                    <include name="PGP_10_validateCashierPageOnRequestTypeBlank"/>
+                    <include name="PGP_40_validateOopsPageOnDuplicateOrderID"/>
+                    <include name="PGP_43_validateCashierPageForIndustryTypeIdInvalid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_cc_dc">
+        <parameter name="theme" value="merchant4"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <include name="PGP_208_RenewalRequestAfterContractExpiration"/>
+                    <include name="PGP_205_RenewalRequestAfterGracePeriod"/>
+                    <include name="PGP_192_verifySuccessfulRenewalOnSubsViaCC"/>
+                    <include name="PGP_204_RenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_203_multipleRenewalRequestWithinGracePeriod"/>
+                    <include name="verifyFailedRenew_WithExpiredCardDetail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_cc_dc on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <exclude name="PGP_193_verifySuccessfulRenewalOnSubsViaDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_renewal_via_cc_dc on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="payMode" value="CC"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <exclude name="PGP_193_verifySuccessfulRenewalOnSubsViaDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_ppi">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaPpi">
+                <methods>
+                    <include name="PGP_220_RenewalRequestAfterSubscriptionContractExpired"/>
+                    <include name="PGP_214_RenewalRequestAfterGracePeriod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_ppi on enhanced wap">
+
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_wallet_only">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_198_RenewalRequestWhenSufficientWalletBalance"/>
+                    <include name="PGP_209_multipleRenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_211_RenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"/>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_wallet_only on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_wallet_only on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_cc_dc">
+        <parameter name="theme" value="merchant4"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_8_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <include name="PGP_67_ValidateTxnWithDCSavedCardWhenPayModeIsCC"/>
+                    <include name="PGP_100_alidateTxnWithCCSavedCardWhenPayModeIsDC"/>
+                    <include name="PGP_75_ValidateSuccessfulCCSubscriptionWithSSOTokenLogin"/>
+                    <include name="PGP_23_validatePayModesWithoutSavedCard"/>
+                    <include name="PGP_4_validatePayModesWithSavedCard"/>
+                    <include name="PGP_74_ValidateSavedCardsDisplayedInCorrectSequence"/>
+                    <include name="PGP_24_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                    <include name="PGP_25_ValidateSuccessfulPaymentWithSavedCard"/>
+                    <include name="PGP_80_validateTxnAmtGreaterThanSubsMaxAmt"/>
+                    <include name="PGP_60_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="PGP_62_ValidateS2StxnWithValidSavedCardAndTxnAmntZero"/>
+                    <include name="PGP_84_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_63_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_86_validateS2StxnWithBlankSSOToken"/>
+                    <include name="PGP_85_validateS2StxnWithInvalidSSOToken"/>
+                    <include name="PGP_22_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_26_ValidateSuccessfulZeroAmtPaymentWithSavedCard"/>
+                    <include name="PGP_2_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_5_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <include name="PGP_7_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountEqualsZero"/>
+                    <include name="Validate_ExpiredCardNotVisible_ForSubs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_cc_dc on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_cc_dc on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_37_ValidateSuccessfulPaymentWithSavedCard"/>
+                    <include name="PGP_35_validateCardGettingSaveForSuccessfulTxn"/>
+                    <include name="PGP_32_loginErrorWithIncorrectCredentials"/>
+                    <include name="PGP_78_validateSuccessfulPPISubsWhenWalletBalEqualsToTxnAmt"/>
+                    <include name="PGP_77_validateSuccessfulPPISubsWhenWalletBalGreaterThanTxnAmt"/>
+                    <include name="PGP_83_ValidateSuccessfulPPISubscriptionWithSSOTokenLogin"/>
+                    <include name="PGP_101_validateTxnAmtGreaterThanSubsMaxAmt"/>
+                    <include name="PGP_87_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="PGP_88_ValidateS2StxnWithValidSavedCardAndTxnAmntZero"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <include name="PGP_91_validateS2StxnWithInvalidSSOToken"/>
+                    <include name="PGP_36_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_33_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <include name="PGP_34_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountEqualsZero"/>
+                    <include name="PGP_30_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <include name="PGP_31_ValidateSuccessfulZeroAmtPaymentWithSavedCard"/>
+                    <include name="PGP_76_validateSuccessfulPPISubsWhenWalletBalLessThanTxnAmt"/>
+                    <include name="ValidateFailedZeroAmtPaymentWith_expiredSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <exclude name="PGP_79_validateFailedTxnWithTxnAmntGreaterThanWalletByFraction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <exclude name="PGP_79_validateFailedTxnWithTxnAmntGreaterThanWalletByFraction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_186_verifyCardSaveAfterSuccessfulTxn"/>
+                    <include name="PGP_184_verifySuccessfulTxnForInsufficientBalanceViaNB"/>
+                    <include name="PGP_181_verifySuccessfulTxnForInsufficientBalanceViaCC"/>
+                    <include name="PGP_182_verifySuccessfulTxnForInsufficientBalanceViaDC"/>
+                    <include name="PGP_183_verifySuccessfulTxnForInsufficientBalanceViaUPI"/>
+                    <include name="PGP_180_verifySuccessfulTxnUsingWalletOnly"/>
+                    <include name="PGP_187_verifySuccessfulTxnUsingSavedCard"/>
+                    <include name="PGP_188_verifyTxnCancellationAtBank"/>
+                    <include name="PGP_189_verifyTxnCancellationAtBankWithSavedCard"/>
+                    <include name="PGP_190_verifyVPA_GettingSavedForSuccessfulTxn"/>
+                    <include name="PGP_verifyFailedSubs_FromExpiredSaveCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <parameter name="transactionType" value="PGOnly"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription"/>
+        </classes>
+    </test>
+
+    <test name="Native Renew Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription"/>
+        </classes>
+    </test>
+
+    <test name="E-Mandate Subscription tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate"/>
+        </classes>
+    </test>
+
+    <test name="P-Mandate Subscription tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate"/>
+        </classes>
+    </test>
+</suite>

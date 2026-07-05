@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Verify Nick Name with  less than equal to 60 characters">
+    <test name="Verify  Nick Name characters substring">
+        <classes>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateNickName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

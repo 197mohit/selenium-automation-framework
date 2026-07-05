@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33716 Sub-Error code response of getPaymentStatus" verbose="1" >
+
+    <test name="getPaymentStatus for UPIIntent failure">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                    <methods>
+                        <include name="TC_001_NativeMF_SIP_Subs_Failure_ErrorCode"/>
+                        <include name="TC_001_Native_Subs_Failure_ErrorCode"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="getPaymentStatus for UPINative failure">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                    <methods>
+                        <include name="TC_001_NativeMF_SIP_Subs_Failure_ErrorCode"/>
+                        <include name="TC_001_Native_Subs_Failure_ErrorCode"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="getPaymentStatus for UPI Enhanced failure">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                    <methods>
+                        <include name="TC_001_Enhanced_Subs_Failure_ErrorCode"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+</suite>

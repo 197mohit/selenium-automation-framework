@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33485" verbose="1" thread-count="20" parallel="tests">
+    <test name="Verify responses of FPO for BM merchant">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.bankmandate.Emandate">
+                    <methods>
+                        <include name="listOfUpdatedNPCIBanksinFPO"></include>
+                        <include name="listOfUpdatedNPCIBanksinFPOwithAuthMode"></include>
+                        <include name="validateFetchMandateListAPI"></include>
+                        <include name="validateSuccessTxnfromBMwithLatestNPCI"></include>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Verify responses of FPO for BM merchant P_MANDATE">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.bankmandate.Pmandate">
+                    <methods>
+                        <include name="listOfUpdatedNPCIBanksinFPOforPMandate"></include>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

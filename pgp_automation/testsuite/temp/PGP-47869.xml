@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-47869" verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-47869 validate Bin Eligibility in bin center API">
+        <classes>
+            <class name="scripts.coft.theia.Fetch_Bin_Change">
+                <methods>
+                    <include name="verify_CC_6_digit_bin_isEmiAvailable_true"/>
+                    <include name="verify_CC_9_digit_bin_isEmiAvailable_true"/>
+                    <include name="verify_CC_6_digit_bin_isEmiAvailable_false"/>
+                    <include name="verify_CC_9_digit_bin_isEmiAvailable_false"/>
+                    <include name="verify_DC_6_digit_bin_isEmiAvailable_true"/>
+                    <include name="verify_DC_9_digit_bin_isEmiAvailable_true"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-47869 validate transactions according to bin eligibility">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyEmiTxnWhenBinIsTrue"/>
+                    <include name="VerifyEmiTxnWhenBinIsFalse"/>
+                    <include name="VerifyBigEligibleTrueInFPO"/>
+                    <include name="VerifyBinEligibleFalseInFPO"/>
+                    <include name="VerifyE2EEmiTxnWithCC"/>
+                    <include name="VerifyE2EEmiTxnWithCCSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI CC Cases" verbose="1" parallel="tests" thread-count="4">
+    <test name="UPI CC Cases">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUpiCCCCOnUPIBlacklistedEnabled"/>
+                    <include name="validateUpiCCCCOnUPIBlacklistedDisabled"/>
+                    <include name="validateUpiCcP2pMerchantEnabled"/>
+                    <include name="validateUpiCcP2pMerchantDisabled"/>
+                    <include name="validateUpiCcOnusAndPrefDisabled"/>
+                    <include name="validateUpiCcOnusAndPrefEnabled"/>
+                    <include name="validateUpiccRailsEnabled"/>
+                    <include name="validateUpiCconupiRailsDisabled"/>
+                    <include name="validateUpiCcAddNPayEnabled"/>
+                    <include name="validateUpiccUpiCcNativeAddMoneyEnabled"/>
+                    <include name="validateUpiccUpiCcSubsDisabled"/>
+                    <include name="validateUpiccUpiCcSubsEnabled"/>
+                    <include name="validateUpiccWhenFetchAddMoneyOptionsTrue"/>
+                    <include name="validateUpiccWhenFetchAddMoneyOptionsFalse"/>
+                    <include name="validateDisplayAccountNoAndBankLogoUrl"/>
+                    <include name="validateDisplayAccountNoAndBankLogoUrlOffline"/>
+                    <include name="validateUpiCCOnlineMidLessThen2000"/>
+                    <include name="validateUpiCCOnlineMidMoreThen2000"/>
+                    <include name="validateUpiCCOnlineMidEquals2000"/>
+                    <include name="validateUpiCCOnlineMidLessThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOnlineMidMoreThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOnlineMidEquals2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidEqualTo2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForBigndustryCconupirailsDisabled"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForBigndustryCconupirailsDisabled"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForBigndustryCconupirailsDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>    
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforNBTxnDiscountPromo"/>  
+                    <include name="ValidateInstrumentCategorization"/>  
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

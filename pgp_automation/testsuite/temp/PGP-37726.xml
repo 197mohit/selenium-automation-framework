@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-37726" parallel="methods" verbose="1">
+    <test name="Validate upi intent on ios mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone SE"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="paytm_registered_no_passed_on_ios_mweb_intent"/>
+                    <include name="Not_paytm_registered_no_passed_on_ios_mweb_intent"/>
+                    <include name="NO_mobile_no_passed_on_ios_mweb_intent"/>
+                    <include name="ios_mweb_intent_addnpay"/>
+                    <include name="NO_ios_mweb_intent_shown"/>
+                    <include name="NO_ios_mweb_intent_shown_ADDnPAY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

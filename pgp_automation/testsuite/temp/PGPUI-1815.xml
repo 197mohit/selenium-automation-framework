@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="verifying txn via child mid" verbose="1">
+    <test name="Verifying txn via child mid">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_txn_via_child_mid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

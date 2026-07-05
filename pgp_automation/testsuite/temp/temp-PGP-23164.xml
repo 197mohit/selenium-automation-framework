@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-23164 Last Paymode" verbose="1" thread-count="2" parallel="methods">
+
+    <test name="PGP-23164 Verify Last Paymode - enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedDCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedPPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddNPayTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddMoneyPPBLTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnsDC_CC_PPBL"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnswithNb_CC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterTxnswithNb_FailedCC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterFailedTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterPendingTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-23164 Verify Last Paymode - enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedCCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedDCTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedPPITxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddNPayTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAddMoneyPPBLTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnsDC_CC_PPBL"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterThreeDifferentTxnswithNb_CC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeAlreadySelectedAfterTxnswithNb_FailedCC"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterFailedTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterPendingTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

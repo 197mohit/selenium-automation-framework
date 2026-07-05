@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-4281">
+    <test name="PG-4281 -Refund Errors and Pending Status for Paytm orders for few orders">
+        <classes>
+            <class name="scripts.RefundTest.RefundValidation">
+                <methods>
+                    <include name="ValidateasyncRefundUPIIntentRedirectedThenUPIIntentSuccessInSecondpayleg"/>
+                    <include name="ValidateasyncRefundCCFailedThenUPIIntentSuccessInSecondpayleg"/>
+                    <include name="ValidateasyncrefundforItembasedTxn"/>
+                    <include name="ValidateasyncrefundforMultipleItembasedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

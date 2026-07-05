@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AxisSBMD">
+
+    <test name="AxisSBMD_Debit">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIAxisMultiDebit">
+                <methods>
+                    <include name="TC_015_SBMD_Subs_CreateSuccess"/>
+                    <include name="TC_016_SBMD_mfSIP_CreateSuccess"/>
+                    <include name="TC_017_SBMD_Subs_DebitSuccess"/>
+                    <include name="TC_018_SBMD_mfSIP_DebitSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

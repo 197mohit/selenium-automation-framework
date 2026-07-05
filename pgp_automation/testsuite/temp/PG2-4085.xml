@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-4085">
+    <test name="Verify COP PPBL Txn">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCOPPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYFailCOPPayPPBLTxnPG2MID"/>
+                    <include name="validateFullTrafficYPendingCOPPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36238" verbose="1" parallel="tests" thread-count="2">
+    <test name="v5 fpo validation">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingWallet"/>
+                    <include name="ValidateSuccessTxnUsingWalletviaSSOtoken"/>
+                    <include name="ValidateSuccessTxnUsingNB"/>
+                    <include name="ValidateConfigName"/>
+                    <include name="ValidateBrandAndBusinessName"/>
+                    <include name="ValidateBrandAndBusinessNameAfterLogin"/>
+                    <include name="ValidateSuccessTxnUsingCCSavedCard"/>
+                    <include name="ValidateSuccessTxnAddNPay"/>
+                    <include name="PGP_27624_ValidateRetryBreachTxnwithNativeJsonPrefN"/>
+                    <include name="PGP_27624_SplitSettlementTxnwithNativeJsonPrefNMerchant"/>
+                    <include name="PGP_27624_ValidateWalletTxnNativeJsonPrefN"/>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="ValidatePCFwithAmexCard"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

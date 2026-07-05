@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service" verbose="1" parallel="tests" thread-count="5">
+    <test name="Mapping Service PG2 API ">
+        <classes>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantAcquiringMid">
+                <methods>
+                    <include name="verifyQueryMerchantAcquiringMidApi_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantGetPreferenceInfo">
+                <methods>
+                    <include name="verifyMerchantGetPreferenceInfoAPI"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.LogoCobrandingDetail">
+                <methods>
+                    <include name="Logo_Cobranding_01"/>
+                    <include name="Logo_Cobranding_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.MerchantV2QueryContractItem">
+                <methods>
+                    <include name="MerchantV2QueryContractItem_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.PaymentInfoFee">
+                <methods>
+                    <include name="PaymentInfoFee_01"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryContractItem">
+                <methods>
+                    <include name="verifySuccessfullResponseOfQueryContractItemApi"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.PG2MappingApis.QueryMerchantPrefInfo">
+                <methods>
+                    <include name="verifyQueryMerchantPrefInfoAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

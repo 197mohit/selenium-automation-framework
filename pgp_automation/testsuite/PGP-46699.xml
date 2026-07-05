@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46699" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-46699 simplified">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="TestE2ESuccessTxnWithPostpaid_01"/>
+                    <include name="TestE2ESuccessTxnWithPostpaid_02"/>
+                    <include name="TestE2ESuccessTxnWithPPBL_01"/>
+                    <include name="TestE2ESuccessTxnWithPPBL_02"/>
+
+                </methods>
+            </class>
+        </classes>
+
+
+    </test>
+
+    <test name="PGP-46699 custom">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestE2ESuccessTxnWithPostpaid_01"/>
+                    <include name="TestE2ESuccessTxnWithPostpaid_02"/>
+                    <include name="TestE2ESuccessTxnWithPPBL_01"/>
+                    <include name="TestE2ESuccessTxnWithPPBL_02"/>
+
+                </methods>
+            </class>
+        </classes>
+
+
+    </test>
+</suite>

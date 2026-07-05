@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LinkService" verbose="1" parallel="methods" thread-count="3">
+    <test name="LinkServicePG2 with theme enhancedweb_revamp">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.GenerateTxnToken">
+                <methods>
+                    <include name="GenerateTxnToken_008"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.GetLinkInfoApi">
+                <methods>
+                    <include name="GetLinkInfo_001"/>
+                    <include name="GetLinkInfo_003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LinkServicePG2 with theme checkoutjs_web_revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.MaxAmountCheck">
+                <methods>
+                    <include name="MaxAmountCheckInvoice_02"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.LocationPopUpTests">
+                <methods>
+                    <include name="locationPopUp_003"/>
+                    <include name="locationPopUp_004"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.initiateTxnApi">
+                <methods>
+                    <include name="Initiate_Txn_0015"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.KafkaMessagePayload">
+                <methods>
+                    <include name="MessagePayload_03"/>
+                </methods>
+            </class>
+            <class name="scripts.api.linkservice.linkEMISubvention">
+                <methods>
+                    <include name="EMISubvention_0014"/>
+                    <include name="EMISubvention_0028"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

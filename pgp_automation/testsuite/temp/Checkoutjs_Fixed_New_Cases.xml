@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyLoginWithInvalidOTP"/>
+                    <include name="verifyLoginWithOTP"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_49001_TC03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

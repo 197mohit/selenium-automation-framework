@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="merchant-status" verbose="1" parallel="tests" thread-count="4">
+    <test name="AXIS DQR for Links">
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="Link_Payment_E2E_Success_Txn_NEWDQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,1575 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia_Suite_Failed" verbose="1" thread-count="25" parallel="classes">
+    <test thread-count="25" verbose="0" name="PGP-24758" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE but user info not passed in request"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test -->
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                    <include name="test when max txn amt constraint is violated"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test -->
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE but user info not passed in request"/>
+                    <include name="test when max txn amt constraint is violated"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test -->
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test">
+                <methods>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                    <include name="test when max txn amt constraint is violated"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE but user info not passed in request"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test -->
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE but user info not passed in request"/>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test -->
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body custId =  ''"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test -->
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test when max txn amt constraint is violated"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE but user info not passed in request"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                    <include name="test when head requestId =  ''"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body custId =  ''"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test -->
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of CC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = EMI_DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when body paymentOptions payMethod = EMI given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE but user info not passed in request"/>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body paymentOptions payMethod = CREDIT_CARD and body paymentOptions savedCardId equals saved card id of DC given merchant has applicable promos"/>
+                </methods>
+            </class> <!-- scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test -->
+        </classes>
+    </test> <!-- PGP-24758 -->
+    <test thread-count="25" verbose="0" name="PGP-24062" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.TxnTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <include name="test when body type = ADD_MONEY"/>
+                    <include name="test when merchant has neither nb nor ppbl configured"/>
+                    <include name="test when merchant had ppbl configured but not nb"/>
+                    <include name="test when multiple nb channels are disabled using Initiate Txn API"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="test when one and only nb channel is disabled using Initiate Txn API"/>
+                    <include name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when merchant has nb configured but not ppbl"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchNbPaymentChannels.TxnTokenFetchNBPaymentChannelsV1Test -->
+            <class name="scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <include name="test when body type = ADD_MONEY"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="test when merchant had ppbl configured but not nb"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="test when merchant has neither nb nor ppbl configured"/>
+                    <include name="test when mid provided in query params is different from mid provided in request body"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when merchant has nb configured but not ppbl"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test -->
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test">
+                <methods>
+                    <include name="fetch EMI details when only DC_EMI is enabled"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="testSuccess"/>
+                    <include name="fetch EMI details when only CC_EMI is enabled"/>
+                    <include name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test -->
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV1Test">
+                <methods>
+                    <include name="test body promoCodeApplied = false when promo is not passed in InitiateTxn API while creating txnToken"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV1Test -->
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV2Test">
+                <methods>
+                    <include name="test body promoCodeApplied = false when promo is not passed in InitiateTxn API while creating txnToken"/>
+                    <include name="test when head tokenType = null"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV2Test -->
+            <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <include name="test when head token = null"/>
+                    <include name="test when head tokenType = null"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test -->
+            <class name="scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test">
+                <methods>
+                    <include name="testSuccess"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test -->
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test">
+                <methods>
+                    <include name="testParamIsEmiAvailableWhenEmiAvailableOnBin"/>
+                    <include name="testForAmexBinWhenSupported"/>
+                    <include name="testForNonAmexBajajfnBinWhenSupported"/>
+                    <include name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="testWhenBinHasHighSuccessRate"/>
+                    <include name="testForPayModeDCWhenNotSupported"/>
+                    <include name="testWhenOneClickOptionNotSupportedOnBin"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test -->
+        </classes>
+    </test> <!-- PGP-24062 -->
+    <test thread-count="25" verbose="0" name="TxnTokenFetchBalanceInfoV1Test" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.fetchBalance.TxnTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <include name="test when head requestId is not provided"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchBalance.TxnTokenFetchBalanceInfoV1Test -->
+        </classes>
+    </test> <!-- TxnTokenFetchBalanceInfoV1Test -->
+    <test thread-count="25" verbose="0" name="Payments API's" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="verify after fetchQRPayment FetchPayV2 is hit and Txn is Successful through PTC"/>
+                    <include name="testWhenInactiveUserQRCodeIsSupplied"/>
+                    <include name="testFetchQR"/>
+                    <include name="Verify that merchant limit list is not returned in the response for merchantLimit is 2"/>
+                    <include name="verify when FPO generateOrderFlag is true than Order is treated as seperate order wrt FetchQR payment order"/>
+                    <include name="Validate that saved vpa should be fetched when device id is passed in query param"/>
+                    <include name="testPaymentDetailsNotFetchedForP2PQRCode"/>
+                    <include name="PGP-28418 test Queryparams in logs when mlv-supported qrCodeId is passed"/>
+                    <include name="test when mlvSupported == true given merchant supports mlv"/>
+                    <include name="verify order is created through fetch QR float in FPO and PTC for successful txn"/>
+                    <include name="Verify that merchant limit list is returned in the response for merchantLimit is 1"/>
+                    <include name="testQRDetailsFetchedForP2PQRCode"/>
+                    <include name="verify generateorder flag is true for fetch QR the response order in FPO and PTC will float for successful txn"/>
+                    <include name="test when mlvSupported key is not passed given merchant supports mlv"/>
+                    <include name="test when mlv-supported qrCodeId is passed"/>
+                    <include name="testPaymentDetailsNotFetchedForDebitQRCode"/>
+                </methods>
+            </class> <!-- scripts.api.theia.FetchQRPaymentDetailsAPITest -->
+        </classes>
+    </test> <!-- Payments API's -->
+    <test thread-count="25" verbose="0" name="Payments API's 1" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.FetchCardIndexNumber">
+                <methods>
+                    <include name="test able to fetch card index no when orderId in query params is not provided"/>
+                    <include name="test able to fetch card index no when cardNumber equals MAESTRO card no"/>
+                    <include name="test able to fetch card index no when cardNumber equals AMEX card no"/>
+                    <include name="test able to fetch card index no when cardNumber equals MASTER card no"/>
+                    <include name="test able to fetch card index no when cardNumber equals VISA card no"/>
+                    <include name="test able to fetch card index no when cardNumber equals DINERS card no"/>
+                    <include name="test able to fetch card index no when cardNumber equals RUPAY card no"/>
+                </methods>
+            </class> <!-- scripts.api.theia.FetchCardIndexNumber -->
+        </classes>
+    </test> <!-- Payments API's 1 -->
+    <test thread-count="25" verbose="0" name="Payments API's 3" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.ErrorJsp">
+                <methods>
+                    <include name="testSuccess"/>
+                </methods>
+            </class> <!-- scripts.api.theia.ErrorJsp -->
+        </classes>
+    </test> <!-- Payments API's 3 -->
+    <test thread-count="25" verbose="0" name="Payments API's 5" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test">
+                <methods>
+                    <include name="test able to fetch bin details when bin equals cc bin"/>
+                    <include name="test unable to fetch bin details when bin equals dc bin given merchant doesn't have dc pay method configured"/>
+                    <include name="test able to fetch bin details when bin equals BAJAJFN bin"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="test unable to fetch bin details when token equals valid checksum generated by other merchant's key"/>
+                    <include name="test unable to fetch bin details when token = null"/>
+                    <include name="testParamIsEmiAvailableWhenEmiAvailableOnBin"/>
+                    <include name="testForAmexBinWhenSupported"/>
+                    <include name="test able to fetch bin details when bin equals AMEX bin"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="testWhenBinHasHighSuccessRate"/>
+                    <include name="testForPayModeDCWhenNotSupported"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test -->
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test">
+                <methods>
+                    <include name="testForCCBin"/>
+                    <include name="testForAmexBinWhenNotSupported"/>
+                    <include name="testBinInResIsSameAsInReq"/>
+                    <include name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                    <include name="testForNonAmexBajajfnBinWhenNotSupported"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="testWhenOneClickOptionNotSupportedOnBin"/>
+                    <include name="testParamIsEmiAvailableWhenEmiAvailableOnBin"/>
+                    <include name="testForAmexBinWhenSupported"/>
+                    <include name="testForNonAmexBajajfnBinWhenSupported"/>
+                    <include name="testWhenTxnTokenOfOtherMerchantUsed"/>
+                    <include name="testFor8Bin"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="testFor6Bin"/>
+                    <include name="testForPayModeDCWhenNotSupported"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test -->
+        </classes>
+    </test> <!-- Payments API's 5 -->
+    <test thread-count="25" verbose="0" name="theia API's 2" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.ChecksumVPAValidateV1Test">
+                <methods>
+                    <include name="testWithPutMethodType"/>
+                </methods>
+            </class> <!-- scripts.api.theia.vpaValidate.ChecksumVPAValidateV1Test -->
+        </classes>
+    </test> <!-- theia API's 2 -->
+    <test thread-count="25" verbose="0" name="theia API's 3" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.ValidateOtp">
+                <methods>
+                    <include name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="testSuccess"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="setUp"/>
+                </methods>
+            </class> <!-- scripts.api.theia.ValidateOtp -->
+        </classes>
+    </test> <!-- theia API's 3 -->
+    <test thread-count="25" verbose="0" name="theia API's 4" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.validateAndFetchMerchantInfo.JWTTokenValidateAndFetchMerchantInfoV1Test">
+                <methods>
+                    <include name="test when body mids =  ''"/>
+                </methods>
+            </class> <!-- scripts.api.theia.validateAndFetchMerchantInfo.JWTTokenValidateAndFetchMerchantInfoV1Test -->
+        </classes>
+    </test> <!-- theia API's 4 -->
+    <test thread-count="25" verbose="0" name="theia API's 6" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.SendOtp">
+                <methods>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is passed"/>
+                    <include name="test when merchant has send otp v5 flag enabled and autoReadHash is not passed"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                </methods>
+            </class> <!-- scripts.api.theia.SendOtp -->
+        </classes>
+    </test> <!-- theia API's 6 -->
+    <test thread-count="25" verbose="0" name="theia API's 7" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.FetchPromoCodeDetail">
+                <methods>
+                    <include name="testInitTxn"/>
+                    <include name="testSuccess"/>
+                </methods>
+            </class> <!-- scripts.api.theia.FetchPromoCodeDetail -->
+        </classes>
+    </test> <!-- theia API's 7 -->
+    <test thread-count="25" verbose="0" name="Native.FetchPromoCodeDetails" parallel="classes">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_007"/>
+                    <include name="TC_FPC_008"/>
+                    <include name="TC_FPC_002"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPromoCodeDetails -->
+        </classes>
+    </test> <!-- Native.FetchPromoCodeDetails -->
+    <test thread-count="25" verbose="0" name="PGP-35329 - FetchPayOptions" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionV4Test">
+                <methods>
+                    <include name="verifyingDinersPrivilegeHDFCBin"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchPayOptions.FetchPayOptionV4Test -->
+        </classes>
+    </test> <!-- PGP-35329 - FetchPayOptions -->
+    <test thread-count="25" verbose="0" name="session-compatibility" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.OfflineCompatibilityTest">
+                <methods>
+                    <include name="testValidateVpa"/>
+                    <include name="testValidateVpa"/>
+                    <include name="testFetchPayOptions"/>
+                    <include name="testFetchQRPaymentDetails"/>
+                    <include name="testFetchMerchantUserInfo"/>
+                    <include name="testFetchBalanceInfo"/>
+                    <include name="testFetchPromoCodeDetail"/>
+                    <include name="testFetchPaymentInstruments"/>
+                    <include name="testFetchBinDetail"/>
+                    <include name="testFetchNBPaymentChannels"/>
+                    <include name="testFetchEmiDetail"/>
+                </methods>
+            </class> <!-- scripts.api.theia.OfflineCompatibilityTest -->
+            <class name="scripts.PGOnly">
+                <parameter name="orderId" value="T1-Retry-theia"/>
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+            <class name="scripts.api.theia.CompatibilityTest">
+                <methods>
+                    <include name="testFetchMerchantInfo"/>
+                    <include name="testFetchPcfDetails"/>
+                    <include name="testFetchPayOptions"/>
+                    <include name="testFetchMerchantUserInfo"/>
+                    <include name="testUpdateTransactionDetail"/>
+                    <include name="testFetchBinDetail"/>
+                    <include name="testFetchPromoCodeDetail"/>
+                    <include name="testSubmitKYC"/>
+                    <include name="testFetchBalanceInfo"/>
+                    <include name="testFetchEmiPaymentChannels"/>
+                    <include name="testSentOtp"/>
+                    <include name="testProcessTransaction"/>
+                    <include name="testValidateVpa"/>
+                    <include name="testFetchNBPaymentChannels"/>
+                    <include name="testInitTxn"/>
+                    <include name="testValidateOtp"/>
+                    <include name="testFetchVpaDetails"/>
+                </methods>
+            </class> <!-- scripts.api.theia.CompatibilityTest -->
+        </classes>
+    </test> <!-- session-compatibility -->
+    <test thread-count="25" verbose="0" name="PGP-25862" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.AccessTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <include name="test when merchant had ppbl configured but not nb"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when merchant has nb configured but not ppbl"/>
+                    <include name="test when body type = ADD_MONEY"/>
+                    <include name="test when merchant has neither nb nor ppbl configured"/>
+                </methods>
+            </class> <!-- scripts.api.theia.fetchNbPaymentChannels.AccessTokenFetchNBPaymentChannelsV1Test -->
+        </classes>
+    </test> <!-- PGP-25862 -->
+    <test thread-count="25" verbose="0" name="theia API's 8" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.FetchPaymentPromotionAttributes">
+                <methods>
+                    <include name="testSuccess"/>
+                </methods>
+            </class> <!-- scripts.api.theia.FetchPaymentPromotionAttributes -->
+        </classes>
+    </test> <!-- theia API's 8 -->
+    <test thread-count="25" verbose="0" name="theia API's 9" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.OrderPayUnipsp">
+                <methods>
+                    <include name="Verify udf1 and posId passed in Create Order &amp; Pay Request"/>
+                    <include name="Verify payment status after Create Order &amp; Pay"/>
+                </methods>
+            </class> <!-- scripts.api.theia.OrderPayUnipsp -->
+        </classes>
+    </test> <!-- theia API's 9 -->
+    <test thread-count="25" verbose="0" name="PGP-27185 - Sending priority Fetch QR V2" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsV2APITest">
+                <methods>
+                    <include name="testFetchQR"/>
+                </methods>
+            </class> <!-- scripts.api.theia.FetchQRPaymentDetailsV2APITest -->
+        </classes>
+    </test> <!-- PGP-27185 - Sending priority Fetch QR V2 -->
+    <test thread-count="25" verbose="0" name="EMI Subvention Phase 2" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="FailureTxn_AmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="t21_1"/>
+                    <include name="t21"/>
+                    <include name="t25"/>
+                    <include name="t93SuccessValidateEMIUsingBothCardBinAndNumber"/>
+                    <include name="t96validateAPIAmountBaseWithCardBinLessThan6Digits"/>
+                </methods>
+            </class> <!-- scripts.api.theia.emiSubvention.EmiSubventionApiTests -->
+        </classes>
+    </test> <!-- EMI Subvention Phase 2 -->
+    <test thread-count="25" verbose="0" name="EMI Subvention Phase 2_1" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t84initiatePTCAPIPhase2"/>
+                    <include name="t88initiatePTCAPIPhase2"/>
+                    <include name="t86initiatePTCAPIPhase2"/>
+                </methods>
+            </class> <!-- scripts.api.theia.emiSubvention.EmiSubventionApiTests -->
+        </classes>
+    </test> <!-- EMI Subvention Phase 2_1 -->
+    <test thread-count="25" verbose="0"
+          name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native"
+          parallel="classes">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                </methods>
+            </class> <!-- scripts.api.theia.emiSubvention.EmiSubventionApiTests -->
+        </classes>
+    </test> <!-- PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native -->
+    <test thread-count="25" verbose="0" name="Emi Subvention for Third Party native" parallel="classes">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t28"/>
+                    <include name="t27"/>
+                </methods>
+            </class> <!-- scripts.api.theia.emiSubvention.EmiSubventionApiTests -->
+        </classes>
+    </test> <!-- Emi Subvention for Third Party native -->
+    <test thread-count="25" verbose="0" name="Emi Subvention for Third Party native plus" parallel="classes">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t28"/>
+                    <include name="t27"/>
+                </methods>
+            </class> <!-- scripts.api.theia.emiSubvention.EmiSubventionApiTests -->
+        </classes>
+    </test> <!-- Emi Subvention for Third Party native plus -->
+    <test thread-count="25" verbose="0" name="session-compatibility_1" parallel="classes">
+        <classes>
+            <class name="scripts.PGOnly">
+                <parameter name="orderId" value="T2-theia"/>
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- session-compatibility_1 -->
+    <test thread-count="25" verbose="0" name="Native.FetchBinDetails" parallel="classes">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="verifyBinTokenizationFalse"/>
+                    <include name="FBD_PCF_AMEX"/>
+                    <include name="TC_FBD_MaestroEMI"/>
+                    <include name="guestBinNotConfiguredOnMerchantTest"/>
+                    <include name="TC_FBD_MaestroCC"/>
+                    <include name="FBD_PCF_DC"/>
+                    <include name="validateFetchBinAPIForSubscriptionDC"/>
+                    <include name="validateFetchBinDetailsWithAccessTokenForPcf"/>
+                    <include name="TC_FBD_MaestroDC"/>
+                    <include name="validateFetchBinAPIForSubscriptionCC"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchBinDetails -->
+        </classes>
+    </test> <!-- Native.FetchBinDetails -->
+    <test thread-count="25" verbose="0" name="PGP-30746 FetchBalanceTests" parallel="classes">
+        <classes>
+            <class name="scripts.FetchBalanceTests">
+                <methods>
+                    <include name="fetchBalanceForLoyaltyPoints_SSOTOKEN"/>
+                    <include name="fetchBalanceForOffusMerchant"/>
+                    <include name="fetchBalanceWithoutMidInBodyForOffusMerchant"/>
+                    <include name="fetchBalanceWithMidInParamsAndBodyForOffusMerchant"/>
+                    <include name="fetchBalanceWithoutMidInBodyForOnusMerchant"/>
+                    <include name="fetchBalanceWithMidInParamsAndBodyForOnusMerchant"/>
+                    <include name="fetchBalanceForLoyaltyPoints_TXNTOKEN"/>
+                </methods>
+            </class> <!-- scripts.FetchBalanceTests -->
+        </classes>
+    </test> <!-- PGP-30746 FetchBalanceTests -->
+    <test thread-count="25" verbose="0" name="Fetch Payment Mode Status using Token Type Checksum" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.FetchUserPayModeStatusTest">
+                <methods>
+                    <include name="fetchUserPaymentModeStatusChecksumWithSpace"/>
+                    <include name="fetchUserPaymentModeStatusChecksum"/>
+                </methods>
+            </class> <!-- scripts.api.theia.FetchUserPayModeStatusTest -->
+        </classes>
+    </test> <!-- Fetch Payment Mode Status using Token Type Checksum -->
+    <test thread-count="25" verbose="0" name="PGP-40975" parallel="classes">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateFetchMerchantConfigAPI"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGP-40975 -->
+    <test thread-count="25" verbose="0" name="Railwire" parallel="classes">
+        <classes>
+            <class name="scripts.RailwireIntegration.RailwaireIntegration">
+                <methods>
+                    <include name="SPLIT_Payment_002"/>
+                    <include name="SPLIT_Payment_001"/>
+                    <include name="SPLIT_Payment_004"/>
+                    <include name="SPLIT_Payment_003"/>
+                    <include name="SPLIT_Payment_005"/>
+                    <include name="SPLIT_Payment_008"/>
+                    <include name="SPLIT_Payment_007"/>
+                    <include name="SPLIT_Payment_006"/>
+                </methods>
+            </class> <!-- scripts.RailwireIntegration.RailwaireIntegration -->
+        </classes>
+    </test> <!-- Railwire -->
+    <test thread-count="25" verbose="0" name="splitPayment" parallel="classes">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.splitPayment">
+                <methods>
+                    <include name="SPLIT_Payment_001"/>
+                </methods>
+            </class> <!-- scripts.api.theia.splitPayment -->
+        </classes>
+    </test> <!-- splitPayment -->
+    <test thread-count="25" verbose="0" name="Split settlement for Native" parallel="classes">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeMF">
+                <methods>
+                    <include name="validateDCTxnWithoutSplit"/>
+                    <include name="validateNBTxnWithoutSplit"/>
+                    <include name="validateSplitInfoDCChild"/>
+                    <include name="validateSplitInfoDC"/>
+                    <include name="validateChecksum"/>
+                </methods>
+            </class> <!-- scripts.Native.NativeMF -->
+        </classes>
+    </test> <!-- Split settlement for Native -->
+    <test thread-count="25" verbose="0" name="Deffered for risk testcases for rent" parallel="classes">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateRiskAcceptNotNullForDC"/>
+                    <include name="validateRiskAcceptNotNullForHybrid"/>
+                    <include name="validateRiskAcceptNotNullForPPBL"/>
+                    <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                    <include name="validateRiskAcceptNotNullForCC"/>
+                </methods>
+            </class> <!-- scripts.DeferredCheckout -->
+        </classes>
+    </test> <!-- Deffered for risk testcases for rent -->
+    <test thread-count="25" verbose="0" name="Corporate Cards on Seamless" parallel="classes">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="successfulSeamlessCorporateDC"/>
+                    <include name="successfulSeamlessCorporateCC"/>
+                </methods>
+            </class> <!-- scripts.Seamless -->
+        </classes>
+    </test> <!-- Corporate Cards on Seamless -->
+    <test thread-count="25" verbose="0" name="Native AddMoney 3rd Party Fee Cases" parallel="classes">
+        <classes>
+            <class name="scripts.Native.NativeAddMoneyTP">
+                <methods>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCDC"/>
+                </methods>
+            </class> <!-- scripts.Native.NativeAddMoneyTP -->
+        </classes>
+    </test> <!-- Native AddMoney 3rd Party Fee Cases -->
+    <test thread-count="25" verbose="0" name="PGP-15980 Improve order retry success rate on Native" parallel="classes">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                </methods>
+            </class> <!-- scripts.Sprint28.OrderRetryImproveSuccessRate -->
+        </classes>
+    </test> <!-- PGP-15980 Improve order retry success rate on Native -->
+    <test thread-count="25" verbose="0" name="PGP-15980 Improve order retry success rate on Native Plus"
+          parallel="classes">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                </methods>
+            </class> <!-- scripts.Sprint28.OrderRetryImproveSuccessRate -->
+        </classes>
+    </test> <!-- PGP-15980 Improve order retry success rate on Native Plus -->
+    <test name="Apply SuperCash API Test">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+                <methods>
+                    <include name="getOfferfor_PPI_Postpaid_Onus_with_SSO"/>
+                    <include name="getOfferfor_PPI_POSTPAID_Onus_with_ACCESS_TOKEN"/>
+                    <include name="getOfferfor_PPI_POSTPAID_Onus_with_TXN_TOKEN"/>
+                    <include name="getOfferfor_POSTPAID_Onus_with_ACCESS_TOKEN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Fetch Payment Mode Status using Token Type Checksum1">
+        <classes>
+            <class name="scripts.api.theia.FetchUserPayModeStatusTest">
+                <methods>
+                    <include name="FetchUserPaymentModeStatusTxnAmountGreaterThenPostpaidBalance"/>
+                    <include name="FetchUserPaymentModeStatusTxnAmountLessThenPostpaidBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+      <test name="PGP-24758 1" >
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test">
+                <methods>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                    <include name="test unable to apply promo when checksum is created using different merchant's key"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when body custId = ''"/>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when max txn amt constraint is violated"/>
+                    <include name="test when body custId equals random value"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test">
+                <methods>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when body custId equals random value"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when head token equals WALLET token"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when head token equals SSO token"/>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when max txn amt constraint is violated"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when head token equals TXN token"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when body custId = ''"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test">
+                <methods>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when body custId equals random value"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test unable to apply promo when checksum is created using different merchant's key"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when body custId = ''"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when head token = ''"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when body custId = ''"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when head token equals SSO token"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when body custId equals random value"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when head token equals TXN token"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when head token equals WALLET token"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when body mid = null"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test">
+                <methods>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when body custId = ''"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when head token equals access token generated by different merchant"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when max txn amt constraint is violated"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when head token equals access token generated for OFFUS user"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when body custId equals random value"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when head token equals access token generated for ONUS user"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body paymentOptions = null"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when head token equals access token generated for ONUS user"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when body custId equals random value"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when body custId = ''"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when head token equals access token generated by different merchant"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when head token equals access token generated for OFFUS user"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when head token equals txn token generated using different mid"/>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when promo is not applied by promo engine"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when body custId equals random value"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when promo is not valid for mid"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when promo code passed in Init Txn API is different from one passed in Apply Promo API"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when promo code is not passed in Init Txn API but is passed in Apply Promo API"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when promo is not valid for payMethod"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when promo code is passed in Init Txn API but is not passed in Apply Promo API"/>
+                    <include name="test when min txn amt constraint is violated"/>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when promo is provided for different bank for which promo is nor created"/>
+                    <include name="test when head token equals txn token generated for ONUS user"/>
+                    <include name="test when same promo code is passed in both Init Txn API and in Apply Promo API"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when head token equals txn token generated for OFFUS user"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when max txn amt constraint is violated"/>
+                    <include name="test when promo code is passed neither in Init Txn API nor in Apply Promo API"/>
+                    <include name="test when body custId = ''"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when head token equals txn token generated using different orderId"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when body simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when body paymentOptions payMethod = HYBRID_PAYMENT given merchant has applicable promos"/>
+                    <include name="test when body promocode = null given merchant has no promos"/>
+                    <include name="test when body paymentOptions equals empty list"/>
+                    <include name="test when head token equals txn token generated for OFFUS user"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when promo code is not passed in Init Txn API but is passed in Apply Promo API"/>
+                    <include name="test when body promocode is not provided given merchant has applicable promos"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when promo is of cashback type"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when body custId is not provided"/>
+                    <include name="test when body promocode = null given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions payMethod = PAYTM_DIGITAL_CREDIT given merchant has applicable promos"/>
+                    <include name="test when body totalTransactionAmount equals random value"/>
+                    <include name="test when body promocode equals random value given merchant has no promos"/>
+                    <include name="test when body paymentOptions payMethod = WALLET given merchant has applicable promos"/>
+                    <include name="cashbackAmount should not be null if promo is applied"/>
+                    <include name="test when promo code is passed in Init Txn API but is not passed in Apply Promo API"/>
+                    <include name="test when head token equals txn token generated using different orderId"/>
+                    <include name="test tncUrl when FF4J applyPromoSendResponseTncUrl flag is disabled on mid"/>
+                    <include name="test when body promocode = '' given merchant has no promos"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when body paymentOptions payMethod = UPI given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions = ''"/>
+                    <include name="test when body totalTransactionAmount = null"/>
+                    <include name="test when body totalTransactionAmount is not provided"/>
+                    <include name="test when promo is of discount type"/>
+                    <include name="test when body paymentOptions payMethod = PPBL given merchant has applicable promos"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when body custId = null"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when body paymentOptions payMethod = BALANCE given merchant has applicable promos"/>
+                    <include name="test when body promocode equals expired promocode"/>
+                    <include name="test when body totalTransactionAmount = ''"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when body custId equals random value"/>
+                    <include name="test when body paymentOptions payMethod = NET_BANKING given merchant has applicable promos"/>
+                    <include name="test when body paymentOptions is not provided"/>
+                    <include name="test when same promo code is passed in both Init Txn API and in Apply Promo API"/>
+                    <include name="test when body paymentOptions payMethod = MP_COD given merchant has applicable promos"/>
+                    <include name="test when head token equals txn token generated for ONUS user"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when promo code is passed neither in Init Txn API nor in Apply Promo API"/>
+                    <include name="test when body paymentOptions = null"/>
+                    <include name="test when body simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body promocode is not provided given merchant has no promos"/>
+                    <include name="test when promo code passed in Init Txn API is different from one passed in Apply Promo API"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="instantDiscount should not be null if promo is applied"/>
+                    <include name="test when body paymentOptions payMethod = COD given merchant has applicable promos"/>
+                    <include name="test when head token equals txn token generated using different mid"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when mid in query params is not equals to mid in request body"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body promocode = '' given merchant has applicable promos"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when body custId = ''"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="EMI Subvention Phase 2 1">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t41bankAPIPhase2"/>
+                    <include name="t83initiatePTCAPIPhase2"/>
+                    <include name="t89SuccessValidateEMIUsingCardBin"/>
+                    <include name="t14"/>
+                    <include name="t11"/>
+                    <include name="t4"/>
+                    <include name="t94ValidateSucessTxnWithCardBin"/>
+                    <include name="t36bankAPIPhase2"/>
+                    <include name="t30bankAPIPhase2"/>
+                    <include name="t60tenureAPIPhase2"/>
+                    <include name="t2"/>
+                    <include name="t12"/>
+                    <include name="t35bankAPIPhase2"/>
+                    <include name="t37bankAPIPhase2"/>
+                    <include name="t6"/>
+                    <include name="t13"/>
+                    <include name="t74validateAPIPhase2"/>
+                    <include name="t79validateAPIPhase2"/>
+                    <include name="t47tenureAPIPhase2"/>
+                    <include name="t64validateAPIPhase2"/>
+                    <include name="t65validateAPIPhase2"/>
+                    <include name="t98validateAPIAmountBaseWithCardBinMoreThan6"/>
+                    <include name="t52tenureAPIPhase2"/>
+                    <include name="t49tenureAPIPhase2"/>
+                    <include name="t23"/>
+                    <include name="t71validateAPIPhase2"/>
+                    <include name="t97validateAPIAmountBaseWithCardBinEmpty"/>
+                    <include name="t31bankAPIPhase2"/>
+                    <include name="t43bankAPIPhase2"/>
+                    <include name="t51tenureAPIPhase2"/>
+                    <include name="t42bankAPIPhase2"/>
+                    <include name="t22"/>
+                    <include name="t16"/>
+                    <include name="t38bankAPIPhase2"/>
+                    <include name="t48tenureAPIPhase2"/>
+                    <include name="t62tenureAPIPhase2"/>
+                    <include name="t68validateAPIPhase2"/>
+                    <include name="t34bankAPIPhase2"/>
+                    <include name="t40bankAPIPhase2"/>
+                    <include name="t54tenureAPIPhase2"/>
+                    <include name="t45bankAPIPhase2"/>
+                    <include name="t75validateAPIPhase2"/>
+                    <include name="t99validateAPIAmountBaseWithCardBinMoreThan6"/>
+                    <include name="t77validateAPIPhase2"/>
+                    <include name="t63validateAPIPhase2"/>
+                    <include name="t33bankAPIPhase2"/>
+                    <include name="t59tenureAPIPhase2"/>
+                    <include name="t81initiateAPIPhase2"/>
+                    <include name="t3"/>
+                    <include name="t44bankAPIPhase2"/>
+                    <include name="t66validateAPIPhase2"/>
+                    <include name="t90SuccessValidateEMIUsingBothCardBinAndNumber"/>
+                    <include name="t1"/>
+                    <include name="t29bankAPIPhase2"/>
+                    <include name="t82initiateAPIPhase2"/>
+                    <include name="t58tenureAPIPhase2"/>
+                    <include name="t73validateAPIPhase2"/>
+                    <include name="t55tenureAPIPhase2"/>
+                    <include name="t19"/>
+                    <include name="t20"/>
+                    <include name="t56tenureAPIPhase2"/>
+                    <include name="t92SuccessValidateEMIUsingBothCardBinAndNumber"/>
+                    <include name="t9"/>
+                    <include name="t18"/>
+                    <include name="t7"/>
+                    <include name="t53tenureAPIPhase2"/>
+                    <include name="t32bankAPIPhase2"/>
+                    <include name="t61tenureAPIPhase2"/>
+                    <include name="t95validateAPIPhaseAmountBasedWithCardBin"/>
+                    <include name="t76validateAPIPhase2"/>
+                    <include name="t15"/>
+                    <include name="t39bankAPIPhase2"/>
+                    <include name="t17"/>
+                    <include name="t70validateAPIPhase2"/>
+                    <include name="t85initiatePTCAPIPhase2"/>
+                    <include name="t57tenureAPIPhase2"/>
+                    <include name="t8"/>
+                    <include name="t67validateAPIPhase2"/>
+                    <include name="t50tenureAPIPhase2"/>
+                    <include name="t5"/>
+                    <include name="t46bankAPIPhase2"/>
+                    <include name="t26"/>
+                    <include name="t69validateAPIPhase2"/>
+                    <include name="t72validateAPIPhase2"/>
+                    <include name="t80validateAPIPhase2"/>
+                    <include name="t10"/>
+                    <include name="t78validateAPIPhase2"/>
+                    <include name="t24"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--       <test name="Native AddMoney 3rd Party Fee Cases">
+        <classes>
+            <class name="scripts.Native.NativeAddMoneyTP">
+                <methods>
+                    <include name="validateFullKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+     <test name="Apply SuperCash API Test 1">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+                <methods>
+                    <exclude name="getOfferfor_PPI_Postpaid_Onus_with_SSO"/>
+                    <include name="getOfferfor_PPI_Onus_with_SSO"/>
+                    <exclude name="getOfferfor_PPI_POSTPAID_Onus_with_ACCESS_TOKEN"/>
+                    <exclude name="getOfferfor_PPI_POSTPAID_Onus_with_TXN_TOKEN"/>
+                    <include name="getOffer_check_amount"/>
+                    <include name="getOffer_with_ACCESS_TOKEN"/>
+                    <include name="onusMerchantSourceOrderPromoNotNull"/>
+                    <exclude name="getOfferfor_POSTPAID_Onus_with_ACCESS_TOKEN"/>
+                    <include name="onusMerchantSourcePGPromoNotNull"/>
+                    <include name="getOfferfor_PPI_Onus_with_TXN_TOKEN"/>
+                    <include name="offusMerchantSourceOrderPromoNull"/>
+                    <include name="offusMerchantSourceOrderPromoNotNull"/>
+                    <include name="offusMerchantSourcePGPromoNull"/>
+                    <include name="offusMerchantSourcePGPromoNotNull"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="PGP-25875_1">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test">
+                <methods>
+                    <include name="test when merchant does have not promos configured"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when simplifiedPaymentOffers object was not provided in Initate Txn API while creating txn token"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when head token equals txn token generated for ONUS user"/>
+                    <include name="test when body orderId is not provided"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when orderId in query params is not provided"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when head requestTimestamp is not provided"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when orderId provided in request body is different from orderId provided in query params"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when mid provided in request body is different from mid provided in query params"/>
+                    <include name="test when body orderId = ''"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when merchant has promos configured"/>
+                    <include name="test when body orderId = null"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when body orderId equals random value"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when head token equals txn token generated using different orderId"/>
+                    <include name="test when head token equals txn token generated for OFFUS user"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when head token equals txn token generated using different mid"/>
+                    <include name="test when head requestTimestamp = null"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Fetch payment instrument for offline txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+
+                    <include name="FetchPayIns_balance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SSOTokenFetchBalanceInfoV1Test">
+    <classes>
+     <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <include name="test when head token equals WALLET token"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when body paymentMode is not provided"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when orderId is not provided in query params"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when body paymentMode equals random value"/>
+                    <include name="test when mid provided in query params is different from mid provided in request body"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when body paymentMode equals BALANCE given user has PPI configured but merchant does not"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when body paymentMode = ''"/>
+                    <include name="test when body paymentMode equals BALANCE given merchant has PPI configured but user does not"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when head token equals expired token"/>
+                    <include name="test when body paymentMode equals PPBL given merchant and user both have PPBL configured"/>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant and user both have PAYTM_DIGITAL_CREDIT configured"/>
+                    <include name="test when head requestTimestamp is not provided"/>
+                    <include name="test when body paymentMode equals PPBL given user has PPBL configured but merchant does not"/>
+                    <include name="test when body paymentMode = null"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when head token equals TXN token"/>
+                    <include name="test when query params are not provided"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when body paymentMode equals BALANCE given merchant and user both have PPI configured"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when mid is not provided in query params"/>
+                    <include name="test when head token equals SSO token"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when body paymentMode equals BALANCE given merchant and user both do not have PPI configured"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TxnTokenFetchBalanceInfoV1Test 1">
+        <classes>
+            <class name="scripts.api.theia.fetchBalance.TxnTokenFetchBalanceInfoV1Test">
+                <methods>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body paymentMode equals BALANCE given user has PPI configured but merchant does not"/>
+                    <include name="test when body paymentMode equals BALANCE given merchant and user both do not have PPI configured"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when body paymentMode = ''"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when body paymentMode is not provided"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when body paymentMode = null"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when body paymentMode equals BALANCE given merchant has PPI configured but user does not"/>
+                    <include name="test when body paymentMode equals PAYTM_DIGITAL_CREDIT given merchant and user both have PAYTM_DIGITAL_CREDIT configured"/>
+                    <include name="test when body paymentMode equals BALANCE given merchant and user both have PPI configured"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when head token equals txn token generated using different orderId"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when orderId is not provided in query params"/>
+                    <include name="test when head token equals txn token generated for ONUS user"/>
+                    <include name="test when head requestTimestamp is not provided"/>
+                    <include name="test when head token is not provided"/>
+                    <include name="test when body paymentMode equals PPBL given user has PPBL configured but merchant does not"/>
+                    <include name="test when mid is not provided in query params"/>
+                    <include name="test when mid provided in query params is different from mid provided in request body"/>
+                    <include name="test when query params are not provided"/>
+                    <include name="test when body paymentMode equals PPBL given merchant and user both have PPBL configured"/>
+                    <include name="test when body paymentMode equals random value"/>
+                    <include name="test when head token equals txn token generated using different mid"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head token equals txn token generated for OFFUS user"/>
+                    <include name="test when body mid is not provided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="Payments API's 3 1">
+        <classes>
+            <class name="scripts.api.theia.FetchBinAppDetails">
+                <methods>
+                    <include name="testFailure"/>
+                    <include name="testSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-15980 Improve order retry success rate on Native 1">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-15980 Improve order retry success rate on Native Plus 1">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="testFormParamIsOptional"/>
+                    <include name="testApiIsAccessibleFromAllowedClients"/>
+                    <include name="testChannelIdValueSupported"/>
+                    <include name="testQueryParamIsMandatory"/>
+                    <include name="testChannelIdValueSupported"/>
+                    <include name="testFormParamIsOptional"/>
+                    <include name="test when mlvSupported == true given merchant does not support mlv"/>
+                    <include name="testVersionValueSupported"/>
+                    <include name="testFormParamIsOptional"/>
+                    <include name="testWhenInactiveMerchantQRCodeIsSupplied"/>
+                    <include name="testApiIsNotAccessibleThroughInvalidToken"/>
+                    <include name="testQueryParamIsMandatory"/>
+                    <include name="testApiIsAccessibleThroughToken"/>
+                    <include name="testPaymentDetailsFetchedForP2MQRCode"/>
+                    <include name="testChannelIdValueSupported"/>
+                    <include name="testQRDetailsFetchedForP2MQRCode"/>
+                    <include name="testFormParamIsOptional"/>
+                    <include name="testChannelIdValueSupported"/>
+                    <include name="testApiIsAccessibleThroughToken"/>
+                    <include name="test when mlvSupported == false given merchant supports mlv"/>
+                    <include name="testWhenInvalidQRCodeIdIsSupplied"/>
+                    <include name="testApiIsNotAccessibleThroughOauthTxnToken"/>
+                    <include name="verify when FPO generateOrderFlag is true than Order is treated as seperate order wrt FetchQR payment order"/>
+                    <include name="test when non-mlv-supported qrCodeId is passed"/>
+                </methods>
+            </class>
+            <class name="SampleTest">
+            </class>
+        </classes>
+    </test>
+    <test name="theia API's 9 1">
+            <classes>
+                <class name="scripts.api.theia.OrderPayUnipsp">
+                    <methods>
+                        <include name="test 'timeoutInSeconds' parameter of COP request should be 1800 when 'upiOrderTimeOutInSeconds' parameter is not passed"/>
+                        <include name="test if 'upiOrderTimeOutInSeconds' parameter's value is forwarded in 'timeoutInSeconds' parameter of COP request"/>
+                        <include name="test if 'upiOrderTimeOutInSeconds' parameter's value is forwarded in 'timeoutInSeconds' parameter of COP request"/>
+                        <include name="test if 'upiOrderTimeOutInSeconds' parameter's value is forwarded in 'timeoutInSeconds' parameter of COP request"/>
+                        <include name="test if 'upiOrderTimeOutInSeconds' parameter's value is forwarded in 'timeoutInSeconds' parameter of COP request"/>
+                        <include name="test upiOrderTimeOutInSeconds is optional"/>
+                        <include name="test if 'upiOrderTimeOutInSeconds' parameter's value is forwarded in 'timeoutInSeconds' parameter of COP request"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
+</suite> <!-- Theia_Suite -->

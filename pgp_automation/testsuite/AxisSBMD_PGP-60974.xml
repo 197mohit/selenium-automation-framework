@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AxisSBMD">
+
+    <test name="AxisSBMD_Theia">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIAxisMultiDebit">
+                <methods>
+                    <include name="TC_001_SBMD_expiryFailure"/>
+                    <include name="TC_002_SBMD_over1lakh"/>
+                    <include name="TC_003_SBMD_FIX"/>
+                    <include name="TC_004_SBMD_amountGreaterThen0"/>
+                    <include name="TC_005_SBMD_NativeSubscription"/>
+                    <include name="TC_006_SBMD_MF_SIP"/>
+                    <include name="TC_007_SBMD_NativeSubscription"/>
+                    <include name="TC_008_SBMD_nativeMFSIP"/>
+                    <include name="TC_009_SBMD_inFPOresponse_subs"/>
+                    <include name="TC_010_SBDM_inFPOresponse_sip"/>
+                    <include name="TC_011_SBMD_ccUPI_FPOresponse"/>
+                    <include name="TC_012_SBMD_upiCreditLine_FPOresponse"/>
+                    <include name="TC_013_SBMD_Subs_ACQUIRING_PAY_ORDER"/>
+                    <include name="TC_014_SBMD_mfSIP_ACQUIRING_PAY_ORDER"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

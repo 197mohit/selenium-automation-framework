@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35751" verbose="1">
+    <test name="CUST and VPA HASH cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+       <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="TC001_VerifyVPAHASHissentinPeon"/>
+                    <include name="TC002_VerifyCUSTIDHASHissentinPeon"/>
+                    <include name="TC003_VerifyVPAHASHisnotsentinPeon"/>
+                    <include name="TC004_VerifyCUSTIDHASHisnotsentinPeon"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

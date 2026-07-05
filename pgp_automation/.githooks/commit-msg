@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Validates commit message format: <type>: <what changed>
+# Delegates to scripts/validate-commit-msg.sh for the actual regex check.
+# Installed by scripts/install-hooks.sh or pre-commit install --hook-type commit-msg.
+set -euo pipefail
+
+HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ "$HOOK_DIR" == *".git/hooks"* ]]; then
+  REPO_ROOT="$(cd "$HOOK_DIR/../.." && pwd)"
+else
+  REPO_ROOT="$(cd "$HOOK_DIR/.." && pwd)"
+fi
+
+COMMIT_MSG_FILE="$1"
+VALIDATOR="$REPO_ROOT/scripts/validate-commit-msg.sh"
+
+if [ ! -f "$VALIDATOR" ]; then
+  echo "[commit-msg hook] Warning: $VALIDATOR not found, skipping validation."
+  exit 0
+fi
+
+FIRST_LINE=$(head -n1 "$COMMIT_MSG_FILE")
+
+if echo "$FIRST_LINE" | grep -qE '^Merge(d)? (in |branch |pull request )'; then
+  exit 0
+fi
+
+exec bash "$VALIDATOR" "$COMMIT_MSG_FILE"

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-1176" verbose="1" parallel="methods" thread-count="1">
+    <test name="PG-1176 - Filter UPI_PUSH for link transactions when supportOnline = false in LPV response">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="verifyUPIPUSH_paymode_FPO_supportOnline_true_inLPV"/>
+                    <include name="verifyUPIPUSH_paymode_FPO_supportOnline_FALSE_inLPV"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

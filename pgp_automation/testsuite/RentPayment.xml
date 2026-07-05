@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RentPayment RiskTestcases" verbose="1">
+    <test name="Rent Payment Risk Info for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskAcceptNotNullForCC"/>
+                        <include name="validateRiskAcceptNotNullForDC"/>
+                        <include name="validateRiskAcceptNotNullForUPI"/>
+                        <include name="validateRiskAcceptNotNullForHybrid"/>
+                        <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                        <include name="validateRiskAcceptNotNullForPPBL"/>
+                        <include name="validateRiskInfoNullForCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Rent Payment Risk Info for  Native Plus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskAcceptNotNullForCC"/>
+                        <include name="validateRiskAcceptNotNullForDC"/>
+                        <include name="validateRiskAcceptNotNullForUPI"/>
+                        <include name="validateRiskAcceptNotNullForHybrid"/>
+                        <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                        <include name="validateRiskAcceptNotNullForPPBL"/>
+                        <include name="validateRiskInfoNullForCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+
+    <test name="Deffered for risk testcases for rent">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateRiskAcceptNotNullForCC"/>
+                    <include name="validateRiskAcceptNotNullForDC"/>
+                    <include name="validateRiskAcceptNotNullForUPI"/>
+                    <include name="validateRiskAcceptNotNullForHybrid"/>
+                    <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                    <include name="validateRiskAcceptNotNullForPPBL"/>
+                    <include name="validateRiskInfoNullForCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Card Index api changes">
+            <classes>
+                <class name="scripts.api.theia.fetchCardIdxNo.JWTTokenFetchCardIndexNoTest">
+                </class>
+            </classes>
+    </test>
+
+</suite>

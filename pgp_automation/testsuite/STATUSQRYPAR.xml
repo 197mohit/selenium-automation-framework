@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="STATUSQUERY" verbose="1" thread-count="4" parallel="tests">
+    <test name="STATUS QUERY PARAMETER">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="successfulCCStatusQuery"/>
+                    <include name="successfulDCStatusQuery"/>
+                    <include name="successfulEMIStatusQuery"/>
+                    <include name="successfulEMIDCStatusQuery"/>
+                    <include name="SuccessfulEBajajFNStatusQuery"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

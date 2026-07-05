@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": [
+    "id",
+    "paytmResponseCode",
+    "resultCodeId",
+    "resultCode",
+    "resultStatus",
+    "remark",
+    "retryPossible",
+    "displayMessage",
+    "messageAndRetryDetails",
+    "responseCode",
+    "subPaytmResponseCode"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer"
+    },
+    "paytmResponseCode": {
+      "type": "integer"
+    },
+    "resultCodeId": {
+      "type": "integer"
+    },
+    "resultCode": {
+      "type": "string"
+    },
+    "resultStatus": {
+      "type": "string"
+    },
+    "remark": {
+      "type": "string"
+    },
+    "retryPossible": {
+      "type": "boolean"
+    },
+    "displayMessage": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "messageAndRetryDetails": {
+      "type": "null"
+    },
+    "responseCode": {
+      "type": "string",
+      "pattern": "[0-9]+"
+    },
+    "subPaytmResponseCode": {
+      "type": "null"
+    }
+  }
+}

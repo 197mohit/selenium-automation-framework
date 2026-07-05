@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Block Collect Request  PGP-52167" verbose="1">
+    <test name="Block Collect Request For MCC">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.BlockCollectRequest">
+                <methods>
+                    <include name="CollectRequestBlockFOR_5816"/>
+                    <include name="CollectRequestNotBlockFOR_5816"/>
+                    <include name="CollectRequestNotBlockFOR_5816_FF4J_OFF" />
+                    <include name="CollectRequestNotBlockFOR_5816_txn"/>
+                    <include name="CollectRequestBlockFOR_5816_PTC"/>
+                    <include name="CollectRequestBlockFOR_4814" />
+                    <include name="CollectRequestNotBlockFOR_4814"/>
+                    <include name="CollectRequestNotBlockFOR_4814_FF4J_OFF"/>
+                    <include name="CollectRequestNotBlockFOR_4814_txn" />
+                    <include name="CollectRequestBlockFOR_4814_PTC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

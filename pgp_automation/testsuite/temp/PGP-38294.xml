@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Visibility of postpaid on PG page for new users" verbose="1" thread-count="2" parallel="tests">
+    <test name="Validate Signup to paytm postpaid strip web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="postpaidSignupBannerVisible"/>
+                    <include name="postpaidSignupBannerNotVisible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate Signup to paytm postpaid strip mWeb">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="postpaidSignupBannerVisible"/>
+                    <include name="postpaidSignupBannerNotVisible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate Signup to paytm postpaid strip checkout js">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.checkoutJSPostpaidAddNPay">
+                <methods>
+                    <include name="postpaidSignupBannerVisibleCheckoutJS"/>
+                    <include name="postpaidSignupBannerNotVisibleCheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

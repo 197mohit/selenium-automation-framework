@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-42982" verbose="1" thread-count="3">
+    <test name="PGP-42982 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC01_ValidateUI"/>
+                    <include name="TC02_ValidateUI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42982 - 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC03_ValidateUI_CheckoutJS"/>
+                    <include name="TC04_ValidateUI_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42982 - 3">
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC05_ValidateTheNewFieldsInFPO"/>
+                    <include name="TC06_ValidateTheNewFieldInFPOWhendeepLinkisFALSE"/>
+                    <include name="TC07_ValidateTheNewFieldInUpiPsp"/>
+                    <include name="TC08_ValidateSuccessFromUPIpspAPI"/>
+                    <include name="TC09_ValidateResponseWhenOrderIdIsInvalid"/>
+                    <include name="TC10_ValidateResponseWhenRequestTypeinNULL"/>
+                    <include name="TC11_ValidateFPOResponseForNATIVE_MF_SIP"/>
+                    <include name="TC12_ValidateSuccessResponseForNATIVE_MF_SIP"/>
+                    <include name="TC13_ValidateResponseWhenAmountTypeIsFix"/>
+                    <include name="TC14_ValidateResponseWhenAmountTypeIsVaraiableandForWeek"/>
+                    <include name="TC15_ValidateResponseWhenAmountTypeIsVaraiableandForQuarter"/>
+                    <include name="TC16_ValidateResponseWhenAmountTypeIsVaraiableForNATIVE_MF_SIP"/>
+                    <include name="TC17_ValidateResponseWhenAmountTypeIsVaraiableandForQuarter_NATIVE_MF_SIP"/>
+                    <include name="TC18_ValidateDeepLinkParameters"/>
+                    <include name="TC19_ValidateDeepLinkParametersForOndemandSubs"/>
+                    <include name="TC20_ValidateDeepLinkParametersForOndemandSubs_1"/>
+                    <include name="TC21_ValidateProductCode"/>
+                    <include name="TC22_ValidateProductCodeForNATIVE_MF_SIP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

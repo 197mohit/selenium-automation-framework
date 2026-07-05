@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Pay Via Notification Cases" verbose="1" >
+    <test name="Enhanced web cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+            <classes>
+                <class name="scripts.PayViaNotification">
+                    <methods>
+                        <include name="payViaNotification_01"/>
+                        <include name="payViaNotification_05"/>
+                        <include name="payViaNotification_09"/>
+                        <include name="payViaNotification_10"/>
+                        <include name="payViaNotification_11"/>
+                        <include name="payViaNotification_12"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+
+    <test name="mweb enhanced cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.PayViaNotification">
+                <methods>
+                    <include name="payViaNotification_01"/>
+                    <include name="payViaNotification_07"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="checkoutjs web cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.PayViaNotification">
+                <methods>
+                    <include name="payViaNotification_02"/>
+                    <include name="payViaNotification_04"/>
+                    <include name="payViaNotification_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="checkoutjs mweb cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.PayViaNotification">
+                <methods>
+                    <include name="payViaNotification_02"/>
+                    <include name="payViaNotification_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

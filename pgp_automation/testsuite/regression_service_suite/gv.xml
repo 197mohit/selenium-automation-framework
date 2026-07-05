@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Merchant_Gift_Voucher_Suite" verbose="1" thread-count="20" parallel="tests">
+
+
+    <test name="EnhancedWap MGV">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.mgv.TestMGVForHybridMerchant"/>
+            <class name="scripts.mgv.TestMgvForAddNPayMerchant">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="testMGVPaymentWhenWalletDisabledOnMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EnhancedWeb MGV">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.mgv.TestMGVForHybridMerchant"/>
+            <class name="scripts.mgv.TestMgvForAddNPayMerchant">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="testWithSavedCard"/>
+                    <exclude name="testMGVPaymentWhenWalletDisabledOnMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25870">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.mgv.TestNativeMGVFlow">
+                <methods>
+                    <exclude name="TC_PT_MGV_001"/>
+                    <exclude name="TC_PT_MGV_002"/>
+                    <exclude name="TC_PT_MGV_003"/>
+                    <exclude name="TC_PT_MGV_004"/>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="TC_PT_MGV_026"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Native MGV">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.mgv.TestNativeMGVFlow">
+                    <methods>
+                        <include name="TC_PT_MGV_001"/>
+                        <include name="TC_PT_MGV_002"/>
+                        <include name="TC_PT_MGV_003"/>
+                        <include name="TC_PT_MGV_004"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Gift Voucher on Native plus">
+        <parameter name="isNativePlus" value="true"></parameter>
+        <classes>
+            <class name="scripts.GiftVoucher">
+                <methods>
+                    <include name="gvAddMoneyNative"/>
+                    <include name="gvAddNPayNative"/>
+                    <include name="gvHybridNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Gift Voucher on Native ">
+        <parameter name="isNativePlus" value="false"></parameter>
+        <classes>
+            <class name="scripts.GiftVoucher">
+                <methods>
+                    <include name="gvAddMoneyNative"/>
+                    <include name="gvAddNPayNative"/>
+                    <include name="gvHybridNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Gift Voucher on enhanced web ">
+        <parameter name="theme" value="enhancedweb_revamp"></parameter>
+        <classes>
+            <class name="scripts.GiftVoucher">
+                <methods>
+                    <include name="gvAddMoney"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Gift Voucher on enhanced wap ">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.GiftVoucher">
+                <methods>
+                    <include name="gvAddMoney"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

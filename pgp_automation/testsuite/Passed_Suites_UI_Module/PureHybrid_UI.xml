@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Hybrid_Suite_UI" verbose="1" parallel="tests" thread-count="1">
+    <test name="PGP-48994 Pure Hybrid Suite Std checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.PureHybrid.PureHybrid">
+                <methods>
+                    <include name="verifyPureHybrid_01"/>
+                    <include name="verifyPureHybrid_02"/>
+                    <include name="verifyPureHybrid_03"/>
+                    <include name="verifyPureHybrid_04"/>
+                    <include name="verifyPureHybrid_12"/>
+                    <include name="verifyPureHybrid_13"/>
+                    <include name="verifyPureHybrid_15"/>
+                    <include name="verifyPureHybrid_16"/>
+                    <include name="verifyPureHybrid_17"/>
+                    <include name="verifyPureHybrid_20"/>
+                    <include name="verifyPureHybrid_21"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48994 Pure Hybrid Suite checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.PureHybrid.PureHybrid">
+                <methods>
+                    <include name="verifyPureHybrid_05"/>
+                    <include name="verifyPureHybrid_06"/>
+                    <include name="verifyPureHybrid_07"/>
+                    <include name="verifyPureHybrid_08"/>
+                    <include name="verifyPureHybrid_11"/>
+                    <include name="verifyPureHybrid_14"/>
+                    <include name="verifyPureHybrid_18"/>
+                    <include name="verifyPureHybrid_19"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

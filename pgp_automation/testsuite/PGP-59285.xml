@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-59285" verbose="1">
+    <test name="Unmasked Access Token is Printing in Logs || Theia">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifymaksedAccessToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

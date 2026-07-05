@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia" verbose="1" thread-count="5" parallel="classes">
+    <test name="Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                    <include name="PGP_289_successfulSeamlessDC"/>
+                    <include name="PGP_293_successfulSeamlessNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Initiate Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction">
+                <methods>
+                    <include name="verifySuccessCase"/>
+                    <include name="verifySuccessCaseWithChannelIdWEB"/>
+                    <include name="verifySuccessCaseWithChannelIdWAP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NativeFPOV2 TCs">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="VerifyBankLogoforEMINative"/>
+                    <include name="VerifyBankLogoforNBNative"/>
+                    <include name="VerifyBankLogoforSavedvpaNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

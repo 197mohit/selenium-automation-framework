@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QR_Suite" verbose="1" thread-count="20" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="PGP 16531 - Notification service should share the transaction success message to the last updated mobile no.s of the merchant" parallel="methods" thread-count="3">
+        <classes>
+            <class name="scripts.Sprint28.CreateQRPayment">
+                <methods>
+                    <exclude name="editQrInfoAndfastForwardTxn"/>
+                    <exclude name="verifySuccessFFTxnWithQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EDCQR TCs">
+        <classes>
+            <class name="scripts.EDCQR"/>
+        </classes>
+    </test>
+
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference"/>
+        </classes>
+    </test>
+
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference"/>
+        </classes>
+    </test>
+
+    <test name="ScanNPay tests Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.ScanNPayTest">
+                <!--EXCLUDING BELOW METHOD AS FUNC IS DEPRECATED FOR NOW (https://jira.mypaytm.com/browse/PGP-20231)-->
+                <methods>
+                    <exclude name="validate_UI_QRSection"/>
+                    <exclude name="validateFtchPayOpt_AddNPayMerch"/>
+                    <exclude name="validateFtchPayOpt_HybridMerch"/>
+                    <exclude name="validateQrCode_displayed_notLogIn_normMerch"/>
+                    <exclude name="validate_S_walletTxn_paytmQr"/>
+                    <exclude name="validate_S_CCTxn_paytmQr"/>
+                    <exclude name="validate_S_AddThenPay_txn"/>
+                    <exclude name="validate_S_DCTxn_paytmQr"/>
+                    <!--Excluding Zero Pass Percentage TC-->
+                    <exclude name="validate_UI_QRSection"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Static QR Test Cases">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="testOrderSuccessByDCWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="validateCCTxn_UsingStaticQR_TxnAmountLessThanLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-ScanNpay All in 1 QR tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.AllInOneQrTests">
+                <methods>
+                    <!--Excluding Zero Pass Percentage TCs -->
+                    <exclude name="validate_S_AthenP_PCF_Txn_allIn1Qr"/>
+                    <exclude name="validate_S_cc_PCF_Txn_allIn1Qr"/>
+                    <exclude name="validate_S_dc_PCF_Txn_allIn1Qr"/>
+                    <exclude name="validate_S_EMI_PCF_Txn_allIn1Qr"/>
+                    <exclude name="validate_S_GV_PCF_Txn_allIn1Qr"/>
+                    <exclude name="validate_S_NB_PCF_Txn_allIn1Qr"/>
+                    <exclude name="validate_S_postpaid_PCF_Txn_allIn1Qr"/>
+                    <exclude name="validate_S_intentTxn_PCF_allIn1Qr"/>
+                    <exclude name="validateTxnAmount10SubWallet7AvailableBalanceMW10FW10"/>
+                    <exclude name="validateTxnAmount10SubWallet7AvailableBalanceMW10FW10PTC"/>
+                    <exclude name="validateTxnAmount15SubWallet12AvailableBalanceMW10FW10"/>
+                    <exclude name="validateTxnAmount15SubWallet3AvailableBalanceMW10FW10"/>
+                    <exclude name="validateTxnAmount25SubWallet12AvailableBalanceMW10FW10"/>
+                    <exclude name="validateTxnAmount25SubWallet15AvailableBalanceMW10FW10"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NewDynamicQR flow">
+        <classes>
+            <class name="scripts.flows.NewDynamicQRTest"/>
+        </classes>
+    </test>
+
+    <test name="temp-Dynamic QR Test Cases">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <!-- Excluding Zero Pass Percenntage TCs-->
+                    <exclude name="testOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-27185 - Sending priority Fetch QR V2">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsV2APITest">
+                <methods>
+                    <include name="testFetchQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate">
+                <methods>
+                    <!--Excluding Zero Pass Percent TC-->
+                    <exclude name="ScanNPayMDRCustomRate"/>
+                    <exclude name="ScanNPayMDRCustomRate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.ScanNPayPCFCustomRate"/>
+        </classes>
+    </test>
+
+    <test name="Payments API's">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="scripts.api.theia.FetchQRPaymentDetailsAPITest.testFormParamIsMandatory"/>
+                    <include name="scripts.api.theia.FetchQRPaymentDetailsAPITest.Validate that saved vpa should be fetched when device id is passed in query param"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API Tests">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantProfile">
+                <methods>
+                    <include name="test QR components in Merchant Profile from Database when Id is paytm"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify QR and Login Strip">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.OptOutPreferenceForQrLogin">
+                <methods>
+                    <!-- Excluding Zero Pass Percentage TCs -->
+                    <exclude name="validateQRandLoginOnMerchant_02"/>
+                    <exclude name="validateQRandLoginOnMerchant_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-40742 FetchQRpaymentDetails - Deals">
+         <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyDealsInFetchQrPaymentDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38902">
+    <test name="Verify user is redirecting to BM URL after Bank Mandate Txn for CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"></include>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoBMURL"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify user is redirecting to BM URL after Bank Mandate Txn for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"></include>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoBMURL"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify user is redirecting to BM URL after Bank Mandate Txn for Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_37658_VerifythatUserisNavigatedtoDynamicURL"></include>
+                    <include name="PGP_37658_ValidateUserRedirectingtoBMURL"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

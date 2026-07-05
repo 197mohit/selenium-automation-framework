@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Instant Refund" verbose="1" parallel="methods" thread-count="10">
+    <test name="Instant Refund">
+        <classes>
+            <class name="scripts.api.instantrefund.AsyncRefund"/>
+            <class name="scripts.api.instantrefund.RefundAccountAdd"/>
+            <class name="scripts.api.instantrefund.RefundAccountQuery"/>
+            <class name="scripts.api.instantrefund.RefundAccountRemove"/>
+            <class name="scripts.api.instantrefund.RefundAccountValidate"/>
+            <class name="scripts.api.instantrefund.RefundConsultView"/>
+        </classes>
+    </test>
+</suite>

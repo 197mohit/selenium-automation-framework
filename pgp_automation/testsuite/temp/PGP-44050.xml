@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-44050" verbose="1" >
+    <test name="validate fields for EMI txn">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateFieldsForEMICCForCOP"/>
+                    <include name="ValidateFieldsForEMICCForCOTP"/>
+                    <include name="ValidateFieldsForEMIDCForCOP"/>
+                    <include name="ValidateFieldsForEMIDCForCOTP"/>
+                    <include name="ValidateFieldsForEMICCPromoAndSubventionForCOP"/>
+                    <include name="ValidateFieldsForEMICCPromoAndSubventionForCOTP"/>
+                    <include name="ValidateFieldsForEMICCSubventionForCOP"/>
+                    <include name="ValidateFieldsForEMICCSubventionForCOTP"/>
+                    <include name="ValidateFieldsForEMICCPromoForCOP"/>
+                    <include name="ValidateFieldsForEMICCPromoForCOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

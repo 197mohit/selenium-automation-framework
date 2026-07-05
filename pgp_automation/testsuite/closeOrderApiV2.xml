@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="close order API V2" verbose="1" parallel="methods" thread-count="5">
+    <test name="close order API V2">
+        <classes>
+            <class name="scripts.api.theia.colseOrderv2.CloseOrder">
+                <methods>
+                    <include name="closeOrderSsoToken"/>
+                    <include name="closeOrderTxnToken"/>
+                    <include name="closeOrderInvalidSsoToken"/>
+                    <include name="closeOrderInvalidTxnToken"/>
+                    <include name="closeOrderInvalidOrderidVaildTxnToken"/>
+                    <include name="closeOrderInvalidChecksum"/>
+                    <include name="closeOrderChecksumToken"/>
+                    <include name="closeOrderSsoSuccessNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenSuccessNativePlusTxn"/>
+                    <include name="closeOrderChecksumSuccessNativePlusTxn"/>
+                    <include name="closeOrderSsoSuccessNativeTxn"/>
+                    <include name="closeOrderTxnTokenSuccessNativeTxn"/>
+                    <include name="closeOrderChecksumSuccessNativeTxn"/>
+                    <include name="closeOrderSsoSuccessEnhanceTxn"/>
+                    <include name="closeOrderChecksumSuccessEnhanceTxn"/>
+                    <include name="closeOrderSsoFailureNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenFailureNativePlusTxn"/>
+                    <include name="closeOrderChecksumFailureNativePlusTxn"/>
+                    <include name="closeOrderSsoFailureNativeTxn"/>
+                    <include name="closeOrderTxnTokenFailureNativeTxn"/>
+                    <include name="closeOrderChecksumFailureNativeTxn"/>
+                    <include name="closeOrderSsoPendingNativePlusTxn"/>
+                    <include name="closeOrderTxnTokenPendingNativePlusTxn"/>
+                    <include name="closeOrderChecksumPendingNativePlusTxn"/>
+                    <include name="closeOrderSsoPendingNativeTxn"/>
+                    <include name="closeOrderTxnTokenPendingNativeTxn"/>
+                    <include name="closeOrderChecksumPendingNativeTxn"/>
+                    <include name="closeOrderSsoPendingEnhanceTxn"/>
+                    <include name="closeOrderChecksumPendingEnhanceTxn"/>
+                    <include name="closeOrderSsoSuccessOfflineTxn"/>
+                    <include name="closeOrderSSoAddMoneySuccess"/>
+                    <include name="closeOrderChecksumAddMoneySuccess"/>
+                    <include name="closeOrderSSoAddMoneyFailure"/>
+                    <include name="closeOrderChecksumAddMoneyFailure"/>
+                    <include name="closeOrderSSoAddMoneyPending"/>
+                    <include name="closeOrderChecksumAddMoneyPending"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

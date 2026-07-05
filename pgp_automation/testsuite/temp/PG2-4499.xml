@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PG2-4499" verbose="1">
+    <test name="Validate Full Traffic Internal Order Modify through PPBL, Wallet ">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+            <methods>
+                <include name="validateFullTrafficYSuccessCOPPPBLInternalOrderModifyTxnPG2MID"/>
+            </methods>
+            </class>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCOThenPayWalletInternalOrderModifyTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

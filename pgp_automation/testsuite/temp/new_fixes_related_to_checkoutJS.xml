@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="UpiNumericIdTestCase_05"/>  
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifying_phone_number_and_email"/>  
+                    <include name="verifyLogoColor"/>  
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

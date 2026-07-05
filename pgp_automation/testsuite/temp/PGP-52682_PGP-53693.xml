@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP-52682">
+        <classes>
+            <class name="scripts.Native.NativePTCWithAdditionalInfo">
+                <methods>
+                    <include name="additionalInfoInPTCFormPostInPay"/>
+                    <include name="additionalInfoBlankInPTCFormPostInPay"/>
+                    <include name="additionalInfoIsNotSentInPTCFormPostInPay"/>
+                    <include name="additionalInfoIsSentInPTCFormPostInPayAndFF4JIsOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

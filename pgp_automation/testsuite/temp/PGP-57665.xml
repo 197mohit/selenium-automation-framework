@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Offers On CC Changes" verbose="1" parallel="methods" thread-count="2">
+    <test name="fetchPaymentPromotionAttributes changes">
+        <classes>
+            <class name="scripts.api.theia.FetchPaymentPromotionAttributes">
+                <methods>
+                    <include name="testSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FPO changes">
+        <classes>
+            <class name="scripts.EMITest.EMIDependentServiceTest">
+            </class>
+        </classes>
+    </test>
+</suite>

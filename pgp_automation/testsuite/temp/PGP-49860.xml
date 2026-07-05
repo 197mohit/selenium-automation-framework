@@ -1,0 +1,30 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-14933" verbose="1">
+    <test name="updated api name of restapi for payment adapter deprication">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validateTimeoutObjectWithFlagOnCORequest"/>
+                </methods>
+            </class>
+            <class name="scripts.genrateESNTest.generateEsnTest">
+                <methods>
+                    <include name="newESN_Normal_NativeSubsFlow"/>
+                </methods>
+            </class>
+            <class name="scripts.GoodsInfoCheck">
+            <methods>
+                <include name="validateitemProductNameinCOP"/>
+                <include name="validateitemProductNameinEnhancedFlow"/>
+            </methods>
+            </class>
+            <class name="scripts.api.FeeCharge.FeeChargePG2">
+                <methods>
+                    <include name="validateTheiaPaymentAdapterFeaturePostPaidPCFTxnPartialRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

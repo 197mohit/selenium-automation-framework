@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Guest Checkout Scripts">
+    <test name="Alternate ID txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyfetchBinResponseforAltVISA"></include>
+                    <include name="verifyfetchBinResponseforAltRupay"></include>
+                    <include name="verifyLPVResponseforAlternateIDVISA"></include>
+                    <include name="verifyLPVResponseforAlternateIDRUPAY"></include>
+                    <include name="verifySuccessAltIDGenerationforVISA"></include>
+                    <include name="verifySuccessTxnforAlternateIDVISA"></include>
+                    <include name="verifyRupayCardAltGenCall"></include>
+                    <include name="verifyRupayCardAltGenCallOffus"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="Alternate ID txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifySuccessAltIDGenerationforVISA"></include>
+                    <include name="verifySuccessTxnforAlternateIDVISA"></include>
+                    <include name="verifyRupayCardAltGenCall"></include>
+                    <include name="verifyRupayCardAltGenCallOffus"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+    <test name="Guest Checkout Txn scripts via UI">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"></include>
+                    <include name="verifyingRupayTxnforAltID"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"></include>
+                    <include name="verifyingGenerateAltIDforGuestCheckoutOnus"></include>
+                    <include name="verifyingRupayTxnforAltID"></include>
+                    <include name="verifyingRupayTxnforAltIDOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-PGP-18282" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-18282 Enhanced">
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_18282_ValidateStatusAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-18282 Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_18282_ValidateStatusAfterLoginNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

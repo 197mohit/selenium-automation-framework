@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CreateQRPayment" verbose="1" parallel="tests" thread-count="10">
+    <test name="PGP 16531 - Notification service should share the transaction success message to the last updated mobile no.s of the merchant">
+        <classes>
+            <class name="scripts.Sprint28.CreateQRPayment"/>
+        </classes>
+    </test>
+</suite>

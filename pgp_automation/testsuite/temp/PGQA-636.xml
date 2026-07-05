@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGQA-636 UPI PSP QR Subscription payerPaymentInstrument validation" verbose="1">
+    <test name="PGQA-636">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUpiPspQrSubscriptionUpiCreditCard"/>
+                    <include name="validateUpiPspQrSubscriptionInvalidPayerPaymentInstrument"/>
+                    <include name="validateUpiPspQrSubscriptionEmptyPayerPaymentInstrument"/>
+                    <include name="validateUpiPspQrSubscriptionNullPayerPaymentInstrument"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

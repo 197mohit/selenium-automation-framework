@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R5 Zero Pass Suite" verbose="1" thread-count="12" parallel="tests">
+
+    <!--Gift Voucher Zero Pass Percentage TCs -->
+    <test name="EnhancedWap MGV">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.mgv.TestMGVForHybridMerchant"/>
+            <class name="scripts.mgv.TestMgvForAddNPayMerchant">
+                <methods>
+                    <include name="testMGVPaymentWhenWalletDisabledOnMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EnhancedWeb MGV">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.mgv.TestMgvForAddNPayMerchant">
+                <methods>
+                    <include name="testWithSavedCard"/>
+                    <include name="testMGVPaymentWhenWalletDisabledOnMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25870">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.mgv.TestNativeMGVFlow">
+                <methods>
+                    <include name="TC_PT_MGV_026"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--Savecard Zero Pass Percentage TCs -->
+    <test name="Add N Pay Fee Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hybrid-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_verifySavedCardList"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly with enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_251_verifySavedCardListAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_251_verifySavedCardListAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="addMoneySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="addMoneySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--Disabling this as Savecard Service APIs are being depricated
+    <test name="PGP-29587 TC">
+        <classes>
+            <class name="scripts.api.savedcardservice.SavedCardOpenAPI">
+                <methods>
+                    <include name="successTransaction"/>
+                    <include name="cardNoLengthFF4jOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <test name="SaveCard">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCard">
+                <methods>
+                    <include name="saveTrused_ValidateExpiryInDB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SaveCard Instant Refund">
+        <classes>
+            <class name="scripts.api.instantrefund.AsyncRefund">
+            <class name="scripts.api.instantrefund.RefundAccountAdd">
+                <methods>
+                    <include name="testForRealUpiAccount"/>
+                    <include name="testWhenAccountDetailsAreAlreadyAdded"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Redirectional Zero Pass Percentage TCs in below mentioned Suite -->
+    <suite-files>
+        <suite-file path="misc_zero.xml"/>
+    </suite-files>
+
+</suite>

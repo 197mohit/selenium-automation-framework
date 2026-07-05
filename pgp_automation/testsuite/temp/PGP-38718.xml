@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38718">
+    <test name="check emi_dc eligiblity">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="EMI_DCbasedonCategorization_DBCheck"/>
+                    <include name="EMI_DCbasedonCategorization_DefaultTrue"/>
+                    <include name="EMI_DCbasedonCategorization_CheckNumber"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

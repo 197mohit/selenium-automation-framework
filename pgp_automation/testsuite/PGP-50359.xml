@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Telemetry checks | PGP-50359" >
+    <test name="Scan and Pay | UPI - Telemetry Checks">
+        <classes>
+            <class name="scripts.Qr.qr">
+                <methods>
+                    <include name="verify_QueryParams_RiskExtendInfo_StaticQR_IOS"></include>
+                    <include name="verify_QueryParams_RiskExtendInfo_StaticQR_Android"></include>
+                    <include name="verify_QueryParams_RiskExtendInfo_DynamicQR_IOS"></include>
+                    <include name="verify_QueryParams_RiskExtendInfo_DynamicQR_Android"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestStaticQR_IOS"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestStaticQR_Android"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestDynamicQR_IOS"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestDynamicQR_Android"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

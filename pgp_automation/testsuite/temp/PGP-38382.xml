@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscriptions of fixed amount type with 0 upfront amount and future start date are failing during creation" verbose="1" thread-count="2" parallel="tests">
+    <test name="Upfront Amount Variation with FIX amount type">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforZero"/>
+                    <include name="PGP_36086_VerifySubscriptionisnotcreatedforNonZero"/>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforMaxAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Upfront Amount Variation with FIX amount type-wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforZero"/>
+                    <include name="PGP_36086_VerifySubscriptionisnotcreatedforNonZero"/>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforMaxAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

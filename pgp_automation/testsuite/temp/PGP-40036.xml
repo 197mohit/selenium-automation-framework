@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Checkoutjs"  verbose="1">
+    <test name="checkoutjs web fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_icici_cobranding_logo_and_theme_is_displayed_on_cashierpage_without_applying_customisation"/>
+                    <include name="Verify_icici_cobranding_logo_and_theme_is_displayed_on_cashierpage_applying_style_in_checkoutconfig"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "KFS" verbose="1" thread-count="4" parallel="methods">
+    <test name="CheckoutJs  cases PGP-48507">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfs_icici_dc"/>
+                    <include name="kfs_hdfc_dc_kfs_upper_text"/>
+                    <include name="kfs_icici_dc_adhere_text"/>
+                    <include name="kfs_icici_dc_adhere_text_link"/>
+                    <include name="kfs_icici_dc_kfs_upper_text"/>
+                    <include name="kfs_icici_dc_kfs_bank_date_text"/>
+                    <include name="kfs_icici_dc_kfs_table_text"/>
+                    <include name="kfs_icici_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_icici_dc_kfs_loan_consent_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text_link"/>
+                    <include name="kfs_hdfc_dc_kfs_bank_date_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_text"/>
+                    <include name="kfs_hdfc_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_Verifivation"/>
+                    <include name="kfs_icici_dc_disabled"/>
+                    <include name="kfs_hdfc_dc_disabled"/>
+                    <include name="kfs_hdfc_dc"/>
+                    <include name="kfs_icici_dc_kfs_table_Verifivation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

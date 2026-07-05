@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Misc_Theia_Suite" verbose="1" parallel="tests" thread-count="15">
+    <test name="PGP-20953 visa single click">
+        <classes>
+            <class name="scripts.VisaSingleClick.CreateTokenTest">
+                <methods>
+                    <include name="createTokenwithMIDAndRefidisgreaterThen20Digit"/>
+                    <include name="createTokenwithMIDAndRefidIslessThen10Digit"/>
+                    <include name="createTokenwithMIDAndRefidAndInvalidMID"/>
+                    <include name="createTokenwithRefidAndMid"/>
+                </methods>
+            </class>
+            <class name="scripts.VisaSingleClick.EnrollmentStatusTest">
+                <methods>
+                    <include
+                            name="enrollmentStatusofEnrolledCardWithSSOANDCustIdAreOfDifferentUsersOneCardIsDeenrolled"/>
+                    <include name="enrollmentStatusofEnrolledCardWithInvalidTxnTokenOneCardIsDeenrolled"/>
+                    <include name="enrollmentStatusofEnrolledCardWithInvalidACCESSTokenOneCardIsNotEnrolled"/>
+                </methods>
+            </class>
+            <class name="scripts.VisaSingleClick.DeEnrollCardTest">
+                <methods>
+                    <include name="DeEnrolCardWithInvalidChecksum"/>
+                    <include name="DeEnrollCardwithInvalidCustId"/>
+                    <include name="DeEnrollCardWithInavlidToken"/>
+                    <include name="DeEnrollCardwithTwodDifferentUsers"/>
+                    <include name="DeEnrollCardWithDiffRefIds"/>
+                    <include name="DeEnrollCardwithInvalidSSO"/>
+                    <include name="DeEnrolCardWithInvalidTxnToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="fetchmerinfo">
+        <classes>
+            <class name="scripts.FetchMerchantInfo">
+                <methods>
+                    <include name="verifyMerchantInfowithValidMid"/>
+                    <include name="invalidMidMerchantInfo"/>
+                    <include name="verifyMerchantInfowithSingleValidMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="DeferredNative flow">
+        <classes>
+            <class name="scripts.flows.DeferredNativeTest">
+                <methods>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for DC pay mode in case of risk pass"/>
+                    <include
+                            name="test eventLinkId is coming in response when order is initiated for NB pay mode in case of risk pass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native OTP Limit Breach">
+        <classes>
+            <class name="scripts.Native.LimitOTP">
+                <methods>
+                    <include name="SuccessfulValidationOfOTP"/>
+                    <include name="VerifySameTokenWillSendSameOTP"/>
+                    <include name="verifySendOTPMaximumTimes"/>
+                    <include name="VerifySameTokenWillSendOTPWithDifferentMobNo"/>
+                    <include name="ValidationOTPwithInvalidMobileNo"/>
+                    <include name="verifysendOTPSuccessCase"/>
+                    <include name="VerifySendOTPWithExceededLimit"/>
+                    <include name="VerifySendOTPExpiredToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native  ProcessTransactionTests2" parallel="methods">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <include name="verifyHDFCCreditCardAllowedwhenHDFC_DC_CC_Enabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefDisabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefDisabled"/>
+                    <include name="validateDuplicateOrderErrorWithSameRequest"/>
+                    <include name="TC_PT_035"/>
+                    <include name="verifyUpdateTxnApiTxnAmountIncreased"/>
+                    <include name="VerifyOrderClosedWithTxnFailureWhenMidNotExemptedfromCloseOrder"/>
+                    <include name="validateTransPaidCC"/>
+                    <include name="enableNbSuccessWithNB"/>
+                    <exclude name="enablePayModePPBLNBSuccessPaytmPostpaidCheckoutJS"/>
+                    <exclude name="checkNativeAddMoneyTxn"/>
+                    <include name="validateTransPaidNB"/>
+                    <include name="logoutV2APISuccessResponse"/>
+                    <include name="testNewFieldUDF_2"/>
+                    <include name="testOrderSuccessByDCWhenNonMatchingWebsiteProvided"/>
+                    <include name="disablePayModeNBInInitWithoutLogin"/>
+                    <include name="testOrderSuccessByPPBLWhenNonMatchingWebsiteProvided"/>
+                    <include name="TC_PT_028"/>
+                    <include name="TC_18"/>
+                    <include name="TC_PT_046"/>
+                    <include name="TC_PT_018"/>
+                    <include name="TC_PT_001"/>
+                    <exclude name="TC_PT_014"/>
+                    <include name="TC_PT_040"/>
+                    <include name="PGP_17782_ValidateSingleQuotesinRespMsgReplacedWithBlanks"/>
+                    <include name="disablePayModeNBInInitCCTxnWithoutLogin"/>
+                    <include name="TC_PT_025_CC"/>
+                    <include name="disablePayModeNBInInitButSuccessTxnFromPaytmCC"/>
+                    <include name="ValidatePaymentsRetryCountEqualsFive"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnDynamicQrPcf"/>
+                    <include name="succesfulOrderwhenApercentagesSignInInit"/>
+                    <include name="testOrderSuccessByNBWhenNonMatchingWebsiteProvided"/>
+                    <include name="disablePayModePPBLNBInInit"/>
+                    <include name="TC_PT_004"/>
+                    <include name="verifyFastforwardDuplicateRequest"/>
+                    <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                    <include name="TC_PT_003"/>
+                    <include name="verifyHDFCCreditCardAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="IPv6clientIpCreateOrder"/>
+                    <include name="IPv4clientIpCreateOrder"/>
+                    <include name="enableNbTxtWithCC"/>
+                    <include name="validateTransPaidDC"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnStaticQr"/>
+                    <include name="verifyUpdateTxnApiTxnAmountDecreased"/>
+                    <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="TC_PT_037"/>
+                    <include name="validateSDKTypeAIO_SDK_PGPCPNativePlus"/>
+                    <include name="disablePayModeNBInInit"/>
+                    <include name="disablePayModePPBLInInitButSuccessTxnFromNB"/>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForFlipkartFlow"/>
+                    <include name="validateTransPaidUPI"/>
+                    <include
+                            name="checkCardIndexNoPresentInProcessTransactionApiResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                    <exclude name="TC_PT_015"/>
+                    <exclude name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                    <include name="TC_PT_002"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForCCTxn"/>
+                    <exclude name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                    <include name="validateIdempotentCase4"/>
+                    <include name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnAmountBased"/>
+                    <include name="TC_13"/>
+                    <include name="TC_PT_001"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnDynamicQr"/>
+                    <exclude name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <exclude name="Verify_NativeAddMoneyCC"/>
+                    <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <exclude name="Verify_NativeAddMoneyDC"/>
+                    <include name="IPv4clientIpCreateOrder"/>
+                    <include name="verifyHDFCCreditCardAllowedwhenHDFC_DC_CC_Enabled"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnDynamicQrPcf"/>
+                    <include name="TC_PT_004"/>
+                    <include name="validateDuplicateOrderErrorWithSameRequest"/>
+                    <include name="testOrderSuccessByNBWhenNonMatchingWebsiteProvided"/>
+                    <include name="validateTransPaidCC"/>
+                    <include name="TC_PT_002"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecisionForCCTxn"/>
+                    <include name="verifyUpdateTxnApiTxnAmountIncreased"/>
+                    <include name="disablePayModeNBInInitWithoutLogin"/>
+                    <include name="TC_18"/>
+                    <include name="validateTransPaidDC"/>
+                    <include name="ValidatePaymentsRetryCountEqualsFive"/>
+                    <exclude name="TC_PT_014"/>
+                    <include name="enableNbSuccessWithNB"/>
+                    <include name="logoutV2APISuccessResponse"/>
+                    <include name="enableNbTxtWithCC"/>
+                    <include name="testOrderSuccessByDCWhenNonMatchingWebsiteProvided"/>
+                    <exclude name="Verify_NativeAddMoneyRetryCountBreached"/>
+                    <include name="validateSDKTypeAIO_SDK_PGPCPNativePlus"/>
+                    <include name="TC_PT_003"/>
+                    <include name="validateUPIPaymodesWhenPrefIsEnableForFlipkartFlow"/>
+                    <include name="verifyFastforwardDuplicateRequest"/>
+                    <include name="TC_PT_PPBL_Success"/>
+                    <include name="IPv6clientIpCreateOrder"/>
+                    <include name="succesfulOrderwhenApercentagesSignInInit"/>
+                    <include name="VerifyOrderClosedWithTxnFailureWhenMidNotExemptedfromCloseOrder"/>
+                    <include name="disablePayModePPBLInInitButSuccessTxnFromNB"/>
+                    <include name="disablePayModeNBInInitButSuccessTxnFromPaytmCC"/>
+                    <include name="PGP_28966_VerifySuccessEMISimplifiedSubventionTxnAmountBased"/>
+                    <exclude name="TC_PT_015"/>
+                    <include name="TC_13"/>
+                    <include name="testNewFieldUDF_2"/>
+                    <include name="enablePayModeAsNB"/>
+                    <include name="TC_PT_035"/>
+                    <include name="TC_PT_018"/>
+                    <include name="disablePayModeNBInInitCCTxnWithoutLogin"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefDisabled"/>
+                    <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefDisabled"/>
+                    <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                    <include name="testOrderSuccessByPPBLWhenNonMatchingWebsiteProvided"/>
+                    <include name="validateIdempotentCase4"/>
+                    <include name="disablePayModeNBInInit"/>
+                    <exclude name="enablePayModePPBLNBSuccessPaytmPostpaidCheckoutJS"/>
+                    <include
+                            name="checkCardIndexNoPresentInProcessTransactionApiResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                    <include name="disablePayModePPBLNBInInit"/>
+                    <include name="TC_PT_046"/>
+                    <include name="PGP_17782_ValidateSingleQuotesinRespMsgReplacedWithBlanks"/>
+                    <exclude name="checkNativeAddMoneyTxn"/>
+                    <include name="TC_PT_040"/>
+                    <include name="validateTransPaidUPI"/>
+                    <include name="TC_PT_025_CC"/>
+                    <include name="TC_PT_028"/>
+                    <exclude name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                    <include name="verifyUpdateTxnApiTxnAmountDecreased"/>
+                    <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="verifyHDFCCreditCardAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="TC_PT_037"/>
+                    <include name="validateTransPaidNB"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnStaticQr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- Added New Theia PG2 Cases from here -->
+    <!--    <test name="PGP-46810 : Risk Error Message Handling on 3P Add Money Flow">-->
+    <!--        <classes>-->
+    <!--            <class name="scripts.Sprint28.RiskAddMoney">-->
+    <!--                <methods>-->
+    <!--                    <exclude name="addMoneyRiskReject_01"/>-->
+    <!--                    <exclude name="addMoneyRiskReject_02"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+
+
+    <test name="Charge amount test cases - pg2-12060">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifySucessfulTxnon20and02PC"/>
+                    <include name="verifySucessfulTxnon20and101PC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--    <test name="Add Money Express Hotfix">-->
+    <!--        <classes>-->
+    <!--            <class name="scripts.AddMoneyExpress">-->
+    <!--                <methods>-->
+    <!--                    <exclude name="ccBlockforExpressAddMoney"/>-->
+    <!--                    <exclude name="successfulAddMoneyExpressCC"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <test name="ValidateTipDetails">
+        <classes>
+            <class name="scripts.api.theia.scanAndPayTipAmount.scanAndPayTipAmountTest"/>
+        </classes>
+    </test>
+
+    <!-- Moved to Saved Card
+    <test name="Billproxy Automation">
+         <classes>
+             <class name="scripts.CCBillPayments.CardDetailsUsingTIN">
+                 <methods>
+                     <include name="ValidateSuccessRespWithTIN1"/>
+                     <include name="ValidateFailureRespWithTIN2"/>
+                     <include name="ValidateDeadTokenRespWithTIN3"/>
+                     <include name="ValidateInvalidSignatureRespWithTIN4"/>
+                 </methods>
+             </class>
+             <class name="scripts.CCBillPayments.CardDetailsUsingSSO">
+                 <methods>
+                     <include name="ValidateSuccessRespWithTIN1"/>
+                     <include name="ValidateFailureRespWithTIN2"/>
+                     <include name="ValidateDeadTokenRespWithTIN3"/>
+                 </methods>
+             </class>
+         </classes>
+     </test> !-->
+    <!-- Moved to THEIA 4
+    <test name="Txnstatus app Api">
+        <classes>
+            <class name="com.paytm.api.theia.Txnstatushandlerinternal">
+                <methods>
+                    <include name="validatechargeamountintxnstatuswhenpreferenceisY"/>
+                    <include name="validatechargeamountintxnstatuswhenpreferenceisN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify fetch balance info api">
+        <classes>
+            <class name="scripts.FetchBalanceTests">
+                <methods>
+                    <include name="fetchBalanceForPPBL"/>
+                    <include name="fetchBalanceForwallet"/>
+                    <include name="fetchBalanceForwalletwhenmidnothavewallet"/>
+                    <include name="fetchBalanceForwalletwhenqrcodeidiswrong"/>
+                    <include name="fetchBalanceForwalletwithoutqueryparam"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Block chat payment cases">
+        <classes>
+            <class name="scripts.api.theia.chatpayment.chatpayment">
+                <methods>
+                    <include name="BlockchatpaymentPTC"/>
+                    <include name="BlockchatpaymentFastforward"/>
+                    <include name="BlockchatpaymentPTCregexcheck"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-48011 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48011 Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC03"/>
+                    <include name="PAPR_4754_TC04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48011">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="PAPR_4754_TC01"/>
+                    <include name="PAPR_4754_TC02"/>
+                    <include name="PAPR_4754_TC06"/>
+                    <include name="PAPR_4754_TC07"/>
+                </methods>
+            </class>
+        </classes>
+    </test> !-->
+    <!--  <test name="PGP-48994 Pure Hybrid Suite Std checkout">
+          <parameter name="theme" value="enhancedweb_revamp"/>
+          <classes>
+              <class name="scripts.PureHybrid.PureHybrid">
+                  <methods>
+                      <include name="verifyPureHybrid_01"/>
+                      <include name="verifyPureHybrid_02"/>
+                      <include name="verifyPureHybrid_03"/>
+                      <include name="verifyPureHybrid_04"/>
+                      <include name="verifyPureHybrid_12"/>
+                      <include name="verifyPureHybrid_13"/>
+                      <include name="verifyPureHybrid_15"/>
+                      <include name="verifyPureHybrid_16"/>
+                      <include name="verifyPureHybrid_17"/>
+                      <include name="verifyPureHybrid_20"/>
+                      <include name="verifyPureHybrid_21"/>
+                  </methods>
+              </class>
+          </classes>
+      </test>
+      <test name="PGP-48994 Pure Hybrid Suite checkoutJS">
+          <parameter name="theme" value="checkoutjs_web_revamp"/>
+          <classes>
+              <class name="scripts.PureHybrid.PureHybrid">
+                  <methods>
+                      <include name="verifyPureHybrid_05"/>
+                      <include name="verifyPureHybrid_06"/>
+                      <include name="verifyPureHybrid_07"/>
+                      <include name="verifyPureHybrid_08"/>
+                      <include name="verifyPureHybrid_11"/>
+                      <include name="verifyPureHybrid_14"/>
+                      <include name="verifyPureHybrid_18"/>
+                      <include name="verifyPureHybrid_19"/>
+                  </methods>
+              </class>
+          </classes>
+      </test>
+      <test name="PGP-48994 Pure Hybrid Suite Native">
+          <classes>
+              <class name="scripts.PureHybrid.PureHybrid">
+                  <methods>
+                      <include name="verifyPureHybrid_22"/>
+                  </methods>
+              </class>
+          </classes>
+      </test>
+      <test name="PGP-48994 Pure Hybrid Suite Deals">
+          <classes>
+              <class name="scripts.Deals.DealsTests">
+                  <methods>
+                      <include name="successfulDealsOnlyHybridCCTransactionViaCOP"/>
+                  </methods>
+              </class>
+          </classes>
+      </test>
+      <test name="PGP-48994 Addnapay Hybrid Suite">
+          <classes>
+              <class name="scripts.PureHybrid.AddnPayHybrid">
+                  <methods>
+                      <include name="validate_AddnpayHYBRID_Txn_01"/>
+                      <include name="validate_AddnpayHYBRID_Txn_02"/>
+                      <include name="validate_AddnpayHYBRID_Txn_03"/>
+                  </methods>
+              </class>
+          </classes>
+      </test>
+         <test name="Validate fileds in BOSS_CHARGE_FEE_BATCH_CONSULT request/response" >
+             <classes>
+                 <class name="scripts.MDRPCF.MDRPCFNative">
+                     <methods>
+                         <include name="validateFetchPCFResponseWhenOnlyEMIpayMethodPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkPassed"/>
+                         <include name="validateFetchPCFResponseWhenIssuerBankPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkDinersPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkMaestroPassed"/>
+                         <include name="validateFetchPCFResponseWhenCardNetworkVisaPassed"/>
+                         <include name="validateFetchBinDetailsResponseForCardNetworkDiners"/>
+                         <include name="validateFetchBinDetailsResponseForCardNetworkVISA"/>
+                         <include name="validatePTCResponseForCardNetworkVISA"/>
+                         <include name="validatePTCResponseForCardNetworkDiners"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test>
+           <test name="Apply SuperCash API Test">
+               <classes>
+                   <class name="scripts.supercashtests.ApplySuperCashTests">
+                       <methods>
+                           <include name="superCashOffersInFPO_V1"/>
+                           <include name="superCashOffersInFPO_V2"/>
+                           <include name="superCashOffersInFPO_V5"/>
+                           <include name="superCashOffersIn_FQR_V2"/>
+                           <include name="superCashOffersIn_FQR_V1"/>
+                           <include name="UPI_OfferDisabled_In_FQRV2"/>
+                       </methods>
+                   </class>
+               </classes>
+           </test>
+            <test name="ChargeFeeOnAddMoney_subcsription cases - PGP-49411">
+                  <classes>
+                      <class name="scripts.ChargeFeeOnAddMoney"/>
+                  </classes>
+              </test>
+
+              <test name="Merchant Center client Id">
+                  <classes>
+                      <class name="scripts.Native.NativeFPOV2">
+                          <methods>
+                              <include name="validateLoginQRClientIdfromMerchantCenter"/>
+                              <include name="validateLoginQRClientIdfromCache"/>
+                              <include name="validateLoginQRClientIdfromCacheUPI"/>
+                              <include name="validateLoginQRClientIdnotPresentonMerchantCenter"/>
+                              <include name="validateLoginQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                              <include name="validateLoginQRFQRClientIdfromMerchantCenter"/>
+                              <include name="validateLoginQRFQRClientIdfromCache"/>
+                              <include name="validateLoginQRFQRClientIdnotPresentonMerchantCenter"/>
+                              <include name="validateLoginQRFQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                          </methods>
+                      </class>
+                  </classes>
+              </test>
+
+         <test name="Verify  Nick Name characters substring">
+             <classes>
+                 <class name="scripts.api.Wallet.PG2Wallet">
+                     <methods>
+                         <include name="validateNickName"/>
+                     </methods>
+                 </class>
+             </classes>
+         </test> !-->
+    <test name="OrderPayApi">
+        <classes>
+            <class name="scripts.OrderPayApi">
+                <methods>
+                    <include name="validatePayOrderApiFailureWithNB"/>
+                    <include name="validatePayOrderApiFailureWithUpiIntent"/>
+                    <include name="validatePayOrderApiSuccessWithNB"/>
+                    <include name="validatePayOrderApiSuccessWithUpiIntent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--    <test name="Add Money 4k Limit">-->
+    <!--        <classes>-->
+    <!--            <class name="scripts.Native.NativeFPOV2">-->
+    <!--                <methods>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOwhenbalanceisZero"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOwhenbalanceisNonZero"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOwhenWalletisNotAllowedonMid"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOwhenaddnpayAndCCNotAllowedonMid"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOwhenaddnpayNotAllowedonMid"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOwhenCCNotAllowedonMid"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOV5whenbalanceisZero"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOV5whenbalanceisNonZero"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOV5whenWalletisNotAllowedonMid"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOV5whenaddnpayAndCCNotAllowedonMid"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOV5whenaddnpayNotAllowedonMid"/>-->
+    <!--                    <exclude name="validateccAddnPayLimitinFPOV5whenCCNotAllowedonMid"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <test name="feeDetails on Native Plus">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.FeeDetailsParameter"/>
+        </classes>
+    </test>
+
+    <test name="PAPR-5059 Verify that mid is mapped to the client">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateMidMappedToClient"/>
+                    <include name="validateMidNotMappedToClient"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Integrate Bin Center Client | Instaproxy">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Instaproxy.InstaproxyValidation">
+                <methods>
+                    <include name="CC_TXN_fetchBinRequest_ToBinCenter_FromInsta"/>
+                    <include name="DC_TXN_fetchBinRequest_ToBinCenter_FromInsta"/>
+                    <include name="EMI_TXN_fetchBinRequest_ToBinCenter_FromInsta"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="VULN-18527-InitiateTransaction">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction">
+                <methods>
+                    <include name="xssVulnerabilityInInitiateWebsitename"/>
+                    <include name="xssVulnerabilityInInitiateMId"/>
+                    <include name="xssVulnerabilityInInitiateOrderId"/>
+                    <include name="xssVulnerabilityInInitiate"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="xssVulnerabilityInPTC"/>
+                    <include name="xssVulnerabilityInPTCOrderId"/>
+                    <include name="xssVulnerabilityInPTCMid"/>
+                    <include name="xssVulnerabilityInPTCPaymode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-52682">
+        <classes>
+            <class name="scripts.Native.NativePTCWithAdditionalInfo">
+                <methods>
+                    <include name="additionalInfoInPTCFormPostInPay"/>
+                    <include name="additionalInfoBlankInPTCFormPostInPay"/>
+                    <include name="additionalInfoIsNotSentInPTCFormPostInPay"/>
+                    <include name="additionalInfoIsSentInPTCFormPostInPayAndFF4JIsOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Callback Ports-CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56181 Callback Ports-Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56181 Callback Ports-Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56181 Callback Ports-Native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyLoggerforCallbackPort443"/>
+                    <include name="verifyLoggerforCallbackPort80"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="DCCExpressUI">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="DccExpressUI_001"/>
+                    <include name="DccExpressUI_002"/>
+                    <include name="DccExpressUI_003"/>
+                    <include name="DccExpressUI_004"/>
+                    <include name="DccExpressUI_005"/>
+                    <include name="DccExpressUI_006"/>
+                    <include name="DccExpressUI_007"/>
+                    <include name="DccExpressUI_008"/>
+                    <include name="DccExpressUI_009"/>
+                    <include name="DccPaymentReceiptEmail001"/>
+                    <include name="DccPaymentReceiptEmail002"/>
+                    <include name="DccPaymentReceiptEmail003"/>
+                    <include name="DccPaymentReceiptEmail004"/>
+                    <include name="DccPaymentReceiptEmail005"/>
+                    <include name="DccPaymentReceiptEmail006"/>
+                    <include name="DccPaymentReceiptEmail007"/>
+                    <include name="DccPaymentReceiptEmail008"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="(FPO) EDC Payment Links : Set correct enabledPayment mode basis the cardType">
+        <classes>
+            <class name="scripts.api.linkservice.BrandEmiNewUrl">
+                <methods>
+                    <include name="EDC_EMIDC_Paymode_EdcLink"/>
+                    <include name="EDC_EMICC_Paymode_EdcLink"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PAPR-6185 : Bin Identifier">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifywhenFF4jFlagisOffOldFlowisCalled"/>
+                    <include name="verifywhenFF4jFlagisOnNewFlowisCalled"/>
+                    <include name="verifyBinIdentifierisPassedinACQUIRING_PAY_ORDER"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Payment: PYFX DCC Final INR amount enhancement">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="DccDomesticMarkUpParams_COP"/>
+                    <include name="DccDomesticMarkUpParams_PayResultQuery"/>
+                    <include name="DccDomesticMarkUpParams_Insta"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FetchMerchantInfo api responses">
+        <classes>
+            <class name="scripts.api.theia.fetchMerchantInfo.fetchMerchantInfo">
+                <methods>
+                    <include name="validateFetchMerchantInfoResp_oneTimeTxn"/>
+                    <include name="validateFetchMerchantInfoResp_subsTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="DCC : Action URL Revamp">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="dcc_newUrl"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-58194">
+        <classes>
+            <class name="scripts.Qr.PosIdQR">
+                <methods>
+                    <include name="prefSMS_001"/>
+                    <include name="prefSMS_002"/>
+                    <include name="prefSMS_003"/>
+                    <include name="prefSMS_004"/>
+                    <include name="prefSMS_005"/>
+                    <include name="prefWHATSAPP_001"/>
+                    <include name="prefWHATSAPP_002" />
+                    <include name="prefDEFAULT_001" />
+                    <include name="prefDEFAULT_002" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Split Convenience Fee and Platform Fee in PCF - Theia">
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyConvFeeChargesAPIResponse"/>
+                    <include name="verifyConvFeeChargesText"/>
+                    <include name="verifyPlatformFeeChargesAPIResponse"/>
+                    <include name="verifyPlatformFeeChargesText"/>
+                    <include name="verifyPlatformFeeChargesAPIResponse_0"/>
+                    <include name="verifyConvFeePlatformFeeCharges_0"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | CheckoutJS | WEB">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | CheckoutJS | WAP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | Checkout JS on Redirectional Flow | WEB">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | Checkout JS on Redirectional Flow | WAP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enable Disable PaymentMode Bin Level">
+        <classes>
+            <class name="scripts.EnableDisablePaymentModeBinLevel">
+                <methods>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith5DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith9DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith10DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith6DigitsBinsandChannels"/>
+                    <include name="verifyInitiateTransactionwithEnabledCreditCardPaymodewith6DigitsalphanumbericBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith5DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith9DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith10DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith6DigitsBinsandChannels"/>
+                    <include name="verifyInitiateTransactionwithDisabledCreditCardPaymodewith6DigitsalphanumbericBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledDebitCardDisabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledDebitCardinvalidBinDisabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyInitiateTransactionwithEnabledDebitCardDisabledCreditCardPaymodeInvalidBin"/>
+                    <include name="verifyFPOwithEnabledsavedCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithEnabledDebitCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithEnabledsavedEMIPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledDebitCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedEMIPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedCreditCardPaymode"/>
+                    <include name="verifyFPOwithDisabledDebitCardPaymode"/>
+                    <include name="verifyFPOwithDisabledsavedEMIPaymode"/>
+                    <include name="verifyFPOwithDisabledsavedBinUpiPaymodewith6DigitsBins"/>
+                    <include name="verifyFPOwithDisabledsavedBinUpiPaymode"/>
+                    <include name="verifyFPOwithEnabledsavedBinUpiPaymodewith6DigitsBins"/>
+                    <include name="verifyFetchbinDetailswithEnabledCreditCardPaymodewith6DigitsBins"/>
+                    <include name="verifyFetchbinDetailswithEnabledCreditCardPaymodewith6DigitsInvalidBins"/>
+                    <include name="verifyFetchbinDetailswithEnabledCreditCardPaymodewith6DigitsDCBins"/>
+                    <include name="verifyFetchbinDetailswithSSOToken"/>
+                    <include name="verifyFetchbinDetailswithInvalidInputParam"/>
+                    <include name="verifyFetchbinDetailswithEnabledDebitCardPaymodewith6DigitsSavedCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithEnabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithEnabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForCCwithEnabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForCCwithDisbledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForEMICCwithDisabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyFetchbinDetailsForDCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithEnabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithEnabledCreditCardPaymodewith6DigitsdifferentCCBins"/>
+                    <include name="verifyPTCForDCwithEnabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithEnabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithDisabledCreditCardPaymodewith6DigitsdifferentCCBins"/>
+                    <include name="verifyPTCForDCwithDisabledCreditCardPaymodewith6DigitsCCBins"/>
+                    <include name="verifyPTCForCCwithDisabledEMIPaymodewith6DigitsCCBins"/>
+                    <include name="DefferedInitiatewithenabledUPI_PTCwithCC_RetrywithUPI"/>
+                    <include name="DefferedInitiatewithDisabledCC_PTCwithCC_RetrywithUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyfetchBinResponseforAltVISA"></include>
+                    <include name="verifyfetchBinResponseforAltRupay"></include>
+                    <include name="verifyLPVResponseforAlternateIDVISA"></include>
+                    <include name="verifyLPVResponseforAlternateIDRUPAY"></include>
+                    <include name="verifySuccessAltIDGenerationforVISA"></include>
+                    <include name="verifySuccessTxnforAlternateIDVISA"></include>
+                    <include name="verifyRupayCardAltGenCall"></include>
+                    <include name="verifyRupayCardAltGenCallOffus"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Guest Checkout Txn scripts via UI 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"></include>
+                    <include name="verifyingGenerateAltIDforGuestCheckoutOnus"></include>
+                    <include name="verifyingRupayTxnforAltID"></include>
+                    <include name="verifyingRupayTxnforAltIDOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOffus"></include>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"></include>
+                    <include name="verifyingRupayTxnforAltID"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AVS task test cases">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <exclude name="NameEMailCodeCountryCodePhoneNumberHouseNoCityStateShoudBeVisibleForCollectCompleteAVS"/>
+                    <include name="WhenAVSscreenisShownAndFieldsVisibleAccordingTocollectOnlyCityZipCode"/>
+                    <include name="WhenAVSscreenisShownAndFieldsVisibleAccordingTocollectOnlyZipCode"/>
+                    <include name="VerifyCustomCheckoutFlowForCollectCompleteAvs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify MGV Process Transaction">
+        <classes>
+            <class name="scripts.api.MGV.MGV_PTC">
+                <methods>
+                    <include name="testMGV_SuccessfulTransaction_WithValidBalance"/>
+                    <include name="testMGV_TransactionFailure_UnknownError"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify minimizing PAR request">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyMinimizingPARrequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MCC - PAPR-5206">
+        <classes>
+            <class name="scripts.MultiCurrencyConversion">
+                <methods>
+                    <include name="MCC_001"/>
+                    <include name="MCC_002"/>
+                    <include name="MCC_003"/>
+                    <include name="MCC_004"/>
+                    <include name="MCC_005"/>
+                    <include name="MCC_006"/>
+                    <include name="MCC_007"/>
+                    <include name="MCC_008"/>
+                    <include name="MCC_009"/>
+                    <include name="MCC_010"/>
+                    <include name="MCC_011"/>
+                    <include name="MCC_UI_0012"/>
+                    <include name="MCC_UI_0013"/>
+                    <include name="MCC_UI_0014"/>
+                    <include name="MCC_UI_0015"/>
+                    <include name="MCC_UI_0016"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SwiftExpressUI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+
+        <classes>
+            <class name="scripts.UI.SwiftExpressUITests">
+            
+                <methods>
+                    <include name="verifyPayCall_AutoSubmit_onTimerCompletion"/>
+                    <include name="SwiftExpressUI_001"/>
+                    <include name="SwiftExpressUI_002"/>
+                    <include name="SwiftExpressUI_003"/>
+                    <include name="SwiftExpressUI_004"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Control the redirection time of integrated payment links via preferences">
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="verifyRedirectTimeOnUI_WhenPrefRedirectionTimePL_100"/>
+                    <include name="verify_PrefRedirectionTimePL_100_onAPP_DATA"/>
+                    <include name="verifyRedirectTimeOnUI_WhenPrefRedirectionTimePL_NotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="DCC Express UI">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests"/>
+            <methods>
+                <include name="verifyDccExpress_CardInfo"/>
+                <include name="verifyDccExpress_TimerSection"/>
+                <include name="verifyStopTimerHidesTimerText_onDccExpress"/>
+                <include name="verifyPayCall_AutoSubmit_onTimerCompletion"/>
+            </methods>
+        </classes>
+    </test>
+        <test name="PGQA-61">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="VerifyparametersInEventLoggerWhenPreferenceIsEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="Multi TPV payerAccountDetails">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC01_multiTPV_NativeMF_withPayerAccountDetails"/>
+                    <include name="TC02_multiTPV_NativeST_withPayerAccountDetails"/>
+                    <include name="TC03_multiTPV_Nativepayments_withPayerAccountDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

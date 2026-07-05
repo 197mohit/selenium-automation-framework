@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping_Suite" verbose="1" thread-count="10" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="mapping Service API" parallel="methods" thread-count="3">
+        <classes>
+            <class name="scripts.api.mappingService.MappingService">
+                <methods>
+                    <include name="validateGetFormatter_fromDB"/>
+                    <include name="validateGetBankDetails_APCODE_FromDB"/>
+                    <include name="validateGetBankDetails_APCODE_FromRedis"/>
+                    <include name="validateBankUrlInfo_fromDB"/>
+                    <include name="validateGetPaytmId_FromDB"/>
+                    <include name="validateGetMerchContractPaymentInfo"/>
+                    <include name="validateGetEntityUrlInfoAPI_Request"/>
+                    <include name="validateGetEntityUrlInfoAPI_Response"/>
+                    <include name="validateLookUpPaymodeAPI_CC"/>
+                    <include name="validateGetPaytmProperties_API"/>
+                    <include name="validateMerchExtendedInfo"/>
+                    <include name="validateMerchPreferenceInfo"/>
+                    <include name="validateBankDetail_fromDatabase"/>
+                    <include name="validateEntityOfferDetail_fromDB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-33726">
+        <classes>
+            <class name="scripts.api.mappingService.userInfo.GetBankListUsingTID"/>
+        </classes>
+    </test>
+
+    <test name="PGP-30748">
+        <classes>
+            <class name="scripts.api.mappingService.GetBrandEmiDetailsApi"/>
+        </classes>
+    </test>
+
+    <test name="Logo Integration Tests">
+        <parameter name="theme" value="merchant"/>
+        <classes>
+            <class name="scripts.api.mappingService.logoIntegrationApi.UploadApi">
+                <methods>
+                    <include name="uploadMerchant"/>
+                    <include name="checkMerchant"/>
+                    <include name="fetchMerchant"/>
+                    <include name="deleteMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22565 Mapping Service">
+        <classes>
+            <class name="scripts.api.mappingService.merchantPreferenceInfo.MerchantPrefInfo"/>
+        </classes>
+    </test>
+    <test name="PGP-22565 Mapping Backend Validation">
+        <classes>
+            <class name="scripts.SolidityCheck.ValidateMerchantConfig">
+                <methods>
+                    <include name="validateOfflineDescText"/>
+                    <include name="validateOfflineDescFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API Tests">
+        <classes>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributeKey"/>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributePreference"/>
+            <class name="scripts.api.mappingService.merchantAttribute.MerchantAttributeUPIKeys"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantIdMap"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantV1"/>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantProfile">
+                <methods>
+                    <exclude name="test QR components in Merchant Profile from Database when Id is paytm"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantContractDetails"/>
+            <class name="scripts.api.mappingService.merchantMigration.MerchantMigrationDetails">
+                <methods>
+                    <exclude name="test merchantPreferenceInfos of Merchant"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.userInfo.UserV1">
+                <methods>
+                    <exclude name="test api UserV1 for Alipay id with Redis"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API Tests 1">
+        <classes>
+            <class name="scripts.api.mappingService.GetResponseCodeAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromAlipayMidAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantKycInfoAPITest"/>
+            <class name="scripts.api.mappingService.GetDynamicWrapperConfigsAPITest"/>
+            <class name="scripts.api.mappingService.GetCustomPayloadDataAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsListFromBankCodesAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromMidAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantLogoInfoFromMidV2APITest"/>
+            <class name="scripts.api.mappingService.GetAggregatorBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetFormatterAPITest"/>
+            <class name="scripts.api.mappingService.GetBankUrlInfoAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsFromIdAPITest"/>
+            <class name="scripts.api.mappingService.GetBankDetailsListFromIdAPITest"/>
+            <class name="scripts.api.mappingService.GetPayMethodDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetBanksDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetAllBankDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetAllBankDetailsByPayModeAPITest"/>
+            <class name="scripts.api.mappingService.GetCardNetworkDetailsAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpFromIdTest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromIdTest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromCategoryAndSubCategoryAPITest"/>
+            <class name="scripts.api.mappingService.GetLookUpDataFromCategoryAndSubCategoryAndNameAPITest"/>
+            <class name="scripts.api.mappingService.GetMerchantApiURLInfoAPITest">
+                <methods>
+                    <exclude name="testThatWhenMIdIsProvidedInRequestAndalipayInPathParamReadDataFromRedis"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merchant GetAgentInfo API">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetAgentInfoTest"/>
+        </classes>
+    </test>
+
+    <test name="temp-BankCardBinV1ApiTest">
+        <classes>
+            <class name="scripts.api.mappingService.BankCardBinV1ApiTest"/>
+        </classes>
+    </test>
+    <test name="temp-BankCardBinApiTest">
+        <classes>
+            <class name="scripts.api.mappingService.BankCardBinApiTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-28115 - Merchant Limit API mapping">
+        <classes>
+            <class name="scripts.api.mappingService.GetLimitMerchantTest"/>
+        </classes>
+    </test>
+
+    <test name="Merchant Request Type">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.GetMerchantRequestTypesTest"/>
+        </classes>
+    </test>
+
+    <test name="mapping Service API 2" parallel="methods" thread-count="3">
+        <classes>
+            <class name="scripts.api.mappingService.MappingService">
+                <methods>
+                    <include name="validateGetFormatter_fromRedis"/>
+                    <include name="validateBankUrlInfo_fromRedis"/>
+                    <include name="validateGetPaytmId_FromRedis"/>
+                    <include name="validateEntityOfferDetail_fromRedis"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API Tests 2">
+        <classes>
+            <class name="scripts.api.mappingService.merchantInfo.MerchantProfile">
+                <methods>
+                    <exclude name="test QR components in Merchant Profile from Database when Id is paytm"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.merchantMigration.MerchantMigrationDetails">
+                <methods>
+                    <exclude name="test merchantPreferenceInfos of Merchant"/>
+                </methods>
+            </class>
+            <class name="scripts.api.mappingService.userInfo.UserV1">
+                <methods>
+                    <exclude name="test api UserV1 for Alipay id with Redis"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Mapping Service API Tests 3">
+        <classes>
+            <class name="scripts.api.mappingService.GetMerchantApiURLInfoAPITest">
+                <methods>
+                    <include name="testThatWhenMIdIsProvidedInRequestAndalipayInPathParamReadDataFromRedis"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merchant Migration Test Cases">
+        <classes>
+            <class name="scripts.api.merchant.migration.MerchantMigration"/>
+        </classes>
+    </test>
+
+    <test name="PGP-33435 - BankCardBinBlockApiTest">
+        <classes>
+            <class name="scripts.BinBlock"/>
+        </classes>
+    </test>
+
+    <test name="PGP-37785 - Mapping Service API TCs 1">
+        <classes>
+            <class name="scripts.api.mappingService.migrationDetailsInfo.GetExtendedInfoTest"/>
+            <class name="scripts.api.mappingService.migrationDetailsInfo.GetMigrationDetailTest"/>
+            <class name="scripts.api.mappingService.migrationDetailsInfo.MappingApisTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-38488">
+        <classes>
+            <class name="scripts.api.mappingService.GetMccCode"/>
+        </classes>
+    </test>
+
+    <test name="Get Reseller Mid PGP-39099">
+        <classes>
+            <class name="scripts.api.mappingService.GetResellerMidTest"/>
+        </classes>
+    </test>
+
+    <test name="InstantOnboardingChangesFromMapping">
+        <classes>
+            <class name="scripts.api.merchant.migration.InstantOnboardingChangesFromMapping"/>
+        </classes>
+    </test>
+
+    <test name="BrandEMIInstantDiscountMigration">
+        <classes>
+            <class name="scripts.api.merchant.migration.BrandEMIInstantDiscountMigration"/>
+        </classes>
+    </test>
+
+    <test name="MigrationTasks">
+        <classes>
+            <class name="scripts.api.merchant.migration.OnlineOfflineMerchantMigration"/>
+        </classes>
+    </test>
+
+    <test name="PaymentBusinessWalletReconciliationView">
+        <classes>
+            <class name="scripts.api.merchant.migration.paymentsBusinessWalletReconciliationView"/>
+        </classes>
+    </test>
+
+    <test name="MbIdLimitEmiPlanTest">
+        <classes>
+            <class name="scripts.MbIdLimitEmiPlanTest"/>
+        </classes>
+    </test>
+
+    <test name="DirectSettlementOnEDCAcquirers">
+        <classes>
+            <class name="scripts.api.merchant.migration.DirectSettlementOnEDCAcquirers"/>
+        </classes>
+    </test>
+
+    <test name="MerchantRiskRelatedInfoMigration">
+        <classes>
+            <class name="scripts.api.merchant.migration.MerchantRiskRelatedInfoMigration"/>
+        </classes>
+    </test>
+
+    <test name="BWMerchantMigration">
+        <classes>
+            <class name="scripts.api.merchant.migration.BWMerchantMigration"/>
+        </classes>
+    </test>
+
+    <test name="BWMerchantASASettlementMigration">
+        <classes>
+            <class name="scripts.api.merchant.migration.BWMerchantASASettlementMigration"/>
+        </classes>
+    </test>
+
+    <test name="SolutionTypeForBlockedMerchant">
+        <classes>
+            <class name="scripts.api.merchant.migration.SolutionTypeForBlockedMerchant"/>
+        </classes>
+    </test>
+
+    <test name="PGP-38446">
+        <classes>
+            <class name="scripts.api.mappingService.GetEmiDetailsTest">
+                <methods>
+                    <include name="verifyEMIDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="preAuthEDCMigration">
+        <classes>
+            <class name="scripts.api.merchant.migration.preAuthEDCMigration"/>
+        </classes>
+    </test>
+
+    <test name="Fetching Contract Detail">
+        <classes>
+            <class name="scripts.GetMigrationContractDetailsTest">
+                <methods>
+                    <include name="fetchMerchantContractDetail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

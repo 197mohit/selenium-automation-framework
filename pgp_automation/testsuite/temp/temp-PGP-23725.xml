@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-23725-Correct Error Message" verbose="1">
+    <test name="PGP-23725-Correct Error Message Tests for different paymodes" parallel="methods" thread-count="6">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifySBICreditCardNotAllowedMsg"/>
+                    <include name="verifyHDFCCreditCardAllowedwhenHDFC_DC_CC_Enabled"/>
+                    <include name="verifyHDFCDebitNotAllowedwhenOnlyHDFC_CC_Enabled"/>
+                    <include name="verifyHDFCCreditCardAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletAddNPay"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletHybrid"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyHDFCDebitCardNotAllowedwithOnlyHDFC_CCEnabledSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

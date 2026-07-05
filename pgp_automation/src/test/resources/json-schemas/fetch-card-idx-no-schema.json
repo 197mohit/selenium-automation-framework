@@ -1,0 +1,73 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "^[0-9]+$"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string",
+              "minLength": 4
+            },
+            "resultMsg": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "cardIndexNumber": {
+          "type": ["string","null"]
+        }
+      }
+    }
+  }
+}

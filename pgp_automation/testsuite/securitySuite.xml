@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name = "Security Suite">
+    <test name="Security Tests">
+            <classes>
+                <class name = "scripts.api.theia.vpaValidate.ChecksumVPAValidateV1Test">
+                    <methods>
+                        <include name="testWithPutMethodType"/>
+                        <include name="testWithDeleteMethodType"/>
+                        <include name="testWithTraceMethodType"/>
+                    </methods>
+                </class>
+                <class name = "scripts.api.theia.ProcessTransactionAPI">
+                    <methods>
+                        <include name="testwithPutMethodType"/>
+                        <include name="testwithDeleteMethodType"/>
+                        <include name="testwithIncorrectContentType"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+</suite>

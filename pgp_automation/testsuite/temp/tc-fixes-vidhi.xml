@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="EMI fixes" verbose="1">
+
+    <test name="Discovery API">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest">
+                <methods>
+                    <include name="verifyWhenItemObjectisNotPassed"/>
+                    <include name="TestSuccessResponseWhen4PaymodesProvided"/>
+                    <include name="TestSuccessResponseWhen4PaymodesProvidedItemsNotPassed"/>
+                    <include name="TestfailureResponseWhenorderAmountIsNull"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

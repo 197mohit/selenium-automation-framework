@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-35537" verbose="1">
+    <test name="verify qrCodeId in request">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+                <methods>
+                    <include name="verifyqrCodeIdInRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

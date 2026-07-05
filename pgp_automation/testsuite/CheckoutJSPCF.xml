@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS_PCF TestSuite" verbose="1" parallel="tests" thread-count="6">
+    <test name="CheckoutJS PCF Test cases">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="ValidatePCFwithWallet"/>
+                    <include name="ValidatePCFwithAmexCard"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+                    <include name="ValidatePCFRetryBreachTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

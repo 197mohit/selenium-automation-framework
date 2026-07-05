@@ -1,0 +1,360 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "definitions": {
+    "errorSchema": {
+      "properties": {
+        "body": {
+          "properties": {
+            "extraParamsMap": {},
+            "resultInfo": {
+              "properties": {
+                "resultStatus": {
+                  "enum": [
+                    "F",
+                    "U"
+                  ]
+                },
+                "resultCode": {
+                  "enum": [
+                    "00000900",
+                    "1001",
+                    "1006",
+                    "2004",
+                    "2006",
+                    "2013"
+                  ]
+                },
+                "resultMsg": {
+                  "enum": [
+                    "System error",
+                    "Request parameters are not valid",
+                    "Your Session has expired.",
+                    "SSO Token is invalid",
+                    "Mid is invalid",
+                    "Mid in the query param doesn't match with the Mid send in the request"
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "successSchema": {
+      "properties": {
+        "body": {
+          "required": [
+            "consultDetails"
+          ],
+          "properties": {
+            "resultInfo": {
+              "properties": {
+                "resultStatus": {
+                  "enum": [
+                    "S"
+                  ]
+                },
+                "resultCode": {
+                  "enum": [
+                    "0000"
+                  ]
+                },
+                "resultMsg": {
+                  "enum": [
+                    "Success"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "money": {
+      "type": "object",
+      "required": [
+        "currency",
+        "value"
+      ],
+      "properties": {
+        "currency": {
+          "enum": [
+            "INR"
+          ]
+        },
+        "value": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]{2}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "pcfDetails": {
+      "type": "object",
+      "required": [
+        "payMethod",
+        "baseTransactionAmount",
+        "feeAmount",
+        "taxAmount",
+        "totalConvenienceCharges",
+        "totalTransactionAmount",
+        "text",
+        "displayText"
+      ],
+      "properties": {
+        "payMethod": {
+          "type": "string"
+        },
+        "baseTransactionAmount": {
+          "$ref": "#/definitions/money"
+        },
+        "feeAmount": {
+          "$ref": "#/definitions/money"
+        },
+        "taxAmount": {
+          "$ref": "#/definitions/money"
+        },
+        "totalConvenienceCharges": {
+          "$ref": "#/definitions/money"
+        },
+        "totalTransactionAmount": {
+          "$ref": "#/definitions/money"
+        },
+        "text": {
+          "pattern": "^Convenience fee of Rs. [0-9]+\\.[0-9]{2} is applicable.$"
+        },
+        "displayText": {
+          "type": "string"
+        },
+        "displayTextRegional": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "oneOf": [
+    {
+      "$ref": "#/definitions/errorSchema"
+    },
+    {
+      "$ref": "#/definitions/successSchema"
+    }
+  ],
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "requestId",
+        "responseTimestamp",
+        "version"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "extraParamsMap",
+        "resultInfo"
+      ],
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {},
+            "resultCode": {},
+            "resultMsg": {}
+          },
+          "additionalProperties": false
+        },
+        "consultDetails": {
+          "type": "object",
+          "minProperties": 1,
+          "properties": {
+            "DEBIT_CARD": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "DEBIT_CARD"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "Debit Card"
+                  ]
+                }
+              }
+            },
+            "PPBL": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "PPBL"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "Paytm Payments Bank"
+                  ]
+                }
+              }
+            },
+            "CREDIT_CARD": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "CREDIT_CARD"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "Credit Card"
+                  ]
+                }
+              }
+            },
+            "EMI": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "EMI"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "EMI"
+                  ]
+                }
+              }
+            },
+            "EMI_DC": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "EMI_DC"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "EMI DC"
+                  ]
+                }
+              }
+            },
+            "UPI": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "UPI"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "BHIM UPI"
+                  ]
+                }
+              }
+            },
+            "PAYTM_DIGITAL_CREDIT": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "PAYTM_DIGITAL_CREDIT"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "Paytm Postpaid"
+                  ]
+                }
+              }
+            },
+            "BALANCE": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "BALANCE"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "Paytm Balance"
+                  ]
+                }
+              }
+            },
+            "ADVANCE_DEPOSIT_ACCOUNT": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "ADVANCE_DEPOSIT_ACCOUNT"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "ADVANCE_DEPOSIT_ACCOUNT"
+                  ]
+                }
+              }
+            },
+            "NET_BANKING": {
+              "$ref": "#/definitions/pcfDetails",
+              "properties": {
+                "payMethod": {
+                  "enum": [
+                    "NET_BANKING"
+                  ]
+                },
+                "displayText": {
+                  "enum": [
+                    "Net Banking"
+                  ]
+                }
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

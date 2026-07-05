@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Mapping-Service-DROP-1-API" verbose="1"  parallel="tests" thread-count="20">
+    <test name="Mapping Service Drop 1 API ">
+        <classes>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.BankdetailsAlipaycodeApi"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.BankmasterdetailsPaymodeApi"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.CommonV1Get"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.DccSupportedCurrencyListAcquirerIICTC1IN"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetBankdetailsBankCode"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetBanksDetailslistfromCodes"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetGlobalConfigACQUIRER_CURRENCY_IICPC1IN"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetLimitMerchantTypePPI_LIMIT_1"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetMerchantlogoinfoV2Mid"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetNotificationTemplate"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetPspSchema"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetResponsecodedetailsPaytmResponseCode"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.GetResponsecodedetailsResultcode"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.MerchantAgentGetAgentInfoIdType"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.NotificationFetchTemplateConfiguration"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.UserV1TypePaytmId"/>
+            <class name="scripts.api.mappingService.MappingDrop1Apis.UserV1TypePaytmIdWillcreate"/>
+        </classes>
+    </test>
+</suite>

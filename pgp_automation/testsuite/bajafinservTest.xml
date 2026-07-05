@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!-- AI-Generated: 2024-12-19 - Test suite configuration for Bajaj Finserv test cases -->
+<suite name="BajajFinserv_Suite" verbose="1" parallel="tests" thread-count="4">
+    
+    <!-- Bajaj Finserv Flow Test Cases -->
+    <test name="Bajaj Finserv Flow Tests - Web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.BajajFinservFlowTest"/>
+        </classes>
+    </test>
+    
+    <!-- Custom Checkout EMI Cardless Test Cases -->
+    <test name="Custom Checkout EMI Cardless Tests">
+        <classes>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutNewFlowTest">
+                <methods>
+                    <include name="testCustomCheckoutforEmiCardless_Amountbased"/>
+                    <include name="testCustomCheckoutforEmiCardless_ItemBased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+</suite>

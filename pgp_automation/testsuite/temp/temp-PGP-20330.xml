@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-20330" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-20330:Duplicate OrderID in INIT for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateSuccessfulTxnWithSameOrderWhenTxnkeyRemovedFromSessionRedis"/>
+                    <include name="validateSuccessfulTxnWithSameOrderWhenKeyIsRemovedTwiceandWithRetry"/>
+                    <include name="validateDuplicateOrderErrorWithSameRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-20330:Duplicate OrderID in INIT for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateSuccessfulTxnWithSameOrderWhenTxnkeyRemovedFromSessionRedis"/>
+                    <include name="validateSuccessfulTxnWithSameOrderWhenKeyIsRemovedTwiceandWithRetry"/>
+                    <include name="validateDuplicateOrderErrorWithSameRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58171">
+    <test name="Verify original card hash in edc">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="verifyOriginalCardHashForStandardEMIUsingRupayCardScheme"/>
+                    <include name="verifyOriginalCardHashForStandardFlowUsingVISACardScheme"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-41837" verbose="1">
+    <test name="Verify Checkout JS UI Changes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_41837_TC01_BankMandateJS"/>
+                    <include name="PGP_41837_TC02_BankMandateJS"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueJCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSUPItCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSWalletCTA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Redirectional UI Changes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="PGP_41837_TC01_BankMandateEnhance"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueEnhnaceTexts"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseEnhnaceTexts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

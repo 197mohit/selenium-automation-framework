@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subs UI Enhancements" verbose="1" parallel="tests" thread-count="3">
+    <test name="Subs UI Enhancements-Redirectional Flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_40026_TC_BankMandateDefaultAuthMode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subs UI Enhancements-CheckoutJS Flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_40026_TC_01_VerifyDefaultUPIHandles"/>
+                    <include name="PGP_40026_TC_02_VerifyAdditionalUPIHandles"/>
+                    <include name="PGP_40026_TC_BankMandateDefaultAuthMode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subs UI Enhancements-UI Flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="TC_01_PGP_40026_VerifyDefaultUPIHandles"/>
+                    <include name="TC_02_PGP_40026_VerifyAdditionalUPIHandles"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

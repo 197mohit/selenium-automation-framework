@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI-Fixes">
+    <test name="EMI Fixes-01">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateSuccessOnusEMITxn_PgOnlyMerc_loggedInUser"/>
+                    <include name="validateSuccessOnusEMITxn_PgOnlyMerc"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardForAddNPayMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes-02">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t86initiatePTCAPIPhase2"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="t84initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

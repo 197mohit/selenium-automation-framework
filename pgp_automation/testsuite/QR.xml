@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QR" verbose="1" thread-count="6" parallel="methods">
+    <test name="Static QR Test Cases">
+        <classes>
+            <class name="scripts.StaticQRNew"/>
+        </classes>
+    </test>
+
+    <test name="Dynamic QR Test Cases">
+        <classes>
+            <class name="scripts.DynamicQRNew"/>
+        </classes>
+    </test>
+
+    <test name="ScanNpay for normal/IRCTC merchant">
+        <classes>
+            <class name="scripts.scanNPay.ScanNPayTest"/>
+        </classes>
+    </test>
+
+    <test name="ScanNpay All in 1 QR tests">
+        <classes>
+            <class name="scripts.scanNPay.AllInOneQrTests"/>
+        </classes>
+    </test>
+
+</suite>

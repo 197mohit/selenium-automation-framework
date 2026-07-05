@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Merchant_Status_Suite_Failed" verbose="1" thread-count="20" parallel="tests">
+<test thread-count="20" verbose="0"
+          name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native plus"
+          parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"
+                    />
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                </methods>
+            </class> <!-- scripts.api.theia.emiSubvention.EmiSubventionApiTests -->
+        </classes>
+    </test> <!-- PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native plus -->
+    <test thread-count="20" verbose="0" name="temp-PGP-25879" parallel="tests">
+        <classes>
+            <class name="scripts.Native.NativeMerchantStatus">
+                <methods>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingMLV"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingMLV"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingMLV"/>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingMLV"/>
+                </methods>
+            </class> <!-- scripts.Native.NativeMerchantStatus -->
+        </classes>
+    </test> <!-- temp-PGP-25879 -->
+    <test thread-count="20" verbose="0" name="PGP-42086 for Offline Flow" parallel="tests">
+        <classes>
+            <class name="scripts.merchantStatus.OfflineMerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInvalid_02"/>
+                    <include name="txnStatus_05"/>
+                    <include name="txnStatus_02"/>
+                    <include name="txnStatusInvalid_03"/>
+                    <include name="txnStatus_04"/>
+                    <!-- txnStatusInvalid_01, txnStatus_01, txnStatusInit_01 excluded: /merchant-status/getTxnListStatus -->
+                    <include name="txnStatusInvalid_04"/>
+                    <include name="txnStatus_03"/>
+                    <include name="txnStatusInvalid_05"/>
+                    <include name="txnStatusInit_05"/>
+                    <include name="txnStatusInit_02"/>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatusInit_03"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.OfflineMerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-42086 for Offline Flow -->
+    <test thread-count="20" verbose="0" name="Validating VPA in merchant status logs" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="Verify_vpa_MerchantstatusResponse"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- Validating VPA in merchant status logs -->
+    <!-- PGP-40233 for NativePlus: excluded - all cases are /merchant-status/getTxnListStatus -->
+    <!--
+    <test thread-count="20" verbose="0" name="PGP-40233 for NativePlus" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeClosed_01"/>
+                    <include name="txnStatusNativeInit_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+    <test thread-count="20" verbose="0" name="PGP-40231 for NativePlus" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeClosed"/>
+                    <include name="txnStatusNativeInvalid"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.MerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-40231 for NativePlus -->
+    <!-- PGP-40233 for Native: excluded - all cases are /merchant-status/getTxnListStatus -->
+    <!--
+    <test thread-count="20" verbose="0" name="PGP-40233 for Native" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInit_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+    <test thread-count="20" verbose="0" name="temp-PGP21884 TC&#039;s " parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.NativeMerchantStatus">
+                <methods>
+                    <include name="validateNewParamsInNativeTxnStatus"/>
+                    <include name="validateVPAInNativeTxnStatus"/>
+                    <include name="validateNewParamsInNativeTxnStatusFailureTxn"/>
+                </methods>
+            </class> <!-- scripts.Native.NativeMerchantStatus -->
+        </classes>
+    </test> <!-- temp-PGP21884 TC's  -->
+    <test thread-count="20" verbose="0" name="PGP-40231 for Native" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInit"/>
+                    <include name="txnStatusNativeClosed"/>
+                    <include name="txnStatusNativeInvalid"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.MerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-40231 for Native -->
+    <!-- PGP-40233 for enhancedweb_revamp: excluded - all cases are /merchant-status/getTxnListStatus -->
+    <!--
+    <test thread-count="20" verbose="0" name="PGP-40233 for enhancedweb_revamp" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInit_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+    <test thread-count="20" verbose="0" name="PGP-40231 for enhancedweb_revamp" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInvalid"/>
+                    <include name="txnStatusClosed"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.MerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-40231 for enhancedweb_revamp -->
+    <test thread-count="20" verbose="0" name="PGP-40230 for NativePlus" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInvalid_02"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.MerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-40230 for NativePlus -->
+    <test thread-count="20" verbose="0" name="PGP-40230 for Native" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusNativeInvalid_02"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.MerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-40230 for Native -->
+    <test thread-count="20" verbose="0" name="PGP-40230 for enhancedweb_revamp" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInvalid_02"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.MerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-40230 for enhancedweb_revamp -->
+    <test thread-count="20" verbose="0" name="PGP-42086 for AppInvoke Flow" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.AppInvokeMerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInvalid_04"/>
+                    <include name="txnStatus_03"/>
+                    <!-- txnStatus_01, txnStatusInit_01, txnStatusClosed_01 excluded: /merchant-status/getTxnListStatus -->
+                    <include name="txnStatus_04"/>
+                    <include name="txnStatusInvalid_03"/>
+                    <include name="txnStatusInvalid_02"/>
+                    <include name="txnStatus_05"/>
+                    <include name="txnStatusClosed_04"/>
+                    <include name="txnStatusClosed_03"/>
+                    <include name="txnStatusClosed_05"/>
+                    <include name="txnStatusInit_05"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.AppInvokeMerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-42086 for AppInvoke Flow -->
+    <test thread-count="20" verbose="0" name="PGP-40231 for enhancedwap_revamp" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="lastFourDigitVisible"/>
+                    <include name="txnStatusNative_03"/>
+                    <include name="txnStatusInvalid"/>
+                    <include name="txnStatusInit_05"/>
+                    <include name="txnStatus_03"/>
+                    <!-- txnStatusInit_01, txnStatusNativeInit_01 excluded: /merchant-status/getTxnListStatus -->
+                    <include name="txnStatusInvalid_02"/>
+                    <include name="txnStatusClosed"/>
+                    <include name="txnStatusNative_05"/>
+                    <include name="txnStatusNative_04"/>
+                    <include name="txnStatusNativeClosed_05"/>
+                    <include name="txnStatusNativeClosed_04"/>
+                    <include name="txnStatus_05"/>
+                    <include name="txnStatusNativeInit_05"/>
+                    <include name="txnStatusInvalid_03"/>
+                    <include name="txnStatusNativeClosed_03"/>
+                    <include name="txnStatus_04"/>
+                    <include name="txnStatusInvalid_04"/>
+                    <include name="txnStatusInvalidNative_03"/>
+                    <include name="txnStatusClosed_04"/>
+                    <include name="txnStatusNativeClosed"/>
+                    <include name="txnStatusClosed_03"/>
+                    <include name="txnStatusNativeInvalid"/>
+                    <include name="txnStatusNativeInvalid_04"/>
+                    <include name="txnStatusClosed_05"/>
+                </methods>
+            </class> <!-- scripts.merchantStatus.MerchantStatusTests -->
+        </classes>
+    </test> <!-- PGP-40231 for enhancedwap_revamp -->
+    <test thread-count="20" verbose="0" name="PGP-40231 for CheckoutJs" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.merchantStatus.CheckoutJSmerchantStatusTests">
+                <methods>
+                    <include name="txnStatusClosed_06"/>
+                    <include name="txnStatusClosed_05"/>
+                    <include name="txnStatusClosed_04"/>
+                    <include name="txnStatusClosed_03"/>
+                    <include name="txnStatusInvalid_05"/>
+                    <include name="txnStatusInvalid_04"/>
+                    <include name="txnStatus_03"/>
+                    <include name="txnStatusInvalid_06"/>
+                    <include name="txnStatus_04"/>
+                    <include name="txnStatusInvalid_02"/>
+                    <include name="txnStatus_05"/>
+                    <include name="txnStatusInit_03"/>
+                    <include name="txnStatusClosed"/>
+                    <!-- txnStatusInit_01 excluded: /merchant-status/getTxnListStatus -->
+                    <include name="txnStatusInvalid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ChargeFeeOnAddMoneycases">
+        <classes>
+            <class name="scripts.ChargeFeeOnAddMoney">
+            </class>
+        </classes>
+    </test>
+</suite> <!-- Merchant_Status_Suite -->

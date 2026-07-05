@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI-ONDEMAND" verbose="1" parallel="tests" thread-count="6">
+    <test name="UPI ONDEMAND for Redirectional/Enhance flow">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI ONDEMAND for Native Collect flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Native_Subs_OnDemandValidations"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI ONDEMAND for Native Intent flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Native_Subs_OnDemandValidations"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI ONDEMAND Renewal">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_001_Renew_MF_Subs_AmountTypeVariable_Freq_ONDEMAND"/>
+                    <include name="TC_002_Renew_Subs_AmountTypeVariable_Freq_ONDEMAND"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Deferred Checkout Scripts">
+    <test name="Deferred Checkout txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateDeferredFlowSubsFPOResponse"/>
+                    <include name="validateDeferredFlowInitSubsResponse"/>
+                    <include name="validateDeferredFlowSubsTxnE2EWallet"/>
+                    <include name="validateDeferredFlowSubsTxnE2EUPI"/>
+                    <include name="validateDeferredFlowSubsTxnE2EPPBL"/>
+                    <include name="validateDeferredFlowSubsTxnE2EBM"/>
+                    <include name="validateVPAvalidateAPI"/>
+                    <include name="validateSendOTPAPI"/>
+                    <include name="validateValidateOTPAPI"/>
+                    <include name="validateFetchBalanceAPI"/>
+                    <include name="validateFetchBinAPI"/>
+                    <include name="validateFetchNBChannelsAPI"/>
+                    <include name="validateFetchCardDetailAPI"/>
+                    <include name="validateFetchPSPAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateDeferredFlowSubsFPOResponse"/>
+                    <include name="validateDeferredFlowInitSubsResponse"/>
+                    <include name="validateDeferredFlowSubsTxnE2EUPI"/>
+                    <include name="validateDeferredFlowSubsTxnE2EPPBL"/>
+                    <include name="validateDeferredFlowSubsTxnE2EBM"/>
+                    <include name="validateVPAvalidateAPI"/>
+                    <include name="validateSendOTPAPI"/>
+                    <include name="validateValidateOTPAPI"/>
+                    <include name="validateFetchBalanceAPI"/>
+                    <include name="validateFetchBinAPI"/>
+                    <include name="validateFetchNBChannelsAPI"/>
+                    <include name="validateFetchCardDetailAPI"/>
+                    <include name="validateFetchPSPAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

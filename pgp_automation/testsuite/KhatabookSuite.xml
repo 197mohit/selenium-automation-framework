@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="KhatabookSuite" verbose="1" parallel="tests" thread-count="10">
+    <test name="khatabook nativeplus test">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC_001_KhataBookTxnNB"/>
+                    <include name="TC_002_KhataBookTxnCC"/>
+                    <include name="TC_003_KhataBookTxnDC"/>
+                    <include name="TC_004_KhataBookTxnWallet"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC_006_KhataBookTxnUPI"/>
+                    <include name="TC_007_KhataBookTxnHYBRID"/>
+                    <include name="TC_008_KhataBookTxnDifferentMID"/>
+                    <include name="TC_009_KhataBookTxnCCFailed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="khatabook native testcases">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC_001_KhataBookTxnNB"/>
+                    <include name="TC_002_KhataBookTxnCC"/>
+                    <include name="TC_003_KhataBookTxnDC"/>
+                    <include name="TC_004_KhataBookTxnWallet"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC_006_KhataBookTxnUPI"/>
+                    <include name="TC_007_KhataBookTxnHYBRID"/>
+                    <include name="TC_008_KhataBookTxnDifferentMID"/>
+                    <include name="TC_009_KhataBookTxnCCFailed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Khatabook enhanceweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC001_KhatabookAppInvokeCC"/>
+                    <include name="TC002_KhatabookAppInvokeDC"/>
+                    <include name="TC003_KhatabookAppInvokeUPI"/>
+                    <include name="TC004_KhatabookAppInvokeNB"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC006_KhatabookAppInvokeHYBRID"/>
+                    <include name="TC007_KhatabookAppInvokeWallet"/>
+                    <include name="TC008_KhatabookAppInvokeCCforFailedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Khatabook enhancewap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC001_KhatabookAppInvokeCC"/>
+                    <include name="TC002_KhatabookAppInvokeDC"/>
+                    <include name="TC003_KhatabookAppInvokeUPI"/>
+                    <include name="TC004_KhatabookAppInvokeNB"/>
+                    <include name="TC_005_KhataBookTxnADDNPAY"/>
+                    <include name="TC006_KhatabookAppInvokeHYBRID"/>
+                    <include name="TC007_KhatabookAppInvokeWallet"/>
+                    <include name="TC008_KhatabookAppInvokeCCforFailedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

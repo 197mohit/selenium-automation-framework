@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PostPaid_Suite_UI" verbose="1" thread-count="10" parallel="tests">
+    <test name="PGP-33928 - Postpaid AddNpay enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="postpaidNotAvailableWhenDeselectedWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33928 - Postpaid AddNpay enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="postpaidNotAvailableWhenDeselectedWallet"/>
+                    <include name="SuccessfulPostpaidTxnForWalletDeselected"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaytmCC-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_478_Pending"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalanceisnull"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <include name="PGP_517_PostPaidAndWalletInactive"/>
+                    <include name="postpaidSignupBannerVisible"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalancefalse"/>
+                    <include name="postpaidSignupBannerNotVisible"/>
+                    <include name="TC_insuffBalShownWhenUserClicksCheckBalGivenInsuffPostpaidBal"/>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PostPaidVisibleAfterLoginCheckoutJS"/>
+                    <include name="PGP_468_PostPaidBalanceLessThanTxn"/>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaytmCC with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="postpaidSignupBannerNotVisible"/>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <include name="TC_insuffBalShownWhenUserClicksCheckBalGivenInsuffPostpaidBal"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalancefalse"/>
+                    <include name="postpaidSignupBannerVisible"/>
+                    <include name="PGP_517_PostPaidAndWalletInactive"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalanceisnull"/>
+                    <include name="PGP_468_PostPaidBalanceLessThanTxn"/>
+                    <include name="PGP_478_Pending"/>
+                    <include name="PostPaidNotVisibleBeforeLoginCheckoutJS"/>
+                    <include name="PGP_469successfulPostPaidTxn_fromPGOnly"/>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate Signup to paytm postpaid strip checkout js">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.checkoutJSPostpaidAddNPay">
+                <methods>
+                    <include name="postpaidSignupBannerVisibleCheckoutJS"/>
+                    <include name="postpaidSignupBannerNotVisibleCheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33928 - Postpaid AddNpay checkoutJS web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.checkoutJSPostpaidAddNPay">
+                <methods>
+                    <include name="postpaidNotAvailableWhenDeselectedWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription on postpaid">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="SubscriptionCreationWithPostpaid"/>
+                    <include name="PreNotifyForPostpaidSubscription"/>
+                    <include name="EnablePostpaidOnSubscriptionFPOResponse"/>
+                    <include name="PostpaidNotAvailableForTXNAmtGreaterThan15000"/>
+                    <include name="SubscriptionCreationWithPostpaidMonth"/>
+                    <include name="payloadPushedToKafkaTopicForPostpaidSubs"/>
+                    <include name="PostpaidSubsCreateSubs"/>
+                    <include name="PostpaidSubsOTPValidation"/>
+                    <include name="acquirerNameForPostpaidSubscriptionPaymentRequest"/>
+                    <include name="settlementTypeForPostpaidSubscriptionPaymentRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="10" verbose="0" name="checkout js cases" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PostPaidVisibleAfterLoginCheckoutJS"/>
+                    <include name="PostPaidNotVisibleBeforeLoginCheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="10" verbose="0" name="PCF enhancewap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="verify_successful_PostPaidPfc"/>
+                </methods>
+            </class> <!-- scripts.PostCovEnhance -->
+        </classes>
+    </test> <!-- PCF enhancewap -->
+    <test name="Postpaid ui msg">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg enhanceweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg elementjs">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg jaonredirection">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg enhanceweb mweb">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg jaonredirection mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="POSTPAID ACCOUNT STATUS MSG">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="postpaidMessage_expiredAccount"/>
+                    <include name="postpaidMessage_blockedAccount"/>
+                    <include name="postpaidMessage_frozenAccount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28967 Merchant Name passed in Promo flow" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-28967 Verify merchant name passed in promo flow">
+            <classes>
+                <class name="scripts.flows.NativePlusTest">
+                    <methods>
+                        <include name="PGP 28967 test merchant name in theia facade logs after paytm_cashback promo txn"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+</suite>

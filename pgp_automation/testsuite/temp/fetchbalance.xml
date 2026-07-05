@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-47530">
+    <test name="Verify fetch balance info api">
+        <classes>
+            <class name="scripts.FetchBalanceTests">
+                <methods>
+                    <include name="fetchBalanceForPPBL"/>
+                    <include name="fetchBalanceForwallet"/>
+                    <include name="fetchBalanceForwalletwhenmidnothavewallet"/>
+                    <include name="fetchBalanceForwalletwhenqrcodeidiswrong"/>
+                    <include name="fetchBalanceForwalletwithoutqueryparam"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

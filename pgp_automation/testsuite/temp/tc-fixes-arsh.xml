@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="IPV6 Tests" verbose="1">
+    <test name="Verify eventLinkId in NativePlusTest">
+        <classes>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="test eventLinkId is not coming in response in case of risk reject"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify eventLinkId in NativeOfflineTest">
+        <classes>
+            <class name="scripts.flows.NativeOfflineTest">
+                <methods>
+                    <include name="test eventLinkId is not coming in response in case of risk reject"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify eventLinkId in DeferredNativeTest">
+        <classes>
+            <class name="scripts.flows.DeferredNativeTest">
+                <methods>
+                    <include name="test eventLinkId is not coming in response in case of risk reject"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

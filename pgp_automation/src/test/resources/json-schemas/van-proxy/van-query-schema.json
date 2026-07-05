@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp"
+      ],
+      "properties": {
+        "signature": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "responseTimestamp": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string",
+              "minLength": 1
+            },
+            "resultMsg": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "vanDetails": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "responseStatus",
+              "searchId"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "identificationNo": {
+                "type": "string",
+                "minLength": 1
+              },
+              "merchantPrefix": {
+                "type": "string",
+                "minLength": 1
+              },
+              "van": {
+                "type": "string",
+                "minLength": 1
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "minLength": 1
+              },
+              "userDefinedFields": {
+                "type": "object",
+                "properties": {
+                  "udf1": {
+                    "type": "string"
+                  },
+                  "udf2": {
+                    "type": "string"
+                  },
+                  "udf3": {
+                    "type": "string"
+                  },
+                  "udf4": {
+                    "type": "string"
+                  },
+                  "udf5": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "active": {
+                "type": "boolean"
+              },
+              "ifscCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bankName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "responseStatus": {
+                "enum": [
+                  "SUCCESS",
+                  "FAILURE"
+                ]
+              },
+              "beneficiaryName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "customerDetails": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "customerEmail": {
+                      "type": "string"
+                    },
+                    "customerMobile": {
+                      "type": "string"
+                    },
+                    "customerName": {
+                      "type": "string"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "searchId": {
+                "type": "string",
+                "minLength": 1
+              },
+              "errorMessage": {
+                "type": "string",
+                "minLength": 1
+              },
+              "errorCode": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

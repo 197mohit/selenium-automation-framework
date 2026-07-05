@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_Checkoutjs_Suite_PG2 " verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP-45666 - checkoutJS web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - checkoutJS wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - app invoke">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_AppInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42134 Co Branding Footer | Prod Bug" parallel="tests" thread-count="2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="Verify_icici_cobranding_logo_header_footer_signedIn"/>
+                    <include name="Verify_icici_cobranding_logo_header_footer_signedOut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41941 -Enhance">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Autologin.AutoLogin">
+                <methods>
+                    <include name="verifyUserLoggedInViaCokkiePostpaidaboveWallet_jsonEnhance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41941 -checkoutJS ">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Autologin.AutoLoginCheckoutJS">
+                <methods>
+                    <include name="verifyUserLoggedInViaCokkiePostpaidaboveWallet_checkoutjs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjs web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjs mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjsonEnhanced web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjsonEnhanced mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp elementjs web">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyfetchBinResponseforAltVISA"></include>
+                    <include name="verifyfetchBinResponseforAltRupay"></include>
+                    <include name="verifyLPVResponseforAlternateIDVISA"></include>
+                    <include name="verifyLPVResponseforAlternateIDRUPAY"></include>
+                    <include name="verifySuccessAltIDGenerationforVISA"></include>
+                    <include name="verifySuccessTxnforAlternateIDVISA"></include>
+                    <include name="verifyRupayCardAltGenCall"></include>
+                    <include name="verifyRupayCardAltGenCallOffus"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifySuccessAltIDGenerationforVISA"></include>
+                    <include name="verifySuccessTxnforAlternateIDVISA"></include>
+                    <include name="verifyRupayCardAltGenCall"></include>
+                    <include name="verifyRupayCardAltGenCallOffus"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"></include>
+                    <include name="verifyingRupayTxnforAltID"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"></include>
+                    <include name="verifyingGenerateAltIDforGuestCheckoutOnus"></include>
+                    <include name="verifyingRupayTxnforAltID"></include>
+                    <include name="verifyingRupayTxnforAltIDOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Upi UI Test for enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="UpiNumericIdTestCase_01"/>
+                    <include name="UpiNumericIdTestCase_02"/>
+                    <include name="UpiNumericIdTestCase_03"/>
+                    <include name="UpiNumericIdTestCase_04"/>
+                    <include name="UpiNumericIdTestCase_05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Upi UI Test for CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="UpiNumericIdTestCase_06"/>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="UpiNumericIdTestCase_08"/>
+                    <include name="UpiNumericIdTestCase_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QR_Suite" verbose="1" thread-count="10" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web revamp">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP 16531 - Notification service should share the transaction success message to the last updated mobile no.s of the merchant">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="scripts.Sprint28.CreateQRPayment">
+                <methods>
+                    <include name="editQrInfoAndgetQRInfo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- New Cases from qr Pg2 Added -->
+<!--    <test name="PGP-42679">-->
+<!--        <classes>-->
+<!--            <class name="scripts.Qr.qr">-->
+<!--                <methods>-->
+<!--                    <include name="Verify_isAddMoneyPayOptionsAvailable_true_user_postpaid_merchant_nonpostpaid"/>-->
+<!--                    <include name="Verify_isAddMoneyPayOptionsAvailable_true_user_nonpostpaid_merchant_postpaid"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <test name="PGP-44639 Static QR">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="verifyMerchantinfoDynamicQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44639 DQR">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="verifyMerchantinfoStaticQR"/>
+                    <include name="verifyMerchantinfoStaticQRwallet"/>
+                    <include name="verifyMerchantinfoStaticQR"/>
+                    <include name="verifyMerchantinfoStaticQRwallet"/>
+                    <include name="validateFailureTxnxnTokenUsingStaticQR"/>
+                    <include name="validateFailureIncorrectMIDUsingStaticQR"/>
+                    <include name="validateFailureTxn_InvalidSSOTokenUsingStaticQR"/>
+                    <exclude name="Verify_PPBL_PaytmPostpaid_balance_is_null_in_response"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="qrcodeId flow">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="qrcodeIdUpiPushSuccessTxnStaticQr"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnDynamicQr"/>
+                    <include name="qrcodeIdUpiPushSuccessTxnDynamicQrPcf"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="BffLayered field in FPO/FetchQrDetails">
+        <classes>
+            <class name="scripts.Qr.qr">
+                <methods>
+                    <include name="verify_bffLayerEnabled_in_FetchQRPaymentetails_FF4J_ON"/>
+                    <include name="verify_bffLayerEnabled_in_FPO_FF4J_ON"/>
+                    <include name="verify_bffLayerEnabled_in_FetchQRPaymentetails_FF4J_OFF"/>
+                    <include name="verify_bffLayerEnabled_in_FPO_FF4J_OFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42767 DQR Repeat Payment Issue">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParam"/>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParamforUPI"/>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParamforPPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43468 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC01_ValidateQrIsNotDsiplayed"/>
+                    <include name="TC02_ValidateQRisNotDisplayed_UPI_INACTIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43468 - 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC03_ValidateQRisNotDisplayed"/>
+                    <include name="TC04_ValidateQRisNotDisplayed_UPI_INACTIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43468 - 3">
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC05_ValidateQRisNotDisplayed_NATIVE"/>
+                    <include name="TC06_ValidateQRisNotDisplayed_UPI_INACTIVE_NATIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45065 : Scan and Pay | Dynamic Payment Instrument Priority">
+        <classes>
+            <class name="scripts.Native.DynamicPaymentInstrumentPriority">
+                <methods>
+                    <include name="dynamicPaymentInstrumentPriority_01"/>
+                    <include name="dynamicPaymentInstrumentPriority_02"/>
+                    <include name="dynamicPaymentInstrumentPriority_03"/>
+                    <include name="dynamicPaymentInstrumentPriority_04"/>
+                    <include name="dynamicPaymentInstrumentPriority_05"/>
+                    <include name="dynamicPaymentInstrumentPriority_06"/>
+                    <include name="dynamicPaymentInstrumentPriority_07"/>
+                    <include name="dynamicPaymentInstrumentPriority_08"/>
+                    <include name="dynamicPaymentInstrumentPriority_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44212 checkoutjs_web_revamp tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                    <include name="ValidateUITextMsgTestsScanNpay"/>
+                    <include name="ValidateUITextMsgTestLoginQR"/>
+                    <exclude name="ValidateUITextMsgLoginQR"/>
+                    <include name="ValidateUITextMsgTestLoginOTP"/>
+                    <include name="ValidateUITextMsgTestLoginQRAndLoginOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44212 enhancedweb_revamp tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                    <include name="ValidateUITextMsgTestLoginOTPEnhancedflow"/>
+                    <exclude name="ValidateUITextMsgTestLoginQREnhancedflow"/>
+                    <include name="ValidateUITextMsgLoginQREnhancedflowWithSavedCard"/>
+                    <exclude name="ValidateUITextMsgLoginOTPEnhancedflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaymentOptionsAvailable for Dynamic EDC QR">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable001"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable002"/>
+                    <exclude name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable003"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable004"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable005"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable006"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Scan and Pay | UPI - Telemetry Checks">
+        <classes>
+            <class name="scripts.Qr.qr">
+                <methods>
+                    <include name="verify_QueryParams_RiskExtendInfo_StaticQR_IOS"></include>
+                    <include name="verify_QueryParams_RiskExtendInfo_StaticQR_Android"></include>
+                    <include name="verify_QueryParams_RiskExtendInfo_DynamicQR_IOS"></include>
+                    <include name="verify_QueryParams_RiskExtendInfo_DynamicQR_Android"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestStaticQR_IOS"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestStaticQR_Android"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestDynamicQR_IOS"></include>
+                    <include name="verify_headersInPtc_Risk_PaymentRequestDynamicQR_Android"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LiteMerchantDetails API">
+        <classes>
+            <class name="scripts.api.theia.merchantDetails.v1LiteMerchantDetailsTest">
+                <methods>
+                    <include name="LiteMerchantDetails_for_MID"/>
+                    <include name="checkPosId_for_VPA"/>
+                    <include name="check_isDqrExpired_as_true"/>
+                    <include name="LiteMerchantDetails_without_MId_VPA"/>
+                    <include name="LiteMerchantDetails_For_DQR"/>
+                    <include name="validate_ProductCodeFor_DQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

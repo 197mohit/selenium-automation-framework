@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="fetchBinDetail" verbose="1" parallel="tests" thread-count="3">
+    <test name="fetchBinDetailWithNativeOTPReq Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC01"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC02"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithCardNo_TC03"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC04"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC05"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithTxnToken_TC06"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC01"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC02"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC03"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC04"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

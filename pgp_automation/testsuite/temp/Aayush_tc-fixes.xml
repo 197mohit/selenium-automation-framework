@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notification Fixes" verbose="1" parallel="tests" thread-count="3">
+<!--    <test name="HDFC Collect Redirectional cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_checkoutJS_Subs_Month"/>
+                    <include name="TC_002_checkoutJS_Subs_ONDEMAND"/>
+                    <include name="TC_003_checkoutJS_Subs_WEEK"/>
+                    <include name="TC_004_checkoutJS_Subs_YEAR"/>
+                    <include name="TC_005_checkoutJS_Subs_QUARTER"/>
+                    <include name="TC_006_checkoutJS_Subs_BI_MONTHLY"/>
+                    <include name="TC_007_checkoutJS_Subs_SEMI_ANNUALLY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+    <test name="PeonTxn Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Peon_native">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="TC_PT_001"/>
+                    <include name="TC_PT_003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="P4B fixes">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="pushNotifications_CA_P4B_004"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="DQR | Custom Webhook for DLF">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="S2SDataForDLFMerchant_NQH_CC"/>
+                    <include name="S2SDataForDLFMerchant_NQH_DC"/>
+                    <include name="S2SDataForDLFMerchant_NQH_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Acquiring Close Notify hit for different Paymodes ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="acquiringCloseNotifyNotifyWithUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PG Notification Development - Settlement Timeline Sticky Notification (P4B)">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="STICKY_NOTIFICATION_UPS_REQUEST_RESPONSE"/>
+                    <include name="STICKY_NOTIFICATION_Payload_CG"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-39455">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="successfulPGOnlyDCEventsPPSL"/>
+                    <include name="successfulPGOnlyNBEventsPPSL"/>
+                    <include name="successfulPGOnlyEMIEventsPPSL"/>
+                    <include name="successfulPGOnlyCCEventsPPSL"/>
+                    <include name="successfulPGOnlyUPIEventsPPSL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

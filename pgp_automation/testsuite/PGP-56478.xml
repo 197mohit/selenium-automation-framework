@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56478" verbose="1" parallel="tests" thread-count="4">
+    <test name="(FPO) EDC Payment Links : Set correct enabledPayment mode basis the cardType">
+        <classes>
+            <class name="scripts.api.linkservice.BrandEmiNewUrl">
+                <methods>
+                    <include name="EDC_EMIDC_Paymode_EdcLink"/>
+                    <include name="EDC_EMICC_Paymode_EdcLink"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

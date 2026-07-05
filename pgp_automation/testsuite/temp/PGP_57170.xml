@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57170 - unitiedOffersToken" verbose="1" thread-count="20" parallel="tests">
+    <listeners>
+        <listener class-name="com.paytm.listeners.CustomListener"/>
+        <listener class-name="com.paytm.listeners.MasterReport"/>
+        <!--        <listener class-name="com.paytm.listeners.StatusCounterListener"/>-->
+        <listener class-name="com.paytm.listeners.ScreenListener"/>
+    </listeners>
+    <test name="PGP-57170">
+        <parameter name="theme" value="PGP-57170"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.MultiItemUnifiedFlowTest">
+                <methods>
+                    <include name="customCheckout_SingleItem_SubventionUnifiedOffersTokenNotReturned"/>
+                    <include name="customCheckout_SingleItem_SubventionTxnAmountGreaterThanItemAmountUnifiedOffersTokenNotReturned"/>
+                    <include name="customCheckout_MultiItem_SubventionTxnAmountGreaterThanItemAmountUnifiedOffersTokenNotReturnedUsingCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

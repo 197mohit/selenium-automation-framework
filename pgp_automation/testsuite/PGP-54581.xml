@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48530" verbose="1" thread-count="5" parallel="tests">
+    <test name="Wallet and PPBL Native Subs transaction blocked">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="walletNotSupporting_subsCreation"/>
+                    <include name="ppblNotSupporting_subsCreation"/>
+                    <include name="walletNotReturned_inSubsFpo"/>
+                    <include name="ppblNotReturned_inSubsFpo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet and PPBL UI Subs transaction blocked">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="walletNotSupporting_subsCreation"/>
+                    <include name="ppblNotSupporting_subsCreation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet and PPBL UI Subs Deferred blocked">
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validate_Wallet_notReturnedInDeferredFlowSubsFPOResponse"/>
+                    <include name="validate_PPBL_notReturnedInDeferredFlowSubsFPOResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet and PPBL Checkout JS blocked">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="walletNotReturned_subsCheckoutJs"/>
+                    <include name="ppblNotReturned_subsCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

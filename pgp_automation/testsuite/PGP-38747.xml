@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38747">
+    <test name="Subscription with PPI when 2fa for subs on wallet is disabled for merchant">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_tc3"/>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_Tc1"/>
+                    <include name="PGP_35774_Validate_2fa_disabled_wallet_subscription_Tc2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

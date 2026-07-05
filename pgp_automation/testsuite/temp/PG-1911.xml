@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-1911 - RT2_MAR_2026">
+    <test name="PG-1911 -Create identification for DQR transactions for UPI Payments ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.TheiaApiQrCreateTest">
+                <methods>
+                    <include name="validate_NonreqAuth_createQR_AcquiringPayOrderRequestContainsIsDqr"/>
+                    <include name="validate_NonreqAuth_DQR_AcquiringPayOrderRequestContainsIsDqr"/>
+                    <include name="validate_reqAuth_UpiPsp_Success_AcquiringPayOrderRequestContainsIsDqr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

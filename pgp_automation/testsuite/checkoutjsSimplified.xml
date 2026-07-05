@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SimplifiedOffer" verbose="1" parallel="methods" thread-count="1">
+<!--    Right now making this class diabled to be run in regression because chekoutjs changes are in dev.
+ I will enable these changes once whole qa is done from our end-->
+<!--    <test name="SimplifiedOffer">-->
+<!--        <parameter name="checkoutjs_web_revamp" value="true"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.SimplifiedUnifiedOffers.CheckoutJsSimplifiedUnifiedOffer">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="SimplifiedOffer1">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyAccessTokenTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenPaymethodBALANCEIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodBALANCEIsProvidedItemBased"/>
+                    <include name="TestSuccessResponseWhenPaymethodUPIIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodUPIIsProvidedItemBased"/>
+                    <include name="TestSuccessResponseWhenPaymethodNBIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodNBIsProvidedItemBased"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenPaymethodBALANCEIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodBALANCEIsProvidedItemBased"/>
+                    <include name="TestSuccessResponseWhenPaymethodUPIIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodUPIIsProvidedItemBased"/>
+                    <include name="TestSuccessResponseWhenPaymethodNBIsProvided"/>
+                    <include name="TestSuccessResponseWhenPaymethodNBIsProvidedItemBased"/>
+                </methods>
+            </class>
+        <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+            <methods>
+                <include name="TestSuccessResponseWhenPaymethodBALANCEIsProvided"/>
+                <include name="TestSuccessResponseWhenPaymethodBALANCEIsProvidedItemBased"/>
+                <include name="TestSuccessResponseWhenPaymethodUPIIsProvided"/>
+                <include name="TestSuccessResponseWhenPaymethodUPIIsProvidedItemBased"/>
+                <include name="TestSuccessResponseWhenPaymethodNBIsProvided"/>
+                <include name="TestSuccessResponseWhenPaymethodNBIsProvidedItemBased"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="SimplifiedOffer2">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenBalanceProvided"/>
+                    <include name="TestSuccessResponseWhenBalanceProvidedItembased"/>
+                    <include name="TestSuccessResponseWhenUPIProvided"/>
+                    <include name="TestSuccessResponseWhenUPIProvidedItembased"/>
+                    <include name="TestSuccessResponseWhenNBProvided"/>
+                    <include name="TestSuccessResponseWhenNBProvidedItembased"/>
+                </methods>
+            </class>
+
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenBalanceProvided"/>
+                    <include name="TestSuccessResponseWhenBalanceProvidedItembased"/>
+                    <include name="TestSuccessResponseWhenUPIProvided"/>
+                    <include name="TestSuccessResponseWhenUPIProvidedItembased"/>
+                    <include name="TestSuccessResponseWhenNBProvided"/>
+                    <include name="TestSuccessResponseWhenNBProvidedItembased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

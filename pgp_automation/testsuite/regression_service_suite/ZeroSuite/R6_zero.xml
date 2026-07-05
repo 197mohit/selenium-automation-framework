@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R6 Zero Pass Suite" verbose="1" thread-count="12" parallel="tests">
+
+    <test name="PGP-14676 Auto Refund on enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Sprint28.AutoRefund">
+                <methods>
+                    <include name="fundBackPaytmCCPeon"/>
+                    <include name="fundBackUPICollectPeon"/>
+                    <include name="fundBackBalance"/>
+                    <include name="fundBackHybrid"/>
+                    <include name="revokeCCPeon"/>
+                    <include name="revokeDCPeon"/>
+                    <include name="revokeNBPeon"/>
+                    <include name="revokePaytmCCPeon"/>
+                    <include name="revokePPBLPeon"/>
+                    <include name="revokeUPICollectPeon"/>
+                    <include name="refundUPIIntentPeon"/>
+                    <include name="revokeCCPWPPeon"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Food wallet refund">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.FoodWalletRefund">
+                    <methods>
+                        <include name="PGP_SuccessAdNPayRefund_WhenLimitBreached"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Refund status V1 - enhancedweb + Refund Refactoring Async/Sync">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <include name="successfulRefundForWalletLimitBreach_asyncStatus"/>
+                    <include name="refundUPIWithJWTAsyncRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund Async with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulRefundForWalletLimitBreach_async"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Instant Refund">
+        <classes>
+            <class name="scripts.api.instantrefund.AsyncRefund"/>
+            <class name="scripts.api.instantrefund.RefundAccountAdd">
+                <methods>
+                    <include name="testForRealUpiAccount"/>
+                    <include name="testWhenAccountDetailsAreAlreadyAdded"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund status V1 - enhancedwap + Refund Refactoring Async/Sync">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <include name="successfulRefundForWalletLimitBreach_asyncStatus"/>
+                    <include name="refundUPIWithJWTAsyncRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25567">
+        <classes>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="Verify successful refund of ECOM token transaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-24245 for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.PrepaidCard">
+                    <methods>
+                        <include name="prepaidCorporateInternationalCard"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="PGP-24245 for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.PrepaidCard">
+                    <methods>
+                        <include name="prepaidCorporateInternationalCard"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Loyality Points IVRFastForward TCs">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="exchangeNumberAlphaNumericLP"/>
+                    <include name="ffExchangeNumberNegativeLP"/>
+                    <include name="validSSOInvalidExchangeLP"/>
+                    <include name="validateSuccessPeonLP"/>
+                    <include name="riskRejectAutoDebit"/>
+                    <include name="testRiskRejectIVRFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorCCInternationalMoreThan25TxnForMDRScanNPay"/>
+                    <include name="ScanNPayMDRCustomRate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulPaytmNBTxnForMDRPlusPCFAppInvokeUsingRetry"/>
+                    <include name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <include name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulEMITxnForMDRPlusPCF"/>
+                    <include name="successfulNBTxnForMDRPlusPCF"/>
+                    <include name="successfulPaytmNBTxnForMDRPlusPCFAppInvoke"/>
+                    <include name="successfulPaytmNBTxnForMDRPlusPCFAppInvokeUsingRetry"/>
+                    <include name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <include name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                    <include name="successfulUPITxnForMDRPlusPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative">
+                <methods>
+                    <include name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative">
+                <methods>
+                    <include name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <include name="successfulPaytmDCTxnForMDRPlusPCFAppInvoke"/>
+                    <include name="successfulPaytmNBTxnForMDRPlusPCFAppInvoke"/>
+                    <include name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <include name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <include name="successfulCCTxnForMDRPlusPCF"/>
+                    <include name="successfulDCTxnForMDRPlusPCF"/>
+                    <include name="successfulPaytmDCTxnForMDRPlusPCFAppInvoke"/>
+                    <include name="successfulEMITxnForMDRPlusPCF"/>
+                    <include name="successfulNBTxnForMDRPlusPCF"/>
+                    <include name="successfulPaytmNBTxnForMDRPlusPCFAppInvoke"/>
+                    <include name="successfulSavedCCTxnForMDRPlusPCF"/>
+                    <include name="successfulsavedCCTxnForMDRPlusPCFAppInvoke"/>
+                    <include name="successfulUPITxnForPCFPlusMDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative">
+                <methods>
+                    <include name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative">
+                <methods>
+                    <include name="successfulEMITxnForMDRPlusPCFNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26586">
+        <classes>
+            <class name="scripts.api.merchantStatus.txnStatusApp.SSOTokenTxnStatusAppTest">
+                <methods>
+                    <include name="test when order is failure"></include>
+                </methods>
+            </class>
+            <class name="scripts.api.merchantStatus.txnStatusListApp.SSOTokenTxnStatusListAppTest">
+                <methods>
+                    <include name="test when order is failure"/>
+                    <include name="test when order is pending"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="post convinence Native APIs">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+                <methods>
+                    <include name="TC_PCF_ADDNPAY"/>
+                    <include name="TC_PCF_AddNPayWithZeroWalletbalance"/>
+                    <include name="TC_PT_002"/>
+                    <include name="TC_PT_003"/>
+                    <include name="TC_PCF_PPI"/>
+                    <include name="TC_PT_001"/>
+                    <include name="TC_PCF_SaveCard"/>
+                    <include name="TC_PT_SaveCardAmex"/>
+                    <include name="TC_PCF_UPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-19819 Khata | Callback to Khata system when Khata order payments are refunded for ledger reconciliation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataRefund">
+                <methods>
+                    <include name="peonShouldSentToMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Prepaid cases for enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="pcfPrepaidEnhancedTxn"/>
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Prepaid cases for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="addPaySuccessPrepaidTxnNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="tempPrepaid cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="pcfPrepaidEnhancedTxn"/>
+                    <include name="retryPrepaid"/>
+                    <include name="offlinePrepaidEnhancedTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PWPEnhanced">
+                <methods>
+                    <include name="PWP_18_failedPWPOnlyHybridCC"/>
+                    <include name="PWP_14_successfulPWPHybridEMIDC"/>
+                    <include name="PWP_21_successfulPWPHybridDirect"/>
+                    <include name="PWP_20_successfulPWPHybridRetry"/>
+                    <include name="PWP_37_successfulPWPHybridShowPaymentPageEMIDC"/>
+                    <include name="PWP_08_successfulPWPOnlyPaytmToSaveCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PWPEnhanced">
+                <methods>
+                    <include name="PWP_18_failedPWPOnlyHybridCC"/>
+                    <include name="PWP_14_successfulPWPHybridEMIDC"/>
+                    <include name="PWP_21_successfulPWPHybridDirect"/>
+                    <include name="PWP_20_successfulPWPHybridRetry"/>
+                    <include name="PWP_37_successfulPWPHybridShowPaymentPageEMIDC"/>
+                    <include name="PWP_08_successfulPWPOnlyPaytmToSaveCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for Native ">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.PWPNative">
+                <methods>
+                    <include name="PWP_14_successfulPWPHybridEMINative"/>
+                    <include name="PWP_15_successfulPWPHybridEMIDCNative"/>
+                    <include name="PWP_18_successfulPWPHybridMutualFund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PWP cases for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PWPNative">
+                <methods>
+                    <include name="PWP_14_successfulPWPHybridEMINative"/>
+                    <include name="PWP_15_successfulPWPHybridEMIDCNative"/>
+                    <include name="PWP_18_successfulPWPHybridMutualFund"/>
+                    <include name="PWP_19_successfulPWPHybridPPBLNativeRetry"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="mlv">
+        <classes>
+            <class name="scripts.api.merchantStatus.GetTxnStatus">
+                <methods>
+                    <include name="testAbleToAccessDetailsUsingChildMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate">
+                <methods>
+                    <include name="ScanNPayMDRCustomRate"/>
+                    <include name="ScanNPayMDRCustomRate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ScanNPay tests Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.ScanNPayTest">
+                <methods>
+                    <include name="validate_UI_QRSection"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Dynamic QR Test Cases">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="testOrderSuccessByCCWhenNonMatchingWebsiteProvided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-ScanNpay All in 1 QR tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.AllInOneQrTests">
+                <methods>
+                    <include name="validate_S_AthenP_PCF_Txn_allIn1Qr"/>
+                    <include name="validate_S_cc_PCF_Txn_allIn1Qr"/>
+                    <include name="validate_S_dc_PCF_Txn_allIn1Qr"/>
+                    <include name="validate_S_EMI_PCF_Txn_allIn1Qr"/>
+                    <include name="validate_S_GV_PCF_Txn_allIn1Qr"/>
+                    <include name="validate_S_NB_PCF_Txn_allIn1Qr"/>
+                    <include name="validate_S_postpaid_PCF_Txn_allIn1Qr"/>
+                    <include name="validate_S_intentTxn_PCF_allIn1Qr"/>
+                    <include name="validateTxnAmount10SubWallet7AvailableBalanceMW10FW10"/>
+                    <include name="validateTxnAmount10SubWallet7AvailableBalanceMW10FW10PTC"/>
+                    <include name="validateTxnAmount15SubWallet12AvailableBalanceMW10FW10"/>
+                    <include name="validateTxnAmount15SubWallet3AvailableBalanceMW10FW10"/>
+                    <include name="validateTxnAmount25SubWallet12AvailableBalanceMW10FW10"/>
+                    <include name="validateTxnAmount25SubWallet15AvailableBalanceMW10FW10"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-Static QR Test Cases">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="testOrderSuccessByDCWhenNonMatchingWebsiteProvided"/>
+                    <include name="validateCCTxn_UsingStaticQR_TxnAmountLessThanLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify QR and Login Strip">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.OptOutPreferenceForQrLogin">
+                <methods>
+                    <include name="validateQRandLoginOnMerchant_02"/>
+                    <include name="validateQRandLoginOnMerchant_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

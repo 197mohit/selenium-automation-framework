@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription_renewal_via_wallet_only" verbose="1">
+    <test name="Subscription_renewal_via_wallet_only">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaWalletOnly"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="UpiTransactionTests" verbose="1">
+
+    <test name="UpiPushTransactionTestCases">
+
+        <classes>
+
+            <class name="scripts.api.UPI.UpiTransactionTests">
+
+                <methods>
+
+                    <include name="validateUpiPushTxn"/>
+
+                    <include name="validateUpiPushTxnWithAndPromo"/>
+
+                    <include name="validateUpiPushTxnWithSimplifiedPromo"/>
+
+                    <include name="validateUpiPushFailTxn"/>
+                    
+                    <include name="validateUpiPushPendingTxn"/>
+
+                    <include name="validateUpiPushHybridTxn" />
+
+                    <include name="validateUpiPushAddAndPayTxn" />
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

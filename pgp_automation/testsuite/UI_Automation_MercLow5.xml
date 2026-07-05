@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI Automation Merchant Low 5" verbose="1" parallel="methods" thread-count="8">
+    <test name="UI Tests MERCHANT LOW 5" >
+        <parameter name ="theme" value = "merchantLow5"></parameter>
+        <parameter name ="mobileEmulation" value = "Nexus 5"></parameter>
+        <parameter name = "browser" value = "CHROME"/>
+        <classes>
+            <class name = "scripts.UI.UITests"/>
+
+        </classes>
+    </test>
+</suite>

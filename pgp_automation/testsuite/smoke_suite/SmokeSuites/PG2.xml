@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2.0" verbose="1" thread-count="5" parallel="classes">
+    <!-- <test name="PG2 Wallet Txn">
+        <classes>
+            class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyWalletTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOThenPayWalletInternalOrderModifyTxnPG2MID"/>
+                </methods>
+            </class
+        </classes>
+    </test> -->
+    <test name="PG2 Card Txn">
+        <classes>
+            <class name="scripts.api.CC.CC_PG2">
+                <methods>
+                    <include name="validateFailedUnsavedCCTxnPG2MID_PG2Enabled"/>
+                    <include name="validateSuccessUnsavedCCTxnPG2MID_PG2Enabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PG2.0 UPI Txn">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validatePG2COPUPIPSP"/>
+                    <include name="validateSuccessUpiPushTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    <!-- Disabling PPBL Cases -->
+    <!-- <test name="PG2.0 PPBL Txn">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateSuccessPPBLTxnPG2MID"/>
+                    <include name="validateFailedPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    <test name="PG2.0 NB Txn">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                <!-- Excluding PPBL Case -->
+                    <!-- <include name="validatePG2COThenPayFullTrafficYPPBLSuccessCheckoutJSPageTxn"/> -->
+                    <include name="validateFullTrafficCOTPSuccessNBTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

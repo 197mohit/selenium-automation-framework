@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI Suite" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="UPICollectNativeSubs" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs"/>
+        </classes>
+    </test>
+
+    <test name="UPIIntentNativeSubs" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs"/>
+        </classes>
+    </test>
+    <test name="UPIRenewSubs" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <exclude name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPIEnhanceEnhanceWap" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs"/>
+        </classes>
+    </test>
+
+    <test name="UPIEnhanceEnhanceWeb" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs"/>
+        </classes>
+    </test>
+
+    <test name="Fetch payment instrument for offline txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_UPI"/>
+                    <include name="FetchPayIns_SavedVpaV2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Offline Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="PGP_531_OfflineTxn_UPI_Collect"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29589 - Flexi subscription testcases for renewal with upi">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-34678 Verify Upi collect Tab on Enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUPICollect_Tab"/>
+                    <include name="VerifyUPICollect_Tab_LoggedIn"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <include name="VerifyUPICollect_Tab_When_PrefDisabled_LoggedIn"/>
+                    <include name="VerifyUPICollect_Via_Login"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-35343 UPI to AddNPay Txn">
+        <classes>
+            <class name="scripts.UpiToAddnPay">
+                <methods>
+                    <include name="validateupiToAddPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20291 and PGP-18062 UpiOfflineFlag">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="Verify_Offline_Flag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddMoneyMP-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddNPay-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_UPI_S"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Hybrid-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_UPI_F_withInvalidPin"/>
+                    <include name="hybrid_UPI_S_sufficientBal"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money using Retry Saved Card on Wap Theme">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29010 Validating priority of UPI in fpo" parallel="methods" thread-count="6">
+        <classes>
+            <class name="scripts.PriorityParamUPI">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28936 enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedSuccessUPITxn"/>
+                    <include name="testLocalisedErrorMsgForUPITxnWhenVPAIsNotEntered"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32155 verifyAllInOneUpiQr">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyAllInOneUpiQr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheckoutJS UPI Intent Flow UI REVAMP">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <exclude name="ValidateUPIPaymodeUIchangeswithUPIIntentEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29609 Verify the successful UPI Intent subscription txn with all possible freq units">
+        <!--        <parameter name="theme" value="enhancedwap_revamp"/>-->
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_26700_verifySuccessUPIIntentSubsTxnOnEnhancedPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 Enhanced ADDNPAY through UPI collect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForADDNPAYThroughUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 subscription ADDNPAY through UPI">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForCreateSubsUsingAddnPayThroughUPIEnhancedFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27607 AppInvoke ADDNPAY through UPI">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForAppInvokeAddNPayThroughUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Exclude Zero Pass Percentage TCs
+   <test name="PGP-31212 Link Payment">
+       <parameter name="theme" value="enhancedweb_revamp"/>
+       <classes>
+           <class name="scripts.PGOnly">
+               <methods>
+                   <include name="VerifyUPINotVisibleOnLinkPaymentCashierPage"/>
+                   <include name="VerifyUPINotVisibleInvoiceLinkCashierPage"/>
+                   <include name="VerifyUPINotVisibleNative_STCashierPage"/>
+               </methods>
+           </class>
+       </classes>
+   </test> -->
+
+   <test name="Khatabook enhancewap">
+       <parameter name="theme" value="enhancedwap_revamp"/>
+       <parameter name="mobileEmulation" value="Nexus 5"/>
+       <parameter name="userAgent"
+                  value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+       <classes>
+           <class name="scripts.Native.Khata.KhataBook">
+               <methods>
+                   <include name="TC003_KhatabookAppInvokeUPI"/>
+               </methods>
+           </class>
+       </classes>
+   </test>
+
+   <test name="Khatabook enhanceweb">
+       <parameter name="theme" value="enhancedweb_revamp"/>
+       <classes>
+           <class name="scripts.Native.Khata.KhataBook">
+               <methods>
+                   <include name="TC003_KhatabookAppInvokeUPI"/>
+               </methods>
+           </class>
+       </classes>
+   </test>
+
+   <test name="khatabook native testcases">
+       <parameter name="isNativePlus" value="false"/>
+       <classes>
+           <class name="scripts.Native.Khata.KhataBook">
+               <methods>
+                   <include name="TC_006_KhataBookTxnUPI"/>
+               </methods>
+           </class>
+       </classes>
+   </test>
+
+   <test name="khatabook nativeplus test">
+       <parameter name="isNativePlus" value="true"/>
+       <classes>
+           <class name="scripts.Native.Khata.KhataBook">
+               <methods>
+                   <include name="TC_006_KhataBookTxnUPI"/>
+               </methods>
+           </class>
+       </classes>
+   </test>
+
+   <test name="UPICollectAppName test for enahncedweb">
+       <parameter name="theme" value="enhancedweb_revamp"/>
+       <classes>
+           <class name="scripts.UPICollectAppName">
+           </class>
+       </classes>
+   </test>
+
+   <test name="UPICollectAppName test for enhancedwap">
+       <parameter name="theme" value="enhancedwap_revamp"/>
+       <parameter name="mobileEmulation" value="Nexus 5"/>
+       <parameter name="userAgent"
+                  value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+       <classes>
+           <class name="scripts.UPICollectAppName">
+           </class>
+       </classes>
+   </test>
+
+   <test name="Non-matching Website TC's">
+       <classes>
+           <class name="scripts.api.Offline.OffLineTxn">
+               <parameter name="theme" value="enhancedweb_revamp"/>
+               <methods>
+                   <include name="testOfflineTxn_UPI_CollectWhenNonMatchingWebsiteProvided"/>
+               </methods>
+           </class>
+       </classes>
+   </test>
+
+   <test name="Upi Intent tests ">
+       <classes>
+           <class name="scripts.Native.UpiIntent"/>
+       </classes>
+   </test>
+
+   <test name="Hybrid with enhancedweb">
+       <parameter name="theme" value="enhancedweb_revamp"/>
+       <classes>
+           <class name="scripts.Hybrid">
+               <methods>
+                   <include name="hybrid_UPI_S"/>
+               </methods>
+           </class>
+       </classes>
+   </test>
+
+   <test name="PGOnly with enhancedweb">
+       <parameter name="theme" value="enhancedweb_revamp"/>
+       <classes>
+           <class name="scripts.PGOnly">
+               <methods>
+                   <include name="PGP_244_successfulPGOnlyUPI"/>
+                   <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                   <include name="PGP_275_validateSaveUPIForHybridTxn"/>
+                   <include name="PGP_276_validatePGTxnUsingSavedUPI"/>
+               </methods>
+           </class>
+       </classes>
+   </test>
+
+
+   <test name="theia API's 9">
+       <classes>
+           <class name="scripts.api.theia.checkUPIAccountExist.ChecksumUPIAccountExistTest">
+               <methods>
+                   <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test upi account exist for a number but mpin is not set then api should provide account not exist response with api status success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPICollectNative test - Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.UPICollectNative"/>
+        </classes>
+    </test>
+    <test name="UPICollectNative test - NativePlus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.UPICollectNative"/>
+        </classes>
+    </test>
+
+    <test name="CheckoutJS UPI Intent Flow">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent"/>
+        </classes>
+    </test>
+
+    <test name="Deffered for risk testcases for rent">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateRiskAcceptNotNullForUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Enhanced Web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                    <include name="VerifySuccessfullSavedUPITxnADDNPAY"/>
+                    <include name="VerifySuccessfullSavedUPITxnHYBRID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24778 : Enhanced WEB ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidUPI"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24778 : Enhanced WAP ">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                    <include name="PGP_275_validateSaveUPIForHybridTxn"/>
+                    <include name="PGP_276_validatePGTxnUsingSavedUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddMoney with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddMoneyMP  with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AddNPay  with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_UPI_S"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27609">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateUPIPayModesWhenPrefEnabled"/>
+                    <include name="validateUPITxwForAddNPAYWhenUPINotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchVPADetails">
+        <classes>
+            <class name="scripts.Native.FetchVPADetails">
+                <methods>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="TC_FVD_001"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native UPI polling Tests">
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests">
+                <methods>
+                    <exclude name="verifyTransactionStatusinNATIVE_MF_SIPSubscriptionUPITxn"/>
+                    <exclude name="verifyTransactionStatusinNativeSubscriptionUPITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30172 - FetchUPIOptions" parallel="methods" thread-count="6">
+        <classes>
+            <class name="scripts.api.theia.FetchUPIOptionsTests"/>
+        </classes>
+    </test>
+
+    <test name="PGP-36410 - Test VPA issue">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="vpaIssue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-36144 AddnPay">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="verifyAddnPayviaSavedVPA2k"/>
+                    <include name="verifyAddnPayviaSavedVPAgreater2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-36144 addMoney">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="verifyAddMoneyviaSavedVPA2k"/>
+                    <include name="verifyAddMoneyviaSavedVPAgreater2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Exclude Zero Pass Percentage TCs
+    <test name="temp-UPI UI Tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.upiUITests"/>
+        </classes>
+    </test> -->
+
+    <test name="UpiPushTransactionTestCases">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests"/>
+        </classes>
+    </test>
+
+
+    <test name="Native Plus ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_018_MutualFund"/>
+                    <include name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                    <include name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                    <include name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_018_MutualFund"/>
+                    <include name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                    <include name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                    <include name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-36177 UPI Autopay Checkout flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.CheckoutJsUPICollectSubs">
+                <methods>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="verifySubsGreaterThan25k"/>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="UpiNumericIdCmid_01"/>
+                    <include name="UpiNumericIdCmid_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify UPI Collect timer is starting from 5 minutes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyUpiCollect5MinTimer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-40016">
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICheckDeviceDetail"/>
+        </classes>
+    </test>
+
+    <test name="PGP-45265">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.PGP_45265"/>
+        </classes>
+    </test>
+
+
+</suite>

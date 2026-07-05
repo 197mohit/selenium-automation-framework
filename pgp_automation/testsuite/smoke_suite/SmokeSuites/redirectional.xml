@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Redirectional_Suite" verbose="1" thread-count="2" parallel="tests">
+    <test name="Redirectionflow P0 Cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.redirectionalflowP0NewCases">
+                <methods>
+                    <include name="Successfull_Promo_DC_Txn"/>
+                    <include name="Successfull_UPI_COLLECT_Txn"/>
+                    <!-- <include name="validate_UPI_Error_Msg_With_Wrong_PhoneNumber"/> -->
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSucessfullPCFTransactionviaICICINB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--<test name="Add Money MP Fee Cases">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="validateFullKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test-->
+</suite>

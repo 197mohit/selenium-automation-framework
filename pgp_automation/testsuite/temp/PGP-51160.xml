@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-51160" verbose="1">
+    <test name="UPI PPI Wallet Task">
+        <classes>
+            <class name="scripts.api.UPI.UpiPPIWallet">
+                <methods>
+                    <include name="validateUpiPpiWalletCollectTxn"/>
+                    <include name="validateUpiPpiWalletIntentTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCCollectTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCIntentTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCCollectTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCIntentTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCNotPresentIntentTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCCollectTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletUpiCCIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCCollectTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCDisabledIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitIntentTxn"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitUPICCCollectTxn"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitUPICCwithLimitCollectTxn"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitUPICCwithLimitIntentTxn"/>
+                    <include name="validateUpiPpiWalletCOTPCollectTxn"/>
+                    <include name="validateUpiPpiWalletIntentCOTPTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCCollectCOTPTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCIntentCOTPTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCCollectCOTPTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCIntentCOTPTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

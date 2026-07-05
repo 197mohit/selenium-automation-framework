@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46700 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-46700 ` on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionAndBO"/>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionWithOfferIdAndBO"/>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionAndBOWithOfferId"/>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionWithOfferIdAndBOWithOfferId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46700 on custom flow">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestOfferIDInADSRequestWhenAmountBasedSubventionAndBOWithoutOfferIDForCustomFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

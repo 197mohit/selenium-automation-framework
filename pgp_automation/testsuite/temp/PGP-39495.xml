@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36262" verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-36262-1">
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="pushCloseNotifyWithPaymodeCC"/>
+                    <include name="pushCloseNotifyWithPaymodeUPI"/>
+                    <include name="pushCloseNotifyWithPaymodePPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-36262-2">
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="pushCloseNotifyWithAddnPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

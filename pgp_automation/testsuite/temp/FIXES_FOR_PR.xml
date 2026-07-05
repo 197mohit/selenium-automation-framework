@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AvsReqAuthTask" verbose="1" parallel="tests" thread-count="10">
+    <test name="AvsReqAuthTask test cases" parallel="methods" thread-count="5">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ReqauthFlowUPIIntentTest">
+                <methods>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndUpiSavingsIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndUPI_CREDITLINEIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndUPI_CREDIT_CARDIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndPPI_WALLETIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenUPI_TR_ACQ_ID_ENABLEIsEnabledOnMerchant"/>
+                </methods>
+            </class>
+            <class name="scripts.UPI.OnlineUpi.DeeplinkStandardisation">
+                <methods>
+                    <include name="testCase_01"/>
+                    <include name="testCase_02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Confee Support HDFC Acq" verbose="1">
+    <test name="Instaproxy | Confee Support HDFC Acq">
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentHDFUformdrUpiSavings"/>
+                    <include name="validateUpiIntentHDFUformdrUpiCrediline"/>
+                    <include name="validateUpiIntentHDFUforPCFUpiSavings"/>
+                    <include name="validateUpiIntentHDFUforPCFUpiCrediline"/>
+                    <include name="validateUpiIntentHDFUforPCFandPlatformUpiSavings"/>
+                    <include name="validateUpiIntentHDFUforPCFandPlatformUpiCrediline"/>
+                    <include name="validateUpiIntentHDFUforMDRandPCFUpiSavings"/>
+                    <include name="validateUpiIntentHDFUforMDRandPCFUpiCrediline"/>
+                    <include name="validateUpiIntentHDFUforMDRandPCFandPlatformUpiSavings"/>
+                    <include name="validateUpiIntentHDFUforMDRandPCFandPlatformUpiCrediline"/>
+                    <include name="validateUpiIntentHDFUforMDRandPCFandPlatformUpiCredilineFGW_PAID_AMOUNT_MISMATCHError"/>
+                    <include name="validateUpiIntentHDFUforPCFUpiCredilineFailure"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28937" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-28937">
+        <classes>
+            <class name="scripts.api.theia.OrderPayUnipsp">
+                <methods>
+                    <include name="test if 'upiOrderTimeOutInSeconds' parameter's value is forwarded in 'timeoutInSeconds' parameter of COP request"/>
+                    <include name="test upiOrderTimeOutInSeconds is optional"/>
+                    <include name="test 'timeoutInSeconds' parameter of COP request should be 1800 when 'upiOrderTimeOutInSeconds' parameter is not passed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

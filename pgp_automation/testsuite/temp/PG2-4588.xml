@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Postpaid CO Then Pay PG2_ENABLED Native+ Txn " verbose="1">
+    <test name="Postpaid CO Then Pay PG2_ENABLED Native+ Test">
+        <classes>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validatePG2EnabledCoThenPaySuccessPostPaidTxnPG2MID"/>
+                    <include name="validatePG2EnabledCoThenPayFailPostPaidTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

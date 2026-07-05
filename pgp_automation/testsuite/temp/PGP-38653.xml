@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38653" verbose="1">
+    <test name="Verify V5/FPO response">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validatePayment_Instrument_Group_level_DEFAULT"/>
+                    <include name="validatePayment_Instrument_Group_level_MerchantPref"/>
+                    <include name="validatePayment_Instrument_Group_level_MerchantPref_NATIVE"/>
+                    <include name="validatePayment_Instrument_Group_level_MerchantPref_SUBS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify PUSH_APP_DATA response">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validatePayment_Instrument_Group_level_DEFAULT"/>
+                    <include name="validatePayment_Instrument_Group_level_ENHANCE"/>
+                    <include name="validatePayment_Instrument_Group_level_APPINVOKE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

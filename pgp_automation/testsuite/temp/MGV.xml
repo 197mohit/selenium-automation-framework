@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MGV-ProcessTransaction.xml">
+    <test name="Verify MGV Process Transaction">
+        <classes>
+            <class name="scripts.api.MGV.MGV_PTC">
+                <methods>
+                    <include name="testMGV_SuccessfulTransaction_WithValidBalance"/>
+                    <include name="testMGV_TransactionFailure_UnknownError"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

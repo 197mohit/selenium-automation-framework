@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AddMoneyExpress" verbose="1" parallel="tests" thread-count="12">
+    <test name="Add Money Express Fee Cases">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <parameter name="userAgent"
+               value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+    <test name="Express Addmoney txn">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <exclude name="validateFullKYCWalletCC"/>
+                    <exclude name="validateFullKYCWalletSavedCC"/>
+                    <exclude name="validateMinKYCWalletLimitNotBreached"/>
+                    <exclude name="validateMinKYCWalletLimitBreached"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateNoKYCWalletLimitBreached"/>
+                    <exclude name="validateFullKYCGV"/>
+                    <exclude name="validateFullKYCGVSavedCC"/>
+                    <exclude name="validateMinKYCLimitNotBreachedGV"/>
+                    <exclude name="validateMinKYCLimitBreachedGV"/>
+                    <exclude name="validateNoKYCGV"/>
+                    <exclude name="validateFullKYCDC"/>
+                    <exclude name="validateMinKycNB"/>
+                    <exclude name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <parameter name="theme" value="enhancedwap"/>
+    <parameter name="mobileEmulation" value="Nexus 5"/>
+    <parameter name="userAgent"
+               value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+    <test name="PGP-20447:verify Response message for Risk amount for Add Money Express">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="verifyResponseMessageForRiskRejectTxnForCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <parameter name="theme" value="enhancedwap"/>
+    <parameter name="mobileEmulation" value="Nexus 5"/>
+    <parameter name="userAgent"
+               value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+
+    <test name="PGP-28964 gv">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="uiMicroserviceEncodedWhenMidPresentInFF4JFlag"/>
+                    <include name="uiMicroserviceEncodedWhenMidIsNotPresentInFF4JFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

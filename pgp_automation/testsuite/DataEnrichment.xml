@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Data Enrichment" verbose="1">
+
+    <test name="Native Plus test cases" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <include name="verifyRiskParametersPassedInV1PTC"/>
+                    <include name="verifyRiskParametersInDeferredNative"/>
+                    <include name="verifyLengthBreachScenario"/>
+                    <include name="verifyBlankParametersScenario"/>
+                    <include name="verifyExtraParametersWithLengthBreachScenario"/>
+                    <include name="verifyMerchantAddMoneyScenario"/>
+                    <include name="verifyBlankRiskExtendInfoScenario"/>
+                    <include name="verifyOnlyOneRiskExtendInfoParameterSentScenario"/>
+                    <include name="IPv6clientIpFundTopUp"/>
+                    <include name="IPv6clientIpCreateOrder"/>
+                    <include name="IPv6clientIpCashierPay"/>
+                    <include name="IPv4clientIpFundTopUp"/>
+                    <include name="IPv4clientIpCreateOrder"/>
+                    <include name="IPv4clientIpCashierPay"/>
+                    <include name="validateMerchantTypeFieldForOffusMerchant"/>
+                    <include name="validateMerchantTypeFieldForOnusMerchant"/>
+                    <include name="validateKafkaTopicNotPushedWhenMidIsNotInFF4J"/>
+                    <include name="validatePaymentBizInfoForVISACreditCard"/>
+                    <include name="validatePaymentBizInfoForMASTERDebitCard"/>
+                    <include name="validatePaymentBizInfoForPostPaid"/>
+                    <include name="validatePaymentBizInfoForBalance"/>
+                    <include name="verifyPaymentBizInfoForUPICollect"/>
+                    <include name="verifyPaymentBizInfoForEMI"/>
+                    <include name="verifyPaymentBizInfoForOldEMISubvention"/>
+                    <include name="verifyPaymentBizInfoForOldPromoWithCashbackTxn"/>
+                    <include name="verifyPaymentBizInfoForEMI_DC"/>
+                    <include name="verifyPaymentBizInfoParametersForApplyPromoAndSimplifiedAmountEmiSubvention"/>
+                    <include name="verifyPaymentBizInfoParametersForSimplifiedPromoAndSimplifiedItemEmiSubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native test cases" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <include name="verifyRiskParametersPassedInV1PTC"/>
+                    <include name="verifyLengthBreachScenario"/>
+                    <include name="verifyBlankParametersScenario"/>
+                    <include name="verifyExtraParametersWithLengthBreachScenario"/>
+                    <include name="verifyMerchantAddMoneyScenario"/>
+                    <include name="verifyBlankRiskExtendInfoScenario"/>
+                    <include name="verifyOnlyOneRiskExtendInfoParameterSentScenario"/>
+                    <include name="validateMerchantTypeFieldForOffusMerchant"/>
+                    <include name="validateMerchantTypeFieldForOnusMerchant"/>
+                    <include name="validateKafkaTopicNotPushedWhenMidIsNotInFF4J"/>
+                    <include name="validatePaymentBizInfoForVISACreditCard"/>
+                    <include name="validatePaymentBizInfoForMASTERDebitCard"/>
+                    <include name="validatePaymentBizInfoForPostPaid"/>
+                    <include name="validatePaymentBizInfoForBalance"/>
+                    <include name="verifyPaymentBizInfoForUPICollect"/>
+                    <include name="verifyPaymentBizInfoForOldPromoWithCashbackTxn"/>
+                    <include name="verifyPaymentBizInfoParametersForApplyPromoAndSimplifiedAmountEmiSubvention"/>
+                    <include name="verifyPaymentBizInfoParametersForSimplifiedPromoAndSimplifiedItemEmiSubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Plus COP Test Cases" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <include name="verifyRiskParametersPassedInV1PTCCOP"/>
+                    <include name="verifyLengthBreachScenarioCOP"/>
+                    <include name="verifyBlankParametersScenarioCOP"/>
+                    <include name="verifyBlankRiskExtendInfoScenarioCOP"/>
+                    <include name="verifyOnlyOneRiskExtendInfoParameterSentScenarioCOP"/>
+                    <include name="verifyExtraParametersWithLengthBreachScenarioCOP"/>
+                    <include name="IPv6clientIpCOP"/>
+                    <include name="IPv4clientIpCOP"/>
+                    <include name="validateMerchantTypeFieldForOffusMerchantCOP"/>
+                    <include name="validateMerchantTypeFieldForOnusMerchantCOP"/>
+                    <include name="validateKafkaTopicNotPushedWhenMidIsNotInFF4JCOP"/>
+                    <include name="validatePaymentBizInfoForVISACreditCardCOP"/>
+                    <include name="validatePaymentBizInfoForMASTERDebitCardCOP"/>
+                    <include name="validatePaymentBizInfoForPostPaidCOP"/>
+                    <include name="validatePaymentBizInfoForBalanceCOP"/>
+                    <include name="verifyPaymentBizInfoForUPICollectCOP"/>
+                    <include name="verifyPaymentBizInfoParametersForNBCOP"/>
+                    <include name="verifyPaymentBizInfoForEMICOP"/>
+                    <include name="verifyPaymentBizInfoForOldEMISubventionCOP"/>
+                    <include name="verifyPaymentBizInfoForOldPromoWithCashbackTxnCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native COP Test Cases" parallel="methods" thread-count="5">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <include name="verifyRiskParametersPassedInV1PTCCOP"/>
+                    <include name="verifyLengthBreachScenarioCOP"/>
+                    <include name="verifyBlankParametersScenarioCOP"/>
+                    <include name="verifyLengthBreachScenarioCOP"/>
+                    <include name="verifyBlankRiskExtendInfoScenarioCOP"/>
+                    <include name="verifyOnlyOneRiskExtendInfoParameterSentScenarioCOP"/>
+                    <include name="verifyExtraParametersWithLengthBreachScenarioCOP"/>
+                    <include name="validateMerchantTypeFieldForOffusMerchantCOP"/>
+                    <include name="validateMerchantTypeFieldForOnusMerchantCOP"/>
+                    <include name="validateKafkaTopicNotPushedWhenMidIsNotInFF4JCOP"/>
+                    <include name="validatePaymentBizInfoForVISACreditCardCOP"/>
+                    <include name="validatePaymentBizInfoForMASTERDebitCardCOP"/>
+                    <include name="validatePaymentBizInfoForPostPaidCOP"/>
+                    <include name="validatePaymentBizInfoForBalanceCOP"/>
+                    <include name="verifyPaymentBizInfoForUPICollectCOP"/>
+                    <include name="verifyPaymentBizInfoParametersForNBCOP"/>
+                    <include name="verifyPaymentBizInfoForOldPromoWithCashbackTxnCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Enhanced web test cases" parallel="methods" thread-count="3">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="verifyRiskParametersInEnhancedNative"/>
+                    <include name="verifyHybridScenario"/>
+                    <include name="verifyAddMoneyMPScenario"/>
+                    <include name="verifyRiskParametersForPCFMerchant"/>
+                    <include name="validatePaymentBizInfoForInternationalCard"/>
+                    <include name="verifyClientIpFieldDerivedByTheia"/>
+                    <include name="VerifyPaymentBizInfoParametersForPPBL_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Enhanced mWeb test cases" parallel="methods" thread-count="3">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="verifyRiskParametersInEnhancedNative"/>
+                    <include name="verifyHybridScenario"/>
+                    <include name="verifyAddMoneyMPScenario"/>
+                    <include name="verifyRiskParametersForPCFMerchant"/>
+                    <include name="validatePaymentBizInfoForInternationalCard"/>
+                    <include name="VerifyPaymentBizInfoParametersForPPBL_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkout js web test cases" parallel="methods" thread-count="3">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <include name="verifyRiskParametersInCheckoutJs"/>
+                    <include name="verifyAddAndPayScenario"/>
+                    <include name="verifyRiskParametersForMDRPCFMerchant"/>
+                    <include name="validatePaymentBizInfoForSavedCard"/>
+                    <include name="verifyPaymentBizInfoParametersForNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkout js mWeb test cases" parallel="methods" thread-count="3">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <include name="verifyRiskParametersInCheckoutJs"/>
+                    <include name="verifyAddAndPayScenario"/>
+                    <include name="verifyRiskParametersForMDRPCFMerchant"/>
+                    <include name="validatePaymentBizInfoForSavedCard"/>
+                    <include name="verifyPaymentBizInfoParametersForNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="osType, browserType fields validation tests in Enhanced Native WEB test cases">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsWEBAndMWeb"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="osType, browserType, deviceModel, deviceManufacturer fields validation tests in Enhanced Native mWeb test cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsWEBAndMWeb"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="osType, browserType, deviceModel, deviceManufacturer fields validation tests in Enhanced Native IOS mWeb test cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWeb"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="osType, browserType fields validation tests in Checkout js web cases WEB test cases">
+        <parameter name="browser" value="Chrome"/>
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsWEBAndMWebInCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="osType, browserType, deviceModel, deviceManufacturer fields validation tests in Checkout js mWeb test cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsWEBAndMWebInCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="osType, browserType, deviceModel, deviceManufacturer fields validation tests in Checkout js IOS mWeb test cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentCheckoutJSTests">
+                <methods>
+                    <include name="validateOsTypeBrowserTypeDeviceModelDeviceManufacturerFieldsIOSmWebInCheckoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="deviceType value = tablet field validation tests in Enhanced Native test cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPad"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPad; CPU OS 11_0 like Mac OS X) AppleWebKit/604.1.34 (KHTML, like Gecko) Version/11.0 Mobile/15A5341f Safari/604.1"/>
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentEnhancedTests">
+                <methods>
+                    <include name="validateDeviceTypeFieldInTabletDevice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

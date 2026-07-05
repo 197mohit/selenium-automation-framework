@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Redirection fixes" verbose="1">
+    <test name="Performing Redirection fixes with web theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="verify_PCF_onAmexCard"/>
+                    <include name="verify_PCF_CCFee_AfterAmexFee"/>
+                    <include name="Verify_TotalTxnAmountOnCashierPage_forFlatCommision"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforCC"/>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforDC"/>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

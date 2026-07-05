@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-50167" verbose="1" parallel="methods" thread-count="5">
+    <test name="PGP-50167">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+            <classes>
+                <class name="scripts.api.UPI.UPIErrorCode">
+                    <methods>
+                        <include name="Overall_UPI_Limit_Exhaust"/>
+                        <include name="UPI_Collect_PerTxn_Limit_Exhaust"/>
+                        <include name="UPI_Intent_PerTxn_Limit_Exhaust"/>
+                        <include name="UPI_PPI_WALLET_PerTxn_Limit_Exhaust"/>
+                        <include name="UPI_CC_PerTxn_Limit_Exhaust"/>
+                        <include name="Eligibility_UPICC_PPIWALLET"/>
+                        <include name="UPI_CC_NotAllowed"/>
+                        <include name="UPI_Collect_PerMonth_Limit_Exhaust"/>
+                        <include name="UPI_Intent_PerMonth_Limit_Exhaust"/>
+                        <include name="UPI_PPI_WALLET_PerMonth_Limit_Exhaust"/>
+                        <include name="UPI_CC_PerMonth_Limit_Exhaust"/>
+                        <include name="UPI_Collect_Daily_Limit_Exhaust"/>
+                        <include name="UPI_Intent_Daily_Limit_Exhaust"/>
+                        <include name="UPI_PPI_WALLET_Daily_Limit_Exhaust"/>
+                        <include name="UPI_CC_Daily_Limit_Exhaust"/>
+                        <include name="UPI_Intent_Collect_Daily_Limit_Exhaust"/>
+                        <include name="UPI_Intent_Collect_Monthly_Limit_Exhaust"/>
+                        <include name="UPI_Intent_Collect_PerTxn_Limit_Exhaust"/>
+                        <include name="UPI_PPI_WALLET_Weekly_Limit_Exhaust"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+</suite>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-47724" verbose="1" >
+    <test name="Subscription on postpaid">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="SubscriptionCreationWithPostpaid"/>
+                    <include name="PreNotifyForPostpaidSubscription"/>
+                    <include name="EnablePostpaidOnSubscriptionFPOResponse"/>
+                    <include name="PostpaidNotAvailableForTXNAmtGreaterThan15000"/>
+                    <include name="SubscriptionCreationWithPostpaidMonth"/>
+                    <include name="payloadPushedToKafkaTopicForPostpaidSubs"/>
+                    <include name="PostpaidSubsCreateSubs"/>
+                    <include name="PostpaidSubsOTPValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

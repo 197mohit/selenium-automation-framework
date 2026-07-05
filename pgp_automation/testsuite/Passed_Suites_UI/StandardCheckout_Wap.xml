@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="StandardCheckout_Wap_UI" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-33928 - Postpaid AddNpay enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="postpaidNotAvailableWhenDeselectedWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaytmCC-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_478_Pending"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalanceisnull"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <include name="PGP_517_PostPaidAndWalletInactive"/>
+                    <include name="postpaidSignupBannerVisible"/>
+                    <include name="showPostpaidbalanceFPOAPIFetchPaytmInstrumentsBalancefalse"/>
+                    <include name="postpaidSignupBannerNotVisible"/>
+                    <include name="TC_insuffBalShownWhenUserClicksCheckBalGivenInsuffPostpaidBal"/>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PostPaidVisibleAfterLoginCheckoutJS"/>
+                    <include name="PGP_468_PostPaidBalanceLessThanTxn"/>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Postpaid ui msg enhanceweb mweb">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UPIEnhanceEnhanceWap" >
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"/>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"/>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                    <include name="verifySubsLessThan5k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PeonTxn Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund status V1 - enhancedwap + Refund Refactoring Async/Sync">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundStatusV1">
+                <methods>
+                    <include name="successfulPGOnlyDCRefund_asyncStatus"/>
+                    <include name="refundDCWithJWTSyncRefund"/>
+                    <include name="successfulWalletOnlyRefund_asyncStatus"/>
+                    <include name="refundDCWithJWTAsyncRefundDisableFalse"/>
+                    <include name="refundPPIWithJWTSyncRefund"/>
+                    <include name="refundDCWithJWTAsyncRefund"/>
+                    <include name="refundPPBLWithJWTAsyncRefundDisabledFalse"/>
+                    <include name="refundPPIWithJWTAsyncRefund"/>
+                    <include name="refundPPBLWithJWTAsyncRefundDisabledTrue"/>
+                    <include name="refundPPIWithJWTAsyncRefundDisabledFalse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Refund-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn"/>
+                    <include name="successfulPGOnlyDCRefund"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund Async-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulPGOnlyDCRefund_async"/>
+                    <include name="partialRefundErrorMessageRedundantRefund"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn_async"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId_async"/>
+                    <include name="masterRefundStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40231 for enhancedwap_revamp">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="txnStatusInit_04"/>
+                    <include name="txnStatusNative"/>
+                    <include name="txnStatusNativeInit_03"/>
+                    <include name="txnStatus_01"/>
+                    <include name="txnStatusClosed_02"/>
+                    <include name="txnStatusNative_01"/>
+                    <include name="txnStatusInvalidNative_05"/>
+                    <include name="lastFourDigitNotVisible"/>
+                    <include name="txnStatusNativeInit"/>
+                    <include name="txnStatusNativeInvalid_01"/>
+                    <include name="txnStatusClosed_01"/>
+                    <include name="txnStatusInvalid_05"/>
+                    <include name="txnStatusInit"/>
+                    <include name="txnStatus"/>
+                    <include name="txnStatusInvalid_01"/>
+                    <include name="txnStatusInit_03"/>
+                    <include name="txnStatusInit_02"/>
+                    <include name="txnStatusNativeInit_04"/>
+                    <include name="txnStatus_02"/>
+                    <include name="txnStatusNativeClosed_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name=" Promo txns - AppInvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsFalse"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsTrue"/>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisTrueAddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription on postpaid">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="SubscriptionCheckStatusPostpaid"/>
+                    <include name="SubscriptionCheckStatusForINITSubs"/>
+                    <include name="SubscriptionCheckStatusForInvalidSubsID"/>
+                    <include name="SubscriptionCancelPostpaid"/>
+                    <include name="SubscriptionCancelForInvalidSubsID"/>
+                    <include name="SubscriptionCancelPOSTPAID_STATUS_NOTIFY_TOPIC"/>
+                    <include name="SubscriptionCheckStatusForCancelled"/>
+                    <include name="SubscriptionModifySUSPENDED"/>
+                    <include name="SubscriptionCheckStatusForSUSPENDED"/>
+                    <include name="SubscriptionPayloadToPOSTPAID_STATUS_NOTIFY_TOPICforSUSPENDED"/>
+                    <include name="SubscriptionActivateForSuspendedSubs"/>
+                    <include name="SubscriptionCheckStatusForActivateFromSuspended"/>
+                    <include name="SubscriptionPayloadPushedToPOSTPAID_STATUS_NOTIFY_TOPICForACTIVATE"/>
+                    <include name="SubscriptionModifyForInvalidSubsID"/>
+                    <include name="SubscriptionStatusModifyWithIncorrectStatus"/>
+                    <include name="PreNotifyStatusForPostpaidSubscription"/>
+                    <include name="SubscriptionCreationWithPostpaid"/>
+                    <include name="PreNotifyForPostpaidSubscription"/>
+                    <include name="EnablePostpaidOnSubscriptionFPOResponse"/>
+                    <include name="PostpaidNotAvailableForTXNAmtGreaterThan15000"/>
+                    <include name="SubscriptionCreationWithPostpaidMonth"/>
+                    <include name="payloadPushedToKafkaTopicForPostpaidSubs"/>
+                    <include name="PostpaidSubsCreateSubs"/>
+                    <include name="PostpaidSubsOTPValidation"/>
+                    <include name="acquirerNameForPostpaidSubscriptionPaymentRequest"/>
+                    <include name="settlementTypeForPostpaidSubscriptionPaymentRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription  on postpaid new">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="RenewForPostpaidSubscription"/>
+                    <include name="RenewActiveInDBForPostpaidSubscription"/>
+                    <include name="renewFailForFutureDatePDNPostpaidSubscription"/>
+                    <include name="renewFailForNoPDNPostpaidSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48381- 2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone SE"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC05_PGP_48381"/>
+                    <include name="TC06_PGP_48381"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_ppi on enhanced wap 2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_87_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_wallet_only on enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <parameter name="transactionType" value="PGOnly"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="PGP_180_verifySuccessfulTxnUsingWalletOnly"/>
+                    <include name="validateAllPayModes"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCanBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="validateIfSubsPaymentModeIsEmptyAndPPIOnlyIsNot"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="ValidateWalletChecked_walletOnlyMerchant"/>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-21763 Subscription - Native">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-29580 Subscription_via_cc_dc">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_40525_TC02_UPICollectSubs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                    <include name="validateStartDateMoreThanTodayDate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation4">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"/>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation6">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_39255_TC_01"/>
+                    <include name="PGP_39255_TC_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI on enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_maxAmount"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount_nonLoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_MaxAmount_nonLoggedIn"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45666 - enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"/>
+                    <include name="verifyingRupayTxnforAltID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Staging Subscription Tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_49001_TC03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MDRPCF on enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulSeamlessWithNewFieldUDFTxnWithCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Add Money using Retry Saved Card on Wap Theme">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_411_validateTxnIsAllowedWhenValidSSOTokenIsPassed"/>
+                    <include name="PGP_285_successfulAddMoneyDC"/>
+                    <include name="addMoneyFail"/>
+                    <include name="PGP_420_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_418_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <include name="PGP_285_AddMoneyFor0Amt"/>
+                    <include name="PGP_422_VerifyTxnFailureWhenRequestTypeOtherThanAddMoney"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNBLessThan2000"/>
+                    <include name="PGP_416_VerifyFailureWhenSSOTokenIsNotPassed"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-PGP-23164 Verify Last Paymode - enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterFailedTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotSelectedwhenDifferentMidUsedNBTxn"/>
+                    <include name="PGP_23164_verifyLastTxnPaymodeNotAlreadySelectedAfterPendingTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-24378 for enhancewap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOff"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOnTxnTokenTampered"/>
+                    <include name="verifyResponseForCancelTxnWhenFf4jFlagIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-29602 Feedback Test Cases for Enhanced WAP">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.feedbackTest.FeedbackTesting">
+                <methods>
+                    <include name="crossAndGoBackCheck_TC16"/>
+                    <include name="insuffPaytmBalnaceCheck_TC08"/>
+                    <include name="checkGoBackClicked_TC01"/>
+                    <include name="notEnteringReason_TC05"/>
+                    <include name="expectedCashbackNotworkingCheck_TC12"/>
+                    <include name="checkCrossClicked_TC02"/>
+                    <include name="forgetPaytmBankPassCheck_TC10"/>
+                    <include name="notFindExpPayMode_TC06"/>
+                    <include name="verifyOtherSubmit_TC15"/>
+                    <include name="skipFeedbackClicked_TC03"/>
+                    <include name="withoutCheckSubmit_TC04"/>
+                    <include name="insuffPaytmBalnaceSubmit_TC09"/>
+                    <include name="notFindExpPayModeSubmit_TC07"/>
+                    <include name="cashbackNotWorkingSubmit_TC13"/>
+                    <include name="verifyOtherCheck_TC14"/>
+                    <include name="forgetPaytmBankPassSubmit_TC11"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddNPay-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_CC_S_loginOnCashier"/>
+                    <include name="addnPay_PPI_S_sufficientBal"/>
+                    <include name="addnPay_CC_F_ZeroAmount"/>
+                    <include name="addnPay_CC_S_withSSOToken"/>
+                    <include name="addnPay_CC_S_ZeroBalance"/>
+                    <include name="addnPay_CC_F_NegativeAmt"/>
+                    <include name="addnPay_DC_S_VerifyWalletBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddMoneyMP-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_378_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_387_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGOnly-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_265_successfulPGOnlyTxnUsingAMEXCardWhenUserLoggedIn"/>
+                    <include name="PGP_259_verifyPaymentModesOnCashierPageWhenUserLogedIn"/>
+                    <include name="checkPaymodesAvailableOnCashierPageWhichArePassedByMerchant"/>
+                    <include name="PGP_175_cardNotInBinCheckTxnAllowed"/>
+                    <include name="PGP_279_verifyInvalidCardNumberForPGOnlyTxn"/>
+                    <include name="checkCardIndexNoPresentInResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                    <include name="refreshPageForLoggedInFlow"/>
+                    <include name="PGP_248_DCCancelOn3DPage"/>
+                    <include name="refreshPageAfterLoginAndProceed"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_243_successfulPGOnlyTxnUsingAMEXCard"/>
+                    <include name="PGP_237_verifyPaymentModeOnCashierPage"/>
+                    <include name="checkPaymodesNotAvailableOnCashierPageWhichArePassedAsDisabledByMerchant"/>
+                    <include name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+                    <include name="refreshNonLoggedInPage"/>
+                    <include name="PGP_262_successfulNBTxnWhenUserLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PCF enhancewap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="verify_walletOnly_successfull_token"/>
+                    <include name="testChargeAmountPropertyNotDisplayedInMerchantCallbackWhenNotEnabledOnMerchant"/>
+                    <include name="verify_walletOnly_successfull_login"/>
+                    <include name="verify_successful_Wallet_TxnWithFlatCommsion_login"/>
+                    <include name="verify_successful_PostPaidPfc"/>
+                    <include name="Failed_PCF_CC_Refund_Partial"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hybrid-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_NB_S_uncheckWalletwithSufficientBalance"/>
+                    <include name="hybrid_verifyAllPayModeOnCashier"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_UPI_S_sufficientBal"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enhanced UI Tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="validateInvalidExpiryForCC_LoggedInUsr_Hybrid"/>
+                    <include name="validateDAYFreqInPushAppData"/>
+                    <include name="validateInvalidExpiryForDC_NonLoggedInUsr"/>
+                    <include name="validateInvalidExpiryForDC_LoggedInUsr"/>
+                    <include name="validateInvalidCVVForDC_LoggedInUsr"/>
+                    <include name="validateInvalidExpiryForCC_LoggedInUsr"/>
+                    <include name="validateInvalidExpiryForCC_NotLoggedInUsr"/>
+                    <include name="validateInvalidCVVForDC_LoggedInUsr_Hybrid"/>
+                    <include name="validateInvalidCVVForDC_NonLoggedInUsr"/>
+                    <include name="validateInvalidExpiryForDC_LoggedInUsr_Hybrid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="COD-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_verifyllPayModesOnCashier"/>
+                    <include name="COD_F_verifyCODNotVisiblewhenTxnAmountIsBelowThresoldAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="WalletOnly-enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                    <include name="PGP_161_failureWalletOnlyTxnWithNegativeAmount"/>
+                    <include name="PGP_159_successfulWalletOnlyTxnInFractionGTOne"/>
+                    <include name="ZERO_WALLET_07"/>
+                    <include name="PGP_40763_TC_01_validateWalletNotSelected"/>
+                    <include name="ZERO_WALLET_03"/>
+                    <include name="PGP_40763_TC_02_validateWallet_Selected"/>
+                    <include name="PGP_160_failureWalletOnlyTxnWithZeroAmount"/>
+                    <include name="PGP_162_failureWalletOnlyTxnWithFractionAmountLTOne"/>
+                    <include name="ZERO_WALLET_02"/>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-32827 Check redirection to appIntentUrl">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppIntentUrlPgp32827">
+                <methods>
+                    <include name="VerifyRedirectiontoappIntentUrlforNonPCF"/>
+                    <include name="VerifyAppIntentUrlNotReceivedWhenneedAppIntentEndpointisFalse"/>
+                    <include name="VerifyRedirectiontoappIntentUrlforNonPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP 16662 - LOGIN Strip Disabled enhanced wap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.PaytmLoginStrip">
+                <methods>
+                    <include name="loginStripDisabledWhenPropLoginStripisY"/>
+                    <include name="loginStripDisableWhenMobileNumberAlreadyEntered"/>
+                    <include name="loginStripEnabledWhenEntryIsNotInDB"/>
+                    <include name="loginStripVisableWhenPropLoginStripisNull"/>
+                    <include name="loginStripDisableWhenPropLoginStripisNonRetry"/>
+                    <include name="loginStripEnaableWhenPropLoginStripisN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28964 enhanced UI enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_28964_verifyCashierPageWhenDataIsNotEncodedByUImicroservice"/>
+                    <include name="PGP_28964_verifyCashierPageWhenDataIsEncodedByUImicroservice"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-PGP-22755 Tests on EnhancedWap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSucessfullPCFTransactionviaICICINB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Wap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

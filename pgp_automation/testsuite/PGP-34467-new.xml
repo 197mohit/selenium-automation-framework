@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-34467-new" verbose="1">
+    <test name="PGP-34467 on Checkout JS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyStandardEMIEmiInfo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-34467 on PGOnly">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyEMIStandardemiInfoObject"/>
+                    <include name="verifyItemBasedEMI_EmiInfoAndEMiSubvention_Object"/>
+                    <include name="verifyAmountBasedEMI_EmiInfoAndEMiSubvention_Object"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

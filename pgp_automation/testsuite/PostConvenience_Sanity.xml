@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PostConvenience" verbose="1" parallel="methods" thread-count="4">
+    <test name="PostConvenience">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.postConvenience.PostConvenience">
+                <methods>
+                    <include name="PGP_486"/>
+                    <include name="PGP_488"/>
+                    <include name="PGP_492"/>
+                    <include name="PGP_493"/>
+                    <include name="PGP_494"/>
+                    <include name="PGP_495"/>
+                    <include name="PGP_496"/>
+                    <include name="PGP_497"/>
+                    <include name="PGP_498"/>
+                    <include name="PGP_506"/>
+                    <include name="PGP_499"/>
+                    <include name="PGP_510"/>
+                    <include name="PGP_511"/>
+                    <include name="PGP_512"/>
+                    <include name="PGP_513"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

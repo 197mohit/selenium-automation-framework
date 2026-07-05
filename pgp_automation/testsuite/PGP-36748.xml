@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PaytmExpress" verbose="1" parallel="methods" thread-count="1">
+    <test name="PaytmExpress">
+        <classes>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="PGP_successfulPtmX2pressCC1"/>
+                    <include name="PGP_verifyCardGettingSavedForsuccessfulPtmX2pressCC1"/>
+                    <include name="PGP_successfulPtmX2pressDC1"/>
+                    <include name="PGP_verifyCardGettingSavedForsuccessfulPtmX2pressDC1"/>
+                    <include name="PGP_successfulPtmX2pressCCSavedCard1"/>
+                    <include name="PGP_successfulPtmX2pressDCSavedCard1"/>
+                    <include name="PGP_successfulPtmX2pressNB1"/>
+                    <include name="PGP_successfulPtmX2pressPPI1"/>
+                    <include name="validatePaytmExpressPGOnlyTxnUsingCC1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

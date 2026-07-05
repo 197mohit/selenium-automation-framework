@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-7072">
+    <test name="Verify PG2 Debit Card Txn">
+        <classes>
+            <class name="scripts.api.Debitcard.PG2Debitcard">
+                <methods>
+                    <include name="validateSuccessDCTxnPG2MID"/>
+                    <include name="validatePendingDCTxnPG2MID"/>
+                    <include name="validateFailedDCTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

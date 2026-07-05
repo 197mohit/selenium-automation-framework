@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-53182" verbose="1" parallel="methods" thread-count="2">
+    <test name="PGP-54997 SupportingSSOToken in fetchPSPApps ">
+        <classes>
+            <class name="scripts.api.theia.FetchPspAppsTests">
+                <methods>
+                    <include name="FetchSuccessUPIPSPOptions_validSsoToken"/>
+                    <include name="FetchSuccessUPIPSPOptions_invalidSsoToken"/>
+                    <include name="FetchSuccessUPIPSPOptions_nullSsoToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

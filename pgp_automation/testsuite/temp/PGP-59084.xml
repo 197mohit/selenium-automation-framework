@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="e-rupi Voucher on UPI Consumption" verbose="1">
+    <test name=" UPIPSP PROCESSOR e-rupi Voucher on UPI Consumption">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateSQRUPIPSPProcessorforUPI_VOUCHER"/>
+                    <include name="validateDQRUPIPSPProcessorforUPI_VOUCHER"/>
+                    <include name="validateSQRUPIPSPProcessorforVOUCHER"/>
+                    <include name="validateDQRUPIPSPProcessorforVOUCHER"/>
+                    <include name="validateSQRUPIPSPProcessorforVOUCHER1"/>
+                    <include name="validateDQRUPIPSPProcessorforVOUCHER1"/>
+                    <include name="validateReqAuthUPIPSPVoucherSQRFlow"/>
+                    <include name="validateReqAuthUPIPSPVoucherDQRFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Theia e-rupi Voucher on UPI Consumption">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateTheiaUPIPSDQRforVOUCHER"/>
+                    <include name="validateTheiaUPIPSSQRforVOUCHER"/>
+                    <include name="validateTheiaUPIPSDQRforUPI_VOUCHER"/>
+                    <include name="validateTheiaUPIPSSQRforUPI_VOUCHER"/>
+                    <include name="validateTheiaUPICollectforVOUCHER"/>
+                    <include name="validateTheiaUPIIntentforVOUCHER"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

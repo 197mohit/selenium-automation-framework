@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-4832">
+    <test name="RETRY testing of upi and postpaid">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateSuccessUpiPushTxnRetrywithupi"/>
+                </methods>
+            </class>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateSuccessWalletTxnagainretrywithwallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Guest Checkout Scripts">
+    <test name="Alternate ID txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyTAVVforCOPinAlternateIdOnusVISA"></include>
+                    <include name="verifyTAVVforPaymemtCashierinAlternateIdOffusVISA"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Alternate ID txn's via Native Flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyTAVVforCOPinAlternateIdOnusVISA"></include>
+                    <include name="verifyTAVVforPaymemtCashierinAlternateIdOffusVISA"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Guest Checkout Txn scripts via UI 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyTAVVforCOPinAlternateIdOnusVISA"></include>
+                    <include name="verifyTAVVforPaymemtCashierinAlternateIdOffusVISA"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

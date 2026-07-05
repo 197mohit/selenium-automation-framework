@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39041">
+    <test name="Verify successful peon for AOA">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Success_Peon_AOA_CC_Txn"/>
+                    <include name="verifying_Success_Peon_AOA_NB_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

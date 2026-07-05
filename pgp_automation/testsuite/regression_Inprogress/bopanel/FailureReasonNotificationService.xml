@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FailureReasonNotificationService" verbose="1" parallel="methods" thread-count="6">
+    <test name="PGP-17977 Send Failure reason Error Code to Notification Service">
+        <classes>
+            <class name="scripts.bopanel.FailureReasonNotificationService"/>
+        </classes>
+    </test>
+</suite>

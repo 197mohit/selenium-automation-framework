@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FetchUPIOptions">
+<test name="FetchUPIOptions" parallel="methods" thread-count="6">
+    <classes>
+        <class name="scripts.api.theia.FetchUPIOptionsTests"/>
+
+    </classes>
+</test>
+</suite>

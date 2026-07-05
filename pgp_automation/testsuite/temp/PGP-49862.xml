@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49862" verbose="1">
+    <test name="Merchant Center client Id">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="validateLoginQRClientIdfromMerchantCenter"/>
+                    <include name="validateLoginQRClientIdfromCache"/>
+                    <include name="validateLoginQRClientIdfromCacheUPI"/>
+                    <include name="validateLoginQRClientIdnotPresentonMerchantCenter"/>
+                    <include name="validateLoginQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                    <include name="validateLoginQRFQRClientIdfromMerchantCenter"/>
+                    <include name="validateLoginQRFQRClientIdfromCache"/>
+                    <include name="validateLoginQRFQRClientIdnotPresentonMerchantCenter"/>
+                    <include name="validateLoginQRFQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49711" verbose="1" thread-count="3">
+    <test name="PGP-49711">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHTemplate"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHDLTTemplateIID"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_CGData"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHTemplate"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_CGData"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_CLOSED_CGData"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHTemplate"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_CGData"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHTemplate"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHDLTTemplateID"/>
+                    <include name="WALLET_NOT_ACTIVATED_CGData"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHTemplate"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHDLTTemplateID"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_CGData"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_FROZEN_CGData"/>
+                    <include name="FGW_PPBL_ACCOUNT_FROZEN_NQHTemplate"/>
+                    <include name="FGW_PPBL_ACCOUNT_FROZEN_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_ACCOUNT_FROZEN_CGData"/>
+                    <include name="FGW_WALLET_FROZEN_NQHTemplate"/>
+                    <include name="FGW_WALLET_FROZEN_NQHDLTTemplateID"/>
+                    <include name="FGW_WALLET_FROZEN_CGData"/>
+                    <include name="FGW_ACCOUNT_DORMANT_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_DORMANT_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_DORMANT_CGData"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHTemplate"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_CGData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

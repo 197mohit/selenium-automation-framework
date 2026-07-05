@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CustomFeeRate" verbose="1" thread-count="5" parallel="methods">
+    <test name="DeferredMDRCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.DeferredMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="EnhancedMDRCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="NativeMDRCustomRateisNativePlusfalse">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.NativeMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="NativeMDRCustomRateisNativePlustrue">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.NativeMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="OfflineMDRCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.OfflineMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="ScanNPayMDRCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.ScanNPayMDRCustomRate"/>
+        </classes>
+    </test>
+    <test name="DeferredPCFCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="EnhancedPCFCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="NativePCFCustomRateisNativePlustrue">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.NativePCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="NativePCFCustomRateisNativePlusfalse">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.NativePCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="OfflinePCFCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate"/>
+        </classes>
+    </test>
+    <test name="ScanNPayPCFCustomRate">
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.ScanNPayPCFCustomRate"/>
+        </classes>
+    </test>
+</suite>

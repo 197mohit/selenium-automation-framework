@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-PGP-20110" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-20110">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="verify after fetchQRPayment FetchPayV2 is hit and Txn is Successful through PTC"/>
+                    <include name="verify when FPO generateOrderFlag is true than Order is treated as seperate order w.r.t FetchQR payment order"/>
+                    <include name="verify generateorder flag is true for fetch QR the response order in FPO and PTC will float for successful txn"/>
+                    <include name="verify order is created through fetch QR float in FPO and PTC for successful txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

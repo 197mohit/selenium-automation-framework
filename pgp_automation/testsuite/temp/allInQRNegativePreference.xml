@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All-in-One-QR-Checkoutjs_Suite" verbose="1" thread-count="5" parallel="tests">
+    <test name="FF4J Flag Enable/Disable for Checkoutjs UI test cases Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="QR Details and UPI Flag in FPO for Checkoutjs UI test cases Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRCodeAndUPIFlagAtCashierPage"/>
+                    <include name="ValidateQRDetailsAndUPIQRSuccessTxnUsingUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="QR Details and PRN Flag in FPO for Checkoutjs UI test cases Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsAndPRNSuccessTxnUsingCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="All-in-One QR Success and Failed txn for Checkoutjs UI test cases Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsAndSuccessTxnUsingWallet"/>
+                    <include name="ValidateQRDetailsAndFailedTxnUsingCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FF4J Flag Enable/Disable for Checkoutjs UI test cases Web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="QR Details and UPI Flag in FPO for Checkoutjs UI test cases Web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRCodeAndUPIFlagAtCashierPage"/>
+                    <include name="ValidateQRDetailsAndUPIQRSuccessTxnUsingUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="QR Details and PRN Flag in FPO for Checkoutjs UI test cases Web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsAndPRNSuccessTxnUsingCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="All-in-One QR Success and Failed txn for Checkoutjs UI test cases Web revamp">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsAndSuccessTxnUsingWallet"/>
+                    <include name="ValidateQRDetailsAndFailedTxnUsingCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

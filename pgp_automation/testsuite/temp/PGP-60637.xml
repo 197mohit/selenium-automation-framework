@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Deep Link Standardisation" verbose="1">
+    <test name="UpiPsp Processor Deep Link Standardisation">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingswhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingswhenRandomacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPMDRPCFUpiCreditCardforpayerPaymentInstrumentFeewhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                    <include name="validateOnlineReqAuthDQRUPIPSPMDRPCFUpiCreditCardforAndpayerPaymentInstrumentFeeNotPassedwhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Theia UpiPsp Deep Link Standardisation">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingswhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                    <include name="validateOnlineReqAuthDQRTheiaUPIPSPMDRPCFUpiCreditCardforpayerPaymentInstrumentFeewhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

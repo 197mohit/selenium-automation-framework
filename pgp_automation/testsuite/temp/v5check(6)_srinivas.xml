@@ -1,0 +1,24 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateInstrumentCategorization_When_FlagEnabled"/>
+                    <include name="validateAddnPayViaCCDynamicLimit_CWEB"/>
+                    <include name="validateAddnPayViaCCDynamicLimit_CWAP"/>
+                    <include name="VerifyWebviewSupportOnJS_When_FlagDisabled"/>
+                    <include name="validateDirectOTPonCashierPage"/>
+                    <include name="verifying_phone_number_and_email"/>
+                    <include name="verifying_hidePaytmBranding_false"/>
+                    <include name="verifying_hidePaytmBranding_true"/>
+                    <include name="verifying_hidePaytmBranding_Null"/>
+                    <include name="verifying_paytmPgLogo_displayed_onCheckout"/>
+                    <include name="ValidateHybridWalletAndCCTxnWithBulkOffer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

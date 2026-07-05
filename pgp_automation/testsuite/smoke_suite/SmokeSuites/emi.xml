@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Emi" verbose="1" thread-count="3" parallel="tests">
+    <test name="CheckoutJS EMI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_EMI_Txn"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus EMI">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_EMI_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native EMISubvention">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

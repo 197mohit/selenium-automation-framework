@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-42947 : Verify addnpay less than 1 rupee " verbose="1" thread-count="2" parallel="methods">
+    <test name="PGP-42947 : Verify addnpay less than 1 rupee">
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="successfullLessthan1rupeeAddNPayTxn"/>
+                    <include name="verifyUiMessageLessthan1rupeeAddNPayTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

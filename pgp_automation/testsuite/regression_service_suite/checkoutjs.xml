@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS_Suite" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP-32214 Validating order amount in JS checkout">
+        <parameter name="theme" value="checkoutjs_web"></parameter>
+        <classes>
+            <class name="scripts.OrderAmountFpoV2"/>
+        </classes>
+    </test>
+    
+
+    <test name="Checkoutjs UI test cases wap 2">
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="TC_005_VerifyManuallyEntering3FieldsAppear"/>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="TC_003_VerifyNBSelectedByDefault"/>
+                    <include name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <include name="TC_015_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <include name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <include name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <include name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases web 1">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <include name="verifyLogoColor"/>
+                    <include name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <include name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-33928 - Postpaid AddNpay checkoutJS web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.checkoutJSPostpaidAddNPay">
+                <methods>
+                    <include name="postpaidSuccessTxn"/>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDNotHavingPostapidPaymode"/>
+                    <include name="postpaidNotAvailableWhenDeselectedWallet"/>
+                    <include name="SuccessfulAddNPayPostpaidTxnForMIDAndWalletMIDHavingPostapidPaymode"/>
+                    <include name="SuccessfulPostpaidTxnForWalletDeselected"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference"/>
+        </classes>
+    </test>
+
+    <test name="PGP-29620 Maestro Card Test Cases for checkoutJS web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.MaestroCardCheckout"/>
+        </classes>
+    </test>
+
+    <test name="PGP-28430 emi subvention on checkoutjs using access token">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ItemBasedEMIOnCheckoutJs"/>
+                    <include name="AmountBasedEMIOnCheckoutJs"/>
+                    <include name="VerifyErrorPopUponCashierPage"/>
+                </methods>
+            </class>
+            <!--            for sanity that existing code works-->
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27624_ValidateCCTxnNativeJsonPrefN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases web-2">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid_NonLoggedIn"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid_NonLoggedIn"/>
+                    <exclude name="VerifyBankLogoforNB"/>
+                    <exclude name="VerifyBankLogoInSavedCard"/>
+                    <exclude name="VerifyBankLogoforSavedVpa"/>
+                    <exclude name="VerifyBankLogoforEMI"/>
+                    <exclude name="TC001_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="TC002_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="TC003_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="VerifyUPICollect_Tab"/>
+                    <exclude name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <exclude name="VerifyUPICollect_Tab_loggedIN"/>
+                    <exclude name="VerifyUPICollect_Tab_when_PrefDisabled_LoggedIn"/>
+                    <exclude name="VerifyUPICollect_Via_Login"/>
+                    <exclude name="VerifyErrorMsgisshownforUPIotherthanPaytmOrBhim"/>
+                    <exclude name="VerifyErrorMsgisshownforUPInotSupportingSubscription"/>
+                    <exclude name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <exclude name="verify_SavedBankMandate_Details"/>
+                    <exclude name="Verify_successful_transaction_with_ZestMoney"/>
+                    <exclude name="Verify_failure_transaction_with_ZestMoney"/>
+                    <exclude name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="ValidateCashbackPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="ValidatePayButtonWithSelectedPaymode"/>
+                    <exclude name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                    <exclude name="VerifySopamount"/>
+                    <exclude name="Verify_theme_is_changed_for_Merchant"/>
+                    <exclude name="DuplicateTxnAttemptusingtxnTokenOfSuccessfulTxn"/>
+                    <exclude name="DuplicateTxnAttemptusingtxnTokenOfFailedTxnWithRetriesExhausted"/>
+                    <exclude name="LoginScreenChanges"/>
+                    <exclude name="ValidatePPBLPasscodeTxt"/>
+                    <exclude name="verify_Login_Strip_When_FlagEnabled"/>
+                    <exclude name="verify_Login_Strip_When_PrefEnabled"/>
+                    <exclude name="verifying_FD_BalanceIsNotVisible"/>
+                    <exclude name="verifying_FD_BalanceIsVisible"/>
+                    <exclude name="VerifyYesNoComingAfterClickOnBackButton"/>
+                    <exclude name="VerifyResponceWhenClickYesForCancelTxn"/>
+                    <exclude name="VerifyUpiChanges"/>
+                    <exclude name="Verifying_PayMode_LOGO_Colors"/>
+                    <exclude name="Verify_txn_via_child_mid"/>
+                    <exclude name="TC_001_Verify_Fields_are_editable"/>
+                    <exclude name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <exclude name="verifyLogoColor"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                    <exclude name="verifyPCFAndTextForNonLoggedInFlow"/>
+                    <exclude name="verifyPCFAndTextForLoggedInFlow"/>
+                    <exclude name="ValidateInstrumentCategorization"/>
+                    <exclude name="ValidateInstrumentCategorization_When_FlagEnabled"/>
+                    <exclude name="VerifyWebviewSupportOnJS_When_FlagDisabled"/>
+                    <exclude name="VerifyWebviewSupportOnJS_When_FlagEnabled"/>
+                    <exclude name="VerifySolutionWiseMdrForOnlineTxn"/>
+                    <exclude name="validateAddnPayViaCCDynamicLimit_CWEB"/>
+                    <exclude name="validateAddnPayViaCCDynamicLimit_CWAP"/>
+                    <exclude name="verifying_success_FD_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases wap-2">
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <exclude name="PGP_27602_verifyTxnNotProceedingwithPromoWhenValidatePromoisTrueAddNPay"/>
+                    <exclude name="FooterBackgroundColourDoNotChangeOnChangingHeaderbackGroundColour"/>
+                    <exclude name="FooterTextColourDoNotChangeOnChangingHeaderTextColour"/>
+                    <exclude name="FooterBackgroundColourDoesntChangeOnChangingHeaderBackgroundColourFromConfig"/>
+                    <exclude name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>
+                    <exclude name="SuccessfulEmiDCTransactionUsingMobNoInInitiateAPI"/>
+                    <exclude name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <exclude name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                    <exclude name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIWithoutLogin"/>
+                    <exclude name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIWithLogin"/>
+                    <exclude name="PGP_32142_pgp_30635_ValidateFailureTxnResponseinPaymentStatusAPIAfterAllRetriesExhausted"/>
+                    <exclude name="ValidatePendingTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <exclude name="ValidatePendingTxnWhenCancelPendingOrderFlagIsFALSE"/>
+                    <exclude name="ValidateSUCCESSTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <exclude name="ValidateFAILTxnWhenCancelPendingOrderFlagIsTRUE"/>
+                    <exclude name="PGP_28691_BulkPromoShouldNotHitWhenBLOCK_BULK_APPLY_PROMOisActive"/>
+                    <exclude name="PGP_27624_SuccessQRTxnUsingCCwithNativeJsonPrefN"/>
+                    <exclude name="ValidateQRDetailsAndSuccessTxnUsingCC"/>
+                    <exclude name="ValidateQRDetailsAndSuccessTxnUsingWallet"/>
+                    <exclude name="ValidateQRDetailsAndFailedTxnUsingCC"/>
+                    <exclude name="ValidatePRNFlagInFPO"/>
+                    <exclude name="ValidateQRDetailsAndPRNSuccessTxnUsingCC"/>
+                    <exclude name="ValidateQRCodeAndUPIFlagAtCashierPage"/>
+                    <exclude name="ValidateQRDetailsAndUPIQRSuccessTxnUsingUPI"/>
+                    <exclude name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                    <exclude name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <exclude name="VerifyTxnPaidTimeFieldShouldReturnInResponse_ViaNB"/>
+                    <exclude name="TC_001_Verify_Fields_are_editable"/>
+                    <exclude name="TC_002_Verify_Fields_are_noneditable"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid_NonLoggedIn"/>
+                    <exclude name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid_NonLoggedIn"/>
+                    <exclude name="VerifyBankLogoforNB"/>
+                    <exclude name="VerifyBankLogoInSavedCard"/>
+                    <exclude name="VerifyBankLogoforSavedVpa"/>
+                    <exclude name="VerifyBankLogoforEMI"/>
+                    <exclude name="verifyLogoColor"/>
+                    <exclude name="toVerifyNewKafkaTopic_inSuccess_Txn"/>
+                    <exclude name="toVerifyNewKafkaTopic_inFailure_Txn"/>
+                    <exclude name="toVerifyNewKafkaTopic_inPending_Txn"/>
+                    <exclude name="TC001_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="TC002_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="TC003_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <exclude name="VerifyUPICollect_Tab"/>
+                    <exclude name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <exclude name="VerifyUPICollect_Tab_loggedIN"/>
+                    <exclude name="VerifyUPICollect_Tab_when_PrefDisabled_LoggedIn"/>
+                    <exclude name="VerifyUPICollect_Via_Login"/>
+                    <exclude name="VerifyErrorMsgisshownforUPIotherthanPaytmOrBhim"/>
+                    <exclude name="VerifyErrorMsgisshownforUPInotSupportingSubscription"/>
+                    <exclude name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <exclude name="verify_SavedBankMandate_Details"/>
+                    <exclude name="Verify_successful_transaction_with_ZestMoney"/>
+                    <exclude name="Verify_failure_transaction_with_ZestMoney"/>
+                    <exclude name="ValidateDiscountPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="ValidateCashbackPromoIsAppliedToPromoAmountOnlyforApiFlow"/>
+                    <exclude name="ValidatePayButtonWithSelectedPaymode"/>
+                    <exclude name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                    <exclude name="VerifySopamount"/>
+                    <exclude name="Verify_theme_is_changed_for_Merchant"/>
+                    <exclude name="DuplicateTxnAttemptusingtxnTokenOfSuccessfulTxn"/>
+                    <exclude name="DuplicateTxnAttemptusingtxnTokenOfFailedTxnWithRetriesExhausted"/>
+                    <exclude name="LoginScreenChanges"/>
+                    <exclude name="ValidatePPBLPasscodeTxt"/>
+                    <exclude name="verify_Login_Strip_When_FlagEnabled"/>
+                    <exclude name="verify_Login_Strip_When_PrefEnabled"/>
+                    <exclude name="verifying_FD_BalanceIsNotVisible"/>
+                    <exclude name="verifying_FD_BalanceIsVisible"/>
+                    <exclude name="VerifyYesNoComingAfterClickOnBackButton"/>
+                    <exclude name="VerifyResponceWhenClickYesForCancelTxn"/>
+                    <exclude name="VerifyUpiChanges"/>
+                    <exclude name="Verifying_PayMode_LOGO_Colors"/>
+                    <exclude name="Verify_txn_via_child_mid"/>
+                    <exclude name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <exclude name="TC_005_VerifyManuallyEntering3FieldsAppear"/>
+                    <exclude name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <exclude name="TC_003_VerifyNBSelectedByDefault"/>
+                    <exclude name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <exclude name="TC_015_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <exclude name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <exclude name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <exclude name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndWithoutCloseOrder"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrder"/>
+                    <exclude name="ValidatePendingTxnWithTimerAndCloseOrderRedirectFalse"/>
+                    <exclude name="verifyPCFAndTextForNonLoggedInFlow"/>
+                    <exclude name="verifyPCFAndTextForLoggedInFlow"/>
+                    <exclude name="ValidateInstrumentCategorization"/>
+                    <exclude name="ValidateInstrumentCategorization_When_FlagEnabled"/>
+                    <exclude name="VerifyWebviewSupportOnJS_When_FlagDisabled"/>
+                    <exclude name="VerifyWebviewSupportOnJS_When_FlagEnabled"/>
+                    <exclude name="VerifySolutionWiseMdrForOnlineTxn"/>
+                    <exclude name="validateAddnPayViaCCDynamicLimit_CWEB"/>
+                    <exclude name="validateAddnPayViaCCDynamicLimit_CWAP"/>
+                    <exclude name="verifying_success_FD_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Cobranded card and de-prioritise dc">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyCobrandedCards"/>
+                    <include name="VerifyDePrioritiseDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+</suite>

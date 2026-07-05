@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28418 MLV Client details" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-28418 Verify MLV Client details in logs">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="PGP-28418 test Queryparams in logs when mlv-supported qrCodeId is passed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

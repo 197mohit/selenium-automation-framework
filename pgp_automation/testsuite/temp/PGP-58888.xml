@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58888.xml">
+    <test name="Verify TPV and NON-TPV Transactions for QrImageRequired Param">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyTheTPVTrueImageParameterInTheiaFacadeLog"/>
+                    <include name="verifyTheTPVFalseImageParameterFalseInTheiaFacadeLog"/>
+                    <include name="verifyTheNONTPVTrueImageParameterInTheiaFacadeLog"/>
+                    <include name="verifyTheNONTPVFalseImageParameterInTheiaFacadeLog"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

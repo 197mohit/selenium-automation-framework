@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TEMP-PGP-27185" verbose="1">
+
+    <test name="PGP-27185 - Sending priority">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="Boss Panel with default merchant"/>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27185 - Sending priority Fetch QR V1">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsAPITest">
+                <methods>
+                    <include name="testFetchQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27185 - Sending priority Fetch QR V2">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsV2APITest">
+                <methods>
+                    <include name="testFetchQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJsTests" verbose="1" parallel="tests" thread-count="10">
+    <test name="Checkoutjs UI test cases web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests"/>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases wap">
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests"/>
+        </classes>
+    </test>
+
+    <test name="CheckoutJS PCF Test cases web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePCFforNB"/>
+                    <include name="ValidatePCFwithWallet"/>
+                    <include name="ValidatePCFwithAmexCard"/>
+                    <include name="ValidatePCFwithHDFCDebitCard"/>
+                    <include name="ValidatePCFRetryBreachTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP_28965 - Checkoutjs Last Used Paymode Tests - Checkoutjs WAP">
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforConfigredMid"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBPCFTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterThreeNBTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterTwoNBTxnandLastCCTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedCCTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedAddNPayTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_AddNPayTxns"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_HybridTxns"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedHybridTxnwithZeroBalanceinWallet"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedGVWalletTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedAddNPayHybridTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="PGP_28965_verifySavedCardAlreadySelectedWhenLocalStorageEmptyWalletBalInsufficient"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP_28965 - Checkoutjs Last Used Paymode Tests - Checkoutjs WEB">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforConfigredMid"/>
+                    <include name="PGP_28965_VerifyisLocalStorageAllowedForLastPayModeisTrueinFPOforMidNotconfigured"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedNBPCFTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterThreeNBTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedafterTwoNBTxnandLastCCTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedCCTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedUPITxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedAddNPayTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_AddNPayTxns"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedwithTwoNB_oneCC_HybridTxns"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedHybridTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedHybridTxnwithZeroBalanceinWallet"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedGVWalletTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedAddNPayHybridTxn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeWhenUserisDifferent"/>
+                    <include name="PGP_28965_verifySavedCardAlreadySelectedWhenLocalStorageEmptyWalletBalInsufficient"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

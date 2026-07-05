@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-4498">
+    <test name="Verify ultimate beneficiary details for ppbl Txn">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateCOPUltimateBeneNameInPPBLtxn"/>
+                    <include name="validateCOthenpayUltimateBeneNameInPPBLtxn"/>
+                    <include name="validateCOPUltimateBeneNamemorethanfiftycharactersInPPBLtxn"/>
+                    <include name="validateCOTHENPAYPUltimateBeneNamemorethanfiftycharactersInPPBLtxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

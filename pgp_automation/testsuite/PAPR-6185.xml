@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PAPR-6185 : Bin Identifier" verbose="1">
+    <test name="PAPR-6185 : Bin Identifier">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifywhenFF4jFlagisOffOldFlowisCalled"/>
+                    <include name="verifywhenFF4jFlagisOnNewFlowisCalled"/>
+                    <include name="verifyBinIdentifierisPassedinACQUIRING_PAY_ORDER"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

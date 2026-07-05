@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UI Automation" verbose="1">
+    <test name="UI Tests merchant 4" parallel="methods" thread-count="8">
+        <parameter name ="theme" value = "merchant4"></parameter>
+        <parameter name = "browser" value = "CHROME"/>
+        <classes>
+            <class name = "scripts.UI.UITests">
+                <methods>
+                    <include name="TC_001_verifyWalletAppearingAndEnabled"/>
+                    <include name="TC_002_verifyPpiAndPpblSelected"/>
+                    <include name="TC_003_verifyPostpaidDefaultSelected"/>
+                    <include name="TC_049_verifyTxnNotAllowedWithoutCVVForCC"/>
+                    <include name="TC_50_verifyTxnNotAllowedWithoutExpDateForCC"/>
+                    <include name="TC_051_verifyInvalidCardNoMsgDisplayedForAmexWhenCardNoLengthLessThan15"/>
+                    <include name="TC_052_verifyInvalidCardNoMsgDisplayedForVisaWhenCardNoLengthLessThan16"/>
+                    <include name="TC_052_verifyInvalidCardNoMsgDisplayedForMasterCardWhenCardNoLengthLessThan16"/>
+                    <include name="TC_006_verifyPpblSelected"/>
+                    <include name="TC_007_verifyPpblDisabled"/>
+                    <include name="TC_052_verifyInvalidCardNoMsgDisplayedForDinersClubWhenCardNoLengthLessThan16"/>
+                    <include name="TC_052_verifyInvalidCardNoMsgDisplayedForRupayWhenCardNoLengthLessThan16"/>
+                    <include name="TC_053_verifyTxnNotAllowedWithoutVPA"/>
+                    <include name="TC_047_verifyOnly4digitsCVVAllowedForAMEX"/>
+                    <include name="TC_048_2_verifyOnly3digitsCVVAllowedForVISA"/>
+                    <include name="TC_048_1_verifyOnly3digitsCVVAllowedForDinersClub"/>
+                    <include name="TC_046_verifyMaxCardLengthAllowedForAMEXIs15"/>
+                    <include name="TC_046_verifyMaxCardLengthAllowedForVISAIs16"/>
+                    <include name="TC_046_verifyMaxCardLengthAllowedForMaestroIs19"/>
+                    <include name="TC_080_verifyLowSuccessRateMsgShownForNB"/>
+                    <include name="TC_070_verifyCvvFieldNotDisplayedForBajajFinservEMI"/>
+                    <include name="TC_054_verifyVPATxnNotAllowedWithoutAtSymbol"/>
+                    <include name="TC_055_verifyCVVBoxDisabledForMaestro"/>
+                    <include name="TC_130_verifyPromoMsgDisplayed"/>
+                    <include name="TC_133_verifyPromoFailedButTxnPassed"/>
+                    <include name="TC_108_verify_PPI_PP_selected"/>
+                    <include name="TC_022_Pay_WoutCVV_Maestro"/>
+                    <include name="TC_122_Postpaid_NotVisible_AddnpayMerchant"/>
+                    <include name="TC_024"/>
+                    <include name="TC_067"/>
+                    <include name="TC_068"/>
+                    <include name="TC_082_verifyBrowserBack"/>
+                    <include name ="TC_127_verifyPayModesShownForUserForAddnPayMerchantWhenWalletChecked"/>
+                    <include name="TC_045_verifyAmexCvvIconShownWhenAmexCardEntered"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

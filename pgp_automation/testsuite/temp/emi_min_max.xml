@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fixes" verbose="1">
+    <test name="pgp_56767" parallel="tests" thread-count="5">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest">
+                <methods>
+                    <include name="TestSuccessResponseWhenEMIProvided"/>
+                    <include name="TestSuccessResponseWhenEMIDCProvided"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

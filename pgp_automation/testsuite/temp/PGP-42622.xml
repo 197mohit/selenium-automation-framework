@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-37474 " verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-37474 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="validateTopicForRTDD_CC"/>
+                    <include name="validateTopicForRTDD_UPI"/>
+                    <include name="validateTopicForRTDD_PPBL"/>
+                    <include name="validateTopicForRTDD_AddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

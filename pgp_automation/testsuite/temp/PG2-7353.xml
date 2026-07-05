@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-7353">
+    <test name="Verify  Static QR , PG2 UPI Scan n pay Txn">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validatePG2COPStaticQRUPIPushScanNPay"/>
+                    <include name="validatePG2COPUPIPSP"/>
+                </methods>
+            </class>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validatePG2COPFullTrafficYSuccessFastForwardTxn"/>
+                    <include name="validatePG2COPYSuccessFastForwardTxn"/>
+                    <include name="validateFullTrafficYSuccessCOPWalletInternalOrderModifyTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOThenPayWalletInternalOrderModifyTxnPG2MID"/>
+                    <include name="validateUserNotPresentInFF4JWalletTxnRoutedToPPlus"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateCoThenPaySuccessRentMidOrderModifyPostPaidTxnPG2MID"/>
+                    <include name="validateFullTrafficCOPSuccessInternalOrderModifyPostPaidTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCOPPPBLInternalOrderModifyTxnPG2MID"/>
+                    <include name="validateCoThenPaySuccessRentMidOrderModifyPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

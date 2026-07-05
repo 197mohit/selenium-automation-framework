@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckBalanceIntegration" verbose="1">
+    <test name="StaticQrNew">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="Verify_PPBL_PaytmPostpaid_balance_is_null_in_response"/>
+                    <include name="Verify_PPBL_Wallet_PaytmPostpaid_currency_value_is_showing_in_response"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

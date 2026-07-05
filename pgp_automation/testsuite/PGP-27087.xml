@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27087" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-27087">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="testPayModeIsForwardedToAlipayInPaymentCashierPayForCCTxn"/>
+                    <include name="testPayModeIsForwardedToAlipayInPaymentCashierPayForDCTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="testPayModeIsForwardedToAlipayInPaymentCashierPayForCCTxn"/>
+                    <include name="testPayModeIsForwardedToAlipayInPaymentCashierPayForDCTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

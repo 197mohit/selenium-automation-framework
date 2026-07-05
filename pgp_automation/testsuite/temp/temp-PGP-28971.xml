@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28971 Risk extended info in theia Facade Pay request" verbose="1" >
+
+
+    <test name="risk extended url for enhanced theme">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validate_RiskExtendedURLInfoTheiaFacade"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="risk extended url for Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskExtendedInfoWithURLs"/>
+                        <include name="validateRiskExtendedInfoURLParamswithRiskAmount"/>
+                        <include name="verifyRiskExtendedInfoURLParamsWithRetry"/>
+                        <include name="validateRiskExtendedInfoURLParamswithExplicitCallBackUrl"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="risk extended url for Native plus">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateRiskExtendedInfoWithURLs"/>
+                        <include name="validateRiskExtendedInfoURLParamswithRiskAmount"/>
+                        <include name="verifyRiskExtendedInfoURLParamsWithRetry"/>
+                        <include name="validateRiskExtendedInfoURLParamswithExplicitCallBackUrl"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+
+    <test name="risk extended url for App Invoke">
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="FPP_validateRiskExtendedInfoUrlParams"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="risk extended url for offline transaction">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <methods>
+                    <include name="validateRiskExtendedInfoURLParamsInPayRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

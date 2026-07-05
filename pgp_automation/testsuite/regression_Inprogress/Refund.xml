@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Refund" verbose="1" parallel="tests" thread-count="12">
+    <test name="Refund with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulHybridRefund"/>
+                    <include name="successfulMultiplePartialRefund"/>
+                    <include name="successfulPGOnlyDCRefund"/>
+                    <include name="successfulPartialRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="successfulWalletOnlyRefund"/>
+                    <include name="validatePPBLRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulHybridRefund"/>
+                    <include name="successfulMultiplePartialRefund"/>
+                    <include name="successfulPGOnlyDCRefund"/>
+                    <include name="successfulPartialRefund"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn"/>
+                    <include name="refundFailureWithIncorrectMidOrderIdTxnId"/>
+                    <include name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <include name="successfulPGOnlyCCRefund"/>
+                    <include name="successfulAddNPayRefund"/>
+                    <include name="validatePPBLRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-SyncRefund Testcaseds">
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulPGOnlyCCSyncRefund"/>
+                    <include name="successfulPGOnlyDCSyncRefund"/>
+                    <include name="successfulWalletOnlySyncRefund"/>
+                    <include name="successfulPGOnlyUPISyncRefund"/>
+                    <include name="successfulHybridSyncRefund"/>
+                    <include name="successfulAddNPaySyncRefund"/>
+                    <include name="successfulRefundOfBaseAmountInPostConvenienceTxn_Sync"/>
+                    <include name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn_async"/>
+                    <include name="successfulPartialRefund_async"/>
+                    <include name="invalidChecksumMsgForSyncRefund"/>
+                    <include name="verifyMerchantIdNotComingInReq"/>
+                    <include name="verifyAmountNotComingInReq"/>
+                    <include name="verifyRefundAmountGreaterThanInTxnAmount"/>
+                    <include name="verifyOrdderIdNotSameAsTxn"/>
+                    <include name="verifyPartialAmountLessThanOne"/>
+                    <include name="verifyAmountToDestinationToInstant"/>
+                    <include name="verifyAmountToDestinationToSourceIfIMPSMerchantButCCtxn"/>
+                    <include name="verifyRefundFailureOfAlreadySuccessfulRefund_sync"/>
+                    <include name="verifyRefundFailureOfFailedPGOnlyTxn_sync"/>
+                    <include name="partialRefundRefundTwiceForSyncRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28980 Pass Onus Identifier Refund">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferRefungDCtxnONUSMerchant"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferRefungDCtxnOFFUSMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

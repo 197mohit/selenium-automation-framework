@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-47634">
+    <test name="UPI COLLECT PENDING CASE ON ENHANCED AND CHECKOUT JS">
+        <classes>
+            <class name="scripts.UPICollectPendingTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="pendingUPICollect_Enhanced"/>
+                </methods>
+            </class>
+            <class name="scripts.UPICollectPendingTxn">
+                <parameter name="theme" value="checkoutjs_web_revamp"/>
+                <methods>
+                    <include name="pendingUPICollect_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

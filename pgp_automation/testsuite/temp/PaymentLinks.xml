@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PaymentLinks">
+    <test name="PaymentLinks - Product code 102 - PG-1815">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.PaymentLinks">
+                <methods>
+                    <include name="verifyPaymentLinkProductcode_FlaginCOP"/>
+                    <include name="verifyPaymentLinkCcTxn"/>
+                    <include name="verifyUPIIntentNotFilteringOutInNativeAppFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

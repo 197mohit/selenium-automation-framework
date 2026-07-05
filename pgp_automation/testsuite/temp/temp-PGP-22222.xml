@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-22222 Initiate cases" verbose="1" parallel="methods" thread-count="4">
+
+    <test name="PGP-22222 Idempotent cases">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateIdempotentCase1"/>
+                    <include name="validateIdempotentCase2"/>
+                    <include name="validateIdempotentCase3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22222 E2E Native + Idempotent cases">
+    <parameter name="isNativePlus" value="true"/>
+    <classes>
+        <class name="scripts.Native.ProcessTransactionTests">
+            <methods>
+                <include name="validateIdempotentCase4"/>
+            </methods>
+    </class>
+    </classes>
+    </test>
+
+    <test name="PGP-22222 E2E Native Idempotent cases">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateIdempotentCase4"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

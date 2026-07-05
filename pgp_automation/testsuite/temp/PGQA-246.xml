@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Enable PPI on UPI at UPI PSP Processor" verbose="1">
+    <test name="PG-4737 | Enable PPI on UPI at UPI PSP Processor">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforPPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforOnlinePPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Null"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_N"/>
+                    <include name="validateUPIPSPforUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_Y_And_WALLET_ON_UPI_RAILS_ENABLED_is_Y"/>
+                    <include name="validateUPIPSPforOnlineUPI_PPIWALLETWhenUPI_WALLET_BLACKLISTED_is_N_And_WALLET_ON_UPI_RAILS_ENABLED_is_Null"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

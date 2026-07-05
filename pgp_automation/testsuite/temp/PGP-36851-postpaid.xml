@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Postpaid balance in the FPO Testcases" verbose="1">
+    <test name="Postpaid balance in the FPO Testcases">
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="showPostpaidbalanceFPOAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPSL-788" verbose="1" thread-count="5" parallel="tests">
+    <test name="Payment: PYFX DCC Final INR amount enhancement">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="DccDomesticMarkUpParams_COP"/>
+                    <include name="DccDomesticMarkUpParams_PayResultQuery"/>
+                    <include name="DccDomesticMarkUpParams_Insta"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

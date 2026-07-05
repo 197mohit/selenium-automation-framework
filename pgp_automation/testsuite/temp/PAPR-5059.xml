@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48418" verbose="1" parallel="tests" thread-count="2">
+    <test name="Verify USD and INR priority for DCC Payment">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyDCCVisaComplianceINR"/>
+                    <include name="verifyDCCVisaComplianceUSD"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

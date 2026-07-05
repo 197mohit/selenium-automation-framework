@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="promo_scm" verbose="1" thread-count="1" >
+
+        <test name="AND flow SCM ApplyPrommo">
+            <classes>
+                <class name="scripts.Promo.ANDFlow.ApplyPromoSCM"/>
+
+            </classes>
+        </test>
+    <test name="OR flow SCM FPO">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.ORFPOSCM"/>
+
+        </classes>
+    </test>
+
+    <test name="OR flow SCM FetchCardDetails">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.FetchCardDetailsSCM"/>
+
+        </classes>
+    </test>
+
+
+</suite>

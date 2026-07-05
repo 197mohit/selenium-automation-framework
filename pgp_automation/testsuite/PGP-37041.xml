@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-37041" verbose="1" parallel="methods" thread-count="5">
+    <parameter name="theme" value="checkoutjs_web_revamp"/>
+    <test name="Verifying Phone Number and Email">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifying_phone_number_and_email"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

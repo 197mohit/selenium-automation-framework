@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_Emi_Suite_PG2" verbose="1" thread-count="10" parallel="tests">
+    <test name="Wallet Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="ZERO_WALLET_05"/>
+                    <include name="ZERO_WALLET_06"/>
+                    <include name="ZERO_WALLET_07"/>
+                    <include name="ZERO_WALLET_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet Native">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="ZERO_WALLET_02"/>
+                    <include name="ZERO_WALLET_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="ZERO_WALLET_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="validate e2e txn for bank offer">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.BankOfferHotfix">
+                <methods>
+                    <include name="validateInitiateTxnAPI"/>
+                    <include name="validateInitiateTxnAPISuccessE2E"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnCheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnNativePlus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnNative"/>
+                    <include name="verifyCOPEmiInfoOnNativeWhenApplyPromoAppliedAmountBased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyCOPEmiInfoForRedirection"/>
+                    <include name="BankVerifiedName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

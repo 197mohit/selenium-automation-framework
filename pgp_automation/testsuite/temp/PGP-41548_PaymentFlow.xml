@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-41548" verbose="1">
+    <test name="Payment Flow Issue">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.ORFPOSCM">
+                <methods>
+                    <include name="validatePaymentFlowinFPOHybrid"/>
+                    <include name="validatePaymentFlowinFPONONE"/>
+                    <include name="validatePaymentFlowinFPOADDNPAY"/>
+                    <include name="validatePaymentFlowinFPONONEADDNPAY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

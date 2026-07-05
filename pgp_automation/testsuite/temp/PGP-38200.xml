@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP++33739" verbose="1">
+    <test name="PGP-38200">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="card_nonLocckedIN_hidelable"/>
+                    <include name="card_LocckedIN_hidelable"/>
+                    <include name="upi_nonLocckedIN_hidelable"/>
+                    <include name="upi_LocckedIN_hidelable"/>
+                    <include name="NB_nonLocckedIN_hidelable"/>
+                    <include name="NB_LocckedIN_hidelable"/>
+                    <include name="EMI_nonLocckedIN_hidelable"/>
+                    <include name="EMI_LocckedIN_hidelable"/>
+                    <include name="card_nonLocckedIN_Fhidelable"/>
+                    <include name="card_LocckedIN_Fhidelable"/>
+                    <include name="upi_nonLocckedIN_Fhidelable"/>
+                    <include name="upi_LocckedIN_Fhidelable"/>
+                    <include name="NB_nonLocckedIN_Fhidelable"/>
+                    <include name="NB_LocckedIN_Fhidelable"/>
+                    <include name="EMI_nonLocckedIN_Fhidelable"/>
+                    <include name="EMI_LocckedIN_Fhidelable"/>
+                    <include name="categorize"/>
+                    <include name="addnpaycategarize"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

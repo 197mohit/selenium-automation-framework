@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CloseOrder" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="Close Order V2">
+        <classes>
+            <class name="scripts.api.theia.colseOrderv2.CloseOrder">
+                <methods>
+                    <include name="closeOrderChecksumAddMoneyFailure"/>
+                    <include name="closeOrderChecksumFailureNativeTxn"/>
+                    <include name="closeOrderChecksumFailureNativePlusTxn"/>
+                    <include name="closeOrderChecksumSuccessNativePlusTxn"/>
+                    <include name="closeOrderChecksumSuccessNativeTxn"/>
+                    <include name="closeOrderChecksumAddMoneyPending"/>
+                    <include name="closeOrderChecksumSuccessEnhanceTxn"/>
+                    <include name="closeOrderChecksumToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

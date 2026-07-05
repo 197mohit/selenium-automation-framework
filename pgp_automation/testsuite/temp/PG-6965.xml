@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-6965" verbose="1" parallel="methods" thread-count="1">
+
+    <test name="Multi TPV payerAccountDetails">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC01_multiTPV_NativeMF_withPayerAccountDetails"/>
+                    <include name="TC02_multiTPV_NativeST_withPayerAccountDetails"/>
+                    <include name="TC03_multiTPV_Nativepayments_withPayerAccountDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

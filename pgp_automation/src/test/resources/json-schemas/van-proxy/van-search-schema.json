@@ -1,0 +1,212 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp"
+      ],
+      "properties": {
+        "signature": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "clientId": {
+          "type": "string"
+        },
+        "responseTimestamp": {
+          "type": "string"
+        },
+        "signature": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string",
+              "minLength": 1
+            },
+            "resultMsg": {
+              "type": "string",
+              "minLength": 1
+            },
+            "resultCodeId": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        },
+        "vanDetails": {
+          "type": [
+            "array",
+            "null"
+          ],
+          "items": {
+            "type": "object",
+            "required": [
+              "identificationNo",
+              "merchantPrefix",
+              "van",
+              "date",
+              "active",
+              "ifscCode",
+              "bankName",
+              "beneficiaryName"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "identificationNo": {
+                "type": "string",
+                "minLength": 10,
+                "maxLength": 10,
+                "pattern": "^[a-zA-Z0-9]{10}$"
+              },
+              "merchantPrefix": {
+                "type": "string",
+                "minLength": 4,
+                "maxLength": 4
+              },
+              "van": {
+                "type": "string",
+                "minLength": 16,
+                "maxLength": 16,
+                "pattern": "^[a-zA-Z0-9]{16}$"
+              },
+              "purpose": {
+                "type": "string"
+              },
+              "date": {
+                "type": "string",
+                "minLength": 1
+              },
+              "userDefinedFields": {
+                "type": "object",
+                "properties": {
+                  "udf1": {
+                    "type": "string"
+                  },
+                  "udf2": {
+                    "type": "string"
+                  },
+                  "udf3": {
+                    "type": "string"
+                  },
+                  "udf4": {
+                    "type": "string"
+                  },
+                  "udf5": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "active": {
+                "type": "boolean"
+              },
+              "ifscCode": {
+                "type": "string",
+                "minLength": 1
+              },
+              "bankName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "beneficiaryName": {
+                "type": "string",
+                "minLength": 1
+              },
+              "customerDetails": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "customerEmail": {
+                      "type": "string"
+                    },
+                    "customerMobile": {
+                      "type": "string"
+                    },
+                    "customerName": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "errorMessage": {
+                "type": "string",
+                "minLength": 1
+              },
+              "errorCode": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        },
+        "pageInfo": {
+          "type": "object",
+          "oneOf": [
+            {
+              "required": [
+                "limit",
+                "offset",
+                "nextPage",
+                "total"
+              ],
+              "properties": {
+                "limit": {
+                  "type": "integer"
+                },
+                "offset": {
+                  "type": "integer"
+                },
+                "nextPage": {
+                  "type": "boolean"
+                },
+                "total": {
+                  "type": "integer"
+                }
+              },
+              "additionalProperties": false
+            },
+            {
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

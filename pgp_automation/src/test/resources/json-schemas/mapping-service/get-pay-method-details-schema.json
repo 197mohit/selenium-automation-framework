@@ -1,0 +1,110 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "response": {
+          "$ref": "#/definitions/Response"
+        },
+        "payMethodDetailsList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PayMethodDetailsList"
+          }
+        }
+      },
+      "required": [
+        "payMethodDetailsList",
+        "response"
+      ],
+      "title": "Root"
+    },
+    "PayMethodDetailsList": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "payMethod": {
+          "enum": [
+            "BALANCE",
+            "NET_BANKING",
+            "CREDIT_CARD",
+            "DEBIT_CARD",
+            "IMPS",
+            "ATM",
+            "EMI",
+            "UPI",
+            "PAYTM_DIGITAL_CREDIT",
+            "PREPAID_CARD",
+            "PPBL",
+            "LOYALTY_POINT",
+            "EMI_DC",
+            "WALLET",
+            "ADVANCE_DEPOSIT_ACCOUNT"
+          ]
+        },
+        "payMethodName": {
+          "enum": [
+            "BALANCE",
+            "NET_BANKING",
+            "CREDIT_CARD",
+            "DEBIT_CARD",
+            "IMPS",
+            "ATM",
+            "EMI",
+            "UPI",
+            "PAYTM_DIGITAL_CREDIT",
+            "PREPAID_CARD",
+            "PPBL",
+            "LOYALTY_POINT",
+            "EMI_DC",
+            "WALLET",
+            "ADVANCE_DEPOSIT_ACCOUNT"
+          ]
+        },
+        "type": {
+          "enum": [
+            "Paytm",
+            "PG",
+            "AOA"
+          ]
+        }
+      },
+      "required": [
+        "payMethod",
+        "payMethodName",
+        "type"
+      ],
+      "title": "PayMethodDetailsList"
+    },
+    "Response": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "resultCode": {
+          "enum": [
+            "00000"
+          ]
+        },
+        "resultStatus": {
+          "enum": [
+            "S"
+          ]
+        },
+        "messaage": {
+          "enum": [
+            "Success"
+          ]
+        }
+      },
+      "required": [
+        "messaage",
+        "resultCode",
+        "resultStatus"
+      ],
+      "title": "Response"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PG2-7071" verbose="1">
+    <test name="Automation Scripts for CC 2.0 with Success ,Failure and Pending Scenarios">
+        <classes>
+            <class name="scripts.api.CC.CC_PG2">
+                <methods>
+                    <include name="validateSuccessUnsavedCCTxnPG2MID"/>
+                    <include name="validatePendingUnsavedCCTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validateFailedUnsavedCCTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

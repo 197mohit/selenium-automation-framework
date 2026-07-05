@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-12060" verbose="1" thread-count="12"
+       parallel="tests">
+    <test name="Charge amount test cases - pg2-12060">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifySucessfulTxnon20and02PC"/>
+                    <include name="verifySucessfulTxnon20and101PC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

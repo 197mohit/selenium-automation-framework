@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                    <include name="PGP_29543_verifyMGVPaymodeAlreadySelected"/>
+                    <include name="PGP_29543_verifyMGVPaymodeColorandSuccessTxn"/>
+                    <include name="PGP_29543_verifyMGVPaymodeBalanceisZero"/>
+                   </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Suite PCF and Minimal Cases and Fixes" verbose="1" thread-count="5" parallel="tests">
+    <test name="ElementJs cases">
+        <parameter name="JsType" value="elementJs"/>
+        <classes>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="testJsCheckoutNewFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_Bank_Flow_with_Offer"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest">
+                <methods>
+                    <include name="testJsCheckoutOldFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_Bank_Flow_with_Offer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="JsOnRedirection cases">
+        <parameter name="JsType" value="JsOnRedirection"/>
+        <classes>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="testJsCheckoutNewFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_Bank_Flow_with_Offer"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest">
+                <methods>
+                    <include name="testJsCheckoutOldFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_Bank_Flow_with_Offer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="Kfs_true_lendingConsent_true_savedCard"/>
+                    <include name="Kfs_true_lendingConsent_false_savedCard"/>
+                    <include name="Kfs_false_lendingConsent_false_SavedCard"/>
+                    <include name="testOfferAppliedOnSavedInstrument_ForFPOChangedResponse"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="refreshPageForLoggedInFlow"/>
+                </methods>
+            </class>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="Verify_numberOfFeeDisplayingIsEqualToNumberOfPayModeOnCashier"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyE2EEmiTxnWithCC"/>
+                </methods>
+            </class>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="validateEMISubventioninfoInGetPaymentStatus"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEmiDetails">
+                <methods>
+                    <include name="testGetEmiDetailsDynamically"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_ApplyOffer"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedUnified"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedOld"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo_AltId"/>
+                    <include name="testDummyValuesNotBeingSentToATSforAmtBasedTxn_STANDARD"/>
+                    <include name="testTxnAmountBeingUsedForOfferApplyNotPayableAmount_SimplifiedPaymentOffers"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

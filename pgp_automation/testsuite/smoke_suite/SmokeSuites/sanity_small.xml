@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Smoke-Suite">
+    <listeners>
+        <listener class-name="com.paytm.listeners.MasterReport"/>
+        <listener class-name="com.paytm.listeners.StatusCounterListener"/>
+        <listener class-name="com.paytm.listeners.ScreenListener"/>
+    </listeners>
+    <suite-files>
+       
+    <!--<suite-file path="LinkServicePg2.xml"/> -->
+    <!-- Disabling mapping suite file -->
+        <!-- <suite-file path="Mapping_pg2.xml"/> -->
+        <suite-file path="merchantstatus.xml"/>
+        
+    </suite-files>
+</suite>

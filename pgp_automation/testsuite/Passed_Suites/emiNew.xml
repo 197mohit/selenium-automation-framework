@@ -1,0 +1,1573 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI_Suite" verbose="1" thread-count="10" parallel="tests">
+    <test name="Custom Checkout Cases">
+        <classes>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutNewFlowTest"/>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutOldFlowTest"/>
+        </classes>
+    </test>
+    <test name="Js Checkout cases">
+        <parameter name="JsType" value="checkoutJs"/>
+        <classes>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest"/>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest"/>
+        </classes>
+    </test>
+    <test name="ElementJs cases">
+        <parameter name="JsType" value="elementJs"/>
+        <classes>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="testJsCheckoutNewFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_Bank_Flow_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_UnifiedOffers_Empty_CC"/>
+                    <include name="testJsCheckoutNewFlow_UnifiedOffers_Empty_EMI"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest">
+                <methods>
+                    <include name="testJsCheckoutOldFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_Bank_Flow_with_Offer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="JsOnRedirection cases">
+        <parameter name="JsType" value="JsOnRedirection"/>
+        <classes>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsNewFlowTest">
+                <methods>
+                    <include name="testJsCheckoutNewFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_EMI_Bank_Flow_with_Offer"/>
+                    <include name="testJsCheckoutNewFlow_UnifiedOffers_Empty_CC"/>
+                    <include name="testJsCheckoutNewFlow_UnifiedOffers_Empty_EMI"/>
+                </methods>
+            </class>
+            <class name="scripts.EMITest.CheckoutJS.EMICheckoutJsOldFlowTest">
+                <methods>
+                    <include name="testJsCheckoutOldFlow_CC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_SavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_NB_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_UPI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMISavedCard_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_DC_with_Offer"/>
+                    <include name="testJsCheckoutOldFlow_EMI_Bank_Flow_with_Offer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Dependent Service Test">
+        <classes>
+            <class name="scripts.EMITest.EMIDependentServiceTest"/>
+        </classes>
+    </test>
+    <test name="OfferApply_API">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyAccessTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyChecksumTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest"/>
+        </classes>
+    </test>
+    <test name="applyPromo Migration to Unified flow">
+        <parameter name="isNativePlus" value="true"></parameter>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.ApplyPromoV2ToUnifiedFlow">
+                <methods>
+                    <include name="testApplyPromoV2WithAccessToken"/>
+                    <include name="testApplyPromoV2WithSSOToken"/>
+                    <include name="testApplyPromoV2WithTxnToken"/>
+                    <include name="testApplyPromoV2WithSSOTokenForUPIPaymode"/>
+                    <include name="testApplyPromoV2WithSSOTokenForEMI_DCPaymode"/>
+                    <include name="testApplyPromoV2WithSSOTokenForItemBased"/>
+                    <include name="testApplyPromoV2WithSSOTokenForItemBasedPromoCodeProvided"/>
+                    <include name="testApplyPromoV2WithSSOTokenPromoCodeProvied"/>
+                    <include name="E2EEmiTxnWithapplyPromoApi"/>
+                    <include name="E2EEmiDCTxnWithapplyPromoApi"/>
+                    <include name="E2ECCTxnWithapplyPromoApi"/>
+                    <include name="E2ENBTxnWithapplyPromoApi"/>
+                    <include name="E2EDCTxnWithapplyPromoApi"/>
+                    <include name="E2EUPITxnWithapplyPromoApi"/>
+                    <include name="E2EEmiTxnWithapplyPromoApiItemBased"/>
+                    <include name="E2ENBTxnWithapplyPromoApiItemBased"/>
+                    <include name="TestE2ENBTxnForMinimalPromoMerchant"/>
+                    <include name="TestE2EEMITxnForMinimalPromoMerchant"/>
+                    <include name="TestE2EEMIDCTxnForMinimalPromoMerchant"/>
+                    <include name="TestE2ECCTxnForMinimalPromoMerchant"/>
+                    <include name="TestE2EUPITxnForMinimalPromoMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-25875_1">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test">
+                <methods>
+                    <include name="test when head token equals txn token generated using different mid"/>
+                    <include name="test when head token = ''"/>
+                    <include name="test when head channelId = null"/>
+                    <include name="test when head token equals txn token generated for OFFUS user"/>
+                    <include name="test when head tokenType equals random value"/>
+                    <include name="test when mid provided in request body is different from mid provided in query params"/>
+                    <include name="test when simplifiedPaymentOffers object was not provided in Initate Txn API while creating txn token"/>
+                    <include name="test when head channelId is not provided"/>
+                    <include name="test when head requestId is not provided"/>
+                    <include name="test when head tokenType is not provided"/>
+                    <include name="test when body orderId equals random value"/>
+                    <include name="test when orderId in query params is not provided"/>
+                    <include name="test when head requestId = null"/>
+                    <include name="test when body mid is not provided"/>
+                    <include name="test when head token equals txn token generated using different orderId"/>
+                    <include name="test when head token = null"/>
+                    <include name="test when body orderId = ''"/>
+                    <include name="test when head channelId = ''"/>
+                    <include name="test when body mid = null"/>
+                    <include name="test when head requestTimestamp = ''"/>
+                    <include name="test when head channelId equals random value"/>
+                    <include name="test when head requestTimestamp equals random value"/>
+                    <include name="test when head tokenType = null"/>
+                    <include name="test when body orderId = null"/>
+                    <include name="test when body orderId is not provided"/>
+                    <include name="test when head requestTimestamp = null"/>
+                    <include name="test when head tokenType = ''"/>
+                    <include name="test when body mid equals random value"/>
+                    <include name="test when head requestId = ''"/>
+                    <include name="test when merchant has promos configured"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when head token equals random value"/>
+                    <include name="test when head requestId equals random value"/>
+                    <include name="test when body mid = ''"/>
+                    <include name="test when orderId provided in request body is different from orderId provided in query params"/>
+                    <include name="test when head requestTimestamp is not provided"/>
+                    <include name="test when head token equals txn token generated for ONUS user"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-25875_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test when body applyPaymentOffer = ''"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals invalid promo in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers equals random value"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals valid promo in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body fetchAllPaymentOffers = false given merchant has promos configured"/>
+                    <include name="test body simplifiedPaymentOffers is not returned in response when body simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body applyPaymentOffer is not provided"/>
+                    <include name="test when body fetchAllPaymentOffers = null"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test when body applyPaymentOffer = null"/>
+                    <include name="test body simplifiedPaymentOffers is returned in response when body simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body applyPaymentOffer equals random value"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-25875_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="test body simplifiedPaymentOffers is not returned in response when body simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body applyPaymentOffer equals random value"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals invalid promo in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = null"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = false in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = ''"/>
+                    <include name="test when body applyPaymentOffer is not provided"/>
+                    <include name="test when body applyPaymentOffer = ''"/>
+                    <include name="test when body simplifiedPaymentOffers promoCode equals invalid promo code in Initiate Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers = true given merchant has promos configured and body simplifiedPaymentOffers promoCode equals valid promo in Initiate Txn API"/>
+                    <include name="test body simplifiedPaymentOffers is returned in response when body simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test when body fetchAllPaymentOffers equals random value"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = true in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                    <include name="test when body fetchAllPaymentOffers = false given merchant has promos configured"/>
+                    <include name="test when body applyPaymentOffer = null"/>
+                    <include name="test when body simplifiedPaymentOffers applyAvailablePromo = false in Initiate Txn API and body applyPaymentOffer = true in FetchPayOptions API"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Promo OR Flow">
+        <classes>
+            <class name="scripts.or.FetchCardDetailsAPI">
+                <methods>
+                    <include name="assertFailureWhenInvalidMidPassed"/>
+                    <include name="assertFailureWhenInvalidTokenTypePassed"/>
+                    <include name="assertFailureWhenTokenNotPassed"/>
+                    <include name="assertFailureWhenCardNumberAndSavedCardIdNotPassed"/>
+                    <include name="assertFailureWhenInvalidTokenPassed"/>
+                    <include name="assertFailureWhenMidNotPassed"/>
+                    <include name="assertFailureWhenBlankSavedCardIdPassed"/>
+                    <include name="assertFailureWhenTokenTypeNotPassed"/>
+                    <include name="assertFailureWhenBlankTokenTypePassed"/>
+                    <include name="assertFailureWhenEmptyCardNumberPassed"/>
+                    <include name="assertFailureWhenBlankTokenPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Promo And Flow">
+        <classes>
+            <class name="scripts.api.theia.FetchAllPaymentOffers">
+                <methods>
+                    <include name="testWhenExpiredSSOTokenPassed"/>
+                    <include name="testWhenNonExistentTokenPassed"/>
+                    <include name="testWhenMidNotPassed"/>
+                    <include name="testWhenSSOTokenNotPassed"/>
+                    <include name="testWhenNonExistentMidPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28430 UI validation for blink checkout for ItemBased and AmountBased">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="EMISubCheckoutJsItembased04"/>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="singleOfferEMISubvention"/>
+                    <include name="verifyEMISubventionStrip_ForStandardEMI"/>
+                    <include name="EMISubCheckoutJsItembased08"/>
+                    <include name="verifyEMISubventionStrip_ForItemBasedEMI"/>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                    <include name="verifyEMISubventionStrip_ForAmountBasedEMI"/>
+                    <include name="multiOfferEMISubvention"/>
+                    <include name="EMISubCheckoutJsItembased05"/>
+                    <include name="EMISubCheckoutJsItembased09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verifying the interest for different banks based on the brand codes passed in the request ">
+        <classes>
+            <class name="scripts.DifferentRoiForEmiTransaction.RoiForEmiTransaction">
+                <methods>
+                    <include name="Verify_passing_brandcode"/>
+                    <include name="Verify_without_passing_brandcode_default"/>
+                    <include name="Verify_multiple_brandcodes_passed_in_request"/>
+                    <include name="Verify_passing_default"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_MaxAmount_nonLoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_maxAmount"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="validateSavedEmiTxn_PgOnly_LoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount_nonLoggedIn"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native EMISubvention">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="validate emi plans button is disabled in case of Invalid Bins- Checkout JS flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="EMI_DCbasedonCategorization_CheckNumber"/>
+                    <include name="verifySelectEmiPlanButtonDisabledforInvalidBins_NBFCsFlow"/>
+                    <include name="EMI_DCbasedonCategorization_DefaultTrue"/>
+                    <include name="EMI_DCbasedonCategorization_DBCheck"/>
+                    <include name="verifySelectEmiPlanButtonDisabledforInvalidBins_NewCardFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Payments API's 2">
+        <classes>
+            <class name="scripts.api.theia.FetchEmiPaymentChannels">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Payments API's 4">
+        <classes>
+            <class name="scripts.api.theia.GetEmiDetails">
+                <methods>
+                    <include name="testWhenSignatureIsNotSupplied"/>
+                    <include name="testWhenSignatureOfOtherMerchantIsUsed"/>
+                    <include name="test channelName for bajajfn emi in emiDetails"/>
+                    <include name="testWhenEmiIsNotConfiguredOnMerchant"/>
+                    <include name="test channelName for amex emi in emiDetails"/>
+                    <include name="test channelCode for zest money emi in emiDetails"/>
+                    <include name="testWhenEmiIsConfiguredOnMerchant"/>
+                    <include name="test emiDetails in Body"/>
+                    <include name="test emiType for zest money emi in emiDetails"/>
+                    <include name="test channelCode for bajajfn emi in emiDetails"/>
+                    <include name="test channelCode for amex emi in emiDetails"/>
+                    <include name="testWhenNonExistentMidIsSupplied"/>
+                    <include name="actual_testWhenMidIsNotSupplied"/>
+                    <include name="actual_testWhenMidInQueryParamsIsNotSupplied"/>
+                    <include name="test channelName for zest money emi in emiDetails"/>
+                    <include name="test emiType for cc emi in emiDetails"/>
+                    <include name="test iconUrl in emiDetails"/>
+                    <include name="test ofMonths in emiChannelInfos"/>
+                    <include name="test emiChannelInfos in emiDetails"/>
+                    <include name="testWhenMidInFormParamAndInQueryParamAreDifferent"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases web UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="PGP_39255_TC_08"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="PGP_39255_TC_09"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native ProcessTransactionTests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_EMI_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus EMISubvention">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CHECKOUTJS on Enhanced Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_EMI_Txn"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-30168 EMI_DC cases">
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifyEmiDcVisibleInFPOPerformSuccessfulTransactionWithAccessToken"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenformobNoWithEmiDcNotConfigured"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenWithoutMobNoInCreateTokenApi"/>
+                    <include name="verifyEmiDcVisibleInFPOAndPerformSuccessfulTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI on enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_maxAmount"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount_nonLoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_MaxAmount_nonLoggedIn"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus ProcessTransactionTests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_EMI_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMISubvention API Test cases">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="getEmiDetailsForInvalidClientId"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfSameBank"/>
+                    <include name="checkEMIEligiBilityForChannelCodeBajajFN"/>
+                    <include name="getEmiDetailsForBlankClientId"/>
+                    <include name="checkEMIEligiBilityForChannelCodeAMEX"/>
+                    <include name="checkEMIEligiBilityWithBlankChannelCode"/>
+                    <include name="getEmiDetailsForInvalidMID"/>
+                    <include name="checkEMIEligiBilityWithInvalidSSOToken"/>
+                    <include name="getEmiDetailsForInvalidJWTToken"/>
+                    <include name="checkEMIEligiBilityWithEMIDisabledMID"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnNonEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMIEnabledMID"/>
+                    <include name="getEmiDetailsForEMIDisabledMerchant"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeEnabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeCreditCard"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeDisabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityForChannelCodeICICI"/>
+                    <include name="checkEMIEligiBilityForChannelCodeHDFC"/>
+                    <include name="verifyEmiDetailsForDiffMIDInRequestAndQueryParams"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithSSOToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-33611 - EMI subvention UI improvements for wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="multiOfferEMISubvention"/>
+                    <include name="EMISubCheckoutJsItembased04"/>
+                    <include name="EMISubCheckoutJsItembased05"/>
+                    <include name="EMISubCheckoutJsItembased08"/>
+                    <include name="EMISubCheckoutJsItembased09"/>
+                    <include name="verifyEMISubventionStrip_ForStandardEMI"/>
+                    <include name="verifyEMISubventionStrip_ForAmountBasedEMI"/>
+                    <include name="verifyEMISubventionStrip_ForItemBasedEMI"/>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="EMISubCheckoutJsItembased03"/>
+                    <include name="singleOfferEMISubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI transaction on token">
+        <classes>
+            <class name="scripts.coft.theia.EmiTransactionOnTokens">
+                <methods>
+                    <include name="standardEmiWithTIN"/>
+                    <include name="standardEmiWithTOKEN"/>
+                    <include name="standardEmiWithFreshCard"/>
+                    <include name="lastFourDigitVerification"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <include name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- New Cases from EMI Pg2 Added -->
+    <!--    <test name="Wallet Enhanced">-->
+    <!--        <parameter name="theme" value="enhancedweb_revamp"/>-->
+    <!--        <classes>-->
+    <!--            <class name="scripts.WalletOnly">-->
+    <!--                <methods>-->
+    <!--                    <include name="ZERO_WALLET_05"/>-->
+    <!--                    <include name="ZERO_WALLET_06"/>-->
+    <!--                    <include name="ZERO_WALLET_07"/>-->
+    <!--                    <include name="ZERO_WALLET_01"/>-->
+    <!--                </methods>-->
+    <!--            </class>-->
+    <!--        </classes>-->
+    <!--    </test>-->
+    <test name="validate e2e txn for bank offer">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.dataEnrichment.BankOfferHotfix">
+                <methods>
+                    <include name="validateInitiateTxnAPI"/>
+                    <include name="validateInitiateTxnAPISuccessE2E"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnCheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnNativePlus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyCOPEmiInfoOnNative"/>
+                    <include name="verifyCOPEmiInfoOnNativeWhenApplyPromoAppliedAmountBased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46368 validate emiInfo in extendInfo in COP request on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyCOPEmiInfoForRedirection"/>
+                    <include name="BankVerifiedName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="10" verbose="0" name="PGP-24062" parallel="classes">
+        <classes>
+            <class name="scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test">
+                <methods>
+                    <include name="testSuccess"/>
+                    <include name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <include name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Discovery API">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest"/>
+        </classes>
+    </test>
+    <test name="PGP-49320 enhanced-web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateLoanAmountInCreateOrderAndPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49320 checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingCC"/>
+                    <include name="validateLoanAmountWithSpecificPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SimplifiedOffer">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest"/>
+        </classes>
+    </test>
+    <test name="BAJAJFN_NONDBD">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDABSOLUTEZERO"/>
+                    <include name="TXNFailureBajajFNRetryDisable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="BAJAJFN_NONDBD NATIVE">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDPERCENTAGEZERO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="BAJAJFN_NONDBD checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFNNONDBDABSOLUTEZEROJS"/>
+                    <include name="BankFormFailureBajajFNRetryDisable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify v2/applyPromo request/response body for EMI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateApplyPromoForEMICCPromoAndSubventionForCOP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoAndSubventionForCOTP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoForCOP"/>
+                    <include name="ValidateApplyPromoForEMICCPromoForCOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate fileds in BOSS_CHARGE_FEE_BATCH_CONSULT request/response" >
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative">
+                <methods>
+                    <include name="validateFetchPCFResponseWhenOnlyEMIpayMethodPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkPassed"/>
+                    <include name="validateFetchPCFResponseWhenIssuerBankPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkDinersPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkMaestroPassed"/>
+                    <include name="validateFetchPCFResponseWhenCardNetworkVisaPassed"/>
+                    <include name="validateFetchBinDetailsResponseForCardNetworkDiners"/>
+                    <include name="validateFetchBinDetailsResponseForCardNetworkVISA"/>
+                    <include name="validatePTCResponseForCardNetworkVISA"/>
+                    <include name="validatePTCResponseForCardNetworkDiners"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-49170 validate OrderItemId in subvention checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ValidateOrterItemIdWhenAmountBasedPromoAndSubvention"/>
+                    <include name="ValidateOrterItemIdWhenItemBasedPromoAndAmountBasedSubvention"/>
+                    <include name="ValidateOrterItemIdWhenAmountBasedPromoAndItemBasedSubvention"/>
+                    <include name="ValidateOrterItemIdWhenItemBasedPromoAndItemBasedSubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+    <test name="PGP-47869 validate Bin Eligibility in bin center API">
+        <classes>
+            <class name="scripts.coft.theia.Fetch_Bin_Change">
+                <methods>
+                    <include name="verify_CC_6_digit_bin_isEmiAvailable_true"/>
+                    <include name="verify_CC_9_digit_bin_isEmiAvailable_true"/>
+                    <include name="verify_CC_6_digit_bin_isEmiAvailable_false"/>
+                    <include name="verify_CC_9_digit_bin_isEmiAvailable_false"/>
+                    <include name="verify_DC_6_digit_bin_isEmiAvailable_true"/>
+                    <include name="verify_DC_9_digit_bin_isEmiAvailable_true"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-47869 validate transactions according to bin eligibility">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="VerifyEmiTxnWhenBinIsTrue"/>
+                    <include name="VerifyEmiTxnWhenBinIsFalse"/>
+                    <include name="VerifyBigEligibleTrueInFPO"/>
+                    <include name="VerifyBinEligibleFalseInFPO"/>
+                    <include name="VerifyE2EEmiTxnWithCC"/>
+                    <include name="VerifyE2EEmiTxnWithCCSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46696 OfferDiscoveryTxnTokenTest">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_NOT_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_without_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_false_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_true_and_amountBasedSubvention_false_with_item_Passsed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46696 OfferDiscoveryAccessTokenTest">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_NOT_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_without_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_false_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_true_and_amountBasedSubvention_false_with_item_Passsed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-52271 Custom emi dc">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="VerifyEMI_DCTxnWithPCFWithPromo"/>
+                    <include name="VerifyEMI_DCTxnWithPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-52271 Checkout EMI DC">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="VerifyEMI_DCTxnWithPCF"/>
+                    <include name="VerifyEMI_DCTxnWithPCFWithPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Error Message Change in PTC">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="VerifyTheResponseMessagewheninvalidPlanIdProvidedForEMI"/>
+                    <include name="VerifyTheResponseMessagewheninvalidPlanIdProvidedForEMIDC"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdSentNotConfiguredOnMIDProvidedForEMI"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdSentNotConfiguredOnMIDProvidedForEMIDC"/>
+                    <include name="VerifyTheResponseMessagewhenPayModeIsEMIDCAndCCCardProvided"/>
+                    <include name="VerifyTheResponseMessagewhenPayModeIsEMIAndDCCardProvided"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdIsofHDFCBankAndCardNumberIsOfICICIEMIDC"/>
+                    <include name="VerifyTheResponseMessagewhenPlanIdIsofICICIBankAndCardNumberIsOfHDFCEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Simplified Unified in FPO">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="VerifyThatMinMaxAmountSentInCOPRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify V2/Order/Checkout API ">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="verifyDCEMIForv2OrderCheckout"/>
+                    <include name="verifyStandardEMIForv2OrderCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-51804 cases">
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyValidateHavingAmexAndPTCHavingHDFCPlanID"/>
+                    <include name="verifyValidateHavingAmexAndPTCHavingAMEXIncorrectPlanID"/>
+                    <include name="verifyFailureTxnforIncorrectPlanIDInPTC"/>
+                    <include name="verifyFailureTxnforIncorrectPlanIDUsingALTIDInPTC"/>
+                    <include name="verifyFailureTxnforIncorrectPlanIDUsingCOFTInPTC"/>
+                    <include name="verifyFailureTxnforIncorrectTenureUsingCOFTInPTC"/>
+                    <include name="verifyFailureTxnforValidateHavingAmexAndPTCHavinCOFTOfAMEXAndIncorrectPlanID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-53495">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateFetchPaymentOptionWhenEMIDCPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCWithICICIBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCWithNOBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAndEMIPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAndEMIWithBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAllBankAndEMIICICIBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCWithHDFCBankAndEMIWithAllBankPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCAndEMIAndCreditCardPassedInEnablePaymentMode"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCPassedInEnablePaymentModeAndTxnAmoutLessThanMinEMIAmount"/>
+                    <include name="validateFetchPaymentOptionWhenEMIDCPassedInEnablePaymentModeAndTxnAmoutGreaterThanMaxEMIAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-54910 EMI Task test">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestFailureCasesInApplyPromoTenuresAPI"/>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows"/>
+        </classes>
+    </test>
+    <test name="PGP-52897">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsOnlyAmountBasedSubventionForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsOnlyAmountBasedBankOfferForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsAmountBasedSubventionAndBankOfferForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsNoParamsForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsAmountBasedSubventionAndAmountBasedBankOfferFalseForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsAmountBasedSubventionAndAmountBasedBankOfferFalseAndItemNullForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersContainsOnlyItemObjectForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersAndFetchAllItemOffersObjectForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersObjectContainsItemBasedSubventionAndAmountBasedPromoForDeferredFlow"/>
+                    <include name="validateFPOWhenFetchUnifiedOffersObjectContainsItemObjectAndAmountBasedBankOfferAndApplyPaymentOfferIsFalseForDeferredFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-49046 checkoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="verifye2eTxnMinSubvention"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48241 Custom Cases">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestDetailExtendInfoItemBasedSubventionAndBOCOP"/>
+                    <include name="TestDetailExtendInfoCOPForOnlypromoForCustomCheckout"/>
+                    <include name="TestDetailExtendInfoItemBasedSubventionCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--This Cases requires version of checkoutJS branch: emiNewFlowPpsl as this cases are for new UI only-->
+    <test name="PGP-48241 Simplified Cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TestParamsInCOPRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionAndBO"/>
+                    <include name="TestParamsInCOPRequestWhenSimplifiedUnifiedOfferOnlyAmountBasedSubvention"/>
+                    <include name="TestParamsInCOPRequestWhenSimplifiedUnifiedOfferOnlyBO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Offer strip is not coming if only subvention offers are there">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.CheckoutJsSimplifiedUnifiedOffer">
+                <methods>
+                    <include name="testOfferStripVisible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46700 ` on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionAndBO"/>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionWithOfferIdAndBO"/>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionAndBOWithOfferId"/>
+                    <include name="TestOfferIDInADSRequestWhenSimplifiedUnifiedOfferAmountBasedSubventionWithOfferIdAndBOWithOfferId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46700 on custom flow">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestOfferIDInADSRequestWhenAmountBasedSubventionAndBOWithoutOfferIDForCustomFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Emi Eligibility New Flow">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEmiEligibilityNewFlow"/>
+        </classes>
+    </test>
+    <test name="KFS Test on EMI New Flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="Kfs_true_lendingConsent_true_newCard"/>
+                    <include name="Kfs_true_lendingConsent_false_newCard"/>
+                    <include name="Kfs_false_lendingConsent_false_newCard"/>
+                    <include name="Kfs_true_lendingConsent_true_savedCard"/>
+                    <include name="Kfs_true_lendingConsent_false_savedCard"/>
+                    <include name="Kfs_false_lendingConsent_false_SavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Card Bin sent in Offer Checkout">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_ApplyOffer"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedUnified"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_SimplifiedOld"/>
+                    <include name="testCardBinPassedinOfferCheckoutNotTokenBin_applyPromo_AltId"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Order Amount is not getting updated if user goes back in the flow in EMI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="verifyAmountModify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PAPR-5456 CheckEMIEligibility API test case">
+        <classes>
+            <class name="scripts.CheckEMIEligibilityEMIDC">
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56124">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfs_hdfc_dc_text"/>
+                    <include name="kfs_hdfc_dc_link"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="verify offers are not overflowing in side bar">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestLinkBasedEmiFlow">
+                <methods>
+                    <include name="testOfferStripBarIsNotOverflowingInLinkPaymentPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Dummy Brand Id not sent in Offer Checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testDummyValuesNotBeingSentToATSforAmtBasedTxn_STANDARD"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEMIOldFlow">
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-55241">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateUnifiedOfferforAllOffers"/>
+                    <include name="validateUnifiedOfferforAllOffersSSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-55241 -all offers in offerDiscovery">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryWithSSOToken">
+                <methods>
+                    <include name="verifyallOffersTrue"/>
+                    <include name="verifyallOffersFalse"/>
+                    <include name="verifyallOffersTruewithAmount"/>
+                    <include name="verifyallOffersTrueLite"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate PGP-55801">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="testNoEmiSubventionServiceCallGoesToPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-55426" parallel="methods" thread-count="14">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="verifyAprTextPopUp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate PGP-56308">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEmiDetails">
+                <methods>
+                    <include name="testGetEmiDetailsDynamically"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI DC Eligbility Not happening in Deferred Checkout FPO">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validate_EmiEligibility_CallNotHappening_inFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-55692 : Verify Offer Widget Discovery">
+        <classes>
+            <class name="scripts.OfferJS.OfferWidgetDiscoveryE2E">
+                <methods>
+                    <include name="testOfferDiscoveryWidgetE2E"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56319 : Verify Offer Discovery Widget">
+        <classes>
+            <class name="scripts.OfferJS.OfferWidgetDiscoveryE2E">
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56779">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testTxnAmountBeingUsedForOfferApplyNotPayableAmount_SimplifiedPaymentOffers"/>
+                    <include name="testTxnAmountBeingUsedForOfferApplyNotPayableAmount_SimplifiedSubvention"/>
+                    <include name="testTxnAmountBeingUsedForOfferApplyNotPayableAmount_SimlifiedUnifiedOffers"/>
+                    <include name="testFPOResponse_UnifiedOffersinSavedinstruments"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="testOfferAppliedOnSavedInstrument_ForFPOChangedResponse"/>
+                    <include name="verifyOriginalCardHashForEMIVisaCreditCardWithOffers"/>
+                    <include name="verifyOriginalCardHashForEMIVisaCreditCardWithoutOffers"/>
+                    <include name="verifyOriginalCardHashForEMIDebitCardWithOffers"/>
+                    <include name="verifyOriginalCardHashFlowForMasterCard"/>
+                    <include name="verifyOriginalCardHashFlowForRupayCard"/>
+                    <include name="verifyOriginalCardHashFlowForVisaCard"/>
+                    <include name="RestrictedTenuresPassedInInitiateRequestWillLeadToSuccessTxnForCorrectTenuresInProcessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="KFS for HDFC DC - EMI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfsNew_hdfc_dc_part1"/>
+                    <include name="kfsNew_hdfc_dc_part2"/>
+                    <include name="kfsNew_hdfc_dc_annexB"/>
+                    <include name="kfsNew_hdfc_dc_annexC"/>
+                    <include name="kfsNew_hdfc_dc_tableText"/>
+                    <include name="kfsNew_hdfc_dc_ImpLinks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="KFS for HDFC DC - EMI1">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfsNew_hdfc_dc_vernacular"/>
+                    <include name="kfsNew_hdfc_dc_vernacularText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56756">
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="verifyCoftResponsePrefON"/>
+                    <include name="verifyCoftResponsePrefOFF" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="KFS ICICI EMI_DC and HDFC DC EMI Online KFS for vernacular Language Translation for static fields">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfsNew_ICICI_EMIDC_part1"/>
+                    <include name="kfsNew_ICICI_EMIDC_part2"/>
+                    <include name="kfsNew_ICICI_EMIDC_annexB1"/>
+                    <include name="kfsNew_ICICI_EMIDC_annexC1"/>
+                    <include name="kfsNew_ICICI_EMIDC_tableText1"/>
+                    <include name="kfsNew_ICICI_EMIDC_consent"/>
+                    <include name="kfsNew_HDFC_EMIDC_vernacularText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="9 Digit bin allowed in ValidateEmi for Migrated Flow">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEMIOldFlow">
+                <methods>
+                    <include name="testCustomCheckoutEMITxn_OldFlowMigratedToNewFlow_with9DigitBin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPSL-524 Cases- bulk apply">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateBin9Digit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPSL-524 Cases - apply/checkout">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="validateBin9Digit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-57869">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="cardBinInApplyReq"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-58010">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBankEMICaseForSingleOffer"/>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBrandEMICaseForMultipleOffer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-58171">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="verifyOriginalCardHashForStandardFlowUsingVISACardScheme"/>
+                    <include name="verifyOriginalCardHashForStandardEMIUsingRupayCardScheme"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-57934">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="subventionPercentInOrderModify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-58208">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="verifyFetchBinResponseForEMIIneligibleBin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-58209">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="Verify_OfferApply_Response_When_Bin_Is_Emi_Ineligible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPSL-799">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="noUneccesaryHits_In_Discovery"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="PGP-58532">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifySubventionAmountNotPresentForMultiItem"/>
+                    <include name="verifySubventionAmountNotPresentForSingleItem"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-58574">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateUnifiedOfferTokenNotPresent_singleItemBasedOffer"/>
+                    <include name="validateUnifiedOfferTokenNotPresent_MultiItemBasedOffer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPSL-794">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="verifyFetchBinResponseForBinThatStartsWithZero"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="Verify_OfferApply_Response_When_Cardnumber_Starts_With_0"/>
+                    <include name="Verify_OfferApply_Response_When_RandomIssuingBank_Is_Sent"/>
+                    <include name="Verify_OfferApply_Response_When_DebitCardInfo_Is_Sent_With_CreditCard_PayMethod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="verifyDeviceImeiAndSourceInOfferApplyAndCheckoutResponse">
+        <classes>
+            <class name="scripts.EMITest.EMIDependentServiceTest">
+                <methods>
+                    <include name="verifyDeviceImeiAndSourceInOfferApplyAndCheckoutResponse"/>
+                    <include name="verifyModelIDisNotGettingOverridenByProductIDWhenModelIDIsSentInRequest"/>
+                    <include name="verifyModelIDisGettingOverridenByProductIDWhenModelIDIsNotSentInRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    
+    <!-- Bajaj Finserv Flow Test Cases -->
+    <test name="Bajaj Finserv Flow Tests - Web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.BajajFinservFlowTest"/>
+        </classes>
+    </test>
+    
+    <!-- Custom Checkout EMI Cardless Test Cases -->
+    <test name="Custom Checkout EMI Cardless Tests">
+        <classes>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutNewFlowTest">
+                <methods>
+                    <include name="testCustomCheckoutforEmiCardless_Amountbased"/>
+                    <include name="testCustomCheckoutforEmiCardless_ItemBased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify customername in payment link txn">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBankEMICaseForSingleOffer"/>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBrandEMICaseForMultipleOffer"/>
+                    <include name="VerifyBankFS"/>
+                    <include name="VerifyBrandFS"/>
+                    <include name="ValidateErrorMsgWhenCustomerNameIsEmpty"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Store Page Brand and Bank EMI Case">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="StorePageBankEmiCase"/>
+                    <include name="StorePageBrandEmiCase"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify UI on Accordian Click">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="verifyUIonAccordianClick"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify error message for ROUTING_FAILED">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyErrorMessageFor_ROUTING_FAILED"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="OfferApply_API_JWE_Encryption">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <!-- JWE Encrypted Test Methods for CardNo, VPA and NB -->
+                    <include name="Verify_OfferApply_With_JWE_Encryption_EncKeyId_And_EncryptedParam"/>
+                    <include name="Verify_OfferApply_With_JWE_Encryption_For_UPI_VPA"/>
+                    <include name="Verify_OfferApply_With_JWE_Encryption_For_CardNo"/>
+                    <include name="Verify_OfferApply_With_JWE_Encryption_For_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FlowType being sent by EDC link service">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyFlowTypeBrandIsBeingFloatedInInitiateAndOfferApply"/>
+                    <include name="VerifyFlowTypeBankIsBeingFloatedInInitiateAndOfferApply"/>
+                    <include name="VerifyErrorWhenFlowTypeInvalidIsBeingPassed"/>
+                    <include name="VerifyWhenFlowTypeBlankIsBeingPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Customer Name Validation">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyBrandFSForCustomerNameValidation"/>
+                    <include name="BrandEmiCaseCustomerNameValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="PGP-6982 - FullSwipeOffersTests">
+    <parameter name="isNativePlus" value="true"/>
+    <classes>
+      <class name="scripts.EMITest.CustomCheckout.FullSwipeOffers">
+        <methods>
+          <include name="testFullSwipeOfferTxn_CC_AffordabilityLogs"/>
+          <include name="testFullSwipeOfferTxn_CC_AcquiringLogs"/>
+          <include name="testFullSwipeOfferTxn_DC_AffordabilityAndAcquiringPayOrderLogs"/>
+          <include name="testFullSwipeOfferTxn_HDFC_EMI_AffordabilityAndAcquiringPayOrderLogs"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="PGP-61253 | PreAuth single and multiCapture flow">
+        <classes>
+            <class name="scripts.api.PreAuthCapture.PreAuthCapture">
+                <methods>
+                   <include name="verifyPreAuthWithMultiCaptureFalse_CC_Txn"/>
+                   <include name="verifyCaptureTxn_CC_Txn"/>
+                   <include name="verifyPartialCapture_Release_Flow_CC_Txn"/>
+                   <include name="verifyDownPayment_multiCaptureTrue_CC_EMI_Txn"/>
+                   <include name="verifyDownPayment_Release_Flow_multiCaptureTrue_CC_EMI_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="PG-2153 Offer Apply Bajaj EMI Cardless">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="testOfferApplyBajajFinservEmiCardless"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PG-7767 EMI Cardless checkout call">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="verifyCheckoutcallForCardLess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="APPLY ERROR MESSAGE">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyApplyErrorMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="PaymentLinks - Product code 102 - PG-1815">
+        <classes>
+            <class name="scripts.api.linkservice.PaymentLinks">
+                <methods>
+                    <include name="verifyPaymentLinkProductcode_FlaginCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="Verify param emi detail info in COP of standard links">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="verifyParamStandardLinks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="Verify branded UPI QR logo when BRANDED_UPI_QR preference is on and off">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyLogoInQRWhenPrefOn"/>
+                    <include name="verifyLogoInQRWhenPrefOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PG-1176 - Filter UPI_PUSH for link transactions when supportOnline = false in LPV response">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest">
+                <methods>
+                    <include name="verifyUPIPUSH_paymode_FPO_supportOnline_true_inLPV"/>
+                    <include name="verifyUPIPUSH_paymode_FPO_supportOnline_FALSE_inLPV"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+      <test name="PaymentLinks - Product code 102 - PG-1815_CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.PaymentLinks">
+                <methods>
+                    <include name="verifyPaymentLinkProductcode_FlaginCOP"/>
+                    <include name="verifyPaymentLinkCcTxn"/>
+                    <include name="verifyUPIIntentNotFilteringOutInNativeAppFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="LINK TXN FOR PCF AND MDR MERCHANT">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifySucessEdcLinkTxnForPcfAndMdrMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

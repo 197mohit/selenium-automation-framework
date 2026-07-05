@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Save_Card_Suite" parallel="tests" thread-count="1">
+<test name="Verify card shortcut is present in FPO V5 and offer is being applied on same card">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.CardShortInFPO">
+                <methods>
+                    <include name="OfferApply_Token_shortcut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    </suite>

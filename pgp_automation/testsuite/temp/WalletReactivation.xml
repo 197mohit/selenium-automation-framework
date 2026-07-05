@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-50394" verbose="1" parallel="tests" thread-count="1">
+    <test name="PGP-50394 Wallet reactivation test cases automation">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.Wallet.WalletReactivation">
+                <methods>
+                    <include name="activeWallet"/>
+                    <include name="activeWallet_ios"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_ON"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_OFF"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_OFF"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_balanceZero_android"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_balanceZero_ios"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_balanceSixThousand_Android"/>
+                    <include name="frozenWallet_Pref_N_reactivationFlag_ON_Android"/>
+                    <include name="frozenWallet_Pref_N_reactivationFlag_ON_IOS"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_ANDROID"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_IOS"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_ANDROID_appversionless"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_ON_IOS_Appversionless"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_ON_IOS"/>
+                    <include name="inactiveWallet_Pref_Y_reactivationFlag_OFF_IOS"/>
+                    <include name="inactiveWallet_Pref_N_reactivationFlag_OFF_IOS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

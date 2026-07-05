@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name=" APR value OfferApplyAPI" verbose="1" thread-count="20" parallel="tests">
+    <test name=" APR OfferApply API">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyAccessTokenTest">
+                <methods>
+                    <include name="verifyAPROfferApply"/>
+                    <include name="verifyAPRnotInOfferApply"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="REDIRECTION FIX" verbose="1" >
+    <test name="Verify message displayed in cashier page when only UPI is enabled">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.UI.EnhancedUITests">
+                    <methods>
+                        <include name="PGP_39547_TC_04_NonLoggedInFlow_UPIEnabled"/>
+                        <include name="PGP_39547_TC_02_NonLoggedInFlow_PostpaidCardsEnabled"/>
+                        <include name="SC_Txn_whenDCCisEnabledInrCurrency"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Zero Pass Percentage Suite ">
+    <suite-files>
+
+        <suite-file path="ZeroSuite/R1_zero.xml"/>
+        <suite-file path="ZeroSuite/R2_zero.xml"/>
+        <suite-file path="ZeroSuite/R3_zero.xml"/>
+        <suite-file path="ZeroSuite/R4_zero.xml"/>
+        <suite-file path="ZeroSuite/R5_zero.xml"/>
+        <suite-file path="ZeroSuite/R6_zero.xml"/>
+
+    </suite-files>
+</suite>

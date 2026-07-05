@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36669" verbose="1" parallel="tests" thread-count="2">
+    <test name="PGP-42046 Verify credit/Debit/creditdebit freeze messages on wallet on enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                    <include name="verify_new_wallet_user_error_message"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-42046 Verify credit/Debit/creditdebit freeze messages on wallet on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_wallet_disabled_message_creditDebitFreeze"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

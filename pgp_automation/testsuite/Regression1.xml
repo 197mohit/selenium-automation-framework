@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression1" verbose="1" thread-count="12"
+       parallel="tests">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="PGP-24758">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test"/>
+        </classes>
+    </test>
+
+    <test name="TestRetryPayModes">
+        <classes>
+            <class name="scripts.RetryPayModes.TestRetryPayModes"/>
+        </classes>
+    </test>
+
+    <test name="PGP-17114 - Subscription merchant preference for store card should not be mandatory">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Sprint28.SubscriptionStoreCardNo"/>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="verifyNoRetryIfCountExhausted"/>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-24062">
+        <classes>
+            <class name="scripts.api.theia.FastForwardTest"/>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test"/>
+            <class name="scripts.api.theia.fetchBalance.SSOTokenFetchBalanceInfoV1Test"/>
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.TxnTokenFetchNBPaymentChannelsV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV1Test"/>
+            <class name="scripts.api.theia.fetchMerchantInfo.TxnTokenFetchMerchantInfoV2Test"/>
+        </classes>
+    </test>
+
+    <test name="saved card api's">
+        <classes>
+            <class name="scripts.api.savedcardservice.UpdateTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SaveTrustedCardDetails"/>
+            <class name="scripts.api.savedcardservice.SaveTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.SavedCardsByCardTypeSsoToken"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByUserIdTokenIdTokenType"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByCustIdMId"/>
+            <class name="scripts.api.savedcardservice.PGDeactivateSavedCard"/>
+            <!--<class name="scripts.api.savedcardservice.GetSavedRecentCCBillPaymentByCardId"/>not completed-->
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdCardNo"/>
+            <class name="scripts.api.savedcardservice.GetSavedcardsByUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdStatus"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdInstruments"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOToken"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOTokenUserIdMId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdSSOTokenChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdUserIdMIdCustId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetCard"/>
+            <class name="scripts.api.savedcardservice.GetCacheSavedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardByUserIdCardId"/>
+            <!--<class name="scripts.api.savedcardservice.DeleteSavedCardBySSOTokenUserIdCardId"/>not completed-->
+            <class name="scripts.api.savedcardservice.DeletePGSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.DeactivateSavedCard"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardMIdCustId"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardByUserId"/>
+            <!--<class name="scripts.api.savedcardservice.AddSavedCardByMIdCustId"/>not completed-->
+        </classes>
+    </test>
+    <test name="MDRPCF on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="MDRPCF on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF seamless and seamless NB">
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulSeamlessTxnWithCC"/>
+                    <include name="successfulSeamlessTxnWithDC"/>
+                    <include name="successfulSeamlessTxnWithNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative"/>
+        </classes>
+    </test>
+
+    <test name="MDRPCF on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCFNative"/>
+        </classes>
+    </test>
+
+
+    <test name="PCFMDR on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="PCFMDR on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <exclude name="successfulSeamlessTxnWithCC"/>
+                    <exclude name="successfulSeamlessTxnWithDC"/>
+                    <exclude name="successfulSeamlessTxnWithNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <exclude name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PCFMDR seamless and seamless NB">
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDR">
+                <methods>
+                    <include name="successfulSeamlessTxnWithCC"/>
+                    <include name="successfulSeamlessTxnWithDC"/>
+                    <include name="successfulSeamlessTxnWithNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNB"/>
+                    <include name="successfulSeamlessTxnWithSeamlessNBPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Add Money Express Fee Cases">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money MP Fee Cases">
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money Uber Fee Cases">
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="Add N Pay Fee Cases">
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Deferred Fee on AddMoney Cases">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateFullKYCWalletNewFlow"/>
+                    <include name="validateFullKYCWalletSavedCCNewFlow"/>
+                    <include name="validateMinKYCWalletWalletNewApp"/>
+                    <include name="validateNoKYCWalletMorePNewFlow"/>
+                    <include name="validateFullKYCGVSavedCCNewAPP"/>
+                    <include name="validateNoKYCGVNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native AddMoney 3rd Party Fee Cases">
+        <classes>
+            <class name="scripts.Native.NativeAddMoneyTP">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SCW Native AddMoney Cases">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateFullKYCWalletNewFlow"/>
+                    <include name="validateFullKYCSavedCardWalletNewFlow"/>
+                    <include name="validateFullKYCGVNewFlow"/>
+
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+    <test name="PCFMDR on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative"/>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative"/>
+        </classes>
+    </test>
+    <test name="PGP-15980 Improve order retry success rate on Enhanced Wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="verifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="verifyNoRetryIfCountExhausted"/>
+                    <include name="verifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="verifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API) ">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <include name="fetchPayOptionForNonRiskRejectedUser"/>
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                    <include name="addMoneySavedCard"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="testGVScenario"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                    <include name="addMoneySavedCard"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="testGVScenario"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPICollectNativeSubs">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs"/>
+        </classes>
+    </test>
+    <test name="UPIIntentNativeSubs">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs"/>
+        </classes>
+    </test>
+    <test name="UPIRenewSubs">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs"/>
+        </classes>
+    </test>
+    <test name="UPIEnhanceEnhanceWap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs"/>
+        </classes>
+    </test>
+
+    <test name="UPIEnhanceEnhanceWeb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs"/>
+        </classes>
+    </test>
+    <test name="PGP-14676 Auto Refund on enhanced web ">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Sprint28.AutoRefund">
+                <methods>
+                    <exclude name="fundBackUPICollectPeon"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16003 - Link Based Limit OTP breach only API">
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifyBreachNumber"/>
+                    <include name="generateOTPLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP 16003 - Link Based Limit OTP breach on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifySuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16003 - Link Based Limit OTP breach on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+
+                <methods>
+                    <include name="verifySuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16531 - Notification service should share the transaction success message to the last updated mobile no.s of the merchant">
+        <classes>
+            <class name="scripts.Sprint28.CreateQRPayment"/>
+        </classes>
+    </test>
+
+
+    <!--<test name="DynamicQRTests">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.DynamicQR"/>
+        </classes>
+    </test>
+    <test name="StaticQR tests">
+        <classes>
+            <class name="scripts.StaticQR"/>
+        </classes>
+    </test>
+-->
+    <test name="PaytmExpress flow with Pgonly and Add n Pay CC,DC,EMI, Saved Card">
+        <classes>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="validatePaytmExpressPGOnlyTxnUsingCC"/>
+                    <include name="validatePaytmExpressPGOnlyTxnUsingDC"/>
+                    <include name="validatePaytmExpressPGOnlyTxnUsingDCWithoutLogin"/>
+                    <include name="validatePaytmExpressPGOnlyTxnUsingEMIWithoutLogin"/>
+                    <include name="validatePaytmExpressPGOnlyTxnUsingSavedCardWithoutLogin"/>
+                    <include name="validatePaytmExpressAddAndPayTransactionUsingCC"/>
+                    <include name="validatePaytmExpressAddAndPayTransactionUsingDC"/>
+                    <include name="validatePaytmExpressAddAndPayTransactionUsingSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Initiate Txn">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction"/>
+        </classes>
+    </test>
+    <test name="Food wallet refund">
+        <parameter name="theme" value="enhancedweb">
+            <classes>
+                <class name="scripts.FoodWalletRefund">
+                    <methods>
+                        <include name="PGP_successfulFoodWalletRefund"/>
+                        <include name="PGP_failedRefund_WhenFoodNotPassedInCheckSum"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_CC"/>
+                        <include name="PGP_FailedFoodRefund_InvalidFoodParamInChecksum"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_FoodCCMainWallet"/>
+                        <include name="PGP_SuccessFoodPartialRefund_Hybrid_FoodMainWallet"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_PartialFoodMainWallet"/>
+                        <include name="PGP_FailedFoodRefund_Hybrid"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_FoodWalletRefundAmtExceed"/>
+                        <include name="PGP_SuccessFoodRefund_Hybrid_notExceedsFoodWalletAmount"/>
+                        <include name="PGP_SuccessRefund_AddnPay"/>
+                        <include name="PGP_SuccessRefund_Partial_AddNPay"/>
+                        <include name="PGP_SuccessAdNPayRefund_WhenLimitBreached"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Fetch payment instrument for offline txn">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_InvalidToken"/>
+                    <include name="FetchPayIns"/>
+                    <include name="FetchPayIns_saveCard"/>
+                    <include name="FetchPayIns_PPBL"/>
+                    <include name="FetchPayIns_creditcard"/>
+                    <include name="FetchPayIns_balance"/>
+                    <include name="FetchPayIns_netbanking"/>
+                    <include name="FetchPayIns_PaytmDigitalCredit"/>
+                    <include name="FetchPayIns_UPI"/>
+                    <include name="FetchPayIns_SavedVpaV2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TopUpExpress">
+        <classes>
+            <class name="scripts.TopUpExpress">
+                <methods>
+                    <include name="PGP_407_successfulTopupXpressCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Offline Txn">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb"/>
+                <methods>
+                    <include name="PGP_528_OfflinePGTxn_WithExpiredToken"/>
+                    <include name="PGP_527_OfflinePG_TxnWithInvalidToken"/>
+                    <include name="PGP_529_OfflinePGTxn"/>
+                    <include name="PGP_530_OfflineWalletTxn"/>
+                    <include name="PGP_531_OfflineTxn_UPI_Collect"/>
+                    <include name="PGP_532_OfflinePPBLTxn"/>
+                    <!--<include name="successOfflineTxn_postpaidOnboarding"/>-->  <!--Functionality is switched off on production-->
+                    <include name="PGP_532_OfflinePaytmCCTxn"/>
+                    <include name="PGP_529_OfflineHybTxn"/>
+                    <include name="PGP_529_OfflineAddnPayTxn"/>
+                    <include name="PGP_529_OfflineSavedCardTxn"/>
+                    <include name="PGP_529_OfflinePGTxnRiskReject"/>
+                    <include name="validatePGonlyWithLoginUsingDC"/>
+                    <include name="validatePGonlyWithLoginUsingSavedCard"/>
+                    <include name="validateAddNPayUsingDC"/>
+                    <include name="validateAddNPayUsingSavedCard"/>
+                    <include name="EMI_Offline_Card_Type_failure"/>
+                    <include name="validateRiskExtendInfoDuplicateModeDC"/>
+                    <include name="validateRiskExtendInfoDuplicateModeCC"/>
+                    <include name="validateRiskExtendInfoDuplicateModeNB"/>
+                    <include name="validateRiskExtendInfoCommaSeperatedDC"/>
+                    <include name="validateRiskExtendInfoPipeSeperatedSpecialDC"/>
+                    <include name="validateRiskExtendInfoPipeEMI"/>
+                    <include name="validateRiskExtendInfoPipePPI"/>
+                    <include name="validateRikExtendInfoMaxSize"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AOA">
+        <parameter name="theme" value="enhancedweb">
+            <classes>
+                <class name="scripts.AOATxn">
+                    <methods>
+                        <include name="aoa_CC_S_withoutToken"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="save card">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCard">
+            </class>
+        </classes>
+    </test>
+    <test name="CCBillPayment on EnhancedWeb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_464_ccBillPaymentViaNB"/>
+                    <include name="PGP_465_ccBillPaymentViaDC"/>
+                    <include name="validateCCBillPaymentUsingDC"/>
+                    <include name="validateCCBillPaymentUsingSavedCard"/>
+                    <include name="validateCCBillPaymentUsingRetryDC"/>
+                    <include name="validateCCBillPaymentUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CCBillPayment on EnhancedWap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="payMode" value="CC"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_464_ccBillPaymentViaNB"/>
+                    <include name="PGP_465_ccBillPaymentViaDC"/>
+                    <include name="validateCCBillPaymentUsingDC"/>
+                    <include name="validateCCBillPaymentUsingSavedCard"/>
+                    <include name="validateCCBillPaymentUsingRetryDC"/>
+                    <include name="validateCCBillPaymentUsingRetrySavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-23725-Correct Error Message Tests for different paymodes">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifySBICreditCardNotAllowedMsg"/>
+                    <include name="verifyHDFCCreditCardAllowedwhenHDFC_DC_CC_Enabled"/>
+                    <include name="verifyHDFCDebitNotAllowedwhenOnlyHDFC_CC_Enabled"/>
+                    <include name="verifyHDFCCreditCardAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletAddNPay"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletHybrid"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyHDFCDebitCardNotAllowedwithOnlyHDFC_CCEnabledSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-21763 Subscription - Enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                    <include name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <include name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCannotBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="PGP_21763_verifyInvalidSubsPaymodeMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="PGP_21763_verifyAddnPayNotAllowedMessage"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-21763 Subscription - Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                    <include name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <include name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCannotBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidAppInvokeDeviceMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                    <include name="PGP_21763_verifyTxnAmtNotEqualtoMaxAmtMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-21763 Subscription Renew - Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifySubsIDLengthValidationFailedMessage"/>
+                    <include name="verifyTxnAmountLengthValidationFailedMessage"/>
+                    <include name="verifyInvalidSavedCardIDMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="OrderStatusV2 CustId Tests - EnhancedWeb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.OrderStatusV2Tests">
+                <methods>
+                    <include name="verifyCustIdReturnedforSuccessTxn"/>
+                    <include name="verifyCustIdReturnedforFailureTxn"/>
+                    <include name="verifyCustIdReturnedforPendingTxn"/>
+                    <include name="verifyCustIdNotReturnedwhenMidNotConfigured"/>
+                    <include name="verifyCustIdReturnedforONUSMerchants"/>
+                    <include name="verifyCustIdReturnedforOFFUSMerchants"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SavedUPI Tests on EnhancedWap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUIChangesforSavedUPI"/>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                    <include name="VerifySuccessfullSavedUPITxnADDNPAY"/>
+                    <include name="VerifySuccessfullSavedUPITxnHYBRID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SavedUPI Tests on EnhancedWeb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUIChangesforSavedUPI"/>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                    <include name="VerifySuccessfullSavedUPITxnADDNPAY"/>
+                    <include name="VerifySuccessfullSavedUPITxnHYBRID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                    <include name="PGP_289_successfulSeamlessDC"/>
+                    <include name="PGP_290_SeamlessCCWithoutSavedCard"/>
+                    <include name="PGP_291_SeamlessCCAndSavingCard"/>
+                    <include name="PGP_292_SeamlessCCUsingSavedCard"/>
+                    <include name="PGP_293_successfulSeamlessNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="mapping Service API">
+        <classes>
+            <class name="scripts.api.mappingService.MappingService">
+                <methods>
+                    <include name="validateGetFormatter_fromDB"/>
+                    <include name="validateGetFormatter_fromRedis"/>
+                    <include name="validateGetBankDetails_APCODE_FromDB"/>
+                    <include name="validateGetBankDetails_APCODE_FromRedis"/>
+                    <include name="validateBankUrlInfo_fromDB"/>
+                    <include name="validateBankUrlInfo_fromRedis"/>
+                    <include name="validateGetPaytmId_FromDB"/>
+                    <include name="validateGetPaytmId_FromRedis"/>
+                    <include name="validateGetMerchContractPaymentInfo"/>
+                    <include name="validateGetEntityUrlInfoAPI_Request"/>
+                    <include name="validateGetEntityUrlInfoAPI_Response"/>
+                    <include name="validateLookUpPaymodeAPI_CC"/>
+                    <include name="validateGetPaytmProperties_API"/>
+                    <include name="validateMerchExtendedInfo"/>
+                    <include name="validateMerchPreferenceInfo"/>
+                    <include name="validateBankDetail_fromDatabase"/>
+                    <include name="validateEntityOfferDetail_fromRedis"/>
+                    <include name="validateEntityOfferDetail_fromDB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SeamlessNative">
+        <classes>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="PGP_359_successfulSeamlessNativeCC"/>
+                    <include name="PGP_360_successfulSeamlessNativeDC"/>
+                    <include name="PGP_361_SeamlessNativeCCWithoutSavedCard"/>
+                    <include name="PGP_362_SeamlessNativeCCAndSavingCard"/>
+                    <include name="PGP_363_SeamlessNativeCCUsingSavedCard"/>
+                    <include name="PGP_364_successfulSeamlesNativeNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="IVRFastForward">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="PGP_236_successfulIVRTxn"/>
+                    <include name="PGP_437_IVR_UnsuccessfulTxnInsufficientWalletBalance"/>
+                    <include name="PGP_438_UnsuccessfulTxnInvalidToken"/>
+                    <include name="PGP_439_UnsuccessfulTxnExpiredToken"/>
+                    <include name="PGP_440_UnsuccessfulTxnInvalidRequestType"/>
+                    <include name="PGP_441_UnsuccessfulTxnInvalidMid"/>
+                    <include name="PGP_442_UnsuccessfulTxnNonMigratedMid"/>
+                    <include name="PGP_443_SuccessfulTxnAppIDNotSend"/>
+                    <include name="PGP_444_UnsuccessfulTxnTxnAmount_0"/>
+                    <include name="PGP_445_UnsuccessfulTxnAlphanumricAmount"/>
+                    <include name="PGP_446_UnsuccessfulTxnNegativeAmount"/>
+                    <include name="PGP_447_SuccessfulTxnInvalidCurrency"/>
+                    <include name="PGP_448_SuccessfulTxnBlankCurrencyType"/>
+                    <include name="PGP_449_SuccessfulTxnCurrencyNotPassed"/>
+                    <include name="PGP_450_SuccessfulTxnDeviceIdNotPassed"/>
+                    <include name="PGP_451_SuccessfulTxnPaytmToken"/>
+                    <include name="PGP_453_UnsuccessfulTxnInvalidPaymode"/>
+                    <include name="PGP_455_UnsuccessfulTxnWithoutCustID"/>
+                    <include name="PGP_456_UnsuccessfulTxnWithBlankCustID"/>
+                    <include name="PGP_457_UnsuccessfulTxnInvalidIndustryType"/>
+                    <include name="PGP_458_SuccessfulTxnChannelWAP"/>
+                    <include name="PGP_459_SuccessfulTxnInvalidAuthMode"/>
+                    <include name="PGP_460_SuccessfulTxnMerchantUniqueNotPassed"/>
+                    <include name="testAutoDebitTxnByPCFMerchant"/>
+                    <include name="riskRejectFastForward"/>
+                    <include name="validateSuccessPeonPPI"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI on enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="SuccessfulEBajajFinMITxn"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardWhenExpiryDateIsEntered"/>
+                    <include name="verifyCorrectInfoMsgIsShownForEMIPaymodeWhenBajajFinservIsSelected"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardForAddNPayMerchant"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVV_IsNotEntered"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVVIsEntered"/>
+                    <include name="verifyEMITxnGetsFailedWhenCancelledOnBajajFinservAuthenticationPage"/>
+                    <include
+                            name="verifyRedirectionToBankPageWhenIncorrectOTP_IsEnteredForEMI_TxnWIthBajajFinservCard"/>
+                    <include name="SuccessfulOffusEMITxn"/>
+                    <include name="validateSuccessEMI_DC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PayTMExpress">
+        <classes>
+            <class name="scripts.PayTMExpress"/>
+        </classes>
+    </test>
+    <test name="Native.FetchBinDetails">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails"/>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_renewal_via_cc_dc on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <exclude name="PGP_193_verifySuccessfulRenewalOnSubsViaDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_renewal_via_cc_dc on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="payMode" value="CC"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <exclude name="PGP_193_verifySuccessfulRenewalOnSubsViaDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_renewal_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_ppi on enhanced wap">
+
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaPpi"/>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_renewal_via_wallet_only on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_renewal_via_wallet_only on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly"/>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_via_cc_dc on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_cc_dc on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc"/>
+        </classes>
+    </test>
+
+    <test name="Food wallet Txn on Enhancedweb">
+        <parameter name="theme" value="enhancedweb">
+            <classes>
+                <class name="scripts.FoodWalletTxns">
+                    <methods>
+                        <include name="PGP_successfulFoodWalletTxn_InsuffFoodBalance"/>
+                        <include name="PGP_successfulFoodWalletTxnWithSufficientFoodBal"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Food wallet Txn on Enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.FoodWalletTxns">
+                <methods>
+                    <include name="PGP_successfulFoodWalletTxn_InsuffFoodBalance"/>
+                    <include name="PGP_successfulFoodWalletTxnWithSufficientFoodBal"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <exclude name="PGP_79_validateFailedTxnWithTxnAmntGreaterThanWalletByFraction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_ppi on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <exclude name="PGP_79_validateFailedTxnWithTxnAmntGreaterThanWalletByFraction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Subscription_via_wallet_only on enhanced web">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Subscription_via_wallet_only on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <parameter name="transactionType" value="PGOnly"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly"/>
+        </classes>
+    </test>
+
+    <test name="Native Plus Add Money">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                        <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                        <include name="Verify_NativeAddMoneyRetry"/>
+                        <include name="Verify_NativeAddMoneyDC"/>
+                        <include name="Verify_NativeAddMoneyNBLessThan2000Rs"/>
+                        <include name="Verify_NativeAddMoneyNBGreaterThan2000"/>
+                        <include name="Verify_NativeAddMoneyUPI"/>
+                        <include name="Verify_NativeAddMoneyCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Native Add Money">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="Verify_NativeAddMoneyRBILimitExceeded"/>
+                        <include name="Verify_NativeAddMoneyRetryCountBreached"/>
+                        <include name="Verify_NativeAddMoneyRetry"/>
+                        <include name="Verify_NativeAddMoneyDC"/>
+                        <include name="Verify_NativeAddMoneyNBLessThan2000Rs"/>
+                        <include name="Verify_NativeAddMoneyNBGreaterThan2000"/>
+                        <include name="Verify_NativeAddMoneyUPI"/>
+                        <include name="Verify_NativeAddMoneyCC"/>
+
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+
+    <test name="Native Plus Process Txn">
+        <parameter name="isNativePlus" value="true">
+            <parameter name="theme" value="enhancedweb"/>
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_PPBL_Success"/>
+                        <include name="TC_PT_COD_Failure_WithoutToken"/>
+                        <include name="TC_PT_COD_Failure"/>
+                        <include name="TC_PT_015"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                        <include name="TC_PT_014"/>
+                        <include name="TC_PT_025_CC"/>
+                        <include name="TC_PT_016"/>
+                        <include name="TC_PT_043"/>
+                        <include name="TC_PT_hybridWithoutFetchPayOption"/>
+                        <include name="verifyRestrictCCPromo_TC_20"/>
+                        <include name="verifyRestrictDCPromo_TC_20"/>
+                        <include name="verifyRestrictPPIPromo_TC_20"/>
+                        <include name="verifyCCPromo_TC_16"/>
+                        <include name="verifyDCPromo_TC_16_1"/>
+                        <include name="verifyWalletPromo_TC_15"/>
+                        <include name="TC_PT_002"/>
+                        <include name="TC_PT_003"/>
+                        <include name="TC_PT_004"/>
+                        <include name="TC_PT_005"/>
+                        <include name="TC_PT_006"/>
+                        <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                        <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                        <include name="TC_PT_035"/>
+                        <include name="TC_PT_037"/>
+                        <include name="TC_13"/>
+                        <include name="TC_07"/>
+                        <include name="TC_PT_001"/>
+                        <include name="TC_PT_COD_Success"/>
+                        <include name="TC_PT_EMI_Success"/>
+                        <include name="TC_PT_0CostEMI_Success"/>
+                        <include name="verifyRestrictDCPromo_TC_20_1"/>
+                        <include name="TC_PT_028"/>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_025"/>
+                        <include name="TC_PT_EMI_Hyb_Success"/>
+                        <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                        <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                        <include name="TC_PT_BAJAJ_EMI_Success"/>
+                        <include
+                                name="checkCardIndexNoPresentInProcessTransactionApiResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                        <include name="checkNativeAddMoneyTxn"/>
+                        <include name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                        <include name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                        <include name="EMI_Native_Bank_failure"/>
+                        <include name="testPPBLPayModeIsDisabledOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                        <include name="testErrMsgIsDisplayedOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                        <include name="testNextPayModeIsSelectedOnShowPaymentPageWhenUserHasInsufficientPPBLBalance"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="Native Process Txn">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="validateCancelTxn_Native"/>
+                        <include name="verifyFastforwardDuplicateRequest"/>
+                        <include name="TC_PT_PPBL_Success"/>
+                        <include name="TC_PT_COD_Failure_WithoutToken"/>
+                        <include name="TC_PT_COD_Failure"/>
+                        <include name="TC_PT_015"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOptionWithZeroWalletbalance"/>
+                        <include name="TC_PT_AddNPayWithoutFetchPayOption"/>
+                        <include name="TC_PT_014"/>
+                        <include name="TC_PT_026_CC"/>
+                        <include name="TC_PT_016"/>
+                        <include name="TC_PT_043"/>
+                        <include name="verifyRestrictCCPromo_TC_20"/>
+                        <include name="verifyRestrictDCPromo_TC_20"/>
+                        <include name="verifyRestrictPPIPromo_TC_20"/>
+                        <include name="verifyCCPromo_TC_16"/>
+                        <include name="verifyDCPromo_TC_16_1"/>
+                        <include name="verifyWalletPromo_TC_15"/>
+                        <include name="TC_PT_002"/>
+                        <include name="TC_PT_003"/>
+                        <include name="TC_PT_004"/>
+                        <include name="TC_PT_005"/>
+                        <include name="TC_PT_006"/>
+                        <include name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                        <include name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                        <include name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                        <include name="TC_PT_031"/>
+                        <include name="TC_PT_037"/>
+                        <include name="TC_13"/>
+                        <include name="TC_07"/>
+                        <include name="TC_PT_001"/>
+                        <include name="TC_PT_COD_Success"/>
+                        <include name="TC_PT_EMI_Success"/>
+                        <include name="TC_PT_0CostEMI_Success"/>
+                        <include name="verifyRestrictDCPromo_TC_20_1"/>
+                        <include name="TC_PT_027"/>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_018_UPI"/>
+                        <include name="TC_PT_025"/>
+                        <include name="TC_PT_EMI_Hyb_Success"/>
+                        <include name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                        <include name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                        <include name="Verify_expiredCardNotFoundInFetchPayInstrument"/>
+                        <include name="Verify_RiskReject"/>
+                        <include name="TC_PT_BAJAJ_EMI_Success"/>
+                        <include name="checkCardIndexNoPresentInProcessTransactionApiResponseWhenCardTokenRequiredParamIsSetTrue"/>
+                        <include name="checkNativeAddMoneyTxn"/>
+                        <include name="mutualFundRiskReject"/>
+                        <include name="EMI_Native_Bank_failure"/>
+
+                        <include name="disablePayModeNBInInit"/>
+                        <include name="disablePayModePPBLNBInInit"/>
+                        <include name="disablePayModeNBInInitButSuccessTxnFromPaytmCC"/>
+                        <include name="disablePayModePPBLInInitButSuccessTxnFromNB"/>
+                        <include name="enablePayModeAsNB"/>
+                        <include name="enablePayModeAsPPBL"/>
+                        <include name="enablePayModeNBSuccessPaytmPostpaid"/>
+                        <include name="enablePayModePPBLNBSuccessPaytmPostpaid"/>
+                        <include name="disablePayModeNBInInitWithoutLogin"/>
+                        <include name="disablePayModeNBInInitCCTxnWithoutLogin"/>
+                        <include name="enableNbSuccessWithNB"/>
+                        <include name="enableNbTxtWithCC"/>
+                        <include name="disablePayModeNBInInit"/>
+                        <include name="disablePayModeNBInInit"/>
+
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Mutual Funds">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_020"/>
+                        <include name="TC_PT_021"/>
+                        <include name="TC_PT_022"/>
+                        <include name="TC_PT_023"/>
+                        <include name="TC_PT_024"/>
+                        <include name="TC_PT_018_MutualFund"/>
+                        <include name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                        <include name="validatePgOnlyWithLoginTxnForMutualFundsviaDC"/>
+                        <include name="validatePgOnlyWithOutLoginTxnForMutualFundsviaSavedCard"/>
+                        <include name="validatePgOnlyWithLoginTxnForMutualFundsviaSavedCard"/>
+                        <include name="TC_PT_DC_Failure_MutualFunds"/>
+                        <include name="TC_PT_DC_Pending_MutualFunds"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Plus Mutual Funds">
+        <parameter name="isNativePlus" value="true">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <include name="TC_PT_018"/>
+                        <include name="TC_PT_020"/>
+                        <include name="TC_PT_021"/>
+                        <include name="TC_PT_022"/>
+                        <include name="TC_PT_018_MutualFund"/>
+                        <include name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                        <include name="validatePgOnlyWithLoginTxnForMutualFundsviaDC"/>
+                        <include name="validatePgOnlyWithOutLoginTxnForMutualFundsviaSavedCard"/>
+                        <include name="validatePgOnlyWithLoginTxnForMutualFundsviaSavedCard"/>
+                        <include name="TC_PT_DC_Failure_MutualFunds"/>
+                        <include name="TC_PT_DC_Pending_MutualFunds"/>
+                        <!--<include name="TC_PT_020"/> -->     <!--Commented test case from nativePlus, based on discussion with Mohit-->
+                        <!--<include name="TC_PT_021"/>-->      <!--Commented test case from nativePlus-->
+                        <!--<include name="TC_PT_022"/>-->      <!--Commented test case from nativePlus-->
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Fetch Pay Options">
+        <classes>
+            <class name="scripts.Native.FetchPayOptions"/>
+        </classes>
+    </test>
+
+    <!--Native enhanced TC's-->
+    <parameter name="browser" value="chrome"/>
+    <test name="AddMoneyMP-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="PGP_378_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_381_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_383_verifySuccessfulTxnUsingCC"/>
+                    <include name="PGP_384_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_387_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <include name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_390_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_394_verifySuccessfulTxnWhenPaymentViaNB"/>
+                    <include name="PGP_396_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <parameter name="browser" value="chrome"/>
+    <test name="Penny Drop for AddMoney">
+        <parameter name="theme" value="merchantLow|ccdc"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="checkSavedCardFormerchantLowccdc"/>
+                    <include name="checkUserAbleToSaveCC"/>
+                    <include name="checkUserAbleToSaveDC"/>
+                    <parameter name="theme" value="enhancedwap">
+                        <include name="checkSavedCardForOthertheme"/>
+                    </parameter>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddNPay-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_PPI_S_sufficientBal"/>
+                    <include name="addnPay_SC_S"/>
+                    <include name="addnPay_CC_S"/>
+                    <include name="addnPay_DC_S"/>
+                    <include name="addnPay_NB_S"/>
+                    <include name="addnPay_UPI_S"/>
+                    <include name="PGP_114_successfulAddNPayWithWalletPaymentModeInCheckoutPage"/>
+                    <include name="addnPay_CC_S_withSSOToken"/>
+                    <include name="PPI_S_AddnpayDisabled"/>
+                    <include name="addnPay_CC_S_CheckforCardSaved"/>
+                    <include name="addnPay_CC_S_ZeroBalance"/>
+                    <include name="addnPay_CC_S_loginOnCashier"/>
+                    <include name="addnPay_CC_F_3DPageCancel"/>
+                    <include name="addnPay_CC_F_ZeroAmount"/>
+                    <include name="addnPay_CC_F_NegativeAmt"/>
+                    <include name="addnPay_DC_S_VerifyWalletBalance"/>
+                    <include name="addnPay_verifyPaymentModeOnCashierPageBeforeLogin"/>
+                    <include name="addnPay_DC_S_withoutLogin"/>
+                    <include name="addnPay_CC_F_verifyResponsePage"/>
+                    <include name="addnPay_CC_P_verifyResponsePage"/>
+                    <include name="addnPay_DC_S_verifyTxnStatusList"/>
+                    <include name="addnPay_Retry_VerifyRetry"/>
+                    <include name="addnPay_PPBL_S"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="COD-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_VerifyMessageWithBalance"/>
+                    <include name="COD_S_withoutBalance"/>
+                    <include name="COD_S_withLessBalance"/>
+                    <include name="PPI_S_whenCODEnabledOnMerchant"/>
+                    <include name="COD_F_verifyCODNotVisiblewhenTxnAmountIsBelowThresoldAmount"/>
+                    <include name="COD_F_verifyCODVisiblewhenTxnAmountIsMoreThanThresoldAmount"/>
+                    <include name="CC_S_whenCODisEnabled"/>
+                    <include name="SC_S_whenCODisEnabled"/>
+                    <include name="COD_verifyllPayModesOnCashier"/>
+                    <include name="COD_S_withSufficientBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hybrid-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                    <include name="hybrid_CC_S_withDecimalAmount"/>
+                    <include name="hybrid_PPI_S_sufficientBal"/>
+                    <include name="hybrid_CC_S_validateCardNotSaved"/>
+                    <include name="hybrid_CC_S_validateCardSaved"/>
+                    <include name="hybrid_verifyWalletBalanceAfterLogin"/>
+                    <include name="hybrid_verifyAllPayModeOnCashier"/>
+                    <include name="hybrid_PPI_S_sufficientBalanceValidateWalletBalance"/>
+                    <include name="hybrid_verifySavedCardList"/>
+                    <include name="hybrid_SC_S"/>
+                    <include name="hybrid_SC_F_invalidCvv"/>
+                    <include name="hybrid_CC_S_walletBalanceZero"/>
+                    <include name="hybrid_DC_S"/>
+                    <include name="hybrid_NB_S"/>
+                    <include name="hybrid_DC_S_verifyCardSaved"/>
+                    <include name="hybrid_SC_S_withDCCard"/>
+                    <include name="hybrid_CC_F_invalidOTP"/>
+                    <include name="hybrid_CC_F_invalidCvv"/>
+                    <include name="hybrid_CC_F_invalidExpiry"/>
+                    <include name="hybrid_UPI_S"/>
+                    <include name="hybrid_CC_F_retryCountBreached"/>
+                    <include name="hybrid_CC_retry_S"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Express Addmoney txn">
+        <classes>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <exclude name="validateFullKYCWalletCC"/>
+                    <exclude name="validateFullKYCWalletSavedCC"/>
+                    <exclude name="validateMinKYCWalletLimitNotBreached"/>
+                    <exclude name="validateMinKYCWalletLimitBreached"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateNoKYCWalletLimitBreached"/>
+                    <exclude name="validateFullKYCGV"/>
+                    <exclude name="validateFullKYCGVSavedCC"/>
+                    <exclude name="validateMinKYCLimitNotBreachedGV"/>
+                    <exclude name="validateMinKYCLimitBreachedGV"/>
+                    <exclude name="validateNoKYCGV"/>
+                    <exclude name="validateFullKYCDC"/>
+                    <exclude name="validateMinKycNB"/>
+                    <exclude name="validateNoKYCDC"/>
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Money using Retry Saved Card on Wap Theme">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNB"/>
+                    <include name="PGP_287_AddMoneyTxnUsingNBLessThan2000"/>
+                    <include name="PGP_410_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <include name="PGP_411_validateTxnIsAllowedWhenValidSSOTokenIsPassed"/>
+                    <include name="PGP_412_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <include name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <include name="PGP_414_validateTxnNotAllowedWhenInvalidChannelIsPassed"/>
+                    <include name="PGP_415_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <include name="PGP_416_VerifyFailureWhenSSOTokenIsNotPassed"/>
+                    <include name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <include name="PGP_418_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <include name="PGP_420_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <include name="PGP_421_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <include name="PGP_422_VerifyTxnFailureWhenRequestTypeOtherThanAddMoney"/>
+                    <include name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                    <include name="PGP_285_AddMoneyFor0Amt"/>
+                    <include name="PGP_285_successfulAddMoneyDC"/>
+                    <include name="PGP_286_successfulSavedCardAddMoneyCC"/>
+                    <include name="addMoneyFail"/>
+                    <include name="validateAddMoneyUsingRetrySavedCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

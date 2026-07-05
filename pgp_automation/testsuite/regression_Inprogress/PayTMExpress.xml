@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PayTMExpress" verbose="1" parallel="tests" thread-count="10">
+    <test name="PayTMExpress">
+        <classes>
+            <class name="scripts.PayTMExpress"/>
+        </classes>
+    </test>
+</suite>

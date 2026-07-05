@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="QR_Suite_UI" verbose="1" thread-count="10" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web revamp">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-30610 All-in-One QR Checkoutjs UI test cases Web">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.AllInOneNegativePreference">
+                <methods>
+                    <include name="ValidateQRDetailsForNegativePreferenceON"/>
+                    <include name="ValidatePRNFlagInFPO"/>
+                    <include name="ValidateQRDetailsForNegativePreferenceOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43468 - 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC01_ValidateQrIsNotDsiplayed"/>
+                    <include name="TC02_ValidateQRisNotDisplayed_UPI_INACTIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-43468 - 2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC03_ValidateQRisNotDisplayed"/>
+                    <include name="TC04_ValidateQRisNotDisplayed_UPI_INACTIVE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44212 checkoutjs_web_revamp tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                    <include name="ValidateUITextMsgTestsScanNpay"/>
+                    <include name="ValidateUITextMsgTestLoginQR"/>
+                    <include name="ValidateUITextMsgLoginQR"/>
+                    <include name="ValidateUITextMsgTestLoginOTP"/>
+                    <include name="ValidateUITextMsgTestLoginQRAndLoginOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44212 enhancedweb_revamp tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITextMsgTests">
+                <methods>
+                    <include name="ValidateUITextMsgTestLoginOTPEnhancedflow"/>
+                    <include name="ValidateUITextMsgTestLoginQREnhancedflow"/>
+                    <include name="ValidateUITextMsgLoginQREnhancedflowWithSavedCard"/>
+                    <include name="ValidateUITextMsgLoginOTPEnhancedflow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

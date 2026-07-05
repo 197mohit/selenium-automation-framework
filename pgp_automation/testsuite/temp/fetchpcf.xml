@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FetchPCFDetails" verbose="1" parallel="tests" thread-count="3">
+    <test name="FetchPCFDetails">
+        <classes>
+            <class name="scripts.api.theia.fetchPcfDetails.fetchpcfdetail">
+                <methods>
+                    <include name="validatePCFDetailApiForUPI_litePaymodewithtxntoken"/>
+                    <include name="validatePCFDetailApiForUPIPaymodewithtxntoken"/>
+                    <include name="validatePCFDetailApiForBalancePaymodewithtxntoken"/>
+                    <include name="validatePCFDetailApiForUPI_LITEANDUPIPaymodewithtxntoken"/>
+                    <include name="validatePCFDetailApiForUPI_LITEANDUPIPaymodewithssotoken"/>
+                    <include name="validatePCFDetailApiForUPI_litePaymodewithssotoken"/>
+                    <include name="validatePCFDetailApiForUPIPaymodewithssotoken"/>
+                    <include name="validatePCFDetailApiForBalancePaymodewithssotoken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29627 suite" verbose="1">
+    <test name="PGP-29627 TC">
+        <classes>
+            <class name="scripts.api.savedcardservice.SavedCardOpenAPI">
+                <methods>
+                    <include name="getCardAPIFF4jOffService"/>
+                    <include name="getCardAPIFF4jOffPlatform"/>
+                    <include name="getCardAPIFF4jONService"/>
+                    <include name="getCardAPIFF4jONPlatform"/>
+                    <include name="successTransaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

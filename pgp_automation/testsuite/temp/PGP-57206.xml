@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57206" verbose="1" thread-count="5" parallel="tests">
+    <test name="Refund related changes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.MultiItemUnifiedFlowTest">
+                <methods>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_SubventionAndPromo_on_1_item_Subvention_on_1item"/>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_SubventionAndPromo_on_1_item_Subvention_on_1Item_promo_on_1item_NoOffer_on_1item_ICICI_DC"/>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_SubventionAndPromo_on_1_item_Subvention_on_1Item_promo_on_1item_NoOffer_on_1item_HDFC_CC"/>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_SubventionAndPromoOnAllItems_Offer_Specified"/>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_SubventionAndPromo_on_1_item_Subvention_on_1item_Offer_Specified"/>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_SubventionAndPromo_on_1_item_Subvention_on_1Item_promo_on_1item_NoOffer_on_1item_ICICI_DC_Offer_Specified"/>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_SubventionAndPromo_on_1_item_Subvention_on_1Item_promo_on_1item_NoOffer_on_1item_HDFC_CC_Offer_Specified"/>
+                    <include name="TxnSuccess_CustomCheckout_MultiItem_UPI"/>
+                    <include name="TxnSuccess_MultiItem_SimplifiedUnified_MultipleItems_No_Offer_applied_on_any_item"/>
+                    <include name="TxnSuccess_CustomCheckout_MultipleItems_No_Offer_applied_on_any_item"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

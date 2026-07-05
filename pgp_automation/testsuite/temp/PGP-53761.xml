@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-53761" verbose="1">
+    <test name="PG and Bank error code for failed subscriptions in penny drop flow">
+        <classes>
+            <class name="scripts.notification.AcquiringOrderCloseNotify">
+                <methods>
+                    <include name="errorCodeValueAsORDER_CLOSEWhenPaymentViewISNotPresent"/>
+                    <include name="errorCodePushToTopicSUBSCRIPTION_ORDER_CLOSE_NOTIFY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

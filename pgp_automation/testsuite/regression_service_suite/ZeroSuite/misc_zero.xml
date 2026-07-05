@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Miscellaneous_Suite" verbose="1" thread-count="10" parallel="tests">
+
+
+    <test name="Autologin_enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Autologin.AutoLogin">
+                <methods>
+                    <include name="autologin_validateCookieDeletedAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="DeferredNative flow">
+        <classes>
+            <class name="scripts.flows.DeferredNativeTest">
+                <methods>
+                    <include name="test eventLinkId is not coming in response in case of risk verify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Plus ProcessTransactionTests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native ProcessTransactionTests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyGVWalletLimitBreachedAddNPay"/>
+                    <include name="validateCancelTxn_Native"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="verifyRestrictDCPromo_TC_20"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderNewNative"/>
+                    <include name="VerifyOrderNotClosedWithTxnFailureWhenMidExemptedfromCloseOrderOldNative"/>
+                    <include name="verifyRestrictDCPromo_TC_20_1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeOffline flow">
+        <classes>
+            <class name="scripts.flows.NativeOfflineTest">
+                <methods>
+                    <include name="test eventLinkId is not coming in response in case of risk verify"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateInvalidPassCodeErrorMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20953 visa single click">
+        <classes>
+            <class name="scripts.VisaSingleClick.EnrollmentStatusTest">
+                <methods>
+                    <include name="enrollmentStatusofCardWithSSOOneCardIsNotEnrolled"/>
+                    <include name="enrollmentStatusofEnrolledCardWithACCESSTokenOneCardNotEnrolled"/>
+                    <include name="enrollmentStatusofEnrolledCardWithSSOForEnrolledCard"/>
+                    <include name="enrollmentStatusofEnrolledCardWithACCESSTokenAndInvalidCustId"/>
+                    <include name="enrollmentStatusofEnrolledCardWithACCESSTokenForEnrolledCard"/>
+                    <include name="enrollmentStatusofEnrolledCardWithChecksumAndInvalidCustId"/>
+                    <include name="enrollmentStatusofEnrolledCardWithChecksumForEnrolledCard"/>
+                    <include name="enrollmentStatusofEnrolledCardWithChecksumOneCardIsNotEnrolled"/>
+                    <include name="enrollmentStatusofEnrolledCardWithTxnTokenOneForEnrolledCard"/>
+                    <include name="enrollmentStatusofEnrolledCardWithTxnTokenOneCardIsNotEnrolled"/>
+                </methods>
+            </class>
+            <class name="scripts.VisaSingleClick.DeEnrollCardTest">
+                <methods>
+                    <include name="DeEnrolCardWithChecksumAndInvalidBin"/>
+                    <include name="DeEnrolCardWithChecksum"/>
+                    <include name="DeEnrolCardWithSSOAndInvalidBin"/>
+                    <include name="DeEnrolCardWithSSO"/>
+                    <include name="DeEnrolCardWithTxnTokenAndInavlidBin"/>
+                    <include name="DeEnrolCardWithTxnToken"/>
+                    <include name="DeEnrollCardWithAccesstokenAndinvalidBin"/>
+                    <include name="DeEnrollCardWithAccesstoken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25567">
+        <classes>
+            <class name="scripts.flows.NativeTest">
+                <methods>
+                    <include name="test when order payment is done by add n pay cc given discount promo is applied"/>
+                </methods>
+            </class>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="test eventLinkId is not coming in response in case of risk verify"/>
+                    <include name="Verify failure transaction with ECOM token with all mandatory and optional fields in PTC"/>
+                    <include name="Verify failure transaction with ECOM token with all mandatory and optional fields in PTC for MDR+PCF merchant"/>
+                    <include name="Verify success transaction with CC ECOM token with only mandatory fields in PTC"/>
+                    <include name="Verify success transaction with ECOM token for MDR+PCF merchant"/>
+                    <include name="Verify success transaction with ECOM token with all mandatory and optional fields in PTC"/>
+                    <include name="Verify that corporate card transaction does not fail at theia end when ECOM token passed has bank as null in get token API"/>
+                    <include name="Verify that in case of mismatch of paymentMode and issuingBank between merchant and our DB, our DB credentials are picked"/>
+                    <include name="Verify that the PTC API fails when ECOM token digits are less than 16"/>
+                    <include name="Verify that the PTC API fails when expiryYear is of past"/>
+                    <include name="Verify that transaction does not fail at theia end when ECOM token passed has bank as null in get token API"/>
+                    <include name="Verify the transaction with corporate card ECOM token is successful"/>
+                    <include name="Verify the transaction with corporate card ECOM token is successful for MDR+PCF merchant"/>
+                    <include name="Verify transaction with VISA CC ECOM token"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28980 Pass Onus Identifier Preauth">
+        <classes>
+            <class name="scripts.PreAuth">
+                <methods>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferSuccesfulPreAuthTxnONUS"/>
+                    <include name="PGP_28980_verifyNotificationQueueHandleraferSuccesfulPreAuthTxnOFFUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PreLoginScreen Test Cases For EnhancedWap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.PreLoginScreen">
+                <methods>
+                    <include name="upiHandlerPostLogin"/>
+                    <include name="upiHandlerPreLogin"/>
+                    <include name="preLoginInitial"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="RedirectionalUserBalanceInsufficient">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.RedirectUserIfBalanceInsufficient">
+                <methods>
+                    <include name="validateWhenWalletAmountLessThanTxnPayPPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-17977 Send Failure reason Error Code to Notification Service">
+        <classes>
+            <class name="scripts.bopanel.FailureReasonNotificationService">
+                <methods>
+                    <include name="bankFailSpecificReasonAccountWithdrawNotify"/>
+                    <include name="incorrectAccountWithdrawNotify"/>
+                    <include name="bankFailExceedWithdrawNotifyManual"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

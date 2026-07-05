@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI_RT2_July" verbose="1">
+    <test name="EMI_RT2_July">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestUnifiedFlows">
+                <methods>
+                    <include name="testTxnAmountBeingUsedForOfferApplyNotPayableAmount_SimplifiedPaymentOffers"/>
+                    <include name="testTxnAmountBeingUsedForOfferApplyNotPayableAmount_SimplifiedSubvention"/>
+                    <include name="testTxnAmountBeingUsedForOfferApplyNotPayableAmount_SimlifiedUnifiedOffers"/>
+                    <include name="testFPOResponse_UnifiedOffersinSavedinstruments"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="testOfferAppliedOnSavedInstrument_ForFPOChangedResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

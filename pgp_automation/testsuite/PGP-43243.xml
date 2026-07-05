@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Dynamic-QR" verbose="1" parallel="tests" thread-count="6">
+    <test name="PGP-42767 DQR Repeat Payment Issue">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParam"/>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParamforUPI"/>
+                    <include name="verifyRepeatDQRTxnQRDeeplinkParamforPPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

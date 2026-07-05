@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="walletTwoFAPcf" verbose="1" parallel="methods" thread-count="1">
+    <test name="ValidateWalletTwoFAPcf">
+        <classes>
+            <class name="scripts.UI.redirectionalflowP0NewCases">
+                <methods>
+                    <include name="validateWallet2FACorrectPasscodeAmountGreaterThan5kAfterAddingPcfFee_Redirection"/>
+                    <include name="validateWallet2FAIncorrectPasscodeAmountGreaterThan5kAfterAddingPcfFee_Redirection"/>
+                    <include name="validateWallet2FAIncompletePasscodeAmountGreaterThan5kAfterAddingPcfFee_Redirection"/>
+                    <include name="validateWallet2FAWalletBalEqualTo5kAfterAddingPcfFee_Redirection"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

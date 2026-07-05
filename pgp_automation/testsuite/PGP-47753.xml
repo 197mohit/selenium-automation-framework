@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Filter Co-branded Debit Card" verbose="1">
+    <test name="Validate isCardCoBranded value in FPO1/2/5 for Credit and Debit Card">
+        <classes>
+            <class name="scripts.api.theia.CObrandedCardsFilterTest">
+                <methods>
+                    <include name="Saved_Card_in_FPO5"/>
+                    <include name="Saved_Card_in_FPO2"/>
+                    <include name="Saved_Card_in_FPO1" />
+                    <include name="Saved_Card_in_FetchQRPaymentDetail" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

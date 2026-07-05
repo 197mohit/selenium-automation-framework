@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkout fix" verbose="1">
+    <test name="checkout fix1">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidCvv"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="validate_vpa_msg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="checkout fix2">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <include name="ValidateEMI_invalidCVV"/>
+                    <include name="nonlogeedin_validate_vpa_msg"/>
+                    <include name="validate_vpa_msg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="checkout fix3">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyMerchantname"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

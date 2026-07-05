@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48861" verbose="1" parallel="tests" thread-count="1">
+    <test name="PGP-48861 MLP test cases automation">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.StoreCash.StoreCash">
+                <methods>
+                    <include name="validateMLP_CCTxn"/>
+                    <include name="validateMLP_DCTxn"/>
+                    <include name="validateMLP_NBTxn"/>
+                    <include name="validateMLP_WALLETTxn"/>
+                    <include name="validateMLP_PostpaidTxn"/>
+                    <include name="validateMLP_PPBLTxn"/>
+                    <include name="validatePartialMLP_CCTxnRefundFailure"/>
+                    <include name="validateMLP_CCTxn_NotificationFix"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

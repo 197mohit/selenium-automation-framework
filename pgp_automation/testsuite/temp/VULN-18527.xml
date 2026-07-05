@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="VULN-18527" verbose="1" thread-count="1">
+    <test name="VULN-18527-InitiateTransaction">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction">
+                <methods>
+                    <include name="xssVulnerabilityInInitiateWebsitename"/>
+                    <include name="xssVulnerabilityInInitiateMId"/>
+                    <include name="xssVulnerabilityInInitiateOrderId"/>
+                    <include name="xssVulnerabilityInInitiate"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="xssVulnerabilityInPTC"/>
+                    <include name="xssVulnerabilityInPTCOrderId"/>
+                    <include name="xssVulnerabilityInPTCMid"/>
+                    <include name="xssVulnerabilityInPTCPaymode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+<!--    <test name="VULN-18527-ProcessTransactionTests">-->
+<!--        <classes>-->
+<!--            <class name="scripts.Native.ProcessTransactionTests">-->
+<!--                <methods>-->
+<!--                    <include name="xssVulnerabilityInPTC"/>-->
+<!--                    <include name="xssVulnerabilityInPTCOrderId"/>-->
+<!--                    <include name="xssVulnerabilityInPTCMid"/>-->
+<!--                    <include name="xssVulnerabilityInPTCPaymode"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>

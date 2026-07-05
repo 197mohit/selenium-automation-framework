@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-55626">
+    <test name="PG Notification Development - Settlement Timeline Sticky Notification (P4B)">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="STICKY_NOTIFICATION_UPS_REQUEST_RESPONSE"/>
+                    <include name="STICKY_NOTIFICATION_Payload_CG"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

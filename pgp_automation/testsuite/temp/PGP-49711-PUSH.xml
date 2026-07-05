@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49711" verbose="1" thread-count="3">
+    <test name="PGP-49711">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHTemplate_Push"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_CGData_PUSH"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHTemplate_Push"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_CGData_PUSH"/>
+                    <include name="DEFAULT_NQHDLTTemplateID_Push"/>
+                    <include name="DEFAULT_NQHTemplateHEADER_Push"/>
+                    <include name="DEFAULT_NQHTemplate_Push"/>
+                    <include name="DEFAULT_CGData_PUSH"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHTemplate_Push"/>
+                    <include name="FGW_ORDER_NOT_FOUND_CGData_PUSH"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHTemplate_Push"/>
+                    <include name="FGW_PAYOUT_REJECTED_CGData_PUSH"/>
+                    <include name="FGW_PPBL_RISK_REJECTED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_RISK_REJECTED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_RISK_REJECTED_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_RISK_REJECTED_CGData_PUSH"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_CGData_PUSH"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHTemplateHEADER_Push"/>
+                    `<include name="FGW_ACCOUNT_CLOSED_NQHTemplate_Push"/>`
+                    <include name="FGW_ACCOUNT_CLOSED_CGData_PUSH"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHDLTTemplateID_Push"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHTemplateHEADER_Push"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHTemplate_Push"/>
+                    <include name="WALLET_NOT_ACTIVATED_CGData_PUSH"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHTemplate_Push"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_CGData_PUSH"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHTemplate_Push"/>
+                    <include name="FGW_ACCOUNT_FROZEN_CGData_PUSH"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_CGData_PUSH"/>
+                    <include name="FGW_WALLET_FROZEN_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_WALLET_FROZEN_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_WALLET_FROZEN_NQHTemplate_Push"/>
+                    <include name="FGW_WALLET_FROZEN_CGData_PUSH"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHTemplate_Push"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_CGData_PUSH"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHDLTTemplateID_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHTemplateHEADER_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHTemplate_Push"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_CGData_PUSH"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

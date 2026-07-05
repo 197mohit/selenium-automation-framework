@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="ADD_new_UPI_linked-bankAcc" verbose="1">
+
+    <test name="ADD_new_upi_testcases">
+
+        <classes>
+
+            <class name="scripts.api.UPI.UpiTransactionTests">
+
+                <methods>
+
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct_ONus"/>
+
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct_OFFus"/>
+
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct3"/>
+
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct4"/>
+
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct5"/>
+
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct6"/>
+
+
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

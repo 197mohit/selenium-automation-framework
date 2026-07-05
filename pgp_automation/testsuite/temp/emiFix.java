@@ -1,0 +1,48 @@
+/*
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI fix suite" verbose="1" thread-count="5" parallel="tests">
+<test name="EMI on enhancedweb">
+<parameter name="theme" value="enhancedweb_revamp"/>
+<classes>
+<class name="scripts.EMI">
+<methods>
+<include name="verifyCorrectInfoMsgIsShownForEMIPaymodeWhenBajajFinservIsSelected"/>
+<include name="checkUserRedirectedToBankWhenPaymentInitiatedUsingAMEXCard"/>
+<include name="validateFailTxnSavedEmi_Pgonly_LoggedIn"/>
+<include name="verifyEMITxnIsSuccessfulWithBajajFinservCardForAddNPayMerchant"/>
+<include name="verifyEMITxnIsSuccessfulWithBajajFinservCardWhenExpiryDateIsEntered"/>
+<include name="validateSavedEmiTxn_PgOnly_LoggedIn"/>
+<include name="validateSuccessEMI_DC"/>
+</methods>
+</class>
+</classes>
+</test>
+
+
+<test name="EMI on enhancedwap" >
+<parameter name="theme" value="enhancedwap_revamp">
+<parameter name="mobileEmulation" value="Nexus 5">
+<parameter name="userAgent"
+        value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25">
+<classes>
+<class name="scripts.EMI">
+<methods>
+<include name="verifyCorrectInfoMsgIsShownForEMIPaymodeWhenBajajFinservIsSelected"/>
+<include name="checkUserRedirectedToBankWhenPaymentInitiatedUsingAMEXCard"/>
+<include name="validateFailTxnSavedEmi_Pgonly_LoggedIn"/>
+<include name="verifyEMITxnIsSuccessfulWithBajajFinservCardForAddNPayMerchant"/>
+<include name="verifyEMITxnIsSuccessfulWithBajajFinservCardWhenExpiryDateIsEntered"/>
+<include name="validateSavedEmiTxn_PgOnly_LoggedIn"/>
+<include name="validateSuccessEMI_DC"/>
+</methods>
+</class>
+</classes>
+</parameter>
+</parameter>
+</parameter>
+</test>
+
+
+
+</suite>*/

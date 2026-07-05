@@ -1,0 +1,231 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp",
+        "version"
+      ],
+      "properties": {
+        "requestId": {
+          "type": "null"
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string"
+            },
+            "resultMsg": {
+              "type": "string"
+            },
+            "resultMsgRegional": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "nbPayOption": {
+          "type": [
+            "object",
+            "null"
+          ],
+          "required": [
+            "displayName",
+            "isDisabled",
+            "payChannelOptions",
+            "feeAmount",
+            "taxAmount",
+            "totalTransactionAmount",
+            "priority",
+            "onboarding",
+            "paymentMode",
+            "isHybridDisabled"
+          ],
+          "properties": {
+            "displayName": {
+              "enum": [
+                "Net Banking"
+              ]
+            },
+            "isDisabled": {
+              "type": "object",
+              "required": [
+                "status",
+                "msg"
+              ],
+              "properties": {
+                "status": {
+                  "enum": [
+                    "false"
+                  ]
+                },
+                "msg": {
+                  "enum": [
+                    ""
+                  ]
+                },
+                "msgRegional": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            },
+            "payChannelOptions": {
+              "type": "array",
+              "minItems": 0,
+              "items": {
+                "type": "object",
+                "required": [
+                  "isDisabled",
+                  "hasLowSuccess",
+                  "iconUrl",
+                  "isHybridDisabled",
+                  "channelCode",
+                  "channelName",
+                  "channelDisplayName"
+                ],
+                "properties": {
+                  "isDisabled": {
+                    "type": "object",
+                    "required": [
+                      "status",
+                      "msg"
+                    ],
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "false"
+                        ]
+                      },
+                      "msg": {
+                        "type": "null"
+                      },
+                      "msgRegional": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "hasLowSuccess": {
+                    "type": "object",
+                    "required": [
+                      "status",
+                      "msg"
+                    ],
+                    "properties": {
+                      "status": {
+                        "enum": [
+                          "false",
+                          "true"
+                        ]
+                      },
+                      "msg": {
+                        "type": "string"
+                      },
+                      "msgRegional": {
+                        "type": "string"
+                      }
+                    },
+                    "additionalProperties": false
+                  },
+                  "iconUrl": {
+                    "type": "string"
+                  },
+                  "isHybridDisabled": {
+                    "type": "boolean"
+                  },
+                  "channelCode": {
+                    "type": "string",
+                    "pattern": "^[A-Z]+$"
+                  },
+                  "channelName": {
+                    "type": "string"
+                  },
+                  "channelNameRegional": {
+                    "type": "string"
+                  },
+                  "channelDisplayName": {
+                    "type": "string"
+                  },
+                  "bankLogoUrl": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "feeAmount": {
+              "type": "null"
+            },
+            "taxAmount": {
+              "type": "null"
+            },
+            "totalTransactionAmount": {
+              "type": "null"
+            },
+            "priority": {
+              "type": "null"
+            },
+            "onboarding": {
+              "type": "boolean"
+            },
+            "paymentMode": {
+              "enum": [
+                "NET_BANKING"
+              ]
+            },
+            "isHybridDisabled": {
+              "type": "boolean"
+            },
+            "displayNameRegional": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

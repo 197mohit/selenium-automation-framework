@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Seamless" verbose="1" parallel="tests" thread-count="10">
+    <test name="Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                    <include name="PGP_289_successfulSeamlessDC"/>
+                    <include name="PGP_290_SeamlessCCWithoutSavedCard"/>
+                    <include name="PGP_291_SeamlessCCAndSavingCard"/>
+                    <include name="PGP_292_SeamlessCCUsingSavedCard"/>
+                    <include name="PGP_293_successfulSeamlessNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-18539 seamless Promo Txn">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_294_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_295_successfulSeamlessNBPromoTxn"/>
+                    <include name="PGP_296_successfulSeamlessNBPromoTxnDiscountType"/>
+                    <include name="PGP_297_successfulSeamlessNBPromoTxn"/>
+                    <include name="PGP_298_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_299_successfulSeamlessCCPromoTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="successfulSeamlessCorporateCC"/>
+                    <include name="successfulSeamlessCorporateDC"/>
+                    <include name="successfulSeamlessCorporateEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

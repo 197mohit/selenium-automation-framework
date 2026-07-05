@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native Plus" verbose="1"  thread-count="2">
+    <test name="Native Plus">
+        <classes>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="Verify success transaction with ECOM token with all mandatory and optional fields in PTC"/>
+                    <include name="Verify success transaction with ECOM token for MDR+PCF merchant"/>
+                    <include name="Verify failure transaction with ECOM token with all mandatory and optional fields in PTC"/>
+                    <include name="Verify failure transaction with ECOM token with all mandatory and optional fields in PTC for MDR+PCF merchant"/>
+                    <include name="Verify that PTC API fails for merchant not having token support preference for transaction with ECOM token"/>
+                    <include name="Verify success transaction with CC ECOM token with only mandatory fields in PTC"/>
+                    <include name="Verify that transaction with prepaid card ECOM token should fail"/>
+                    <include name="Verify that transaction with prepaid card ECOM token should fail for MDR+PCF merchant"/>
+                    <include name="Verify the transaction with corporate card ECOM token is successful"/>
+                    <include name="Verify the transaction with corporate card ECOM token is successful for MDR+PCF merchant"/>
+                    <include name="Verify that PTC API fails with ECOM token when mandatory parameter ecomtoken is missing"/>
+                    <include name="Verify that PTC API fails with ECOM token when mandatory parameter expiryMonth is missing"/>
+                    <include name="Verify that PTC API fails with ECOM token when mandatory parameter expiryYear is missing"/>
+                    <include name="Verify that PTC API fails with ECOM token when mandatory parameter authenticationValue is missing"/>
+                    <include name="Verify that in case of mismatch of paymentMode and issuingBank between merchant and our DB, our DB credentials are picked"/>
+                    <include name="Verify that the PTC API fails when expiryMonth field has value more than 12"/>
+                    <include name="Verify that the PTC API fails when expiryMonth field has only single digit value"/>
+                    <include name="Verify transaction with VISA CC ECOM token"/>
+                    <include name="Verify that the PTC API fails when expiryYear is of past"/>
+                    <include name="Verify that the PTC API fails when ECOM token digits are less than 16"/>
+                    <include name="Verify transaction should fail when CC ECOM token transaction is initiated when CC acquiring is not present on MID"/>
+                    <include name="Verify transaction should fail for prepaid ECOM token transaction is initiated when Prepaid acquiring is not present on MID"/>
+                    <include name="Verify transaction should fail for corporate ECOM token transaction is initiated when Corporate acquiring is not present on MID"/>
+                    <include name="Verify successful refund of ECOM token transaction"/>
+                    <include name="Verify that the PTC API fails when EMI transaction is initiated with ECOM token"/>
+                    <include name="Verify that transaction does not fail at theia end when ECOM token passed has bank as null in get token API"/>
+                    <include name="Verify that corporate card transaction does not fail at theia end when ECOM token passed has bank as null in get token API"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

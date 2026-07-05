@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2" verbose="1" parallel="tests" thread-count="7">
+    <test name="Native">
+        <classes>
+            <class name="scripts.DccPg2">
+                <methods>
+                    <include name="successfulTransactionForMdrCC"/>
+                    <include name="unsuccessfulTransactionForMdrCC"/>
+                    <include name="successfulTransactionForPcfCC"/>
+                    <include name="successfulTransactionWithINRForPcfDC"/>
+                    <include name="dccPg2MerchantStatusValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"></parameter>
+        <classes>
+            <class name="scripts.DccPg2">
+                <methods>
+                    <include name="pg2DccEnhancedFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"></parameter>
+        <classes>
+            <class name="scripts.DccPg2">
+                <methods>
+                    <include name="pg2DccChekoutJsFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48530" verbose="1" thread-count="5" parallel="tests">
+
+    <test name="PostPaid Subs transaction">
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="PostPaidSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Wallet Subs Transaction">
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="WalletSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Subs Wallet transaction">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="nativeWalletSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheckoutJs Wallet Subs Transaction">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="WalletSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

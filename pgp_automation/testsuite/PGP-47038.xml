@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46752 " verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-46752">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validateTimeoutObjectWithFlagOffCORequest"/>
+                    <include name="validateTimeoutObjectWithFlagOnCORequest"/>
+                    <include name="validateTimeoutObjectWithFlagOffCOPRequest"/>
+                    <include name="validateTimeoutObjectWithFlagOnCOPRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

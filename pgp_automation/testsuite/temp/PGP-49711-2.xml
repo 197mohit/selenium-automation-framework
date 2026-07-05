@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49711" verbose="1" thread-count="3">
+    <test name="PGP-49711">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_NO_PAN_NQHTemplate"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_NO_PAN_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_NO_PAN_CGData"/>
+                    <include name="MONTHLY_AMOUNT_BALANCE_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="MONTHLY_AMOUNT_BALANCE_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="MONTHLY_AMOUNT_BALANCE_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_AMOUNT_WALLET_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_AMOUNT_WALLET_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_AMOUNT_WALLET_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_PPBL_CREDIT_COUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_PPBL_CREDIT_COUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_CREDIT_COUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_ACCOUNT_BLOCKED_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_BLOCKED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_BLOCKED_CGData"/>
+                    <include name="FGW_MERCHANT_IS_NRE_ACCOUNT_NQHTemplate"/>
+                    <include name="FGW_MERCHANT_IS_NRE_ACCOUNT_NQHDLTTemplateID"/>
+                    <include name="FGW_MERCHANT_IS_NRE_ACCOUNT_CGData"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHTemplate"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHDLTTemplateID"/>
+                    <include name="FGW_PAYOUT_REJECTED_CGData"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHTemplate"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHDLTTemplateID"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_CGData"/>
+                    <include name="FGW_BANK_FAIL_SPECIFIC_REASON_NQHTemplate"/>
+                    <include name="FGW_BANK_FAIL_SPECIFIC_REASON_NQHDLTTemplateID"/>
+                    <include name="FGW_BANK_FAIL_SPECIFIC_REASON_CGData"/>
+                    <include name="NO_CONNECTIVITY_NPCI_NQHTemplate"/>
+                    <include name="NO_CONNECTIVITY_NPCI_NQHDLTTemplateID"/>
+                    <include name="NO_CONNECTIVITY_NPCI_CGData"/>
+                    <include name="FGW_CONNECT_TIMEOUT_WITH_BANK_NQHTemplate"/>
+                    <include name="FGW_CONNECT_TIMEOUT_WITH_BANK_NQHDLTTemplateID"/>
+                    <include name="FGW_CONNECT_TIMEOUT_WITH_BANK_CGData"/>
+                    <include name="FGW_UNREGISTERED_UPI_PSP_NQHTemplate"/>
+                    <include name="FGW_UNREGISTERED_UPI_PSP_NQHDLTTemplateID"/>
+                    <include name="FGW_UNREGISTERED_UPI_PSP_CGData"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHTemplate"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHDLTTemplateID"/>
+                    <include name="FGW_ORDER_NOT_FOUND_CGData"/>
+                    <include name="FGW_BENE_NOT_EXIST_NQHTemplate"/>
+                    <include name="FGW_BENE_NOT_EXIST_NQHDLTTemplateID"/>
+                    <include name="FGW_BENE_NOT_EXIST_CGData"/>
+                    <include name="DEFAULT_NQHTemplate"/>
+                    <include name="DEFAULT_NQHDLTTemplateID"/>
+                    <include name="DEFAULT_CGData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

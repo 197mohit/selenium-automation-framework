@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# Pre-commit hook (standalone fallback when pre-commit CLI is unavailable).
+# Runs optional AI code detection if pre-commit-ai-detector.py is present.
+# Skippable with: git commit --no-verify
+set -euo pipefail
+
+HOOK_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+if [[ "$HOOK_DIR" == *".git/hooks"* ]]; then
+  REPO_ROOT="$(cd "$HOOK_DIR/../.." && pwd)"
+else
+  REPO_ROOT="$(cd "$HOOK_DIR/.." && pwd)"
+fi
+
+AI_DETECTOR="$REPO_ROOT/pre-commit-ai-detector.py"
+
+if [ -f "$AI_DETECTOR" ]; then
+  if command -v python3 >/dev/null 2>&1; then
+    echo "[pre-commit] Running AI code detection..."
+    python3 "$AI_DETECTOR"
+  else
+    echo "[pre-commit] Warning: python3 not found — skipping AI code detection."
+  fi
+fi
+
+exit 0

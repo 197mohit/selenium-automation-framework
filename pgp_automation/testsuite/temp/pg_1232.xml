@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-1232">
+    <test name="Customer Name Validation Task">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyBrandFSForCustomerNameValidation"/>
+                    <include name="BrandEmiCaseCustomerNameValidation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

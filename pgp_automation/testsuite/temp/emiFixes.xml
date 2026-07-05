@@ -1,0 +1,731 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression 1" verbose="1" thread-count="20" parallel="tests">
+    <parameter name="browser" value="chrome"/>
+    <test name="PGP-24062" parallel="classes" thread-count="2">
+        <classes>
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test"/>
+            <class name="scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test"/>
+        </classes>
+    </test>
+
+    <test name="PGP-29589 - flexi subscription creation">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2WhenFrequencyIsSemiAnually"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include
+                            name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include
+                            name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32156 EMISubventionUsingTxnTokenApiTests">
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <exclude name="emisub24"></exclude>
+                    <exclude name="emisub25"></exclude>
+                    <exclude name="emisub26"></exclude>
+                    <exclude name="emisub27"></exclude>
+                    <exclude name="emisub28"></exclude>
+                    <exclude name="emisub29"></exclude>
+                    <exclude name="emisub30"></exclude>
+                    <exclude name="emisub31"></exclude>
+                    <exclude name="emisub32"></exclude>
+                    <exclude name="emisub33"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32156 EMISubventionUsingTxnTokenAppinvokeTests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <include name="emisub24"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Plus ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <exclude name="TC_PT_EMI_Hyb_Success"/>
+                    <exclude name="TC_PT_EMI_Success"/>
+                    <exclude name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <exclude name="TC_PT_BAJAJ_EMI_Success"/>
+                    <exclude name="TC_PT_0CostEMI_Success"/>
+                    <exclude name="checkEmiTxnUsingAmexCreditCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30175 Validating HDFC EMI is blocked for EDC">
+        <classes>
+            <class name="scripts.EdcHdfcEmiBlocked">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30168 EMI_DC cases">
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifyEmiDcVisibleInFPOAndPerformSuccessfulTransaction"/>
+                    <include name="verifyEmiDcNotVisibleInFPOformobNoWithEmiDcNotConfigured"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithoutMobNoInInitiateApi"/>
+                    <include name="verifyEmiDcVisibleInFPOPerformSuccessfulTransactionWithAccessToken"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenformobNoWithEmiDcNotConfigured"/>
+                    <include name="verifyEmiDcNotVisibleInFPOWithAccessTokenWithoutMobNoInCreateTokenApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases web UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC19"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/>
+                    <exclude name="VerifyBankLogoforEMI"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28430 emi subvention on checkoutjs using access token">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="ItemBasedEMIOnCheckoutJs"/>
+                    <include name="AmountBasedEMIOnCheckoutJs"/>
+                    <include name="VerifyErrorPopUponCashierPage"/>
+                </methods>
+            </class>
+            <!--            for sanity that existing code works-->
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27624_ValidateCCTxnNativeJsonPrefN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Offline Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="EMI_Offline_Card_Type_failure"/>
+                    <include name="validateRiskExtendInfoPipeEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="EMI on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifyCorrectInfoMsgIsShownForEMIPaymodeWhenBajajFinservIsSelected"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardForAddNPayMerchant"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVV_IsNotEntered"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardWhenExpiryDateIsEntered"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVVIsEntered"/>
+                    <include name="verifyEMITxnGetsFailedWhenCancelledOnBajajFinservAuthenticationPage"/>
+                    <include
+                            name="verifyRedirectionToBankPageWhenIncorrectOTP_IsEnteredForEMI_TxnWIthBajajFinservCard"/>
+                    <include name="SuccessfulOffusEMITxn"/>
+                    <include name="validateSuccessEMI_DC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="EMI on enhancedwap">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardForAddNPayMerchant"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVV_IsNotEntered"/>
+                    <include name="verifyEMITxnIsSuccessfulWithBajajFinservCardWhenExpiryDateIsEntered"/>
+                    <include name="SuccessfulEBajajFinMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PayTMExpress" parallel="methods" thread-count="3">
+        <classes>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <exclude name="Validate Success Paytm Express EMI transaction also verify its refund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="SuccessfulEmiDCTransactionUsingMobNoInInitiateAPI"/>
+                    <exclude name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <exclude name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-30748">
+        <classes>
+            <class name="scripts.DifferentRoiForEmiTransaction.DifferentRoiForEmiTransaction"/>
+            <class name="scripts.api.mappingService.GetBrandEmiDetailsApi"/>
+        </classes>
+    </test>
+
+
+    <test name="Native EMISubvention">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyHybridFlowInWithEMIIdInInitiateTransaction"/>
+                    <include name="verifyHybridEMIDCWithEMIID"/>
+                    <include name="verifyHybridBAJAJEMIWithEMIID"/>
+                    <include name="verifyHybridEMIWithEMIIDWithSavedCard"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Native Plus EMISubvention">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                    <include name="verifyHybridFlowInWithEMIIdInInitiateTransaction"/>
+                    <include name="verifyHybridEMIDCWithEMIID"/>
+                    <include name="verifyHybridBAJAJEMIWithEMIID"/>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                    <include name="verifyHybridEMIWithEMIIDWithSavedCard"/>
+                    <include name="verifyEMIDCWithEMIID"/>
+                    <include name="verifyBAJAJEMIWithEMIID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="EMISubvention API Test cases">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="getEmiDetailsForEMIEnabledMerchant"/>
+                    <include name="getEmiDetailsForEMIDisabledMerchant"/>
+                    <include name="verifyEmiDetailsWithCCEMI"/>
+                    <include name="verifyEmiDetailsWithBajajFinEMI"/>
+                    <include name="verifyForAllEMIEnabled"/>
+                    <include name="checkEMIEligiBilityWithSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityWithEMIEnabledMID"/>
+                    <include name="checkEMIEligiBilityWithEMIDisabledMID"/>
+                    <include name="checkEMIEligiBilityWithBlankChannelCode"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeEnabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeDisabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeCreditCard"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnNonEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfSameBank"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfDifferntBank"/>
+                    <include name="checkEMIEligiBilityWithUserNotconfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityWithUserConfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityForChannelCodeHDFC"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityForChannelCodeICICI"/>
+                    <include name="checkEMIEligiBilityForChannelCodeBajajFN"/>
+                    <include name="checkEMIEligiBilityForChannelCodeAMEX"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGOnly with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validatePGOnlyRetryTxnUsingEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Payments API's 5">
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test">
+                <methods>
+                    <exclude
+                            name="scripts.api.theia.fetchBinDetail.FetchBinDetailTest.testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test">
+                <methods>
+                    <exclude
+                            name="scripts.api.theia.fetchBinDetail.FetchBinDetailTest.testForPayModeEMIWhenSupported"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Payments API's 2">
+        <classes>
+            <class name="scripts.api.theia.FetchEmiPaymentChannels"/>
+        </classes>
+    </test>
+
+
+    <test name="Payments API's 4">
+        <classes>
+            <class name="scripts.api.theia.CheckEmiEligibility"/>
+            <class name="scripts.api.theia.GetEmiDetails"/>
+        </classes>
+    </test>
+
+    <test name="PGP-21143">
+        <classes>
+            <class name="scripts.BinInResponseV1">
+                <methods>
+                    <exclude name="testForSuccessfulEMIDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Checkoutjs UI test cases web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="VerifyBankLogoforEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases wap">
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <exclude name="VerifyBankLogoforEMI"/>
+                    <exclude name="SuccessfulEmiDCTransactionUsingMobNoInInitiateAPI"/>
+                    <exclude name="VerifyEmiDCNotVisibleForMobNoWithEmiDcNotConfigured"/>
+                    <exclude name="VerifyEmiDCNotVisibleWithoutMobNoInInitiateApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-ScanNpay All in 1 QR tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.scanNPay.AllInOneQrTests">
+                <methods>
+                    <exclude name="validate_S_EMI_PCF_Txn_allIn1Qr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27716 - Native Plus cases for Pre Debit">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewSEMIANNUALLYDDCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Corporate Cards on Enhanced Web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Enhanced WAP">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIDCBinCorporateMerchant"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Corporate Cards on Enhanced Web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successCorporateEMIDCBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Corporate Cards on Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="successfulSeamlessCorporateEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EMI Subvention Phase 2">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <exclude name="t27"/>
+                    <exclude name="t28"/>
+                    <exclude name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <exclude name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <exclude name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <exclude name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <exclude
+                            name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <exclude name="t88initiatePTCAPIPhase2"/>
+                    <exclude name="t86initiatePTCAPIPhase2"/>
+                    <exclude name="t87initiatePTCAPIPhase2"/>
+                    <exclude name="t84initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly-enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validatePGOnlyRetryTxnUsingEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="EMI on enhancedwap">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateSuccessOnusEMITxn_PgOnlyMerc"/>
+                    <include name="validateSuccessOnusEMITxn_PgOnlyMerc_loggedInUser"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_MaxAmount_nonLoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountMorethan_maxAmount"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount_nonLoggedIn"/>
+                    <include name="validateEmiNotDisplayed_txnAmountLessthan_minAmount"/>
+                    <include name="validateFailedEmiTxn_PgOnly_LoggedIn"/>
+                    <include name="validateFailedEmiTxn_PgOnly_nonLoggedIn"/>
+                    <include name="validateSavedEmiTxn_PgOnly_LoggedIn"/>
+                    <include name="validateFailTxnSavedEmi_Pgonly_LoggedIn"/>
+                    <include name="SuccessfulOffusEMITxn"/>
+                    <include name="verifyCorrectInfoMsgIsShownForEMIPaymodeWhenBajajFinservIsSelected"/>
+                    <include name="verifyEMITxnIsSuccessfulWithSavedBajajFinservCardWhenCVVIsEntered"/>
+                    <include name="verifyEMITxnGetsFailedWhenCancelledOnBajajFinservAuthenticationPage"/>
+                    <include
+                            name="verifyRedirectionToBankPageWhenIncorrectOTP_IsEnteredForEMI_TxnWIthBajajFinservCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <!--EMI Txn is not supported in Native, Hence Excluded-->
+                    <exclude name="hybridTxnUsingEMI"/>
+                    <exclude name="retryTxnUsingEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-27715 Corporate Card EMI Only Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMIOnlyMerchant"/>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMI_DC_OnlyMerchantCorporate"/>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMI_DC_OnlyMerchantWithoutCorporate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27715 Corporate Card EMI Only Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMIOnlyMerchant"/>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMI_DC_OnlyMerchantCorporate"/>
+                    <include name="PGP_27715_validateSuccessTxnUsingEMI_DC_OnlyMerchantWithoutCorporate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28966 Simplify EMI subvention tests - Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.DeferredCheckout">
+                    <methods>
+                        <include name="validateDeferedFPOWhenGoodsIdNotMatchesInProp"/>
+                        <include name="validateDeferedFPOWhenGoodIDMatchesInProperty"/>
+                        <include name="validateDeferedFPOWhenGoodsIdNotPassed"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+
+    <test name="PayTMExpress">
+        <classes>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="Validate Success Paytm Express EMI transaction also verify its refund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="temp-Prepaid cases for enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+
+    <test name="tempPrepaid cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="emiCCPrepaidEnhancedTxn"/>
+                    <include name="emiDCPrepaidEnhancedTxn"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Emi Subvention for Third Party native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Emi Subvention for Third Party native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="PGP_27715_validateOnlyEMIDCMerchantwithCorporateBin"/>
+                    <include name="TC_PT_BAJAJ_EMI_Success"/>
+                    <include name="TC_PT_0CostEMI_Success"/>
+                    <include name="checkEmiTxnUsingAmexCreditCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-28936 enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedSuccessEMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28936 enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedSuccessEMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EMISubvention API Test cases">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyEmiDetailsWithDCEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

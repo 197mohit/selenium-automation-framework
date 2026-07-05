@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "requestId",
+        "responseTimestamp",
+        "version"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "requestId": {
+          "type": "null",
+          "minLength": 1
+        },
+        "version": {
+          "enum": [
+            "v1"
+          ]
+        },
+        "responseTimestamp": {
+          "type": "string",
+          "pattern": "[0-9]{13,}"
+        }
+      }
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "upiAccountExist": {
+          "type": "boolean"
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCode": {
+              "type": "string",
+              "enum": [
+                "9999",
+                "00000900",
+                "1001",
+                "0001",
+                "0000",
+                "2005"
+              ],
+              "minLength": 1,
+              "maxLength": 64
+            },
+            "resultMsg": {
+              "type": "string",
+              "enum": [
+                "check upi account preference not enabled",
+                "System error",
+                "Request parameters are not valid",
+                "invalid request params",
+                "Failure",
+                "Success",
+                "Checksum provided is invalid"
+              ],
+              "minLength": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    }
+  }
+}

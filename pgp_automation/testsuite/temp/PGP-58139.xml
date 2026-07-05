@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58139">
+    <test name="FetchMerchantInfo api responses">
+        <classes>
+            <class name="scripts.api.theia.fetchMerchantInfo.fetchMerchantInfo">
+                <methods>
+                    <include name="validateFetchMerchantInfoResp_oneTimeTxn"/>
+                    <include name="validateFetchMerchantInfoResp_subsTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

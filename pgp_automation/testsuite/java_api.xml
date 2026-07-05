@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Java_API_TestCases" verbose="1" thread-count="20"
+       parallel="methods" data-provider-thread-count="1">
+    <parameter name="browser" value="chrome"/>
+
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API) ">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <include name="fetchPayOptionForNonRiskRejectedUser"/>
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16003 - Link Based Limit OTP breach only API">
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifyBreachNumber"/>
+                    <include name="generateOTPLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Fetch payment instrument for offline txn">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_InvalidToken"/>
+                    <include name="FetchPayIns"/>
+                    <include name="FetchPayIns_saveCard"/>
+                    <include name="FetchPayIns_PPBL"/>
+                    <include name="FetchPayIns_creditcard"/>
+                    <include name="FetchPayIns_balance"/>
+                    <include name="FetchPayIns_netbanking"/>
+                    <include name="FetchPayIns_PaytmDigitalCredit"/>
+                    <include name="FetchPayIns_UPI"/>
+                    <include name="FetchPayIns_SavedVpaV2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="save card">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCard">
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-23725-Correct Error Message Tests for different paymodes">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifySBICreditCardNotAllowedMsg"/>
+                    <include name="verifyHDFCCreditCardAllowedwhenHDFC_DC_CC_Enabled"/>
+                    <include name="verifyHDFCDebitNotAllowedwhenOnlyHDFC_CC_Enabled"/>
+                    <include name="verifyHDFCCreditCardAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithCCAllEnabled"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletAddNPay"/>
+                    <include name="verifyHDFCDebitCardNotAllowedwithSBI_ICICI_DCwithWalletHybrid"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="verifyHDFCDebitCardNotAllowedwithOnlyHDFC_CCEnabledSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-21763 Subscription - Native">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                    <include name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <include name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCannotBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidAppInvokeDeviceMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                    <include name="PGP_21763_verifyTxnAmtNotEqualtoMaxAmtMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="fetchmerinfo">
+        <classes>
+            <class name="scripts.FetchMerchantInfo">
+                <methods>
+                    <include name="verifyMerchantInfowithValidMid"/>
+                    <include name="invalidMidMerchantInfo"/>
+                    <include name="verifyMerchantInfowithSingleValidMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Upi Intent tests ">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native OTP Limit Breach">
+        <classes>
+            <class name="scripts.Native.LimitOTP">
+            </class>
+        </classes>
+    </test>
+
+    <test name="OrderStatusAPI Security related test Cases">
+        <classes>
+            <class name="scripts.api.statusAPI.OrderStatusAPI">
+            </class>
+        </classes>
+    </test>
+
+    <test name="CC Bill Payment-CardTokenizeTest">
+        <classes>
+            <class name="scripts.CCBillPayments.CardTokenizeTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-CheckEligibilityTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FetchBinTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-FetchBinTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FetchBinTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-FulfilmentTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FulfilmentTest"/>
+        </classes>
+    </test>
+    <test name="CC Bill Payment-StatusCheckTest">
+        <classes>
+            <class name="scripts.CCBillPayments.StatusCheckTest"/>
+        </classes>
+    </test>
+
+    <test name="EMISubvention API Test cases">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="getEmiDetailsForEMIEnabledMerchant"/>
+                    <include name="getEmiDetailsForEMIDisabledMerchant"/>
+                    <include name="getEmiDetailsForInvalidMID"/>
+                    <include name="getEmiDetailsForInvalidJWTToken"/>
+                    <include name="getEmiDetailsForBlankClientId"/>
+                    <include name="getEmiDetailsForInvalidClientId"/>
+                    <include name="verifyEmiDetailsForDiffMIDInRequestAndQueryParams"/>
+                    <include name="verifyEmiDetailsWithCCEMI"/>
+                    <include name="verifyEmiDetailsWithDCEMI"/>
+                    <include name="verifyEmiDetailsWithBajajFinEMI"/>
+                    <include name="verifyForAllEMIEnabled"/>
+                    <include name="checkEMIEligiBilityWithSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityWithEMIEnabledMID"/>
+                    <include name="checkEMIEligiBilityWithEMIDisabledMID"/>
+                    <include name="checkEMIEligiBilityWithBlankChannelCode"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeEnabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeDisabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeCreditCard"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnNonEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfSameBank"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfDifferntBank"/>
+                    <include name="checkEMIEligiBilityWithUserNotconfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityWithUserConfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityForChannelCodeHDFC"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityForChannelCodeICICI"/>
+                    <include name="checkEMIEligiBilityForChannelCodeBajajFN"/>
+                    <include name="checkEMIEligiBilityForChannelCodeAMEX"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-18000:Phone Update | User verification through saved cards">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCardByUserIdTest"/>
+        </classes>
+    </test>
+    <test name="PGP-17977 Send Failure reason Error Code to Notification Service">
+        <classes>
+            <class name="scripts.bopanel.FailureReasonNotificationService"/>
+        </classes>
+    </test>
+
+    <test name="Emi Subvention for Third Party native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+            </class>
+        </classes>
+    </test>
+    <test name="Emi Subvention for Third Party native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Logo Integration Tests">
+        <parameter name="theme" value="merchant"/>
+        <classes>
+            <class name="scripts.api.mappingService.logoIntegrationApi.UploadApi">
+                <methods>
+                    <include name="uploadMerchant"/>
+                    <include name="checkMerchant"/>
+                    <include name="fetchMerchant"/>
+                    <include name="deleteMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Loyality Points Fetch Balance info and fast forward TC's">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="successfulFetchBalanceLP"/>
+                    <include name="fetchBalanceOnUserNotHavingLP"/>
+                    <include name="fetchBalanceOnInvalidSSOTokenLP"/>
+                    <include name="fetchBalanceOnMidNotHavingLP"/>
+                    <include name="fetchBalanceWithInvalidPayModeLP"/>
+                    <include name="successFFTxnWithInvalidPayModeLP"/>
+                    <include name="invalidSSOtokenFastForwardLP"/>
+                    <include name="validSSOInvalidExchangeLP"/>
+                    <include name="txnAmountGreaterThanLP"/>
+                    <include name="payModeNotThereOnMerchantLP"/>
+                    <include name="payModeNotThereOnUserLP"/>
+                    <include name="ffExchangeNumberNegativeLP"/>
+                    <include name="exchangeNumberAlphaNumericLP"/>
+                    <include name="duplicateOrderIdLP"/>
+                    <include name="refundFullAmountLP"/>
+                    <include name="refundPartialAmountLP"/>
+                    <include name="expiredSSOTokenLP"/>
+                    <include name="newParamMerchantMLP"/>
+                    <include name="oldFlowMerchantIfNewParamNullLP"/>
+                    <include name="midNotListedInPropFFLP"/>
+                    <include name="invalidRootCustId"/>
+                    <include name="refundFullAmountMLP"/>
+                    <include name="validateSuccessPeonLP"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22565 Mapping Backend Validation">
+        <classes>
+            <class name="scripts.SolidityCheck.ValidateMerchantConfig">
+                <methods>
+                    <include name="validateOfflineDescText"/>
+                    <include name="validateOfflineDescFlag"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Description FPO Tests - txntoken and Guest">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithTxnTokenWhenPrefDisabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefEnabled"/>
+                    <include name="ValidateDescriptionTextinFPOwithGuestWhenPrefDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="E-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOEMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="P-Mandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Pmandate">
+                <methods>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_MF_SIP"/>
+                    <include name="VerifyBankNameinFPOPMandateForNATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22222 Idempotent cases">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateIdempotentCase1"/>
+                    <include name="validateIdempotentCase2"/>
+                    <include name="validateIdempotentCase3"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="iconURL in savedMandates bankMandate">
+        <classes>
+            <class name="scripts.Native.bankmandate.Emandate">
+                <methods>
+                    <include name="iconURLpayModeBankMandateNativeSubs"/>
+                    <include name="iconURLpayModeBankMandateNativeMFSIP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native UPI polling Tests">
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests"/>
+        </classes>
+    </test>
+
+    <test name="PGP-28416 - Offline Cases for SDKType">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateAIOSDKTypeParam"/>
+                    <include name="validateCUISDKTypeParam"/>
+                    <include name="validateSDKTypeParamWithoutCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="WalletSettlement">
+        <classes>
+            <class name="scripts.WalletSetlement.WalletSettlementNotify"/>
+            <class name="scripts.WalletSetlement.WalletSettlementInstaproxy"/>
+        </classes>
+    </test>
+    <test name="temp-PGP-25879">
+        <classes>
+            <class name="scripts.Native.NativeMerchantStatus">
+                <methods>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingMLV"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingMLV"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingMLV"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingMLV"/>
+                </methods>
+            </class>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="validateDirectFormGeneratedWhenFF4JisOFFPrefActive_UsingStaticQR"/>
+                    <include name="validateDirectFormNotGeneratedWhenFF4JisOFF_UsingStaticQR"/>
+                    <include name="validateGenerateDirectFormParamsWhenFF4JisON_UsingStaticQR"/>
+                    <include name="validateDirectFormGeneratedWhenFF4JisONPrefActive_UsingStaticQR"/>
+                </methods>
+            </class>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisOFFPrefIsActiveForCC_UsingDynmQR"/>
+                    <include name="validateDirectFormParamNotInPTCFF4JFlagisOFFPrefNotActiveForCC_UsingDynmQR"/>
+                    <include name="validateDirectFormParamInPTCFF4JFlagisONPrefNotActiveForCC_UsingDynmQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25870">
+        <classes>
+            <class name="scripts.mgv.TestNativeMGVFlow">
+                <methods>
+                    <include name="TC_PT_MGV_005"/>
+                    <include name="TC_PT_MGV_005_V2"/>
+                    <include name="TC_PT_MGV_006"/>
+                    <include name="TC_PT_MGV_007"/>
+                    <include name="TC_PT_MGV_008"/>
+                    <include name="TC_PT_MGV_009"/>
+                    <include name="TC_PT_MGV_010"/>
+                    <include name="TC_PT_MGV_011"/>
+                    <include name="TC_PT_MGV_012"/>
+                    <include name="TC_PT_MGV_012_V2"/>
+                    <include name="TC_PT_MGV_013"/>
+                    <include name="TC_PT_MGV_014"/>
+                    <include name="TC_PT_MGV_015"/>
+                    <include name="TC_PT_MGV_016"/>
+                    <include name="TC_PT_MGV_017"/>
+                    <include name="TC_PT_MGV_018"/>
+                    <include name="TC_PT_MGV_019"/>
+                    <include name="TC_PT_MGV_019_V2"/>
+                    <include name="TC_PT_MGV_020"/>
+                    <include name="TC_PT_MGV_021"/>
+                    <include name="TC_PT_MGV_022"/>
+                    <include name="TC_PT_MGV_023"/>
+                    <include name="TC_PT_MGV_024"/>
+                    <include name="TC_PT_MGV_025"/>
+                    <include name="TC_PT_MGV_026"/>
+                    <include name="TC_PT_MGV_026_V2"/>
+                    <include name="TC_PT_MGV_027"/>
+                    <include name="TC_PT_MGV_028"/>
+                    <include name="TC_PT_MGV_029"/>
+                    <include name="TC_PT_MGV_030"/>
+                    <include name="TC_PT_MGV_031"/>
+                    <include name="TC_PT_MGV_032"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-EMI Subvention Phase 2">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t29bankAPIPhase2"/>
+                    <include name="t30bankAPIPhase2"/>
+                    <include name="t31bankAPIPhase2"/>
+                    <include name="t32bankAPIPhase2"/>
+                    <include name="t33bankAPIPhase2"/>
+                    <include name="t34bankAPIPhase2"/>
+                    <include name="t35bankAPIPhase2"/>
+                    <include name="t36bankAPIPhase2"/>
+                    <include name="t37bankAPIPhase2"/>
+                    <include name="t38bankAPIPhase2"/>
+                    <include name="t39bankAPIPhase2"/>
+                    <include name="t40bankAPIPhase2"/>
+                    <include name="t41bankAPIPhase2"/>
+                    <include name="t42bankAPIPhase2"/>
+                    <include name="t43bankAPIPhase2"/>
+                    <include name="t44bankAPIPhase2"/>
+                    <include name="t45bankAPIPhase2"/>
+                    <include name="t46bankAPIPhase2"/>
+                    <include name="t47tenureAPIPhase2"/>
+                    <include name="t48tenureAPIPhase2"/>
+                    <include name="t49tenureAPIPhase2"/>
+                    <include name="t50tenureAPIPhase2"/>
+                    <include name="t51tenureAPIPhase2"/>
+                    <include name="t52tenureAPIPhase2"/>
+                    <include name="t53tenureAPIPhase2"/>
+                    <include name="t54tenureAPIPhase2"/>
+                    <include name="t55tenureAPIPhase2"/>
+                    <include name="t56tenureAPIPhase2"/>
+                    <include name="t57tenureAPIPhase2"/>
+                    <include name="t58tenureAPIPhase2"/>
+                    <include name="t59tenureAPIPhase2"/>
+                    <include name="t60tenureAPIPhase2"/>
+                    <include name="t61tenureAPIPhase2"/>
+                    <include name="t62tenureAPIPhase2"/>
+                    <include name="t63validateAPIPhase2"/>
+                    <include name="t64validateAPIPhase2"/>
+                    <include name="t65validateAPIPhase2"/>
+                    <include name="t66validateAPIPhase2"/>
+                    <include name="t67validateAPIPhase2"/>
+                    <include name="t68validateAPIPhase2"/>
+                    <include name="t69validateAPIPhase2"/>
+                    <include name="t70validateAPIPhase2"/>
+                    <include name="t71validateAPIPhase2"/>
+                    <include name="t72validateAPIPhase2"/>
+                    <include name="t73validateAPIPhase2"/>
+                    <include name="t74validateAPIPhase2"/>
+                    <include name="t75validateAPIPhase2"/>
+                    <include name="t76validateAPIPhase2"/>
+                    <include name="t77validateAPIPhase2"/>
+                    <include name="t78validateAPIPhase2"/>
+                    <include name="t79validateAPIPhase2"/>
+                    <include name="t80validateAPIPhase2"/>
+                    <include name="t81initiateAPIPhase2"/>
+                    <include name="t82initiateAPIPhase2"/>
+                    <include name="t83initiatePTCAPIPhase2"/>
+                    <include name="t84initiatePTCAPIPhase2"/>
+                    <include name="t85initiatePTCAPIPhase2"/>
+                    <include name="t86initiatePTCAPIPhase2"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                    <include name="t88initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Fetch bin details">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="FBD_PCF_DC"></include>
+                    <include name="FBD_PCF_CC"></include>
+                    <include name="FBD_PCF_AMEX"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchVPADetails">
+        <classes>
+            <class name="scripts.Native.FetchVPADetails"/>
+        </classes>
+    </test>
+
+</suite>

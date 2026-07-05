@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Chnages" verbose="1" parallel="tests" thread-count="3">
+    <test name="Subscription UI/UX Changes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_35247_TC_01_Subs_UIUX_Month"/>
+                    <include name="PGP_35247_TC_02_Subs_UIUX_DAY"/>
+                    <include name="PGP_35247_TC_03_Subs_UIUX_YEAR"/>
+                    <include name="PGP_35247_TC_04_Subs_UIUX_ONDEMAND"/>
+                    <include name="PGP_35247_TC_05_Subs_UIUX_FIX"/>
+                    <include name="PGP_35247_TC_06_Subs_UIUX_UPI"/>
+                    <include name="PGP_35247_TC_07_Subs_UIUX_PPBL"/>
+                    <include name="PGP_35247_TC_08_Subs_UIUX_CC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

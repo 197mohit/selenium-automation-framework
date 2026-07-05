@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" verbose="1" parallel="tests" thread-count="10">
+    <test name="EMI" parallel="methods" thread-count="5">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+                <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                        <methods>
+                            <include name="JSCheckoutDomainOnEnhanced_EMI_Txn"/>
+                        </methods>
+                    </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyStandardEMIForNewCardFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

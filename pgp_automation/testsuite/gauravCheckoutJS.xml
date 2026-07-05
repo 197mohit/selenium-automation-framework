@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1" parallel="tests" thread-count="3">
+
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifySolutionWiseMdrForOnlineTxn"/>
+                    <include name="ValidateParentAndChildMIDThemeOverwriteEnabled"/>
+                    <include name="verifyLogoColor"/>
+                    <include name="SuccessfulEmiDCTransactionUsingMobNoInInitiateAPI"/>
+                    <include name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>
+                    <include name="FooterTextColourDoNotChangeOnChangingHeaderTextColour"/>
+                    <include name="FooterBackgroundColourDoNotChangeOnChangingHeaderbackGroundColour"/>
+                    <include name="PGP_28691_BulkPromoShouldNotHitWhenBLOCK_BULK_APPLY_PROMOisActive"/>
+                    <include name="ValidateZeroRetry"/>
+                    <include name="verifying_success_FD_txn"/>
+                    <include name="PGP_28965_verifyLastTxnPaymodeAlreadySelectedSavedCCTxn"/>
+                    <include name="t2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

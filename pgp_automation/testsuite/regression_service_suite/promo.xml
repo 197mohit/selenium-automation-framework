@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Promo_Suite" verbose="1" thread-count="20" parallel="tests">
+
+    <!-- same cases are in theia1 suite -->
+    <!--<test name="PGP-24758" parallel="classes" thread-count="1">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.ChecksumApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.AccessTokenApplyPromoV2Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV1Test"/>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test"/>
+        </classes>
+    </test>-->
+
+    <test name="Native Plus ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="verifyCCPromo_TC_16"/>
+                    <include name="verifyNBPromo_TC_17"/>
+                    <include name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <!-- Exclude Zero Pass Percentage TCs
+                    <include name="verifyRestrictDCPromo_TC_20"/>
+                    <include name="verifyDCPromo_TC_16_1"/>
+                    <include name="verifyRestrictDCPromo_TC_20_1"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native ProcessTransactionTests" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+
+                    <include name="verifyCCPromo_TC_16"/>
+                    <include name="verifyRestrictDCPromo_TC_20"/>
+                    <include name="verifyNBPromo_TC_17"/>
+                    <include name="succesfulOrderwhenApercentagesSignInInitForPromoFlow"/>
+                    <!-- Exclude Zero Pass Percentage TCs
+                    <include name="verifyDCPromo_TC_16_1"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30155 AppInvoke Promo cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsTrue"/>
+                    <include name="SuccessfulTransactionWithCashbackWhenValidatePromoIsFalse"/>
+                    <!-- Exclude Zero Pass Percentage
+                    <include name="SuccessfullTransactionWithInstantDiscountWhenValidatePromoIsFalse"/>
+                    <include name="SuccessfulTransactionWithInstantDiscountWhenValidatePromoIsTrue"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22997 AND flow SCM ApplyPrommo">
+        <classes>
+            <class name="scripts.Promo.ANDFlow.ApplyPromoSCM"/>
+        </classes>
+    </test>
+
+    <test name="PGP-22997 OR flow SCM FPO">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.ORFPOSCM">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="validateORFlowFPOandInitiate_using_CIN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-22997 OR flow SCM FetchCardDetails">
+        <classes>
+            <class name="scripts.Promo.ORRFlow.FetchCardDetailsSCM"/>
+        </classes>
+    </test>
+
+    <test name="PGP-28691 Block bulk apply Pref check for show payment page">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="PGP_28691_BulkPromoShouldNotHitWhenBLOCK_BULK_APPLY_PROMOisActiveForShowPaymentPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Promo And Flow">
+        <classes>
+            <class name="scripts.api.theia.FetchAllPaymentOffers"/>
+        </classes>
+    </test>
+
+    <test name="Promo OR Flow">
+        <classes>
+            <class name="scripts.or.FetchCardDetailsAPI"/>
+        </classes>
+    </test>
+
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateFailureTxnUsingPaymentandSimplifiedoffers"/>
+                    <include name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificDiscountPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingInvalidPromoWithValidatePromoTrueInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingInvalidPromoWithValidatePromoFalseInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingNullPromoParamsInNewFlow"/>
+                    <include name="TC_FPC_007"/>
+                    <!-- Exclude Zero Pass Percentage TCs
+                    <include name="TC_FPC_008"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateFailureTxnUsingPaymentandSimplifiedoffers"/>
+                    <include name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificDiscountPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingInvalidPromoWithValidatePromoTrueInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingInvalidPromoWithValidatePromoFalseInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingNullPromoParamsInNewFlow"/>
+                    <include name="TC_FPC_007"/>
+                    <include name="TC_FPC_008"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Exclude Zero Pass Percentage TCs
+   <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests - DirectBankTest">
+       <classes>
+           <class name="scripts.PGDirectHddo">
+               <methods>
+                   <include name="verifySuccessfulPromoTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <test name="PGP-18539 seamless Promo Txn">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_295_successfulSeamlessNBPromoTxn"/>
+                    <include name="PGP_296_successfulSeamlessNBPromoTxnDiscountType"/>
+                    <include name="PGP_297_successfulSeamlessNBPromoTxn"/>
+                    <include name="PGP_299_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_294_successfulSeamlessCCPromoTxn"/>
+                    <include name="PGP_298_successfulSeamlessCCPromoTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-24050 Promo cases for enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisTrue"/>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisFalse"/>
+                    <include name="PGP_24050_verifyTxnwhenPromoNotAppliedandValidatePromoisTrueAddNPay"/>
+                    <!-- Exclude Zero Pass Percentage
+                    <include name="PGP_24050_verifyTxnAmountAndpromoOffersListNotVisiblewhenDiscountPromoPassed"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_1">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test">
+                <methods>
+                    <exclude name="test when head token equals expired token"/>
+                    <exclude name="test when head token is not provided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test body.simplifiedPaymentOffers is returned in response when body.simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test body.simplifiedPaymentOffers is not returned in response when body.simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body.fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body.fetchAllPaymentOffers = null"/>
+                    <include name="test when body.fetchAllPaymentOffers = ''"/>
+                    <include name="test when body.fetchAllPaymentOffers equals random value"/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant does not have promos configured'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals valid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals invalid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = false given merchant has promos configured'/>
+                    <include name="test when body.applyPaymentOffer is not provided"/>
+                    <include name="test when body.applyPaymentOffer = null"/>
+                    <include name="test when body.applyPaymentOffer = ''"/>
+                    <include name="test when body.applyPaymentOffer equals random value"/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals invalid promo code in Initiate Txn API"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25875_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="test body.simplifiedPaymentOffers is returned in response when body.simplifiedPaymentOffers is passed in Init Txn API"/>
+                    <include name="test body.simplifiedPaymentOffers is not returned in response when body.simplifiedPaymentOffers is not passed in Init Txn API"/>
+                    <include name="test when body.fetchAllPaymentOffers is not provided"/>
+                    <include name="test when body.fetchAllPaymentOffers = null"/>
+                    <include name="test when body.fetchAllPaymentOffers = ''"/>
+                    <include name="test when body.fetchAllPaymentOffers equals random value"/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant does not have promos configured'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals valid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = true given merchant has promos configured and body.simplifiedPaymentOffers.promoCode equals invalid promo in Initiate Txn API'/>
+                    <include name='test when body.fetchAllPaymentOffers = false given merchant has promos configured'/>
+                    <include name="test when body.applyPaymentOffer is not provided"/>
+                    <include name="test when body.applyPaymentOffer = null"/>
+                    <include name="test when body.applyPaymentOffer = ''"/>
+                    <include name="test when body.applyPaymentOffer equals random value"/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = true in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = true in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name='test when body.simplifiedPaymentOffers.applyAvailablePromo = false in Initiate Txn API and body.applyPaymentOffer = false in FetchPayOptions API'/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode is not passed in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals valid promo code in Initiate Txn API"/>
+                    <include name="test when body.simplifiedPaymentOffers.promoCode equals invalid promo code in Initiate Txn API"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25567">
+        <classes>
+            <class name="scripts.flows.NativeTest"/>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test if tncUrl present in apply promo response if ff4j flag ON"/>
+                    <exclude name="Verify successful refund of ECOM token transaction"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EMI Subvention Phase 2">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27157 Bank offers on PWP Not Supported enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_27157_ValidateBankOffersNotVisiblewithPWPMerchantfterLoggingIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchPromoCodeDetails">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_002"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27602 AddNPay Promo txns - AppInvoke">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_27602_verifyTxnProceedswithoutPromoWhenValidatePromoisFalseAddNPay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforCheckoutJs"/>
+                    <!-- Exclude Zero Pass Percentage TCs
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Checkoutjs UI test cases web UI REVAMP">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidatePromoIsAppliedToPromoAmountOnlyinBulkApplyforCheckoutJs"/>
+                    <!-- Exclude Zero Pass Percentage TCs
+                    <include name="PGP_29542_ValidateBankOffersSimplifiedFlowforEMITxnWithoutSpecificPromo"/-->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!-- Exclude Zero Pass Percentage TCs
+    <test name="temp-PGP-24050 Promo cases for enhancedwap 2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AppInvokePromoCases">
+                <methods>
+                    <include name="PGP_24050_verifyBulkOffersareAppliedwhenPromoNotPassed"/>
+                    <include name="PGP_24050_verifyTxnAmountAndpromoOffersListNotVisibleWhenCashbackPromoPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <test name="PGP-28967 Verify merchant name passed in promo flow">
+        <classes>
+            <class name="scripts.flows.NativePlusTest">
+                <methods>
+                    <include name="PGP 28967 test merchant name in theia facade logs after paytm_cashback promo txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchPromoCodeDetails-2">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <exclude name="ValidateFailureTxnUsingPaymentandSimplifiedoffers"/>
+                    <exclude name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                    <exclude name="ValidateSuccessTxnUsingSpecificDiscountPromoInNewFlow"/>
+                    <exclude name="ValidateSuccessTxnUsingAnyAvailablePromoInNewFlow"/>
+                    <exclude name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <exclude name="ValidateFailureTxnUsingInvalidPromoWithValidatePromoTrueInNewFlow"/>
+                    <exclude name="ValidateSuccessTxnUsingInvalidPromoWithValidatePromoFalseInNewFlow"/>
+                    <exclude name="ValidateFailureTxnUsingNullPromoParamsInNewFlow"/>
+                    <exclude name="PGP_28691_BulkPromoShouldNotHitWhenBLOCK_BULK_APPLY_PROMOisActiveForShowPaymentPage"/>
+                    <!--Exclude Zero Pass Percentage TCs -->
+                    <exclude name="TC_FPC_003"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify user Payment Offers applied on the merchant">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="verifyFetchUserPaymentOffers"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="applyPromoSuccessCheckoutPromoFailLogged">
+        <classes>
+            <class name="scripts.Promo.AND_Flow.ApplyPromoSuccessCheckoutPromoFailLogged">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="validateApplyPromo_ApplyPromoSuccessAndCheckoutFailCC1"/>
+                    <exclude name="validateApplyPromo_ApplyPromoSuccessAndCheckoutFailDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Item Level Promo Discount redemption">
+        <classes>
+            <class name="scripts.api.theia.ItemLevelPromoTest"/>
+        </classes>
+    </test>
+    <test name="Promo Fixes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

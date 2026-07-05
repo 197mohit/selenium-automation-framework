@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPBL PG2 Test1" verbose="1">
+    <test name="PPBL PG2 Test1"><!-- These Tese Cases to be run only on QA8 profile-->
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateSuccessPPBLTxnPG2MID"/>
+                    <include name="validatePendingPPBLTxnPG2MIDCloseOrderV1ThenCheckMerchantStatus"/>
+                    <include name="validatePendingPPBLTxnPG2MIDCloseOrderV2ThenCheckMerchantStatus"/>
+                    <include name="userNotPrsentInFF4JPPBLTxnRoutedToPPlus"/>
+                    <include name="midNotPrsentInFF4JButPrefEnabledPPBLRoutedToPG2PendingTxn"/>
+                    <include name="userPrsentMidNotPresentInFF4JPPBLTxnRoutedToPPlus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

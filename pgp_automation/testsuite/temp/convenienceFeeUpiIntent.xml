@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ConvenienceFeeUpiIntent_Suite" verbose="1" thread-count="20" parallel="tests">
+  <test name="ConvenienceFeeUpiIntent">
+    <parameter name="mobileEmulation" value="Nexus 5"/>
+    <parameter name="JsType" value="checkoutjs"/>
+    <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUI">
+        <methods>
+          <include name="testCase_04"/>
+          <include name="testCase_05"/>
+          <include name="testCase_06"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="ConvenienceFeeUpiIntentDQR">
+    <parameter name="JsType" value="checkoutjs"/>
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUI">
+        <methods>
+          <include name="testCase_01"/>
+          <include name="testCase_02"/>
+          <include name="testCase_03"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="ConvenienceFeeUpiIntentOnRedirection">
+    <parameter name="mobileEmulation" value="Nexus 5"/>
+    <parameter name="JsType" value="jsonredirection"/>
+    <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUI">
+        <methods>
+          <include name="testCase_04"/>
+          <include name="testCase_05"/>
+          <include name="testCase_06"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="ConvenienceFeeUpiIntentDQROnRedirection">
+    <parameter name="JsType" value="jsonredirection"/>
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUI">
+        <methods>
+          <include name="testCase_01"/>
+          <include name="testCase_02"/>
+          <include name="testCase_03"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+  <test name="ConvenienceFeeUpiIntentAPI">
+    <classes>
+      <class name="scripts.UPI.OnlineUpi.ConvenienceFeeOnUPiIntent"/>
+    </classes>
+  </test>
+</suite>

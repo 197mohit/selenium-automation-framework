@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateHybridWalletAndCCTxnWithDiscount"/>
+                    <include name="ValidateHybridWalletAndSavedCCTxnWithCashback"/>
+                    <include name="ValidateHybridWalletAndNBTxnWithDiscount"/>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <include name="PGP_36505_VerifyNoNullPointerExceptionforMerchantStatusAPIs"/>
+                    <include name="ValidateHybridWalletAndUPITxnWithCashback"/>
+                    <include name="ValidateHybridWalletAndNBTxnWithCashback"/>
+                    <include name="ValidatePromoFalseHybridWalletAndCCTxnWithCashback"/>
+                    <include name="ValidateTxn_AvoidNullPointerException"/>
+                    <include name="verifying_success_FD_txn"/>
+                    <include name="Verify_text_user_has_closed_the_bank_popup_is_displayed_after_canceling_txn"/>
+                    <include name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <include name="VerifyErrorMsgisshownforUPInotSupportingSubscription"/>
+                    <include name="VerifyErrorMsgisshownforUPIotherthanPaytmOrBhim"/>
+                    <include name="TC003_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="verify_SavedBankMandate_Details"/>
+                    <include name="LoginScreenChanges"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

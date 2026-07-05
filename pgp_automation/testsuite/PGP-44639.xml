@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-44639" verbose="1" parallel="methods" thread-count="12">
+    <test name="PGP-44639 Static QR">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="verifyMerchantinfoDynamicQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44639 DQR">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="verifyMerchantinfoStaticQR"/>
+                    <include name="verifyMerchantinfoStaticQRwallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

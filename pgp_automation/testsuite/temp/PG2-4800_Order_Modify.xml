@@ -1,0 +1,28 @@
+<suite name="PG2-4800_Order_Modify" verbose="1">
+    <test name="Validate Full Traffic Order Modify through PPBL, Wallet,UPI, PostPaid">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateFullTrafficCOThenPayUPIPUshOrderModifyTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateCOPSuccessOrderModifyPostPaidTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateFullTrafficYSuccessCOPPPBLOrderModifyTxnPG2MID"/>
+                    <include name="validateFullTrafficYSuccessCOThenPayPPPBLOrderModifyTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateCOPSuccessOrderModifyWalletTxnPG2MID"/>
+                    <include name="validateCOThenPaySuccessOrderModifyWalletTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

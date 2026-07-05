@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Suite Changes" verbose="1" parallel="tests" thread-count="3">
+    <test name="Subscription Suite Changes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="sC_VIA_PPI"/>
+                    <include name="sC_VIA_PPI01"/>
+                    <include name="verify_closed_wallet_user_error_message_SubsFlow"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <include name="TC_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

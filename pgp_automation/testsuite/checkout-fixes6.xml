@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS 6 fixes" verbose="1" parallel="tests" thread-count="3">
+
+    <test name="CHECKOUTJS element on web Test cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="LogoutNB"/>
+                    <include name="LogoutUPI"/>
+                    <include name="addnpayNB"/>
+                    <include name="addandpayCC"/>
+                    <include name="loginstateDiffUserWallet"/>
+                    <include name="logoutstateloginPostpaid"/>
+                    <include name="EMI_nonLocckedIN_hidelable"/>
+                    <include name="EMI_LocckedIN_hidelable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CHECKOUTJS mastercard on web Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.MaestroCardCheckout">
+                <methods>
+                    <include name="verifyTxnViaEnteringExpdateAndCvv"/>
+                    <include name="verifyTxnWithoutEnteringExpandCvv"/>
+                    <include name="verifyMaestroCardinHyb"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

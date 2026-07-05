@@ -1,0 +1,21 @@
+{
+  "jsUrlTemplate": "https://pgp-%s.paytm.in/merchantpgpui/offerjs/merchants/%s.js",
+  "loginPageUrl": "https://automation-pg-ext.paytm.in/checkoutpage/offerjs.html",
+  "referenceIdSuffix": "OfferJs",
+  "merchantType": "EMI_DISCOVERY",
+  "merchantTypeAccessToken": "EMI_NEW_FLOW",
+  "data": {
+    "amount": "10000",
+    "userDetail": {
+      "mobileNumber": "9999999999"
+    },
+    "offerDiscoveryInfo": {
+      "amountBasedBankOffer": true,
+      "amountBasedSubvention": true
+    }
+  },
+  "merchant": {
+    "mid": "qa12FU97229952596781"
+  },
+  "root": "#banner"
+}

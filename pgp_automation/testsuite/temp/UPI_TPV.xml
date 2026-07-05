@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI TPV cases">
+    <test name="UPI TPV cases">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ReqauthFlowUPIIntentTest">
+                <methods>
+                    <include name="UPITPVNameMismatchError"/>
+                    <include name="UPITPVSuccessTxnWhenPayerAccountDetailsAreGoingInEncryptedFormInEncryptedParams"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

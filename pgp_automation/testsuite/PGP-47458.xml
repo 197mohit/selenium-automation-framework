@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-47458 " verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-47458">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="gd_00"/>
+                    <include name="gd_01"/>
+                    <include name="gd_02"/>
+                    <include name="gd_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

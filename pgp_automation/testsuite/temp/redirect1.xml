@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="REDIRECTION FIX" verbose="1" >
+    <test name="fix">
+        <parameter name="theme" value="enhancedweb_revamp">
+            <classes>
+                <class name="scripts.UI.EnhancedUITests">
+                    <methods>
+                        <include name="PGP_39547_TC_01_NonLoggedInFlow_PostpaidWalletEnabled"/>
+                        <include name="PGP_39547_TC_04_NonLoggedInFlow_UPIEnabled"/>
+                        <include name="PGP_39547_TC_05_NonLoggedInFlow_AllPaymodesEnabled"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="MwebFIX">
+        <parameter name="theme" value="enhanced_wap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_39547_TC_01_NonLoggedInFlow_PostpaidWalletEnabled"/>
+                    <include name="PGP_39547_TC_02_NonLoggedInFlow_PostpaidCardsEnabled"/>
+                    <include name="PGP_39547_TC_03_NonLoggedInFlow_WalletCardsEnabled"/>
+                    <include name="PGP_39547_TC_04_NonLoggedInFlow_UPIEnabled"/>
+                    <include name="PGP_39547_TC_05_NonLoggedInFlow_AllPaymodesEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

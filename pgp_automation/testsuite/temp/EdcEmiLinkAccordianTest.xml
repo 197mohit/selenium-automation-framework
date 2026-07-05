@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EdcEmiLink-AccordianUI-TestSuite" preserve-order="true">
+    <test name="Verify UI on Accordian Click for EDC EMI Link">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="verifyUIonAccordianClick"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

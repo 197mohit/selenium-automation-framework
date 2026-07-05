@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DCC email notification" verbose="1" >
+    <test name="DCC email notification | PGP-56251 | PGP-56252 | PGP-56251">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests">
+                <methods>
+                    <include name="DccPaymentReceiptEmail001"/>
+                    <include name="DccPaymentReceiptEmail002"/>
+                    <include name="DccPaymentReceiptEmail003"/>
+                    <include name="DccPaymentReceiptEmail004"/>
+                    <include name="DccPaymentReceiptEmail005"/>
+                    <include name="DccPaymentReceiptEmail006"/>
+                    <include name="DccPaymentReceiptEmail007"/>
+                    <include name="DccPaymentReceiptEmail008"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,820 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression test cases for merchant 4 and enhancedWAP themes" verbose="1" parallel="tests"
+       thread-count="12">
+    <parameter name="browser" value="chrome"/>
+    <test name="PostConvenience">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.postConvenience.PostConvenience">
+                <methods>
+                    <exclude name="PGP_486"/>
+                    <exclude name="PGP_488"/>
+                    <exclude name="PGP_488"/>
+                    <exclude name="PGP_490"/>
+                    <exclude name="PGP_491"/>
+                    <exclude name="PGP_492"/>
+                    <exclude name="PGP_493"/>
+                    <exclude name="PGP_494"/>
+                    <exclude name="PGP_495"/>
+                    <exclude name="PGP_496"/>
+                    <exclude name="PGP_497"/>
+                    <exclude name="PGP_498"/>
+                    <exclude name="PGP_499"/>
+                    <exclude name="PGP_500"/>
+                    <exclude name="PGP_501"/>
+                    <exclude name="PGP_502"/>
+                    <exclude name="PGP_503"/>
+                    <exclude name="PGP_506"/>
+                    <exclude name="PGP_510"/>
+                    <exclude name="PGP_511"/>
+                    <exclude name="PGP_512"/>
+                    <exclude name="PGP_513"/>
+                    <exclude name="PGP_520"/>
+                </methods>
+            </class>
+            <class name="scripts.PostConvenience">
+                <methods>
+                    <exclude name="PGP_408_successfulPostConvTxnUsingWallet"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddMoney">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <exclude name="PGP_285_successfulAddMoneyCC"/>
+                    <exclude name="PGP_287_AddMoneyTxnUsingNB"/>
+                    <exclude name="PGP_410_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <exclude name="PGP_411_validateTxnIsAllowedWhenValidSSOTokenIsPassed"/>
+                    <exclude name="PGP_412_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <exclude name="PGP_413_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <exclude name="PGP_414_validateTxnNotAllowedWhenInvalidChannelIsPassed"/>
+                    <exclude name="PGP_415_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <exclude name="PGP_416_VerifyFailureWhenSSOTokenIsNotPassed"/>
+                    <exclude name="PGP_417_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <exclude name="PGP_418_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <exclude name="PGP_420_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <exclude name="PGP_421_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <exclude name="PGP_422_VerifyTxnFailureWhenRequestTypeOtherThanAddMoney"/>
+                    <exclude name="PGP_419_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddMoneyMP">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <exclude name="PGP_378_verifyTxnIsAllowedWhenCorrectMidIsPassed"/>
+                    <exclude name="PGP_381_VerifyFailureWhenBankHasInsufficientFunds"/>
+                    <exclude name="PGP_383_verifySuccessfulTxnUsingCC"/>
+                    <exclude name="PGP_384_validateTxnNotAllowedWhenDuplicateOrderIdIsPassed"/>
+                    <exclude name="PGP_385_validateTxnNotAllowedWhenExpiredSSoTokenIsPassed"/>
+                    <exclude name="PGP_386_validateTxnNotAllowedWhenInvalidChannelIsPassed"/>
+                    <exclude name="PGP_387_verifyOnlyActiveAcquiringsAreShownAsPayModes"/>
+                    <exclude name="PGP_389_verifyTxnSuccessfullyProcessedWhenPaymentViaSavedCard"/>
+                    <exclude name="PGP_390_verifyTxnDetailsShownInResponsePageAreAsExpected"/>
+                    <exclude name="PGP_394_verifySuccessfulTxnWhenPaymentViaNB"/>
+                    <exclude name="PGP_396_verifySuccessfulTxnWhenPaymentViaDC"/>
+                    <exclude name="PGP_395_verifySuccessfulTxnWhenPaymentViaUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddNPay">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <exclude name="AddnPay_PPI_S_sufficientBal"/>
+                    <exclude name="AddnPay_SC_S"/>
+                    <exclude name="addnPay_CC_S"/>
+                    <exclude name="AddnPay_DC_S"/>
+                    <exclude name="AddnPay_NB_S"/>
+                    <exclude name="AddnPay_UPI_S"/>
+                    <exclude name="PGP_114_successfulAddNPayWithWalletPaymentModeInCheckoutPage"/>
+                    <exclude name="AddnPay_CC_S_withSSOToken"/>
+                    <exclude name="PPI_S_AddnpayDisabled"/>
+                    <exclude name="AddnPay_CC_S_CheckforCardSaved"/>
+                    <exclude name="AddnPay_CC_S_ZeroBalance"/>
+                    <exclude name="AddnPay_CC_S_loginOnCashier"/>
+                    <exclude name="AddnPay_CC_F_3DPageCancel"/>
+                    <exclude name="AddnPay_CC_F_ZeroAmount"/>
+                    <exclude name="AddnPay_CC_F_NegativeAmt"/>
+                    <exclude name="AddnPay_DC_S_LoginWithDiffUserOnCashierPage"/>
+                    <exclude name="AddnPay_DC_S_VerifyWalletBalance"/>
+                    <exclude name="AddnPay_verifyPaymentModeOnCashierPageBeforeLogin"/>
+                    <exclude name="AddnPay_DC_S_withoutLogin"/>
+                    <exclude name="AddnPay_CC_F_verifyResponsePage"/>
+                    <exclude name="AddnPay_CC_P_verifyResponsePage"/>
+                    <exclude name="AddnPay_DC_S_verifyTxnStatusList"/>
+                    <exclude name="AddnPay_Retry_F_WhenRetryCountBreached"/>
+                    <exclude name="AddnPay_Retry_VerifyRetry"/>
+                    <exclude name="VerifySaveCardListOnCashierAfterLogin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="COD">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.COD">
+                <methods>
+                    <exclude name="PGP_221_validateMsgCODTxnWithSomeWalletBalance"/>
+                    <exclude name="COD_VerifyMessageWithBalance"/>
+                    <exclude name="COD_S_withoutBalance"/>
+                    <exclude name="COD_S_withLessBalance"/>
+                    <exclude name="PPI_S_whenCODEnabledOnMerchant"/>
+                    <exclude name="COD_F_verifyCODNotVisiblewhenTxnAmountIsBelowThresoldAmount"/>
+                    <exclude name="COD_F_verifyCODVisiblewhenTxnAmountIsMoreThanThresoldAmount"/>
+                    <exclude name="CC_S_whenCODisEnabled"/>
+                    <exclude name="SC_S_whenCODisEnabled"/>
+                    <exclude name="COD_verifyllPayModesOnCashier"/>
+                    <exclude name="COD_S_withSufficientBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <exclude name="PGP_179_validateBankAllPlans"/>
+                    <exclude name="PGP_178_successfulOnusEMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Hybrid">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <exclude name="hybrid_CC_S"/>
+                    <exclude name="hybrid_CC_S_withDecimalAmount"/>
+                    <exclude name="hybrid_PPI_S_sufficientBal"/>
+                    <exclude name="hybrid_CC_S_validateCardNotSaved"/>
+                    <exclude name="hybrid_CC_S_validateCardSaved"/>
+                    <exclude name="hybrid_verifyWalletBalanceAfterLogin"/>
+                    <exclude name="hybrid_verifyAllPayModeOnCashier"/>
+                    <exclude name="hybrid_PPI_S_sufficientBalanceValidateWalletBalance"/>
+                    <exclude name="hybrid_verifySavedCardList"/>
+                    <exclude name="hybrid_SC_S"/>
+                    <exclude name="hybrid_SC_F_invalidCvv"/>
+                    <exclude name="PGP_319_verifyHybridTxnWithRetryCountCofigured"/>
+                    <exclude name="hybrid_CC_S_walletBalanceZero"/>
+                    <exclude name="hybrid_DC_S"/>
+                    <exclude name="hybrid_NB_S"/>
+                    <exclude name="hybrid_DC_S_verifyCardSaved"/>
+                    <exclude name="hybrid_SC_S_withDCCard"/>
+                    <exclude name="hybrid_CC_F_invalidOTP"/>
+                    <exclude name="hybrid_CC_F_invalidCvv"/>
+                    <exclude name="hybrid_CC_F_invalidExpiry"/>
+                    <exclude name="hybrid_UPI_S"/>
+                    <exclude name="hybrid_CC_S_loginOnCashier"/>
+                    <exclude name="hybrid_CC_F_retryCountBreached"/>
+                    <exclude name="hybrid_CC_retry_S"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="IVRFastForward">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <exclude name="PGP_236_successfulIVRTxn"/>
+                    <exclude name="PGP_437_IVR_UnsuccessfulTxnInsufficientWalletBalance"/>
+                    <exclude name="PGP_438_UnsuccessfulTxnInvalidToken"/>
+                    <exclude name="PGP_439_UnsuccessfulTxnExpiredToken"/>
+                    <exclude name="PGP_440_UnsuccessfulTxnInvalidRequestType"/>
+                    <exclude name="PGP_441_UnsuccessfulTxnInvalidMid"/>
+                    <exclude name="PGP_442_UnsuccessfulTxnNonMigratedMid"/>
+                    <exclude name="PGP_443_SuccessfulTxnAppIDNotSend"/>
+                    <exclude name="PGP_444_UnsuccessfulTxnTxnAmount_0"/>
+                    <exclude name="PGP_445_UnsuccessfulTxnAlphanumricAmount"/>
+                    <exclude name="PGP_446_UnsuccessfulTxnNegativeAmount"/>
+                    <exclude name="PGP_447_SuccessfulTxnInvalidCurrency"/>
+                    <exclude name="PGP_448_SuccessfulTxnBlankCurrencyType"/>
+                    <exclude name="PGP_449_SuccessfulTxnCurrencyNotPassed"/>
+                    <exclude name="PGP_450_SuccessfulTxnDeviceIdNotPassed"/>
+                    <exclude name="PGP_451_SuccessfulTxnPaytmToken"/>
+                    <exclude name="PGP_453_UnsuccessfulTxnInvalidPaymode"/>
+                    <exclude name="PGP_455_UnsuccessfulTxnWithoutCustID"/>
+                    <exclude name="PGP_456_UnsuccessfulTxnWithBlankCustID"/>
+                    <exclude name="PGP_457_UnsuccessfulTxnInvalidIndustryType"/>
+                    <exclude name="PGP_458_SuccessfulTxnChannelWAP"/>
+                    <exclude name="PGP_459_SuccessfulTxnInvalidAuthMode"/>
+                    <exclude name="PGP_460_SuccessfulTxnMerchantUniqueNotPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PayTMExpress">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <exclude name="PGP_406_successfulPtmXpressCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGOnly">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <exclude name="PGP_170_successfulPGOnlyCC"/>
+                    <exclude name="PGP_171_CCCancelOn3DPage"/>
+                    <exclude name="PGP_174_successfulNBTxn"/>
+                    <exclude name="PGP_175_cardNotInBinCheckTxnAllowed"/>
+                    <exclude name="PGP_237_verifyPaymentModeOnCashierPage"/>
+                    <exclude name="PGP_239_successfulPGOnlyDC"/>
+                    <exclude name="PGP_243_successfulPGOnlyTxnUsingAMEXCard"/>
+                    <exclude name="PGP_244_successfulPGOnlyUPI"/>
+                    <exclude name="PGP_246_failedPGOnlyTxnWithLicenceExpiredDate"/>
+                    <exclude name="PGP_248_DCCancelOn3DPage"/>
+                    <exclude name="PGP_249_savedCardCancelOn3DPage"/>
+                    <exclude name="PGP_252_verifyPGOnlyTxnWithRetryCountCofigured"/>
+                    <exclude name="PGP_251_verifySavedCardListAfterLogin"/>
+                    <exclude name="PGP_253_verifyPGOnlyTxnWithMaxRetryCount"/>
+                    <exclude name="PGP_254_verifyPGOnlyTxnWithRetryCountBreached"/>
+                    <exclude name="PGP_259_verifyPaymentModesOnCashierPageWhenUserLogedIn"/>
+                    <exclude name="PGP_260_successfulPGOnlyCCTxnWhenUserLoggedIn"/>
+                    <exclude name="PGP_261_successfulPGOnlyDCTxnWhenUserLoggedIn"/>
+                    <exclude name="PGP_262_successfulNBTxnWhenUserLoggedIn"/>
+                    <exclude name="PGP_265_successfulPGOnlyTxnUsingAMEXCardWhenUserLoggedIn"/>
+                    <exclude name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                    <exclude name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <exclude name="PGP_269_verifySaveCardThroughDCTxn"/>
+                    <exclude name="PGP_270_verifyCCSavedCardTxn"/>
+                    <exclude name="PGP_271_verifyDCSavedCardTxn"/>
+                    <exclude name="PGP_275_validateSaveUPIForHybridTxn"/>
+                    <exclude name="PGP_276_validatePGTxnUsingSavedUPI"/>
+                    <exclude name="PGP_279_verifyInvalidCardNumberForPGOnlyTxn"/>
+                    <exclude name="PGP_280_verifyInvalidCVVForPGOnlyTxn"/>
+                    <exclude name="PGP_281_verifyInvalidOTPForPGOnlyTxn"/>
+                    <exclude name="PGP_282_verifyInvalidExpiryDateForPGOnlyTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Seamless">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <exclude name="PGP_288_successfulSeamlessCC"/>
+                    <exclude name="PGP_289_successfulSeamlessDC"/>
+                    <exclude name="PGP_290_SeamlessCCWithoutSavedCard"/>
+                    <exclude name="PGP_291_SeamlessCCAndSavingCard"/>
+                    <exclude name="PGP_292_SeamlessCCUsingSavedCard"/>
+                    <exclude name="PGP_293_successfulSeamlessNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SeamlessNative">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <exclude name="PGP_359_successfulSeamlessNativeCC"/>
+                    <exclude name="PGP_360_successfulSeamlessNativeDC"/>
+                    <exclude name="PGP_361_SeamlessNativeCCWithoutSavedCard"/>
+                    <exclude name="PGP_362_SeamlessNativeCCAndSavingCard"/>
+                    <exclude name="PGP_363_SeamlessNativeCCUsingSavedCard"/>
+                    <exclude name="PGP_364_successfulSeamlesNativeNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="subscription_field_validations">
+        <parameter name="theme" value="merchant4"/>
+        <parameter name="transactionType" value="PGOnly"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionFieldValidations">
+                <methods>
+                    <exclude name="PGP_45_validateErrorForCustIdBlank"/>
+                    <exclude name="PGP_64_validateCashierPageForSsoTokenBlank"/>
+                    <exclude name="PGP_66_validateCashierPageForSsoTokenExpiredValue"/>
+                    <exclude name="PGP_20_validateCashierPageForSubsPaymentModeBlank"/>
+                    <exclude name="PGP_21_validateCashierPageForSubsPPIOnlyBlank"/>
+                    <exclude name="PGP_99_validateCashierPageForSubsPPIOnlyInvalid"/>
+                    <exclude name="PGP_61_validateCashierPageForSaveCardIdBlankAndCallTypeBlank"/>
+                    <exclude name="PGP_44_validateOopsPageForIndustryTypeIdBlank"/>
+                    <exclude name="PGP_38_validateOopsPageOnRequestTypeInvalid"/>
+                    <exclude name="PGP_65_validateOopsPageForSsoTokenInvalid"/>
+                    <exclude name="PGP_55_validateOopsPageForSubsEnableRetryBlank"/>
+                    <exclude name="PGP_98_validateOopsPageForSubsPaymentModeInvalid"/>
+                    <exclude name="PGP_52_validateOopsPageForSubsAmountFix"/>
+                    <exclude name="PGP_12_validateOopsPageForSubsAmountBlank"/>
+                    <exclude name="PGP_51_validateOopsPageForSubsAmountInvalid"/>
+                    <exclude name="PGP_19_validateOopsPageForSubsExpiryDateBlank"/>
+                    <exclude name="PGP_53_validateOopsPageForSubsFrequencyInvalid"/>
+                    <exclude name="PGP_14_validateOopsPageForSubsFrequencyBlank"/>
+                    <exclude name="PGP_69_validateOopsPageForSubsGraceDaysInvalid"/>
+                    <exclude name="PGP_17_validateOopsPageForSubsGraceDaysBlank"/>
+                    <exclude name="PGP_13_validateOopsPageForSubsMaxAmountBlank"/>
+                    <exclude name="PGP_68_validateOopsPageForSubsMaxAmountInvalid"/>
+                    <exclude name="PGP_18_validateOopsPageForSubsRetryEnabledBlank"/>
+                    <exclude name="PGP_97_validateOopsPageForSubsRetryEnabledInvalid"/>
+                    <exclude name="PGP_16_validateOopsPageForSubsStartDateBlank"/>
+                    <exclude name="PGP_462_validateOopsPageForTransactionAmountBlank"/>
+                    <exclude name="PGP_48_validateOopsPageForTransactionAmountNonNumeric"/>
+                    <exclude name="PGP_46_validateOopsPageForWebsiteBlank"/>
+                    <exclude name="PGP_47_validateOopsPageForWebsiteInvalid"/>
+                    <exclude name="PGP_58_validateOopsPageForSubsStartDateLTCurrentDate"/>
+                    <exclude name="PGP_56_validateOopsPageWhenSubsStartDateGTSubsExpiryDate"/>
+                    <exclude name="PGP_42_validateOopsPageForexpiredLicencedMid"/>
+                    <exclude name="PGP_10_validateCashierPageOnRequestTypeBlank"/>
+                    <exclude name="PGP_40_validateOopsPageOnDuplicateOrderID"/>
+                    <exclude name="PGP_43_validateCashierPageForIndustryTypeIdInvalid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_renewal_via_cc_dc">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaCcDc">
+                <methods>
+                    <exclude name="PGP_208_RenewalRequestAfterContractExpiration"/>
+                    <exclude name="PGP_205_RenewalRequestAfterGracePeriod"/>
+                    <exclude name="PGP_192_verifySuccessfulRenewalOnSubsViaCC"/>
+                    <exclude name="PGP_204_RenewalRequestWithinGracePeriod"/>
+                    <exclude name="PGP_203_multipleRenewalRequestWithinGracePeriod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_renewal_via_ppi">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaPpi">
+                <methods>
+                    <exclude name="PGP_220_RenewalRequestAfterSubscriptionContractExpired"/>
+                    <exclude name="PGP_214_RenewalRequestAfterGracePeriod"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_renewal_via_wallet_only">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.defaultFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <exclude name="PGP_198_RenewalRequestWhenSufficientWalletBalance"/>
+                    <exclude name="PGP_209_multipleRenewalRequestWithinGracePeriod"/>
+                    <exclude name="PGP_211_RenewalRequestWithinGracePeriod"/>
+                    <exclude name="PGP_213_RenewalRequestAfterGracePeriod"/>
+                    <exclude name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_cc_dc">
+        <parameter name="theme" value="merchant4"/>
+        <parameter name="payMode" value="CC"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaCcDc">
+                <methods>
+                    <exclude name="PGP_8_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <exclude name="PGP_67_ValidateTxnWithDCSavedCardWhenPayModeIsCC"/>
+                    <exclude name="PGP_100_alidateTxnWithCCSavedCardWhenPayModeIsDC"/>
+                    <exclude name="PGP_75_ValidateSuccessfulCCSubscriptionWithSSOTokenLogin"/>
+                    <exclude name="PGP_23_validatePayModesWithoutSavedCard"/>
+                    <exclude name="PGP_4_validatePayModesWithSavedCard"/>
+                    <exclude name="PGP_74_ValidateSavedCardsDisplayedInCorrectSequence"/>
+                    <exclude name="PGP_24_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                    <exclude name="PGP_25_ValidateSuccessfulPaymentWithSavedCard"/>
+                    <exclude name="PGP_80_validateTxnAmtGreaterThanSubsMaxAmt"/>
+                    <exclude name="PGP_60_ValidateS2StxnWithSavedCardBlank"/>
+                    <exclude name="PGP_62_ValidateS2StxnWithValidSavedCardAndTxnAmntZero"/>
+                    <exclude name="PGP_84_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <exclude name="PGP_63_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <exclude name="PGP_86_validateS2StxnWithBlankSSOToken"/>
+                    <exclude name="PGP_85_validateS2StxnWithInvalidSSOToken"/>
+                    <exclude name="PGP_22_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <exclude name="PGP_26_ValidateSuccessfulZeroAmtPaymentWithSavedCard"/>
+                    <exclude name="PGP_2_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <exclude name="PGP_5_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <exclude name="PGP_7_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountEqualsZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_ppi">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <exclude name="PGP_37_ValidateSuccessfulPaymentWithSavedCard"/>
+                    <exclude name="PGP_35_validateCardGettingSaveForSuccessfulTxn"/>
+                    <exclude name="PGP_32_loginErrorWithIncorrectCredentials"/>
+                    <exclude name="PGP_78_validateSuccessfulPPISubsWhenWalletBalEqualsToTxnAmt"/>
+                    <exclude name="PGP_77_validateSuccessfulPPISubsWhenWalletBalGreaterThanTxnAmt"/>
+                    <exclude name="PGP_83_ValidateSuccessfulPPISubscriptionWithSSOTokenLogin"/>
+                    <exclude name="PGP_101_validateTxnAmtGreaterThanSubsMaxAmt"/>
+                    <exclude name="PGP_87_ValidateS2StxnWithSavedCardBlank"/>
+                    <exclude name="PGP_88_ValidateS2StxnWithValidSavedCardAndTxnAmntZero"/>
+                    <exclude name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <exclude name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <exclude name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <exclude name="PGP_91_validateS2StxnWithInvalidSSOToken"/>
+                    <exclude name="PGP_36_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                    <exclude name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <exclude name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <exclude name="PGP_33_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <exclude name="PGP_34_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountEqualsZero"/>
+                    <exclude name="PGP_30_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <exclude name="PGP_31_ValidateSuccessfulZeroAmtPaymentWithSavedCard"/>
+                    <exclude name="PGP_76_validateSuccessfulPPISubsWhenWalletBalLessThanTxnAmt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription_via_wallet_only">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <exclude name="PGP_186_verifyCardSaveAfterSuccessfulTxn"/>
+                    <exclude name="PGP_184_verifySuccessfulTxnForInsufficientBalanceViaNB"/>
+                    <exclude name="PGP_181_verifySuccessfulTxnForInsufficientBalanceViaCC"/>
+                    <exclude name="PGP_182_verifySuccessfulTxnForInsufficientBalanceViaDC"/>
+                    <exclude name="PGP_183_verifySuccessfulTxnForInsufficientBalanceViaUPI"/>
+                    <exclude name="PGP_180_verifySuccessfulTxnUsingWalletOnly"/>
+                    <exclude name="PGP_187_verifySuccessfulTxnUsingSavedCard"/>
+                    <exclude name="PGP_188_verifyTxnCancellationAtBank"/>
+                    <exclude name="PGP_189_verifyTxnCancellationAtBankWithSavedCard"/>
+                    <exclude name="PGP_190_verifyVPA_GettingSavedForSuccessfulTxn"/>
+                    <exclude name="PGP_191_verifySuccessfulTxnViaSavedVPA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="TopUpExpress">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.TopUpExpress">
+                <methods>
+                    <exclude name="PGP_407_successfulTopupXpressCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="WalletOnly">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <exclude name="PGP_158_successfulWalletOnlyTxn"/>
+                    <exclude name="PGP_160_failureWalletOnlyTxnWithZeroAmount"/>
+                    <exclude name="PGP_161_failureWalletOnlyTxnWithNegativeAmount"/>
+                    <exclude name="PGP_162_failureWalletOnlyTxnWithFractionAmountLTOne"/>
+                    <exclude name="PGP_164_successfulWalletOnlyTxnWithOtherUser"/>
+                    <exclude name="PGP_165_failedWalletOnlyTxnWithBlockedTxnAmnt"/>
+                    <exclude name="PGP_166_walletOnlyTxnWithMobileAutoPopulated"/>
+                    <exclude name="PGP_167_walletOnlyTxnWithEmailIDAutoPopulated"/>
+                    <exclude name="PGP_168_walletOnlyTxnWithMobileAutoPopulatedInCaseOfBothPresent"/>
+                    <exclude name="PGP_159_successfulWalletOnlyTxnInFractionGTOne"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PeonTxn">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <exclude name="PGP_397_PeonPGonlyPass"/>
+                    <exclude name="PGP_398_PeonPGonlyFail"/>
+                    <exclude name="PGP_399_PeonWalletOnlyPass"/>
+                    <exclude name="PGP_400_PeonWalletOnlyFail"/>
+                    <exclude name="PGP_401_PeonHybridPass"/>
+                    <exclude name="PGP_402_PeonHybridFail"/>
+                    <exclude name="PGP_403_PeonAddNPayPass"/>
+                    <exclude name="PGP_404_PeonAddMoneyPass"/>
+                    <exclude name="PGP_405_PeonAddNPayFail"/>
+                    <exclude name="PGP_406_PeonAddMoneyFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CCBillPayment">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <exclude name="PGP_464_ccBillPaymentViaNB"/>
+                    <exclude name="PGP_465_ccBillPaymentViaDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaytmCC">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <exclude name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <exclude name="PGP_467_PostPaidVisibleAfterLogin"/>
+                    <exclude name="PGP_468_PostPaidBalanceLessThanTxn"/>
+                    <exclude name="PGP_469_successfulPostPaidTxn"/>
+                    <exclude name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                    <exclude name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <exclude name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <exclude name="PGP_514_PostPaidSelectWhenWalletBalanceZero"/>
+                    <exclude name="PGP_516_BlankPasscode"/>
+                    <exclude name="PGP_515_WalletSelectWhenWalletBalanceNotZero"/>
+                    <exclude name="PGP_517_PostPaidAndWalletInactive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--<test name="VelociyLimit">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.Velocity">
+                <methods>
+                    <exclude name="VerifySuccessfulTxnWhenMerchantLimitNotBreached"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+    <test name="IDebit">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.Idebit">
+                <methods>
+                    <exclude name="PGP_525_IDebit_WithoutIDebitChannelOnMerchant"/>
+                    <exclude name="PGP_521_IDebitTxn_Via_ATMPin"/>
+                    <exclude name="PGP_522_IDebitTxn_Via_CVV"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Offline Txn">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <methods>
+                    <exclude name="PGP_528_OfflinePGTxn_WithExpiredToken"/>
+                    <exclude name="PGP_527_OfflinePG_TxnWithInvalidToken"/>
+                    <exclude name="PGP_529_OfflinePGTxn"/>
+                    <exclude name="PGP_530_OfflineWalletTxn"/>
+                    <exclude name="PGP_531_OfflineTxn_UPI_Collect"/>
+                    <exclude name="PGP_532_OfflinePPBLTxn"/>
+                    <exclude name="PGP_532_OfflinePaytmCCTxn"/>
+                    <exclude name="PGP_529_OfflineHybTxn"/>
+                    <exclude name="PGP_529_OfflineAddnPayTxn"/>
+                    <exclude name="PGP_529_OfflineSavedCardTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.Refund">
+                <methods>
+                    <exclude name="successfulHybridRefund"/>
+                    <exclude name="successfulMultiplePartialRefund"/>
+                    <exclude name="successfulPGOnlyDCRefund"/>
+                    <exclude name="successfulPartialRefund"/>
+                    <exclude name="verifyRefundFailureOfAlreadySuccessfulRefund"/>
+                    <exclude name="verifyRefundFailureOfFailedPGOnlyTxn"/>
+                    <exclude name="verifySuccessfulRefundOnSubsViaCC"/>
+                    <exclude name="refundFailureWithIncorrectMidOrderIdTxnId"/>
+                    <exclude name="failurePartilRefundDoneTwiceThatExceedsTxnAmount"/>
+                    <exclude name="successfulPGOnlyCCRefund"/>
+                    <exclude name="successfulRefundOfBaseAmountInPostConvenienceTxn"/>
+                    <exclude name="successfulPartialRefundOfBaseAmountInPostConvenienceTxn"/>
+                    <exclude name="successfulAddNPayRefund"/>
+                    <exclude name="successfulWalletOnlyRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Refund Status Api">
+        <parameter name="theme" value="merchant4"/>
+        <classes>
+            <class name="scripts.RefundStatus">
+                <methods>
+                    <exclude name="validateRefundStatusResp_PGOnly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AOA">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.AOATxn">
+                    <methods>
+                        <exclude name="aoa_CC_S_withoutToken"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name ="mapping Service API">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.api.mappingService.MappingService">
+                    <methods>
+                        <exclude name="validateGetFormatter_fromDB"/>
+                        <exclude name="validateGetFormatter_fromRedis"/>
+                        <exclude name="validateGetBankDetails_APCODE_FromDB"/>
+                        <exclude name="validateGetBankDetails_APCODE_FromRedis"/>
+                        <exclude name="validateBankUrlInfo_fromDB"/>
+                        <exclude name="validateBankUrlInfo_fromRedis"/>
+                        <exclude name="validateGetPaytmId_FromDB"/>
+                        <exclude name="validateGetPaytmId_FromRedis"/>
+                        <exclude name="validateGetMerchContractPaymentInfo"/>
+                        <exclude name="validateGetEntityUrlInfoAPI_Request"/>
+                        <exclude name="validateGetEntityUrlInfoAPI_Response"/>
+                        <exclude name="validateLookUpPaymodeAPI_CC"/>
+                        <exclude name="validateGetPaytmProperties_API"/>
+                        <exclude name="validateMerchExtendedInfo"/>
+                        <exclude name="validateMerchPreferenceInfo"/>
+                        <exclude name="validateBankDetail_fromDatabase"/>
+                        <exclude name="validateEntityOfferDetail_fromRedis"/>
+                        <exclude name="validateEntityOfferDetail_fromDB"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Process Txn">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.Native.ProcessTransactionTests">
+                    <methods>
+                        <exclude name="TC_PT_COD_Failure_WithoutToken"/>
+                        <exclude name="TC_PT_COD_Failure"/>
+                        <exclude name="TC_PT_015"/>
+                        <exclude name="TC_PT_014"/>
+                        <exclude name="TC_PT_025_CC"/>
+                        <exclude name="TC_PT_016"/>
+                        <exclude name="TC_PT_043"/>
+                        <exclude name="verifyRestrictCCPromo_TC_20"/>
+                        <exclude name="verifyRestrictDCPromo_TC_20"/>
+                        <exclude name="verifyRestrictPPIPromo_TC_20"/>
+                        <exclude name="verifyCCPromo_TC_16"/>
+                        <exclude name="verifyDCPromo_TC_16_1"/>
+                        <exclude name="verifyWalletPromo_TC_15"/>
+                        <exclude name="TC_PT_002"/>
+                        <exclude name="TC_PT_003"/>
+                        <exclude name="TC_PT_004"/>
+                        <exclude name="TC_PT_005"/>
+                        <exclude name="TC_PT_006"/>
+                        <exclude name="verifyRetryCase_whenRetryIsDoneUsingNB"/>
+                        <exclude name="verifyRetryCase_whenRetryIsdoneUsingCC"/>
+                        <exclude name="verifyRetryCase_whenRetryIsdoneUsingDC"/>
+                        <exclude name="verifyRetryCase_whenRetryNotAppliedOnMerc"/>
+                        <exclude name="TC_PT_035"/>
+                        <exclude name="TC_PT_037"/>
+                        <exclude name="TC_13"/>
+                        <exclude name="TC_07"/>
+                        <exclude name="TC_PT_001"/>
+                        <exclude name="TC_PT_COD_Success"/>
+                        <exclude name="TC_PT_EMI_Success"/>
+                        <exclude name="TC_PT_0CostEMI_Success"/>
+                        <exclude name="verifyRestrictDCPromo_TC_20_1"/>
+                        <exclude name="TC_PT_028"/>
+                        <exclude name="TC_PT_018"/>
+                        <exclude name="TC_PT_025"/>
+                        <exclude name="TC_PT_EMI_Hyb_Success"/>
+                        <exclude name="verifyRetryCase_InitiateDC_RetryUsingCC"/>
+                        <exclude name="verifyRetryCase_TryCC_thenRetryIsDoneUsingCC"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Initiate Txn">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.Native.InitiateTransaction">
+                    <methods>
+                        <exclude name="verifySuccessCase"/>
+                        <exclude name="verifySuccessCaseWithChannelIdWEB"/>
+                        <exclude name="verifySuccessCaseWithChannelIdWAP"/>
+                        <exclude name="UnsuccessfulTxnWithBlankMID"/>
+                        <exclude name="SuccessfulTxnWithDuplicateOrderId"/>
+                        <exclude name="SuccessfulTxnWithDecimalTxnAmount"/>
+                        <exclude name="TC_CT_036"/>
+                        <exclude name="TC_CT_037"/>
+                        <exclude name="TC_CT_043"/>
+                        <exclude name="TC_CT_046"/>
+                        <exclude name="TC_CT_047_SuccessfulTxnWhenNotPassingSSOToken"/>
+                        <exclude name="TC_CT_048_SuccessfulTxnWhenPassingSSOToken"/>
+                        <exclude name="TC_CT_051_ValidateTxn_ChecksumIsPassedAndEnabledOnMerchant"/>
+                        <exclude name="TC_CT_049_UnsuccessfulTxnWithInvalidSSOToken"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Food wallet refund">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.FoodWalletRefund">
+                    <methods>
+                        <exclude name="PGP_successfulFoodWalletRefund"/>
+                        <exclude name="PGP_failedRefund_WhenFoodNotPassedInCheckSum"/>
+                        <exclude name="PGP_SuccessFoodRefund_Hybrid_CC"/>
+                        <exclude name="PGP_FailedFoodRefund_InvalidFoodParamInChecksum"/>
+                        <exclude name="PGP_SuccessFoodRefund_Hybrid_FoodCCMainWallet"/>
+                        <exclude name="PGP_SuccessFoodPartialRefund_Hybrid_FoodMainWallet"/>
+                        <exclude name="PGP_SuccessFoodRefund_Hybrid_PartialFoodMainWallet"/>
+                        <exclude name="PGP_FailedFoodRefund_Hybrid"/>
+                        <exclude name="PGP_SuccessFoodRefund_Hybrid_FoodWalletRefundAmtExceed"/>
+                        <exclude name="PGP_SuccessFoodRefund_Hybrid_notExceedsFoodWalletAmount"/>
+                        <exclude name="PGP_SuccessRefund_AddnPay"/>
+                        <exclude name="PGP_SuccessRefund_Partial_AddNPay"/>
+                        <exclude name="PGP_SuccessAdNPayRefund_WhenLimitBreached"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Food wallet Txn">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.FoodWalletTxns">
+                    <methods>
+                        <exclude name="PGP_successfulFoodWalletTxn_InsuffFoodBalance"/>
+                        <exclude name="PGP_successfulFoodWalletTxnWithSufficientFoodBal"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Fetch payment instrument for offline txn">
+        <parameter name="theme" value="merchant4">
+            <classes>
+                <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                    <methods>
+                        <exclude name="FetchPayIns_InvalidToken"/>
+                        <exclude name="FetchPayIns_saveCard"/>
+                        <exclude name="FetchPayIns"/>
+                        <exclude name="FetchPayIns_PPBL"/>
+                        <exclude name="FetchPayIns_creditcard"/>
+                        <exclude name="FetchPayIns_balance"/>
+                        <exclude name="FetchPayIns_netbanking"/>
+                        <exclude name="FetchPayIns_PaytmDigitalCredit"/>
+                        <exclude name="FetchPayIns_UPI"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+    <test name="Native Process Subscription">
+        <classes>
+            <class name = "scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC_NPS001_ValidateSubscriptionTrxToken"/>
+                    <include name="TC_NPS002_ValidateSuccessPaymentOptions"/>
+                    <include name="TC_NPS003_ProcessVariableSubscriptionCCMonth"/>
+                    <include name="TC_NPS004_ProcessVariableSubscriptionDCMonth"/>
+                    <include name="TC_NPS005_ProcessVariableSubscriptionPPIMonth"/>
+                    <include name="TC_NPS006_ProcessVariableSubscriptionCCDay"/>
+                    <include name="TC_NPS007_ProcessVariableSubscriptionPPIDay"/>
+                    <include name="TC_NPS008_ProcessVariableSubscriptionCCYear"/>
+                    <include name="TC_NPS009_ProcessFixSubscriptionCCMonth"/>
+                    <include name="TC_NPS010_ProcessSubscriptionWithoutSubscriptionStartDate"/>
+                    <include name="TC_NPS011_ProcessSubscriptionWithoutSubscriptionStartDate"/>
+                    <include name="TC_NPS012_RenewSubscription"/>
+                    <include name="TC_NPS013_CancelSubscription"/>
+                    <include name="TC_NPS013_ProcessFixSubscriptionUsingSavedCard"/>
+                    <include name="TC_NPS014_ProcessvariableSubscriptionUsingSavedCard"/>
+                    <include name="TC_SGC01_GuestCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name ="Fetch Payment Page AppInvoke">
+        <parameter name="theme" value="enhancedwap"/>
+    <classes>
+        <class name ="scripts.Native.FetchPaymentPage">
+            <methods>
+                <include name="FPP_CCAppInvokeTC001"/>
+                <include name="FPP_PPIAppInvokeTC002"/>
+                <include name="FPP_SavedCCAppInvokeTC003"/>
+                <include name="FPP_HDFOAppInvokeTC004"/>
+                <include name="FPP_BajajFinAppInvokeTC005"/>
+            </methods>
+        </class>
+    </classes>
+    </test>
+</suite>

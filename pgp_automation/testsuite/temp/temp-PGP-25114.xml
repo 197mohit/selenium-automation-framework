@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-25114" verbose="1" thread-count="6" parallel="methods">
+    <test name="PGP-25114">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifySpecialCharacterCustIdTxnGotSuccessloggedUser"/>
+                    <include name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-25114 for Native">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="SpecialCharCustIdTxnSuccessfulForloggedInUser"/>
+                    <include name="SpecialCharCustIdTxnSuccessfulForNonloggedInUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

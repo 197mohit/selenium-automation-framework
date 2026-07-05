@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="cashbackAmount/instantDiscount should not be null if v2/apply promo is applied" verbose="1">
+    <test name="Validate cases for cashback and discount based promos">
+        <classes>
+            <class name="scripts.api.theia.applyPromo.TxnTokenApplyPromoV2Test">
+                <methods>
+                    <include name="cashbackAmount should not be null if promo is applied"/>
+                    <include name="instantDiscount should not be null if promo is applied"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

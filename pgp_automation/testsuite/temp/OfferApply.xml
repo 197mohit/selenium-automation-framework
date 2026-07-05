@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="OfferApplyAPI" verbose="1" thread-count="20" parallel="tests">
+    <test name="OfferApply API">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyAccessTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyChecksumTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest"/>
+        </classes>
+    </test>
+</suite>

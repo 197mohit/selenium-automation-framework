@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI Fixes" verbose="1">
+    <test name="EMI Fixes -01" parallel="methods" thread-count="14">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t88initiatePTCAPIPhase2"/>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                    <include name="FailureTxn_AmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes -02">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnNonEMIDCMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes -03">
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <include name="emiSubClientVerifyItem"/>
+                    <include name="emiSubClientVerifyAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

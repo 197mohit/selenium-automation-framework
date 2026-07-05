@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="LiteMerchantDetails" verbose="1" thread-count="1">
+    <test name="LiteMerchantDetails API">
+        <classes>
+            <class name="scripts.api.theia.merchantDetails.v1LiteMerchantDetailsTest">
+                <methods>
+                    <include name="LiteMerchantDetails_for_MID"/>
+                    <include name="checkPosId_for_VPA"/>
+                    <include name="check_isDqrExpired_as_true"/>
+                    <include name="LiteMerchantDetails_without_MId_VPA"/>
+                    <include name="LiteMerchantDetails_For_DQR"/>
+                    <include name="validate_ProductCodeFor_DQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

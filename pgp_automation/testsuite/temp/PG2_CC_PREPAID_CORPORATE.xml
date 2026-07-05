@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-REMAINING UNSAVED CC CASES">
+    <test name="Verify P+ routing if userid isn't present in payment.adapter flag">
+        <classes>
+            <class name="scripts.api.CC.CC_PG2">
+                <methods>
+                    <include name="validateSuccessUnsavedPplusCCTxnPG2MID"/>
+                    <include name="validateFullAsyncRefund_UnsavedCCTxnPG2MID_PG2Enabled"/>
+                    <include name="validatePartialAsyncRefund_UnsavedCCTxnPG2MID_PG2Enabled"/>
+                    <include name="validateSuccessUnsavedCorporateCardTxnPG2MID"/>
+                    <include name="validateSuccessUnsavedPrepaidCardTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

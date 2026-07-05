@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Offline API" verbose="1" parallel="classes" thread-count="3">
+    <test name="Offline API TCs">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest"/>
+            <class name="scripts.api.Offline.FetchPayInstrumentV1"/>
+            <class name="scripts.api.Offline.OffLineTxn"></class>
+        </classes>
+    </test>
+</suite>

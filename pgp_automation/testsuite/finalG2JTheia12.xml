@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="G2JTheiaOne-2" verbose="1" thread-count="10" parallel="tests">
+    <test name="PGP-25875_1">
+        <classes>
+            <class name="scripts.api.theia.fetchAllPaymentOffers.TxnTokenFetchAllPaymentOffersV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test when head token equals expired token"/>
+                    <exclude name="test when head token is not provided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchPromoCodeDetails">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_002"/>
+                    <include name="TC_FPC_007"/>
+                    <include name="TC_FPC_008"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-35329 - FetchPayOptions">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionV4Test"/>
+        </classes>
+    </test>
+
+    <test name="session-compatibility">
+        <classes>
+            <class name="scripts.api.theia.CompatibilityTest"/>
+            <class name="scripts.api.theia.OfflineCompatibilityTest"/>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <parameter name="orderId" value="T1-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+                <!-- Exclude Zero Pass Percentage
+                <methods>
+                    <parameter name="orderId" value="T2-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods> -->
+            </class>
+        </classes>
+    </test>
+
+
+
+    <test name="PGP-26586">
+        <classes>
+            <class name="scripts.api.theia.validateRefId.SSOTokenValidateRefIdTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-26075">
+        <classes>
+            <class name="scripts.api.theia.fetchPcfDetails.SSOTokenFetchPCFDetailsV1Test"/>
+        </classes>
+    </test>
+
+    <test name="PGP-25862">
+        <classes>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.AccessTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <!-- Excluding Zero Pass Percentage -->
+                    <exclude name="test when head token equals expired token"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-25866">
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.AccessTokenVPAValidateV1Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test unable to validate vpa when body vpa equals random numerical value"/>
+                    <exclude name="test when head token equals expired token"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="theia API's 8">
+        <classes>
+            <class name="scripts.api.theia.FetchPaymentPromotionAttributes"/>
+            <class name="scripts.api.theia.FetchPaymentInstruments"/>
+        </classes>
+    </test>
+
+    <test name="theia API's 9">
+        <classes>
+            <class name="scripts.api.theia.OrderPayUnipsp"/>
+        </classes>
+    </test>
+
+    <test name="PGP-27185 - Sending priority Fetch QR V2">
+        <classes>
+            <class name="scripts.api.theia.FetchQRPaymentDetailsV2APITest">
+                <methods>
+                    <include name="testFetchQR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-27608">
+        <classes>
+            <class name="scripts.api.theia.SendOtpV4Test">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="test when merchant has send otp v5 flag enabled and autoReadHash is not passed"/>
+                    <exclude name="test when merchant has send otp v5 flag enabled and autoReadHash is passed"/>
+                    <exclude name="test when merchant has send otp v5 flag enabled and requestType is NATIVE_SUBSCRIPTION"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- Exclude EMI TCs
+    <test name="EMI Subvention Phase 2">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <exclude name="t27"/>
+                    <exclude name="t28"/>
+                    <exclude name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <exclude name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <exclude name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <exclude name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <exclude name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <exclude name="t88initiatePTCAPIPhase2"/>
+                    <exclude name="t86initiatePTCAPIPhase2"/>
+                    <exclude name="t87initiatePTCAPIPhase2"/>
+                    <exclude name="t84initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="EMI Subvention Phase 2_1">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t88initiatePTCAPIPhase2"/>
+                    <include name="t86initiatePTCAPIPhase2"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                    <include name="t84initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30167_emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Emi Subvention for Third Party native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Emi Subvention for Third Party native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    -->
+    <test name="session-compatibility_1">
+        <classes>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Fetch payment instrument for offline txn" >
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_InvalidToken"/>
+                    <include name="FetchPayIns"/>
+                    <include name="FetchPayIns_PPBL"/>
+                    <include name="FetchPayIns_creditcard"/>
+                    <include name="FetchPayIns_balance"/>
+                    <include name="FetchPayIns_netbanking"/>
+                    <include name="FetchPayIns_PaytmDigitalCredit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchBinDetails" >
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <!-- Exclude Zero Pass Percentage TCs -->
+                    <exclude name="guestKeyInSessionRedisTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-30746 FetchBalanceTests">
+        <classes>
+            <class name="scripts.FetchBalanceTests"/>
+        </classes>
+    </test>
+
+    <test name="Fetch Payment Mode Status using Token Type Checksum">
+        <classes>
+            <class name="scripts.api.theia.FetchUserPayModeStatusTest"/>
+        </classes>
+    </test>
+
+    <test name="Apply SuperCash API Test">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests"/>
+        </classes>
+    </test>
+
+    <test name="PGP-40975">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateFetchMerchantConfigAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--Exclude MUTUAL FUND CASES
+    <test name="Railwire">
+        <classes>
+            <class name="scripts.RailwireIntegration.RailwaireIntegration">
+            </class>
+        </classes>
+    </test>
+
+    <test name="splitPayment">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.splitPayment"/>
+        </classes>
+    </test>
+    -->
+    <test name="Validate Null pointer exception should not come while initiating txn">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateTxn_AvoidNullPointerException"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--MUTUAL FUND TC's
+    <test name="Split settlement for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeMF"/>
+        </classes>
+    </test>
+     -->
+    <test name="Deffered for risk testcases for rent">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateRiskAcceptNotNullForCC"/>
+                    <include name="validateRiskAcceptNotNullForDC"/>
+                    <include name="validateRiskAcceptNotNullForHybrid"/>
+                    <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                    <include name="validateRiskAcceptNotNullForPPBL"/>
+                    <include name="validateRiskInfoNullForCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Corporate Cards on Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="successfulSeamlessCorporateCC"/>
+                    <include name="successfulSeamlessCorporateDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native AddMoney 3rd Party Fee Cases">
+        <classes>
+            <class name="scripts.Native.NativeAddMoneyTP">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-15980 Improve order retry success rate on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.OrderRetryImproveSuccessRate">
+                <methods>
+                    <include name="nativeVerifyRetryAllowedForNonRetriableResponseCode"/>
+                    <include name="nativeVerifyNoRetryIfCountExhausted"/>
+                    <include name="nativeVerifyNoRetryIfCountExhaustedAndRetriableResponse"/>
+                    <include name="nativeVerifyNoRetryIfCountisZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

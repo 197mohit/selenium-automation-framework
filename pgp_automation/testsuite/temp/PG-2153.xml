@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-2153 Cases" verbose="1">
+    <test name="PG-2153 Offer Apply Bajaj EMI Cardless">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="testOfferApplyBajajFinservEmiCardless"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

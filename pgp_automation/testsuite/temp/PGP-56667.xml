@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Increasing BHIM UPI Visibility on Checkout Pages">
+    <test name="M_WEB iOS cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="M_WEB android cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="M_WEB checkoutJS iOS cases">
+        <parameter name="theme" value="checkoutjswap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on_checkoutJs"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off_checkoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="M_WEB checkoutJS android cases">
+        <parameter name="theme" value="checkoutjswap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on_checkoutJs"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off_checkoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

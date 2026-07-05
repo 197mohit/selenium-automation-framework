@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-32471" parallel="methods" thread-count="20">
+    <test name="CHECKOUTJS on Enhanced Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_CCTxn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_DCTxn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_UPITxn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_NB_Txn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_ADD_N_PAY_Txn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_HYBRID_Txn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_Exhausted_Retry_Txn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_EMI_Txn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_DIRECT_BANK_Txn"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_BANK_OFFER"></include>
+                    <include name="JSCheckoutDomainOnEnhanced_SUBS_Txn"></include>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

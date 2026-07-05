@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPSL-794" verbose="1" thread-count="5" parallel="tests">
+    <test name="OfferApplyTxnTokenTest">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="Verify_OfferApply_Response_When_Cardnumber_Starts_With_0"/>
+                    <include name="Verify_OfferApply_Response_When_RandomIssuingBank_Is_Sent"/>
+                    <include name="Verify_OfferApply_Response_When_DebitCardInfo_Is_Sent_With_CreditCard_PayMethod"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMINewFlowTest">
+                <methods>
+                    <include name="verifyFetchBinResponseForBinThatStartsWithZero"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

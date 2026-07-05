@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription deferred fpo Changes">
+    <test name="Subscription Deffered fpo">
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateStartEndDateInCorrectFormat"/>
+                    <include name="validateStartEndDateinInorrectFormat"/>
+                    <include name="validateStartEndDateinInorrectFormat_2"/>
+                    <include name="validateSubsDetailsNotComing_PrefN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

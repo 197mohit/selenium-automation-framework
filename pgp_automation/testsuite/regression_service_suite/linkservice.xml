@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Link_Service" verbose="1" thread-count="20" parallel="tests">
+
+    <test name="PGP 16003 - Link Based Limit OTP breach only API">
+        <classes>
+            <class name="scripts.Sprint28.LimitOtpLinkBased">
+                <methods>
+                    <include name="verifyBreachNumber"/>
+                    <include name="generateOTPLimit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31212 Link Payment 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="ValidateSuccessfulLinkPayment"/>
+                    <include name="ValidateSuccessfulNativeSTLinkPayment"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Move Payment Links to JS Checkout">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="MovePaymentLinkstoJSCheckout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <!--Exclude Zero Pass Percentage TCs
+    <test name="PGP-31212 Link Payment 2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="ValidateSuccessfulNativeMFLinkPayment"/>
+                    <include name="VerifyUPINotVisibleNative_MFCashierPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+
+    <test name="PGP-28935">
+        <classes>
+            <class name="scripts.flows.LinkBasedPaymentNativeMFTest"/>
+            <class name="scripts.flows.LinkBasedPaymentNativeSTTest"/>
+            <class name="scripts.flows.LinkBasedPaymentInvoiceNativeMFTest"/>
+            <class name="scripts.flows.LinkBasedPaymentInvoiceNativeSTTest"/>
+        </classes>
+    </test>
+
+    <test name="Link Service TCs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.initiateTxnApi"/>
+            <class name="scripts.api.linkservice.OTPConsultApi"/>
+            <class name="scripts.api.linkservice.LinkTxnOneCrore"/>
+            <class name="scripts.api.linkservice.linkEMISubvention"/>
+            <class name="scripts.api.linkservice.MonthlyLinkTxnLimit"/>
+            <class name="scripts.api.linkservice.UpdateStatusApi"/>
+            <class name="scripts.api.linkservice.EnableDisablePayModesTest"/>
+        </classes>
+    </test>
+    <test name="Link_Service TCs">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CreateOrderApi"/>
+            <class name="scripts.api.linkservice.getLinkDetail"/>
+            <class name="scripts.api.linkservice.GenerateTxnToken"/>
+            <class name="scripts.api.linkservice.GetLinkInfoApi"/>
+            <class name="scripts.api.linkservice.RiskConsultApi"/>
+            <class name="scripts.api.linkservice.RiskConsultApi"/>
+            <class name="scripts.api.linkservice.LinkReportDownloadApi"/>
+        </classes>
+    </test>
+
+    <test name="PGP-36657">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EnableDisablePayModesTest"/>
+        </classes>
+    </test>
+
+    <test name="UpdatestatusApi">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.UpdateStatusApi"/>
+        </classes>
+    </test>
+
+    <test name="linkEMISubvention">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.linkEMISubvention"/>
+        </classes>
+    </test>
+
+    <test name="MonthlyLinkTxnLimit">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.MonthlyLinkTxnLimit"/>
+        </classes>
+    </test>
+
+    <test name="LinkSplitSettlement">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.LinkSplitSettlement"/>
+        </classes>
+    </test>
+
+    <test name="CreateOrderAPI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.CustomerJourneyChangesCheckoutJS"/>
+        </classes>
+    </test>
+
+    <test name="FetchLinkAPI">
+        <classes>
+            <class name="scripts.api.linkservice.FetchLinkApiTest"/>
+        </classes>
+    </test>
+
+    <test name="ExpireLinkAPI">
+        <classes>
+            <class name="scripts.api.linkservice.ExpireLinkApiTest"/>
+        </classes>
+    </test>
+
+    <test name="ArchiveLinkAPI">
+        <classes>
+            <class name="scripts.api.linkservice.ArchiveLinkApiTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-40075">
+        <classes>
+            <class name="scripts.api.linkservice.PaymentButtonsDisabled"/>
+        </classes>
+    </test>
+
+    <test name="SaveDefaultSettingsApi">
+        <classes>
+            <class name="scripts.api.linkservice.SaveDefaultSettingsApi"/>
+        </classes>
+    </test>
+
+    <test name="ResendNotificationLink">
+        <classes>
+            <class name="scripts.api.linkservice.ResendNotificationApiTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-40132">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.MaxAmountCheck"/>
+        </classes>
+    </test>
+
+    <test name="UpdateLinkAPI">
+        <classes>
+            <class name="scripts.api.linkservice.UpdateLinkApi"/>
+        </classes>
+    </test>
+
+    <test name="IsNewMerchant">
+        <classes>
+            <class name="scripts.api.linkservice.IsNewMerchantApiTest"/>
+        </classes>
+    </test>
+
+    <test name="CreateLink">
+        <classes>
+            <class name="scripts.api.linkservice.CreateNewLinkTest"/>
+        </classes>
+    </test>
+
+    <test name="SummaryLinkAPI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.SummaryLinkApiTest"/>
+        </classes>
+    </test>
+
+    <test name="SaveOrUpdateLinkDefaultSettingsApi">
+        <classes>
+            <class name="scripts.api.linkservice.SaveOrUpdateLinkDefaultSettingsApiTest"/>
+        </classes>
+    </test>
+
+    <test name="FetchTransactionApi">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.FetchTransactionApiTest"/>
+        </classes>
+    </test>
+
+    <test name="PGP-40319">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.EdcLinkSafetyTipTest"/>
+        </classes>
+    </test>
+
+    <test name="FetchDefaultSettings">
+        <classes>
+            <class name="scripts.api.linkservice.FetchDefaultSettingsTest"/>
+        </classes>
+    </test>
+
+    <test name="LocationPopUpDisable">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.LocationPopUpTests"/>
+        </classes>
+    </test>
+
+    <test name="AmountCheckAtUI">
+        <classes>
+            <class name="scripts.api.linkservice.AmountCheckAtUITest"/>
+        </classes>
+    </test>
+
+    <test name="FetchTxnV1Test">
+        <classes>
+            <class name="scripts.api.linkservice.FetchTxnV1Test"/>
+        </classes>
+    </test>
+
+    <test name="PGP-41056 with theme">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.KafkaMessagePayload">
+                <methods>
+                    <include name="MessagePayload_15"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-41056 without theme">
+        <classes>
+            <class name="scripts.api.linkservice.KafkaMessagePayload">
+                <methods>
+                    <exclude name="MessagePayload_15"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="MaxPaymentLimitTask">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.MaxPaymentLimitTask"/>
+        </classes>
+    </test>
+
+</suite>

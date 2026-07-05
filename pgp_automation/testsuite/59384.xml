@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-59384" verbose="1">
+    <test name="Remitter Bank Field Name is MS APIs">
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="verifyThatRemitterBankNameDetailsIsShowngetPaymentStatus"/>
+                    <include name="verifyThatRemitterBankNameDetailsIsShowngetTxnStatus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

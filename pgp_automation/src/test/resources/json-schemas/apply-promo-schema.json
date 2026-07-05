@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "type": "object",
+  "required": [
+    "head",
+    "body"
+  ],
+  "properties": {
+    "head": {
+      "type": "object",
+      "required": [
+        "responseTimestamp",
+        "version"
+      ],
+      "properties": {
+        "requestId": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "responseTimestamp": {
+          "type": "string"
+        },
+        "version": {
+          "enum": [
+            "v1",
+            "v2"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "body": {
+      "type": "object",
+      "required": [
+        "resultInfo"
+      ],
+      "properties": {
+        "extraParamsMap": {
+          "type": "null"
+        },
+        "resultInfo": {
+          "type": "object",
+          "required": [
+            "resultStatus",
+            "resultCode",
+            "resultMsg"
+          ],
+          "properties": {
+            "resultStatus": {
+              "enum": [
+                "S",
+                "F",
+                "U"
+              ]
+            },
+            "resultCodeId": {
+              "type": "null"
+            },
+            "resultCode": {
+              "type": "string",
+              "minLength": 1
+            },
+            "resultMsg": {
+              "type": "string",
+              "minLength": 1
+            },
+            "resultMsgRegional": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        },
+        "paymentOffer": {
+          "type": "object",
+          "required": [
+            "totalInstantDiscount",
+            "totalCashbackAmount",
+            "totalPaytmCashbackAmount",
+            "totalTransactionAmount",
+            "offerBreakup"
+          ],
+          "properties": {
+            "tncUrl": {
+              "type": "string"
+            },
+            "totalInstantDiscount": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "totalCashbackAmount": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "totalPaytmCashbackAmount": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "totalTransactionAmount": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "offerBreakup": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "promocodeApplied",
+                  "promotext",
+                  "promoVisibility",
+                  "responseCode",
+                  "instantDiscount",
+                  "cashbackAmount",
+                  "paytmCashbackAmount",
+                  "transactionAmount",
+                  "payMethod"
+                ],
+                "properties": {
+                  "promocodeApplied": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "promotext": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "promoVisibility": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "responseCode": {
+                    "type": [
+                      "string",
+                      "null"
+                    ],
+                    "minLength": 1
+                  },
+                  "instantDiscount": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "cashbackAmount": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "paytmCashbackAmount": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "transactionAmount": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "payMethod": {
+                    "enum": [
+                      "CREDIT_CARD",
+                      "DEBIT_CARD",
+                      "NET_BANKING",
+                      "BALANCE",
+                      "WALLET",
+                      "PPBL",
+                      "PAYTM_DIGITAL_CREDIT",
+                      "UPI",
+                      "EMI",
+                      "EMI_DC",
+                      "COD",
+                      "MP_COD",
+                      "HYBRID_PAYMENT"
+                    ]
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

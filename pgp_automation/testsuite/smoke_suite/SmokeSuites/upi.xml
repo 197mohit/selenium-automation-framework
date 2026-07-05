@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI" verbose="1" thread-count="3" parallel="tests">
+    <test name="Upi Intent tests ">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+                <methods>
+                   <include name="successUpiIntent_staticQR"/>
+                  <include name="successUpiIntent_deepLink"/>
+                  </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="UPICollectNative test - Native" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.UPICollectNative">
+                <methods>
+                    <include name="appName_VPA_UPI"/>
+                    <include name="appName_VPA_Paytm"/>
+                    <include name="appName_VPA_Default"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI collect Tab on Enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUPICollect_Tab"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <include name="VerifyUPICollect_Tab_When_PrefDisabled_LoggedIn"/>
+                    <!-- <include name="VerifySuccessfullSavedUPITxn"/> -->
+                    <!-- <include name="verifyAllInOneUpiQr"/> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

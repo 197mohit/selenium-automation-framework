@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeSuite" verbose="1" parallel="tests" thread-count="2">
+
+    <test name="Verify Bin details" parallel="methods" thread-count="25">
+        <classes>
+            <class name="scripts.api.binCheck.BinCheckTest"/>
+        </classes>
+    </test>
+
+    <!-- Deprecating Old Checkout JS UI TCs-->
+    <!--test name="Checkoutjs wap Tests" parallel="methods" thread-count="20">
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test-->
+
+    <test name="Checkoutjs wap revamp Tests" parallel="methods" thread-count="20">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SmokeTest with enhancedCashier WAP Theme" parallel="methods" thread-count="5">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                </methods>
+            </class>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="verify_successfulCCTxnWithFlatCommsion"/>
+                </methods>
+            </class>
+            <class name="scripts.AdvanceDeposit">
+                <methods>
+                    <include name="t1"/>
+                </methods>
+            </class>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.OfflinePCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorInternationalCCTxnForPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SmokeTest with enhanced WEB Theme" parallel="methods" thread-count="5">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="PGP_285_successfulAddMoneyCC"/>
+                </methods>
+            </class>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_CC_S"/>
+                </methods>
+            </class>
+            <class name="scripts.COD">
+                <methods>
+                    <include name="COD_S_withoutBalance"/>
+                </methods>
+            </class>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="PGP_178_successfulOnusEMITxn"/>
+                </methods>
+            </class>
+
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="PGP_236_successfulIVRTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_CC_S"/>
+                </methods>
+            </class>
+            <class name="scripts.PayTMExpress">
+                <methods>
+                    <include name="PGP_successfulPtmX2pressCC"/>
+                </methods>
+            </class>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyCC"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryCountConfigured"/>
+                    <include name="PGP_268_verifySaveCardThroughCCTxn"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                </methods>
+            </class>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="Verify_FeeOnCashierPageForAllPayModes_forFlatCommision"/>
+                </methods>
+            </class>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                </methods>
+            </class>
+            <class name="scripts.SeamlessNative">
+                <methods>
+                    <include name="PGP_359_successfulSeamlessNativeCC"/>
+                </methods>
+            </class>
+            <class name="scripts.TopUpExpress">
+                <methods>
+                    <include name="PGP_407_successfulTopupXpressCC"/>
+                </methods>
+            </class>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_158_successfulWalletOnlyTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                </methods>
+            </class>
+            <class name="scripts.Refund">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund"/>
+                </methods>
+            </class>
+            <class name="scripts.RefundAsync">
+                <methods>
+                    <include name="successfulPGOnlyCCRefund_async"/>
+                </methods>
+            </class>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_469_successfulPostPaidTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.AddMoneyExpress">
+                <methods>
+                    <include name="successfulAddMoney_CheckForSaveCard"/>
+                </methods>
+            </class>
+            <class name="scripts.postConvenience.PostConvenience">
+                <methods>
+                    <include name="PGP_500"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_020"/>
+                </methods>
+            </class>
+            <!--            <class name="scripts.subscription.subscriptionFirstRequestefaultFlows.Subscription_via_cc_dc">-->
+            <!--                <methods>-->
+            <!--                    <include name="PGP_24_ValidateSuccessfulPaymentWithoutSavedCard"/>-->
+            <!--                </methods>-->
+            <!--            </class>-->
+            <!--            <class name="scripts.subscription.subscriptionRenewaldefaultFlows.Subscription_renewal_via_cc_dc">-->
+            <!--                <methods>-->
+            <!--                    <include name="PGP_192_verifySuccessfulRenewalOnSubsViaCC"/>-->
+            <!--                </methods>-->
+            <!--            </class>-->
+
+                <class name = "scripts.Sprint28.SubscriptionStoreCardNo">
+                <methods>
+                    <include name="savedCardIdGeneratedCC"/>
+                    <include name="assertSubsCreatedForEnhancedFlowCC"/>
+                </methods>
+            </class>
+
+            <class name = "scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <!--include name="fetchPayOptionForNonRiskRejectedUser"/-->
+                </methods>
+            </class>
+            <class name="scripts.DirectBankTest">
+                <methods>
+                    <include name="verifySuccessfulPGOnlyTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.Autologin.AutoLogin">
+                <methods>
+                    <include name="autologin_validateCookie"/>
+                </methods>
+            </class>
+            <class name="scripts.HDFCUPICollect">
+                <methods>
+                    <include name="verifyNormalUPINative"/>
+                </methods>
+            </class>
+            <!--<class name="scripts.LinkBasePayment">
+                <methods>
+                    <include name="PGPM_855_successfulLinkBasedPaymentThroughWalletOnly"/>
+                </methods>
+            </class>-->
+
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateCCTxn_UsingDynmQR"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.applyPromo.SSOTokenApplyPromoV1Test">
+                <methods>
+                    <include name="test when body paymentOptions payMethod = DEBIT_CARD given merchant has applicable promos"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include name="test able to fetch body merchantPayOption"/>
+                </methods>
+            </class>
+            <class name="scripts.PWPNative">
+                <methods>
+                    <include name="PWP_03_successfulPWPOnlyNBNative"/>
+                </methods>
+            </class>
+            <class name="scripts.PWPEnhanced">
+                <methods>
+                    <include name="PWP_04_successfulPGOnlyPPBL"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.NativeStock">
+                <methods>
+                    <include name="tc3UPI"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC007_KhatabookAppInvokeWallet"/>
+                </methods>
+            </class>
+            <class name="scripts.mgv.TestNativeMGVFlow">
+                <methods>
+                    <include name="TC_PT_MGV_002"/>
+                </methods>
+            </class>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulCCTxnForMDRPlusPCF"/>
+                </methods>
+            </class>
+            <class name="scripts.CCBillPayment">
+                <methods>
+                    <include name="PGP_464_ccBillPaymentViaNB"/>
+                </methods>
+            </class>
+            <class name="scripts.PrepaidCard">
+                <methods>
+                    <include name="successPrepaidEnhancedTxn"/>
+                </methods>
+            </class>
+            <class name="scripts.customFeeRateFactor.MDRMerchant.EnhancedMDRCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorNBForSlabMDR"/>
+                </methods>
+            </class>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+            <class name="scripts.scanNPay.ScanNPayTest">
+                <methods>
+                    <include name="validate_S_walletTxn_IRCTCMerc_PRNtrue"/>
+                    <include name="validate_PRNSectionDisplayed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Verify API tests isNativePlus=false" parallel="methods" thread-count="20">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_007_Renew_Subs_AmountTypeVariable_Freq_SemiAnnually"/>
+                </methods>
+            </class>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDCTxn_DeferredCheckout_WithAmountInFetchPayOptionForPCFMerchant"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_001"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include name="assertAllNBPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                </methods>
+            </class>
+            <class name="scripts.api.van.createVan.ChecksumTokenVanCreateTest">
+                <methods>
+                    <include name="Validate the create van api response when all mandatory parameters are provided"/>
+                </methods>
+            </class>
+            <class name="scripts.api.van.disableVan.JWTTokenVanDisableTest">
+                <methods>
+                    <include name="Validate the disable van api when valid mid is provided"/>
+                </methods>
+            </class>
+            <class name="scripts.api.van.updateVan.ChecksumTokenVanUpdateTest">
+                <methods>
+                    <include name="Validate the response of Van update api for disable a VAN"/>
+                </methods>
+            </class>
+    <!--TODO Enable after Mock Creation>
+    <class name="scripts.VisaSingleClick.DeEnrollCardTest">
+        <methods>
+            <include name="DeEnrollCardWithAccesstoken"/>
+        </methods>
+    </class>
+    -->
+    <class name="scripts.customFeeRateFactor.MDRMerchant.DeferredMDRCustomRate">
+        <methods>
+            <include name="successfulFeeFactorDCTxnForMDROffline"/>
+        </methods>
+    </class>
+    <class name="scripts.customFeeRateFactor.MDRMerchant.NativeMDRCustomRate">
+        <methods>
+            <include name="successfulFeeFactorDCTxnForMDRNative"/>
+        </methods>
+    </class>
+    <class name="scripts.customFeeRateFactor.MDRMerchant.OfflineMDRCustomRate">
+        <methods>
+            <include name="successfulFeeFactorCCInternationalMoreThan25TxnForMDR"/>
+        </methods>
+    </class>
+    <class name="scripts.customFeeRateFactor.PCFMerchant.DeferredPCFCustomRate">
+        <methods>
+            <include name="successfulFeeFactorDCTxnForPCF"/>
+        </methods>
+    </class>
+    <class name="scripts.api.theia.vpaValidate.AccessTokenVPAValidateV1Test">
+        <methods>
+            <include name="test able to validate vpa when body vpa equals paytm vpa"/>
+        </methods>
+    </class>
+    <class name="scripts.api.theia.vpaValidate.TxnTokenVPAValidateV1Test">
+        <methods>
+            <include name="test when body mid = null"/>
+        </methods>
+    </class>
+</classes>
+</test>
+
+<test name="Verify API tests isNativePlus=true" parallel="methods" thread-count="20">
+<parameter name="isNativePlus" value="true"/>
+<classes>
+    <class name="scripts.UPISubsMandate.UPIRenewSubs">
+        <methods>
+            <include name="TC_007_Renew_Subs_AmountTypeVariable_Freq_SemiAnnually"/>
+        </methods>
+    </class>
+    <class name="scripts.DeferredCheckout">
+        <methods>
+            <include name="validateADDANDPAYTxn_DeferredCheckout_WithAmountInFetchPayOption"/>
+        </methods>
+    </class>
+    <class name="scripts.customFeeRateFactor.PCFMerchant.NativePCFCustomRate">
+        <methods>
+            <include name="successfulNBTxnForMDRPlusPCFNative"/>
+        </methods>
+    </class>
+    <class name="scripts.Native.ProcessTransactionTests">
+        <methods>
+            <include name="TC_PT_001"/>
+        </methods>
+    </class>
+</classes>
+</test>
+
+<!-- Deprecating old checkoutjs UI TCs-->
+    <!--test name="Checkoutjs web Tests" parallel="methods" thread-count="20">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingCC"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27014_ValidateSuccessUPISubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test-->
+
+    <test name="Checkoutjs web revamp Tests" parallel="methods" thread-count="20">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingCC"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27014_ValidateSuccessUPISubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="AOA Txn">
+        <classes>
+            <class name="scripts.AOA.AOATest">
+                <methods>
+                    <include name="verifying_Successful_DC_TXN_"/>
+                    <include name="verifying_Successful_CC_TXN_NATIVEPLUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Data Enrichment TC">
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <include name="verifyRiskParametersPassedInV1PTCCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+
+
+</suite>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="v5 FPO fixes 3" verbose="1" parallel="tests" thread-count="2">
+    <test name="v5 FPO fixes web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_003_VerifyNBSelectedByDefault"/>
+                    <include name="TC_004_VerifyManuallyEntering3FieldsAppear"/>
+                    <include name="TC_005_VerifyManuallyEntering3FieldsAppear"/>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <include name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="v5 FPO fixes wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_27014_ValidateSuccessUPISubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

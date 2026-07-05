@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SimplifiedOffer" verbose="1" parallel="methods" thread-count="1">
+    <test name="SimplifiedOffer">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest"/>
+        </classes>
+    </test>
+
+</suite>

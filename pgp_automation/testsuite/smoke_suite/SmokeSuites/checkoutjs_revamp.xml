@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS" verbose="1" thread-count="5" parallel="methods">
+   <test name="checkoutjs UI sanity cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityCheckoutJS">
+                <methods>
+                    <!-- <include name="verifyLoginWithOTP"/> -->
+                    <include name="ValidateSuccessTxnUsingEMI"/>
+                    <include name="ValidateSuccessTxnUsingNB"/>
+                    <include name="ValidateSuccessTxnUsingCC"/>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                    <include name="ValidateSuccessTxnUsingUPI"/>
+                    <include name="validatePCFforNB"/>
+                    <include name="EMISubventionAmountBasedSuccess"/>
+                    <include name="EMISubCheckoutJsItembasedSuccess"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ElementJs UI sanity cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UiSanityElementJs">
+                <methods>
+                    <include name="newCreditCardSuccessTxn"/>
+                    <include name="nbSuccessTxn"/>
+                    <!--<include name="walletPcfTxn"/>-->
+                    <include name=""/>
+                    <include name=""/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Standard Checkout UI sanity cases">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                    <include name="PGP_174_successfulNBTxn"/>
+                    <include name="PGP_239_successfulPGOnlyDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="JS on redirection UI sanity cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="CCSuccessTxn"/>
+                    <include name="NBSuccessTxn"/>
+                    <include name="EMISuccessTxn"/>
+                    <include name="UPISuccessTxn"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="CCSuccessTxn_AppInvoke"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Custom Checkout UI sanity cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestE2ESuccessResponseWhenCCPaymethodWithDiscountOfferAmountbased"/>
+                    <include name="TestE2ESuccessResponseWhenCCPaymethodWithCashbackOfferAmountbased"/>
+                    <include name="TestE2ESuccessResponseWhenCCPaymethodWithCashbackOfferItemBased"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Deferred Checkout UI sanity cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDeferredCheckoutFPOResponse"/>
+                </methods>
+            </class>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                        <include name="validate_EmiEligibility_CallNotHappening_inFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

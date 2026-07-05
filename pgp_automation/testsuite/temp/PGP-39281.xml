@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="Regression fix , upi push" verbose="1">
+
+    <test name="alidate UPI push transaction with Andflow promo">
+        <classes>
+
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="validateUpiPushTxnWithAndPromo"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

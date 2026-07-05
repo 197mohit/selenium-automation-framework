@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-37186" parallel="methods" verbose="1">
+    <test name="CHECKOUTJS on web Test cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validate_vpa_msg"/>
+                    <include name="validate_vpa_msg_AddnPay"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="validate_vpa_msg_logs"/>
+                    <include name="validate_vpa_msg_logs_addnpay"/>
+                    <include name="validate_vpa_msg_logs_subscription"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs_subscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CHECKOUTJS on wap Test cases">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="validate_vpa_msg"/>
+                    <include name="validate_vpa_msg_AddnPay"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="validate_vpa_msg_logs"/>
+                    <include name="validate_vpa_msg_logs_addnpay"/>
+                    <include name="validate_vpa_msg_logs_subscription"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs_subscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPSL-524 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PPSL-524 Cases- bulk apply">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateBin9Digit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPSL-524 Cases - apply/checkout">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="validateBin9Digit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46696" verbose="1" parallel="tests">
+    <test name="PGP-46696 OfferDiscoveryTxnTokenTest">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_NOT_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_without_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_false_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_true_and_amountBasedSubvention_false_with_item_Passsed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46696 OfferDiscoveryAccessTokenTest">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest">
+                <methods>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_NOT_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_and_amountBasedSubvention_false_without_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_false_and_amountBasedSubvention_true_with_item_Passsed"/>
+                    <include name="Test_api_response_when_both_amountBasedBankOffer_true_and_amountBasedSubvention_false_with_item_Passsed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

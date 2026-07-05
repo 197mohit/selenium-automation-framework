@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-23215 - OrderStatusV2 - CustId" verbose="1" thread-count="2" parallel="methods">
+    <test name="OrderStatusV2 CustId Tests - EnhancedWeb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.OrderStatusV2Tests">
+                <methods>
+                    <include name="verifyCustIdReturnedforSuccessTxn"/>
+                    <include name="verifyCustIdReturnedforFailureTxn"/>
+                    <include name="verifyCustIdReturnedforPendingTxn"/>
+                    <include name="verifyCustIdNotReturnedwhenMidNotConfigured"/>
+                    <include name="verifyCustIdReturnedforONUSMerchants"/>
+                    <include name="verifyCustIdReturnedforOFFUSMerchants"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

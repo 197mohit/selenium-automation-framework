@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48065" verbose="1" thread-count="4" parallel="tests">
+    <test name="UPI_CC ADDNPAYTranaction">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateccOnUPIAllowedTrue"/>
+                    <include name="validateccOnUPIAllowedTrue2"/>
+                    <include name="validateccOnUPIAllowedTrue3"/>
+                    <include name="validateccOnUPIAllowedTrue4"/>
+                    <include name="validateccOnUPIAllowedTrue5"/>
+                    <include name="validateccOnUPIAllowedTrue6"/>
+                    <include name="validateccOnUPIAllowedTrue7"/>
+                    <include name="validateccOnUPIAllowedTrue8"/>
+                    <include name="validateccOnUPIAllowedTrue9"/>
+                    <include name="validateccOnUPIAllowedTrue10"/>
+                    <include name="validateccOnUPIAllowedTrue11"/>
+                    <include name="validateccOnUPIAllowedTrue12"/>
+                    <include name="validateccOnUPIAllowedTrue13"/>
+                    <include name="validateccOnUPIAllowedTrue14"/>
+                    <include name="validateccOnUPIAllowedTrue15"/>
+                    <include name="validateccOnUPIAllowedTrue16"/>
+                    <include name="validateccOnUPIAllowedTrue17"/>
+                    <include name="validateccOnUPIAllowedTrue18"/>
+                    <include name="validateccOnUPIAllowedTrue19"/>
+                    <include name="validateccOnUPIAllowedTrue20"/>
+                    <include name="validateccOnUPIAllowedTrue21"/>
+                    <include name="validateccOnUPIAllowedTrue22"/>
+                    <include name="validateccOnUPIAllowedTrue23"/>
+                    <include name="validateccOnUPIAllowedTrue24"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

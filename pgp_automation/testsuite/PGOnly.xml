@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGOnly" verbose="1" parallel="methods" thread-count="12">
+    <test name="PGOnly Enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <exclude name="testLowSuccessRateMessageWhenZeroSuccessRateis1"/>
+                    <exclude name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtWithoutDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithSameDetailsAfterDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgWithoutDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgAfterDeletingCachedKey"/>
+                    <exclude name="validateUPIPayModesWhenPrefEnabled"/>
+                    <exclude name="validateUPITxwForAddNPAYWhenUPINotEnabled"/>
+                    <exclude name="validateNewFlagIsTrueWhenPrefEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGOnly - Enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <exclude name="testLowSuccessRateMessageWhenZeroSuccessRateis1"/>
+                    <exclude name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtWithoutDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithSameDetailsAfterDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgWithoutDeletingCachedKey"/>
+                    <exclude name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgAfterDeletingCachedKey"/>
+                    <exclude name="validateUPIPayModesWhenPrefEnabled"/>
+                    <exclude name="validateUPITxwForAddNPAYWhenUPINotEnabled"/>
+                    <exclude name="validateNewFlagIsTrueWhenPrefEnabled"/>
+                    <exclude name="VerifyUPINotVisibleOnLinkPaymentCashierPage"/>
+                    <exclude name="ValidateSuccessfulLinkPayment"/>
+                    <exclude name="VerifyUPINotVisibleNative_MFCashierPage"/>
+                    <exclude name="VerifyUPINotVisibleInvoiceLinkCashierPage"/>
+                    <exclude name="ValidateSuccessfulNativeMFLinkPayment"/>
+                    <exclude name="VerifyUPINotVisibleNative_STCashierPage"/>
+                    <exclude name="ValidateSuccessfulNativeSTLinkPayment"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-26892">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLowSuccessRateMessageWhenZeroSuccessRateis1"/>
+                    <include name="testTxnAmtInCallbackAndTxnStatusHas2DecimalPrecision"/>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtWithoutDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithSameDetailsAfterDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgWithoutDeletingCachedKey"/>
+                    <include name="testWhenOrderIsReInitiatedWithDifferentTxnAmtAfterGettingDuplicateOrderErrorMsgAfterDeletingCachedKey"/>
+                    <include name="validateUPIPayModesWhenPrefEnabled"/>
+                    <include name="validateUPITxwForAddNPAYWhenUPINotEnabled"/>
+                    <include name="validateNewFlagIsTrueWhenPrefEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="session-compatibility">
+        <classes>
+            <class name="scripts.PGOnly">
+                <parameter name="theme" value="enhancedweb"/>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-theia"/>
+                    <include name="PGP_170_successfulPGOnlyBackwardCmpatibilityCC"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T1-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+                <methods>
+                    <parameter name="orderId" value="T2-Retry-theia"/>
+                    <include name="PGP_252_verifyPGOnlyTxnWithRetryBackwardCompatibilityCountConfigured"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

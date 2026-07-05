@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="temp-PGP-21772" verbose="1" parallel="methods" thread-count="5">
+    <test name="Enhanced cases for PGP-21772">
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="enhancedOrderingNonLoggedIn"/>
+                    <include name="enhancedOrderingLoggedIn"/>
+                    <include name="enhancedOrderingLogInCashierPage"/>
+                    <include name="enhancedOrderingHybrid"/>
+                    <include name="enhancedOrderingHybridSSO"/>
+                    <include name="enhancedOrderingAddMoneySSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FPO Native cases for PGP-21772">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                    <include name="enhancedOrderingLoggedIn"/>
+                    <include name="enhancedOrderingLogInCashierPage"/>
+                    <include name="enhancedOrderingHybrid"/>
+                    <include name="enhancedOrderingHybridSSO"/>
+                    <include name="enhancedOrderingAddMoneySSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

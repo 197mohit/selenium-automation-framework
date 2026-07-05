@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-4562_New.xml">
+    <test name="Verify Simplified Promo Order Modify Txn for PG2">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyUPIPushTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyWalletTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyPostPaidTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateCoThenPaySimplifiedPromoOrderModifyPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

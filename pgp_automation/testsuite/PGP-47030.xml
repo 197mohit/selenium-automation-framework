@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46021 " verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-46021">
+        <classes>
+            <class name="scripts.api.CC.CVV_Less_transaction">
+                <methods>
+                    <include name="Saved_HDFC_VISA_Success_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

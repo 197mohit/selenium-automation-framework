@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28959 Blank Peon Suite" verbose="1" thread-count="4" parallel="methods">
+    <test name="PGP-28959 - Tests">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.LogValidationScripts">
+                <methods>
+                    <include name="PGP_28959_VerifyPeonSentinLogsCCTxnOFFUS"/>
+                    <include name="PGP_28959_VerifyPeonSentinLogsCCTxnONUS"/>
+                    <include name="PGP_28959_VerifyPeonSentinLogsDCTxnOFFUS"/>
+                    <include name="PGP_28959_VerifyPeonSentinLogsDCTxnONUS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Enhanced retry(PGP-30182)" verbose="1">
+    <test name="Checkoutjs retry test cases - Web">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingCCRetry"/>
+                    <include name="ValidateSuccessTxnUsingNBAfterCCRetry"/>
+                    <include name="ValidateZeroRetry"/>
+                    <include name="ExhaustAllRetryAvailable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs retry test cases - Wap">
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="ValidateSuccessTxnUsingCCRetry"/>
+                    <include name="ValidateSuccessTxnUsingNBAfterCCRetry"/>
+                    <include name="ValidateZeroRetry"/>
+                    <include name="ExhaustAllRetryAvailable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

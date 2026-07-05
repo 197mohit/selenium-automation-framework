@@ -1,0 +1,13 @@
+{
+  "head": {
+    "clientId": "ANDROID",
+    "version": "v1",
+    "requestTimeStamp": "1519736590323",
+    "channelId": "APP",
+    "signature": ""
+  },
+  "body": {
+    "cardNumber": "",
+    "ssoToken": ""
+  }
+}

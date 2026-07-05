@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Refund API" verbose="1" parallel="classes" thread-count="3">
+    <test name="Refund API TCs">
+        <classes>
+            <class name="scripts.api.refund.AsyncRefund"/>
+            <class name="scripts.api.refund.RefundStatus"/>
+        </classes>
+    </test>
+</suite>

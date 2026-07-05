@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="upi_nonLocckedIN_hidelable"/>
+                    <include name="loginstateUPI"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_41787_TC13"/>
+                    <include name="PGP_41787_TC04"/>
+                    <include name="PGP_41787_TC03"/>
+                    <include name="PGP_41787_TC12"/>
+                </methods>
+            </class>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingRupayTxnforAltIDOnus"/>
+                </methods>
+            </class>
+            <class name="scripts.BankTransferCheckoutTest">
+                <methods>
+                    <include name="checkingBankTransfer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

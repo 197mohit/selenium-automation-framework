@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="checkoutjs_suite">
+    <test name="CheckoutJs_suite fixes">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifytooltipforConvenienceFeesMerchantisShownforCC"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>        
+                </methods>
+            </class>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>     
+                </methods>
+            </class>
+        </classes>
+    </test>
+ </suite> 

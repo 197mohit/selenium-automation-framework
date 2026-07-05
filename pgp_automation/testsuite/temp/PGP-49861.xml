@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49861" verbose="1" thread-count="1">
+    <test name="PGP-49861">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.mappingService.AlipayRemoval">
+                <methods>
+                    <include name="validateMappingAPITheiaMerchantstatusRefund"/>
+                    <include name="validateMappingApiTheiaMerchantStatus"/>
+                    <include name="validateMappingApiTheia"/>
+                    <include name="validateMappingApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-49861-checkout">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.mappingService.AlipayRemoval">
+                <methods>
+                    <include name="validatepaymodeMappingApi"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

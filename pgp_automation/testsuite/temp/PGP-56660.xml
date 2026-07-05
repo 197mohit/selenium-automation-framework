@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56660 " verbose="1">
+    <test name="Error Message Handling in offer Discovery and offer Apply">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="Test_Error_Response_01"/>
+                    <include name="Test_Error_Response_02"/>
+                    <include name="Test_Error_Response_03"/>
+                    <include name="Test_Error_Response_04"/>
+                    <include name="Test_Error_Response_05"/>
+                    <include name="Test_Error_Response_06"/>
+                    <include name="Test_Error_Response_07"/>
+                    <include name="Test_Error_Response_08"/>
+                    <include name="Test_Error_Response_09"/>
+                    <include name="Test_Error_Response_10"/>
+                    <include name="Test_Error_Response_11"/>
+                    <include name="Test_Error_Response_12"/>
+                    <include name="Test_Error_Response_13"/>
+                    <include name="Test_Error_Response_14"/>
+                    <include name="Test_Error_Response_15"/>
+                    <include name="Test_Error_Response_16"/>
+                    <include name="Test_Error_Response_17"/>
+                    <include name="Test_Error_Response_18"/>
+                    <include name="Test_Error_Response_19"/>
+                    <include name="Test_Error_Response_20"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest">
+                <methods>
+                    <include name="Test_Error_Response_01"/>
+                    <include name="Test_Error_Response_02"/>
+                    <include name="Test_Error_Response_03"/>
+                    <include name="Test_Error_Response_04"/>
+                    <include name="Test_Error_Response_05"/>
+                    <include name="Test_Error_Response_06"/>
+                    <include name="Test_Error_Response_07"/>
+                    <include name="Test_Error_Response_08"/>
+                    <include name="Test_Error_Response_09"/>
+                    <include name="Test_Error_Response_10"/>
+                    <include name="Test_Error_Response_11"/>
+                    <include name="Test_Error_Response_12"/>
+                    <include name="Test_Error_Response_13"/>
+                    <include name="Test_Error_Response_14"/>
+                    <include name="Test_Error_Response_01_dicoveryLite"/>
+                    <include name="Test_Error_Response_02_dicoveryLite"/>
+                    <include name="Test_Error_Response_03_dicoveryLite"/>
+                    <include name="Test_Error_Response_04_dicoveryLite"/>
+                    <include name="Test_Error_Response_05_dicoveryLite"/>
+                    <include name="Test_Error_Response_06_dicoveryLite"/>
+                    <include name="Test_Error_Response_07_dicoveryLite"/>
+                    <include name="Test_Error_Response_08_dicoveryLite"/>
+                    <include name="Test_Error_Response_09_dicoveryLite"/>
+                    <include name="Test_Error_Response_10_dicoveryLite"/>
+                    <include name="Test_Error_Response_11_dicoveryLite"/>
+                    <include name="Test_Error_Response_12_dicoveryLite"/>
+                    <include name="Test_Error_Response_13_dicoveryLite"/>
+                    <include name="Test_Error_Response_14_dicoveryLite"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

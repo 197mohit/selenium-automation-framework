@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57823" verbose="1" thread-count="5" parallel="tests">
+    <test name="verifyDealsFlowTxnIsMigratedToV2Checkout">
+        <classes>
+            <class name="scripts.EMITest.CustomCheckout.CustomCheckoutNewFlowTest">
+                <methods>
+                    <include name="verifyDealsFlowTxnIsMigratedToV2Checkout"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

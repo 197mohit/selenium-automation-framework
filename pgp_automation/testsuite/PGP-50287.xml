@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-50287" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-50287">
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="validateEMISubventioninfoInCop"/>
+                    <include name="validateOnlySubventionANDPromo"/>
+                    <include name="validateOnlyPromo"/>
+                    <include name="validateOnlySubventionANDPromoEMI_DC"/>
+                    <include name="validateEMISubventioninfoInCopEMI_DC"/>
+                    <include name="validateOnlyPromoEMI_DC"/>
+                    <include name="validateEMISubventioninfoInCopEMI_DCForPayableAmount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

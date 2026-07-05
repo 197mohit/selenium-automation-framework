@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RefundStatus" verbose="1" parallel="tests" thread-count="10">
+    <test name="Refund Status Api with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.RefundStatus">
+                <methods>
+                    <include name="validateRefundStatusResp_PGOnly"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-24411 Enhanced Cases">
+        <classes>
+            <class name="scripts.RefundStatus">
+                <parameter name="theme" value="enhancedweb"/>
+                <methods>
+                    <include name="verifyUniqueTxnId"/>
+                    <include name="verifyUniqueTxnIdAlphaNumeric"/>
+                    <include name="validateFullRefund"/>
+                    <include name="validateHybridRefund"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

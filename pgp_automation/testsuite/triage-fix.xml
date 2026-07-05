@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="triage-fix" verbose="1" parallel="tests" thread-count="1">
+    <test name="Validating OTP message">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.OTPLimit">
+                <methods>
+                    <include name="OTPLimitBreach"/>
+                    <include name="OTPLimitBreachWitDifferentNo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validating peon">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_402_PeonHybridFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

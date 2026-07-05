@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-46447" verbose="1" parallel="tests" thread-count="4" >
+    <test name="upi revamp checkoutjs web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjs mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjsonEnhanced web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                 <methods>
+                    <include name="verifyScanQrRevamp"/>
+                     <include name="verifyEnabledPaymodeColourRevamp"/>
+                     <include name="verifyorScanwithUPItextRevamp"/>
+                     <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                     <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                 </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp checkoutjsonEnhanced mweb">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="verifyUpiPaymodeUpiAppImgNonLoggedIn"/>
+                    <include name="verifyUpiPaymodeUpiAppImgLoggedIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp elementjs web">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

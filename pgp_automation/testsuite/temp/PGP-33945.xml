@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI-Fix Frequency Changes" verbose="1" parallel="tests" thread-count="9">
+    <test name="UPI-Fix Frequency Redirectional/Enhance flow">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI-Fix Frequency Native Collect flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_MF_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Native_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_003_Native_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Native_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI-Fix Frequency Native Intent flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_002_Native_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

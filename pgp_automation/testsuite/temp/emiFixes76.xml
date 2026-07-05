@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native Plus" verbose="1">
+    <test name="Native Plus" parallel="methods" thread-count="14">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="SimplifiedPromoAndItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMISubventionNew">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t84initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

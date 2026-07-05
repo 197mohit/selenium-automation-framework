@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29611" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-29611">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_001_VerifyBankmandatePaymodeAppearingOnCashierPage"/>
+                    <include name="TC_002_VerifyBankmandateTxn"/>
+                    <include name="TC_003_VerifyNBSelectedByDefault"/>
+                    <include name="TC_004_VerifyManuallyEntering3FieldsAppear"/>
+                    <include name="TC_005_VerifyManuallyEntering3FieldsAppear"/>
+                    <include name="TC_006_VerifyAuthenticationOptionsDC"/>
+                    <include name="TC_007_VerifyProceedButtonWithoutUserNameErrorInvoke"/>
+                    <include name="TC_008_VerifyProceedButtonWithoutBankAccountErrorInvoke"/>
+                    <include name="TC_009_VerifyProceedButtonWithoutIFSCErrorInvoke"/>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="TC_011_VerifySubsCreatedInInitState"/>
+                    <include name="TC_012_BankMandateSubscriptionDCPAymodeAmount0"/>
+                    <include name="TC_013_ValidateSubsPurposeValueIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="TC_0014_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="TC_015_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="TC_016_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

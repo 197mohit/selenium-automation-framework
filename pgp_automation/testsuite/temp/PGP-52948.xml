@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PGP-52948" verbose="1">
+    <test name="Add Money 4k Limit">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="validateccAddnPayLimitinFPOwhenbalanceisZero"/>
+                    <include name="validateccAddnPayLimitinFPOwhenbalanceisNonZero"/>
+                    <include name="validateccAddnPayLimitinFPOwhenWalletisNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOwhenaddnpayAndCCNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOwhenaddnpayNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOwhenCCNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenbalanceisZero"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenbalanceisNonZero"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenWalletisNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenaddnpayAndCCNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenaddnpayNotAllowedonMid"/>
+                    <include name="validateccAddnPayLimitinFPOV5whenCCNotAllowedonMid"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

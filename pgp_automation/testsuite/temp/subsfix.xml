@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Suite Changes" verbose="1" parallel="tests" thread-count="3">
+    <test name="Subs Suite Changes">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC03_ValidateBankAccountFeatureList_ReqType_NATIVE_SUBSCRIPTION_PAY"/>
+                    <include name="TC05_ValidateBankAccountFeatureList_ReqType_NATIVE_MF_SIP_PAY"/>
+                </methods>
+            </class>
+                <class name="scripts.Native.bankmandate.Emandate">
+                    <methods>
+                        <include name="validateFetchMandateListAPI"></include>
+                    </methods>
+                </class>
+        </classes>
+    </test>
+</suite>

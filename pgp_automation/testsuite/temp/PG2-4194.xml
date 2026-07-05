@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="PG2-4194" verbose="1">
+    <test name="Validate Wallet Co Then Pay Full Traffic COP Success,Failed Txn">
+        <classes>
+            <class name="scripts.api.Wallet.PG2Wallet">
+                <methods>
+                    <include name="validateSuccessCOThenPayFullTrafficWalletTxnPG2MID"/>
+                    <include name="validateFailedFullTrafficCOThenPayWalletTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

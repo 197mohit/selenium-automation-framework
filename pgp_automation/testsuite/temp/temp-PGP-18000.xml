@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-18000" verbose="1" thread-count="5"
+       parallel="methods">
+    <test name = "PGP-18000:Phone Update | User verification through saved cards">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCardByUserIdTest"/>
+        </classes>
+    </test>
+</suite>
+

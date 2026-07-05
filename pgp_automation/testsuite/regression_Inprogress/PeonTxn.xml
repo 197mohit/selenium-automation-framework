@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PeonTxn" verbose="1" parallel="tests" thread-count="10">
+    <test name="PeonTxn with enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                    <include name="PGP_398_PeonPGonlyFail"/>
+                    <include name="PGP_399_PeonWalletOnlyPass"/>
+                    <include name="PGP_400_PeonWalletOnlyFail"/>
+                    <include name="PGP_401_PeonHybridPass"/>
+                    <include name="PGP_402_PeonHybridFail"/>
+                    <include name="PGP_403_PeonAddNPayPass"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_405_PeonAddNPayFail"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PeonTxn-enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="PGP_397_PeonPGonlyPass"/>
+                    <include name="PGP_398_PeonPGonlyFail"/>
+                    <include name="PGP_399_PeonWalletOnlyPass"/>
+                    <include name="PGP_400_PeonWalletOnlyFail"/>
+                    <include name="PGP_401_PeonHybridPass"/>
+                    <include name="PGP_402_PeonHybridFail"/>
+                    <include name="PGP_403_PeonAddNPayPass"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_405_PeonAddNPayFail"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

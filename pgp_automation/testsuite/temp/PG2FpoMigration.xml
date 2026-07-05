@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="V5FPO" verbose="1" thread-count="12" parallel="methods">
+    <test name="fpoBalanceMigration">
+        <classes>
+            <class name="scripts.api.fpoMigration.fpoMigratioWallet">
+                <methods>
+                    <include name="validateSuccessWalletBalanceinFPO"/>
+                    <include name="validateSuccessWalletBalanceinFetchWalletBalance"/>
+                    <include name="validateFPOResponsewithoutSSO"/>
+                    <include name="validateSuccessWalletBalanceinFPOforpercentageBasedUser"/>
+                    <include name="validateSuccessfetchWalletBalanceinFPOforpercentageBasedUser"/>
+                    <include name="successfulFetchBalanceWallet"/>
+                    <include name="successfulFetchBalanceWalletwherepercentisZERO"/>
+                    <include name="validatefpoV5"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

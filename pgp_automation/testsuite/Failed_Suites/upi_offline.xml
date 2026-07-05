@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI_Offline_Suite" verbose="1" thread-count="2" parallel="tests">
+  <test name="PGP-60910 - PPBL UPI CreateOrder Validation Tests" parallel="methods" thread-count="2">
+    <classes>
+      <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+        <methods>
+          <include name="testPaymentAggregatorAndMidInQueryParamForSqRequest"/>
+        </methods>
+      </class>
+    </classes>
+  </test>
+</suite>

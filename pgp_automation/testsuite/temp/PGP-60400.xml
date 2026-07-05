@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-60400" verbose="1">
+
+    <test
+      name="PGP-60400: Changes in Create Order API (for YBL) - addition of errorCode, errorMessage in request when ff4j flag ON">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+                <methods>
+                    <include name="testErrorCode20001188_FlagON"/>
+                    <include name="testErrorCode20001189_FlagON"/>
+                    <include name="testNoErrorCode_FlagON"/>
+                    <include name="testOtherErrorCode_FlagON"/>
+                    <include name="testErrorCodeNull_FlagON"/>
+                    <include name="testErrorCodeBlank_FlagON"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test
+      name="PGP-60400: Changes in Create Order API (for YBL) - addition of errorCode, errorMessage in request when ff4j flag Off">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPI.OfflineUpi.OcilYesBankTest">
+                <methods>
+                    <include name="testErrorCode20001188_FlagOFF"/>
+                    <include name="testNoErrorCode_FlagOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

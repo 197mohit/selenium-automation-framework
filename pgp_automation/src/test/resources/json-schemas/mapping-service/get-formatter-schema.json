@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$ref": "#/definitions/Root",
+  "definitions": {
+    "Root": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "bankCode": {
+          "type": "string"
+        },
+        "payMethod": {
+          "type": "string"
+        },
+        "formatterName": {
+          "type": "string"
+        },
+        "status": {
+          "type": "boolean"
+        },
+        "params": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "bankCode",
+        "formatterName",
+        "id",
+        "params",
+        "payMethod",
+        "status"
+      ],
+      "title": "Root"
+    }
+  }
+}

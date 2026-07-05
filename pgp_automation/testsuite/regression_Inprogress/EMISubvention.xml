@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMISubvention" verbose="1" parallel="methods" thread-count="12">
+    <test name="EMISubvention API Test cases">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="getEmiDetailsForEMIEnabledMerchant"/>
+                    <include name="getEmiDetailsForEMIDisabledMerchant"/>
+                    <include name="getEmiDetailsForInvalidMID"/>
+                    <include name="getEmiDetailsForInvalidJWTToken"/>
+                    <include name="getEmiDetailsForBlankClientId"/>
+                    <include name="getEmiDetailsForInvalidClientId"/>
+                    <include name="verifyEmiDetailsForDiffMIDInRequestAndQueryParams"/>
+                    <include name="verifyEmiDetailsWithCCEMI"/>
+                    <include name="verifyEmiDetailsWithDCEMI"/>
+                    <include name="verifyEmiDetailsWithBajajFinEMI"/>
+                    <include name="verifyForAllEMIEnabled"/>
+                    <include name="checkEMIEligiBilityWithSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidSSOToken"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityWithEMIEnabledMID"/>
+                    <include name="checkEMIEligiBilityWithEMIDisabledMID"/>
+                    <include name="checkEMIEligiBilityWithBlankChannelCode"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeEnabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithChannelCodeDisabledOnMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMITypeCreditCard"/>
+                    <include name="checkEMIEligiBilityWithEMITypeDebitCardOnNonEMIDCMerchant"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfSameBank"/>
+                    <include name="checkEMIEligiBilityWithEMIDCAndEMICCOfDifferntBank"/>
+                    <include name="checkEMIEligiBilityWithUserNotconfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityWithUserConfiguredOnEMIDCInDB"/>
+                    <include name="checkEMIEligiBilityForChannelCodeHDFC"/>
+                    <include name="checkEMIEligiBilityWithInvalidMID"/>
+                    <include name="checkEMIEligiBilityForChannelCodeICICI"/>
+                    <include name="checkEMIEligiBilityForChannelCodeBajajFN"/>
+                    <include name="checkEMIEligiBilityForChannelCodeAMEX"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus EMISubvention">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                    <include name="verifyHybridFlowInWithEMIIdInInitiateTransaction"/>
+                    <include name="verifyEMIDCWithEMIID"/>
+                    <include name="verifyHybridEMIDCWithEMIID"/>
+                    <include name="verifyBAJAJEMIWithEMIID"/>
+                    <include name="verifyHybridBAJAJEMIWithEMIID"/>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                    <include name="verifyHybridEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native EMISubvention">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                    <include name="verifyHybridFlowInWithEMIIdInInitiateTransaction"/>
+                    <include name="verifyEMIDCWithEMIID"/>
+                    <include name="verifyHybridEMIDCWithEMIID"/>
+                    <include name="verifyBAJAJEMIWithEMIID"/>
+                    <include name="verifyHybridBAJAJEMIWithEMIID"/>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                    <include name="verifyHybridEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

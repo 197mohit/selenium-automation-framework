@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Bank Offer Integration" verbose="1" thread-count="20" parallel="tests">
+    <test name="Bank Offer Integration">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.BankOffersIntegration">
+                <methods>
+                    <include name="simplifiedPaymentOffersVisibleFPO"/>
+                    <include name="simplifiedPaymentOffersNotVisibleFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

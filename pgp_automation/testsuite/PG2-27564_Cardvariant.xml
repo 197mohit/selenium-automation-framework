@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="schemeCardVariant and schemeCardVariantCategory For Feerate Factor">
+    <test name="schemeCardVariant and schemeCardVariantCategory in COP and COTP Request">
+        <classes>
+            <class name="scripts.api.theia.schemeCardVariantInCOP">
+                <methods>
+                    <include name="SUPER_PREMIUM_NEWCARD_IN_COP"/>
+                    <include name="PREMIUM_NEWCARD_IN_COP"/>
+                    <include name="STANDARD_NEWCARD_IN_COP"/>
+                    <include name="OTHERS_NEWCARD_IN_COP"/>
+                    <include name="SUPER_PREMIUM_SAVED_CARD_IN_COP"/>
+                    <include name="PREMIUM_SAVED_CARD_IN_COP"/>
+                    <include name="STANDARD_SAVED_CARD_IN_COP"/>
+                    <include name="OTHERS_SAVED_CARD_IN_COP"/>
+                    <include name="SUPER_PREMIUM_NEWCARD_IN_COTP"/>
+                    <include name="PREMIUM_NEWCARD_IN_COTP"/>
+                    <include name="STANDARD_NEWCARD_IN_COTP"/>
+                    <include name="OTHERS_NEWCARD_IN_COTP"/>
+                    <include name="SUPER_PREMIUM_SAVEDCARD_IN_COTP"/>
+                    <include name="PREMIUM_SAVEDCARD_IN_COTP"/>
+                    <include name="STANDARD_SAVEDCARD_IN_COTP"/>
+                    <include name="OTHERS_SAVEDCARD_IN_COTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-45666" verbose="1" thread-count="1" parallel="tests">
+
+    <test name="PGP-45666 - checkoutJS web">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-45666 - checkoutJS wap">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_CheckoutJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-45666 - enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="PGP-45666 - enhanced wap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-45666 - app invoke">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+            <classes>
+                <class name="scripts.UI.UITests">
+                    <methods>
+                        <include name="verifyWalletNotPresent_UPICollectOnlyMerchant_AppInvoke"/>
+                    </methods>
+                </class>
+            </classes>
+    </test>
+
+
+
+</suite>

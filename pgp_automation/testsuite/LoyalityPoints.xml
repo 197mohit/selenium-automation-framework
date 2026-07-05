@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Loyality Points" parallel="methods" thread-count="20">
+    <test name="Loyality Points Fetch Balance info and fast forward TC's">
+        <classes>
+            <class name="scripts.IVRFastForward">
+            <methods>
+                <include name="successfulFetchBalanceLP"/>
+                <include name="fetchBalanceOnUserNotHavingLP"/>
+                <include name="fetchBalanceOnInvalidSSOTokenLP"/>
+                <include name="fetchBalanceOnMidNotHavingLP"/>
+                <include name="fetchBalanceWithInvalidPayModeLP"/>
+                <include name="successFFTxnWithInvalidPayModeLP"/>
+                <include name="invalidSSOtokenFastForwardLP"/>
+                <include name="validSSOInvalidExchangeLP"/>
+                <include name="txnAmountGreaterThanLP"/>
+                <include name="payModeNotThereOnMerchantLP"/>
+                <include name="payModeNotThereOnUserLP"/>
+                <include name="ffExchangeNumberNegativeLP"/>
+                <include name="exchangeNumberAlphaNumericLP"/>
+                <include name="duplicateOrderIdLP"/>
+                <include name="refundFullAmountLP"/>
+                <include name="refundPartialAmountLP"/>
+                <include name="expiredSSOTokenLP"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

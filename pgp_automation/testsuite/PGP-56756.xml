@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-56756" verbose="1">
+    <test name="PGP-56756">
+        <classes>
+            <class name="scripts.SimplifiedUnifiedOffers.SimplifiedUnifiedOffersTest">
+                <methods>
+                    <include name="verifyCoftResponsePrefON"/>
+                    <include name="verifyCoftResponsePrefOFF" />
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

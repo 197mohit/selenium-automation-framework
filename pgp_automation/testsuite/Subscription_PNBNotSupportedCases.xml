@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription_PNBDebitCardsNotSupported" verbose="1"  parallel="tests" thread-count="6">
+    <test name="Native Process Subscription PNB DC">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="ValidateSubscriptionPNB_DCNotSupported"/>
+                    <include name="ValidateSubscriptionPNB_DCNotSupportedForADDNPAY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Subscription PNB DC Enhanced">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="ValidatePNB_DC_CardNotSupported"/>
+                    <include name="ValidatePNB_DC_CardNotSupportedForAddNPay"/>
+                    <include name="ValidateSavedPNB_DC_CardNotSupported"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

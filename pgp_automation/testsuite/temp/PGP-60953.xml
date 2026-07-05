@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-60953">
+    <test name="Verify customername in payment link txn">
+        <classes>
+            <class name="scripts.api.linkservice.EdcEmiLink">
+                <methods>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBankEMICaseForSingleOffer"/>
+                    <include name="VerifyAdditionalCashbackPercentageForEdcBrandEMICaseForMultipleOffer"/>
+                    <include name="VerifyBankFS"/>
+                    <include name="VerifyBrandFS"/>
+                    <include name="ValidateErrorMsgWhenCustomerNameIsEmpty"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

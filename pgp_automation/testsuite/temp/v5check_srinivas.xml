@@ -1,0 +1,40 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1">
+    <test name="CheckoutJS fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="t2"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC10"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC11"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC12"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC13"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC14"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC15"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_01"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC16_02"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC18"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC19"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC20_ICICI"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC20_Amex"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidExpiryDate"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC21_invalidCvv"/>
+                    <include name="PGP_29543_ValidateSuccessTxnUsingEMI_TC22"/>
+                    <include name="ValidateSuccessTxnUsingCC"/>
+                    <include name="ValidateSuccessTxnUsingDC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs wap revamp">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyUpiChanges"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

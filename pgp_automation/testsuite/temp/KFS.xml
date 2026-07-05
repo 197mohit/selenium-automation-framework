@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-57180" verbose="1">
+    <test name="KFS for HDFC DC - EMI">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="kfsNew_hdfc_dc_part1"/>
+                    <include name="kfsNew_hdfc_dc_part2"/>
+                    <include name="kfsNew_hdfc_dc_annexB"/>
+                    <include name="kfsNew_hdfc_dc_annexC"/>
+                    <include name="kfsNew_hdfc_dc_tableText"/>
+                    <include name="kfsNew_hdfc_dc_ImpLinks"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

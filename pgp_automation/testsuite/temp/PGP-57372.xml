@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RemovelegacycodeforCConUPIandotherUPIsubtypes" verbose="1">
+    <test name="Remove legacy UPIPSP PROCESSOR code for CC on UPI and other UPI subtypes">
+        <classes>
+            <class name="scripts.api.UPI.UpiPspProcessorTests">
+                <methods>
+                    <include name="validateUPIPSPProcessorforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPProcessorforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPProcessorforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPProcessorforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPProcessorforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPProcessorforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPProcessorforOnlineMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPProcessorforOnlineMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPProcessorUPICCforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPProcessorUPICCforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateUPIPSPProcessorUPIPPIWalletforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPProcessorUPIPPIWALLETforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateUPIPSPProcessorUPICreditLineforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPProcessorUPICreditLineforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CC"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPIPPIWALLET"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPICREDITLINE"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPI_CCNotEnabled"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPIPPIWALLETNotEnabled"/>
+                    <include name="validateUPIPSPProcessorforOnusMerchantforUPICREDITLINENotEnabled"/>
+                    <include name="validateUPIPSPProcessorforWrongJWT"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Remove legacy Theia code for CC on UPI and other UPI subtypes">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUPIPSPUPICCforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPUPICCforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateUPIPSPUPIPPIWalletforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPUPIPPIWALLETforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateUPIPSPUPICreditLineforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPUPICreditLineforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateCConUPIAllowedforOnusMerchantwhennoUPICCPrefisEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPI_CC"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPIPPIWALLET"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPICREDITLINE"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPI_CCNotEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPIPPIWALLETNotEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPICREDITLINENotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

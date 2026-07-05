@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="RTDD_Suite" verbose="1" thread-count="10" parallel="tests">
+<!--    <test name="add money wallet pcf for Native plus">-->
+<!--        <parameter name="isNativePlus" value="true"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Native.PCFNative">-->
+<!--                <methods>-->
+<!--                    <include name="TC_AddMOneyWalletOnlyPCFMerchant"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+<!--    <test name="post convinence Native APIs">-->
+<!--        <parameter name="isNativePlus" value="false"/>-->
+<!--        <classes>-->
+<!--            <class name="scripts.Native.PCFNative">-->
+<!--                <methods>-->
+<!--                    <include name="TC_AddMOneyWithDCAcquiringNonPCFMerchant"/>-->
+<!--                    <include name="TC_AddMOneyWalletOnlyPCFMerchant"/>-->
+<!--                    <include name="TC_AddMOneyWithDCAcquiringPCFMerchant"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="PCFMerchant TCs for Enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorDCPrepaidTxnForPCF_MDR"/>
+                    <include name="successfulFeeFactorDCTxnForPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="temp-PGP-19819 Khata | Callback to Khata system when Khata order payments are refunded for ledger reconciliation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataRefund">
+                <methods>
+                    <include name="peonNotSentToMerchant"/>
+                    <include name="peonNotSentToMerchant1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PCFMDR on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative">
+                <methods>
+                    <include name="verifyMDRPCFnotAddedforProductCode147"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MDRPCF on enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulSeamlessWithNewFieldUDFTxnWithCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="MDRPCF on enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.MDRPCF.MDRPCF">
+                <methods>
+                    <include name="successfulSeamlessWithNewFieldUDFTxnWithCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PCFMDR on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative">
+                <methods>
+                    <include name="verifyMDRPCFnotAddedforProductCode147"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Loyality Points IVRFastForward TCs">
+        <classes>
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="PGP_441_UnsuccessfulTxnInvalidMid"/>
+                    <include name="fetchBalanceOnInvalidSSOTokenLP"/>
+                    <include name="PGP_455_UnsuccessfulTxnWithoutCustID"/>
+                    <include name="PGP_446_UnsuccessfulTxnNegativeAmount"/>
+                    <include name="PGP_445_UnsuccessfulTxnAlphanumricAmount"/>
+                    <include name="testAutoDebitTxnByPCFMerchant"/>
+                    <include name="PGP_439_UnsuccessfulTxnExpiredToken"/>
+                    <include name="PGP_456_UnsuccessfulTxnWithBlankCustID"/>
+                    <include name="fetchBalanceOnMidNotHavingLP"/>
+                    <include name="PGP_442_UnsuccessfulTxnNonMigratedMid"/>
+                    <include name="PGP_236_successfulIVRTxn"/>
+                    <include name="PGP_438_UnsuccessfulTxnInvalidToken"/>
+                    <include name="PGP_444_UnsuccessfulTxnTxnAmount_0"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PCFMerchant TCs for Enhancedwap">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.customFeeRateFactor.PCFMerchant.EnhancedPCFCustomRate">
+                <methods>
+                    <include name="successfulFeeFactorCCMasterTxnForPCF_MDR"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

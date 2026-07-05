@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="verifyLogoInQR-BrandedUPIQR" verbose="1" parallel="methods" thread-count="1">
+    <test name="Verify branded UPI QR logo when BRANDED_UPI_QR preference is on and off">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verifyLogoInQRWhenPrefOn"/>
+                    <include name="verifyLogoInQRWhenPrefOff"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-34485" verbose="1">
+    <test name="Validate correct failure code and reason being sent for failed UPI Push txn">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="PGP_34485_p2mErrorCodes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

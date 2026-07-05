@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SplitConvFeePlatformFee" verbose="1" >
+    <test name="Split Convenience Fee and Platform Fee in PCF - Theia">
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyConvFeeChargesAPIResponse"/>
+                    <include name="verifyConvFeeChargesText"/>
+                    <include name="verifyPlatformFeeChargesAPIResponse"/>
+                    <include name="verifyPlatformFeeChargesText"/>
+                    <include name="verifyPlatformFeeChargesAPIResponse_0"/>
+                    <include name="verifyConvFeePlatformFeeCharges_0"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | CheckoutJS | WEB">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | CheckoutJS | WAP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | Checkout JS on Redirectional Flow | WEB">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | Checkout JS on Redirectional Flow | WAP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

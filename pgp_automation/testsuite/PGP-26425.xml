@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-26425" verbose="1">
+    <test name="corporate indian card">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="corporate card">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="successNonCorporateEMIBinCorporateMerchant"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

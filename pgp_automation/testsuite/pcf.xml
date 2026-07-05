@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="postConv" verbose="1" thread-count="20">
+       <test name="post convenience with enhanced WAP Theme">
+           <parameter name="theme" value="enhancedwap"/>
+           <parameter name="mobileEmulation" value="Nexus 5"/>
+           <parameter name="userAgent"
+                      value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+           <classes>
+               <class name="scripts.PostCovEnhance">
+                   <methods>
+                       <exclude name="success_PCF_CC_Refund"></exclude>
+                       <exclude name="success_PCF_CC_Refund_Partial"></exclude>
+                       <exclude name="Failed_PCF_CC_Refund_Partial"></exclude>
+                       <exclude name="Verify_feeSavedInCache_forDC"></exclude>
+                       <exclude name="Verify_feeSavedInCache_forNB"></exclude>
+                   </methods>
+               </class>
+           </classes>
+       </test>
+       <test name="post convenience with enhanced WEB Theme">
+           <parameter name="theme" value="enhancedweb"/>
+           <classes>
+               <class name="scripts.PostCovEnhance">
+                   <methods>
+                       <exclude name="success_PCF_CC_Refund"></exclude>
+                       <exclude name="success_PCF_CC_Refund_Partial"></exclude>
+                       <exclude name="Failed_PCF_CC_Refund_Partial"></exclude>
+                       <exclude name="Verify_feeSavedInCache_forDC"></exclude>
+                       <exclude name="Verify_feeSavedInCache_forNB"></exclude>
+                   </methods>
+               </class>
+           </classes>
+       </test>
+    <test name="post convinence Native APIs">
+        <classes>
+            <class name="scripts.Native.PCFNative">
+            </class>
+        </classes>
+    </test>
+    <test name="Fetch bin details">
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="FBD_PCF_DC"></include>
+                    <include name="FBD_PCF_CC"></include>
+                    <include name="FBD_PCF_AMEX"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddNPay EnhancedWeb TCs">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.AddNPay"></class>
+            <class name="scripts.Hybrid"></class>
+            <class name="scripts.WalletOnly"></class>
+        </classes>
+    </test>
+
+    <test name="AddNPay EnhancedWap TCs">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay"></class>
+            <class name="scripts.Hybrid"></class>
+            <class name="scripts.WalletOnly"></class>
+        </classes>
+    </test>
+    <test name="add money wallet pcf for enhanceweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="verifyAddNMoneywithDCwihDCpresentOnMerchant"/>
+                    <include name="verifyAddNMoneywithDC"/>
+                    <include name="validateAddmoneyWalletMerchantPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="add money wallet pcf for enhancewap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PostCovEnhance">
+                <methods>
+                    <include name="verifyAddNMoneywithDCwihDCpresentOnMerchant"/>
+                    <include name="verifyAddNMoneywithDC"/>
+                    <include name="validateAddmoneyWalletMerchantPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="add money wallet pcf for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+                <methods>
+                    <include name="TC_AddMOneyWalletOnlyPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringNonPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="add money wallet pcf for Native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.PCFNative">
+                <methods>
+                    <include name="TC_AddMOneyWalletOnlyPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringPCFMerchant"/>
+                    <include name="TC_AddMOneyWithDCAcquiringNonPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="add money wallet pcf for Native plus deferred flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDCTxn_DeferredCheckout_WithAmountInFetchPayOptionForPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="add money wallet pcf for Native deferred flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDCTxn_DeferredCheckout_WithAmountInFetchPayOptionForPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+
+
+
+
+

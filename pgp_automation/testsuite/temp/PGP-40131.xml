@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-40131" verbose="1" thread-count="2" parallel="tests">
+    <test name="EMI Fixes">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="noEmiStripVisible_ForStandardEMI"/>
+                    <include name="VerifyErrorPopUponCashierPage"/>
+                    <include name="EMISubCheckoutJsItembased10"/>
+                    <include name="EMISubventionAmountBasedSuccess05"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes-2">
+        <parameter name="theme" value=""/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDeferedFPOWhenGoodIDMatchesInProperty"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes-3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <include name="emisub30"/>
+                    <include name="emisub31"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMI Fixes-4">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EMISubventionTxnTokenFlow">
+                <methods>
+                    <include name="emisub30"/>
+                    <include name="emisub31"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

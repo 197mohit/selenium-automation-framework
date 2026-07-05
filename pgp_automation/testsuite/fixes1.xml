@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CheckoutJS fixes" verbose="1" parallel="tests" thread-count="2">
+    <test name="web tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyBankLogoforEMI"/>
+                    <include name="verifyQRDetailsShowingInFPOResponse"/>
+                    <include name="toVerifyNewKafkaTopic_inSuccess_Txn"/>
+                    <include name="verify_new_wallet_user_error_message"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="element tests">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="Nonloggedin_validate_vpa_msg_logs_subscription"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs"/>
+                    <include name="validate_vpa_msg_logs"/>
+                    <include name="validate_vpa_msg_logs_subscription"/>
+                    <include name="Nonloggedin_validate_vpa_msg_logs_subscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="JS on redirection tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.JSCheckout.CheckoutJSonEnhanced">
+                <methods>
+                    <include name="JSCheckoutDomainOnEnhanced_NB_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_DCTxn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_SUBS_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_CCTxns"/>
+                    <include name="JSCheckoutDomainOnEnhanced_BANK_OFFER"/>
+                    <include name="JSCheckoutDomainOnEnhanced_EMI_Txn"/>
+                    <include name="JSCheckoutDomainOnEnhanced_Exhausted_Retry_Txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

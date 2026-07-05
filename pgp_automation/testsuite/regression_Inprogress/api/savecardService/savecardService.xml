@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Savecard Service API" verbose="1" parallel="methods" thread-count="3">
+    <test name="Savecard Service API TCs">
+        <classes>
+            <class name="scripts.api.savecardService.SaveCard"/>
+            <class name="scripts.api.savecardService.SavedCardOpenApi"/>
+            <class name="scripts.api.savecardService.SaveCardByUserIdTest"/>
+            <class name="scripts.api.savedcardservice.getcard.GetCardFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.getcard.GetCardFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardByMIdCustId"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardByUserId"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardMIdCustId"/>
+            <class name="scripts.api.savedcardservice.AddSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.DeletePGSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardBySSOTokenUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardCache"/>
+            <class name="scripts.api.savedcardservice.DeleteSavedCardTrustedCard"/>
+            <class name="scripts.api.savedcardservice.GetCard"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCardIdUserIdMIdCustId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByCustIdMIdSSOTokenChecksum"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOToken"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardBySSOTokenUserIdMId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdCardId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdInstruments"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdStatus"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardByUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardMIdCustIdUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedcardsByUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserId"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdCardNo"/>
+            <class name="scripts.api.savedcardservice.GetSavedCardUserIdTokenId"/>
+            <class name="scripts.api.savedcardservice.GetSavedRecentCCBillPaymentByCardId"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByCustIdMId"/>
+            <class name="scripts.api.savedcardservice.PGGetSavedCardByUserIdTokenIdTokenType"/>
+            <class name="scripts.api.savedcardservice.SavedCardOpenAPI"/>
+            <class name="scripts.api.savedcardservice.SavedCardsByCardTypeSsoToken"/>
+            <class name="scripts.api.savedcardservice.SaveTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.UpdateTransactionCardDetail"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbycustidmidchecksum.GetSavedCardByCustIdMIdChecksumFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbycustidmidchecksum.GetSavedCardByCustIdMIdChecksumFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbyssotoken.GetSavedCardBySSOTokenFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.getsavedcardbyssotoken.GetSavedCardBySSOTokenFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbycustidmid.PGGetSavedCardByCustIdMIdFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbycustidmid.PGGetSavedCardByCustIdMIdFlagOffTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbyuseridtokenidtokentype.PGGetSavedCardByUserIdTokenIdTokenTypeFlagOnTest"/>
+            <class name="scripts.api.savedcardservice.pggetsavedcardbyuseridtokenidtokentype.PGGetSavedCardByUserIdTokenIdTokenTypeFlagOffTest"/>
+        </classes>
+    </test>
+</suite>

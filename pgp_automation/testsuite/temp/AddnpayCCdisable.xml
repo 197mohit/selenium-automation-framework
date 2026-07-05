@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="AddnpayCCdisable" verbose="1" thread-count="20" parallel="tests">
+    <test name="AddnpayCCdisable_enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="enhanced01"/>
+                    <include name="enhanced02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddnpayCCdisable_nativeplus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="naiveplus01"/>
+                    <include name="naiveplus02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="AddnpayCCdisable_appinvoke">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddnpayCCdisable">
+                <methods>
+                    <include name="appInvoke01"/>
+                    <include name="appInvoke02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

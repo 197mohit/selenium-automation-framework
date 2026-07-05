@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPSL-598" verbose="1" thread-count="5" parallel="tests">
+    <test name="9 Digit bin allowed in ValidateEmi for Migrated Flow">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.TestEMIOldFlow">
+                <methods>
+                    <include name="testCustomCheckoutEMITxn_OldFlowMigratedToNewFlow_with9DigitBin"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

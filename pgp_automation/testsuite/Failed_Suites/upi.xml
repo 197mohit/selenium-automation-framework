@@ -1,0 +1,1048 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI_Suite_Failed" verbose="1" thread-count="20" parallel="tests">
+    <test thread-count="20" verbose="0" name="PGP-35343 UPI to AddNPay Txn" parallel="tests">
+        <classes>
+            <class name="scripts.UpiToAddnPay">
+                <methods>
+                    <include name="validateupiToAddPay"/>
+                </methods>
+            </class> <!-- scripts.UpiToAddnPay -->
+        </classes>
+    </test> <!-- PGP-35343 UPI to AddNPay Txn -->
+    <test thread-count="20" verbose="0" name="PGP-27607 Enhanced ADDNPAY through UPI collect" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForADDNPAYThroughUPI"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGP-27607 Enhanced ADDNPAY through UPI collect -->
+    <test thread-count="20" verbose="0" name="khatabook native testcases" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC_006_KhataBookTxnUPI"/>
+                </methods>
+            </class> <!-- scripts.Native.Khata.KhataBook -->
+        </classes>
+    </test> <!-- khatabook native testcases -->
+    <test thread-count="20" verbose="0" name="Khatabook enhancewap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC003_KhatabookAppInvokeUPI"/>
+                </methods>
+            </class> <!-- scripts.Native.Khata.KhataBook -->
+        </classes>
+    </test> <!-- Khatabook enhancewap -->
+    <test thread-count="20" verbose="0" name="khatabook nativeplus test" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC_006_KhataBookTxnUPI"/>
+                </methods>
+            </class> <!-- scripts.Native.Khata.KhataBook -->
+        </classes>
+    </test> <!-- khatabook nativeplus test -->
+    <test thread-count="20" verbose="0" name="Khatabook enhanceweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.Khata.KhataBook">
+                <methods>
+                    <include name="TC003_KhatabookAppInvokeUPI"/>
+                </methods>
+            </class> <!-- scripts.Native.Khata.KhataBook -->
+        </classes>
+    </test> <!-- Khatabook enhanceweb -->
+    <test thread-count="20" verbose="0" name="AddNPay-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_UPI_S"/>
+                </methods>
+            </class> <!-- scripts.AddNPay -->
+        </classes>
+    </test> <!-- AddNPay-enhancedwap -->
+    <test thread-count="20" verbose="0" name="PGP-27607 subscription ADDNPAY through UPI" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForCreateSubsUsingAddnPayThroughUPIEnhancedFlow"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- PGP-27607 subscription ADDNPAY through UPI -->
+    <test thread-count="20" verbose="0" name="PGP-20291 and PGP-18062 UpiOfflineFlag" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="Verify_Offline_Flag"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGP-20291 and PGP-18062 UpiOfflineFlag -->
+    <test thread-count="20" verbose="0" name="CheckoutJS UPI Intent Flow UI REVAMP" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="ValidateUPICollectpaymodeNotVisiblewithIntentOnlyEnabled"/>
+                    <include name="PGP_27157_ValidateBankOffersNotVisiblewithPWPMerchantfterLoggingIn"/>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisFalse"/>
+                </methods>
+            </class> <!-- scripts.Native.checkoutjs.CheckoutJsUPIIntent -->
+        </classes>
+    </test> <!-- CheckoutJS UPI Intent Flow UI REVAMP -->
+    <test thread-count="20" verbose="0" name="PGP-27607 AppInvoke ADDNPAY through UPI" parallel="tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.FetchPaymentPage">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForAppInvokeAddNPayThroughUPI"/>
+                </methods>
+            </class> <!-- scripts.Native.FetchPaymentPage -->
+        </classes>
+    </test> <!-- PGP-27607 AppInvoke ADDNPAY through UPI -->
+    <test thread-count="20" verbose="0" name="Deffered for risk testcases for rent" parallel="tests">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateRiskAcceptNotNullForUPI"/>
+                </methods>
+            </class> <!-- scripts.DeferredCheckout -->
+        </classes>
+    </test> <!-- Deffered for risk testcases for rent -->
+    <test thread-count="20" verbose="0" name="Hybrid with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <include name="hybrid_UPI_S"/>
+                </methods>
+            </class> <!-- scripts.Hybrid -->
+        </classes>
+    </test> <!-- Hybrid with enhancedweb -->
+    <test thread-count="20" verbose="0" name="PGOnly with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGOnly with enhancedweb -->
+    <test thread-count="20" verbose="0" name="temp-PGP-24778 : Enhanced WAP " parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidUPI"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- temp-PGP-24778 : Enhanced WAP  -->
+    <test thread-count="20" verbose="0" name="PGP-27609" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateUPITxwForAddNPAYWhenUPINotEnabled"/>
+                    <include name="validateUPIPayModesWhenPrefEnabled"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGP-27609 -->
+    <test thread-count="20" verbose="0" name="PGP-28936 enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedErrorMsgForUPITxnWhenVPAIsNotEntered"/>
+                    <include name="testLocalisedSuccessUPITxn"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGP-28936 enhancedweb -->
+    <test thread-count="20" verbose="0" name="Native.FetchVPADetails" parallel="tests">
+        <classes>
+            <class name="scripts.Native.FetchVPADetails">
+                <methods>
+
+                </methods>
+            </class> <!-- scripts.Native.FetchVPADetails -->
+        </classes>
+    </test> <!-- Native.FetchVPADetails -->
+    <test thread-count="20" verbose="0" name="PGOnly-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_244_successfulPGOnlyUPI"/>
+                    <include name="PGP_266_successfulPGOnlyUPITxnWhenUserLoggedIn"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGOnly-enhancedwap -->
+    <test thread-count="20" verbose="0" name="AddNPay  with enhancedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="addnPay_UPI_S"/>
+                </methods>
+            </class> <!-- scripts.AddNPay -->
+        </classes>
+    </test> <!-- AddNPay  with enhancedweb -->
+    <test thread-count="20" verbose="0" name="PGP-36410 - Test VPA issue" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="vpaIssue"/>
+                    <include name="loadMerchants"/>
+                </methods>
+            </class> <!-- scripts.UI.UITests -->
+        </classes>
+    </test> <!-- PGP-36410 - Test VPA issue -->
+    <test thread-count="20" verbose="0" name="Native Plus ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                    <include name="TC_PT_018_MutualFund"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native Plus ProcessTransactionTests -->
+    <test thread-count="20" verbose="0" name="Native ProcessTransactionTests" parallel="methods">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="testMutualFundOrderSuccessByUPICollectWhenNonMatchingWebsiteProvided"/>
+                    <include name="TC_PT_018_MutualFund"/>
+                </methods>
+            </class> <!-- scripts.Native.ProcessTransactionTests -->
+        </classes>
+    </test> <!-- Native ProcessTransactionTests -->
+    <test thread-count="20" verbose="0" name="Native UPI polling Tests" parallel="tests">
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests">
+                <methods>
+                    <include name="verifyTransactionStatusinFailureUPITxn"/>
+                    <include name="verifyTransactionStatusinPendingUPITxn"/>
+                    <include name="verifyTransactionStatusinUPIOfflineSuccessUPITxn"/>
+                    <include name="verifyTransactionStatusinHybridFailureUPITxn"/>
+                </methods>
+            </class> <!-- scripts.TransactionStatusV1Tests -->
+        </classes>
+    </test> <!-- Native UPI polling Tests -->
+    <test thread-count="20" verbose="0" name="CheckoutJS UPI Intent Flow" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="ValidateUPICollectpaymodeNotVisiblewithIntentOnlyEnabled"/>
+                    <include name="PGP_27157_ValidateBankOffersNotVisiblewithPWPMerchantfterLoggingIn"/>
+                </methods>
+            </class> <!-- scripts.Native.checkoutjs.CheckoutJsUPIIntent -->
+        </classes>
+    </test> <!-- CheckoutJS UPI Intent Flow -->
+    <test thread-count="20" verbose="0" name="PGP-34678 Verify Upi collect Tab on Enhanced web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUPICollect_Via_Login"/>
+                    <include name="VerifyUPICollect_Tab_LoggedIn"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- PGP-34678 Verify Upi collect Tab on Enhanced web -->
+    <test thread-count="20" verbose="0" name="PGP-29589 - Flexi subscription testcases for renewal with upi"
+          parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="VerifyFlexiTrueInSubsContractV2ForSubsRenewalWithUPI"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPIRenewSubs -->
+        </classes>
+    </test> <!-- PGP-29589 - Flexi subscription testcases for renewal with upi -->
+    <test thread-count="20" verbose="0" name="Offline Txn" parallel="methods">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="PGP_531_OfflineTxn_UPI_Collect"/>
+                </methods>
+            </class> <!-- scripts.api.Offline.OffLineTxn -->
+        </classes>
+    </test> <!-- Offline Txn -->
+    <test thread-count="20" verbose="0" name="Non-matching Website TC&#039;s" parallel="tests">
+        <classes>
+            <class name="scripts.api.Offline.OffLineTxn">
+                <parameter name="theme" value="enhancedweb_revamp"/>
+                <methods>
+                    <include name="testOfflineTxn_UPI_CollectWhenNonMatchingWebsiteProvided"/>
+                </methods>
+            </class> <!-- scripts.api.Offline.OffLineTxn -->
+        </classes>
+    </test> <!-- Non-matching Website TC's -->
+    <test thread-count="20" verbose="0" name="Verify UPI Collect timer is starting from 5 minutes" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyUpiCollect5MinTimer"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- Verify UPI Collect timer is starting from 5 minutes -->
+    <test thread-count="20" verbose="0" name="Corporate Cards on Enhanced Web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifySuccessfullSavedUPITxnADDNPAY"/>
+                    <include name="VerifySuccessfullSavedUPITxnHYBRID"/>
+                    <include name="VerifySuccessfullSavedUPITxn"/>
+                </methods>
+            </class> <!-- scripts.PGOnly -->
+        </classes>
+    </test> <!-- Corporate Cards on Enhanced Web -->
+    <test thread-count="20" verbose="0" name="PGP-40016" parallel="tests">
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICheckDeviceDetail">
+                <methods>
+                    <include name="validatedevicedetail"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPICheckDeviceDetail -->
+        </classes>
+    </test> <!-- PGP-40016 -->
+    <test thread-count="20" verbose="0" name="UPICollectAppName test for enahncedweb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPICollectAppName">
+                <methods>
+                    <include name="appName_VPA_OK"/>
+                    <include name="appName_VPA_Default"/>
+                    <include name="appName_VPA_YBL"/>
+                    <include name="appName_VPA_UPI"/>
+                    <include name="appName_VPA_Paytm"/>
+                </methods>
+            </class> <!-- scripts.UPICollectAppName -->
+        </classes>
+    </test> <!-- UPICollectAppName test for enahncedweb -->
+    <test thread-count="20" verbose="0" name="UPICollectAppName test for enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPICollectAppName">
+                <methods>
+                    <include name="appName_VPA_OK"/>
+                    <include name="appName_VPA_Default"/>
+                    <include name="appName_VPA_YBL"/>
+                    <include name="appName_VPA_UPI"/>
+                    <include name="appName_VPA_Paytm"/>
+                </methods>
+            </class> <!-- scripts.UPICollectAppName -->
+        </classes>
+    </test> <!-- UPICollectAppName test for enhancedwap -->
+    <test thread-count="20" verbose="0" name="PGP-36177 UPI Autopay Checkout flow" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.CheckoutJsUPICollectSubs">
+                <methods>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="UpiNumericIdCmid_01"/>
+                    <include name="UpiNumericIdCmid_02"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.CheckoutJsUPICollectSubs -->
+        </classes>
+    </test> <!-- PGP-36177 UPI Autopay Checkout flow -->
+    <test thread-count="20" verbose="0" name="PGP-36144 AddnPay" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="verifyAddnPayviaSavedVPAgreater2k"/>
+                    <include name="verifyAddnPayviaSavedVPA2k"/>
+                </methods>
+            </class> <!-- scripts.AddNPay -->
+        </classes>
+    </test> <!-- PGP-36144 AddnPay -->
+    <test thread-count="20" verbose="0" name="UPICollectNativeSubs" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_MF_Subs_FailureTransaction"/>
+                    <include name="TC_008_Native_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Native_Subs_FreqUnitMonth"/>
+                    <include name="TC_008_Native_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_001_Native_Subs_Failure_ErrorCode"/>
+                    <include name="TC_004_Native_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_003_Native_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_001_Native_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_004_Native_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_002_Native_Subs_StartDateIsFuture"/>
+                    <include name="TC_006_Native_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_004_Native_Subs_FreqIsBlank"/>
+                    <include name="TC_002_Native_MF_Subs_FreqUnitMonth"/>
+                    <include name="Validate_PaymentServiceTypeNative_Subs_PartialRefund"/>
+                    <include name="TC_001_Native_Subs_FreqUnitDay"/>
+                    <include name="TC_003_Native_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_004_Native_MF_Subs_FreqUnitQuater"/>
+                    <include name="Validate_PaymentServiceTypeNative_Subs_FullRefund"/>
+                    <include name="TC_001_Native_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="TC_004_Native_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Native_Subs_FailureTransaction"/>
+                    <include name="TC_001_Native_Subs_OnDemandValidations"/>
+                    <include name="TC_004_Native_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_006_Native_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_001_NativeMF_SIP_Subs_Failure_ErrorCode"/>
+                    <include name="TC_003_Native_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_004_Native_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_001_Native_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_007_Native_MF_Subs_FreqUnitWeek"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPICollectNativeSubs -->
+        </classes>
+    </test> <!-- UPICollectNativeSubs -->
+    <test thread-count="20" verbose="0" name="PGP-36144 addMoney" parallel="tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="verifyAddMoneyviaSavedVPA2k"/>
+                    <include name="verifyAddMoneyviaSavedVPAgreater2k"/>
+                </methods>
+            </class> <!-- scripts.AddMoneyUber -->
+        </classes>
+    </test> <!-- PGP-36144 addMoney -->
+    <test thread-count="20" verbose="0" name="UPIEnhanceEnhanceWeb" parallel="methods">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_02_UPISubsRenewPPP"/>
+                    <include name="TC_001_Enhanced_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_Subs_Failure_ErrorCode"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_006_Enhanced_Subs_FreqUnitSemiAnually"/>
+                    <include name="UpiVpaCases_08"/>
+                    <include name="UpiVpaCases_07"/>
+                    <include name="UpiVpaCases_05"/>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Enhanced_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="UpiNumericIdCmid_01"/>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"/>
+                    <include name="TC_001_Enhanced_Subs_FreqUnitDay"/>
+                    <include name="UpiNumericId_02"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.EnhanceUPICollectSubs -->
+        </classes>
+    </test> <!-- UPIEnhanceEnhanceWeb -->
+    <test thread-count="20" verbose="0" name="UPIEnhanceEnhanceWap" parallel="methods">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_02_UPISubsRenewPPP"/>
+                    <include name="TC_001_Enhanced_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_Subs_Failure_ErrorCode"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_006_Enhanced_Subs_FreqUnitSemiAnually"/>
+                    <include name="UpiVpaCases_01"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="UpiVpaCases_02"/>
+                    <include name="UpiVpaCases_08"/>
+                    <include name="UpiVpaCases_07"/>
+                    <include name="UpiVpaCases_05"/>
+                    <include name="TC_002_Enhanced_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_002_Enhanced_Subs_FreqUnitMonth"/>
+                    <include name="TC_004_Enhanced_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_001_Enhanced_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="UpiNumericIdCmid_02"/>
+                    <include name="UpiNumericIdCmid_01"/>
+                    <include name="TC_003_Enhanced_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_007_Enhanced_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_001_Enhanced_Subs_FreqUnitDay"/>
+                    <include name="UpiNumericId_02"/>
+                    <include name="UpiNumericId_01"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.EnhanceUPICollectSubs -->
+        </classes>
+    </test> <!-- UPIEnhanceEnhanceWap -->
+    <test thread-count="20" verbose="0" name="UpiPushTransactionTestCases" parallel="tests">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="validateUpiPushTxnWithSimplifiedPromo"/>
+                    <include name="validateUpiPushTxn"/>
+                    <include name="validateUpiPushAddAndPayTxn"/>
+                    <include name="validateUpiPushFailTxn"/>
+                    <include name="PGP_34485_p2mErrorCodes"/>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct3"/>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct5"/>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct4"/>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct6"/>
+                    <include name="validateUpiPushHybridTxn"/>
+                    <include name="PGP_40525_TC_02_validateUpiPushTxnSubs"/>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct_OFFus"/>
+                    <include name="validateUpiPushPendingTxn"/>
+                    <include name="validateUpiPushTxnWithAndPromo"/>
+                    <include name="PGP_40525_TC_01_validateUpiPushTxnSubs"/>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct_ONus"/>
+                </methods>
+            </class> <!-- scripts.api.UPI.UpiTransactionTests -->
+        </classes>
+    </test> <!-- UpiPushTransactionTestCases -->
+    <test thread-count="20" verbose="0" name="Upi Intent tests " parallel="tests">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+                <methods>
+                    <include name="testOrderSuccessByUpiIntent_PaytmMoneyWhenNonMatchingWebsiteProvided"/>
+                    <include name="failUpiIntent_staticQR"/>
+                    <include name="failUpiIntent_deepLink"/>
+                    <include name="verifyqrCodeIdInRequest"/>
+                </methods>
+            </class> <!-- scripts.Native.UpiIntent -->
+        </classes>
+    </test> <!-- Upi Intent tests  -->
+    <test thread-count="20" verbose="0" name="UPIRenewSubs" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_001_Renew_Failure_MF_Subs_UPICollect"/>
+                    <include name="TC_001_Renew_Subs_WithInGracePeriod"/>
+                    <include name="TC_001_Renew_Failure_Subs_NotPerFrequency"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMANDSameDayRenewal"/>
+                    <include name="TC_004_Renew_Subs_AmountTypeVariable_Freq_Week"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_ThreeDaysRenewal"/>
+                    <include name="TC_001_Renew_RetryCountBreach"/>
+                    <include name="TC_001_Renew_Subs_MultipleRenewal"/>
+                    <include name="TC_001_Renew_MF_Subs_WithInGracePeriod"/>
+                    <include name="TC_002_Renew_Subs_AmountTypeVariable_Freq_Day"/>
+                    <include name="TC_006_Renew_MF_Subs_AmountTypeVariable_Freq_BiMonthly"/>
+                    <include name="TC_001_Renew_Subs_AmountTypeFix_Freq_Month"/>
+                    <include name="TC_001_Renew_Failure_Subs_UPIIntent"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPIRenewSubs -->
+        </classes>
+    </test> <!-- UPIRenewSubs -->
+    <test thread-count="20" verbose="0" name="UPIIntentNativeSubs" parallel="methods">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_Subs_Failure_ErrorCode"/>
+                    <include name="TC_001_Native_MF_Subs_FailureTransaction"/>
+                    <include name="TC_002_Native_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_006_Native_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_001_Native_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Native_Subs_FailureTransaction"/>
+                    <include name="TC_004_Native_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Native_Subs_FreqUnitYear"/>
+                    <include name="PGP_40525_TC_02_Native_Subs"/>
+                    <include name="TC_001_NativeMF_SIP_Subs_Failure_ErrorCode"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.UPIIntentNativeSubs -->
+        </classes>
+    </test> <!-- UPIIntentNativeSubs -->
+    <test name="MCC ADDMONEY UPICOllect">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.MCC_ADD_COLLECT">
+                <methods>
+                    <include name="addnPay_UPI_Collect_FULLKYC"/>
+                    <include name="addnPay_UPI_Collect_MINKYC"/>
+                    <include name="addMoney_UPI_Collect_FULLKYC"/>
+                    <include name="addMoney_UPI_Collect_MINKYC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI CC">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedwhenCCONUPIRAILSENABLEDisY"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisN"/>
+                    <include name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NATIVE : MCC ADDNPAY UPICOllect">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MCC_ADD_COLLECT">
+                <methods>
+                    <include name="validateupiCollectToAddPayFullKyc"/>
+                    <include name="validateupiCollectToAddPayMinKyc"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44577 UPI Intent Retry-1">
+        <classes>
+            <class name="scripts.api.UPI.UPI_Intent_Disable">
+                <methods>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_MWeb()"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_MWeb"/>
+                    <include name="UPI_INTENTEnabled_FPOV5_IOS_MWeb_nullWorkFlow"/>
+                    <include name="UPI_INTENTEnabled_FPOV5_Andriod_MWeb_nullWorkFlow"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_WEB"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_WAP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_APP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upicc">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUpiPushCCTxn"/>
+                    <include name="validateUpiCollectCCTxn"/>
+                    <include name="validateUpiPushCCTxnOffline"/>
+                    <include name="validateUpiCollectCCTxnOffline"/>
+                    <include name="validateUpiCCCCOnUPIBlacklistedEnabled"/>
+                    <include name="validateUpiCCCCOnUPIBlacklistedDisabled"/>
+                    <include name="validateUpiCcP2pMerchantEnabled"/>
+                    <include name="validateUpiCcP2pMerchantDisabled"/>
+                    <include name="validateUpiCcOnusAndPrefDisabled"/>
+                    <include name="validateUpiCcOnusAndPrefEnabled"/>
+                    <include name="validateUpiccRailsEnabled"/>
+                    <include name="validateUpiCconupiRailsDisabled"/>
+                    <include name="validateUpiCcAddNPayEnabled"/>
+                    <include name="validateUpiccUpiCcNativeAddMoneyEnabled"/>
+                    <include name="validateUpiccUpiCcSubsDisabled"/>
+                    <include name="validateUpiccUpiCcSubsEnabled"/>
+                    <include name="validateUpiccWhenFetchAddMoneyOptionsTrue"/>
+                    <include name="validateUpiccWhenFetchAddMoneyOptionsFalse"/>
+                    <include name="validateDisplayAccountNoAndBankLogoUrl"/>
+                    <include name="validateDisplayAccountNoAndBankLogoUrlOffline"/>
+                    <include name="validateUpiCCOnlineMidLessThen2000"/>
+                    <include name="validateUpiCCOnlineMidMoreThen2000"/>
+                    <include name="validateUpiCCOnlineMidEquals2000"/>
+                    <include name="validateUpiCCOnlineMidLessThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOnlineMidMoreThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOnlineMidEquals2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidEqualTo2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForBigndustryCconupirailsDisabled"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForBigndustryCconupirailsDisabled"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForBigndustryCconupirailsDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NATIVE : MCC ADDNPAY and ADDMONEY UPIPUSH">
+        <classes>
+            <class name="scripts.MCCADDNPAY">
+                <methods>
+                    <include name="validateUpiPushTxnADDNPAY"/>
+                    <include name="validateUpiPushTxnADDNPAYMINKYC"/>
+                    <include name="validateUpiPushTxnADDNPAYNOKYC"/>
+                    <include name="validateUpiPushTxnADDMONEY"/>
+                    <include name="validateUpiPushTxnADDMONEYMINKYC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus ProcessTransactionTests 2" parallel="methods" thread-count="6">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <exclude name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                    <exclude name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Fetch payment instrument for offline txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <exclude name="FetchPayIns_SavedVpaV2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+<!--    <test name="PGP-34678 Verify Upi collect Tab on Enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <exclude name="VerifySuccessfullSavedUPITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpiPushTransactionTestCases">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <exclude name="PGP_40525_TC_01_validateUpiPushTxnSubs"/>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct_ONus"/>
+                </methods>
+            </class>
+        </classes>
+    </test> -->
+    <test name="theia API's 9">
+        <classes>
+            <class name="scripts.api.theia.checkUPIAccountExist.ChecksumUPIAccountExistTest">
+                <methods>
+                    <exclude name="test when head tokenType = ''"/>
+                    <exclude name="test when head requestTimestamp is not provided"/>
+                    <exclude name="test when head requestTimestamp equals random value"/>
+                    <exclude name="test when head tokenType is not provided"/>
+                    <exclude name="test CHECK_UPI_ACCOUNT_EXISTS=N on merchant error will invoke"/>
+                    <exclude name="test when head token equals checksum generated using different merchant's key"/>
+                    <exclude name="test when head tokenType equals random value"/>
+                    <exclude name="test when head requestId = ''"/>
+                    <exclude name="test when head channelId = ''"/>
+                    <exclude name="test when head tokenType = null"/>
+                    <exclude name="test when head requestId is not provided"/>
+                    <exclude
+                            name="test error message is retuned in response is incorrect mobileNumber is sent in request body"/>
+                    <exclude name="test when head channelId equals random value"/>
+                    <exclude name="test with invalid checksum it should invoke error"/>
+                    <exclude name="test success response if all mandatory parameters are sent and correct"/>
+                    <exclude name="test error message is retuned in response is incorrect mid is sent in request body"/>
+                    <exclude name="test when head channelId = null"/>
+                    <exclude name="test when head requestTimestamp = null"/>
+                    <exclude name="test when head requestTimestamp = ''"/>
+                    <exclude
+                            name="test mid is mandatory parameter and error message is returned in case mid is not send in request body"/>
+                    <exclude name="test when head requestId = null"/>
+                    <exclude name="test upiAccountWithTokenExists=false upi account doesnot exist for a number"/>
+                    <exclude name="test when head channelId is not provided"/>
+                    <exclude name="test SSO token support is removed from the api"/>
+                    <exclude name="test when head requestId equals random value"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native UPI polling Tests 2">
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests">
+                <methods>
+                    <exclude name="verifyTransactionStatusinHybridPendingUPITxn"/>
+                    <exclude name="verifyTransactionStatusinHybridSuccessUPITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upicc 2">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <exclude name="validateUpiPushCCTxn"/>
+                    <exclude name="validateUpiPushCCTxnOffline"/>
+                    <exclude name="validateUpiCcAddNPayEnabled"/>
+                    <exclude name="validateUpiccUpiCcNativeAddMoneyEnabled"/>
+                    <exclude name="validateUpiccWhenFetchAddMoneyOptionsTrue"/>
+                    <exclude name="validateUpiccWhenFetchAddMoneyOptionsFalse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upilite">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <exclude name="validateUpiPushLiteTxn"/>
+                    <exclude name="validateUpiPushOffline"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="Hybrid-enhancedwap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <exclude name="hybrid_UPI_S"/>
+                    <exclude name="hybrid_UPI_S_sufficientBal"/>
+                </methods>
+            </class> <!-- scripts.Hybrid -->
+        </classes>
+    </test> <!-- Hybrid-enhancedwap -->
+    <test name="PGP-48011 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <exclude name="PGP_48011_TC01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48011">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <exclude name="PGP_48011_TC04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FetchPCFDetails 3">
+        <classes>
+            <class name="scripts.api.theia.fetchPcfDetails.fetchpcfdetail">
+                <methods>
+                    <exclude name="validatePCFDetailApiForBalancePaymodewithtxntoken"/>
+                    <exclude name="validatePCFDetailApiForBalancePaymodewithssotoken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44577 UPI Intent Retry-2">
+        <classes>
+            <class name="scripts.api.UPI.UPI_Intent_Disable">
+                <methods>
+                    <exclude name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_APP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_APP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_APP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_WAP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_WAP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_WAP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_IOS_WEB"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_IOS_WEB"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_IOS_WEB"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_WEB"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_WEB"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_WEB"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_WAP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_WAP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_WAP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV1_addMoneyPayOption_Android_APP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV2_addMoneyPayOption_Android_APP"/>
+                    <exclude name="UPI_INTENTDisabled_FPOV5_addMoneyPayOption_Android_APP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI CC 2">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <exclude
+                            name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <exclude
+                            name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisY"/>
+                    <exclude name="validateccOnUPIAllowedccOnUPIAllowedwhenCCONUPIRAILSENABLEDisY"/>
+                    <exclude
+                            name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletselectedwhenCCONUPIRAILSENABLEDisN"/>
+                    <exclude
+                            name="validateccOnUPIAllowedccOnUPIAllowedForAddNPayandwalletdeselectedwhenCCONUPIRAILSENABLEDisN"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpiLiteLimitCases">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <exclude name="validateUpiPushLiteTxnAmountMoreThenTxnLimit"/>
+                    <exclude name="validateUpiPushLiteTxnAmountMoreThenDailyLimit"/>
+                    <exclude name="validateUpiPushLiteTxnAmountMoreThenMonthlyLimit"/>
+                    <exclude name="validateUpiPushLiteTxnAmountMoreThenTxnLimitCotp"/>
+                    <exclude name="validateUpiPushLiteTxnAmountMoreThenDailyLimitCotp"/>
+                    <exclude name="validateUpiPushLiteTxnAmountMoreThenMonthlyLimitCotp"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <exclude name="ValidateTxnLimitForUPIPush"/>
+                    <exclude name="ValidateDailyLimitForUPIPush"/>
+                    <exclude name="ValidateMonthlyLimitForUPIPush"/>
+                    <exclude name="ValidateTxnLimitForUPIPushCotp"/>
+                    <exclude name="ValidateDailyLimitForUPIPushCotp"/>
+                    <exclude name="ValidateMonthlyLimitForUPIPushCotp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify expected parameters come in PTC response if UPI Push/Lite txn fails">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <exclude name="ValidateIncorrectPinPTCResp_UPIPush_Pref_On"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPILite_Pref_On"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPIPush_Pref_Off"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPILite_Pref_Off"/>
+                    <exclude name="ValidateSuccessPTCResp_UPIPush_Pref_On"/>
+                    <include name="ValidateSuccessPTCResp_UPILite_Pref_On"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpiLiteLimitCases1">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <exclude name="UPILITE_WithUPIPushExpress"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="FetchPCFDetails 2">
+        <classes>
+            <class name="scripts.api.theia.fetchPcfDetails.fetchpcfdetail">
+                <methods>
+                    <exclude name="validatePCFDetailApiForBalancePaymodewithtxntoken"/>
+                    <exclude name="validatePCFDetailApiForBalancePaymodewithssotoken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test thread-count="2" verbose="0" name="Hybrid-enhancedwap 2" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Hybrid">
+                <methods>
+                    <exclude name="hybrid_UPI_S"/>
+                    <exclude name="hybrid_UPI_S_sufficientBal"/>
+                </methods>
+            </class> <!-- scripts.Hybrid -->
+        </classes>
+    </test> <!-- Hybrid-enhancedwap -->
+    <test name="PGP-29010 Validating priority of UPI in fpo" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.PriorityParamUPI">
+                <methods>
+                   <include name="TC_005_fetch_QR_details"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-44577 UPI Intent Retry">
+        <classes>
+            <class name="scripts.genrateESNTest.generateEsnTest">
+                <methods>
+                    <include name="newESN_BankFormOptimizedFlow"/>
+                    <include name="newESN_NormaTxnFlow"/>
+                    <include name="CheckPref_In_PreferenceInfoExt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="PGP-61180-AllowedTpapCloseOrderTestSuite">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.AllowedTpapCloseOrderTests">
+                <methods>
+                    <include name="testCloseOrderHitWhenFF4JOnForRiskReject"/>
+                    <include name="testCloseOrderNotHitForOtherErrors"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite> <!-- UPI Suite -->

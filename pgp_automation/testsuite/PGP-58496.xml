@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Timeout Changes">
+
+    <test name="Native Subscription Timeout Changes">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="validateExpiryTime_MFSIP"/>
+                    <include name="validateExpiryTime_NativeSubs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Deferred Subscription Timeout Changes">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateExpiryTime_deferredFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Enhanced Subscription Tinmeout Changes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="validateExpiryTime_Enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

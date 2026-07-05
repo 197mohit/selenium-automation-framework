@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36144" verbose="1" parallel="tests" thread-count="2">
+
+    <test name="PGP-36144 AddnPay">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="verifyAddnPayviaSavedVPA2k"/>
+                    <include name="verifyAddnPayviaSavedVPAgreater2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-36144 addMoney">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyUber">
+                <methods>
+                    <include name="verifyAddMoneyviaSavedVPA2k"/>
+                    <include name="verifyAddMoneyviaSavedVPAgreater2k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

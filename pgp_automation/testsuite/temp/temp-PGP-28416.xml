@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28416" >
+    <test name="Offline Cases for SDKType">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="validateAIOSDKTypeParam"/>
+                    <include name="validateCUISDKTypeParam"/>
+                    <include name="validateSDKTypeParamWithoutCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Cases for SDK Type">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <parameter name="isNativePlus" value="false"/>
+                <methods>
+                    <include name="validateSDKTypeAIO_SDK_PGPCP"/>
+                    <include name="validateSDKTypeCUI_SDK_PGPCP"/>
+                    <include name="validateSDKTypeAIO_SDK_PGCOP"/>
+                    <include name="validateSDKTypeCUI_SDK_PGCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+</suite>

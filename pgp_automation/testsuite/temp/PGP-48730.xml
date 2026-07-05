@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48382" verbose="1" thread-count="3">
+    <test name="PGP-48382- 1">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="TC01_PGP_48382"/>
+                    <include name="TC02_PGP_48382"/>
+                    <include name="TC03_PGP_48382"/>
+                    <include name="TC04_PGP_48382"/>
+                    <include name="TC05_PGP_48382"/>
+                    <include name="TC06_PGP_48382"/>
+                    <include name="TC07_PGP_48382"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2-29862 - Charge amount in Initiate Transaction API" verbose="1">
+    <test name="ChargeAmountInInitiateTransactionApi">
+        <classes>
+            <class name="scripts.api.theia.InitiateWithChargeAmount.ChargeAmountInInitiateTransactionApi">
+                <methods>
+                    <include name="validateTxnTokenGenerationWithChargeAmountInInitiateAPI"/>
+                    <include name="validateWhenValueOfChargeAmountIsBlankInInitiateAPI"/>
+                    <include name="validateWhenValueOfChargeAmountIsNullInInitiateAPI"/>
+                    <include name="validateWhenValueOfChargeAmountIsNullAsStringInInitiateAPI"/>
+                    <include name="validateIncorrectChargeAmountInInitiateAPI"/>
+                    <include name="validateCorrectChargeAmountInInitiateAPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SmokeJDK" verbose="1" thread-count="5" parallel="classes">
+    <test name="UPIEnhanceEnhanceWeb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                    <include name="verifySubsLessThan5k"/>
+                  </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaytmCC with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PaytmDigitalCard">
+                <methods>
+                    <include name="PGP_467_PostPaidVisibleAfterLogin"/>
+                    <include name="PGP_474_PaytmCCNotEnabledOnUser"/>
+                    <include name="postpaidSignupBannerNotVisible"/>
+                    <include name="PGP_466_PostPaidNotVisibleBeforeLogin"/>
+                    <include name="PGP_473_PaytmCCNotEnabledOnMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Net Banking test cases">
+        <classes>
+            <class name="scripts.api.NetBanking.NBPG2">
+                <methods>
+                    <include name="validateCOPFullTrafficPendingNBTxnPG2MID"/>
+                    <include name="midNotPrsentInFF4JButPrefEnabledNBRoutedToPG2PendingTxn"/>
+                    <include name="validatePG2COThenPayFullTrafficYPPBLSuccessCheckoutJSPageTxn"/>
+                    <include name="validateFullTrafficCOTPSuccessNBTxn"/>
+                    <include name="validateFullTrafficCOTPPendingNBTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkoutjs UI test cases web UI REVAMP 1">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="UpiNumericIdTestCase_07"/>
+                    <include name="PGP_40763_TC_04_validateWallet_Selected"/>
+                    <include name="TC_001_VerifyBankmandatePaymodeAppearingOnCashierPage"/>
+                    <include name="verifyRupeeSymbolInPCFFlow"/>
+                    <include name="ValidateHtmlRenderParamWhenWorkflowIsNotCheckoutandFF4jDisabled"/>
+                    <include name="verify_closed_wallet_user_error_message_when_all_paymodes_disabled_except_wallet"/>
+                    <include name="VerifyBankLogoforSavedVpa"/>
+                    <include name="FooterTextColourDoesntChangeAfterChangingHeaderTextColourFromConfig"/>
+                    <include name="TC_010_VerifyChangeInBankTop5BankAppears"/>
+                    <include name="VerifyBankLogoforNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Process Subscription">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_39530_TC_03_Subs_GD_CC"/>
+                    <include name="TC_ValidateSubsFrequencyInFpo"/>
+                    <include name="TC_NPS009_ProcessFixSubscriptionPPIYear"/>
+                    <include name="TC05_CheckFPOResponse_AccountNoPassedAsNULL"/>
+                    <include name="TC03_CheckFPOResponse_AccountNoIncorrect"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Initiate Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction"/>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Native Plus" verbose="1">
+    <test name="Native Plus" parallel="methods" thread-count="14">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_EMI_Hyb_Success"/>
+                    <include name="successCorporateEMIBinCorporateMerchant"/>
+                    <include name="TC_PT_0CostEMI_Success"/>
+                    <include name="TC_PT_EMI_Success"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="hybridTxnUsingEMI"/>
+                    <include name="retryTxnUsingEMI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMISubvention">
+        <classes>
+            <class name="scripts.EMISubvention">
+                <methods>
+                    <include name="verifyPGOnlyWithEMIIDInInitiateTransaction"/>
+                    <include name="verifyEMIWithEMIIDWithSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="EMISubventionNew">
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="t86initiatePTCAPIPhase2"/>
+                    <include name="t88initiatePTCAPIPhase2"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                    <include name="t27"/>
+                    <include name="t28"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="t87initiatePTCAPIPhase2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="TC_FPC_007"/>
+                    <include name="TC_FPC_008"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

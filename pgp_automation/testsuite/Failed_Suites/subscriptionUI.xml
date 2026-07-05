@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SubscriptionUI_Failed" verbose="1" thread-count="20" parallel="tests">
+    <test thread-count="20" verbose="0" name="Subscription_renewal_via_wallet_only on enhanced web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_198_RenewalRequestWhenSufficientWalletBalance"/>
+                    <include name="PGP_209_multipleRenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"/>
+                    <include name="PGP_215_RetryRenewalRequestWhenRetryCountIsGreaterThanZero"/>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"/>
+                    <include name="PGP_199_RenewalRequestWhenInsufficientWalletBalance"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly -->
+        </classes>
+    </test> <!-- Subscription_renewal_via_wallet_only on enhanced web -->
+    <test thread-count="20" verbose="0" name="Subscription_renewal_via_wallet_only on enhanced wap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_198_RenewalRequestWhenSufficientWalletBalance"/>
+                    <include name="PGP_209_multipleRenewalRequestWithinGracePeriod"/>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"/>
+                    <include name="PGP_215_RetryRenewalRequestWhenRetryCountIsGreaterThanZero"/>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"/>
+                    <include name="PGP_199_RenewalRequestWhenInsufficientWalletBalance"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly -->
+        </classes>
+    </test> <!-- Subscription_renewal_via_wallet_only on enhanced wap -->
+    <test thread-count="20" verbose="0" name="PGP-27607 subscription ADDNPAY through UPI" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyisAddNPayFlagForCreateSubsUsingAddnPayThroughUPIEnhancedFlow"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- PGP-27607 subscription ADDNPAY through UPI -->
+    <test thread-count="20" verbose="0" name="Dynamic URL update for EnhancedWeb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- Dynamic URL update for EnhancedWeb -->
+    <test thread-count="20" verbose="0" name="Dynamic URL update for EnhancedWap" parallel="tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- Dynamic URL update for EnhancedWap -->
+    <test thread-count="20" verbose="0" name="bank Mandate Cases Enhanced" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="TC_001_Verify_Fields_are_noneditable"/>
+                    <include name="TC_002_Verify_Fields_are_editable"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- bank Mandate Cases Enhanced -->
+    <test thread-count="20" verbose="0" name="PGP-26916 Creating subscriptions(Included)" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="TC_06"/>
+                    <include name="TC_03"/>
+                    <include name="TC_04"/>
+                </methods>
+            </class> <!-- scripts.SubscriptionBlinkCheckout -->
+        </classes>
+    </test> <!-- PGP-26916 Creating subscriptions(Included) -->
+    <test thread-count="20" verbose="0" name="PGP-29588 Enhanced subscription testcases for freq fortnight"
+          parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="verifySuccessfulCreateSubscriptionforFreqFortnight"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- PGP-29588 Enhanced subscription testcases for freq fortnight -->
+    <test thread-count="20" verbose="0" name="PGP-37902 on enhanced" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="verify_closed_wallet_user_error_message_SubsFlow"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaWalletOnly -->
+        </classes>
+    </test> <!-- PGP-37902 on enhanced -->
+    <test thread-count="20" verbose="0" name="PGP-23279 tests" parallel="tests">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="PGP_23279_verifySuccessBankMandateNativeMFSIPwithhAppInvokeFlowUpfrontAmt"/>
+                    <include name="PGP_23279_verifySuccessBankMandateNativeSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <include name="PGP_23279_verifySuccessPPBLSubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                    <include name="PGP_23279_verifySuccessPPBLSubscriptionwithhAppInvokeFlowZeroAmt"/>
+                    <include name="PGP_23279_verifySuccessPPISubscriptionwithhAppInvokeFlowUpfrontAmt"/>
+                </methods>
+            </class> <!-- scripts.Native.subscription.NativeProcessSubscription -->
+        </classes>
+    </test> <!-- PGP-23279 tests -->
+    <test thread-count="20" verbose="0" name="PGP-20306" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="testCardIndexNoIsAbsentInOutputWhenCardTokenRequiredIsFalseInOrder"/>
+                    <include name="testCardIndexNoIsAbsentInOutputWhenCardTokenRequiredParamIsNotPassedInOrder"/>
+                </methods>
+            </class> <!-- scripts.AddMoneyMP -->
+        </classes>
+    </test> <!-- PGP-20306 -->
+    <test thread-count="20" verbose="0" name="Subs UI Enhancements-Redirectional Flow" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_40026_TC_BankMandateDefaultAuthMode"/>
+                    <include name="PGP_35247_TC_01_Subs_UIUX_Month"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc -->
+        </classes>
+    </test> <!-- Subs UI Enhancements-Redirectional Flow -->
+    <test thread-count="20" verbose="0"
+          name="Verify the UI Text for the Subscription Flow when values in MerchantStaticConfig DB updated"
+          parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="PGP_37934_Verify_Subs_UI_Text_forBM"/>
+                    <include name="PGP_37934_Verify_Subs_UI_Text"/>
+                    <include name="loadMerchants"/>
+                </methods>
+            </class> <!-- scripts.UI.UITests -->
+        </classes>
+    </test> <!-- Verify the UI Text for the Subscription Flow when values in MerchantStaticConfig DB updated -->
+    <test thread-count="20" verbose="0" name="PGP-30170 wallet not selected by default in subscription enhanced txn"
+          parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_35247_TC_02_Subs_UIUX_DAY"/>
+                    <include name="PGP_35247_TC_04_Subs_UIUX_ONDEMAND"/>
+                    <include name="PGP_35247_TC_03_Subs_UIUX_YEAR"/>
+                    <include name="PGP_35247_TC_08_Subs_UIUX_CC"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc -->
+        </classes>
+    </test> <!-- PGP-30170 wallet not selected by default in subscription enhanced txn -->
+    <test thread-count="20" verbose="0" name="Subscription_via_ppi on enhanced wap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOnePPIY"/>
+                    <include name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOnePPIYSubsonWalletEnabled"/>
+                    <include name="ValidateFailedZeroAmtPaymentWith_expiredSavedCard"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- Subscription_via_ppi on enhanced wap -->
+    <test thread-count="20" verbose="0" name="PGP-39530 Enhanced" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_39530_TC_01_Subs_GD_CC"/>
+                    <include name="PGP_39530_TC_02_Subs_GD_CC"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc -->
+        </classes>
+    </test> <!-- PGP-39530 Enhanced -->
+    <test thread-count="20" verbose="0" name="PGP-26916 Creating subscriptions UI REVAMP(Included)" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"/>
+                    <include name="TC_06"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"/>
+                    <include name="TC_04"/>
+                    <include name="TC_01"/>
+                    <include name="TC_05"/>
+                    <include name="sC_VIA_PPI"/>
+                    <include name="TC_02"/>
+                    <include name="PGP_41837_TC02_BankMandateJS"/>
+                    <include name="PGP_35247_TC_01_YEAR"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                </methods>
+            </class> <!-- scripts.SubscriptionBlinkCheckout -->
+        </classes>
+    </test> <!-- PGP-26916 Creating subscriptions UI REVAMP(Included) -->
+    <test thread-count="20" verbose="0" name="PGP-29580 Subscription_via_cc_dc" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_Bank_Mandate"/>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedIn_Bank_Mandate"/>
+                    <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_Bank_Mandate"/>
+                    <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_Bank_Mandate"/>
+                    <include name="PGP_40525_TC01_UPICollectSubs"/>
+                    <include name="PGP_40525_TC02_UPICollectSubs"/>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC04_User_loggedIn_PPBL"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc -->
+        </classes>
+    </test> <!-- PGP-29580 Subscription_via_cc_dc -->
+    <test thread-count="20" verbose="0" name="PGP-42982 - 1" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC01_ValidateUI"/>
+                </methods>
+            </class> <!-- scripts.UpiQrFlow -->
+        </classes>
+    </test> <!-- PGP-42982 - 1 -->
+    <test thread-count="20" verbose="0" name="PGP-29580 Subscription_via_cc_dc 2" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc">
+                <methods>
+                    <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_PPBL"/>
+                    <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_PPBL"/>
+                    <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_Balance"/>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedin_PPBL"/>
+                    <include name="PGP_29580_Appinvokeallowed_TC02_User_loggedIn_Wallet"/>
+                    <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_BalanceWallet_SSoSent"/>
+                    <include name="PGP_29580_AutoAppInvoke_Appinvokeallowed_TC03_User_loggedIn_BalanceWallet_SSOSent"/>
+                    <include name="PGP_29580_Appinvokeallowed_TC04_User_loggedIn_Balance"/>
+                    <include name="PGP_29580_AutoAppInvoke_appinvokeallowed_TC_User_loggedIn_Wallet"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaCcDc -->
+        </classes>
+    </test> <!-- PGP-29580 Subscription_via_cc_dc 2 -->
+    <test thread-count="20" verbose="0" name="PGP-42982 - 2" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UpiQrFlow">
+                <methods>
+                    <include name="TC03_ValidateUI_CheckoutJS"/>
+                </methods>
+            </class> <!-- scripts.UpiQrFlow -->
+        </classes>
+    </test> <!-- PGP-42982 - 2 -->
+    <test thread-count="20" verbose="0" name="Subscription_via_ppi on enhanced wap 2" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_25155_verifyAuthModesinSubscriptionBankMandate"/>
+                    <include name="TC_001_Verify_Fields_are_noneditable"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <include name="validatePPBLTxnIfAllPaymodesAreAvailable"/>
+                    <include name="TC_002_Verify_Fields_are_editable"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_87_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- Subscription_via_ppi on enhanced wap 2 -->
+    <test thread-count="20" verbose="0" name="Subs UI Enhancements-UI Flow" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_39255_TC_05"/>
+                    <include name="TC_02_PGP_40026_VerifyAdditionalUPIHandles"/>
+                    <include name="PGP_39255_TC_04"/>
+                    <include name="PGP_39255_TC_01"/>
+                </methods>
+            </class> <!-- scripts.UI.EnhancedUITests -->
+        </classes>
+    </test> <!-- Subs UI Enhancements-UI Flow -->
+    <test thread-count="20" verbose="0" name="Subscription_via_ppi on enhanced web 1" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="TC004_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="PGP_25155_verifyAuthModesinSubscriptionBankMandate"/>
+                    <include name="TC_001_Verify_Fields_are_noneditable"/>
+                    <include name="VerifyErrorMsgisshownforUPIotherthanPaytmOrBhim"/>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"/>
+                    <include name="validatePPBLTxnIfAllPaymodesAreAvailable"/>
+                    <include name="TC_002_Verify_Fields_are_editable"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"/>
+                    <include name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_30_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testPPBLPayModeIsDisabledWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="PGP_87_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="PGP_18282_ValidateStatusAfterLogin"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- Subscription_via_ppi on enhanced web 1 -->
+    <test thread-count="20" verbose="0" name="PGP-26916 Creating subscriptions" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="sC_VIA_PPI01"/>
+                    <include name="PGP_40026_TC_02_VerifyAdditionalUPIHandles"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueJCTA"/>
+
+                    <include name="PGP_40026_TC_01_VerifyDefaultUPIHandles"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSWalletCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSUPItCTA"/>
+                    <include name="sC_VIA_DC15"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueJCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSUPItCTA"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSWalletCTA"/>
+                </methods>
+            </class> <!-- scripts.SubscriptionBlinkCheckout -->
+        </classes>
+    </test> <!-- PGP-26916 Creating subscriptions -->
+    <test thread-count="20" verbose="0" name="PGP-26916 Creating subscriptions UI REVAMP" parallel="tests">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="PGP_40026_TC_02_VerifyAdditionalUPIHandles"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueJCTA"/>
+                    <include name="PGP_35247_TC_04_FIX"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSWalletCTA"/>
+                    <include name="sC_VIA_DC15"/>
+                    <include name="TC_03"/>
+                    <include name="PGP_35247_TC_02_MONTH"/>
+                    <include name="sC_VIA_PPI01"/>
+                    <include name="PGP_40026_TC_01_VerifyDefaultUPIHandles"/>
+                    <include name="verify_closed_wallet_user_error_message_SubsFlow"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseJSUPItCTA"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"/>
+                    <include name="PGP_35247_TC_03_DAY"/>
+                </methods>
+            </class> <!-- scripts.SubscriptionBlinkCheckout -->
+        </classes>
+    </test> <!-- PGP-26916 Creating subscriptions UI REVAMP -->
+    <test thread-count="20" verbose="0" name="Subscription_via_wallet_only on enhanced wap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="transactionType" value="PGOnly"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <include name="PGP_186_verifyCardSaveAfterSuccessfulTxn"/>
+                    <include name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <include name="PGP_188_verifyTxnCancellationAtBank"/>
+                    <include name="PGP_184_verifySuccessfulTxnForInsufficientBalanceViaNB"/>
+                    <include name="PGP_187_verifySuccessfulTxnUsingSavedCard"/>
+                    <include name="PGP_21763_verifyInvalidSubsPaymodeMessage"/>
+                    <include name="ValidateWalletChecked_walletOnlyMerchantUserLoginatCashierPage"/>
+                    <include name="PGP_verifyFailedSubs_FromExpiredSaveCard"/>
+                    <include name="PGP_189_verifyTxnCancellationAtBankWithSavedCard"/>
+                    <include name="PGP_181_verifyWalletOnlyWithFixedSubsType"/>
+                    <include name="PGP_181_verifySuccessfulTxnForInsufficientBalanceViaCC"/>
+                    <include name="PGP_182_verifySubsDailyFrequencyFlow"/>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="PGP_180_verifySuccessfulTxnUsingWalletOnly"/>
+                    <include name="validateAllPayModes"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCanBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="validateIfSubsPaymentModeIsEmptyAndPPIOnlyIsNot"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="ValidateWalletChecked_walletOnlyMerchant"/>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly -->
+        </classes>
+    </test> <!-- Subscription_via_wallet_only on enhanced wap -->
+    <test thread-count="20" verbose="0" name="Subscription_via_wallet_only on enhanced web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="PGP_21763_verifyInvalidSubsAmountTypeMessage"/>
+                    <include name="PGP_186_verifyCardSaveAfterSuccessfulTxn"/>
+                    <include name="PGP_21763_verifyInvalidMaxSubsAmountMessage"/>
+                    <include name="PGP_188_verifyTxnCancellationAtBank"/>
+                    <include name="PGP_184_verifySuccessfulTxnForInsufficientBalanceViaNB"/>
+                    <include name="PGP_187_verifySuccessfulTxnUsingSavedCard"/>
+                    <include name="PGP_21763_verifyInvalidSubsPaymodeMessage"/>
+                    <include name="ValidateWalletChecked_walletOnlyMerchantUserLoginatCashierPage"/>
+                    <include name="PGP_verifyFailedSubs_FromExpiredSaveCard"/>
+                    <include name="PGP_189_verifyTxnCancellationAtBankWithSavedCard"/>
+                    <include name="PGP_181_verifyWalletOnlyWithFixedSubsType"/>
+                    <include name="PGP_181_verifySuccessfulTxnForInsufficientBalanceViaCC"/>
+                    <include name="PGP_182_verifySubsDailyFrequencyFlow"/>
+                    <include name="validateAllPayModes"/>
+                    <include name="PGP_21763_verifyMaxAmtGreaterThanPermissibleAmtMessage"/>
+                    <include name="PGP_21763_verifyInvalidPaymodeSelectedMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysCannotBeGreaterthanFrequencyMessage"/>
+                    <include name="ValidateWalletChecked_walletOnlyMerchant"/>
+                    <include name="PGP_21763_verifyInvalidFrequencyUnitMessage"/>
+                    <include name="PGP_21763_verifyGraceDaysMandatoryMessage"/>
+                    <include name="PGP_21763_verifyTxnAmountCanBeGreaterthanMaxSubsAmountMessage"/>
+                    <include name="validateIfSubsPaymentModeIsEmptyAndPPIOnlyIsNot"/>
+                    <include name="PGP_180_verifySuccessfulTxnUsingWalletOnly"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly -->
+        </classes>
+    </test> <!-- Subscription_via_wallet_only on enhanced web -->
+    <test thread-count="20" verbose="0" name="Subscription_via_ppi on enhanced web" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOnePPIY"/>
+                    <include name="VerifyZeroAmtPaymentWithWalletBalanceLessThanOnePPIYSubsonWalletEnabled"/>
+                    <include name="ValidateFailedZeroAmtPaymentWith_expiredSavedCard"/>
+                    <include name="PGP_25155_verifyAuthModesinSubscriptionBankMandate"/>
+                    <include name="TC_001_Verify_Fields_are_noneditable"/>
+                    <include name="PGP_35618_VerifythatUserisNavigatedtoDynamicURL"/>
+                    <include name="validatePPBLTxnIfAllPaymodesAreAvailable"/>
+                    <include name="TC_002_Verify_Fields_are_editable"/>
+                    <include name="PGP_79_validateFailedTxnWithTxnAmntGreaterThanWalletByFraction"/>
+                    <include name="TC004_Verify_ChannelCode_is_retrieved_bySending_IFSC"/>
+                    <include name="VerifyErrorMsgisshownforUPInotSupportingSubscription"/>
+                    <include name="VerifyErrorMsgisshownforUPIotherthanPaytmOrBhim"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Month"/>
+                    <include name="PGP_33_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Month"/>
+                    <include name="VerifyErrorMsgisshownforInvalidUPI"/>
+                    <include name="PGP_37658_ValidateUserRedirectingtoBMURL"/>
+                </methods>
+            </class> <!-- scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi -->
+        </classes>
+    </test> <!-- Subscription_via_ppi on enhanced web -->
+    <test thread-count="20" verbose="0" name="temp-Enhancedweb Bank Mandate Redirectional flow" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="TC_009_Enhanced_ValidateSubsPurposeValueIsNotUpdatedForUpfrontAmountIs0InMetaData"/>
+                    <include name="verifySubsFor0TxnAmtWithTwoDecimalPlacePayModeBlankAndPaymentThroughPPI"/>
+                    <include name="PGP_36086_VerifySubscriptionisnotcreatedforNonZero"/>
+                    <include name="PGP_39935_verifyBankMandateText"/>
+                    <include name="PGP_41837_TC01_BankMandateEnhance"/>
+                    <include name="TC_014_Enhanced_ValidateBankMandateSubscriptionDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_017_Enhanced_ValidateSavedBankMandateSubscriptionRenewDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_019_Enhanced_ValidateSavedBankMandateSubscriptionRenewDCPAymodeAmount0"/>
+                    <include name="verifySubsFor0TxnAmtWithOneDecimalPlacePayModeBlankAndPaymentThroughPPI"/>
+                    <include name="TC_01_BankMandateSubsRenewPPP"/>
+                    <include name="TC_001_Enhanced_ValidateSubsPurposeIfCustomerPass"/>
+                    <include
+                            name="TC_010_Enhanced_ValidateSubsPurposeValueNotPassedIsUpdatedOthersIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="TC_012_Enhanced_ValidateBankMandateFrequencyOtherThanOndemand"/>
+                    <include name="verifySubsFor0TxnAmtWithTwoDecimalPlacePayModePPI"/>
+                    <include name="verify_SavedBankMandate_Details"/>
+                    <include name="TC_006_Enhanced_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="TC_003_Enhanced_ValidateBankAccountDetailsIsPrefilled"/>
+                    <include name="TC_007_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforMaxAmount"/>
+                    <include name="verifySubscriptionCreatedFor0TxnAmtWithTwoDecimalPlacePayModeUPI"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueEnhnaceTexts"/>
+                    <include name="TC_005_Enhanced_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="TC_008_Enhanced_ValidateSubsPurposeValueIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforZero"/>
+                    <include name="TC_002_Enhanced_ValidateSubsPurposeNotComingIfCustomerPassDontPass"/>
+                    <include name="verifySubscriptionCreatedFor0TxnAmtWithOneDecimalPlacePayModeUPI"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseEnhnaceTexts"/>
+                    <include
+                            name="TC_011_Enhanced_ValidateSubsPurposeValueIsNotUpdatedWHenNotPassedForUpfrontAmountIs0InMetaData"/>
+                    <include name="TC_004_Enhanced_ValidateTopSixBankDisplayed"/>
+                    <include name="zeroAmountSubscription"/>
+                    <include name="TC_018_Enhanced_ValidateSavedBankMandateSubscriptionRenewNBPAymodeAmount0"/>
+                    <include name="TC_020_Enhanced_ValidateBankMandateTxnWhileManuallyEnteringBankAccountDC"/>
+                    <include name="TC_013_Enhanced_ValidateBankMandateSubscriptionDCPAymodeAmount0"/>
+                    <include name="verifySubsFor0TxnAmtWithTwoDecimalPlacePayModeBlankAndPaymentThroughMandate"/>
+                    <include name="TC_015_Enhanced_ValidateBankMandateSubscriptionRenewDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_016_Enhanced_ValidateSavedBankMandateSubscriptionRenewNBPAymodeAmountMoreThan0"/>
+                    <include name="TC_021_Enhanced_ValidateBankMandateTxnWhileManuallyEnteringBankAccountNB"/>
+                </methods>
+            </class> <!-- scripts.EnhancedBankMandate -->
+        </classes>
+    </test> <!-- temp-Enhancedweb Bank Mandate Redirectional flow -->
+    <test thread-count="20" verbose="0" name="temp-Enhancedwap Bank Mandate Redirectional flow" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="TC_009_Enhanced_ValidateSubsPurposeValueIsNotUpdatedForUpfrontAmountIs0InMetaData"/>
+                    <include name="verifySubsFor0TxnAmtWithTwoDecimalPlacePayModeBlankAndPaymentThroughPPI"/>
+                    <include name="PGP_36086_VerifySubscriptionisnotcreatedforNonZero"/>
+                    <include name="PGP_41837_TC01_BankMandateEnhance"/>
+                    <include name="TC_014_Enhanced_ValidateBankMandateSubscriptionDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_017_Enhanced_ValidateSavedBankMandateSubscriptionRenewDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_019_Enhanced_ValidateSavedBankMandateSubscriptionRenewDCPAymodeAmount0"/>
+                    <include name="verifySubsFor0TxnAmtWithOneDecimalPlacePayModeBlankAndPaymentThroughPPI"/>
+                    <include name="TC_01_BankMandateSubsRenewPPP"/>
+                    <include name="TC_001_Enhanced_ValidateSubsPurposeIfCustomerPass"/>
+                    <include
+                            name="TC_010_Enhanced_ValidateSubsPurposeValueNotPassedIsUpdatedOthersIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="TC_012_Enhanced_ValidateBankMandateFrequencyOtherThanOndemand"/>
+                    <include name="verifySubsFor0TxnAmtWithTwoDecimalPlacePayModePPI"/>
+                    <include name="verify_SavedBankMandate_Details"/>
+                    <include name="TC_006_Enhanced_ValidateSubsCreatedStatusIsActiveResponseFromNPCIGreaterThan0"/>
+                    <include name="TC_003_Enhanced_ValidateBankAccountDetailsIsPrefilled"/>
+                    <include name="TC_007_Enhanced_ValidateSubRenewedStatusForAmountGreaterThan0"/>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforMaxAmount"/>
+                    <include name="verifySubscriptionCreatedFor0TxnAmtWithTwoDecimalPlacePayModeUPI"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueEnhnaceTexts"/>
+                    <include name="TC_005_Enhanced_ValidateSubsCreatedInAuthorizedStateAmountGreaterThan0"/>
+                    <include name="TC_008_Enhanced_ValidateSubsPurposeValueIsUpdatedForUpfrontAmountInMetaData"/>
+                    <include name="PGP_36086_VerifySubscriptioniscreatedforZero"/>
+                    <include name="TC_002_Enhanced_ValidateSubsPurposeNotComingIfCustomerPassDontPass"/>
+                    <include name="verifySubscriptionCreatedFor0TxnAmtWithOneDecimalPlacePayModeUPI"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseEnhnaceTexts"/>
+                    <include
+                            name="TC_011_Enhanced_ValidateSubsPurposeValueIsNotUpdatedWHenNotPassedForUpfrontAmountIs0InMetaData"/>
+                    <include name="TC_004_Enhanced_ValidateTopSixBankDisplayed"/>
+                    <include name="zeroAmountSubscription"/>
+                    <include name="TC_018_Enhanced_ValidateSavedBankMandateSubscriptionRenewNBPAymodeAmount0"/>
+                    <include name="TC_020_Enhanced_ValidateBankMandateTxnWhileManuallyEnteringBankAccountDC"/>
+                    <include name="TC_013_Enhanced_ValidateBankMandateSubscriptionDCPAymodeAmount0"/>
+                    <include name="verifySubsFor0TxnAmtWithTwoDecimalPlacePayModeBlankAndPaymentThroughMandate"/>
+                    <include name="TC_015_Enhanced_ValidateBankMandateSubscriptionRenewDCPAymodeAmountMoreThan0"/>
+                    <include name="TC_016_Enhanced_ValidateSavedBankMandateSubscriptionRenewNBPAymodeAmountMoreThan0"/>
+                    <include name="TC_021_Enhanced_ValidateBankMandateTxnWhileManuallyEnteringBankAccountNB"/>
+                </methods>
+            </class> <!-- scripts.EnhancedBankMandate -->
+        </classes>
+    </test> <!-- temp-Enhancedwap Bank Mandate Redirectional flow -->
+    <test thread-count="20" verbose="0" name="UPIEnhanceEnhanceWeb" parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_02_UPISubsRenewPPP"/>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="TC_001_Enhanced_Subs_Failure_ErrorCode"/>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"/>
+                    <include name="TC_006_Enhanced_Subs_FreqUnitSemiAnually"/>
+                    <include name="UpiVpaCases_01"/>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"/>
+                    <include name="UpiVpaCases_02"/>
+                    <include name="TC_001_Enhanced_Subs_FreqUnitDay"/>
+                    <include name="UpiVpaCases_08"/>
+                    <include name="UpiVpaCases_07"/>
+                    <include name="UpiVpaCases_05"/>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"/>
+                    <include name="UpiNumericId_02"/>
+                    <include name="TC_002_Enhanced_Subs_FreqUnitMonth"/>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"/>
+                    <include name="UpiNumericId_01"/>
+                    <include name="TC_001_Enhanced_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="UpiNumericIdCmid_02"/>
+                    <include name="UpiNumericIdCmid_01"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.EnhanceUPICollectSubs -->
+        </classes>
+    </test> <!-- UPIEnhanceEnhanceWeb -->
+    <test thread-count="20" verbose="0" name="UPIEnhanceEnhanceWap" parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_02_UPISubsRenewPPP"/>
+                    <include name="TC_001_Enhanced_MF_Subs_StartDateIsFuture"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="TC_001_Enhanced_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_001_Enhanced_Subs_Failure_ErrorCode"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"/>
+                    <include name="TC_006_Enhanced_Subs_FreqUnitSemiAnually"/>
+                    <include name="UpiVpaCases_01"/>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"/>
+                    <include name="UpiVpaCases_02"/>
+                    <include name="TC_001_Enhanced_Subs_FreqUnitDay"/>
+                    <include name="UpiVpaCases_08"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="UpiVpaCases_07"/>
+                    <include name="UpiVpaCases_05"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="UpiNumericId_02"/>
+                    <include name="TC_002_Enhanced_Subs_FreqUnitMonth"/>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"/>
+                    <include name="UpiNumericId_01"/>
+                    <include name="TC_001_Enhanced_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="UpiNumericIdCmid_02"/>
+                    <include name="UpiNumericIdCmid_01"/>
+                </methods>
+            </class> <!-- scripts.UPISubsMandate.EnhanceUPICollectSubs -->
+        </classes>
+    </test> <!-- UPIEnhanceEnhanceWap -->
+    <test name="PGP-20306-1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.AddMoneyMP">
+                <methods>
+                    <include name="testCardIndexNoIsPresentInOutputWhenCardTokenRequiredIsTrueInOrder"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PostPaid Subs transaction">
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="PostPaidSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Merchant Updation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                    <include name="validateStartDateMoreThanTodayDate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <include name="testErrMsgIsDisplayedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="testNextPayModeIsSelectedWhenUserHasInsufficientPPBLBalance"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InFix_and_Ondemand"/>
+                    <include name="toVerifyRecurringAmountAndRibbonTextLabel_InVariable_and_Ondemand"/>
+                    <include name="validateStartDateMoreThanTodayDate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation3">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"/>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation4">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionRenewal.enhancedFlows.SubscriptionRenewalViaWalletOnly">
+                <methods>
+                    <include name="PGP_213_RenewalRequestAfterGracePeriod"/>
+                    <include name="PGP_219_RenewalRequestAfterSubscriptionContractExpired"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Merchant Updation5">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_39255_TC_01"/>
+                    <include name="PGP_39255_TC_04"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-26916 Creating subscriptionsCJS">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.SubscriptionBlinkCheckout">
+                <methods>
+                    <include name="TC_05"/>
+                    <include name="sC_VIA_PPI"/>
+                    <include name="TC_02"/>
+                    <include name="PGP_41837_TC02_BankMandateJS"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Redirectional UI Changes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnhancedBankMandate">
+                <methods>
+                    <include name="PGP_41837_TC01_BankMandateEnhance"/>
+                    <include name="TCPGP_41837_AutoRefundisTrueEnhnaceTexts"/>
+                    <include name="TCPGP_41837_AutoRefundisFalseEnhnaceTexts"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Bank Mandate Cases">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="TC_002_Verify_Fields_are_noneditable"/>
+                    <include name="TC_001_Verify_Fields_are_editable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJs Wallet Subs Transaction">
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="WalletSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Subs Wallet transaction">
+        <classes>
+            <class name="scripts.Native.subscription.NativeProcessSubscription">
+                <methods>
+                    <include name="nativeWalletSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Wallet Subs Transaction">
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaWalletOnly">
+                <methods>
+                    <include name="WalletSubs_BankTxnId_returned"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite> <!-- Subscription UI -->

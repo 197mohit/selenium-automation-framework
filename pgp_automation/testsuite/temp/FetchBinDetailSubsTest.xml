@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FetchBinDetailSubsTest" verbose="1" parallel="false">
+    <test name="FetchBinDetail subscription and init txn tokens">
+        <classes>
+            <class name="scripts.api.theia.fetchBinDetail.FetchBinDetailSubsTest">
+                <methods>
+                    <include name="validateFetchBinDetailWithCreateSubscriptionToken"/>
+                    <include name="validateFetchBinDetailWithInitTxnToken"/>
+                    <include name="validateFetchBinDetailIneligibleBinWithCreateSubscriptionToken"/>
+                    <include name="validateFetchBinDetailIneligibleBinWithInitTxnToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

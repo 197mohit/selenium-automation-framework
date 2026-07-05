@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="CCBillPayments" verbose="1" thread-count="5" parallel="methods">
+    <test name="FetchBinTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FetchBinTest"/>
+        </classes>
+    </test>
+    <test name="CardTokenize">
+    <classes>
+        <class name="scripts.CCBillPayments.CardTokenizeTest"/>
+    </classes>
+    </test>
+    <test name="CheckEligibilityTest">
+        <classes>
+            <class name="scripts.CCBillPayments.CheckEligibilityTest"/>
+        </classes>
+    </test>
+    <test name="FulfilmentTest">
+        <classes>
+            <class name="scripts.CCBillPayments.FulfilmentTest"/>
+        </classes>
+    </test>
+</suite>

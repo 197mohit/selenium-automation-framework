@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPBL , Postpaid order Modify co then pay full traffic Y" verbose="1">
+    <test name="PPBL , Postpaid order Modify co then pay full traffic Y">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateCoThenPaySuccessRentMidOrderModifyPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PostPaid.PG2PostPaid">
+                <methods>
+                    <include name="validateCoThenPaySuccessRentMidOrderModifyPostPaidTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-31174">
+    <test name="Verify isAutoRefund is true in FPO response of subscription created for merchant whose AutoRefund is enabled">
+        <classes>
+            <class name="scripts.dataEnrichment.DataEnrichmentNativeTests">
+                <methods>
+                    <include name="IPv6clientIpFundTopUp"/>
+                    <include name="IPv6clientIpCreateOrder"/>
+                    <include name="IPv6clientIpCashierPay"/>
+                    <include name="IPv6clientIpCOP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

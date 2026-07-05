@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-30167-xiaomi task"  verbose="1" thread-count="2" parallel="tests">
+
+    <test name="emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="FailureTxn_AmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="AmountEMISimplifiedSubvention_peonON_MerchantStatusON"/>
+                    <include name="ItemEMISimplifiedSubvention_peonOFF_MerchantStatusOFF"/>
+                    <include name="SimplifiedPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON"/>
+                    <include name="SimplifiedPromoAndItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndSimplifiedAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoON"/>
+                    <include name="ApplyPromoAndSimplifiedItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON_PromoOFF"/>
+                </methods>
+            </class>
+
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="PaymentOffersFlow_PromoON"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="emi subvention data and promo checkout data presence in merchant-status response and peon controlled by ff4j - native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.api.theia.emiSubvention.EmiSubventionApiTests">
+                <methods>
+                    <include name="AmountEMISubvention_peonON_MerchantStatusOFF"/>
+                    <include name="ItemEMISubvention_peonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoOFF"/>
+                    <include name="ApplyPromoAndItemEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                    <include name="FailureTxn_ApplyPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON_PromoON"/>
+                </methods>
+            </class>
+
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="AmountEMISimplifiedSubvention_peonON_MerchantStatusON"/>
+                    <include name="ItemEMISimplifiedSubvention_peonOFF_MerchantStatusOFF"/>
+                    <include name="SimplifiedPromoAndAmountEmiSubventionBothApplied_PeonON_MerchantStatusON"/>
+                    <include name="SimplifiedPromoAndItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON"/>
+                    <include name="ApplyPromoAndSimplifiedAmountEmiSubventionBothApplied_PeonON_MerchantStatusOFF_PromoON"/>
+                    <include name="ApplyPromoAndSimplifiedItemEmiSubventionBothApplied_PeonOFF_MerchantStatusON_PromoOFF"/>
+                </methods>
+            </class>
+
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="PaymentOffersFlow_PromoON"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

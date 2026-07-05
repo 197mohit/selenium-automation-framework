@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-28936" verbose="1" parallel="methods">
+    <test name="PGP-28936 enhancedweb">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedSuccessCCTxn"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenCardNumberIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenExpiryDetailsIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenCVVIsNotEntered"/>
+                    <include name="testLocalisedSuccessDCTxn"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCardNumberIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenExpiryDetailsIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCVVIsNotEntered"/>
+                    <include name="testLocalisedSuccessNBTxn"/>
+                    <include name="testLocalisedErrorMsgForNBTxnWhenNoBankIsSelected"/>
+                    <include name="testLocalisedSuccessPPITxn"/>
+                    <include name="testLocalisedErrorMsgForPPITxnWhenUserDoesNotHaveEnoughBalanceInWallet"/>
+                    <include name="testLocalisedSuccessUPITxn"/>
+                    <include name="testLocalisedErrorMsgForUPITxnWhenVPAIsNotEntered"/>
+                    <include name="testLocalisedSuccessPPBLTxn"/>
+                    <include name="testLocalisedSuccessPDCTxn"/>
+                    <include name="testLocalisedSuccessEMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28936 enhancedwap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="testLocalisedSuccessCCTxn"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenCardNumberIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenExpiryDetailsIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForCCTxnWhenCVVIsNotEntered"/>
+                    <include name="testLocalisedSuccessDCTxn"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCardNumberIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenExpiryDetailsIsNotEntered"/>
+                    <include name="testLocalisedErrorMsgForDCTxnWhenCVVIsNotEntered"/>
+                    <include name="testLocalisedSuccessNBTxn"/>
+                    <include name="testLocalisedSuccessPPITxn"/>
+                    <include name="testLocalisedErrorMsgForPPITxnWhenUserDoesNotHaveEnoughBalanceInWallet"/>
+                    <include name="testLocalisedSuccessUPITxn"/>
+                    <include name="testLocalisedErrorMsgForUPITxnWhenVPAIsNotEntered"/>
+                    <include name="testLocalisedSuccessPPBLTxn"/>
+                    <include name="testLocalisedSuccessPDCTxn"/>
+                    <include name="testLocalisedSuccessEMITxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-28936 API" parallel="methods">
+        <classes>
+            <class name="scripts.api.theia.SendOtp">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.ValidateOtp">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV2Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.GuestTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.AccessTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.SSOTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchNbPaymentChannels.TxnTokenFetchNBPaymentChannelsV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.ChecksumFetchBinDetailV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.SSOTokenFetchBinDetailV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchBinDetail.TxnTokenFetchBinDetailV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.ProcessTransactionAPI">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchEmiDetail.SSOTokenFetchEmiDetailV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchEmiDetail.TxnTokenFetchEmiDetailV1Test">
+                <methods>
+                    <include
+                            name='test localisation fields are not present when localisation is disabled on merchant but language header is passed'/>
+                    <include
+                            name='test localisation fields are not present when localisation is enabled on merchant but language header is not passed'/>
+                    <include
+                            name='test localisation fields are present when localisation is enabled on merchant and language header is passed'/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

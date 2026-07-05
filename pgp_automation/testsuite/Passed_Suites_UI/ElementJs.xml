@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ElementJs_UI" verbose="1" thread-count="25" parallel="tests">
+    <test name="Postpaid ui msg elementjs">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="postpaidDeactiveUimsg"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-38200">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="upi_LocckedIN_Fhidelable"/>
+                    <include name="EMI_LocckedIN_Fhidelable"/>
+                    <include name="upi_nonLocckedIN_hidelable"/>
+                    <include name="NB_nonLocckedIN_hidelable"/>
+                    <include name="card_LocckedIN_Fhidelable"/>
+                    <include name="card_LocckedIN_hidelable"/>
+                    <include name="NB_nonLocckedIN_Fhidelable"/>
+                    <include name="NB_LocckedIN_hidelable"/>
+                    <include name="categorize"/>
+                    <include name="EMI_nonLocckedIN_Fhidelable"/>
+                    <include name="EMISubElementJsItembased04"/>
+                    <include name="NB_LocckedIN_Fhidelable"/>
+                    <include name="card_nonLocckedIN_hidelable"/>
+                    <include name="addnpaycategarize"/>
+                    <include name="card_nonLocckedIN_Fhidelable"/>
+                    <include name="upi_nonLocckedIN_Fhidelable"/>
+                    <include name="EMISubElementJsItembased09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-29613_CheckoutJsMerchantElementTest">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="loginstatePPBL"/>
+                    <include name="validate_vpa_msg"/>
+                    <include name="LogoutUPI"/>
+                    <include name="addandpayCC"/>
+                    <include name="integrateEMI"/>
+                    <include name="loginstateUPI"/>
+                    <include name="LogoutNB"/>
+                    <include name="integrateNB"/>
+                    <include name="loginstateNB"/>
+                    <include name="loginstateSavedVPA"/>
+                    <include name="validate_vpa_msg_Subscription"/>
+                    <include name="EMISubElementJsItembased09"/>
+                    <include name="Nonloggedin_validate_vpa_msg_Subscription"/>
+                    <include name="EMISubElementJsItembased04"/>
+                    <include name="Nonlogeedin_validate_vpa_msg"/>
+                    <include name="integrateCard"/>
+                    <include name="integrateUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upi revamp elementjs web">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="verifyScanQrRevamp"/>
+                    <include name="verifyEnabledPaymodeColourRevamp"/>
+                    <include name="verifyorScanwithUPItextRevamp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ElementJs UI sanity cases">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UiSanityElementJs">
+            </class>
+        </classes>
+    </test>
+    <test name="ElementJs  cases PGP-48836">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="no_Wallet_mid_cashierPage_loaded_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_loggedin"/>
+                    <include name="no_Wallet_mid_cashierPage_loaded_non_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_non_loggedin"/>
+                    <include name="Wallet_mid_cashierPage_loaded_login_otp_txn"/>
+                    <include name="Wallet_only_cashierPage_loaded_loggedin_txn"/>
+                    <include name="Wallet_only_cashierPage_loaded_login_otp_txn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ElementJs  cases PGP-48507">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="kfs_icici_dc"/>
+                    <include name="kfs_hdfc_dc_kfs_upper_text"/>
+                    <include name="kfs_icici_dc_adhere_text"/>
+                    <include name="kfs_icici_dc_adhere_text_link"/>
+                    <include name="kfs_icici_dc_kfs_upper_text"/>
+                    <include name="kfs_icici_dc_kfs_bank_date_text"/>
+                    <include name="kfs_icici_dc_kfs_table_text"/>
+                    <include name="kfs_icici_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_icici_dc_kfs_loan_consent_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text"/>
+                    <include name="kfs_hdfc_dc_adhere_text_link"/>
+                    <include name="kfs_hdfc_dc_kfs_bank_date_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_text"/>
+                    <include name="kfs_hdfc_dc_kfs_disclaimer_text"/>
+                    <include name="kfs_hdfc_dc_kfs_table_Verifivation"/>
+                    <include name="kfs_icici_dc_disabled"/>
+                    <include name="kfs_hdfc_dc_disabled"/>
+                    <include name="kfs_hdfc_dc"/>
+                    <include name="kfs_icici_dc_kfs_table_Verifivation"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

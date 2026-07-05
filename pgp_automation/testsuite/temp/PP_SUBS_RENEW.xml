@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-48426" verbose="1" parallel="tests" thread-count="1">
+    <test name="Subscription on postpaid">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.subscription.postpaid.subscriptionOnPostpaid">
+                <methods>
+                    <include name="RenewForPostpaidSubscription"/>
+                    <include name="RenewActiveInDBForPostpaidSubscription"/>
+                    <include name="renewFailForFutureDatePDNPostpaidSubscription"/>
+                    <include name="renewFailForNoPDNPostpaidSubscription"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

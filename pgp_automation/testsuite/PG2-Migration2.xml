@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2MIGARATION" verbose="1" parallel="methods" thread-count="1">
+    <test name="CreateOrderAPI">
+        <classes>
+            <class name="scripts.api.merchant.migration.PG2Migration">
+            <methods>
+                <include name="CreatePG2Merchant_025"/>
+                <include name="CreatePG2Merchant_026"/>
+                <include name="CreatePG2Merchant_027"/>
+                <include name="CreatePG2Merchant_028"/>
+                <include name="CreatePG2Merchant_029"/>
+                <include name="CreatePG2Merchant_030"/>
+                <include name="CreatePG2Merchant_031"/>
+                <include name="CreatePG2Merchant_032"/>
+                <include name="CreatePG2Merchant_033"/>
+                <include name="CreatePG2Merchant_034"/>
+                <include name="CreatePG2Merchant_035"/>
+                <include name="CreatePG2Merchant_036"/>
+                <include name="CreatePG2Merchant_037"/>
+                <include name="CreatePG2Merchant_038"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

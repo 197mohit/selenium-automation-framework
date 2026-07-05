@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPGP-397_CheckoutjsRevampCardValidation" verbose="1">
+    <test name="Checkoutjs Revamp - Card Field Validation">
+        <parameter name="theme" value="checkoutjs_web_revamp_2"/>
+        <classes>
+            <class name="scripts.CheckoutjsRevamp">
+                <methods>
+                    <include name="ValidateCardFieldAcceptsComplete16DigitCardNumber"/>
+                    <include name="ValidateCardWithExpiredYearDoesNotCompleteSuccessTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

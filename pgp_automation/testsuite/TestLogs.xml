@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notifications" verbose="1" parallel="methods" thread-count="5">
+    <test name="Notification API's">
+        <classes>
+            <class name="scripts.notification.MerchantNotifyTest"/>
+            <class name="scripts.Native.UpiIntent">
+                <methods>
+                    <include name="copUPIPSPRequestValidation"/>
+                </methods>
+            </class>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validateCOPUltimateBeneNamemorethanfiftycharactersInPPBLtxn"/>
+                </methods>
+            </class>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyRupayCardAltGenCall"/>
+                </methods>
+            </class>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="Testv1CheckoutApiCalledForStdEmiTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

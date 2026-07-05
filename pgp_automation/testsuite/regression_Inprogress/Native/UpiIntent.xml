@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UpiIntent" verbose="1" parallel="methods" thread-count="20">
+    <test name="Upi Intent tests">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+            </class>
+        </classes>
+    </test>
+
+    <test name="Upi Intent tests 2">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+                <methods>
+
+                    <include name="testOrderSuccessByUpiIntent_PaytmMoneyWhenNonMatchingWebsiteProvided"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

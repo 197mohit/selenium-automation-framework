@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP_25155 Verify Bank Mandate Authmodes" verbose="1" parallel="tests" thread-count="2">
+
+<test name="Verify Bank Mandate Authmodes on enhanced web">
+    <parameter name="theme" value="enhancedweb"/>
+    <classes>
+        <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+        <methods>
+            <include name="PGP_25155_verifyAuthModesinSubscriptionBankMandate"/>
+            <include name="PGP_25155_verifyAuthModesinSubscriptionBankMandatewithSecondUser"/>
+        </methods>
+        </class>
+    </classes>
+</test>
+
+    <test name="Verify Bank Mandate Authmodes on enhanced wap">
+        <parameter name="theme" value="enhancedwap"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_25155_verifyAuthModesinSubscriptionBankMandate"/>
+                    <include name="PGP_25155_verifyAuthModesinSubscriptionBankMandatewithSecondUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

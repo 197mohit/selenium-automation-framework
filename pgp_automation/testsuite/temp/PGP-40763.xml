@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-39530" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-40763 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.WalletOnly">
+                <methods>
+                    <include name="PGP_40763_TC_01_validateWalletNotSelected"/>
+                    <include name="PGP_40763_TC_02_validateWallet_Selected"/>
+                </methods>
+            </class>
+            <class name="scripts.AddNPay">
+                <methods>
+                    <include name="PGP_40763_TC_05_validateWallet_NotSelected"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-40763 CheckoutJS">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="PGP_40763_TC_03_validateWallet_NotSelected"/>
+                    <include name="PGP_40763_TC_04_validateWallet_Selected"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

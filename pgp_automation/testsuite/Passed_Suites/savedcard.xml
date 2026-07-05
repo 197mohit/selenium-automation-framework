@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Save_Card_Suite" parallel="tests" thread-count="10">
+    <test name="Checkoutjs UI test cases wap UI REVAMP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyBankLogoInSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGOnly with enhancedweb">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_249_savedCardCancelOn3DPage"/>
+                    <include name="PGP_270_verifyCCSavedCardTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!-- New Cases from SavedCard Pg2 Added -->
+    <test name="FetchValidBinsAPI Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusNull"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusZero"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusOne"/>
+                    <include name="ValidateFetchValidBinsWithEMIPlanIdAndIsOfusTwo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Global Vault and Local Vault">
+        <classes>
+            <class name="scripts.coft.theia.GlobalVaultAndLocalVault">
+                <methods>
+                    <exclude name="onusMerchantLoggedinFlow"/>
+                    <exclude name="ofusMerchantLoggedinFlow"/>
+                    <include name="ofusMerchantNonLoggedinFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SaveCardAdditionalApis">
+        <classes>
+            <class name="scripts.coft.savedCardService.DeleteCardbyMidCustIdTest"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalBinInfoTests"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalDeleteBinUserTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests"/>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest"/>
+        </classes>
+    </test>
+<!--    <test name="EdcQrCintoGcInTest">-->
+<!--        <classes>-->
+<!--            <class name="scripts.DynamicQRNew">-->
+<!--                <methods>-->
+<!--                    <include name="verifycin_EdcQRFlow_NewCard"/>-->
+<!--                    <include name="verifycin_EdcQRFlow_Tin"/>-->
+<!--                </methods>-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
+    <test name="MS and PS last four digit">
+        <parameter name="isNativePlus" value="true"></parameter>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="lastFourDigitNotVisible"/>
+                    <include name="lastFourDigitVisible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46021">
+        <classes>
+            <class name="scripts.api.CC.CVV_Less_transaction">
+                <methods>
+                    <include name="Saved_HDFC_VISA_Success_txn"/>
+                </methods>
+            </class>
+
+
+        </classes>
+    </test>
+    <test name="Card Sorting">
+        <classes>
+            <class name="scripts.coft.theia.CardSorting">
+                <methods>
+                    <include name="onusSorting"/>
+                    <include name="offusLoggedInSorting"/>
+                    <include name="offusNonLoggedInSorting"/>
+                    <include name="cacheCardRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate isCardCoBranded value in FPO1/2/5 for Credit and Debit Card">
+        <classes>
+            <class name="scripts.api.theia.CObrandedCardsFilterTest">
+                <methods>
+                    <exclude name="Saved_Card_in_FPO5"/>
+                    <include name="Saved_Card_in_FPO2"/>
+                    <include name="Saved_Card_in_FPO1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Fetch Bin response validation for Alt tokenization">
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifyFetchBinV1ApiAlt"/>
+                    <include name="verifyFetchBinApiAlt"/>
+                    <include name="verifySuccessTxnforValidateAndPTCHavingSameAmexCard"/>
+                    <include name="verifySuccessTxnforValidateAndPTCHavingDifferentAmexCard"/>
+                    <include name="verifySuccessTxnforValidateHavingCardBinAndPTCHavingDifferentAmexCard"/>
+                    <include name="verifyFailureTxnforValidateHavingAmexAndPTCHavinICICICard"/>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinALTIDOfSameCard"/>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinALTIDOfDifferentCard"/>
+                    <include name="verifyFailureTxnforValidateHavingAmexAndPTCHavinALTIDOfHDFCCard"/>
+                    <include name="verifyFailureTxnforValidateAndPTCHavingDifferentHDFCCard"/>
+                    <include name="verifyFailureTxnforValidateHavingHDFCCardAAndPTCHavingHDFCCardB"/>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinCOFTOfSameCard"/>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinCOFTOfDifferentCard"/>
+                    <include name="verifySuccessTxnforValidateHavingAmexAndPTCHavinCOFTOfHDFCCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="SavedCardVaultSplit">
+        <classes>
+            <class name="scripts.coft.savedCardService.HandlerInternalBinInfoTests">
+                <methods>
+                    <include name="VerifyPPBLCardsAreReturnedWhenSentInQueryParam"/>
+                    <include name="VerifyNoOCLCardsAreReturnedWhenPPBLSentInQueryParam"/>
+                    <include name="VerifyOCLCardsAreReturnedWhenSentInQueryParam"/>
+                    <include name="VerifyNoPPBLCardsAreReturnedWhenOCLSentInQueryParam"/>
+                    <include name="VerifyForPendingOCLTokens"/>
+                    <include name="VerifyNoPendingPPBLTokenIsReturned"/>
+                    <include name="VerifyPendingPPBLTokenAreReturned"/>
+                    <include name="VerifyNoPendingOCLTokenIsReturned"/>
+                    <include name="VerifyVaultIdentifierInFetchAllAndFetchPendingTokenRequest"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.HandlerInternalDeleteBinUserTests">
+                <methods>
+                    <include name="VerifyUserIsAbleToDeleteActivePPBLToken"/>
+                    <include name="VerifyUserIsAbleToDeletePendingOclToken"/>
+                    <include name="VerifyUserIsAbleToDeletePendingPPBLToken"/>
+                    <include name="VerifyOCLTokenForSameCardIsAlsoDeletedWhileDeletingPPBLToken"/>
+                    <include name="VerifyPPBLTokenForSameCardIsAlsoDeletedWhileDeletingOCLToken"/>
+                    <include name="VerifyPPBLTokenForDifferentCardIsNotDeletedWhileDeletingOclCard"/>
+                    <include name="VerifyOCLTokenForDifferentCardIsNotDeletedWhileDeletingPPBLCard"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests">
+                <methods>
+                    <include name="VerifyPendingTokensAreNotReturnedInSuccessResponse"/>
+                    <include name="VerifyPendingPPBLTokensAreNotReturnedInSuccessResponse"/>
+                    <include name="VerifyActivePPBLTokensAreNotReturnedInSuccessResponse"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest">
+                <methods>
+                    <include name="verifySuccessResponseSSOInCaseOfPending"/>
+                    <include name="verifySuccessResponseSSOInCaseOfPendingPPBL"/>
+                    <include name="verifySuccessResponseSSOInCaseOfActivePPBL"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Issuer Control">
+        <classes>
+            <class name="scripts.coft.theia.IssuerControl">
+                <methods>
+                    <include name="fetchBinBlocked"/>
+                    <include name="fetchBinAllowed"/>
+                    <include name="fpoBlocked"/>
+                    <include name="fpoAllowed"/>
+                    <include name="ptcBlockedCard"/>
+                    <include name="ptcBlockedSavedCard"/>
+                    <include name="ptcAllowedCard"/>
+                    <include name="ptcAllowedSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Coft Consent Box">
+        <classes>
+            <class name="scripts.coft.theia.CoftConsentBox">
+                <methods>
+                    <include name="onusSuccess"/>
+                    <include name="onusFailure1"/>
+                    <include name="onusFailure2"/>
+                    <include name="offusGVEnabledSuccess"/>
+                    <include name="offusGVEnabledFailure1"/>
+                    <include name="offusGVEnabledFailure2"/>
+                    <include name="offustridConfiguredSuccess"/>
+                    <include name="offustridConfiguredFailure1"/>
+                    <include name="offustridConfiguredFailure2"/>
+                    <include name="offustridNotConfiguredFailure"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="HPCL bin mapping in merchant-status">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.HPCLBinMappingMerchantStatus">
+            </class>
+        </classes>
+    </test>
+    <test name="fetchBinDetailWithNativeOTPReq Automation">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Native.FetchBinDetails">
+                <methods>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC01"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC02"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithCardNo_TC03"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith6DigitBin_TC04"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWith9DigitBin_TC05"/>
+                    <include name="ValidateNativeOtpEligibleinFetchBinDetailWithTxnToken_TC06"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC01"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC02"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC03"/>
+                    <include name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC04"/>
+                    <exclude name="ValidateNativeOtpEligibleNotPresentinFetchBinDetail_TC05"/>
+                    <include name="validateGetBinBulkHashForBulkCardBins"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="IssuerTokenizationSavedCardCases">
+        <classes>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests">
+                <methods>
+                    <include name="VerifyBothTokens"/>
+                    <include name="VerifyOnlyIssuerTokens"/>
+                    <include name="VerifyOnlyNetworkTokens"/>
+                    <include name="VerifyOnlyNetworkTokenWhenTokenTypeNotSent"/>
+                    <include name="VerifyNetworkIsReturnedIfNetworkIsSaved"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Make bin info dynamic in Card service via v2 fetch all API">
+        <classes>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest">
+                <methods>
+                    <include name="requestToV2_fetchall_SavedCardByTokenType"/>
+                    <include name="requestToV2_fetchall_SavedCardByTokenType_SuccessResponse"/>
+                    <include name="requestToV2_fetchall_SavedCardByTokenType_response"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests">
+                <methods>
+                    <include name="requestToV2_fetchall_merchant_coft_card"/>
+                    <include name="requestToV2_fetchall_merchant_coft_card_SuccessResponse"/>
+                    <include name="V2fetchall_merchant_coft_card_Response"/>
+                    <include name="merchantCoftCard_Response_validate"/>
+                </methods>
+            </class>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests">
+                <methods>
+                    <include name="requestToV2_fetchall_SavedCardByUser"/>
+                    <include name="requestToV2_fetchall_SavedCardByUserID_SuccessResponse"/>
+                    <include name="requestToV2_fetchall_SavedCardByUserID_Response"/>
+                    <include name="SavedCardByUserID_Response_Validate"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-54535 Card Shortcut">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.CardShortInFPO">
+                <methods>
+                    <include name="VISA_shortcut_Offus"/>
+                    <include name="DINERS_shortcut_offus"/>
+                    <include name="DINERS_shortcutFor_ONUS"/>
+                    <include name="VISA_shortcut_JSCHECKOUT"/>
+                    <include name="VISA_shortcut_Offus_On_JSCheckout"/>
+                    <include name="SaveCardOn_shortcut_Txn_JSCheckout"/>
+                    <include name="SUCCESS_TXN_WITH_TOKEN_ON_JSCheckout"/>
+                    <include name="MASTER_shortcutFor_ONUS_ON_JSCheckout"/>
+                    <include name="OfferApply_Token_shortcut"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify Global level block functionality on bin">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.CardsControlConfig.CardsControlConfig">
+                <methods>
+                    <include name="onlineMid_UnsavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_UnblockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_UnsavedCard_UnblockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="onlineMid_SavedCard_UnblockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_BothBlockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_OnlineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_OfflineBlockedBin_ff4jON"/>
+                    <include name="offlineMid_SavedCard_UnblockedBin_ff4jON"/>
+                    <include name="onlineMid_UnsavedCard_BothBlockedBin_ff4jOFF"/>
+                    <include name="offlineMid_UnsavedCard_BothBlockedBin_ff4jOFF"/>
+                    <include name="offlineMid_SavedCard_BothBlockedBin_ff4jOFF"/>
+                    <include name="onlineMid_SavedCard_BothBlockedBin_ff4jOFF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="IssuerTokenizationSavIssuerTokenizationTheiaCasesedCardCases">
+        <classes>
+            <class name="scripts.coft.theia.IssuerTokenization"/>
+        </classes>
+    </test>
+    <test name="PGP-56596_Blocking_OCL_Saved_Card">
+        <classes>
+            <class name="scripts.api.theia.Blocking_SavedCard_QRAndDQR">
+                <methods>
+                    <include name="fetchAll_call_NotIn_SQ_FQR"/>
+                    <include name="fetchAll_call_In_SQ_FQR"/>
+                    <include name="fetchAll_call_NotIn_DQR_FQR"/>
+                    <include name="savedCard_Present_On_ONLINE_Not_On_OFFLINE"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CVV Validation handling for Card transcation ">
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="CVValidationforVisawith_3_NumericDigits"/>
+                    <include name="CVValidationforVisawith_4_NumericDigits"/>
+                    <include name="CVValidationforVisawith_2_NumericDigits"/>
+                    <include name="CVValidationforVisawith_3_NumericDigitsandSpaceBetweenThem"/>
+                    <include name="CVValidationforVisawith_3_NumericDigitsandSpaceAfterCvv"/>
+                    <include name="CVValidationforVisawith_3_AlphaNumericDigits"/>
+                    <include name="CVValidationforVisawith_3_SpecialCharNumericDigits"/>
+                    <include name="CVValidationforDinerswith_3_NumericDigits"/>
+                    <include name="CVValidationforDinerswith_4_NumericDigits"/>
+                    <include name="CVValidationforDinerswith_2_NumericDigits"/>
+                    <include name="CVValidationforDinerswith_3_NumericDigitsandSpaceBetweenThem"/>
+                    <include name="CVValidationforDinerswith_3_NumericDigitsandSpaceAfterCvv"/>
+                    <include name="CVValidationforDinerswith_3_AlphaNumericDigits"/>
+                    <include name="CVValidationforDinerswith_3_SpecialCharNumericDigits"/>
+                    <include name="CVValidationforAMEXwith_4_NumericDigits"/>
+                    <include name="CVValidationforAMEXwith_3_NumericDigits"/>
+                    <include name="CVValidationforAMEXwith_5_NumericDigits"/>
+                    <include name="CVValidationforAMEXwith_4_NumericDigitsandSpaceBetweenThem"/>
+                    <include name="CVValidationforAMEXwith_4_NumericDigitsandSpaceAfterCvv"/>
+                    <include name="CVValidationforAMEXwith_4_AlphaNumericDigits"/>
+                    <include name="CVValidationforAMEXwith_4_SpecialCharNumericDigits"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="VULN Platform Information Disclosed in HTTP Response">
+        <classes>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest">
+                <methods>
+                    <include name="testDeleteSavedCardByTokenTypeGET"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="IssuerTokenGuestCheckout">
+        <classes>
+            <class name="scripts.coft.theia.IssuerTokenizationOnGuestCheckout"></class>
+        </classes>
+    </test>
+    <test name="Verify card shortcut is present in FPO V5 and offer is being applied on same card">
+        <parameter name="theme" value="checkoutjs_web"/>
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.CardShortInFPO">
+                <methods>
+                    <include name="OfferApply_Token_shortcut"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="schemeCardVariant and schemeCardVariantCategory in COP and COTP Request">
+        <classes>
+            <class name="scripts.api.theia.schemeCardVariantInCOP">
+                <methods>
+                    <include name="SUPER_PREMIUM_NEWCARD_IN_COP"/>
+                    <include name="PREMIUM_NEWCARD_IN_COP"/>
+                    <include name="STANDARD_NEWCARD_IN_COP"/>
+                    <include name="OTHERS_NEWCARD_IN_COP"/>
+                    <include name="SUPER_PREMIUM_SAVED_CARD_IN_COP"/>
+                    <include name="PREMIUM_SAVED_CARD_IN_COP"/>
+                    <include name="STANDARD_SAVED_CARD_IN_COP"/>
+                    <include name="OTHERS_SAVED_CARD_IN_COP"/>
+                    <include name="SUPER_PREMIUM_NEWCARD_IN_COTP"/>
+                    <include name="PREMIUM_NEWCARD_IN_COTP"/>
+                    <include name="STANDARD_NEWCARD_IN_COTP"/>
+                    <include name="OTHERS_NEWCARD_IN_COTP"/>
+                    <include name="SUPER_PREMIUM_SAVEDCARD_IN_COTP"/>
+                    <include name="PREMIUM_SAVEDCARD_IN_COTP"/>
+                    <include name="STANDARD_SAVEDCARD_IN_COTP"/>
+                    <include name="OTHERS_SAVEDCARD_IN_COTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

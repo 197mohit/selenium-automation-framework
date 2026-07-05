@@ -1,0 +1,571 @@
+---
+alwaysApply: false
+manualTrigger: true
+triggerPhrase: "@pgp-automation.mdc"
+description: "PGP Automation Framework Rules - Use @pgp-automation.mdc to activate"
+---
+# PGP Automation Framework
+
+## Project Context
+Enterprise-grade test automation framework for Paytm's Payment Gateway Platform (PGP) built with Java 11, TestNG, Selenium, and RestAssured.
+
+## Framework Architecture
+
+### Base Test Class Structure
+```java
+public class YourTestClass extends PGPBaseTest {
+    // Page objects — declare as fields
+    private final CheckoutPage checkoutPage = new CheckoutPage();
+    private final ResponsePage responsePage = new ResponsePage();
+}
+```
+
+### CORRECT IMPORTS (always include exactly these for test classes):
+```java
+import com.paytm.api.GetPaymentStatus;
+import com.paytm.api.TxnStatus;
+import com.paytm.appconstants.Constants;
+import com.paytm.base.test.PGPBaseTest;
+import com.paytm.dto.GetPaymentStatusRequest.GetPaymentStatusDTO;
+import com.paytm.dto.OrderDTO;
+import com.paytm.dto.OrderFactory;
+import com.paytm.framework.reporting.Reporter;   // NOT com.paytm.apphelpers.Reporter
+import com.paytm.pages.CashierPage;
+import com.paytm.pages.CashierPageFactory;
+import com.paytm.pages.CheckoutPage;
+import com.paytm.pages.ResponsePage;
+import io.qameta.allure.Feature;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
+import org.assertj.core.api.SoftAssertions;   // plural — NOT SoftAssertion
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+```
+
+## Test Case Writing Standards
+
+### Test Method Structure
+```java
+// CORRECT PGOnly E2E CC payment pattern — copy this exactly
+@Feature("PGP-XXXX")
+@Test(groups = {"smoke", "regression", "pgp-xxxx"}, description = "Clear business-focused description.")
+@Parameters({"theme"})
+public void testSomething(@Optional("enhancedweb_revamp") String theme) throws Exception {
+    SoftAssertions softly = new SoftAssertions();
+
+    // Arrange
+    Constants.MerchantType merchant = Constants.MerchantType.PGOnly;
+    OrderDTO orderDTO = new OrderFactory.PGOnly(merchant, theme)
+            .setTXN_AMOUNT("1.00")
+            .build();
+
+    // Act
+    checkoutPage.createOrder(orderDTO);
+    CashierPage cashierPage = CashierPageFactory.getCashierPage(theme);
+    cashierPage.payBy(Constants.PayMode.CC);
+    responsePage.waitUntilLoads();
+
+    // Internal TxnStatus confirmation — fluent chain (preferred)
+    TxnStatus txnStatus = new TxnStatus(orderDTO.getMID(), orderDTO.getORDER_ID());
+    txnStatus.executeUntilNotPending();
+    txnStatus.validateStatus("TXN_SUCCESS")
+             .validateRespCode(Constants.ResponseCode.TXN_SUCCESS.getRespCode())
+             .validateOrderid(orderDTO.getORDER_ID())
+             .AssertAll();
+    // OR: access via getters after execute
+    // softly.assertThat(txnStatus.getResponse().getRESPCODE()).isEqualTo("01");
+    // NOTE: for raw jsonPath access, use Pattern C — store execute() result as Response and call jsonPath() on it
+
+    // External merchant-status assertion via GetPaymentStatus
+    // For PGOnly: use 2-param constructor — aggrMid is null in PGOnly, do NOT use 4-param version
+    GetPaymentStatusDTO getPaymentStatusDTO = new GetPaymentStatusDTO.Builder(
+            orderDTO.getORDER_ID(), merchant)
+            .build();
+    Response gpsResponse = new GetPaymentStatus(getPaymentStatusDTO).execute();
+    JsonPath jsonPath = gpsResponse.jsonPath();
+    softly.assertThat(jsonPath.getString("body.resultInfo.resultStatus"))
+          .as("resultStatus").isEqualToIgnoringCase("TXN_SUCCESS");
+    softly.assertThat(jsonPath.getString("body.resultInfo.resultCode"))
+          .as("resultCode").isEqualTo(Constants.ResponseCode.TXN_SUCCESS.getRespCode());
+    softly.assertThat(jsonPath.getString("body.orderId"))
+          .as("orderId").isEqualToIgnoringCase(orderDTO.getORDER_ID());
+    softly.assertThat(jsonPath.getString("body.mid"))
+          .as("mid").isEqualToIgnoringCase(orderDTO.getMID());
+
+    softly.assertAll();
+}
+```
+
+## Constants and Enums Usage
+
+### Merchant Types
+```java
+// ALWAYS qualify with Constants. — never use bare MerchantType
+Constants.MerchantType merchant = Constants.MerchantType.PGOnly;
+String merchantId = merchant.getId();
+String merchantKey = merchant.getKey();
+
+// required only for UPI transactions
+String merchantVpa = merchant.getVpa();
+
+// field-level examples
+public static Constants.MerchantType onusMid = Constants.MerchantType.CCB_ONUS;
+public static Constants.MerchantType offusGVEnabled = Constants.MerchantType.CCB_OFFUS_GVE;
+```
+
+### Payment Modes
+```java
+// ALWAYS qualify with Constants.PayMode
+Constants.PayMode payMode = Constants.PayMode.CC;
+// Usage in tests:
+cashierPage.payBy(Constants.PayMode.CC);    // no PaymentDTO needed for standard flows
+cashierPage.payBy(Constants.PayMode.DC);
+cashierPage.payBy(Constants.PayMode.NB);
+```
+
+### Response Codes (Existing Enum Usage)
+```java
+// ALWAYS qualify with Constants.ResponseCode
+Constants.ResponseCode.TXN_SUCCESS.getRespCode()  // returns "01"
+Constants.ResponseCode.TXN_SUCCESS.getRespMsg()   // returns "Txn Success"
+Constants.ResponseCode.TXN_FAILURE.getRespCode()  // returns "810"
+// For JSON string comparison: use literal "TXN_SUCCESS" or Constants.TXNSTATUS.TXN_SUCCESS.toString()
+```
+
+## API Testing Patterns
+
+### TxnStatus (Internal PG Status) — Patterns
+```java
+// Pattern A: fluent chain validation (preferred for standard PGOnly tests)
+TxnStatus txnStatus = new TxnStatus(orderDTO.getMID(), orderDTO.getORDER_ID());
+txnStatus.executeUntilNotPending();  // polls until not PENDING (max 1 minute)
+txnStatus.validateStatus("TXN_SUCCESS")
+         .validateRespCode("01")
+         .validateOrderid(orderDTO.getORDER_ID())
+         .validateTxnAmount(orderDTO.getTXN_AMOUNT())
+         .AssertAll();               // note: AssertAll() with capital A
+
+// Pattern B: getter-based soft assertions after executeUntilNotPending
+TxnStatus txnStatus = new TxnStatus(orderDTO.getMID(), orderDTO.getORDER_ID());
+txnStatus.executeUntilNotPending();
+SoftAssertions softly = new SoftAssertions();
+softly.assertThat(txnStatus.getResponse().getRESPCODE()).as("RESPCODE").isEqualTo("01");
+softly.assertThat(txnStatus.getResponse().getSTATUS()).as("STATUS").isEqualTo("TXN_SUCCESS");
+softly.assertThat(txnStatus.getResponse().getORDERID()).as("ORDERID").isEqualTo(orderDTO.getORDER_ID());
+softly.assertAll();
+
+// Pattern C: raw response for one-shot execute (no polling)
+TxnStatus txnStatus = new TxnStatus(orderDTO.getMID(), orderDTO.getORDER_ID());
+Response rawResponse = txnStatus.execute();  // single call, sets txnStatusResponse internally
+softly.assertThat(rawResponse.jsonPath().getString("STATUS")).isEqualToIgnoringCase("TXN_SUCCESS");
+// NOTE: getResponse() returns TxnStatusResponse (POJO getters only), not a raw RestAssured Response.
+// For jsonPath access use the rawResponse variable from execute() above — there is no getApiResponse() method.
+```
+
+### GetPaymentStatus (Merchant-Facing Status API) — Patterns
+```java
+// For PGOnly: use 2-param constructor (aggrMid is null for PGOnly — never pass orderDTO.getAggrMid())
+GetPaymentStatusDTO dto = new GetPaymentStatusDTO.Builder(
+        orderDTO.getORDER_ID(), Constants.MerchantType.PGOnly)
+        .build();
+
+// For merchants where you have explicit mid + key:
+GetPaymentStatusDTO dto = new GetPaymentStatusDTO.Builder(
+        orderDTO.getORDER_ID(), orderDTO.getMID(), merchant.getKey())
+        .build();
+
+// Execute and assert on JsonPath
+Response gpsResponse = new GetPaymentStatus(dto).execute();
+JsonPath jsonPath = gpsResponse.jsonPath();
+SoftAssertions softly = new SoftAssertions();
+softly.assertThat(jsonPath.getString("body.resultInfo.resultStatus")).as("resultStatus").isEqualToIgnoringCase("TXN_SUCCESS");
+softly.assertThat(jsonPath.getString("body.resultInfo.resultCode")).as("resultCode").isEqualTo("01");
+softly.assertThat(jsonPath.getString("body.orderId")).as("orderId").isEqualToIgnoringCase(orderDTO.getORDER_ID());
+softly.assertThat(jsonPath.getString("body.mid")).as("mid").isEqualToIgnoringCase(orderDTO.getMID());
+softly.assertThat(jsonPath.getString("body.txnAmount")).as("txnAmount").isNotEmpty();
+softly.assertAll();
+```
+
+### CRITICAL: API Class Creation Checklist
+**BEFORE creating any new API class, ALWAYS follow this mandatory checklist:**
+
+1. **Search Existing API Classes** - Use codebase search to find existing API classes for the same endpoint
+2. **Check API Endpoint Mapping** - Verify if the endpoint is already covered by existing API classes
+3. **Review Existing Implementation** - Analyze existing API class structure and patterns
+4. **Determine Reusability** - Check if existing API class can be extended or modified
+5. **Avoid Duplication** - Only create new API class if no suitable existing implementation exists
+
+**Search Commands to Use:**
+```bash
+# Search for existing API classes by endpoint
+grep -r "setBasePath.*\/api\/your-endpoint" src/main/java/com/paytm/api/
+grep -r "your-endpoint" src/main/java/com/paytm/api/
+grep -r "YourApiName" src/main/java/com/paytm/api/
+
+# Search for similar API patterns
+grep -r "extends BaseApi" src/main/java/com/paytm/api/
+```
+
+**If API class already exists:**
+- **Extend existing class** instead of creating new one
+- **Add new methods** to existing class if functionality is related
+- **Create wrapper methods** in existing class for new requirements
+- **Document the extension** with proper comments
+
+**Only create new API class if:**
+- No existing API class covers the endpoint
+- Existing API class cannot be extended due to architectural constraints
+- New API class serves a completely different purpose
+
+
+### API Class Structure
+```java
+public class YourApiClass extends BaseApi {
+
+    public YourApiClass(String param) {
+        setMethod(MethodType.POST);
+        getRequestSpecBuilder().setBaseUri(LocalConfig.PGP_HOST);
+        getRequestSpecBuilder().setBasePath("/api/endpoint");
+        getRequestSpecBuilder().addHeader("X-Amzn-Trace-Id", PGPHelpers.TraceIdGenerator());
+        getRequestSpecBuilder().setContentType(ContentType.JSON);
+    }
+
+    // Use existing response handling patterns
+    public void executeUntilGetResponse(int timeOutInSeconds, int pollingTimeInSeconds) {
+        Response response = null;
+        int pollCount = 0;
+        long startTime = System.currentTimeMillis();
+
+        while ((System.currentTimeMillis() - startTime) < timeOutInSeconds * 1000) {
+            pollCount++;
+            response = this.execute();
+            if (response.getStatusCode() == 200) {
+                break;
+            }
+            // Existing polling logic
+        }
+        Assertions.assertThat(response.getStatusCode()).as("Status Code").isEqualTo(200);
+    }
+}
+```
+
+### DTO Builder Pattern
+```java
+public class YourRequestDTO {
+    private String field1;
+    private String field2;
+
+    // Use existing builder pattern
+    public static class Builder {
+        private String field1;
+        private String field2;
+
+        public Builder setField1(String field1) {
+            this.field1 = field1;
+            return this;
+        }
+
+        public YourRequestDTO build() {
+            return new YourRequestDTO(this);
+        }
+    }
+
+    // Use existing constructor pattern
+    public YourRequestDTO(Builder builder) {
+        this.field1 = builder.field1;
+        this.field2 = builder.field2;
+    }
+}
+```
+
+## UI Testing Patterns
+
+### Page Object Structure
+```java
+public class YourPage extends BasePage {
+
+    public YourPage() {
+        super("Page Display Name");
+    }
+
+    // Use existing element patterns
+    private Button submitButton() {
+        return new Button(By.id("submitBtn"), getPageName(), "Submit Button");
+    }
+
+    private TextBox cardNumberField() {
+        return new TextBox(By.id("cardNumber"), getPageName(), "Card Number Field");
+    }
+
+    // Use existing action patterns
+    public void performAction() {
+        submitButton().click();
+        waitUntilLoads();
+    }
+
+    // Use existing validation patterns
+    public void validateExpectedAndActual(String fieldName, String actual, String expected) {
+        if (actual.equals("FIELD_NOT_AVAILABLE_IN_UI")) {
+            this.softly.fail(fieldName + " field not available in UI");
+        } else {
+            this.softly.assertThat(actual).as(fieldName + " mismatch").isEqualToIgnoringCase(expected);
+        }
+    }
+}
+```
+
+## Data Management
+
+### User Management
+```java
+// Use existing user management patterns
+User user = userManager.getForWrite(Label.BASIC);
+String ssoToken = user.ssoToken();
+String mobile = user.mobNo();
+
+// Use existing user creation patterns
+User user1 = new User(user, password);
+```
+
+### Order Creation
+```java
+// Standard PGOnly order — no User needed
+OrderDTO orderDTO = new OrderFactory.PGOnly(Constants.MerchantType.PGOnly, theme)
+        .setTXN_AMOUNT("1.00")
+        .build();
+String orderId = orderDTO.getORDER_ID();
+
+// Native order pattern
+OrderDTO orderDTO = new OrderFactory.Native(merchantType, initTxnDTO.orderFromBody(), txnToken, payMethodType)
+    .setChannelCode("ICICI")
+    .setAUTH_MODE("USRPWD")
+    .setCardInfo("|4718650100010336|618|122323")
+    .build();
+```
+
+## Validation Patterns
+
+### Soft Assertions
+```java
+// Use SoftAssertions (org.assertj.core.api.SoftAssertions — plural) — NOT SoftAssertion
+SoftAssertions softly = new SoftAssertions();
+softly.assertThat(actual).as("Field description").isEqualTo(expected);
+softly.assertAll();
+```
+
+### API Response Validation
+```java
+// Use SoftAssertions (plural) for response validation
+Response response = api.execute();
+JsonPath jsonPath = response.jsonPath();
+SoftAssertions softly = new SoftAssertions();
+softly.assertThat(jsonPath.getString("body.resultInfo.resultCode")).as("resultCode").isEqualTo("0000");
+softly.assertThat(jsonPath.param("status", status).getList(
+    "body.merchantPayOption.paymentModes.findAll { paymentModes -> paymentModes.isDisabled.status == status }.paymentMode"))
+    .contains(payMethod);
+softly.assertAll();
+```
+
+## Helper Methods
+
+### Common Helpers
+```java
+// Use existing helper methods
+String orderId = CommonHelpers.generateOrderId();
+String date = CommonHelpers.getDate(new Date(), "yyyy-MM-dd");
+String invalidOTP = CommonHelpers.getInvalidOTP();
+long epochTime = CommonHelpers.getCurrentEpochTime();
+
+// Use existing auth helper patterns
+String ssoToken = AuthHelpers.getSSOToken(mobile, password);
+Response userTokens = AuthHelpers.getUserTokens(authBaseUri, ssoToken);
+```
+
+## Configuration Management
+
+### Environment Configuration
+```java
+// Use existing LocalConfig patterns
+String pgpHost = LocalConfig.PGP_HOST;
+String walletHost = LocalConfig.WALLET_HOST;
+String authHost = LocalConfig.AUTH_HOST;
+String theiaUrl = LocalConfig.THEIA_URL;
+```
+
+### Feature Flags
+```java
+// Use existing FF4J patterns
+FF4JClient ff4jClient = new FF4JClientImpl();
+boolean isFeatureEnabled = ff4jClient.check(FF4JFlags.FEATURE_NAME);
+```
+
+## Test Suite Organization
+
+### TestNG XML Structure
+```xml
+<suite name="SuiteName" parallel="methods" thread-count="10">
+    <test name="TestName">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Package.ClassName">
+                <methods>
+                    <include name="testMethodName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+```
+1. Add xml with naming convention jira_id.xml in testsuite/temp folder for local testing
+1.  Add cases to xmls which are used for regression present in testsuite/Passed_Suites
+
+## Error Handling
+
+### Exception Handling
+```java
+// Use existing exception handling patterns
+try {
+    // API call
+} catch (Exception e) {
+    Reporter.report.error("Error message: " + e.getMessage());
+    throw e;
+}
+
+// Use existing skip patterns
+if (condition) {
+    throw new SkipException("Skip reason");
+}
+```
+
+## Reporting and Logging
+
+### Allure Reporting
+```java
+// Use existing @Step annotations
+@Step("Step description")
+public void stepMethod() {
+    // Implementation
+}
+
+// Use existing reporting patterns
+Reporter.report.info("Information message");
+Reporter.report.error("Error message");
+Reporter.report.pass("Success message");
+```
+
+## Performance and Parallel Execution
+
+### Parallel Execution
+```java
+// Use existing parallel execution patterns
+@DataProvider(name = "DataProvider", parallel = true)
+public Object[][] dataProvider() {
+    // Data provider implementation
+}
+
+// Use existing wait strategies
+protected Wait pageWait = new Wait(value -> 3, 10, 1000);
+protected Wait peonWait = new Wait(n -> n == 0 ? 0 : 5, 10, 1000);
+```
+
+## Security and Authentication
+
+### Token Management
+```java
+// Use existing token management patterns
+String ssoToken = AuthHelpers.getSSOToken(mobile, password);
+String traceId = PGPHelpers.TraceIdGenerator();
+
+// Use existing token validation patterns
+AuthHelpers.tokens.add(ssoToken);
+```
+
+## Code Quality Standards
+
+### Naming Conventions
+```java
+// Use existing naming patterns
+public void TestDescription() { }
+public void validatePaymentRetry(String firstPaymentMode, String secondPayMethod) { }
+public void PGP_successfulPtmX2pressCC(MerchantType merchant) { }
+
+// Use existing variable naming
+private static final String THEME = "enhancedweb_revamp";
+private static final String DISABLED_PAYMENT_MODE_ERROR_MSG = "{paymentMode} is not allowed";
+```
+
+### Documentation
+```java
+/**
+ * Test class for payment processing functionality
+ *
+ * @author DeveloperName
+ * @version 1.0
+ * @since 2024-01-01
+ */
+//check if existing test class exist. If exist ask user is he wants to add cases in existing class or create a new class. If user answers new class ask class name he want to make.
+//if existing test class does not exit ask user for test class name he/she wants to create
+public class YourTestClass extends PGPBaseTest {
+
+
+    @Test(description = "Should process payment successfully with valid credentials")
+    public void testMethodName() throws Exception {
+        // Test implementation
+    }
+}
+```
+
+## Anti-Patterns to Avoid
+
+1. **Don't hardcode values** - use existing constants and configuration
+2. **Don't use Thread.sleep()** - use existing wait strategies
+3. **Don't ignore exceptions** - use existing exception handling patterns
+4. **Don't use hard assertions** for multiple validations - use `SoftAssertions` (plural, `org.assertj.core.api.SoftAssertions`)
+5. **Don't create duplicate code** - use existing helper methods
+6. **Don't skip proper setup/cleanup** - use existing @BeforeMethod/@AfterMethod patterns
+7. **Don't use absolute paths** - use existing relative paths
+8. **Don't ignore test data validation** - use existing validation patterns
+9. **Don't break existing naming conventions** - follow established patterns
+10. **Don't modify existing framework structure** - extend, don't change
+11. **CRITICAL: Don't create new API classes without checking existing ones** - Always search for existing API classes before creating new ones
+12. **Don't duplicate API endpoints** - Reuse existing API classes or extend them instead of creating duplicates
+13. **Don't update existing test cases unless asked otherwise** - Reuse existing API classes or extend them instead of creating duplicates
+14. **Don't use system.out.println() for logging purpose** - Use Logger.info and Logger.debug instead
+
+
+## Tools & Technologies Integration
+
+### Static Analysis
+- **SonarQube** for code quality analysis
+- **SpotBugs** for bug detection
+- **PMD** for code style checking
+- **Checkstyle** for coding standards
+
+### Testing Tools
+- **TestNG** for test execution
+- **RestAssured** for API testing
+- **Selenium** for UI testing
+- **Allure** for reporting
+- **JaCoCo** for code coverage
+
+### CI/CD Integration
+- **Jenkins** for continuous integration
+- **Maven** for build management
+- **Git** for version control
+
+## Summary
+
+These enhanced Cursor rules maintain your existing project structure while incorporating industry best practices:
+
+1. **Preserves Your Architecture** - All existing patterns and structures maintained
+2. **Enhances Code Quality** - Adds industry standards without breaking existing code
+3. **Maintains Consistency** - Follows your established naming and coding conventions
+4. **Improves Maintainability** - Adds better documentation and error handling
+5. **Keeps Framework Intact** - No changes to existing framework components
+6. **Adds Modern Practices** - Incorporates contemporary testing and development practices
+7. **Maintains Performance** - Keeps existing parallel execution and optimization patterns
+8. **Preserves Security** - Maintains existing security patterns while adding enhancements
+
+The rules ensure that any generated code will seamlessly integrate with your existing framework while following industry best practices for quality, maintainability, and performance.

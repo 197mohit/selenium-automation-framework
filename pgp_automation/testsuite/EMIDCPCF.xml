@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMI DC PCF">
+    <test name="Custom emi dc">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="VerifyEMI_DCTxnWithPCFWithPromo"/>
+                    <include name="VerifyEMI_DCTxnWithPCF"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Checkout EMI DC">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsEMITests">
+                <methods>
+                    <include name="VerifyEMI_DCTxnWithPCF"/>
+                    <include name="VerifyEMI_DCTxnWithPCFWithPromo"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

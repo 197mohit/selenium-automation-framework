@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-33727" verbose="1" thread-count="20" parallel="tests">
+    <test name="To verify merchant and custom footer logo on CheckoutJS Page">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid"></include>
+                    <include name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid"></include>
+                    <include name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnBothMid_NonLoggedIn"></include>
+                    <include name="toVerifyMerchantLogoAndFooterLogo_whenPrefIsEnableOnChildMid_NonLoggedIn"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription_via_ppi" verbose="1" parallel="tests" thread-count="12">
+    <test name="Subscription_via_ppi">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.defaultFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_37_ValidateSuccessfulPaymentWithSavedCard"/>
+                    <include name="PGP_35_validateCardGettingSaveForSuccessfulTxn"/>
+                    <include name="PGP_32_loginErrorWithIncorrectCredentials"/>
+                    <include name="PGP_78_validateSuccessfulPPISubsWhenWalletBalEqualsToTxnAmt"/>
+                    <include name="PGP_77_validateSuccessfulPPISubsWhenWalletBalGreaterThanTxnAmt"/>
+                    <include name="PGP_83_ValidateSuccessfulPPISubscriptionWithSSOTokenLogin"/>
+                    <include name="PGP_101_validateTxnAmtGreaterThanSubsMaxAmt"/>
+                    <include name="PGP_87_ValidateS2StxnWithSavedCardBlank"/>
+                    <include name="PGP_88_ValidateS2StxnWithValidSavedCardAndTxnAmntZero"/>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                    <include name="PGP_91_validateS2StxnWithInvalidSSOToken"/>
+                    <include name="PGP_36_ValidateSuccessfulPaymentWithoutSavedCard"/>
+                    <include name="PGP_27_validateSubsDetailsOnCashierPageWhenSavedCardPresent"/>
+                    <include name="PGP_28_validateSubsDetailsOnCashierPageWhenSavedCardNotPresent"/>
+                    <include name="PGP_33_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountGtZero"/>
+                    <include name="PGP_34_validateErrMsgsOnInvalidCardDetailsWhenTxnAmountEqualsZero"/>
+                    <include name="PGP_30_ValidateSuccessfulZeroAmtPaymentWithoutSavedCard"/>
+                    <include name="PGP_31_ValidateSuccessfulZeroAmtPaymentWithSavedCard"/>
+                    <include name="PGP_76_validateSuccessfulPPISubsWhenWalletBalLessThanTxnAmt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

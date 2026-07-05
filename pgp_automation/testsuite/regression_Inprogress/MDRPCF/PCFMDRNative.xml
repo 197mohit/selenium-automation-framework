@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PCFMDRNative" verbose="1" parallel="methods" thread-count="20">
+    <test name="PCFMDR on Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative"/>
+        </classes>
+    </test>
+
+    <test name="PCFMDR on Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.MDRPCF.PCFMDRNative"/>
+        </classes>
+    </test>
+</suite>

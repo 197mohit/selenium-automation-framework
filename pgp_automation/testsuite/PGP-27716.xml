@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-27716" verbose="1">
+    <test name="Native cases for Pre Debit">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewCCMONTHDD"/>
+                    <include name="verifyRenewQUARTERDDDC"/>
+                    <include name="verifyRenewWEEKDDDC"/>
+                    <include name="verifyRenewBIMONTHLYDDCC"/>
+                    <include name="verifyRenewSEMIANNUALLYDDCC"/>
+                    <include name="verifyRenewCCONDEMANDDD"/>
+                    <include name="verifyRenewCCDAYDD"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+    <test name="Native Plus cases for Pre Debit">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.subscription.ProcessRenewSubscription">
+                <methods>
+                    <include name="verifyRenewCCMONTHDD"/>
+                    <include name="verifyRenewQUARTERDDDC"/>
+                    <include name="verifyRenewWEEKDDDC"/>
+                    <include name="verifyRenewBIMONTHLYDDCC"/>
+                    <include name="verifyRenewSEMIANNUALLYDDCC"/>
+                    <include name="verifyRenewCCONDEMANDDD"/>
+                    <include name="verifyRenewCCDAYDD"/>
+
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+
+</suite>

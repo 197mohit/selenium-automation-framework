@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-58209">
+    <test name="Verify OfferApply Response When Bin Is Emi Ineligible">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest">
+                <methods>
+                    <include name="Verify_OfferApply_Response_When_Bin_Is_Emi_Ineligible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

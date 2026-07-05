@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-38395" verbose="1" thread-count="1" parallel="tests">
+    <test name="Verify Paytm NB on Top">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.EnhancingLogicOfOrderingNetBanking">
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-45369 " verbose="1" parallel="tests" thread-count="3">
+    <test name="PGP-45369 CBR for TopUp and AddNPay">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.EnableCBRForTopupAndAddAndPayTxn">
+                <methods>
+                    <include name="RequestToProcessRoutingEngineTopUpCC"/>
+                    <include name="ResponseToProcessRoutingEngineTopUp"/>
+                    <include name="channelPreferenceInFUND_ORDER_PAYRequestTopUpFlow"/>
+                    <include name="RequestToProcessRoutingEngineDC"/>
+                    <include name="RequestToProcessRoutingEngineAddMoneyExpressCC"/>
+                    <include name="ResponseToProcessRoutingEngineAddMoneyExpress"/>
+                    <include name="channelPreferenceInFUND_ORDER_PAYRequestAddMoneyExpressFlow"/>
+                    <include name="RequestToProcessRoutingEngineAddNPayCC"/>
+                    <include name="ResponseToProcessRoutingEngineAddNPay"/>
+                    <include name="channelPreferenceInPAYMENT_CASHIER_PAYRequestAddNPayFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+
+

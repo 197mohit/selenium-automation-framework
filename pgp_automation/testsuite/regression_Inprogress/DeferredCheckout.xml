@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="DeferredCheckout" verbose="1" parallel="methods" thread-count="12">
+    <test name="Deferred Fee on AddMoney Cases">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateFullKYCWalletCC"/>
+                    <include name="validateFullKYCWalletSavedCC"/>
+                    <include name="validateMinKYCWalletLimitNotBreached"/>
+                    <include name="validateMinKYCWalletLimitBreached"/>
+                    <include name="validateNoKYCWalletLimitNotBreached"/>
+                    <include name="validateNoKYCWalletLimitBreached"/>
+                    <include name="validateFullKYCGV"/>
+                    <include name="validateFullKYCGVSavedCC"/>
+                    <include name="validateMinKYCLimitNotBreachedGV"/>
+                    <include name="validateMinKYCLimitBreachedGV"/>
+                    <include name="validateNoKYCGV"/>
+                    <include name="validateFullKYCDC"/>
+                    <include name="validateMinKycNB"/>
+                    <include name="validateFullKYCWalletNewFlow"/>
+                    <include name="validateFullKYCWalletSavedCCNewFlow"/>
+                    <include name="validateMinKYCWalletWalletNewApp"/>
+                    <include name="validateNoKYCWalletMorePNewFlow"/>
+                    <include name="validateFullKYCGVSavedCCNewAPP"/>
+                    <include name="validateNoKYCGVNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Deferred Checkout Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <exclude name="validateFullKYCWalletCC"/>
+                    <exclude name="validateFullKYCWalletSavedCC"/>
+                    <exclude name="validateMinKYCWalletLimitNotBreached"/>
+                    <exclude name="validateMinKYCWalletLimitBreached"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateNoKYCWalletLimitBreached"/>
+                    <exclude name="validateFullKYCGV"/>
+                    <exclude name="validateFullKYCGVSavedCC"/>
+                    <exclude name="validateMinKYCLimitNotBreachedGV"/>
+                    <exclude name="validateMinKYCLimitBreachedGV"/>
+                    <exclude name="validateNoKYCGV"/>
+                    <exclude name="validateFullKYCDC"/>
+                    <exclude name="validateMinKycNB"/>
+                    <exclude name="validateFullKYCWalletNewFlow"/>
+                    <exclude name="validateFullKYCWalletSavedCCNewFlow"/>
+                    <exclude name="validateMinKYCWalletWalletNewApp"/>
+                    <exclude name="validateNoKYCWalletMorePNewFlow"/>
+                    <exclude name="validateFullKYCGVSavedCCNewAPP"/>
+                    <exclude name="validateNoKYCGVNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Deferred Checkout Native+">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <exclude name = "deferredCheckoutRiskReject"/>
+                    <exclude name="validateFullKYCWalletCC"/>
+                    <exclude name="validateFullKYCWalletSavedCC"/>
+                    <exclude name="validateMinKYCWalletLimitNotBreached"/>
+                    <exclude name="validateMinKYCWalletLimitBreached"/>
+                    <exclude name="validateNoKYCWalletLimitNotBreached"/>
+                    <exclude name="validateNoKYCWalletLimitBreached"/>
+                    <exclude name="validateFullKYCGV"/>
+                    <exclude name="validateFullKYCGVSavedCC"/>
+                    <exclude name="validateMinKYCLimitNotBreachedGV"/>
+                    <exclude name="validateMinKYCLimitBreachedGV"/>
+                    <exclude name="validateNoKYCGV"/>
+                    <exclude name="validateFullKYCDC"/>
+                    <exclude name="validateMinKycNB"/>
+                    <exclude name="validateFullKYCWalletNewFlow"/>
+                    <exclude name="validateFullKYCWalletSavedCCNewFlow"/>
+                    <exclude name="validateMinKYCWalletWalletNewApp"/>
+                    <exclude name="validateNoKYCWalletMorePNewFlow"/>
+                    <exclude name="validateFullKYCGVSavedCCNewAPP"/>
+                    <exclude name="validateNoKYCGVNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="add money wallet pcf for Native plus deferred flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDCTxn_DeferredCheckout_WithAmountInFetchPayOptionForPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="add money wallet pcf for Native deffered flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateDCTxn_DeferredCheckout_WithAmountInFetchPayOptionForPCFMerchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20549:a percentage sign in init txn for Deffered Flow for native">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="succesfulOrderwhenApercentagesSignInInitForDeferred"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20549:a percentage sign in init txn for Deffered Flow for native +">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="succesfulOrderwhenApercentagesSignInInitForDeferred"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Deffered for risk testcases for rent">
+        <classes>
+            <class name="scripts.DeferredCheckout">
+                <methods>
+                    <include name="validateRiskAcceptNotNullForCC"/>
+                    <include name="validateRiskAcceptNotNullForDC"/>
+                    <include name="validateRiskAcceptNotNullForUPI"/>
+                    <include name="validateRiskAcceptNotNullForHybrid"/>
+                    <include name="validateRiskAcceptNotNullForADDNPAY"/>
+                    <include name="validateRiskAcceptNotNullForPPBL"/>
+                    <include name="validateRiskInfoNullForCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-28966 Simplify EMI subvention tests - Native">
+        <parameter name="isNativePlus" value="false">
+            <classes>
+                <class name="scripts.DeferredCheckout">
+                    <methods>
+                        <include name="validateDeferedFPOWhenGoodsIdNotMatchesInProp"/>
+                        <include name="validateDeferedFPOWhenGoodIDMatchesInProperty"/>
+                        <include name="validateDeferedFPOWhenGoodsIdNotPassed"/>
+                    </methods>
+                </class>
+            </classes>
+        </parameter>
+    </test>
+</suite>

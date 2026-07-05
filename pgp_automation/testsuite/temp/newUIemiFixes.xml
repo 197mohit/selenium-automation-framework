@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="test thread" verbose="1" thread-count="5" parallel="methods">
+    <test name="newUIemiFixes">
+
+        <classes>
+            <class name="scripts.api.theia.vpaValidate.AccessTokenVPAValidateV1Test">
+                <methods>
+                    <include name="test when query params are not provided"/>
+                    <include name="test when mid in query params is not provided"/>
+                    <include name="test when orderId in query params is not provided"/>
+                    <include name="test unable to validate vpa when body vpa is not provided"/>
+                    <include name="test unable to validate vpa when body vpa = null"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia_Suite-2" verbose="1" thread-count="15" parallel="classes">
+    <test name="Payments API's 4">
+        <classes>
+            <class name="scripts.api.theia.CloseOrder">
+                <methods>
+                    <exclude name="testSuccess"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.CheckEmiEligibility">
+                <methods>
+                    <exclude name="testSuccess"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.GetEmiDetails">
+                <methods>
+                    <exclude name="test planId in emiChannelInfos"/>
+                    <exclude name="testThatEMIdetailsShouldBefetchedFor51051000100000000001ProductCodeWhenProductCodeIsNotProvidedInrequest"/>
+                    <exclude name="test channelName for any bank emi in emiDetails"/>
+                    <exclude name="test emiChannelInfos for zest money emi in emiDetails"/>
+                    <exclude name="testThatEMIdetailsShouldBefetchedForProductCode51051000100000000001"/>
+                    <exclude name="test emiId in emiChannelInfos"/>
+                    <exclude name="test size in emiDetails in Body"/>
+                    <exclude name="test interestRate in emiChannelInfos"/>
+                    <exclude name="test channelCode for any bank emi in emiDetails"/>
+                    <exclude name="test maxAmount in emiChannelInfos"/>
+                    <exclude name="test minAmount in emiChannelInfos"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Add Description FPO Tests - Mid + SSO - FPO V1, V2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled'"/>
+                    <include name="'test body.addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is disabled'"/>
+                    <include name="'test body.descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is disabled'"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Promo OR Flow">
+        <classes>
+            <class name="scripts.or.FetchCardDetailsAPI">
+                <methods>
+                    <exclude name="assertValidResponseForDifferentSavedCardTypes"/>
+                    <exclude name="assertSuccessWhenSavedCardIdPassed"/>
+                    <exclude name="assertFailureWhenSavedCardIdOfAnotherUserPassed"/>
+                    <exclude name="assertBinLength8WhenEightDigitBinRequiredTrue"/>
+                    <exclude name="assertResponseWhenBothCardNumberAndSavedCardIdPassed"/>
+                    <exclude name="assertValidResponseForDifferentCardTypes"/>
+                    <exclude name="assertCorrectRespWhenLowSuccessRateCardProvided"/>
+                    <exclude name="assertBinLength6WhenEightDigitBinRequiredFalse"/>
+                    <exclude name="executeFetchPayOptions"/>
+                    <exclude name="assertBinNotValidRespWhenInvalidBinProvided"/>
+                    <exclude name="assertFailureWhenCardWithNonExistentBINPassed"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-27185 - Sending priority">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="Boss Panel with default merchant"/>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV1Test">
+                <methods>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test able to fetch body merchantPayOption"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV2Test">
+                <methods>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has amex saved card and merchant it"/>
+                    <exclude name="test body merchantPayOption savedInstruments equals empty list when user has saved cards but these cards are not supported by merchant"/>
+                    <exclude name="test body merchantPayOption upiProfile defaultCreditAccRefId"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test body merchantPayOption paymentModes emi payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033_1">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV1Test">
+                <methods>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for ppbl when merchant and user both have ppbl"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV2Test">
+                <methods>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test body merchantPayOption paymentModes emi payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test body merchantPayOption upiProfile defaultCreditAccRefId"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppbl') when m payModes contains('ppbl') &amp;&amp; u ppbl == true"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033_2">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.GuestTokenFetchPayOptionsV1Test">
+                <methods>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for pdc when merchant has pdc but not user"/>
+                    <exclude name="test body userDetails paytmCCEnabled = false when pdc is not configured on user but is configured on merchant"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="test body userDetails kyc = true when user's kyc is completed"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test body userDetails paytmCCEnabled = true when merchant and user both support pdc"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test able to fetch body userDetails when token has user authentication"/>
+                    <exclude name="test body loginInfo userLoggedIn == true when token has user authentication"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for paytm instruments"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for pdc when merchant and user both have pdc"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for ppbl when merchant and user both have ppbl"/>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body userDetails kyc = false when user's kyc is not completed"/>
+                    <exclude name="test body userDetails mobile equals user's mobile no"/>
+                    <exclude name="test body userDetails paytmCCEnabled = true when pdc is not configured on merchant but is configured on user"/>
+                    <exclude name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                    <exclude name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="temp-PGP-25033_3">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV1Test">
+                <methods>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test enable paymode for EMI pay method when EMI_TYPE is not passed"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="Verify that merchant limit list is not returned in the response for merchantLimit is not 1"/>
+                    <exclude name="test emi type DEBIT_CARD added in enable paymode for EMI pay method"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="assertAllSavedCCPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') payChannelOptions"/>
+                    <exclude name="test disable paymode for EMI pay method when EMI_TYPE is not passed"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test emi type CREDIT_CARD added in enable paymode for EMI pay method"/>
+                    <exclude name="test able to fetch body merchantPayOption"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV2Test">
+                <methods>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test body merchantPayOption savedInstruments equals empty list when user has saved cards but these cards are not supported by merchant"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has amex saved card and merchant it"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="assertAllSavedCCPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test body merchantPayOption paymentModes emi payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="Verify that merchant limit list is not returned in the response for merchantLimit is 2"/>
+                    <exclude name="test emi type CREDIT_CARD added in enable paymode for EMI pay method"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test enable paymode for EMI pay method when EMI_TYPE is not passed"/>
+                    <exclude name="test emi type DEBIT_CARD added in enable paymode for EMI pay method"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="temp-PGP-25033_4">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV1Test">
+                <methods>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="assertAllSavedCCPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for non app invoke flow even when addNPayOnUPIPushSupported is true"/>
+                    <exclude name="test body walletOnly = false when merchant has wallet-only preference disabled"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is false"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test when body fetchAllPaymentOffers = ''"/>
+                    <exclude name="Verify UPIPUSHEXPRESS present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is true"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') payChannelOptions"/>
+                    <exclude name="setTxnToken"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+
+
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV2Test">
+                <methods>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test when body fetchAllPaymentOffers = true given merchant does not have promos configured"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('emi') when m payModes contains('emi')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="setTxnToken"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for non app invoke flow even when addNPayOnUPIPushSupported is true"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has amex saved card and merchant it"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is false"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="assertAllSavedCCPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="Verify UPIPUSHEXPRESS present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is true"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="checkResponseForMultiplePayModesProvided"/>
+                    <exclude name="test body merchantPayOption paymentModes emi payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <exclude name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test that Bulk Promo API is applied successfully when merchant has saved cards"/>
+                    <exclude name="test that Bulk Promo API is applied successfully when user has saved cards"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('ppi') when m payModes contains('ppi') &amp;&amp; u ppi == true"/>
+                    <exclude name="test body merchantPayOption paymentModes find('pdc') displayName"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-37815 V5 FPO">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.AccessTokenFetchPayOptionsV5Test">
+                <methods>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for non-paytm instruments"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has amex saved card and merchant it"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption paymentModes nb payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails merchantName"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference enabled"/>
+                    <exclude name="test body addMoneyPayOption when merchant has addnpay preference enabled"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled"/>
+                    <exclude name="test body merchantPayOption upiProfile defaultCreditAccRefId"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.ChecksumFetchPayOptionsV5Test">
+                <methods>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for non-paytm instruments"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test body merchantPayOption upiProfile defaultCreditAccRefId"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test body merchantPayOption paymentModes nb payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled"/>
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.SSOTokenFetchPayOptionsV5Test">
+                <methods>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for non-paytm instruments"/>
+                    <exclude name="test enable paymode for EMI pay method when EMI_TYPE is not passed"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test emi type DEBIT_CARD added in enable paymode for EMI pay method"/>
+                    <exclude name="test body merchantPayOption savedInstruments equals empty list when user has saved cards but these cards are not supported by merchant"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has amex saved card and merchant it"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="assertAllSavedCCPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                    <exclude name="Verify that merchant limit list is not returned in the response for merchantLimit is 2"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="Verify that merchant limit list is returned in the response for merchantLimit is 1"/>
+                    <exclude name="test body merchantPayOption paymentModes nb payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled"/>
+                    <exclude name="Validate that saved vpa should be fetched when device id is passed in query param"/>
+
+                </methods>
+            </class>
+            <class name="scripts.api.theia.fetchPayOptions.TxnTokenFetchPayOptionsV5Test">
+                <methods>
+                    <exclude name="test body merchantPayOption savedInstruments equals iterable with size greater than 0 when user has saved cards"/>
+                    <exclude name="test body merchantPayOption paymentModes isDisabled for non-paytm instruments"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('emi') when m payModes contains('emi')"/>
+                    <exclude name="test body merchantPayOption paymentModes contains('cod') when m payModes contains('cod')"/>
+                    <exclude name="test body descriptionTextFormat when preference - OFFLINE_SNP_DESC_TXT is enabled"/>
+                    <exclude name="test body merchantPayOption paymentModes payChannelOptions iconurl contain(null)"/>
+                    <exclude name="test when body simplifiedPaymentOffers promoCode is not passed in Initiate Txn API"/>
+                    <exclude name="test body merchantPayOption savedInstruments contains saved card details when user has bajajfn saved card and merchant supports it"/>
+                    <exclude name="assertAllSavedCCPayChannelOptionsReturnedWhenOnlyModeIsProvided"/>
+                    <exclude name="setTxnToken"/>
+                    <exclude name="checkResponseForMultiplePayModesProvided"/>
+                    <exclude name="test body merchantPayOption paymentModes find('cod') displayName"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="test body merchantPayOption paymentModes find('ppbl') payChannelOptions"/>
+                    <exclude name="test unable to fetch pay options details when head token = null"/>
+                    <exclude name="test body paymentFlow when m hybrid == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="Verify UPIPUSHEXPRESS present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is true"/>
+                    <exclude name="test body merchantPayOption paymentModes nb payChannelOptions hasLowSuccess('true')"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for non app invoke flow even when addNPayOnUPIPushSupported is true"/>
+                    <exclude name="Verify UPIPUSHEXPRESS not present in add and pay paymodes for app invoke flow and addNPayOnUPIPushSupported is false"/>
+                    <exclude name="test priority in fpo for all paymodes for default merchant"/>
+                    <exclude name="test body paymentFlow when m addnpay == true &amp;&amp; token contains user authentication"/>
+                    <exclude name="test able to fetch body addMoneyMerchantDetails when merchant has addnpay preference disabled"/>
+                    <exclude name="test unable to fetch body addMoneyPayOption when merchant has addnpay preference disabled"/>
+                    <exclude name="test body addDescriptionMandatory when preference - OFFLINE_SNP_DESC_FLAG is enabled"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Card Index api changes">
+        <classes>
+            <class name="scripts.api.theia.fetchCardIdxNo.JWTTokenFetchCardIndexNoTest">
+                <methods>
+                    <exclude name="test when with incomplete bank account number"/>
+                    <exclude name="test when reference id in header"/>
+                    <exclude name="test when with incomplete IFSC number"/>
+                    <exclude name="test with bankifsc number set as blank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FPO Native cases for PGP-21772">
+        <classes>
+            <class name="scripts.api.theia.fetchPayOptions.FetchPayOptionsV1Test">
+                <methods>
+                    <include name="test priority in fpo for all paymodes for default merchant"/>
+                    <include name="enhancedOrderingLoggedIn"/>
+                    <include name="enhancedOrderingLogInCashierPage"/>
+                    <include name="enhancedOrderingHybrid"/>
+                    <include name="enhancedOrderingHybridSSO"/>
+                    <include name="enhancedOrderingAddMoneySSO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Promo And Flow">
+        <classes>
+            <class name="scripts.api.theia.FetchAllPaymentOffers"/>
+            <class name="scripts.api.theia.ProcessTransactionAPI">
+                <methods>
+                    <exclude name="test localisation fields are not present when localisation is enabled on merchant but language header is not passed"/>
+                    <exclude name="testPaymentByPDC"/>
+                    <exclude name="testwithDeleteMethodType"/>
+                    <exclude name="testPaymentsByDC"/>
+                    <exclude name="testPaymentsBySavedDC"/>
+                    <exclude name="testHybridPaymentByCC"/>
+                    <exclude name="test localisation fields are present when localisation is enabled on merchant and language header is passed"/>
+                    <exclude name="testPaymentByPPI"/>
+                    <exclude name="test localisation fields are not present when localisation is disabled on merchant but language header is passed"/>
+                    <exclude name="testAddnPayPaymentByCC"/>
+                    <exclude name="testPaymentsByCC"/>
+                    <exclude name="testPaymentsBySavedCC"/>
+                    <exclude name="testwithIncorrectContentType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native Initiate Txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.Native.InitiateTransaction"/>
+        </classes>
+    </test>
+
+    <test name="Seamless">
+        <classes>
+            <class name="scripts.Seamless">
+                <methods>
+                    <include name="PGP_288_successfulSeamlessCC"/>
+                    <include name="PGP_289_successfulSeamlessDC"/>
+                    <!--   <include name="PGP_293_successfulSeamlessNB"/> -->
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="Native Fetch Pay Options" parallel="methods" thread-count="3">
+        <classes>
+            <class name="scripts.Native.FetchPayOptions">
+                <methods>
+                    <exclude name="prepaidCardVisibleSupportedMidPG"/>
+                    <exclude name="TC_FPI_037"/>
+                    <exclude name="TC_FPI_038"/>
+                    <exclude name="TC_FPI_060"/>
+                    <exclude name="prepaidCardVisibleSupportedMid"/>
+                    <exclude name="TC_FP1_067"/>
+                    <exclude name="TC_FPI_042"/>
+                    <exclude name="internationalCardNonLoggedInFlowPGSide"/>
+                    <exclude name="disableScreenShotCapture"/>
+                    <exclude name="TC_FPI_041"/>
+                    <exclude name="prepaidCardNotVisibleUnsupportedMidPG"/>
+                    <exclude name="internationalCardNotVisibleLoggedInFlowPGSide"/>
+                    <exclude name="prepaidCardNotVisibleUnsupportedMid"/>
+                    <exclude name="TC_FPI_067"/>
+                    <exclude name="TC_FPI_026"/>
+                    <exclude name="TC_FPI_027"/>
+                    <exclude name="internationalCardLoggedInFlowPGSide"/>
+                    <exclude name="internationalCardLoggedInFlowPPlus"/>
+                    <exclude name="internationalCardNonLoggedInFlowPPlusSide"/>
+                    <exclude name="TC_FPI_031"/>
+                    <exclude name="bajajFinservFilteringAlipay"/>
+                    <exclude name="merchantLogoUrlPresent"/>
+                    <exclude name="TC_FPI_002"/>
+                    <exclude name="TC_FPI_056"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="NativeFPOV2 TCs">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <exclude name="internationalCardLoggedInFlowPPlus"/>
+                    <exclude name="internationalCardNonLoggedInFlowPGSide"/>
+                    <exclude name="prepaidCardNotVisibleUnsupportedMidPG"/>
+                    <exclude name="setSavedFlagToItsOriginalValue"/>
+                    <exclude name="internationalCardLoggedInFlowPGSide"/>
+                    <exclude name="prepaidCardVisibleSupportedMidPG"/>
+                    <exclude name="VerifyBankLogoforSavedCardsNative"/>
+                    <exclude name="internationalCardNotVisibleLoggedInFlowPPlus"/>
+                    <exclude name="validateccAddnPayLimitinFPOV5whenbalanceisZero"/>
+                    <exclude name="validateccAddnPayLimitinFPOV5whenaddnpayAndCCNotAllowedonMid"/>
+                    <exclude name="validateccAddnPayLimitinFPOV5whenaddnpayNotAllowedonMid"/>
+                    <exclude name="validateccAddnPayLimitinFPOV5whenbalanceisNonZero"/>
+                    <exclude name="validateccAddnPayLimitinFPOV5whenCCNotAllowedonMid"/>
+                    <exclude name="validateccAddnPayLimitinFPOV5whenWalletisNotAllowedonMid"/>
+                    <exclude name="validateccAddnPayLimitinFPOwhenaddnpayAndCCNotAllowedonMid"/>
+                    <exclude name="validateccAddnPayLimitinFPOwhenaddnpayNotAllowedonMid"/>
+                    <exclude name="validateccAddnPayLimitinFPOwhenbalanceisNonZero"/>
+                    <exclude name="validateccAddnPayLimitinFPOwhenbalanceisZero"/>
+                    <exclude name="validateccAddnPayLimitinFPOwhenCCNotAllowedonMid"/>
+                    <exclude name="validateccAddnPayLimitinFPOwhenWalletisNotAllowedonMid"/>
+                    <exclude name="validateLoginQRFQRClientIdfromCache"/>
+                    <exclude name="validateLoginQRFQRClientIdfromCacheAndnotPresentonMerchantCenter"/>
+                    <exclude name="validateLoginQRFQRClientIdfromMerchantCenter"/>
+                    <exclude name="validateLoginQRFQRClientIdnotPresentonMerchantCenter"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-31411 NATIVE PAY CALL">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.NativePaycall">
+                <methods>
+                    <exclude name="payOnBankForNativeTxnCCPayMode"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+    <!-- Excluding Zero Pass Percentage TCs ->
+   <test name="PGP-32831 - Verifying different sub wallets on single user">
+       <classes>
+           <class name="scripts.SubWalletDetails"/>
+        </classes>
+    </test> -->
+
+    <test name="PGP-30179 - ChecksumIssueAggrMerchants">
+        <classes>
+            <class name="scripts.ChecksumIssueAggregatorMerchants">
+                <methods>
+                    <exclude name="checksumIssue"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Split settlement For Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeMF">
+                <methods>
+                    <exclude name="validateDCTxnWithoutSplit"/>
+                    <exclude name="validateNBTxnWithoutSplit"/>
+                    <exclude name="validateSplitInfoDC"/>
+                    <exclude name="validateChecksum"/>
+                    <exclude name="validateSplitInfoNB"/>
+                    <exclude name="validateSplitInfoDCPercentage"/>
+                    <exclude name="validateSplitInfoDCChild"/>
+                    <exclude name="validateSplitInfoDCChildPERCENTAGE"/>
+                    <exclude name="validateSplitInfoNBPercentage"/>
+                    <exclude name="validateSplitInfoNBChild"/>
+                    <exclude name="validateSplitInfoNBChildPercentage"/>
+                    <exclude name="validateSplitInfoUPIChild"/>
+                    <exclude name="validateSplitInfoUPIChildPERCENTAGE"/>
+                    <exclude name="validateSplitInfoUPIPercentage"/>
+                    <exclude name="validateSplitInfoUPI"/>
+                    <exclude name="validateUPITxnWithoutSplit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="JusPay API Automation">
+        <classes>
+            <class name="scripts.JusPay">
+                <methods>
+                    <exclude name="jusPayValidationforPREAUTHReqestType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+
+    <!-- Excluding Zero Pass Percentage TCs (All Risk Add MOney TCs ) >
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API)">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                    <include name="fetchPayOptionForNonRiskRejectedUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="testGVScenario"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="testGVScenario"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    < Till here  -->
+
+    <test name="BinMinMax">
+        <classes>
+            <class name="scripts.api.CC.CC_PG2">
+                <methods>
+                    <include name="validateFetchBinDetailAndSuccessCCTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="KYB Limit">
+        <classes>
+            <class name="scripts.MerchantLimtiCenter">
+                <methods>
+                    <include name="validateKYBDailyLimit"/>
+                    <include name="validateKYBMonthlyLimit"/>
+                    <include name="validateKYBNoLimitExceed"/>
+                    <include name="validateKYBDailyLimitAmount20001"/>
+                    <include name="validateKYBMonthlyLimitAmount30001"/>
+                    <include name="validateKYBNoLimitExceedAmount20"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+        <test name="Payment link UPI NON ReqAuth DQR in Native App FPO">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.PaymentLinks">
+                <methods>
+                    <include name="verifyUPINonReqAuthDQRInNativeAppFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

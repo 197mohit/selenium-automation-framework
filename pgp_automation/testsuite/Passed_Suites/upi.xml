@@ -1,0 +1,1492 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="UPI_Suite" verbose="1" thread-count="2" parallel="tests">
+    <test name="Upi Intent tests ">
+        <classes>
+            <class name="scripts.Native.UpiIntent">
+                <methods>
+                    <include name="cashierPayUPIPSPRequestValidation"/>
+                    <include name="successUpiIntent_staticQR"/>
+                    <include name="validateNewDeeplinkPaytmReturnedWhenOStypeIsIOSAndPSPIsPaytm"/>
+                    <include name="successUpiIntent_deepLink"/>
+                    <include name="validateNewDeeplinkTezReturnedWhenOStypeIsIOSAndPSPIsGpay"/>
+                    <include name="validateOldDeeplinkIsReturnedWhenOsTypeIsOtherThanIOS"/>
+                    <include name="validateUpiIntentLinkGenerated"/>
+                    <include name="validateNewDeeplinkPaytmReturnedWhenOStypeIsIOSAndPSPOtherThanPaytmGPAYPhonepe"/>
+                    <include name="successUpiIntent_PaytmMoney"/>
+                    <include name="copUPIPSPRequestValidation"/>
+                    <include name="validateNewDeeplinkPaytmReturnedWhenOStypeIsIOS"/>
+                    <include name="validateNewDeeplinkPhonepayReturnedWhenOStypeIsIOSAndPSPIsPhonePay"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-30172 - FetchUPIOptions" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.theia.FetchUPIOptionsTests">
+                <methods>
+                    <include name="FetchSuccessUPIPSPOptions_validChecksum"/>
+                    <include name="FetchSUPIPSPOptionsResponse_invalidChecksum"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-29010 Validating priority of UPI in fpo" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.PriorityParamUPI">
+                <methods>
+                    <include name="TC_001_No_Saved_VPA"/>
+                    <include name="TC_006_No_Saved_VPA_MID_SSO"/>
+                    <include name="TC_002_Saved_VPA"/>
+                    <include name="TC_004_Saved_VPA"/>
+                    <include name="TC_003_Non_LoggedIn_Flow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIRenewSubs" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIRenewSubs">
+                <methods>
+                    <include name="TC_002_Renew_MF_Subs_AmountTypeVariable_Freq_Day"/>
+                    <include name="TC_001_Renew_PaymentRequestAlreadyPendingForFrequencyCycle"/>
+                    <include name="TC_006_Renew_Subs_AmountTypeVariable_Freq_BiMonthly"/>
+                    <include name="TC_001_Prenotify_Invalid_Cycle"/>
+                    <include name="TC_001_Renew_MF_Failed_DifferentAmountSent"/>
+                    <include name="TC_003_Renew_Subs_AmountTypeFix_Freq_Year"/>
+                    <include name="TC_001_Renew_Without_PreNotify"/>
+                    <include name="TC_001_Renew_MF_Subs_AmountTypeFix_Freq_Month"/>
+                    <include name="TC_007_Renew_MF_Subs_AmountTypeVariable_Freq_SemiAnnually"/>
+                    <include name="TC_001_Renew_MF_Subs_AmountTypeVariable_Freq_ONDEMAND"/>
+                    <include name="TC_001_Renew_MF_Subs_MultipleRenewal"/>
+                    <include name="TC_005_Renew_MF_Subs_AmountTypeVariable_Freq_Quarter"/>
+                    <include name="TC_002_Prenotify_Past_Date"/>
+                    <include name="TC_001_Renew_Subs_Failed_DifferentAmountSent"/>
+                    <include name="TC_005_Renew_Subs_AmountTypeFix_Freq_Quarter"/>
+                    <include name="TC_004_Renew_MF_Subs_AmountTypeVariable_Freq_Week"/>
+                    <include name="TC_002_Renew_Subs_AmountTypeVariable_Freq_ONDEMAND"/>
+                    <include name="TC_007_Renew_Subs_AmountTypeVariable_Freq_SemiAnnually"/>
+                    <include name="TC_003_Renew_MF_Subs_AmountTypeVariable_Freq_Year"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_OneDaysRenewal"/>
+                    <include name="TC_PGP_42375_Renew_Subs_Freq_ONDEMAND_TwoDaysRenewal"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS UPI Intent Flow UI REVAMP">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisTrue"/>
+                    <include name="ValidateUPICollectpaymodeNotVisiblewithIntentOnlyEnabled"/>
+                    <include name="PGP_27157_ValidateBankOffersNotVisiblewithPWPMerchantfterLoggingIn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="CheckoutJS UPI Intent Flow">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="theme" value="checkoutjs_wap"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsUPIIntent">
+                <methods>
+                    <include name="ValidateUPIPaymodeUIchangeswithUPIIntentEnabled"/>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisFalse"/>
+                    <include name="PGP_28418_VerifyUPIAPPPaymodeStatusWhenFieldupiAppsPayModeEnabledisTrue"/>
+                    <include name="ValidateSuccessTxnUsingUPICollectwithIntentEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-36177 UPI Autopay Checkout flow">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.CheckoutJsUPICollectSubs">
+                <methods>
+                    <include name="verifySubsGreaterThan25k"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native Plus ProcessTransactionTests" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                    <include name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native ProcessTransactionTests" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="TC_PT_FetchVPAV2_With_TxnToken"/>
+                    <include name="TC_PT_FetchVPAV2_WithSSOToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIEnhanceEnhanceWap" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqUnitYear"/>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"/>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_003_Enhanced_Subs_FreqUnitYear"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIEnhanceEnhanceWeb" parallel="methods" thread-count="2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.EnhanceUPICollectSubs">
+                <methods>
+                    <include name="TC_003_Enhanced_MF_Subs_FreqIsBlank"/>
+                    <include name="UpiNumericIdCmid_02"/>
+                    <include name="verifySubsGreaterThan5k"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_004_Enhanced_Subs_FreqUnitQuater"/>
+                    <include name="TC_002_Enhanced_Subs_StartDateIsFuture"/>
+                    <include name="UpiVpaCases_02"/>
+                    <include name="verifySubsLessThan5k"/>
+                    <include name="verifySubsFixTo25k"/>
+                    <include name="TC_006_Enhanced_MF_Subs_FreqUnitSemiAnually"/>
+                    <include name="TC_001_Enhanced_Subs_OnDemandValidations"/>
+                    <include name="TC_004_Enhanced_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_003_Enhanced_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_005_Enhanced_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_004_Enhanced_Subs_FreqIsBlank"/>
+                    <include name="TC_002_Enhanced_Subs_FreqUnitMonth"/>
+                    <include name="UpiVpaCases_01"/>
+                    <include name="TC_007_Enhanced_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Enhanced_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_001_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_003_Enhanced_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FreqGreaterThn1"/>
+                    <include name="TC_001_Enhanced_Subs_FreqGreaterThn1"/>
+                    <include name="TC_002_Enhanced_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_003_Enhanced_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_004_Enhanced_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_001_Enhanced_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_003_Enhanced_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_002_Enhanced_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_001_Enhanced_Subs_StartDateIsNull"/>
+                    <include name="TC_001_Enhanced_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_002_Enhanced_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_003_Enhanced_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Enhanced_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Enhanced_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_002_Enhanced_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="UpiNumericId_01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Fetch payment instrument for offline txn" parallel="methods" thread-count="2">
+        <classes>
+            <class name="scripts.api.Offline.FetchPayInstrumentTest">
+                <methods>
+                    <include name="FetchPayIns_UPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPIIntentNativeSubs" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPIIntentNativeSubs">
+                <methods>
+                    <include name="TC_001_Native_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_003_Native_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_003_Native_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_002_Native_MF_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_001_Native_Subs_FreqGreaterThn1"/>
+                    <include name="TC_002_Native_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_002_Native_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_002_Native_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_003_Native_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Native_MF_Subs_FreqGreaterThn1"/>
+                    <include name="TC_002_Native_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_004_Native_MF_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_001_Native_MF_Subs_EnableRetryGreaterThan2"/>
+                    <include name="TC_002_Native_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_002_Native_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_001_Native_MF_Subs_StartDateIsNull"/>
+                    <include name="TC_004_Native_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_001_Native_Subs_EnableRetryGreaterThan2"/>
+                    <include name="TC_003_Native_MF_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Native_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_004_Native_Subs_VariableAmountGreater"/>
+                    <include name="TC_001_Native_MF_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_001_Native_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_001_Native_Subs_StartDateIsNull"/>
+                    <include name="TC_003_Native_MF_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_003_Native_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_008_Native_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Native_Subs_FreqUnitMonth"/>
+                    <include name="TC_008_Native_MF_Subs_FreqUnitOnDemand"/>
+                    <include name="TC_002_Native_Subs_StartDateIsFuture"/>
+                    <include name="TC_004_Native_MF_Subs_AccountNumFalseAndValid"/>
+                    <include name="TC_004_Native_MF_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Native_MF_Subs_FreqUnitDay"/>
+                    <include name="TC_005_Native_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_005_Native_MF_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_003_Native_MF_Subs_AccountNumTrueAndInValidUnverifiedFalse"/>
+                    <include name="TC_001_Native_Subs_FreqUnitDay"/>
+                    <include name="TC_004_Native_MF_Subs_FreqUnitQuater"/>
+                    <include name="TC_004_Native_Subs_FreqUnitQuater"/>
+                    <include name="TC_003_Native_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_007_Native_Subs_FreqUnitWeek"/>
+                    <include name="TC_002_Native_MF_Subs_FreqUnitMonth"/>
+                    <include name="TC_002_Native_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_004_Native_MF_Subs_FreqIsBlank"/>
+                    <include name="TC_003_Native_MF_Subs_VariableAmountEqualOrLessMaxAmount"/>
+                    <include name="TC_003_Native_MF_Subs_FreqUnitYear"/>
+                    <include name="TC_007_Native_MF_Subs_FreqUnitWeek"/>
+                    <include name="TC_001_Native_MF_Subs_AccountNumTrueAndValid"/>
+                    <include name="PGP_40525_TC_01_Native_Subs"/>
+                    <include name="TC_004_Native_Subs_OnlyMaxAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Native_MF_Subs_OnDemandValidations"/>
+                    <include name="TC_006_Native_MF_Subs_FreqUnitSemiAnually"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-34678 Verify Upi collect Tab on Enhanced web">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="VerifyUPICollect_Tab"/>
+                    <include name="VerifyUPICollect_Tab_when_PrefDisabled"/>
+                    <include name="VerifyUPICollect_Tab_When_PrefDisabled_LoggedIn"/>
+                    <include name="verifyAllInOneUpiQr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpiPushTransactionTestCases">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="Verify_the_value_of_field_onboardNewUPIBankAcct_ONus"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPICollectNativeSubs" parallel="methods" thread-count="2">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPICollectNativeSubs">
+                <methods>
+                    <include name="TC_005_Native_Subs_FreqUnitBiMonthly"/>
+                    <include name="TC_002_Native_MF_Subs_AccountNumTrueAndInvalid"/>
+                    <include name="TC_002_Native_MF_Subs_StartDateIsFuture"/>
+                    <include name="TC_007_Native_Subs_FreqUnitWeek"/>
+                    <include name="TC_003_Native_Subs_FreqUnitYear"/>
+                    <include name="TC_003_Native_MF_Subs_FreqUnitYear"/>
+                    <include name="TC_003_Native_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_003_Native_MF_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_003_Native_MF_Subs_StartDateGraceDayNull"/>
+                    <include name="TC_001_Native_MF_Subs_FreqGreaterThn1"/>
+                    <include name="TC_003_Native_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Native_MF_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_002_Native_MF_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_003_Native_MF_Subs_FreqEqualToZero"/>
+                    <include name="TC_001_Native_Subs_FreqGreaterThn1"/>
+                    <include name="TC_002_Native_Subs_EnableRetryGreaterThan2PaymodeBlank"/>
+                    <include name="TC_001_Native_MF_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_001_Native_Subs_StartDateIsNull"/>
+                    <include name="TC_001_Native_Subs_EnableRetryGreaterThan2"/>
+                    <include name="TC_004_Native_Subs_VariableAmountGreater"/>
+                    <include name="TC_001_Native_Subs_FixAmountEqualAmountNotPassedUPI"/>
+                    <include name="TC_001_Native_MF_Subs_EnableRetryGreaterThan2"/>
+                    <include name="TC_002_Native_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_002_Native_MF_Subs_MaxAmountGreaterThan5000PaymodeUPI"/>
+                    <include name="TC_001_Native_Subs_MaxAmountGreaterThan5000PaymodeNull"/>
+                    <include name="TC_002_Native_MF_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_002_Native_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_002_Native_MF_Subs_FreqGreaterthan1_PaymodeBlank"/>
+                    <include name="TC_002_Native_Subs_FixAmountEqualAmountNotPassed"/>
+                    <include name="TC_004_Native_Subs_StartDateIsOnlyBlank"/>
+                    <include name="TC_003_Native_Subs_TxnAmountGreaterThanMaxAmount"/>
+                    <include name="TC_001_Native_MF_Subs_StartDateIsNull"/>
+                    <include name="TC_004_Native_MF_Subs_StartDateIsOnlyBlank"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-45265">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.PGP_45265">
+                <methods>
+                    <include name="TEST_06"/>
+                    <include name="TEST_018"/>
+                    <include name="TEST_01"/>
+                    <include name="TEST_010"/>
+                    <include name="TEST_02"/>
+                    <include name="TEST_020"/>
+                    <include name="TEST_017"/>
+                    <include name="TEST_014"/>
+                    <include name="TEST_019"/>
+                    <include name="TEST_05"/>
+                    <include name="TEST_011"/>
+                    <include name="TEST_015"/>
+                    <include name="TEST_04"/>
+                    <include name="TEST_07"/>
+                    <include name="TEST_03"/>
+                    <include name="TEST_016"/>
+                    <include name="TEST_013"/>
+                    <include name="TEST_012"/>
+                    <include name="TEST_08"/>
+                    <include name="TEST_09"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="2" verbose="0" name="UPICollectNative test - Native" parallel="tests">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.UPICollectNative">
+                <methods>
+                    <include name="appName_VPA_UPI"/>
+                    <include name="appName_VPA_UPI"/>
+                    <include name="appName_VPA_Paytm"/>
+                    <include name="appName_VPA_Paytm"/>
+                    <include name="appName_VPA_YBL"/>
+                    <include name="appName_VPA_YBL"/>
+                    <include name="appName_VPA_Default"/>
+                    <include name="appName_VPA_Default"/>
+                    <include name="appName_VPA_OK"/>
+                    <include name="appName_VPA_OK"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="20" verbose="0" name="temp-PGP-24778 : Enhanced WEB " parallel="tests">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="validateSuccessTransPaidUPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="2" verbose="0"
+          name="PGP-29609 Verify the successful UPI Intent subscription txn with all possible freq units"
+          parallel="tests">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.EnhancedUITests">
+                <methods>
+                    <include name="PGP_26700_verifySuccessUPIIntentSubsTxnOnEnhancedPage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test thread-count="2" verbose="0" name="UPICollectNative test - NativePlus" parallel="tests">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.UPICollectNative">
+                <methods>
+                    <include name="appName_VPA_UPI"/>
+                    <include name="appName_VPA_UPI"/>
+                    <include name="appName_VPA_Paytm"/>
+                    <include name="appName_VPA_Paytm"/>
+                    <include name="appName_VPA_YBL"/>
+                    <include name="appName_VPA_YBL"/>
+                    <include name="appName_VPA_Default"/>
+                    <include name="appName_VPA_Default"/>
+                    <include name="appName_VPA_OK"/>
+                    <include name="appName_VPA_OK"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Native UPI polling Tests">
+        <classes>
+            <class name="scripts.TransactionStatusV1Tests">
+                <methods>
+                    <include name="verifyTransactionStatusinSuccessCCITxn"/>
+                    <include name="verifyTransactionStatusinUPISuccessUPITxnDeferredNative"/>
+                    <include name="verifyTransactionStatusinSuccessUPITxnWithAPIV1Version"/>
+                    <include name="verifyTransactionStatusinSuccessUPITxn"/>
+                    <include name="verifLowestUPIStatusTimeoutValuePicked"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upicc">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUpiCollectCCTxn"/>
+                    <include name="validateUpiCollectCCTxnOffline"/>
+                    <include name="validateUpiCCCCOnUPIBlacklistedEnabled"/>
+                    <include name="validateUpiCCCCOnUPIBlacklistedDisabled"/>
+                    <include name="validateUpiCcP2pMerchantEnabled"/>
+                    <include name="validateUpiCcP2pMerchantDisabled"/>
+                    <include name="validateUpiCcOnusAndPrefDisabled"/>
+                    <include name="validateUpiCcOnusAndPrefEnabled"/>
+                    <include name="validateUpiccRailsEnabled"/>
+                    <include name="validateUpiCconupiRailsDisabled"/>
+                    <include name="validateUpiccUpiCcSubsDisabled"/>
+                    <include name="validateUpiccUpiCcSubsEnabled"/>
+                    <include name="validateDisplayAccountNoAndBankLogoUrl"/>
+                    <include name="validateDisplayAccountNoAndBankLogoUrlOffline"/>
+                    <include name="validateUpiCCOnlineMidLessThen2000"/>
+                    <include name="validateUpiCCOnlineMidMoreThen2000"/>
+                    <include name="validateUpiCCOnlineMidEquals2000"/>
+                    <include name="validateUpiCCOnlineMidLessThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOnlineMidMoreThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOnlineMidEquals2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidEqualTo2000ForSmallIndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForNullndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForBigndustry"/>
+                    <include name="validateUpiCCOfflineMidLessThen2000ForBigndustryCconupirailsDisabled"/>
+                    <include name="validateUpiCCOfflineMidMoreThen2000ForBigndustryCconupirailsDisabled"/>
+                    <include name="validateUpiCCOfflineMidEqual2000ForBigndustryCconupirailsDisabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="upilite">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <include name="validateUpiLitePaymodeByEnablePrefAndIsliteEligibleNotPassed"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligibleTrue"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligibleFalse"/>
+                    <include name="validateUpiLitePaymodeByEnablePrefAndIsliteEligibleNotPassedForOffline"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligiblePassedForOffline"/>
+                    <include name="validateUpiLitePaymodeByDisablePrefAndIsliteEligibleFalseForOffline"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-48011 Enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_48011_TC01"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-48011">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="PGP_48011_TC02"/>
+                    <include name="PGP_48011_TC03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--   <test name="NATIVE : MCC ADDNPAY and ADDMONEY UPIPUSH">
+            <classes>
+              <class name="scripts.MCCADDNPAY">
+                <methods>
+                        <exclude name="validateUpiPushTxnADDNPAY"/>
+                        <exclude name="validateUpiPushTxnADDNPAYMINKYC"/>
+                        <exclude name="validateUpiPushTxnADDNPAYNOKYC"/>
+                        <exclude name="validateUpiPushTxnADDMONEY"/>
+                        <exclude name="validateUpiPushTxnADDMONEYMINKYC"/>
+                    </methods>
+                 </class>
+            </classes>
+        </test> -->
+    <test name="PGP-44577 UPI Intent Retry">
+        <classes>
+            <class name="scripts.genrateESNTest.generateEsnTest">
+                <methods>
+                    <exclude name="newESN_BankFormOptimizedFlow"/>
+                    <exclude name="newESN_NormaTxnFlow"/>
+                    <include name="newESN_Normal_NativeSubsFlow"/>
+                    <exclude name="CheckPref_In_PreferenceInfoExt"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Apply SuperCash API Test">
+        <classes>
+            <class name="scripts.supercashtests.ApplySuperCashTests">
+                <methods>
+                    <include name="superCashOffersInFPO_V1"/>
+                    <include name="superCashOffersInFPO_V2"/>
+                    <include name="superCashOffersInFPO_V5"/>
+                    <include name="superCashOffersIn_FQR_V2"/>
+                    <include name="superCashOffersIn_FQR_V1"/>
+                    <include name="UPI_OfferDisabled_In_FQRV2"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+
+    <test name="FetchPCFDetails">
+        <classes>
+            <class name="scripts.api.theia.fetchPcfDetails.fetchpcfdetail">
+                <methods>
+                    <include name="validatePCFDetailApiForUPI_litePaymodewithtxntoken"/>
+                    <include name="validatePCFDetailApiForUPIPaymodewithtxntoken"/>
+                    <include name="validatePCFDetailApiForUPI_LITEANDUPIPaymodewithtxntoken"/>
+                    <include name="validatePCFDetailApiForUPI_LITEANDUPIPaymodewithssotoken"/>
+                    <include name="validatePCFDetailApiForUPI_litePaymodewithssotoken"/>
+                    <include name="validatePCFDetailApiForUPIPaymodewithssotoken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <!--    <test name="MCC ADDMONEY UPICOllect">
+            <parameter name="theme" value="enhancedweb_revamp"/>
+            <classes>
+               <class name="scripts.MCC_ADD_COLLECT">
+               <methods>
+                    <exclude name="addnPay_UPI_Collect_FULLKYC"/>
+                    <exclude name="addnPay_UPI_Collect_MINKYC"/>
+                    <exclude name="addMoney_UPI_Collect_FULLKYC"/>
+                    <exclude name="addMoney_UPI_Collect_MINKYC"/>
+                </methods>
+           </class>
+        </classes>
+    </test>
+  <test name="NATIVE : MCC ADDNPAY UPICOllect">
+           <parameter name="isNativePlus" value="false"/>
+        <classes>
+               <class name="scripts.MCC_ADD_COLLECT"> -->
+    <!--   <methods>
+          <exclude name="validateupiCollectToAddPayFullKyc"/>
+         <exclude name="validateupiCollectToAddPayMinKyc"/>
+     </methods>
+</class>
+   </classes>
+</test> -->
+    <test name="PGP-44577 UPI Intent Retry-1">
+        <classes>
+            <class name="scripts.api.UPI.UPI_Intent_Disable">
+                <methods>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_APP"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_WebView"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_Android_MWeb()"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_Android_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_Android_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV5_IOS_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV2_IOS_MWeb"/>
+                    <include name="UPI_INTENTDisabled_FPOV1_IOS_MWeb"/>
+                    <include name="UPI_INTENTEnabled_FPOV5_IOS_MWeb_nullWorkFlow"/>
+                    <include name="UPI_INTENTEnabled_FPOV5_Andriod_MWeb_nullWorkFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI CC">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validatePG2COPUPIPSPNonExpiredFlagOn"/>
+                    <include name="validatePG2COPUPIPSPExpiredFlagOn"/>
+                    <include name="validatePG2COPUPIPSPNonExpiredFlagOff"/>
+                    <include name="validatePG2COPUPIPSPExpiredFlagOff"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI PPI Wallet Task">
+        <classes>
+            <class name="scripts.api.UPI.UpiPPIWallet">
+                <methods>
+                    <include name="validateUpiPpiWalletCollectTxn"/>
+                    <include name="validateUpiPpiWalletIntentTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCCollectTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCIntentTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCCollectTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCIntentTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCNotPresentIntentTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCCollectTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletUpiCCIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCCollectTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletDisabledUPICCDisabledIntentTxnFlagOff"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitIntentTxn"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitUPICCCollectTxn"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitUPICCwithLimitCollectTxn"/>
+                    <include name="validateUpiPpiWalletEnabledwithLimitUPICCwithLimitIntentTxn"/>
+                    <include name="validateUpiPpiWalletCOTPCollectTxn"/>
+                    <include name="validateUpiPpiWalletIntentCOTPTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCCollectCOTPTxn"/>
+                    <include name="validateUpiPpiWalletUpiCCIntentCOTPTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCCollectCOTPTxn"/>
+                    <include name="validateUpiPpiWalletNotPresentUpiCCIntentCOTPTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpiLiteLimitCases">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <include name="ValidateRiskReject"/>
+                    <include name="ValidateTxnLimit3pPsp"/>
+                    <include name="ValidateDailyLimit3pPsp"/>
+                    <include name="ValidateMonthlyLimit3pPsp"/>
+                    <include name="ValidateTxnLimitForUPILite3pPspDynamicQR"/>
+                    <include name="ValidateDailyLimitForUPILite3pPspDynamicQR"/>
+                    <include name="ValidateMonthlyLimitForUPILite3pPspDynamicQR"/>
+                </methods>
+            </class>
+            <class name="scripts.Native.walletInteroperability">
+                <methods>
+                    <include name="ValidateTxnLimitForUPICc3pPsp"/>
+                    <include name="ValidateDailyLimitForUPICc3pPsp"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPsp"/>
+                    <include name="ValidateMerchantIneligibleForUPIWallet"/>
+                    <include name="ValidateTxnLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateDailyLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPspDynamicQR"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="ValidateRiskRejectForUPICc"/>
+                    <include name="ValidateMerchantIneligibleForUPICc"/>
+                    <include name="ValidateMerchantIneligibleForUPICcDynamicQr"/>
+                    <include name="ValidateTxnLimitForUPICc3pPsp"/>
+                    <include name="ValidateDailyLimitForUPICc3pPsp"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPsp"/>
+                    <include name="ValidateTxnLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateDailyLimitForUPICc3pPspDynamicQR"/>
+                    <include name="ValidateMonthlyLimitForUPICc3pPspDynamicQR"/>
+                </methods>
+            </class>
+            <class name="scripts.api.UPI.UPICollectTransactionPG2">
+                <methods>
+                    <include name="ValidateTxnLimitForUPICollect"/>
+                    <include name="ValidateDailyLimitForUPICollect"/>
+                    <include name="ValidateMonthlyLimitForUPICollect"/>
+                    <include name="ValidateTxnLimitForUPICollectCotp"/>
+                    <include name="ValidateDailyLimitForUPICollectCotp"/>
+                    <include name="ValidateMonthlyLimitForUPICollectCotp"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-50167">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.api.UPI.UPIErrorCode">
+                <methods>
+                    <include name="Overall_UPI_Limit_Exhaust"/>
+                    <include name="UPI_Collect_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_Intent_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_CC_PerTxn_Limit_Exhaust"/>
+                    <include name="Eligibility_UPICC_PPIWALLET"/>
+                    <include name="UPI_CC_NotAllowed"/>
+                    <include name="UPI_Collect_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_Intent_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_CC_PerMonth_Limit_Exhaust"/>
+                    <include name="UPI_Collect_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Daily_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_Daily_Limit_Exhaust"/>
+                    <include name="UPI_CC_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_Daily_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_Monthly_Limit_Exhaust"/>
+                    <include name="UPI_Intent_Collect_PerTxn_Limit_Exhaust"/>
+                    <include name="UPI_PPI_WALLET_Weekly_Limit_Exhaust"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-54047 UPI INTENET ADDED">
+        <classes>
+            <class name="scripts.UPIPushExpDis">
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-54997 SupportingSSOToken in fetchPSPApps ">
+        <classes>
+            <class name="scripts.api.theia.FetchPspAppsTests">
+                <methods>
+                    <include name="FetchSuccessUPIPSPOptions_validSsoToken"/>
+                    <include name="FetchSuccessUPIPSPOptions_invalidSsoToken"/>
+                    <include name="FetchSuccessUPIPSPOptions_nullSsoToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Additionalinfo passed in extendedinfo in UPI Intent ">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="validateMultipleObjectinAdditionalInfoUpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoUDF1UDF3UpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoUDF3UpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoMercUnqRefUpiIntentTxn"/>
+                    <include name="validateMultipleObjectwithoutAdditionalInfoUDF3UpiIntentTxn"/>
+                    <include name="validateMultipleObjectemptyAdditionalInfoUDF3UpiIntentTxn"/>
+                    <include name="validatenoExtendinfoUpiIntentTxn"/>
+                    <include name="validatemptyExtendinfoUpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoudf1udf2ud3UpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoudf2ud3UpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoudf1udf2udf3commentUpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoudf1udf2commentUpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoudf1udf3commentUpiIntentTxn"/>
+                    <include name="validateMultipleObjectinAdditionalInfoudf2udf3commentUpiIntentTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify expected parameters come in PTC response if UPI Push/Lite txn fails">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="ValidateIncorrectPinPTCResp_UPILite_Pref_On"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPIPush_Pref_Off"/>
+                    <include name="ValidateIncorrectPinPTCResp_UPILite_Pref_Off"/>
+                    <include name="ValidateSuccessPTCResp_UPILite_Pref_On"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-53319 : Scan and Pay | Additional parameter in v1/PTC fallback">
+        <classes>
+            <class name="scripts.api.UPI.UPItransactionPG2">
+                <methods>
+                    <include name="PGP_53319_TC01"/>
+                    <include name="PGP_53319_TC02"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Axis UPI Online Integration Test">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V1ValidateVpaTest"/>
+            <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V4ValidateVpaTest"/>
+            <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.AxisUpiOnlineTransactionsTest"/>
+        </classes>
+    </test>
+    <test name="UPI PSP api cases">
+        <classes>
+            <class name="scripts.api.UpiPsp.ExternalOrderPayTest">
+            </class>
+        </classes>
+    </test>
+    <test name="UPI PSP e2e txn">
+        <classes>
+            <class name="scripts.api.UpiPsp.StaticQrE2ETxn">
+            </class>
+        </classes>
+    </test>
+    <test name="JWT Support in v1Validate api" >
+        <classes>
+            <class name="scripts.api.UPI.V1ValidateApiJWTSupport">
+                <methods>
+                    <include name="v1ValidateVpa_withJWT"/>
+                    <include name="v1ValidateVpa_withoutJWT"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Increasing BHIM UPI M_WEB iOS cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Increasing BHIM UPI M_WEB android cases">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Increasing BHIM UPI M_WEB checkoutJS iOS cases">
+        <parameter name="theme" value="checkoutjswap_revamp"/>
+        <parameter name="mobileEmulation" value="iPhone X"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on_checkoutJs"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off_checkoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Increasing BHIM UPI M_WEB checkoutJS android cases">
+        <parameter name="theme" value="checkoutjswap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UI.UITests">
+                <methods>
+                    <include name="verifyBHIMUpiPromotion_ff4j_on_checkoutJs"/>
+                    <include name="verifyBHIMUpiPromotion_ff4j_off_checkoutJs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI Credit Card - NPCI Risk Reject logic at Theia">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateCConUPIAllowedforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOnlineMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOnlineMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateCConUPIAllowedforOnusMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateCConUPIAllowedforOnusMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineSmallMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineNullMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOfflineBigMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOnlineMerchantforUPI_CC_RISK_BLACKLISTDisabled"/>
+                    <include name="validateUPIPSPforOnlineMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPI_CC_RISK_BLACKLISTEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PPSL-406 Paytm Handle Errors">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V1ValidateVpaTest">
+                <methods>
+                    <include name="VerifyVPAwithPaytmthrowsError"/>
+                    <include name="VerifyNumericIDmappedwithPaytmthrowsError"/>
+                    <include name="VerifyVPAwithPaytmthrowsNoError"/>
+                    <include name="VerifyNumericIDmappedwithPaytmthrowsNoError"/>
+                </methods>
+            </class>
+            <class name="scripts.UPI.OnlineUpi.AxisUpiOnline.V4ValidateVpaTest">
+                <methods>
+                    <include name="VerifyVPAwithPaytmthrowsError"/>
+                    <include name="VerifyVPAwithPaytmthrowsNoError"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Block Collect Request For MCC">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.api.UPI.BlockCollectRequest">
+                <methods>
+                    <include name="CollectRequestBlockFOR_5816"/>
+                    <include name="CollectRequestNotBlockFOR_5816"/>
+                    <include name="CollectRequestNotBlockFOR_5816_FF4J_OFF" />
+                    <include name="CollectRequestNotBlockFOR_5816_txn"/>
+                    <include name="CollectRequestBlockFOR_5816_PTC"/>
+                    <include name="CollectRequestBlockFOR_4814" />
+                    <include name="CollectRequestNotBlockFOR_4814"/>
+                    <include name="CollectRequestNotBlockFOR_4814_FF4J_OFF"/>
+                    <include name="CollectRequestNotBlockFOR_4814_txn" />
+                    <include name="CollectRequestBlockFOR_4814_PTC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UpiLiteLimitCases1">
+        <classes>
+            <class name="scripts.api.UPI.UpiLite">
+                <methods>
+                    <include name="UPILITE_WithoutUPIPushExpress"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Remove legacy Theia code for CC on UPI and other UPI subtypes">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUPIPSPUPICCforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPUPICCforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateUPIPSPUPIPPIWalletforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPUPIPPIWALLETforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateUPIPSPUPICreditLineforOfflineSmallMerchantforAmountGreaterThan2000"/>
+                    <include name="validateUPIPSPUPICreditLineforOfflineSmallMerchantforAmountLessThan2000"/>
+                    <include name="validateCConUPIAllowedforOnusMerchantwhennoUPICCPrefisEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPI_CC"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPIPPIWALLET"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPICREDITLINE"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPI_CCNotEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPIPPIWALLETNotEnabled"/>
+                    <include name="validateUPIPSPforOnusMerchantforUPICREDITLINENotEnabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Theia UPIPSP  upi interest free and interest bear credit line">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateTheiaUPIPSofflinesmallInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPofflinesmallInterestBearCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPofflineBigInterestBearCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineSuperBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineSuperBlacklistedN"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineSuperBlacklistedNabove2000"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineBlacklistedY"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestFreeCreditLineRailsYabove2000"/>
+                    <include name="validateTheiaUPIPSPonlineBigInterestBearCreditLineRailsYabove2000"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Saved UPI VPA transactions Flows">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.UPISavedVPA">
+                <methods>
+                    <include name="savedVPA_localCustomerId001"/>
+                    <include name="savedVPA_localCustomerId002"/>
+                    <include name="savedVPA_localCustomerId003"/>
+                    <include name="savedVPA_localMobile001"/>
+                    <include name="savedVPA_localMobile002"/>
+                    <include name="savedVPA_localMobile003"/>
+                    <include name="savedVPA_GLOBAL001"/>
+                    <include name="savedVPA_GLOBAL002"/>
+                    <include name="savedVPA_GLOBAL003"/>
+                    <include name="savedVPA_GLOBAL004"/>
+                    <include name="savedVPA_GLOBAL005"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-56708_RISK_RULES">
+        <classes>
+            <class name="scripts.api.UPI.Risk_Rules_In_OrderPayUpipsp">
+                <methods>
+                    <include name="ValidateriskExtendInfoin_TheiaOrderPayUPIPSP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ConvenienceFeeUpiIntent">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="JsType" value="checkoutjs"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUITest">
+                <methods>
+                    <include name="testCase_04"/>
+                    <include name="testCase_05"/>
+                    <include name="testCase_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ConvenienceFeeUpiIntentDQR">
+        <parameter name="JsType" value="checkoutjs"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUITest">
+                <methods>
+                    <include name="testCase_01"/>
+                    <include name="testCase_02"/>
+                    <include name="testCase_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ConvenienceFeeUpiIntentOnRedirection">
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="JsType" value="jsonredirection"/>
+        <parameter name="userAgent" value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUITest">
+                <methods>
+                    <include name="testCase_04"/>
+                    <include name="testCase_05"/>
+                    <include name="testCase_06"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ConvenienceFeeUpiIntentDQROnRedirection">
+        <parameter name="JsType" value="jsonredirection"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUITest">
+                <methods>
+                    <include name="testCase_01"/>
+                    <include name="testCase_02"/>
+                    <include name="testCase_03"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="ConvenienceFeeUpiIntentAPI">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ConvenienceFeeUpiIntentUITest"/>
+        </classes>
+    </test>
+    <test name=" Prioritise Settlement Account UPI Profile">
+        <classes>
+            <class name="scripts.Native.NativeFPOV2">
+                <methods>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileFPO"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileV5FPO"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileSubscriptionFPO"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileFPOwhenaccountisemptystring"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileV5FPOwhenaccountisemptystring"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileSubscriptionFPOwhenaccountisemptystring"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileFPOwhenItineraryDisplayURLisempty"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileV5FPOwhenItineraryDisplayURLisnull"/>
+                    <include name="validatePrioritiseSettlementAccountUPIProfileSubscriptionFPOPriorityUpiAccountisnull"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Validate cases for enabled and disabled flags">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="callback_present_FF4J_Enabled"/>
+                    <include name="callback_not_present_FF4J_Disabled"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Theia e-rupi Voucher on UPI Consumption">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateTheiaUPIPSDQRforVOUCHER"/>
+                    <include name="validateTheiaUPIPSSQRforVOUCHER"/>
+                    <include name="validateTheiaUPIPSDQRforUPI_VOUCHER"/>
+                    <include name="validateTheiaUPIPSSQRforUPI_VOUCHER"/>
+                    <include name="validateTheiaUPICollectforVOUCHER"/>
+                    <include name="validateTheiaUPIIntentforVOUCHER"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI PSP CONSULT PCF FEE VALIDATION">
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectMDRPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiVoucher"/>
+                    <include name="validateTheiaUPIPSPReqAuthFlowinCOTP"/>
+                    <include name="validateTheiaUpiIntentPTCNonReqAuthFlowinCOTP"/>
+                    <include name="validateTheiaUpiCollectPTCNonReqAuthFlowinCOTP"/>
+                    <include name="validateUpiPspConsultOrderClosed"/>
+                    <include name="validateUpiPspConsultVpadoesnotexist"/>
+                    <include name="validateUpiPspConsultOrderdoesnotexist"/>
+                    <include name="validateUpiPspConsulttxnAmountInvalid"/>
+                    <include name="validateUpiPspConsultmidInvalid"/>
+                    <include name="validateUpiPspConsultMerchantIneligibleUPIPPIWALLET"/>
+                    <include name="validateUpiPspConsultMerchantIneligibleUPICREDITCARD"/>
+                    <include name="validateUpiPspConsultMerchantdoesnotsupportUPICREDITLINEInterestFree"/>
+                    <include name="validateUpiPspConsultMerchantdoesnotsupportUPICREDITLINEInterestBearing"/>
+                    <include name="validateUpiPspConsultMerchantdoesnotsupportUPICREDITLINEwithrandomsubAccountTypeValue"/>
+                    <include name="validateUpiPspConsulttxnFeemismatchUpiCreditCard"/>
+                    <include name="validateUpiPspConsulttxnFeemismatchUpiCreditLine"/>
+                    <include name="validateUpiPspConsulttxnFeemismatchUpiPpiWallet"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrwithrandompayerPaymentInstrument"/>
+                    <include name="validateUpiIntentRequestforcreditlinewhenCreditLineOnUpiRailedDisabled"/>
+                    <include name="validateUpiCollectRequestforcreditlinewhenCreditLineOnUpiRailedDisabled"/>
+                    <include name="validateUpiIntentRequestforcreditlinewhenCreditlinelimitisbreached"/>
+                    <include name="validateUpiCollectRequestforcreditlinewhenCreditlinelimitisbreached"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditCardMisMatchAmount"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLineMisMatchAmount"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiPpiWalletMisMatchAmount"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLineRefund"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeelessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpisavingsfee0lessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeeequaltobaseamount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify TPV and NON-TPV Transactions for QrImageRequired Param">
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifyTheTPVTrueImageParameterInTheiaFacadeLog"/>
+                    <include name="verifyTheTPVFalseImageParameterFalseInTheiaFacadeLog"/>
+                    <include name="verifyTheNONTPVTrueImageParameterInTheiaFacadeLog"/>
+                    <include name="verifyTheNONTPVFalseImageParameterInTheiaFacadeLog"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify deeplink standardization is working fine">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.DeeplinkStandardisation">
+            </class>
+        </classes>
+    </test>
+    <test name="Theia UpiPsp Deep Link Standardisation">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateOnlineReqAuthDQRUPIPSPUpisavingswhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                    <include name="validateOnlineReqAuthDQRTheiaUPIPSPMDRPCFUpiCreditCardforpayerPaymentInstrumentFeewhenacquirementIdispassedinorderIdparameterfortrasacquirementIdwhenpreferenceUPI_TR_ACQ_ID_ENABLEisY"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Verify payerVpa and payerName is returened in MS response when pref UPI_PAYER_VPA and UPI_PAYER_NAME are ON">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.PayerAndPayeeVpaInMSResponse">
+            </class>
+        </classes>
+    </test>
+    <test name="Verify mcc and upiVerified fields are present and valid in fetchMerchantUserInfo API response">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.FetchMerchantUserInfoAPITests">
+                <methods>
+                    <include name="validateMccAndUpiVerifiedInResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="ReqAuth Flow in ptc for UPI Intent">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ReqauthFlowUPIIntentTest">
+                <methods>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndUpiSavingsIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndUPI_CREDITLINEIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndUPI_CREDIT_CARDIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenConvenienceFeeIsAppliedOnMerchantAndPPI_WALLETIsSelectedAsPayerPaymentInstrument"/>
+                    <include name="VerfyReqAuthTxnWhenUPI_TR_ACQ_ID_ENABLEIsEnabledOnMerchant"/>
+                    <include name="VerfyReqAuthTxnForSubscriptions"/>
+                    <include name="VpaShouldBeVisibleInGetPaymentStatusWhenThisPreferenceAndFf4jIsOnReturnUserVpaInResponse"/>
+                    <include name="UPITPVNameMismatchError"/>
+                    <include name="UPITPVSuccessTxnWhenPayerAccountDetailsAreGoingInEncryptedFormInEncryptedParams"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-61180-AllowedTpapCloseOrderTestSuite">
+        <parameter name="theme" value="enhancedweb"/>
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.AllowedTpapCloseOrderTests">
+                <methods>
+                    <include name="testPayerVpaInAllowedTpapList"/>
+                    <include name="testCloseOrderNotHitWhenFF4JOffForAllowedTpaps"/>
+                    <include name="testCloseOrderHitWhenFF4JOnForAllowedTpaps"/>
+                    <include name="testCloseOrderNotHitWhenFF4JOffForRiskReject"/>
+                    <exclude name="testCloseOrderHitWhenFF4JOnForRiskReject"/>
+                    <exclude name="testCloseOrderNotHitForOtherErrors"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Order Timeout Not getting captured correctly in Online Intent">
+        <classes>
+            <class name="scripts.api.UPI.UpiTransactionTests">
+                <methods>
+                    <include name="verifyThatOrderTimeoutisCapturedwhenFlagisOnCOP"/>
+                    <include name="verifyThatOrderTimeoutisCapturedwhenFlagisOnPayOrder"/>
+                    <include name="verifyPaymentTimeoutFieldShouldNotBePresentInLogs"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI PSP Consult Confee less than base amount Validation">
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeelessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpisavingsfee0lessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeegreaterthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeeequaltobaseamount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Confee Support - Create QR">
+        <classes>
+            <class name="scripts.api.theia.TheiaApiQrCreateTest">
+                <methods>
+                    <include name="validateonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateNativeSubscriptionOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateNativeMfSipOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonetrAsAcqIdonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonePlatformonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneMdrandPcfwithtrAsAcqIdonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateoneonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithChecksumforHDFU"/>
+                    <include name="validateonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonetrAsAcqIdonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateonePlatformonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneMdrandPcfwithtrAsAcqIdonetimeOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateoneonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateonePcfonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateonePcfandPlatformonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateoneMdrandPcfonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateoneMdrandPcfandPlatformonetimeOnDemandQRwithTxnTokenforHDFU"/>
+                    <include name="validateNativeSubscriptionOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateNativeMfSipOnDemandQRwithTxnTokenforPTYBLI"/>
+                    <include name="validateerrorcodeDQRO_0001onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeQR_1005onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0002onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0004onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0007onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateNativeRequestSubscriptionOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0008onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0009onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeQR_1007onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateerrorcodeDQR_0001onetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validatesuccessDQRforinvalidexpiryonetimeOnDemandQRwithChecksumforPTYBLI"/>
+                    <include name="validateonetimeOnDemandQRwithInvalidChecksumforPTYBLI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UPI Sub Type Automation">
+
+        <classes>
+            <class name="scripts.api.UpiPsp.UpiPspConsultFeeTest">
+                <methods>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiCollectUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentPCFUpiPspConsultformdrUpiSavings"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditCard"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiCreditLine"/>
+                    <include name="validateUpiIntentMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiCollectMDRPCFandplatformUpiPspConsultformdrUpiPpiWallet"/>
+                    <include name="validateUpiIntentUpiPspConsultformdrUpiVoucher"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditCardConfeelessthanbaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiCreditLineConfeeequaltobaseamount"/>
+                    <include name="validateUpiIntentMDRPCFUpiPspConsultforUpiPpiWalletConfeeequaltobaseamount"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+      <test name="PG-1911 -Create identification for DQR transactions for UPI Payments ">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.api.theia.TheiaApiQrCreateTest">
+                <methods>
+                    <include name="validate_NonreqAuth_createQR_AcquiringPayOrderRequestContainsIsDqr"/>
+                    <include name="validate_NonreqAuth_DQR_AcquiringPayOrderRequestContainsIsDqr"/>
+                    <include name="validate_reqAuth_UpiPsp_Success_AcquiringPayOrderRequestContainsIsDqr"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PaymentLinks - Product code 102 - PG-1815">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.api.linkservice.PaymentLinks">
+                <methods>
+                    <include name="verifyPaymentLinkProductcode_FlaginCOP"/>
+                    <include name="verifyUPIIntentNotFilteringOutInNativeAppFPO"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+     <test name="PGQA-636">
+        <classes>
+            <class name="scripts.api.UPI.UpiCreditCard">
+                <methods>
+                    <include name="validateUpiPspQrSubscriptionUpiCreditCard"/>
+                    <include name="validateUpiPspQrSubscriptionInvalidPayerPaymentInstrument"/>
+                    <include name="validateUpiPspQrSubscriptionEmptyPayerPaymentInstrument"/>
+                    <include name="validateUpiPspQrSubscriptionNullPayerPaymentInstrument"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="IFSC and Payer Account Should Come In FluxnetPG2PaymentRequest">
+        <classes>
+            <class name="scripts.UPI.OnlineUpi.ReqauthFlowUPIIntentTest">
+                <methods>
+                    <include name="PayerIfSCAndPayerAccountShouldComeInFluxnetPG2PaymentRequest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

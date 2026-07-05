@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-29627 suite" verbose="1">
+    <test name="PGP-29627 TC">
+        <classes>
+            <class name="scripts.StaticQRNew">
+                <methods>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisFalseinFastFwdTxn_UsingStaticQR"/>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisFalseinPPBLTxn_UsingStaticQR"/>
+                </methods>
+            </class>
+
+
+            <class name="scripts.IVRFastForward">
+                <methods>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisFalseinAutoDebitTxn"/>
+                </methods>
+            </class>
+
+            <class name="scripts.Native.ProcessTransactionTests">
+                <methods>
+                    <include name="validateWhetherBuyerUserIdChangeFlagisNotPassedinNativeTxn"/>
+                </methods>
+            </class>
+
+        </classes>
+    </test>
+</suite>

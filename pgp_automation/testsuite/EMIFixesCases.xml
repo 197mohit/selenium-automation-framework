@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="EMISubvention" verbose="1" parallel="methods" thread-count="3">
+    <test name="Custom emi cases">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn"/>
+        </classes>
+    </test>
+    <test name="api cases">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyAccessTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplySSOTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyTxnTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferApplyChecksumTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryAccessTokenTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryChecksumTest"/>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryTxnTokenTest"/>
+        </classes>
+    </test>
+</suite>

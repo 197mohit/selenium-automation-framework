@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="FetchPromoCodeDetails" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateFailureTxnUsingPaymentandSimplifiedoffers"/>
+                    <include name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificDiscountPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingInvalidPromoWithValidatePromoTrueInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingInvalidPromoWithValidatePromoFalseInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingNullPromoParamsInNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-20495 - Promo - SimpliFiedPaymentOffers Tests for Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails">
+                <methods>
+                    <include name="ValidateFailureTxnUsingPaymentandSimplifiedoffers"/>
+                    <include name="ValidateSuccessTxnUsingSpecificCashbackPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingSpecificDiscountPromoInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateMerchantRetryNotAllowedUsingAnyAvailablePromoInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingInvalidPromoWithValidatePromoTrueInNewFlow"/>
+                    <include name="ValidateSuccessTxnUsingInvalidPromoWithValidatePromoFalseInNewFlow"/>
+                    <include name="ValidateFailureTxnUsingNullPromoParamsInNewFlow"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Native.FetchPromoCodeDetails">
+        <classes>
+            <class name="scripts.Native.FetchPromoCodeDetails"/>
+        </classes>
+    </test>
+</suite>

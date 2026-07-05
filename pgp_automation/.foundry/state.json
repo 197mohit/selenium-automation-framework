@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "meta": {
+    "foundry_version": "1.10.5",
+    "completed_migrations": []
+  },
+  "active_stage": {
+    "current_stage": "",
+    "last_completed_stage": ""
+  },
+  "version_control": {
+    "platform": "bitbucket",
+    "project_org": "paytmteam",
+    "repo_slug": "pgp_automation",
+    "branching_strategy": "trunk",
+    "main_branch": "master"
+  },
+  "agent": {
+    "default": "claude",
+    "heavy_model": "sonnet",
+    "medium_model": "sonnet",
+    "light_model": "haiku",
+    "default_model": "sonnet"
+  },
+  "telemetry": {
+    "otel_endpoint": ""
+  },
+  "registration": {
+    "team_name": "paymentsqa",
+    "registered_at": "2026-03-14T05:03:07Z"
+  }
+}

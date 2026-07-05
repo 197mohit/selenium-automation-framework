@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="R2">
+    <listeners>
+        <listener class-name="com.paytm.listeners.MasterReport"/>
+        <listener class-name="com.paytm.listeners.StatusCounterListener"/>
+        <listener class-name="com.paytm.listeners.ScreenListener"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="MiscSuitePg2_UI.xml"/>
+        <suite-file path="PG2_UI.xml"/>
+        <suite-file path="promo_UI.xml"/>
+        <suite-file path="PureHybrid_UI.xml"/>
+        <suite-file path="subscription_UI.xml"/>
+        <suite-file path="theia1_UI.xml"/>
+    </suite-files>
+</suite>

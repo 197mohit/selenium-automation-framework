@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Misc_Theia_Suite_UI" verbose="1" parallel="tests" thread-count="15">
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_checkoutjs"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate"/>
+                    <include name="ultimate_beneficiary_sent_in_fpo_request"/>
+                    <include name="ultimate_beneficiary_sent_in_initiate_and_fpo_request"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-41714 verify ultimate beneficiary details present in cashier page and insta logs on enhanced">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verify_ultimate_beneficiary_details_present_in_cashier_page_and_insta_logs_enhanced"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Charge amount test cases - pg2-12060">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="verifySucessfulTxnon20and02PC"/>
+                    <include name="verifySucessfulTxnon20and101PC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on checkoutjs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyJSflowWhenPreferenceIsOn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-46970 validate online transactions for whitelisted offline merchants on redirection">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOn"/>
+                    <include name="RedirectionOnOfflineMerchantWhenPreferenceIsOff"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsOff_API_Y"/>
+                    <include name="onlineTxnOnOfflineMerchantWhenPreferenceIsON_API_Y"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

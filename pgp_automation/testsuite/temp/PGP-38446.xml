@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Remove duplicate EMIs" verbose="1" parallel="methods" thread-count="20">
+    <test name="PGP-38446">
+        <classes>
+            <class name="scripts.api.mappingService.GetEmiDetailsTest">
+                <methods>
+                    <include name="verifyEMIDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

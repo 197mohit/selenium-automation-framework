@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Support txn amount in eligibility check API for Paytm Postpaid " verbose="1">
+    <test name="Support txn amount in eligibility check API for Paytm Postpaid ">
+        <classes>
+            <class name="scripts.api.theia.FetchUserPayModeStatusTest">
+                <methods>
+                    <include name="FetchUserPaymentModeStatusTxnAmountLessThenPostpaidBalance"/>
+                    <include name="FetchUserPaymentModeStatusTxnAmountGreaterThenPostpaidBalance"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

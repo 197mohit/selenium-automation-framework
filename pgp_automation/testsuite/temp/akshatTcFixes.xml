@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Subscription Fixes" verbose="1" thread-count="3">
+
+<!--
+    <test name="Deferred Fix">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.DeferredFlowSubs">
+                <methods>
+                    <include name="validateDeferredFlowSubsFPOResponse"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="HDFC UPI Fix">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_005_Native_Subs_QUARTER"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Guest Checkout">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyTAVVforCOPinAlternateIdOnusVISA"/>
+                    <include name="verifyTAVVforPaymemtCashierinAlternateIdOffusVISA"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+-->
+
+<!--    <test name="CloseOrderNotify">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.AcquiringOrderCloseNotify">
+                <methods>
+                    <include name="acquiringOrderCloseNotify_CC"/>
+                    <include name="acquiringOrderCloseNotify_DC"/>
+                    <include name="acquiringOrderCloseNotify_NB"/>
+                    <include name="acquiringOrderCloseNotify_UPI"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PaymentNotifyFixes">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="verifyPaymentNotifyWithCC"/>
+                    <include name="verifyPaymentNotifyWithDC"/>
+                    <include name="verifyPaymentNotifyWithNB"/>
+                    <include name="verifyPaymentNotifyWithUPI"/>
+                    <include name="acquiringCloseNotifyNotifyWithCC"/>
+                    <include name="acquiringCloseNotifyNotifyWithDC"/>
+                    <include name="acquiringCloseNotifyNotifyWithNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheckoutJs">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="VerifyBankLogoInSavedCard"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="CheckoutJsElement">
+        <parameter name="theme" value="checkoutjse_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsMerchantElement">
+                <methods>
+                    <include name="card_nonLocckedIN_Fhidelable"/>
+                    <include name="upi_nonLocckedIN_hidelable"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="SubscriptionViaPPi">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.subscription.subscriptionFirstRequest.enhancedFlows.SubscriptionViaPpi">
+                <methods>
+                    <include name="PGP_89_ValidateS2STxnWithValidSavedCardAndTxnAmtGreaterThanZero"/>
+                    <include name="PGP_90_ValidateS2StxnWithValidSavedCardIDOfAnotherUser"/>
+                    <include name="PGP_92_validateS2StxnWithBlankSSOToken"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGonly">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PGOnly">
+                <methods>
+                    <include name="ValidatePayButtonWithSelectedPaymodeAsSC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+    <!--<test name="PGP-49711_fixes">
+        <classes>
+            <class name="scripts.notification.NotificationTemplate">
+                <methods>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_CGData_PUSH"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_CGData_PUSH"/>
+                    <include name="FGW_WALLET_FROZEN_CGData_PUSH"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_CGData_PUSH"/>
+                    <include name="FGW_ACCOUNT_FROZEN_CGData_PUSH"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_CGData_PUSH"/>
+                    <include name="WALLET_NOT_ACTIVATED_CGData_PUSH"/>
+                    <include name="FGW_ACCOUNT_CLOSED_CGData_PUSH"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION"/>
+                    <include name="FGW_PPBL_RISK_REJECTED"/>
+                    <include name="FGW_PAYOUT_REJECTED_CGData_PUSH"/>
+                    <include name="FGW_ORDER_NOT_FOUND_CGData_PUSH"/>
+                    <include name="DEFAULT_CGData_PUSH"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_CGData_PUSH"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_CGData_PUSH"/>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_CGData"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_CGData"/>
+                    <include name="FGW_ACCOUNT_CLOSED_CGData"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_CGData"/>
+                    <include name="WALLET_NOT_ACTIVATED_CGData"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_CGData"/>
+                    <include name="FGW_ACCOUNT_FROZEN_CGData"/>
+                    <include name="FGW_PPBL_ACCOUNT_FROZEN_CGData"/>
+                    <include name="FGW_WALLET_FROZEN_CGData"/>
+                    <include name="FGW_ACCOUNT_DORMANT_CGData"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_CGData"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_NO_PAN_CGData"/>
+                    <include name="MONTHLY_AMOUNT_BALANCE_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_AMOUNT_WALLET_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_PPBL_CREDIT_COUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_ACCOUNT_BLOCKED_CGData"/>
+                    <include name="FGW_MERCHANT_IS_NRE_ACCOUNT_CGData"/>
+                    <include name="FGW_PAYOUT_REJECTED_CGData"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_CGData"/>
+                    <include name="FGW_BANK_FAIL_SPECIFIC_REASON_CGData"/>
+                    <include name="NO_CONNECTIVITY_NPCI_CGData"/>
+                    <include name="FGW_CONNECT_TIMEOUT_WITH_BANK_CGData"/>
+                    <include name="FGW_UNREGISTERED_UPI_PSP_CGData"/>
+                    <include name="FGW_ORDER_NOT_FOUND_CGData"/>
+                    <include name="FGW_BENE_NOT_EXIST_CGData"/>
+                    <include name="DEFAULT_CGData"/>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="SMS_FGW_AMOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_LIMIT_EXCEEDED_CGData"/>
+                    <include name="FGW_AMOUNT_LIMIT_NO_PAN_NQHTemplate"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHTemplate"/>
+                    <include name="FGW_PPBL_BC_ACCOUNT_REJECTION_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_CLOSED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_CLOSED_CGData"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHTemplate"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED"/>
+                    <include name="FGW_PPBL_ACCOUNT_CLOSED_NQHDLTTemplateID"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHTemplate"/>
+                    <include name="WALLET_NOT_ACTIVATED_NQHDLTTemplateID"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHTemplate"/>
+                    <include name="FGW_INVALID_ACCOUNT_OR_IFSC_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_FROZEN_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_ACCOUNT_FROZEN_NQHTemplate"/>
+                    <include name="FGW_PPBL_ACCOUNT_FROZEN_NQHDLTTemplateID"/>
+                    <include name="FGW_WALLET_FROZEN_NQHTemplate"/>
+                    <include name="FGW_WALLET_FROZEN_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_DORMANT_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_DORMANT"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHTemplate"/>
+                    <include name="FGW_PPBL_ACCOUNT_DORMANT_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_NO_PAN_NQHTemplate"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_NO_PAN_NQHDLTTemplateID"/>
+                    <include name="MONTHLY_AMOUNT_BALANCE_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="MONTHLY_AMOUNT_BALANCE_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_AMOUNT_WALLET_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_AMOUNT_WALLET_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_PPBL_AMOUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_PPBL_CREDIT_COUNT_LIMIT_EXCEEDED_NQHTemplate"/>
+                    <include name="FGW_PPBL_CREDIT_COUNT_LIMIT_EXCEEDED_NQHDLTTemplateID"/>
+                    <include name="FGW_ACCOUNT_BLOCKED_NQHTemplate"/>
+                    <include name="FGW_ACCOUNT_BLOCKED_NQHDLTTemplateID"/>
+                    <include name="FGW_MERCHANT_IS_NRE_ACCOUNT_NQHTemplate"/>
+                    <include name="FGW_MERCHANT_IS_NRE_ACCOUNT_NQHDLTTemplateID"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHTemplate"/>
+                    <include name="FGW_PAYOUT_REJECTED_NQHDLTTemplateID"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHTemplate"/>
+                    <include name="FGW_REMITTER_BANK_FAIL_REASON_NQHDLTTemplateID"/>
+                    <include name="FGW_BANK_FAIL_SPECIFIC_REASON_NQHTemplate"/>
+                    <include name="FGW_BANK_FAIL_SPECIFIC_REASON_NQHDLTTemplateID"/>
+                    <include name="NO_CONNECTIVITY_NPCI_NQHTemplate"/>
+                    <include name="NO_CONNECTIVITY_NPCI_NQHDLTTemplateID"/>
+                    <include name="FGW_CONNECT_TIMEOUT_WITH_BANK_NQHTemplate"/>
+                    <include name="FGW_CONNECT_TIMEOUT_WITH_BANK_NQHDLTTemplateID"/>
+                    <include name="FGW_UNREGISTERED_UPI_PSP_NQHTemplate"/>
+                    <include name="FGW_UNREGISTERED_UPI_PSP_NQHDLTTemplateID"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHTemplate"/>
+                    <include name="FGW_ORDER_NOT_FOUND_NQHDLTTemplateID"/>
+                    <include name="FGW_BENE_NOT_EXIST_NQHTemplate"/>
+                    <include name="FGW_BENE_NOT_EXIST_NQHDLTTemplateID"/>
+                    <include name="DEFAULT_NQHTemplate"/>
+                    <include name="DEFAULT_NQHDLTTemplateID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+    <!--<test name="DQR | Custom Webhook for DLF">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="S2SDataForDLFMerchant_NQH_CC"/>
+                    <include name="S2SBodyForDLF_CG_CC"/>
+                    <include name="S2SDataForDLFMerchant_NQH_DC"/>
+                    <include name="S2SBodyForDLF_CG_DC"/>
+                    <include name="S2SDataForDLFMerchant_NQH_NB"/>
+                    <include name="S2SBodyForDLF_CG_NB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+<!--    <test name="Mandate Subcription Creation">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.bankmandate.SubsMandate">
+                <methods>
+                    <include name="TC_SM013_ValidateSubs_Success_NMS_emptyGraceDays"/>
+                    <include name="TC_SM012_ValidateSubs_Success_NMS_emptyRetryCount"/>
+                    <include name="TC_SM014_ValidateSubs_Success_NMS_enblRetryis0"/>
+                    <include name="TC_SM018_ValidateSubs_Success_NMS_emptySubsFreq"/>
+                    <include name="TC_SM019_ValidateSubs_Success_NMS_ZeroSubsFreq"/>
+                    <include name="TC_SM011_ValidateSubs_Success_NMS_startDateLess_todayDate"/>
+                    <include name="TC_022_ValidateFPO_BM_PaymodeSupported"/>
+                    <include name="TC_SM001_ValidateTknGnrtd_NMS_BM"/>
+                    <include name="TC_SM001_ValidateTknGnrtd_NS_BM"/>
+                </methods>
+            </class>
+        </classes>
+    </test>-->
+
+    <test name="Alternate ID txn's via Native+ Flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutNative">
+                <methods>
+                    <include name="verifySuccessAltIDGenerationforVISA"></include>
+                    <include name="verifySuccessTxnforAlternateIDVISA"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISA"></include>
+                    <include name="verifySuccessTxnE2EforAlternateIDVISAOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Guest Checkout Txn scripts via UI 1">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.GuestCheckout.GuestCheckoutUI">
+                <methods>
+                    <include name="verifyingGenerateAltIDforGuestCheckout"></include>
+                    <include name="verifyingGenerateAltIDforGuestCheckoutOnus"></include>
+                    <include name="verifyingRupayTxnforAltID"></include>
+                    <include name="verifyingRupayTxnforAltIDOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOnus"></include>
+                    <include name="verifyingGenerateAltIDforSavedGuestCheckoutOffus"></include>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Integrate Bin Center Client | Instaproxy">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.Instaproxy.InstaproxyValidation">
+                <methods>
+                    <include name="DC_TXN_fetchBinRequest_ToBinCenter_FromInsta"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UI | Checkout JS on Redirectional Flow | WEB">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="UI | Checkout JS on Redirectional Flow | WAP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.UISanityJSonRedirection">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UI | CheckoutJS | WAP">
+        <parameter name="theme" value="checkoutjs_wap_revamp"/>
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="UI | CheckoutJS | WEB">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.SplitConvFeePlatformFee">
+                <methods>
+                    <include name="verifyFees_applied_text"/>
+                    <include name="verify_i_button_heading"/>
+                    <include name="verify_ibuttonConvFeeHeading"/>
+                    <include name="verify_ibuttonConvFeeText"/>
+                    <include name="verify_ibuttonPlatformFeeHeading"/>
+                    <include name="verify_ibuttonPlatformFeeText"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

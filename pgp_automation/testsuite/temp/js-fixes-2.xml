@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-36238" verbose="1" parallel="tests" thread-count="2">
+    <test name="v5 fpo validation">
+        <parameter name="theme" value="checkoutjs_web_revamp"/>
+        <classes>
+            <class name="scripts.Native.checkoutjs.CheckoutJsTests">
+                <methods>
+                    <include name="t1"/>
+                    <include name="DuplicateTxnAttemptusingtxnTokenOfSuccessfulTxn"/>
+                    <include name="verifying_hidePaytmBranding_false"/>
+                    <include name="verifying_hidePaytmBranding_true"/>
+                    <include name="verifying_hidePaytmBranding_Null"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

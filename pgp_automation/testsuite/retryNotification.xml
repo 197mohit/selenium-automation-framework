@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Notification_Suite" verbose="1" thread-count="5" parallel="tests">
+    <test name="NativePeon">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativePeon">
+                <methods>
+                    <include name="retryTxnUsingSavedCard"/>
+                    <include name="TC_PT_002"/>
+                    <include name="verifyRetryCase_whenRetryIsDoneUsingCC"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NotificationLogs">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationLogs">
+                <methods>
+                    <include name="successfulPGOnlyCCEvents"/>
+                    <include name="verifyLowPriorityOfFailedPGOnlyTxn"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="NotificationTest">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationTest">
+                <methods>
+                    <include name="acquiringCloseNotifyNotifyWithAddnPay"/>
+                    <include name="acquiringCloseNotifyNotifyWithNB"/>
+                    <include name="acquiringCloseNotifyNotifyWithPPI"/>
+                    <include name="pushCloseNotifyWithAddnPay"/>
+                    <include name="validateTopicForRTDD_AddNPay"/>
+                    <include name="validateTopicForRTDD_CC"/>
+                    <include name="validateTopicForRTDD_PPBL"/>
+                    <include name="validateTopicForRTDD_UPI"/>
+                    <include name="verifyPaymentNotifyWithNB"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="FGW Mappings - PGP-38316">
+        <classes>
+            <class name="scripts.notificationTemplate.PGP38316NewFGWMappingwithContextualErrorMessagesFailedSettlementTxn">
+                <methods>
+                    <include name="FgwBankFailSpecificReason_MerchantAutoWithdraw"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-36427 - Verify isAutoRefund is true in FPO response of subscription created for merchant whose AutoRefund is enabled">
+        <classes>
+            <class name="scripts.notificationTemplate.TestGetNotificationGlobalConfig">
+            <methods>
+                <include name="getNotificationGlobalConfig"/>
+            </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PeonTxn Enhancedwap">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <parameter name="mobileEmulation" value="Nexus 5"/>
+        <parameter name="userAgent"
+                   value="Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML,like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="isPeonSuccessfulAfterTransaction"/>
+                    <include name="PGP_37891_DetailingOutErrorResCodeDisable"/>
+                    <include name="PGP_403_PeonAddNPayPass"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                    <include name="validatePeonForLimitBreach"/>
+                    <include name="validateRiskRejectMessage"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Addition of fields in DTOs">
+        <classes>
+            <class name="scripts.PgproxyNotificationTest">
+                <methods>
+                    <include name="SendAutoWithdrawSMSForBWMerchantwithflagon"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
+

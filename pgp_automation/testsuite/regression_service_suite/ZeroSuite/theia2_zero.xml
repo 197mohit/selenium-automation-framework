@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Theia_Suite-2" verbose="1" thread-count="10" parallel="tests">
+
+    <test name="PGP 16441 - Fee on Add money via CC support (Only API)">
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="fetchPayOptionForRiskRejectedUser"/>
+                    <include name="validatePTCFailWhenTxnAmountAndSumOfInitialAndRiskAmountMismatch"/>
+                    <include name="fetchPayOptionForNonRiskRejectedUser"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native plus flow">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="testGVScenario"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP 16441 - Fee on Add money via CC support in PG Native flow">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Sprint28.RiskAddMoney">
+                <methods>
+                    <include name="validateTxnForRiskConvFee"/>
+                    <include name="feeAppliedTrueInPTC"/>
+                    <include name="validatePTCDifferentMerchant"/>
+                    <include name="noRiskFeeForNormalMerchant"/>
+                    <include name="verifyRiskFeeNotAppliedForOtherPayMode"/>
+                    <include name="ptcFailBlacklistedIfFeeNotApplied"/>
+                    <include name="addMoneyWithOtherPayModes"/>
+                    <include name="feeAppliedFalse"/>
+                    <include name="testGVScenario"/>
+                    <include name="riskFeeDifferentFromProp"/>
+                    <include name="txnGetDeclinedIfFeeNotPassed"/>
+                    <include name="ptcFailForBlacklistedMerchants"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="PGP-32831 - Verifying different sub wallets on single user">
+        <classes>
+            <class name="scripts.SubWalletDetails"/>
+        </classes>
+    </test>
+
+    <test name="Native Fetch Pay Options" parallel="methods" thread-count="3">
+        <classes>
+            <class name="scripts.Native.FetchPayOptions">
+                <methods>
+                    <include name="merchantLogoUrlPresent"/>
+                    <include name="TC_FPI_002"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Promo And Flow">
+        <classes>
+            <class name="scripts.api.theia.ProcessTransactionAPI">
+                <methods>
+                    <include name="testwithIncorrectContentType"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Split settlement For Native Plus">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.Native.NativeMF">
+                <methods>
+                    <include name="validateSplitInfoNB"/>
+                    <include name="validateSplitInfoDCPercentage"/>
+                    <include name="validateSplitInfoDCChild"/>
+                    <include name="validateSplitInfoDCChildPERCENTAGE"/>
+                    <include name="validateSplitInfoNBPercentage"/>
+                    <include name="validateSplitInfoNBChild"/>
+                    <include name="validateSplitInfoNBChildPercentage"/>
+                    <include name="validateSplitInfoUPIChild"/>
+                    <include name="validateSplitInfoUPIChildPERCENTAGE"/>
+                    <include name="validateSplitInfoUPIPercentage"/>
+                    <include name="validateSplitInfoUPI"/>
+                    <include name="validateUPITxnWithoutSplit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+    <test name="Split settlement for Native">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.Native.NativeMF">
+                <methods>
+                    <include name="validateSplitInfoNB"/>
+                    <include name="validateSplitInfoDCPercentage"/>
+                    <include name="validateSplitInfoDCChildPERCENTAGE"/>
+                    <include name="validateSplitInfoNBPercentage"/>
+                    <include name="validateSplitInfoNBChild"/>
+                    <include name="validateSplitInfoNBChildPercentage"/>
+                    <include name="validateSplitInfoUPIChild"/>
+                    <include name="validateSplitInfoUPIChildPERCENTAGE"/>
+                    <include name="validateSplitInfoUPIPercentage"/>
+                    <include name="validateSplitInfoUPI"/>
+                    <include name="validateUPITxnWithoutSplit"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>

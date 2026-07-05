@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PriorityTest(PGP-31228)" verbose="1" thread-count="20" parallel="tests">
+    <test name="Priority Test cases">
+        <parameter name="theme" value="enhancedweb"/>
+        <classes>
+            <class name="scripts.StandardCheckoutPriority.PriorityTest"/>
+        </classes>
+    </test>
+</suite>

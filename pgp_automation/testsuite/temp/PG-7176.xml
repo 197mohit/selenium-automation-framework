@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG-7176" verbose="1" parallel="methods" thread-count="1">
+
+    <test name="HDFC payerAccountDetails">
+        <parameter name="isNativePlus" value="true"/>
+        <classes>
+            <class name="scripts.UPISubsMandate.UPISubsHDFC">
+                <methods>
+                    <include name="TC_001_HDFC_Subs_Intet_Ondemand_withPayerAccountDetails"/>
+                    <include name="TC_001_Native_Subs_ONDEMAND_withPayerAccountDetails"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

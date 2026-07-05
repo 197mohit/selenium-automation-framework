@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Automation fixes" verbose="1" >
+    <test name="Notification fixes 1">
+    <classes>
+        <class name="scripts.PgproxyNotificationTest">
+            <methods>
+                <include name="CheckFieldOfDTOinRefundApi"/>
+            </methods>
+        </class>
+    </classes>
+    </test>
+    <test name="Notification fixes 2">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="isPeonSuccessfulAfterTransaction"/>
+                    <include name="PGP_400_PeonWalletOnlyFail"/>
+                    <include name="PGP_402_PeonHybridFail"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notification fixes 3">
+        <parameter name="theme" value="enhancedwap_revamp"/>
+        <classes>
+            <class name="scripts.PeonTxn">
+                <methods>
+                    <include name="isPeonSuccessfulAfterTransaction"/>
+                    <include name="PGP_402_PeonHybridFail"/>
+                    <include name="PGP_404_PeonAddMoneyPass"/>
+                    <include name="PGP_406_PeonAddMoneyFail"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="Notification fixes 4">
+        <parameter name="theme" value="enhancedweb_revamp"/>
+        <classes>
+            <class name="scripts.notification.NotificationLogs">
+                <methods>
+                    <include name="successfulPGOnlyCCEvents"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SwiftExpressUI - PAPR-6911" verbose="1" parallel="methods" thread-count="1">
+    <test name="SwiftExpressUI">
+        <classes>
+            <class name="scripts.UI.SwiftExpressUITests"/>
+            <methods>
+                <include name="verifyPayCall_AutoSubmit_onTimerCompletion"/>
+            </methods>
+        </classes>
+    </test>
+    <test name="DCC Express UI">
+        <classes>
+            <class name="scripts.UI.DCCExpressUITests"/>
+            <methods>
+                <include name="verifyDccExpress_CardInfo"/>
+                <include name="verifyDccExpress_TimerSection"/>
+                <include name="verifyStopTimerHidesTimerText_onDccExpress"/>
+                <include name="verifyPayCall_AutoSubmit_onTimerCompletion"/>
+            </methods>
+        </classes>
+    </test>
+
+</suite>

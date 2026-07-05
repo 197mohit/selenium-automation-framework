@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-54974 Cases" verbose="1" thread-count="20" parallel="tests">
+    <test name="PGP-54974">
+        <parameter name="isNativePlus" value="false"/>
+        <classes>
+            <class name="scripts.EMI">
+                <methods>
+                    <include name="validateUnifiedOfferToken_AmountBasedOffer"/>
+                    <include name="validateUnifiedOfferTokenE2ETxn_AmountBasedOffer"/>
+                    <include name="validateUnifiedOfferToken_ItemBasedOffer"/>
+                    <include name="validateUnifiedOfferTokenE2ETxn_ItemBasedOffer"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test name="PGP-54974 -sso support in offerDiscovery">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.OfferDiscoveryWithSSOToken">
+            </class>
+        </classes>
+    </test>
+</suite>

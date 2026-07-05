@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="New_Redirection_Suite_PG2" verbose="1" thread-count="10" parallel="tests">
+    <test name="Redirectionflow P0 UI Cases">
+        <parameter name="theme" value="enhancedweb_revamp"></parameter>
+        <classes>
+            <class name="scripts.UI.redirectionalflowP0NewCases"/>
+        </classes>
+    </test>
+</suite>

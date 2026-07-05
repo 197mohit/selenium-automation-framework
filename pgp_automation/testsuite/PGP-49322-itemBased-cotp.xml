@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PGP-49322-cotp" verbose="1" parallel="methods" thread-count="1">
+    <test name="PGP-49322-cotp item and amount based for custom checkout flow">
+        <classes>
+            <class name="scripts.api.PromoAndEmiSubvention.CustomCheckoutE2ETxn">
+                <methods>
+                    <include name="TestDetailExtendInfoForAmountBasedForCOTP"/>
+                    <include name="TestDetailExtendInfoForAmountBasedAndPromoForCOTP"/>
+                    <include name="TestDetailExtendInfoItemBasedCOTP"/>
+                    <include name="TestDetailExtendInfoItemBasedAndPromoCOTP"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Merchant Status Last Four Digit" verbose="1" parallel="tests" thread-count="7">
+    <test name="MS and PS last four digit">
+        <parameter name="isNativePlus" value="true"></parameter>
+        <classes>
+            <class name="scripts.merchantStatus.MerchantStatusTests">
+                <methods>
+                    <include name="lastFourDigitNotVisible"/>
+                    <include name="lastFourDigitVisible"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

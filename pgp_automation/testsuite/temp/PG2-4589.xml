@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PPBL CO Then Pay PG2_ENABLED Native+ Txn " verbose="1">
+    <test name="PPBL CO Then Pay PG2_ENABLED Native+ Test">
+        <classes>
+            <class name="scripts.api.PPBL.PPBLPG2">
+                <methods>
+                    <include name="validatePG2EnabledCoThenPaySuccessPPBLTxnPG2MID"/>
+                    <include name="validatePG2EnabledCoThenPayFailPPBLTxnPG2MID"/>
+                    <include name="validatePG2EnabledCoThenPayPendingPPBLTxnPG2MID"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

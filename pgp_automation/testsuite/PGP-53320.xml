@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Dynamic EDC QR PGP-53320" verbose="1">
+    <test name="PaymentOptionsAvailable for Dynamic EDC QR">
+        <classes>
+            <class name="scripts.DynamicQRNew">
+                <methods>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable001"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable002"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable003"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable004"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable005"/>
+                    <include name="EDCQR_FetchQRPaymentDetailswithpaymentOptionsAvailable006"/>
+                </methods>
+
+            </class>
+        </classes>
+    </test>
+</suite>

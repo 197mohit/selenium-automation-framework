@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SaveCardAdditionalApis" verbose="1">
+
+    <test name="SaveCardAdditionalApis">
+
+        <classes>
+            <class name="scripts.coft.savedCardService.DeleteCardbyMidCustIdTest"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalBinInfoTests"/>
+            <class name="scripts.coft.savedCardService.HandlerInternalDeleteBinUserTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByMidCustIdTests"/>
+            <class name="scripts.coft.savedCardService.SavedCardByUserIdTests"/>
+            <class name="scripts.coft.savedCardService.SavecardServicegetGcinV1Test"></class>
+            <class name="scripts.coft.savedCardService.SaveCardByTokenTypeTest"></class>
+        </classes>
+    </test>
+</suite>

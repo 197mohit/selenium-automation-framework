@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="PG2MIGARATION" verbose="1" parallel="methods" thread-count="1">
+    <test name="PG2SDMigration">
+        <classes>
+            <class name="scripts.api.merchant.migration.PG2SDMigration">
+                <methods>
+                    <include name="CreatePG2Merchant_01"/>
+                    <include name="CreatePG2Merchant_02"/>
+                    <include name="CreatePG2Merchant_03"/>
+                    <include name="CreatePG2Merchant_04"/>
+                    <include name="CreatePG2Merchant_05"/>
+                    <include name="CreatePG2Merchant_06"/>
+                    <include name="CreatePG2Merchant_07"/>
+                    <include name="CreatePG2Merchant_08"/>
+                    <include name="CreatePG2Merchant_09"/>
+                    <include name="CreatePG2Merchant_010"/>
+                    <include name="CreatePG2Merchant_011"/>
+                    <include name="CreatePG2Merchant_012"/>
+                    <include name="CreatePG2Merchant_013"/>
+                    <include name="CreatePG2Merchant_014"/>
+                    <include name="CreatePG2Merchant_015"/>
+                    <include name="CreatePG2Merchant_016"/>
+                    <include name="CreatePG2Merchant_017"/>
+                    <include name="CreatePG2Merchant_018"/>
+                    <include name="CreatePG2Merchant_019"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
